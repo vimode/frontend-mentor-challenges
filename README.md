@@ -22,9 +22,13 @@ The folders in this repo are based on the 'Difficulty' level set by Frontend Men
 ## Difficulty Level
 
 -[Newbie][#newbie]
+
 -[Junior][#junior]
+
 -[Intermediate][#intermediate]
+
 -[Advanced][#advanced]
+
 -[Guru][#guru]
 
 
