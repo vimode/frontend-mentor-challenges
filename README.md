@@ -21,15 +21,15 @@ The folders in this repo are based on the 'Difficulty' level set by Frontend Men
 
 ## Difficulty Level
 
--[Newbie][#newbie]
+- [Newbie](#newbie)
 
--[Junior][#junior]
+- [Junior](#junior)
 
--[Intermediate][#intermediate]
+- [Intermediate](#intermediate)
 
--[Advanced][#advanced]
+- [Advanced](#advanced)
 
--[Guru][#guru]
+- [Guru](#guru)
 
 
 ## Newbie 
