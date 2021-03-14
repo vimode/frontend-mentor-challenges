@@ -26,7 +26,7 @@ You can use any tools you like to help you complete the challenge. So if you've 
 
 ### What I learned
 
-**CSS Variables **: This is my first project which incorporates the usage of  CSS variables. This being a very small challenge, it was fairly easy to setup the limited set of variables required for the complete challenge. 
+**CSS Variables** : This is my first project which incorporates the usage of  CSS variables. This being a very small challenge, it was fairly easy to setup the limited set of variables required for the complete challenge. 
 
 ```css
 :root {
@@ -63,6 +63,7 @@ You can use any tools you like to help you complete the challenge. So if you've 
 
 I struggled with positioning the background images properly. They are close to the design but I am not happy how I positioned them. There has to be a better way. I do not like positioning elements using negative values as they do not scale properly for all screen sizes. 
 
+---
 
 ###### Pending Tasks 
 
