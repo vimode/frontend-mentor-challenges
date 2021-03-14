@@ -1,4 +1,6 @@
-# Frontend Mentor - Profile card component
+#  Profile card component
+
+Solution : [Live Site URL](#)
 
 This is a solution to the [Profile card component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/profile-card-component-cfArpWshJ).
 
@@ -11,11 +13,8 @@ Your challenge is to build out this profile card component and get it looking as
 
 You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
 
-### Links
 
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
-
-## My process
+## Experience
 
 ### Built with
 
@@ -65,8 +64,8 @@ You can use any tools you like to help you complete the challenge. So if you've 
 I struggled with positioning the background images properly. They are close to the design but I am not happy how I positioned them. There has to be a better way. I do not like positioning elements using negative values as they do not scale properly for all screen sizes. 
 
 
-#### Pending Tasks 
+###### Pending Tasks 
 
-[] Final challenge screenshot(s) (desktop and mobile)
-[] Background image positioning fixes.
-[] Submit the challenge at frontendmentor
+- Final challenge screenshot(s) (desktop and mobile)
+- Background image positioning fixes.
+- Submit the challenge at frontendmentor
