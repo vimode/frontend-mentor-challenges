@@ -1,6 +1,6 @@
 #  Profile card component
 
-Solution : [Live Site URL](https://frontend-mentor-challenges-ivory-one.vercel.app/profile-card-component)
+Solution : [Live Site URL](https://frontend-mentor-challenges-ecru.vercel.app/profile-card-component)
 
 This is a solution to the [Profile card component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/profile-card-component-cfArpWshJ).
 
