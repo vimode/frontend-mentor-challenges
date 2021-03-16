@@ -48,8 +48,6 @@ section {
   display:flex;
   justify-content:center;
   align-items:center;
-  position:relative;
-  overflow:hidden;
 }
 
 .container{
@@ -60,7 +58,8 @@ section {
 /* PROFILE CARD */
 
 .profile-card {
-  width: 350px;
+  width: 95%;
+  max-width: 350px;
   background: #fff;
   border-radius: 1em;
   text-align:center;
@@ -137,22 +136,20 @@ section {
 /* BACKGROUND CIRCLES */
 
 .bg-circles img {
-  position:absolute;
-  width: 800px;
-  height:auto;
   animation: 3s bg-circles forwards;
-  overflow:hidden;
 }
 
 .bg-c1 {
-  top:-350px;
-  left:100px;
+  position:fixed;
+  top:-400px;
+  left:-50px;
   transform: translate(-10px, -10px);
 }
 
 .bg-c2 {
-  bottom: -350px;
-  right:100px;
+  position:fixed;
+  bottom: -400px;
+  right:-50px;
   transform:translate(10px, 10px);
 }
 
@@ -176,24 +173,6 @@ section {
 
 .footer a {
   color :var(--clr-link);
-}
-
-/* MEDIA QUERIES */
-
-@media (max-width: 375px) {
-  .profile-card {width: 300px;}
-
-  .bg-c1 {
-    top:-100px;
-    left:-200px;
-    transform: translate(-50px, -20px);
-  }
-  
-  .bg-c2 {
-    bottom: -100px;
-    right:-200px;
-    transform:translate(50px, 20px);
-  }
 }
 
 
