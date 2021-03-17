@@ -2,9 +2,7 @@
 
 *,
 *::before,
-*::after {
-  box-sizing:border-box;
-}
+*::after {box-sizing:border-box;}
 
 /* CUSTOM PROPERTIES */
 
@@ -65,9 +63,7 @@ body {
 
 /* IMAGE WRAPPER */
 
-.wrapper_img{
-  position:relative;
-}
+.wrapper_img{position:relative;}
 
 .wrapper_img__inner {
   background-image: url(/faq-accordion-card/images/illustration-woman-online-desktop.svg);
@@ -119,27 +115,30 @@ body {
 }
 
 .question_title:hover,
-.question_title:focus {
-  color:var(--clr-primary-text-red);
-}
+.question_title:focus {color:var(--clr-primary-text-red);}
 
 .entries_single > .question_answer {
-  display:none;
-}
+  opacity:0;
+  height:0;
+  overflow:hidden;
+  transition: opacity 0.5s ease-in-out;
+  }
 
 /* ACTIVE  */
 
 .active > .question_answer {
-  display:block;
+  opacity:1;
+  height:auto;
   padding-bottom : 1rem;
 }
+
 .active > .single_question> .question_title {
   color : var(--clr-primary-text-blue);
   font-weight: var(--fw-bold);
 }
 
-.active img {
-  transform: rotate(180deg);
+.active img {transform: rotate(180deg);
+
 }
 
 /* FOOTER */
@@ -164,6 +163,7 @@ body {
     position:relative;
     top: 10%;
     height: 70vh;
+    padding-left:1em;
   }
 
   .wrapper_img {
