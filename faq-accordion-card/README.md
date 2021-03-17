@@ -37,7 +37,7 @@ Your users should be able to:
 
 ### Challenges
 
-Image manipulation with responsiveness is mind was challenging and still is for me. This challenge required positioning some elements with negative properties which took me more time than it should. 
+Image manipulation with responsiveness was challenging and still is for me. This challenge required positioning some elements with negative properties which took me more time than it should. 
 I struggled with positioning the background pattern image properly for all screen widths, for the two expected screen sizes it works fine but somewhere in between it does not retain the expected position.
 
 ---
