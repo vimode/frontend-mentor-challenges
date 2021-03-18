@@ -58,6 +58,7 @@ body {
   background-repeat:no-repeat;
   background-position:850% 69%;
   box-shadow: 0px 4px 40px 0px var(--clr-primary-text-blue);
+  transition: all 0.5s;
 }
 
 
@@ -121,7 +122,7 @@ body {
   opacity:0;
   height:0;
   overflow:hidden;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-out;
   }
 
 /* ACTIVE  */
@@ -169,7 +170,7 @@ body {
   .wrapper_img {
     background-image: url(/faq-accordion-card/images/bg-pattern-mobile.svg);
     background-repeat:no-repeat;
-    background-position: center 55%;  
+    background-position: center 55%;
   }
 
   .wrapper_img__inner {
