@@ -29,9 +29,26 @@
   --clr-text: #414141;
   --clr-grey: #dbe5e6;
   
+  
 }
 
 /* GENERAL STYLES */
+
+/* TEMP OVERLAY */
+.overlay {
+  position:absolute;
+  background: rgba(218, 223, 225, 0.9); 
+  height:100%;
+  width: 100%;
+}
+
+.overlay p {
+  color: var(--clr-titletext);
+  text-align:center;
+  position:relative;
+  top:30%;
+  font-size:xxx-large;
+}
 
 body {
   margin: 0 auto;
