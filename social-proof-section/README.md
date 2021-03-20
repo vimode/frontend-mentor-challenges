@@ -1,4 +1,4 @@
-#   Social proof section
+#  Social proof section
 
 Solution : [Live Site URL](https://frontend-mentor-challenges-ecru.vercel.app/social-proof-section)
 
@@ -6,7 +6,7 @@ This is a solution to the [Social proof section challenge on Frontend Mentor](ht
 
 ![Design preview for the Social proof section coding challenge](./design/desktop-preview.jpg)
 
- ## The challenge
+## The challenge
 
 Your challenge is to build out this social proof section and get it looking as close to the design as possible.
 
