@@ -1,4 +1,4 @@
-#  Social proof section
+# Social proof section
 
 Solution : [Live Site URL](https://frontend-mentor-challenges-ecru.vercel.app/social-proof-section)
 
@@ -16,7 +16,6 @@ Your users should be able to:
 
 - View the optimal layout for the section depending on their device's screen size
 
-
 ## Experience
 
 ### Built with
@@ -26,11 +25,9 @@ Your users should be able to:
 - Flexbox
 - CSS Grid
 
-
 ### What I learned
 
 I am used to starting with the desktop view first so tried the mobile first approach. At first it felt really easy but this challenge had a unique desktop view which meant I had to do a lot of things  in the media queries which felt a little backwards as I am not used to this type of work flow. 
-
 
 ### Challenges
 
@@ -43,4 +40,4 @@ Mobile first is something either I will embrace or reject, I am not sure yet. I 
 ###### Pending Tasks 
 
 - Final challenge screenshot(s) (desktop and mobile)
-- Submit the challenge at frontendmentor
+- Submit the challenge at frontendmentor.
