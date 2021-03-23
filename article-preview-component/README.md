@@ -1,6 +1,6 @@
 # Article preview component
 
-Solution : [Live Site URL](https://frontend-mentor-challenges-ecru.vercel.app/)
+Solution : [Live Site URL](https://frontend-mentor-challenges-ecru.vercel.app/article-preview-component/)
 
 This is a solution to the [Article preview component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/article-preview-component-dYBN_pYFT). 
 
