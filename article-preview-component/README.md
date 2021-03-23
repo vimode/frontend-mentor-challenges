@@ -33,10 +33,9 @@ Your users should be able to:
 
 It is easier to use relative and absolute position for elements with fixed height and width. At first I built  the article component with responsive sizing but had to switch to fixed sizing for it to make the share menu to be positioned properly.
 
-Learned about some new elements related to the element `article`. 
-(MDN link)[https://developer.mozilla.org/en-US/docs/Web/HTML/Element/article]
+Learned about some new elements related to the element `article`. [MDN link](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/article)
 
-Re-learned and used the `fill` attribute for SVGs. (MDN link)[https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/fill]
+Re-learned and used the `fill` attribute for SVGs. [MDN link](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/fill)
 
 
 ### Continued development 
@@ -54,6 +53,7 @@ This challenge was done with the design principles of mobile-first philosophy. S
 
 ###### Pending Tasks 
 
+- Update readme
 - Final challenge screenshot(s) (desktop and mobile)
 - Submit the challenge at frontendmentor.
 
