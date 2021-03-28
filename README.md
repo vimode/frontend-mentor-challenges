@@ -9,12 +9,12 @@ The folders in this repo are based on the 'Difficulty' level set by Frontend Men
 
 ######  Current Status
 
-- Starting the 'Newbie' difficulty.
-- Currently working on the `profile-card-component`
+- Started at the 'Newbie' difficulty.
+- Currently working on the `coding-bootcamp-testimonial slider`
 
 ###### Pending tasks for the repo
 
-- Build a custom showcase page for FrontendMentor to showcase all the challenges. 
+- Build a custom showcase page for to display all the challenges/submitted solutions. 
 - Fill `README.md` for this as well as each challenge with  challenge information, my experience, new technologies learned, new experiments in the challenge, time to complete each (approx. hours for each challenge)
 - Fill the index below
 
