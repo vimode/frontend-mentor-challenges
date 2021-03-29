@@ -32,6 +32,7 @@ Your users should be able to:
 When creating a slider do not create buttons for each slide, there is a reason everyone keeps the slider buttons common across slides. Even though I made individual buttons on each slide work for the slider its a little messy way to do it. Not the most efficient way to do it. 
 
 `place-content` is a shorthand for `align-content` and `justify-content` - [MDN Link](https://developer.mozilla.org/en-US/docs/Web/CSS/place-content)
+
 `place-items`  is a shorthand for `align-items` and `justify-items`  - [MDN Link](https://developer.mozilla.org/en-US/docs/Web/CSS/place-items)
 
 Not sure how I missed these shorthands while learning about grid. But these are really handy. 
