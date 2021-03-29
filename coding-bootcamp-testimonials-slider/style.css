@@ -42,8 +42,8 @@ img {max-width: 100%;}
 
 /* CONTAINER */
 .container {
-  margin: 0 auto;
   height: 100vh;
+  margin: 0 auto;
   width: 100vw;
   display:flex;
   flex-direction: column;
@@ -53,17 +53,14 @@ img {max-width: 100%;}
 
 /* SLIDER */
 
-
-
 .slide {
   display:grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(2,1fr);
 }
 
-
 .slider_img {
-  grid-column: 1/2;
+  margin-top: 1rem;
   grid-row: 1/2;
   display:flex;
   flex-direction:column;
@@ -95,7 +92,6 @@ img {max-width: 100%;}
 }
 
 .prev {background-image: url(/coding-bootcamp-testimonials-slider/images/icon-prev.svg);}
-
 .next { background-image: url(/coding-bootcamp-testimonials-slider/images/icon-next.svg);}
 
 .prev,
@@ -109,23 +105,28 @@ img {max-width: 100%;}
   display: inline;
 }
 
-.prev:active {margin-left:-2px;}
-.next:active {margin-right: 2px;}
-
-.prev:hover {
-  background-position: 40% 50%;
-  transition: all 300ms 100ms;
+.next:active {
+  padding-right: 3px;
+  margin-right: 3px;
+}
+.prev:active {
+  padding-left: 3px;
+  margin-left: 3px;
 }
 
 .next:hover {
-  background-position: 60% 50%;
+  background-position: 70% 50%;
+  transition: all 300ms 100ms;
+}
+
+.prev:hover {
+  background-position: 30% 50%;
   transition: all 300ms 100ms;
 }
 
 .slider_quote {
   margin-top: 2rem;
   height: 100%;
-  grid-column: 1/2;
   grid-row: 2/3;
   color: var(--clr-primary-title-text);
   font-size: 1.4rem;
@@ -133,9 +134,7 @@ img {max-width: 100%;}
 }
 
 .slider_quote img  {height: 15%;}
-
 .slider_quote >p {margin-top: -1.5rem;}
-
 .slider_name {text-align:center;}
 
 .slider_name > .name {
@@ -147,8 +146,6 @@ img {max-width: 100%;}
   color: var(--clr-primary-text);
   display:block;
 }
-
-.slider_two {display:none;}
 
 /* FOOTER */
 .footer {
@@ -165,9 +162,9 @@ img {max-width: 100%;}
 
 @media (min-width: 800px) {
 
-  body {
-    background-position: -100% 130%;
-  }
+  body {background-position: -100% 130%;}
+
+  .container {height: 100vh;}
 
   .slide {
     max-width: 1200px;
@@ -176,9 +173,9 @@ img {max-width: 100%;}
     place-items: flex-start center;
   }
 
-  .slider_img {
-    grid-column: 2/3;
-  }
+  .slider_img { grid-column: 2/3;}
+
+  .slider_nav {transform: translate(-60% , -20px);}
 
   .slider_quote {
     align-self: center;
@@ -196,4 +193,6 @@ img {max-width: 100%;}
 
   .slider_name {text-align: left;}
   .slider_name .role {display:unset;}
+
+  .footer {margin-top: 5rem;}
 }
