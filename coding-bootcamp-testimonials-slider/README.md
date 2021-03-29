@@ -39,7 +39,7 @@ Not sure how I missed these shorthands while learning about grid. But these are 
 
 ### Challenges
 
-While positing the background images, I messed up the height of other elements and that caused changing heights of almost wrapper element. At the end I managed to fixed most issues but on every small height devices like less than 700px height, my body overflows and the footer is below the background image too. 
+While positioning the background images, I messed up the height of other elements and that caused changing heights of almost wrapper element. At the end I managed to fixed most issues but on every small height devices like less than 700px height, my body overflows and the footer is below the background image too. 
 
 Background images are still very tricky to move around the canvas especially when these images are expected to be responsive for all device sizes. 
 
@@ -53,5 +53,7 @@ I will be fixing the background images sooner or later once I have better  grasp
 
 - Update README
 - Adjust the background images properly. 
+- Adjust the height for small screen devices.
+- Quote img flickering issue on button click
 - Final challenge screenshot(s) (desktop and mobile)
 - Submit the challenge at frontendmentor.
