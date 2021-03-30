@@ -10,7 +10,7 @@ The folders in this repo are based on the 'Difficulty' level set by Frontend Men
 ######  Current Status
 
 - Started at the 'Newbie' difficulty.
-- Currently working on the `coding-bootcamp-testimonial slider`
+- Currently working on the `four-card-feature-section`
 
 ###### Pending tasks for the repo
 
@@ -42,3 +42,6 @@ The folders in this repo are based on the 'Difficulty' level set by Frontend Men
 
 ## Guru
 
+### Author 
+
+Discord vimo#6620
