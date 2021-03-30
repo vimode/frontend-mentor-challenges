@@ -20,22 +20,17 @@ Your users should:
 
 ## Experience
 
+This challenge was simpler than any of the previous challenges, Flexbox is powerful for such cards, helps centering everything in less lines of code. The ordering of one of the card item had to be changed for desktop view but otherwise it was pretty straightforward with the usage of flexbox.
+
 ### Built with
-
-
-### What I learned
-
-
-### Challenges
- 
-### Continued development  & Learning
-
+- HTML5
+- CSS3
+- Flexbox
 
 ---
 
 ###### Pending Tasks 
 
--
 - Update README
 - Final challenge screenshot(s) (desktop and mobile)
 - Submit the challenge at frontendmentor.

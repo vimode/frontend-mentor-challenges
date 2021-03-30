@@ -90,8 +90,8 @@ h2 {
 
 .card:nth-child(3),
 .card:nth-child(4) {order: 0}
-/* FOOTER */
 
+/* FOOTER */
 .footer {
   text-align: center;
   font-weight:var(--fw-light);
@@ -105,8 +105,8 @@ h2 {
 /* MEDIA QUERIES */
 
 @media (min-width: 1160px) {
-  .card:nth-child(3) {order: 2;}
-  .card:nth-child(4){order: 1; }
+  .card:nth-child(3) {order:2;}
+  .card:nth-child(4) {order:1;}
 
   .card:nth-child(1),
   .card:nth-child(4) { 
