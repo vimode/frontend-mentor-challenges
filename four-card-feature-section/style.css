@@ -49,6 +49,7 @@ h2 {
 .header {
   max-width:500px;
   margin: 3rem auto;
+  padding: 0 5px;
   text-align: center;
 }
 
