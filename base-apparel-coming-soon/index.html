@@ -7,8 +7,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <!-- CUSTOM CSS -->
   <link rel="stylesheet" href="/base-apparel-coming-soon/style.css">
-  
-  <script src="/base-apparel-coming-soon/script.js" defer></script>
 
   <title> Base Apparel coming soon page</title>
 
@@ -18,35 +16,37 @@
 
     <div class="main">
       <img class="logo" src="/base-apparel-coming-soon/images/logo.svg" alt="Base Apparel">
-      <h1 class="main-title"><span>We're</span> 
+
+      <img src="/base-apparel-coming-soon/images/hero-mobile.jpg" class=
+      "mobile-img" alt="">
+      
+      <h1 class="main-title inner-container"><span>We're</span> 
         coming <br> soon
       </h1>
       
-      <p class="main-content">
+      <p class="main-content inner-container">
         Hello fellow shoppers! We're currently building our new fashion store.
         Add your email below to stay up-to-date with announcements and our launch deals.
       </p>
       
-      <form>
-          <input type="email" placeholder="Email Address" aria-label="Email Address">
+      <form id= "form" autocomplete="on" class="inner-container">
+          <input type="email" placeholder="Email Address" aria-label="Email Address" id = "email" name="user_email" />
           <img class="error-icon"src="/base-apparel-coming-soon/images/icon-error.svg" alt="error">
-          <button><img class="arrow-icon" src="/base-apparel-coming-soon/images/icon-arrow.svg" alt="arrow"> </button>
-          <p class="small-text">Please provide a valid email</p>
-        </input>
+          <button type="submit" class = "btn"><img class="arrow-icon" src="/base-apparel-coming-soon/images/icon-arrow.svg" alt="arrow"> </button>
+          <p class="error-text">Please provide a valid email</p>
       </form>
-
+    
+      <footer class="footer">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a
+          href="https://github.com/ppusher/frontend-mentor-challenges">ppusher</a>
+      </footer>
+    
     </div> <!--main-->
 
-    <div class="hero-img">
-
-    </div><!-- hero img -->
+    <div class="hero-img"></div>
   </div> <!-- container-->
 
-<footer class="footer">
-  Challenge by
-  <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a
-    href="https://github.com/ppusher/frontend-mentor-challenges">ppusher</a>
-</footer>
-
+<script src="/base-apparel-coming-soon/script.js" defer></script>
 </body>
 </html>
