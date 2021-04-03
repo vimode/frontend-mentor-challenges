@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
 
-
 *,
 *::before,
 *::after {box-sizing:border-box;}
@@ -187,7 +186,7 @@ input::placeholder {color: var(--clr-primary-red);}
 
 /* MEDIA QUERIES */
 
-@media( max-width: 700px) {
+@media(max-width: 700px) {
 
   .inner-container {
     margin: 0 auto;
@@ -228,13 +227,19 @@ input::placeholder {color: var(--clr-primary-red);}
 /* ANIMATIONS */
 
 @keyframes reveal {
-  to {opacity: 1;}
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes glidein {
-  to {transform:translateX(0);}
+  to {
+    transform:translateX(0);
+  }
 }
 
 @keyframes  errorreveal {
-  to {opacity: 1;}
+  to {
+    opacity: 1;
+  }
 }
