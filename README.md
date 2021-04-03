@@ -10,7 +10,7 @@ The folders in this repo are based on the 'Difficulty' level set by Frontend Men
 ######  Current Status
 
 - Started at the 'Newbie' difficulty.
-- Currently working on the `four-card-feature-section`
+- Currently working on the `base-apparel-coming-soon`
 
 ###### Pending tasks for the repo
 
