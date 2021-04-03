@@ -20,7 +20,7 @@ Your users should:
 
 ## Experience
 
-This challenge was simpler than any of the previous challenges, Flexbox is powerful for such cards, helps centering everything in less lines of code. The ordering of one of the card item had to be changed for desktop view but otherwise it was pretty straightforward with the usage of flexbox.
+This challenge was simpler than any of the previous challenges, Flexbox is powerful for such cards, helps centering everything in less lines of code. At first I wanted to use grid but the offset boxes made it difficult to have a proper grid. 
 
 ### Built with
 - HTML5
