@@ -29,7 +29,7 @@ form.addEventListener('submit', (e) => {
     removeError(password);
   }
 
-  if(email.value === '' || validEmail(email.value)) {
+  if(email.value === '' && validEmail(email.value)) {
     showError(email);
   } else {
     removeError(email);

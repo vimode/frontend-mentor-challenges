@@ -196,12 +196,12 @@ body {
 
 /* MEDIA QUERIES */
 
-@media(max-width: 850px) {
+@media(max-width: 860px) {
   .container {flex-direction:column;}
   .header {max-width:  450px;}
 }
 
-@media (min-width: 851px) {
+@media (min-width: 861px) {
   body {
     background-image: url(/intro-component-with-signup-form/images/bg-intro-desktop.png);
     height: 100vh;
