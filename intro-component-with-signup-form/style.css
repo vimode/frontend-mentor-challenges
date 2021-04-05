@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+*,
+*::before,
+*::after {box-sizing:border-box;}
+
+/* CUSTOM PROPERTIES */
+
+:root {
+  --ff-sans:'Poppins', sans-serif;
+
+  --fw-light : 400;
+  --fw-reg : 500;
+  --fw-semi-bold : 600;
+  --fw-bold : 700;
+
+  --fs-body : 16px; 
+  --fs-att : 11px;
+  
+  --clr-white :hsl(0, 0%, 100%);
+  --clr-primary-red : hsl(0, 100%, 74%);
+  --clr-primary-green : hsl(154, 59%, 51%);
+  --clr-accent-blue: hsl(248, 32%, 49%);
+  --clr-neutral-dark-blue: hsl(249, 10%, 26%);
+  --clr-neutral-grey-blue:hsl(246, 25%, 77%);
+  
+}
+   
+body {
+  font-family: var(--ff-sans);
+  font-size:var(--fs-body);
+  font-weight:var(--fw-reg);
+  color:  var(--clr-white);
+  margin : 0 auto;
+  background: var(--clr-primary-red);
+  background-image:url(/intro-component-with-signup-form/images/bg-intro-mobile.png);
+}
+
+.container {
+  display:flex;
+  flex-wrap:wrap;
+  align-items: center;
+  justify-content: center;
+  height:90%;
+  max-width: 1200px;
+  padding: 1.2rem;
+  margin: 0 auto;
+}
+
+.header {
+  flex:1;
+  min-width: 350px;
+  text-align:center;
+}
+
+.title {
+  font-size:1.7rem;
+  font-weight:var(--fw-bold);
+  margin-top: 0;
+}
+
+.content {
+  font-weight: var(--fw-light);
+  line-height:1.5;
+  letter-spacing: 1px;
+  font-size:0.9rem;
+  margin-bottom: 3rem;
+  opacity: 0.8;
+}
+
+.side-form {
+  flex:1;
+  min-width: 350px;
+}
+
+.box {
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  box-shadow: 0 8px hsla(249, 10%, 26%, 0.3);
+}
+
+.form-highlight {
+  background-color: var(--clr-accent-blue);
+  text-align: center;
+}
+
+.highlight-next {display:block;}
+.light-text {
+  font-weight:var(--fw-light);
+  opacity:0.8;
+}
+
+.sign-up-form {
+  background: var(--clr-white);
+  margin-top: 1.5rem;
+  padding: 2rem;
+}
+
+.form-elements {
+  position:relative;
+  margin-bottom: 2rem;
+}
+
+.form-elements > input {
+  display:block;
+  width:100%;
+  border-radius: 5px;
+  padding: 1rem;
+  border: 1px solid var(--clr-neutral-grey-blue);
+  font-weight: var(--fw-semi-bold);
+  font-family: inherit;
+}
+
+.form-elements > input:active,
+.form-elements > input:focus {
+  border: 1px solid var(--clr-accent-blue);
+  outline:none;
+}
+.small-text {
+  color: var(--clr-neutral-grey-blue);
+  font-size: 0.7rem;
+  text-align: center;
+  font-weight: var(--fw-light);
+}
+
+.small-text a {
+  color: var(--clr-primary-red);
+  text-decoration: none;
+}
+
+
+.btn {
+  display:block;
+  background-color: var(--clr-primary-green);
+  border-radius: 5px;
+  border: 1px solid hsl(154, 59%, 45%);
+  padding: 1rem;
+  width: 100%;
+  color: var(--clr-white);
+  text-transform: uppercase;
+  font-family:inherit;
+  font-weight: var(--fw-semi-bold);
+  font-size: 0.9rem;
+  letter-spacing: 1.1px;
+  cursor:pointer;
+  box-shadow: 0 2px hsl(154, 59%, 45%);
+}
+
+.btn:hover { background: hsl(154, 59%, 60%);}
+.btn:focus{outline:none;}
+.btn:active {transform:translateY(1px);}
+
+
+/* ERROR  */
+.error-text {
+  display:block;
+  position:absolute;
+  bottom: 0;
+  right:0;
+  transform:translateY(40px);
+  color: var(--clr-primary-red);
+  margin:0;
+  padding-bottom: 1rem;
+  font-size: 0.7rem;
+  font-style: italic;
+  opacity: 0;
+}
+
+.form-elements > img {
+  position:absolute;
+  display:block;
+  top: 15px;
+  right: 10px;
+  opacity:0;
+}
+
+.form-elements.error > input {border : 1px solid var(--clr-primary-red);}
+
+
+.form-elements.error > img {opacity: 1;}
+
+.form-elements.error .error-text {opacity: 1;}
+
+/* FOOTER */
+.footer {
+  font-weight:var(--fw-light);
+  color: var(--clr-white);
+  font-size: var(--fs-att);
+  margin: 0 auto;
+  text-align:center;
+  opacity: 0.5;
+}
+
+.footer a {color : var(--clr-a);}
+
+/* MEDIA QUERIES */
+
+@media(max-width: 850px) {
+  .container {flex-direction:column;}
+  .header {max-width:  450px;}
+}
+
+@media (min-width: 851px) {
+  body {height: 100vh;}
+  .container {height: 95%;} 
+  .header {text-align: left;}
+  .header h1 {font-size: 3rem;}
+  .highlight-next{display:inline-block;}
+} 
+
