@@ -10,11 +10,11 @@ The folders in this repo are based on the 'Difficulty' level set by Frontend Men
 ######  Current Status
 
 - Started at the 'Newbie' difficulty.
-- Currently working on the `base-apparel-coming-soon`
+- Currently working on the `intro-component-with-signup-form`
 
 ###### Pending tasks for the repo
 
-- Build a custom showcase page for to display all the challenges/submitted solutions. 
+- Build a custom showcase page  to display all the challenges/submitted solutions. 
 - Fill `README.md` for this as well as each challenge with  challenge information, my experience, new technologies learned, new experiments in the challenge, time to complete each (approx. hours for each challenge)
 - Fill the index below
 
