@@ -201,7 +201,10 @@ body {
 }
 
 @media (min-width: 851px) {
-  body {height: 100vh;}
+  body {
+    background-image: url(/intro-component-with-signup-form/images/bg-intro-desktop.png);
+    height: 100vh;
+  }
   .container {height: 95%;} 
   .header {text-align: left;}
   .header h1 {font-size: 3rem;}
