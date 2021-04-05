@@ -32,7 +32,6 @@ body {
   font-size:var(--fs-body);
   color: var(--clr-primary-red);
   font-weight:var(--fw-reg);
-  background: var(--clr-neutral-light-gray);
   margin : 0 auto;
   background: linear-gradient(var(--clr-linear-grad1));
 }
