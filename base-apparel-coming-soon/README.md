@@ -47,6 +47,8 @@ Accessibility wise I am no happy with the way I designed the form elements and h
 
 ###### Pending Tasks 
 
+- Fix height issues with  screen sizes with small height, footer collapses in the form 
+- Fix font size for small width devices.
 - Update README
 - Final challenge screenshot(s) (desktop and mobile)
 - Submit the challenge at frontendmentor.
