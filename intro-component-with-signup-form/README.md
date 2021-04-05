@@ -1,4 +1,4 @@
-Starting working on this challenge, readme will be updated when I finish this challenge.
+Started working on this challenge, readme will be updated when I finish this challenge.
 
 # Intro component with sign up form
 
@@ -35,6 +35,8 @@ Your users should be able to:
 
 ###### Pending Tasks 
 
+- JS need refactoring
+- JS needs to be updated to update form field status while typing
 - Update README
 - Final challenge screenshot(s) (desktop and mobile)
 - Submit the challenge at frontendmentor.
