@@ -34,11 +34,12 @@ body {
   font-weight:var(--fw-reg);
   margin : 0 auto;
   background: linear-gradient(var(--clr-linear-grad1));
+  height: 100vh;
 }
   
 .container {
   display:flex;
-  min-height: 100vh;
+  height: 100%;
   position: relative;
 }
 
@@ -52,6 +53,7 @@ h1 {margin:0;}
   background-image: url(/base-apparel-coming-soon/images/bg-pattern-desktop.svg);
   background-repeat:no-repeat;
   background-size: cover;
+  position:relative;
 }
 
 .logo {
@@ -140,7 +142,26 @@ input::placeholder {color: var(--clr-primary-red);}
 .btn:active {opacity: 0.7;}
 .btn:focus {outline:none;}
 
+.toast-success {
+  position: absolute;
+  top :70%;
+  left: 25%;
+  background: linear-gradient(var(--clr-linear-grad2));
+  padding: 1rem 2rem;
+  color: var(--clr-neutral-dark-gray);
+  border-radius: 10px;
+  font-size: 1rem;
+  text-align:center;
+  display:none;
+}
+
+.show {display:block;}
+
+.toast-success p {margin: 0;}
+
 /* FORM ERROR  */
+
+/* input:invalid {border: 2px solid var(--clr-primary-soft-red);} */
 
 .error-icon {
   position: absolute;
@@ -156,7 +177,7 @@ input::placeholder {color: var(--clr-primary-red);}
   display:none;
 }
 
-.error input {border: 1.5px solid var(--clr-primary-soft-red);}
+.error input {border: 2px solid var(--clr-primary-soft-red);}
 
 .error .error-icon {
   display:block;
@@ -194,7 +215,8 @@ input::placeholder {color: var(--clr-primary-red);}
 
   .main {
     width: 100%;
-    padding: 0 1rem;
+    padding: 0rem 1rem;
+    
   }
  
   .logo {
@@ -210,7 +232,7 @@ input::placeholder {color: var(--clr-primary-red);}
     width: calc(100% + 2rem);
   }
   
-  .main-title {font-size: 2.5rem;}
+  .main-title {font-size: 2rem;}
   .btn {width: 80px;}
 
   .error-icon {
@@ -220,7 +242,7 @@ input::placeholder {color: var(--clr-primary-red);}
 
   .error-text {text-align:left;}
   .hero-img {display:none;}
-  .footer {text-align:center;}
+  .footer {display:none;}
 }
 
 /* ANIMATIONS */
@@ -237,8 +259,10 @@ input::placeholder {color: var(--clr-primary-red);}
   }
 }
 
-@keyframes  errorreveal {
-  to {
-    opacity: 1;
+@keyframes show_slow {
+    to {
+      opacity:1;
+    }
   }
-}
+
+
