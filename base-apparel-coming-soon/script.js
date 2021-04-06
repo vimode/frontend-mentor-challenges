@@ -2,9 +2,9 @@ const form = document.getElementById('form');
 const email = document.getElementById('email');
 const toastmsg = document.querySelector('.toast-success');
 
-form.addEventListener('submit', validation) 
-
 email.addEventListener('input', activeValidation)
+
+form.addEventListener('submit', validation) 
 
 function activeValidation (e) {
   if (email.validity.patternMismatch) {
@@ -17,7 +17,7 @@ function activeValidation (e) {
 function validation(e) {
 	e.preventDefault();
 
-  if (email.validity.valueMissing) {
+  if (email.validity.valueMissing || email.validity.patternMismatch) {
     form.classList.add('error') 
   } else {
       toastmsg.classList.add('show');
