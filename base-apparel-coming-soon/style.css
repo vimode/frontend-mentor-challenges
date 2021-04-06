@@ -53,7 +53,6 @@ h1 {margin:0;}
   background-image: url(/base-apparel-coming-soon/images/bg-pattern-desktop.svg);
   background-repeat:no-repeat;
   background-size: cover;
-  position:relative;
 }
 
 .logo {
@@ -144,8 +143,8 @@ input::placeholder {color: var(--clr-primary-red);}
 
 .toast-success {
   position: absolute;
-  top :70%;
-  left: 25%;
+  top: 100px;
+  left: 20%;
   background: linear-gradient(var(--clr-linear-grad2));
   padding: 1rem 2rem;
   color: var(--clr-neutral-dark-gray);
