@@ -95,6 +95,7 @@ body {
   background: var(--clr-white);
   margin-top: 1.5rem;
   padding: 2rem;
+  position:relative;
 }
 
 .form-elements {
@@ -153,6 +154,24 @@ body {
 
 
 /* ERROR  */
+
+.toast-success {
+  position: absolute;
+  top: 50%;
+  left: 35%;
+  background: var(--clr-accent-blue);
+  padding: 0.5rem 1.5rem;
+  color: var(--clr-neutral-grey-blue);
+  border-radius: 10px;
+  font-size: 1rem;
+  text-align:center;
+  display:none;
+}
+
+.show {display:block;}
+
+.toast-success p {margin: 0;}
+
 .error-text {
   display:block;
   position:absolute;
@@ -176,10 +195,7 @@ body {
 }
 
 .form-elements.error > input {border : 1px solid var(--clr-primary-red);}
-
-
 .form-elements.error > img {opacity: 1;}
-
 .form-elements.error .error-text {opacity: 1;}
 
 /* FOOTER */
