@@ -35,8 +35,7 @@ Your users should be able to:
 
 ###### Pending Tasks 
 
-- JS need refactoring
-- JS needs to be updated to update form field status while typing
+- The current form validation is buggy.
 - Update README
 - Final challenge screenshot(s) (desktop and mobile)
 - Submit the challenge at frontendmentor.
