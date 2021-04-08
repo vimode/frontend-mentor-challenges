@@ -1,4 +1,4 @@
-#  Single price grid component
+#  Single price grid component WIDE
 
 Solution : [Live Site URL](https://frontend-mentor-challenges-ecru.vercel.app/single-price-grid-component-wide/)
 
