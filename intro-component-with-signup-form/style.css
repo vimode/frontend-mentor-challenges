@@ -23,9 +23,10 @@
   --clr-accent-blue: hsl(248, 32%, 49%);
   --clr-neutral-dark-blue: hsl(249, 10%, 26%);
   --clr-neutral-grey-blue:hsl(246, 25%, 77%);
-  
+
+  --clr-a: hsl(228, 45%, 44%);  
 }
-   
+
 body {
   font-family: var(--ff-sans);
   font-size:var(--fs-body);
