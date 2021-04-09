@@ -4,4 +4,4 @@ Solution : [Live Site URL](https://frontend-mentor-challenges-ecru.vercel.app/si
 
 ## The challenge
 
- This challenge is the same as the `single-price-grid-component' but reimagined for full viewport design.
+ This challenge is the same as the `single-price-grid-component` but reimagined for full viewport design.

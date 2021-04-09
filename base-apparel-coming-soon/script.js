@@ -27,7 +27,7 @@ function validation(e) {
   }
 };
 
-// Throws an e rror if doesn't match the regEx pattern or if its just an empty field
+// Throws an error if doesn't match the regEx pattern or if its just an empty field
 function validationError() {
   if(email.validity.patternMismatch || email.validity.valueMissing) {
     form.classList.add('error')
