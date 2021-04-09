@@ -159,12 +159,14 @@ figure > img { width: 100%;}
 
 @media (min-width: 650px ) {
 
-  header {margin: 5rem  auto 5rem auto;}
+  header {margin: 5rem  auto 3rem auto;}
 
   .wide-centered {
     width: 80%;
     margin: 0 auto;
   }
+
+  .sub-title{margin-bottom: 2rem;}
 
   input[type="email"] {
     display:inline-block;
@@ -176,7 +178,7 @@ figure > img { width: 100%;}
   }
   
   figure {margin: 3rem 2rem 0rem 2rem;}
-  figure > img {width: 50%;}
+  figure > img {width: 95%;}
 
   small {
     top: 100%;
@@ -205,4 +207,5 @@ figure > img { width: 100%;}
 
 @media (min-width: 1200px) {
   .wide-centered {width: 60%;}
+  figure > img {width: 60%;}
 }
