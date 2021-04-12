@@ -60,6 +60,7 @@ h1 {
   font-family: var(--ff-head);
   font-size: 1.3rem;
   font-weight:var(--fw-bold);
+  margin-top: 0;
 }
 
 /* HEADER */
@@ -70,7 +71,7 @@ header {
 }
 
 .brand-logo {
-  width: 14rem;
+  width: 13rem;
   height: auto;
   padding: 2rem;
 }
@@ -172,13 +173,17 @@ figure {
   header {height: 100%;}
 
   .brand-logo { 
-    height: 20%;
+    flex-shrink: 0;
     margin-left: 3rem;
+    height: 8rem;
+    min-height: 2rem;
+    padding: 0 2rem;
   }
 
   figure {
-    margin-top: 2rem;
-    max-width: 900px;
+    margin-top: 1rem;
+    max-width: 800px;
+    width: 80%;
   }
 
   .lp-content {align-items: flex-start;}
