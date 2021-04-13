@@ -154,19 +154,23 @@ a {text-decoration: none;}
     padding: 3rem 1rem 3rem 2rem;
   }
 
-  .box-one:hover,
-  .box-two:hover,
-  .box-three:hover,
-  .box-one:focus,
-  .box-two:focus,
-  .box-three:focus{
-    padding: 2rem;
-    z-index: 2;
-    border-radius: 10px;
-    height: 110%;
-    /* transition:100ms ease-out; */
+  @media(hover:hover) {
+    .box-one:hover,
+    .box-two:hover,
+    .box-three:hover,
+    .box-one:focus,
+    .box-two:focus,
+    .box-three:focus{
+      padding: 2rem;
+      z-index: 2;
+      border-radius: 10px;
+      height: 110%;
+      /* transition:100ms ease-out; */
+    }
   }
 }
+
+
 
 /* REGULAR MEDIA QUERIES */
 @media (min-width: 999px ) {
