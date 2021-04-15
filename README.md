@@ -10,7 +10,6 @@ The folders in this repo are based on the 'Difficulty' level set by Frontend Men
 ######  Current Status
 
 - Started at the 'Newbie' difficulty.
-- Currently working on the `intro-component-with-signup-form`
 
 ###### Pending tasks for the repo
 
