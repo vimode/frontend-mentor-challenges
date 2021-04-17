@@ -40,9 +40,6 @@ I added animations to the the error and success of form validation but I was no 
 CSS Animations requires more reading to make them  look smooth and meaningful.
 Background images, pseude elements required more reading and experimenting. 
 
-
-
-
 ---
 
 ###### Pending tasks
