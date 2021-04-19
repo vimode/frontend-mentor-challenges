@@ -116,6 +116,7 @@ h1{
   text-align: center;
   color: var(--clr-neutral-white-stats);
   font-size: var(--fs-att);
+  margin-top: 1em;
 }
 
 .footer a {
