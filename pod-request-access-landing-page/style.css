@@ -327,7 +327,7 @@ input::placeholder {
     opacity: 0.6;
   }
   30% {
-    transform: ranslateX(40px);
+    transform:translateX(40px);
     opacity: 0.4;
   }
   40% {
