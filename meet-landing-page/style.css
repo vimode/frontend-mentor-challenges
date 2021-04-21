@@ -299,9 +299,10 @@ a {text-decoration: none;}
     display:grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr;
+    gap: 1em;
   }
 
-  .hero-title {font-size: 4rem;}
+  .hero-title {font-size: 3.5rem;}
 
   .hero-img-one {
     grid-column: 1/2;
