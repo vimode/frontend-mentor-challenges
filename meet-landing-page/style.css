@@ -301,6 +301,10 @@ a {text-decoration: none;}
     grid-template-rows: 1fr;
   }
 
+  .hero-title {
+    font-size: var(--fs-h2);
+  }
+
   .hero-img-one {
     grid-column: 1/2;
     grid-row: 1/2;
