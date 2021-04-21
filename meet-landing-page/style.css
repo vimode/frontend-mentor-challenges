@@ -85,6 +85,7 @@ a {text-decoration: none;}
 .hero-text {
   text-align:center;
   margin:  0 auto;
+  line-height: var(--fs-space);
 }
 
 .hero-title > span {display:block;}
