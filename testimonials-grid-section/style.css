@@ -31,7 +31,7 @@ body {
   background:var(--clr-neutral-bg);
   font-family:var(--ff-primary);
   font-size:var(--fs-body);
-  height: 100vh;
+  width: 100vw;
   margin: 0 auto;
   color: var(--clr-neutral-text);
 }
@@ -41,3 +41,139 @@ img {
   width: 100%;
 }
 
+.wrapper {
+  margin: 3em auto;
+  width: 90%;
+  display:grid;
+  gap: 2em;
+  height: 80%;
+  transition: all 500ms linear;
+}
+
+/* CARD */
+
+.testimonial-card {
+  border-radius: 10px;
+  padding: 2em;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.card-identity {
+  display:flex;
+  flex-direction:row;
+  gap: 1em;
+  align-items: center;
+}
+
+.card-identity img {
+  width: 3em;
+  border-radius: 50%;
+}
+
+.card-one {
+  background:url(/testimonials-grid-section/images/bg-pattern-quotation.svg) var(--clr-box-one-bg);
+  background-repeat:no-repeat;
+  background-position: top right 10%;
+}
+
+.card-two {background: var(--clr-box-two-bg);}
+.card-three {background:var(--clr-white);}
+.card-four  {background: var(--clr-box-four-bg);}
+.card-five {background: var(--clr-white);}
+
+.card-one img,
+.card-four img {border: 2px solid hsl(263, 55%, 70%);}
+
+.card-two img,
+.card-three img,
+.card-five img {border: 2px solid var(--clr-white);}
+
+
+.testimonial-card small {opacity: 0.5;}
+.testimonial-card .card-text {
+  line-height: 1.5;
+  opacity: 0.7;
+}
+
+.text-bold {
+  color: var(--clr-white);
+  font-size: 1.4rem;
+  font-weight: var(--fw-bold);
+  margin: 1em auto;
+}
+
+.card-three h3,
+.card-three small,
+.card-three .card-text,
+.card-three .text-bold,
+.card-five h3,
+.card-five small,
+.card-five .card-text,
+.card-five .text-bold {color: var(--clr-box-two-bg);}
+
+/* FOOTER */
+
+.footer {text-align: center;}
+.footer > a {color : var(--clr-neutral-text);}
+
+/* MEDIA QUERIES */
+
+@media (min-width: 640px) {
+  .wrapper {grid-template-columns: repeat(2, 1fr);}
+
+  .card-one,
+  .card-four,
+  .card-five{grid-column: span 2;}
+}
+
+@media (min-width: 1000px) {
+  .wrapper {grid-template-columns: repeat(3,1fr);}
+  
+  .card-one,
+  .card-five{grid-column: span 3;}
+  
+  .card-four{grid-column: unset;}
+
+}
+
+@media (min-width: 1200px)  {
+
+  .wrapper {
+    grid-template-columns: unset;
+    width: 90%;
+    max-width: 1200px;
+    place-content:center;
+    grid-template-areas: 
+    "one one two five"
+    "three four four five";
+    margin: 1em auto;
+  }
+  
+  .card-one {background-position: top right 20%;}
+
+  .card-one {grid-area: one;}
+  .card-two {grid-area: two;}
+  .card-three {grid-area: three;}
+  .card-four {grid-area :four; }
+  .card-five {grid-area: five;}
+
+  .card-one,
+  .card-four {width: 600px;} 
+  .card-two,
+  .card-three,
+  .card-five{width: 250px;}
+  
+  .text-bold {margin: 0.5em auto;}
+}
+
+@media(min-height: 750px) {
+  .wrapper {margin: 2em auto;}
+}
+
+@media(min-height: 850px) {
+  .wrapper {margin: 5em auto;}
+}
+
+@media(min-height: 950px) {
+  .wrapper {margin: 8em auto;}
+}
