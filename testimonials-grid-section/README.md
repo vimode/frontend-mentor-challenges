@@ -23,7 +23,6 @@ Your users should be able to:
 - CSS Grid
 - CSS Flexbox
 
-
 ### Experience,  Challenges and Learning
 Simple and quick challenge, the layout was easy to follow. I kept the mobile(375px) and desktop (1440px) design as close to provided the design specs as possible but experimented with various layout styles in media queries with the power of CSS Grid. 
 
