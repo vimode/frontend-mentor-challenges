@@ -9,7 +9,8 @@ The folders in this repo are based on the 'Difficulty' level set by Frontend Men
 
 ######  Current Status
 
-- Started at the 'Newbie' difficulty.
+- Completed all the 'Newbie' difficulty challenges.
+- Started 'Junior' difficulty challenges.
 
 ###### Pending tasks for the repo
 
