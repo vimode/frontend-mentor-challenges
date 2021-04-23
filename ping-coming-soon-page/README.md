@@ -1,6 +1,8 @@
 #  Ping coming soon page
 
 Solution : [Live Site URL](https://frontend-mentor-challenges-ecru.vercel.app/ping-coming-soon-page/)
+[Solution submitted at Frontend Mentor](https://www.frontendmentor.io/solutions/ping-coming-soon-page-very-robust-email-validation-Hq5nrXyJE)
+
 
 This is a solution to the [Ping coming soon page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/ping-single-column-coming-soon-page-5cadd051fec04111f7b848da). 
 
@@ -36,10 +38,11 @@ I use flex and/or grid any and everywhere, as much and I like using them I wante
 
 I forgot about the error message and only at the end had to add it which took a lot of time as its position was a bit tricky without using flex especially when I had to add it after I had finished everything.
 
+
 ---
 
 ###### Pending Tasks 
 
-- Update README
+ 
 - Final challenge screenshot(s) (desktop and mobile)
-- Submit the challenge at frontendmentor.
+ 
