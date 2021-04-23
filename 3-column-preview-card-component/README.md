@@ -2,6 +2,8 @@
 
 Solution : [Live Site URL](https://frontend-mentor-challenges-ecru.vercel.app/3-column-preview-card-component/)
 
+Solution submitted  at Frontend Mentor - [Submission link](https://www.frontendmentor.io/solutions/3column-preview-card-component-with-unique-tablet-view-9lWoAoGXF)
+
 This is a solution to the [3-column preview card component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/3column-preview-card-component-pH92eAR2-). 
 
 ![Design preview for the 3-column preview card component coding challenge](./design/desktop-preview.jpg)
@@ -38,6 +40,4 @@ Learn more about animation and transition to make it look consistent and linear 
 
 ###### Pending Tasks 
 
-- Update README
 - Final challenge screenshot(s) (desktop and mobile)
-- Submit the challenge at frontendmentor.

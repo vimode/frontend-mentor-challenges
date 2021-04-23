@@ -2,6 +2,8 @@
 
 Solution : [Live Site URL](https://frontend-mentor-challenges-ecru.vercel.app/stats-preview-card-component/)
 
+Solution submitted  at Frontend Mentor - [Submission link](https://www.frontendmentor.io/solutions/stats-preview-card-component-some-css-animations-7vOY0TU9h)
+
 This is a solution to the [Stats preview card component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/stats-preview-card-component-8JqbgoU62).
 
 ![Design preview for the Stats preview card component coding challenge](./design/desktop-preview.jpg)
@@ -35,6 +37,4 @@ Need to do some more reading and practice of the CSS background image and color 
 
 ###### Pending tasks
 
-- Update README
 - Live solution screenshot(s)
-- Submit the challenge at frontendmentor

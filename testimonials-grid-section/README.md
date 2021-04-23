@@ -2,6 +2,8 @@
 
 Solution : [Live Site URL](https://frontend-mentor-challenges-ecru.vercel.app/testimonials-grid-section/)
 
+Solution submitted  at Frontend Mentor - [Submission link](https://www.frontendmentor.io/solutions/testimonials-grid-section-subtle-transition-effects-iHdjWpeUk)
+
 This is a solution to the [Testimonials grid section challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/testimonials-grid-section-Nnw6J7Un7). 
 
 ![Design preview for the Testimonials grid section coding challenge](./design/desktop-preview.jpg)
@@ -28,7 +30,5 @@ Simple and quick challenge, the layout was easy to follow. I kept the mobile(375
 
 ---
 ##### Pending tasks
-
-- Updated README
+ 
 - Live solution screenshot(s)
-- Submit to frontendmentor.io

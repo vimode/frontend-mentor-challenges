@@ -2,6 +2,8 @@
 
 Solution : [Live Site URL](https://frontend-mentor-challenges-ecru.vercel.app/four-card-feature-section/)
 
+Solution submitted  at Frontend Mentor - [Submission link](https://www.frontendmentor.io/solutions/four-card-feature-section-with-transition-effects-l33wSP48b)
+
 This is a solution to the [Four card feature section challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/four-card-feature-section-weK1eFYK).
 
 ![Design preview for the Four card feature section coding challenge](./design/desktop-preview.jpg)

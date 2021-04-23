@@ -2,6 +2,8 @@
 
 Solution : [Live Site URL](https://frontend-mentor-challenges-ecru.vercel.app/base-apparel-coming-soon/)
 
+Solution submitted  at Frontend Mentor - [Submission link](https://www.frontendmentor.io/solutions/base-apparel-coming-soon-page-Bl1ggRnL4)
+
 This is a solution to the [Base Apparel coming soon page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/base-apparel-coming-soon-page-5d46b47f8db8a7063f9331a0).
 
 ![Design preview for the Base Apparel coming soon page coding challenge](./design/desktop-preview.jpg)
@@ -47,6 +49,4 @@ Accessibility wise I am no happy with the way I designed the form elements and h
 
 ###### Pending Tasks 
 
-- Update README
 - Final challenge screenshot(s) (desktop and mobile)
-- Submit the challenge at frontendmentor.

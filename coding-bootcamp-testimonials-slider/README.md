@@ -2,6 +2,8 @@
 
 Solution : [Live Site URL](https://frontend-mentor-challenges-ecru.vercel.app/coding-bootcamp-testimonials-slider/)
 
+Solution submitted  at Frontend Mentor - [Submission link](https://www.frontendmentor.io/solutions/coding-bootcamp-testimonials-slider-bkzOViUBo)
+
 This is a solution to the [Coding bootcamp testimonials slider challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/coding-bootcamp-testimonials-slider-4FNyLA8JL).
 
 ![Design preview for the Coding bootcamp testimonials slider coding challenge](./design/desktop-preview.jpg)
@@ -51,9 +53,7 @@ I will be fixing the background images sooner or later once I have better  grasp
 
 ###### Pending Tasks 
 
-- Update README
 - Adjust the background images properly. 
 - Adjust the height for small screen devices.
 - Quote img flickering issue on button click
 - Final challenge screenshot(s) (desktop and mobile)
-- Submit the challenge at frontendmentor.
