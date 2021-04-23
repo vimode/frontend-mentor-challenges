@@ -1,14 +1,12 @@
 #  Ping coming soon page
 
 Solution : [Live Site URL](https://frontend-mentor-challenges-ecru.vercel.app/ping-coming-soon-page/)
-[Solution submitted at Frontend Mentor](https://www.frontendmentor.io/solutions/ping-coming-soon-page-very-robust-email-validation-Hq5nrXyJE)
 
+Solution submitted  at Frontend Mentor - [Submission link](https://www.frontendmentor.io/solutions/ping-coming-soon-page-very-robust-email-validation-Hq5nrXyJE)
 
 This is a solution to the [Ping coming soon page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/ping-single-column-coming-soon-page-5cadd051fec04111f7b848da). 
 
 ![Design preview for the Ping coming soon page coding challenge](./design/desktop-preview.jpg)
-
- 
 
 ## The challenge
 
