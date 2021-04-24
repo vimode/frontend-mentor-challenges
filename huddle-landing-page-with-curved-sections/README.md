@@ -1,6 +1,8 @@
+Readme will be updated upon challenge completion.
+
 #  Huddle landing page with curved sections
 
-Solution : [Live Site URL](https://frontend-mentor-challenges-ecru.vercel.app/huddle-landing-page-with-curved-sections/)
+Solution : [Live Site URL](#)
 
 
 ![Header/intro section for the Huddle landing page with curved sections](./design/desktop-preview.jpg)
