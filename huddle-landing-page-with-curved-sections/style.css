@@ -145,6 +145,8 @@ figure {padding: 1em 2em;}
 .feature_bg_top_desktop,
 .feature_bg_bottom_desktop {width: 100%;}
 
+.footer_bg_mobile { margin-bottom: -1px;}
+
 .feature_bg_top_desktop,
 .feature_bg_bottom_desktop,
 .footer_bg_desktop {display:none;}
@@ -336,6 +338,8 @@ ion-icon {margin-right: 0.6em;}
   .feature_bg_top_desktop,
   .feature_bg_bottom_desktop,
   .footer_bg_desktop {display:block;}
+
+  .footer_bg_desktop { margin-bottom: -1px;}
 
   .footer_items {
     grid-template-columns:repeat(2, 1fr);
