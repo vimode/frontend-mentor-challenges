@@ -8,6 +8,7 @@ a::after {
   padding : 0;
 }
 
+
 /* ROOT */
 
 :root {
@@ -37,7 +38,6 @@ body {
   font-family: var(--ff-body);
   margin: 0 auto;
   color: var(--clr-primary-bg-dark);
-  width: 100vw;
 }
 
 img {
@@ -62,9 +62,8 @@ h3,
   place-items:center;
   place-content:center;
   text-align:center;
-  padding: 0 2em;
   margin: 0 auto;
-  width: 80%;
+  width: 100%;
 }
 
 nav ul li {list-style: none;}
@@ -190,7 +189,8 @@ input[type="email"] {
 /* FEATURES */
 
 .feature_bg_before_mobile {
-  width: 100vw;
+  display:block;
+  width: 100%;
   margin-bottom:-1px;
 }
 
@@ -401,17 +401,13 @@ footer .col4 > a i:focus  {transition: all 400ms ease-out;}
 
   .feature_bg_before_desktop {
     display:block;
-    width: 100vw;
+    width: 100%;
     margin-bottom: -1px;
   }
 
-  .feature_item {
-    flex-direction:row;
-  }
+  .feature_item {flex-direction:row;}
 
-  .feature_content {
-    width: 60%;
-  }
+  .feature_content {width: 60%;}
   
   .feature_content h2 {
     text-align: left;
@@ -459,14 +455,16 @@ footer .col4 > a i:focus  {transition: all 400ms ease-out;}
   }
 
   footer {
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: auto;
+    grid-template-areas: 
+    "col1 col2 col3 col4"
+    "footer footer footer footer";
     gap: 0.5em;
     padding: 3em 1em;
     font-size: 1rem;
   }
 
   .col1 {
+    grid-area: col1;
     margin-left:2em;
   }
 
@@ -475,17 +473,24 @@ footer .col4 > a i:focus  {transition: all 400ms ease-out;}
   address {margin: 0 auto;}
   address img {margin-top: 0;}
 
-  .col2 {align-self: flex-end;}
+  .col2 {
+    grid-area: col2;
+    align-self: flex-end;
+  }
+
+  .col3 {grid-area: col3;}
+  
+  
+  .col4 {
+    grid-area: col4;
+    margin-right: auto;
+  }
   
   .col2,
   .col3,
   .col4 {margin-top: 2em;}
 
-  .col4 {
-    margin-right: auto;
-  }
-
-  .footer {grid-column: span 4;}
+  .footer {grid-area: footer;}
 
   .toast_success_bottom {
     position:absolute;
