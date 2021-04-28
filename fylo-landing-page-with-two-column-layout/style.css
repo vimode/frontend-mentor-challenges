@@ -187,7 +187,6 @@ input[type="email"] {
 .toast_success.show {animation: reveal 2.5s ease forwards;}
 
 
-
 /* FEATURES */
 
 .feature_bg_before_mobile {
@@ -409,6 +408,10 @@ footer .col4 > a i:focus  {transition: all 400ms ease-out;}
   .feature_item {
     flex-direction:row;
   }
+
+  .feature_content {
+    width: 60%;
+  }
   
   .feature_content h2 {
     text-align: left;
@@ -418,6 +421,7 @@ footer .col4 > a i:focus  {transition: all 400ms ease-out;}
   .feature_img {
     align-self: flex-start;
     margin-top: 8em;
+    width: 40%;
   }
 
   .feature_link {place-content: flex-start;}
@@ -426,7 +430,6 @@ footer .col4 > a i:focus  {transition: all 400ms ease-out;}
   .bottom_cta {
     display:flex;
     flex-direction:row;
-    align-items:space-evenly;
     position: relative;
   }
 
