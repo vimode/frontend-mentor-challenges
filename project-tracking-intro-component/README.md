@@ -1,6 +1,6 @@
 # Project tracking intro component
 
-Solution : [Live Site URL](https://frontend-mentor-challenges-ecru.vercel.app/project-tracking-intro-componentt/)
+Solution : [Live Site URL](https://frontend-mentor-challenges-ecru.vercel.app/project-tracking-intro-component/)
 
 This is a solution to the [Project tracking intro component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/project-tracking-intro-component-5d289097500fcb331a67d80e). 
 
