@@ -273,7 +273,7 @@ footer {
   .content_cols {
     flex-direction:row;
     place-items:center;
-    margin-top: 4%;
+    margin-top: 8%;
     margin-left: 5em;
   }
 
