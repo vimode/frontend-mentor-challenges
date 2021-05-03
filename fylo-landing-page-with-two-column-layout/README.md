@@ -36,8 +36,8 @@ There also seems to be a horizontal scroll on Chrome and not on Firefox, haven't
 
 ##### Pending tasks
 
+
 - Email validation
 - Updated readme after javascript work
-- Fix horizontal scroll for webkit.  
 - Live solution screenshot(s)
 - Submit to frontendmentor and add Solution submitted  at Frontend Mentor - [Submission link]()
