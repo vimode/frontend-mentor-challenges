@@ -1,5 +1,3 @@
-Challenge in progress
-
 # Fylo data storage component
 
 Solution : [Live Site URL](https://frontend-mentor-challenges-ecru.vercel.app/fylo-data-storage-component/)
@@ -20,12 +18,20 @@ Your users should be able to:
 
 ### Built with
 
+- HTML
+- CSS
+- CSS Grid
+- CSS Flexbox
+- CSS Animations
+
 ### Experience, Challenges and Learning
+
+The layout was simple. Challenge was short and easy to finish. This component had elements which inspired some animations to play with. 
+CSS Animations still need more reading, the current animations I do to any challenge are very fast and mostly end up being similar to my previous attempt at CSS Animations.
 
 ---
 ##### Pending tasks
 
-- Updated README 
 - Live solution screenshot(s)
 - Submit to frontendmentor and add Solution submitted  at Frontend Mentor - [Submission link]()
 
