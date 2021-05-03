@@ -15,7 +15,7 @@
 
   <main class="wrapper">
     
-    <section class="col1">
+    <section class="cols col1">
       <figure class="logo">
         <img src="/fylo-data-storage-component/images/logo.svg" alt="">
       </figure>
@@ -26,22 +26,28 @@
       </div>
     </section><!-- col1-->
 
-    <section class="col2">
-  
-      <div class="col2_pop">
-        <p>185 gb left</p>
-      </div>
+    <section class="cols col2">
   
       <div class="col2_content">
-        <p>You've used <span>815 GB</span> of your storage</p>
+        <p>You've used <b>815 GB</b> of your storage</p>
   
-        <div class="col2_bar">
-          <div class="bar_inner"></div>
+        <div class="col2_bar"> 
+          <div class="bar_inner">
+            <div class="bar_dot"></div>
+          </div>
+          
+        </div><!--col2 bar-->
+
+        <div class="bar_limits">
+          <p>0 GB</p>
+          <p>1000 GB</p>
         </div>
-  
-        <p class="num_start">0 GB</p>
-        <p class="num_end">1000 GB</p>
-      </div>
+
+        <div class="col2_pop">
+          <p>185 <span>gb left</span></p>
+        </div>
+
+      </div><!--col2 content-->
     </section><!-- col2-->
   
   </main>
