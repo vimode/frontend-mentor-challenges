@@ -256,6 +256,7 @@ input[type="email"] {
   padding: 2em;
   box-shadow:  0px 8px 10px hsla(0, 0%, 5%, 0.1);
   border-radius: 5px;
+  max-width: 50ch;
 }
 
 .testimonial_img{width: 2em;}
@@ -382,6 +383,11 @@ footer .col4 > a i:focus  {transition: all 400ms ease-out;}
     align-self:center;
   }
 
+  .hero_content h2 {
+    max-width: 25ch;
+    margin: 1em 0;
+  }
+
   .hero_cta_img {width: 40%;}
   .hero_content p {margin: 0;}
   
@@ -407,12 +413,14 @@ footer .col4 > a i:focus  {transition: all 400ms ease-out;}
 
   .feature_item {flex-direction:row;}
 
-  .feature_content {width: 60%;}
+  .feature_content {width: 55%;}
   
   .feature_content h2 {
     text-align: left;
     font-size: 2em;
   }
+
+  .feature_content p {max-width:60ch;}
 
   .feature_img {
     align-self: flex-start;
@@ -421,8 +429,7 @@ footer .col4 > a i:focus  {transition: all 400ms ease-out;}
   }
 
   .feature_link {place-content: flex-start;}
-  .feature_testimonial {max-width: 50ch;}
-
+  
   .bottom_cta {
     display:flex;
     flex-direction:row;
