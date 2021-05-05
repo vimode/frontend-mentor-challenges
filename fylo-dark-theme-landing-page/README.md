@@ -2,7 +2,6 @@
 
 Solution : [Live Site URL](https://frontend-mentor-challenges-ecru.vercel.app/fylo-dark-theme-landing-page/)
 
-
 This is a solution to the [Fylo dark theme landing page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/fylo-dark-theme-landing-page-5ca5f2d21e82137ec91a50fd).
 
 ![Design preview for the Fylo dark theme landing page challenge](./design/desktop-preview.jpg)
@@ -21,7 +20,22 @@ Your users should be able to:
 
 ### Built with
 
+- HTML
+- CSS
+- CSS Grid
+- CSS Flexbox
+- CSS Animations
+- Javascript
+
 ### Experience, Challenegs and Learning
+
+The layout was big  and had several components but most of it was easy to structure properly. 
+There are few things I could not figure out how to do, I was unable to 
+  - Unable to position the background image as per the specs. 
+  - `.feature_link` has a svg icon with it. On hover, the link + the icon switch to color white, I am unable to change the svg's fill color to white with the link, it does only when hovered on the icon but not on the link. 
+  - `.img_quote' for bigger screen hides behind the `.template_item`, no matter how I do the z-index, I am unable to move it behind the item box. 
+
+Apart from those hurdles everything else is as close to the specs as I can make it. 
 
 ---
 ##### Pending tasks
