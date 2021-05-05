@@ -74,7 +74,6 @@ a {
 
 
 ul li {list-style: none;}
-
 .main_bg  {background: var(--clr-main-bg);}
 
 /* HEADER */
@@ -130,9 +129,7 @@ nav ul li a:focus {
   border-radius: 30px;
 }
 
-.btn_fill {
-  background: linear-gradient(to right, var(--clr-accent-cyan-gradient), var(--clr-accent-blue-gradient));
-}
+.btn_fill {background: linear-gradient(to right, var(--clr-accent-cyan-gradient), var(--clr-accent-blue-gradient));}
 
 .btn_a { 
   width: 10em;
@@ -140,9 +137,7 @@ nav ul li a:focus {
 }
 
 .btn:hover,
-.btn:focus{
-  background: hsl(176, 68%, 70%);
-}
+.btn:focus{background: hsl(176, 68%, 70%);}
 
 /* FEATURES */
 
@@ -168,8 +163,7 @@ nav ul li a:focus {
   text-align:left;
 }
 
-.showcase_item figure img {margin: 0 auto;}
-
+.showcase_item figure {margin: 0 auto;}
 .showcase_content p{margin-top: 1em;}
 
 .feature_link {
@@ -210,9 +204,7 @@ nav ul li a:focus {
   max-width: 500px;
 }
 
-.testimonial_item:nth-child(1) {
-  position:relative;
-}
+.testimonial_item:nth-child(1) {position:relative;}
 
 .img_quote  {
   position: absolute;
@@ -231,9 +223,7 @@ nav ul li a:focus {
   border-radius: 50%;
 }
 
-.testimonial_item .profile p {
-  font-weight:var(--fw-bold);
-}
+.testimonial_item .profile p {font-weight:var(--fw-bold);}
 
 .testimonial_item .profile p span{
   display:block;
@@ -275,7 +265,6 @@ footer {background: var(--clr-footer-bg);}
   position:relative;
   width: 20em;
   margin: 0 auto;
-
 }
 
 .form_bottom input[type="email"] {
@@ -299,7 +288,6 @@ footer {background: var(--clr-footer-bg);}
   max-width: 25em;
   margin: 0 auto;
 }
-
 
 
 /* ERROR */
@@ -360,7 +348,6 @@ footer {background: var(--clr-footer-bg);}
 }
 
 .item_location {margin-top: 2em;}
-
 .item_location figure{align-self:flex-start;}
 
 .item_contact {
@@ -382,7 +369,6 @@ footer {background: var(--clr-footer-bg);}
 .item_nav ul li a:focus {font-weight: var(--fw-bold);}
 
 .item_social {margin: 0 auto;}
-
 .item_social a i {border: 2px solid var(--clr-neutral-white);}
 
 .item_social a i:hover,
@@ -428,19 +414,19 @@ footer {background: var(--clr-footer-bg);}
   .feature_item p {max-width: 48ch;}
 
   /* SHOWCASE */
-  .showcase_item {flex-direction: row;}
   .showcase_item figure {width: 70%;}
   .showcase_content {align-self: center;}
   .showcase_content h2 { font-size: 2rem; }
   .showcase_content p {max-width: 90ch;}
-
+  
 }
 
 @media(min-width: 1000px)  {
-
+  
   .p2 {padding: 2em 6em;}
   .hero_item figure {width: 50%;}
-
+  
+  .showcase_item {flex-direction: row;}
 
   /* FEATURE */
   .features_tab {padding: 5em 10%;}
