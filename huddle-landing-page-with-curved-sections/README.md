@@ -2,6 +2,8 @@
 
 Solution : [Live Site URL](https://frontend-mentor-challenges-ecru.vercel.app/huddle-landing-page-with-curved-sections/)
 
+Submit to frontendmentor and add Solution submitted  at Frontend Mentor - [Submission link](https://www.frontendmentor.io/solutions/huddle-landing-page-with-curved-sections-m3iKpn2k3  )
+
 
 ![Header/intro section for the Huddle landing page with curved sections](./design/desktop-preview.jpg)
 
@@ -36,7 +38,7 @@ Most of the layout was done with Grid and with the help of flexbox I was able to
 ###### Pending tasks
 
 - Live solution screenshot(s)
-- Submit to frontendmentor and add Solution submitted  at Frontend Mentor - [Submission link]()
+
 
 
 
