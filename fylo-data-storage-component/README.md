@@ -2,6 +2,8 @@
 
 Solution : [Live Site URL](https://frontend-mentor-challenges-ecru.vercel.app/fylo-data-storage-component/)
 
+Submit to frontendmentor and add Solution submitted  at Frontend Mentor - [Submission link](https://www.frontendmentor.io/solutions/fylo-data-storage-component-Gk9Smf5f8)
+
 This is a solution to the [Fylo data storage component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/fylo-data-storage-component-1dZPRbV5n).
 
 ![Design preview for the Fylo data storage component coding challenge](./design/desktop-preview.jpg)
@@ -33,5 +35,4 @@ CSS Animations still need more reading, the current animations I do to any chall
 ##### Pending tasks
 
 - Live solution screenshot(s)
-- Submit to frontendmentor and add Solution submitted  at Frontend Mentor - [Submission link]()
 
