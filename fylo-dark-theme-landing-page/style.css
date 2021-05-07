@@ -151,7 +151,9 @@ nav ul li a:focus {
   gap: 3em;
 }
 
-.feature_item {gap: 1.5em;}
+.feature_item {grid-template-rows:2fr 1fr 1.5fr;}
+
+.feature_item {gap: 1em;}
 .feature_item figure {width: 5em;}
 
 /* SHOWCASE */
@@ -201,7 +203,7 @@ nav ul li a:focus {
   letter-spacing: 1.1px;
   line-height: 1.5;
   box-shadow: 0px 10px 30px 0px var(--clr-intro-bg);
-  max-width: 500px;
+  max-width: 450px;
 }
 
 .testimonial_item:nth-child(1) {position:relative;}
@@ -246,7 +248,7 @@ footer {background: var(--clr-footer-bg);}
   border-radius: 10px;
   box-shadow: 0px 5px 15px hsla(0, 0%, 0%, 0.35);
   line-height: 1.8;
-  transform: translateY(-220px);
+  transform: translateY(-180px);
   width: 90%;
   max-width:1000px;
 }
@@ -418,15 +420,16 @@ footer {background: var(--clr-footer-bg);}
   .showcase_content {align-self: center;}
   .showcase_content h2 { font-size: 2rem; }
   .showcase_content p {max-width: 90ch;}
-  
 }
 
 @media(min-width: 1000px)  {
   
   .p2 {padding: 2em 6em;}
-  .hero_item figure {width: 50%;}
+  .hero_item figure {width: 80%;}
   
   .showcase_item {flex-direction: row;}
+  .showcase_item figure {padding-right:0;}
+  .showcase_content{padding-left:0;}
 
   /* FEATURE */
   .features_tab {padding: 5em 10%;}
@@ -469,11 +472,13 @@ footer {background: var(--clr-footer-bg);}
     "logo - - - -"
     "location contact nav1 nav2 social"
     ;
+    grid-template-columns: 2.5fr 2fr 1fr 1fr 1fr;
+    padding: 2em 10em;
   }
 
   .footer_logo { 
     grid-area: logo;
-    width: 10em;
+    width: 8em;
   }
 
   .footer_items{
@@ -491,12 +496,11 @@ footer {background: var(--clr-footer-bg);}
 }
 
 @media(min-width:1500px) {
-  .showcase_item figure {width: 50%;}
+  .hero_item figure {width: 40%;}
+  .showcase_item figure {width: 30%;}
 }
 
 /* ANIMATIONS */
 @keyframes reveal {
-  to {
-    opacity: 1;
-  }
+  to {opacity: 1;}
 }
