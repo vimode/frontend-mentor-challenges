@@ -425,7 +425,7 @@ footer {background: var(--clr-footer-bg);}
 @media(min-width: 1000px)  {
   
   .p2 {padding: 2em 6em;}
-  .hero_item figure {width: 80%;}
+  .hero_item figure {width: 55%;}
   
   .showcase_item {flex-direction: row;}
   .showcase_item figure {padding-right:0;}
