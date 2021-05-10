@@ -19,20 +19,20 @@
       <h1>Our Pricing</h1>
 
       <div class="pricing_options">
-        <p>Anually</p>
+        <p>Annually</p>
         <label class="pricing_toggle">
-        <input class="toggle_outer" type="checkbox" />
+        <input class="toggle_outer" type="checkbox" checked aria-checked="true" aria-label="Toggle Annually Billing"/>
             <span class="toggle"></span>
         </label><!-- pricing toggle-->
         <p>Monthly</p>
-       </div>
+       </div><!-- pricing options-->
     
     </section><!-- heading-->
 
     <section class="pricing_table">
       <div class="table">
         <h3>Basic</h3>
-        <p><span class="monthly">&dollar;19.99</span><span class="anually">&dollar;199.99</span></p>
+        <p><span class="monthly" aria-label="Monthly Pricing">&dollar;19.99</span><span class="annually" aria-label="Annual Pricing">&dollar;199.99</span></p>
         <ul>
         <li class="features">500 GB Storage</li>
         <li class="features">2 Users Allowed</li>
@@ -42,7 +42,7 @@
       </div>
       <div class="table">
         <h3>Professional</h3>
-        <p><span class="monthly">&dollar;24.99</span><span class="anually">&dollar;249.99</span></p>
+        <p><span class="monthly" aria-label="Monthly Pricing">&dollar;24.99</span><span class="annually" aria-label="Annual Pricing">&dollar;249.99</span></p>
         <ul>
         <li class="features">1 TB Storage</li>
         <li class="features">5 Users Allowed</li>
@@ -52,7 +52,7 @@
       </div>
       <div class="table">
         <h3>Master</h3>
-        <p><span class="monthly">&dollar;39.99</span><span class="anually">&dollar;399.99</span></p>
+        <p><span class="monthly" aria-label="Monthly Pricing">&dollar;39.99</span><span class="annually" aria-label="Annual Pricing">&dollar;399.99</span></p>
         <ul>
         <li class="features">2 TB Storage</li>
         <li class="features">10 Users Allowed</li>
@@ -69,5 +69,7 @@
         <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor.</a> Coded by <a
           href="https://github.com/ppusher/frontend-mentor-challenges">ppusher</a>
   </footer>
+
+  <script src="/pricing-component-with-toggle/script.js"></script>
 </body>
 </html>
