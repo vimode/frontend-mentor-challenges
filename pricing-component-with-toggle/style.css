@@ -149,9 +149,7 @@ input:checked + .toggle:before {transform: translateX(24px);}
 }
 
 .table:nth-child(2)  h3,
-.table:nth-child(2)  .features {
-  color:var(--clr-white)
-}
+.table:nth-child(2)  .features {color:var(--clr-white)}
 
 ul {border-top: 1px solid var( --clr-neutral-light-bg);}
 
@@ -221,11 +219,11 @@ ul {border-top: 1px solid var( --clr-neutral-light-bg);}
   .heading h1 {font-size: 2rem;}
 
   .wrapper {
-    height: 80%;
+    height: 90%;
     padding: 0;
   }
 
-  .pricing_table{flex-direction: row;  }
+  .pricing_table{flex-direction: row;}
   .pricing_table .table {margin: 10px 0;}
 
   .table:nth-child(2) {transform: scale(1.1);}

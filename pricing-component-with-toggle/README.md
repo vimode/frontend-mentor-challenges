@@ -34,5 +34,6 @@ Challenge was extremely enjoyable. The challenge specs says in the bonus to comp
 ---
 ##### Pending tasks
 
+- Bug : Activate Toggle > Switch to annual > refresh page. The toggle stays on annual but the prices have updated to default (monthly)
 - Live solution screenshot(s)
 - Submit to frontendmentor and add Solution submitted  at Frontend Mentor - [Submission link]()
