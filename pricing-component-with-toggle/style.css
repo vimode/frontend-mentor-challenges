@@ -105,14 +105,14 @@ input[type="checkbox"] {
   content : "";
   height: 24px;
   width: 24px;
-  right: 3px;
+  right: 27px;
   bottom: 3px;
   background: var(--clr-white);
   border-radius: 50%;
   transition: 350ms;
 }
 
-input:checked  + .toggle:before {transform: translateX(-24px);}
+input:checked + .toggle:before {transform: translateX(24px);}
 
 /* PRICING TABLE */
 
