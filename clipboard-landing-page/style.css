@@ -1,0 +1,324 @@
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ROOT */
+:root {
+  --ff-serif : 'Bai Jamjuree', sans-serif;
+
+  --fs-body : 18px;
+  --fs-att: 11px;
+
+  --fw-reg: 400;
+  --fw-bold: 600;
+
+  --clr-white : hsl(0,0%, 100%);
+  --clr-primary-main :hsl(171, 66%, 44%);
+  --clr-primary-main-dark :hsl(171, 66%, 35%);
+  --clr-primary-alt :hsl(233, 100%, 69%);
+  --clr-primary-alt-dark :hsl(233, 100%, 60%);
+  --clr-neutral-title :hsl(210, 10%, 33%);
+  --clr-neutral-body :hsl(201, 11%, 66%);
+  --clr-neutral-body-light :hsl(201, 11%, 98%);
+  --clr-footer-a : hsl(228, 45%, 44%);
+}
+
+/* GENERAL */
+body {
+  font-family: var(--ff-serif);
+  color: var(--clr-neutral-body);
+  font-size: var(--fs-body);
+  background: url(/clipboard-landing-page/images/bg-header-mobile.png) no-repeat;
+  background-size: contain;
+  background-position: top;
+  /* width: 100vw; */
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: var(--fw-bold);
+  color: var(--clr-neutral-title);
+  margin: 1em auto;
+}
+
+a {
+  text-decoration: none;
+  color: var(--clr-neutral-title);
+}
+
+a:hover,
+a:focus,
+.social_icons svg path:hover,
+.social_icons svg path:focus {
+  color: var(--clr-primary-main);
+  fill:  var(--clr-primary-main);
+  transition:350ms;
+}
+
+ul li {list-style: none;}
+
+img {
+  display:block;
+  width: 100%;
+}
+
+p {
+  line-height: 1.5;
+  font-size: 1rem;
+  max-width: 50ch;
+  margin: 0.5em auto 2em;
+}
+
+.wrapper {
+  display:grid;
+  gap: 6em;
+  place-content: center;
+  place-items:center;
+  text-align:center;
+  padding: 1.5em;
+}
+
+/* HEADER */
+
+.logo {
+  padding-top: 3em;
+  margin-bottom: -4em;
+}
+
+/* HERO CTA */
+
+.hero_cta {max-width: 600px;}
+.hero_cta h1 {font-size: 2rem;}
+
+.hero_downloadbtn {
+  margin: 2em auto;
+  display:flex;
+  flex-direction: column;
+  gap: 1.5em;
+}
+
+/* BUTTON */
+.btn {
+  max-width: 20em;
+  padding: 0.8em 4em;
+  margin: 0 auto;
+  border-radius: 50px;
+}
+
+.btn_a {color: var(--clr-white);}
+
+.btn_primary {
+  background: var(--clr-primary-main);
+  border-bottom: 3px solid var(--clr-primary-main-dark);
+  border-top: 3px solid transparent;
+  box-shadow: 0px 1px 10px -1px var(--clr-primary-main);
+}
+
+.btn_alt {
+  background: var(--clr-primary-alt);
+  border-bottom: 3px solid var(--clr-primary-alt-dark);
+  border-top: 3px solid transparent;
+  box-shadow: 0px 1px 10px -1px var(--clr-primary-alt);
+}
+
+.btn_a:hover,
+.btn_a:focus{
+  color: var(--clr-white);
+  opacity: 0.7;
+  transform: scale(0.975);
+  transition:550ms;
+}
+
+.btn_primary:hover,
+.btn_primary:focus {
+  border-top: 3px solid var(--clr-primary-main-dark);
+  border-bottom: 3px solid transparent;
+  transition:400ms;
+}
+
+.btn_alt:hover,
+.btn_alt:focus {
+  border-top: 3px solid var(--clr-primary-alt-dark);
+  border-bottom: 3px solid transparent;
+  transition:400ms;
+}
+
+/* FEATURES */
+
+.main_features {
+  display:grid;
+  gap: 4em;
+  place-items:center;
+  place-content:center;
+}
+
+.feature_item {
+  max-width:600px;
+  margin: 0 auto;
+}
+
+.itemOne_content_list img {margin: 3em auto;}
+
+/* itemThree Content list */
+.itemThree_content_list ul{
+  margin-top: 5em;
+  display:flex;
+  flex-direction:column;
+  place-content: center;
+  place-items:center;
+  gap:2em;
+}
+
+.itemThree_content_list ul li img {
+  margin: 0 auto;
+  width: 3em;
+}
+
+/* PARTNER LOGOS */
+
+.partner_logos {
+  display:flex;
+  flex-direction: column;
+  gap: 3em;
+  place-items:center;
+}
+
+/* FOOTER */
+
+footer {
+  background: var(--clr-neutral-body-light);
+  padding: 2em;
+}
+
+.footer_items figure{width: 3em;}
+
+.footer_items,
+.footer_nav_items,
+.social_icons{
+  display:grid;
+  place-items:center;
+  place-content:center;
+  gap: 2em;
+}
+
+.social_icons {grid-template-columns:repeat(3,1fr);}
+
+.attribution {
+  font-size: var(--fs-att);
+  text-align: center;
+  margin-bottom: -2em;
+}
+
+/* MEDIA QUERIES */
+
+@media(min-width: 1000px) {
+  body {
+    background: url(/clipboard-landing-page/images/bg-header-desktop.png) no-repeat;
+    background-size: contain;
+    background-position: top;
+  }
+
+  .wrapper {padding:0;}
+
+  p {max-width: 55ch;}
+  
+  .hero_downloadbtn {flex-direction: row;}
+
+  .feature_item {max-width: 100%;}
+
+  /* ITEM ONE */
+  .itemOne_content {
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 0.5fr;
+    grid-template-rows: repeat(5,1fr);
+  }
+
+  .itemOne_content_list p {max-width: 60ch;}
+
+  .itemOne .itemOne_content_list:nth-child(1) {
+    grid-column: span 4;
+    grid-row: 1/1;
+  }
+
+  .itemOne .itemOne_content_list:nth-child(2)  {
+    grid-column: 1/3;
+    grid-row: 2/6;
+  }
+
+  .itemOne .itemOne_content_list:nth-child(2) img {
+    object-fit:cover;
+    object-position: -50px top;
+  }
+
+  .itemOne .itemOne_content_list:nth-child(3) {
+    grid-column: 3/4;
+    grid-row: 2/3;
+  }
+
+  .itemOne .itemOne_content_list:nth-child(4) {
+    grid-column: 3/4;
+    grid-row: 3/4;
+  }
+
+  .itemOne .itemOne_content_list:nth-child(5)  {
+    grid-column: 3/4;
+    grid-row: 4/5;
+  }
+
+  .itemOne .itemOne_content_list:nth-child(3),
+  .itemOne .itemOne_content_list:nth-child(4),
+  .itemOne .itemOne_content_list:nth-child(5) {
+    margin-left: 1em;
+    text-align:left;
+    align-self: flex-end;
+  }
+
+  .itemThree_content_list ul {
+    flex-direction:row;
+    max-width: 1200px;
+    width: 90%;
+    place-content:center;
+  }
+
+  .partner_logos {
+    flex-direction: row;
+    gap: 4em;
+    width: 90%;
+    max-width: 1200px;
+    place-content:center;
+  }
+
+  .footer_items {
+    grid-template-areas: 
+    "logo nav1 nav2 nav3 - social"
+    "att att att att att att"
+    ;
+    grid-template-columns: repeat(6,1fr);
+    max-width:1200px;
+    margin: 0 auto;
+    gap:1em;
+  }
+
+  .footer_items figure {grid-area: logo;}
+
+  .footer_nav_items {
+    place-items: flex-start;
+    align-self: flex-start;
+    gap:1em;
+  }
+
+  .footer_nav_items:nth-child(1) {grid-area: nav3;}
+  .footer_nav_items:nth-child(2) {grid-area: nav1;}
+  .footer_nav_items:nth-child(3) {grid-area: nav2;}
+
+  .social_icons{grid-area: social;}
+  .attribution{grid-area: att;} 
+}
