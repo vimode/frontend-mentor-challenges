@@ -107,10 +107,10 @@ p {
 
 /* BUTTON */
 .btn {
-  max-width: 20em;
-  padding: 0.8em 4em;
+  padding: 0.8em 3em;
   margin: 0 auto;
   border-radius: 50px;
+  width: 60%;
 }
 
 .btn_a {color: var(--clr-white);}
