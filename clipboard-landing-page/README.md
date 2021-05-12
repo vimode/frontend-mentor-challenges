@@ -18,8 +18,8 @@ Your users should be able to:
 - See hover states for all interactive elements on the page
 
 ## Built with
-- HTML5
-- CSS3
+- HTML
+- CSS
 - CSS Grid
 - CSS Flexbox
 

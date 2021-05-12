@@ -21,19 +21,19 @@ Your users should be able to:
 - Hide/Show the answer to a question when the question is clicked
 
 
-### Built with
+## Built with
 
 - Semantic HTML5 markup
 - CSS Variables
-- Flexbox
+- CSS Flexbox
 - CSS Grid
-- Javascript
+- JavaScript
 
-### What I learned
+## What I learned
 
 **Background Manipulation using CSS** : CSS has a lot of properties to adjust and manipulate background images, I am yet to figure out all of them properly especially when used together, they feel a little overwhelming.  
 
-### Challenges
+## Challenges
 
 Image manipulation with responsiveness was challenging and still is for me. This challenge required positioning some elements with negative properties which took me more time than it should. 
 I struggled with positioning the background pattern image properly for all screen widths, for the two expected screen sizes it works fine but somewhere in between it does not retain the expected position.

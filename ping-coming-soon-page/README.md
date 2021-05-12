@@ -23,13 +23,13 @@ Your users should be able to:
 	- The `input` field is empty. The message for this error should say *"Whoops! It looks like you forgot to add your email"*
 	- The email address is not formatted correctly (i.e. a correct email address should have this structure: `name@host.tld`). The message for this error should say *"Please provide a valid email address"*
 
-### Built with
+## Built with
  
  - HTML
  - CSS
  - JavaScript
 
-### Experience & Challenges
+## Experience & Challenges
 
 This challenge was quick and easy.
 I use flex and/or grid any and everywhere, as much and I like using them I wanted  to not use them if not required. There were few instances where using flex would have really helped and made things easy but otherwise this was done without using flex or grid. 

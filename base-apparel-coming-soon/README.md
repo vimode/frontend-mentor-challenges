@@ -23,21 +23,21 @@ Your users should be able to:
   - The `input` field is empty
   - The email address is not formatted correctly
 
-### Built with
+###Built with
  
  - HTML
  - CSS
- - Flexbox
- - Vanilla JavaScript
+ - CSS Flexbox
+ - JavaScript
 
-### Experience & Challenges
+## Experience & Challenges
 The layout was a little difficult to understand as in the desktop view the image  takes the right side of the page but in the mobile view the hero mobile image is different and is between the logo and the main content. This would have been easy with grid but the logo area and the main content area share a common background image and background color gradient which meant the hero image would have to be on top of the these grids but grid elements don't collapse on each other. So that had think over about the layout. 
 
 At the end I used flexbox, two separate hero images each only visible in the expected screen sizes. 
 
 For form validation I use a combination of HTML5 validation and JS taking advantage of the browser's Constraint Validation API which consists of set methods and properties available on form elements DOM interfaces. 
 
-### Continued development & Learning
+## Continued development & Learning
 
 I learned some more ways of using CSS animations. 
 

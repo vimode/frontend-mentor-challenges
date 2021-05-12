@@ -19,20 +19,20 @@ Your users should be able to:
 - View the optimal layout depending on their device's screen size
 - See hover states for interactive elements
 
-### Built with
+## Built with
 - HTML
 - CSS
-- Grid
-- Flexbox
+- CSS Grid
+-  CSS Flexbox
 
-### Experience & Challenges
+## Experience & Challenges
 This challenge has a simple layout to follow. And required very little CSS too for the layout, most of the CSS code is towards the design of typography and design of the cards itself. 
 
 So I decide to have a little fun with it, I stuck to the design specs provided by the challenge on mobile and desktop. 
 
 But between 600px and 900px I used grid to make a little a different design choice for provided cards by adding some hover effects. I experimented with `tabindex` for each card (terrible idea, [MDN & accessbility doesn't approve](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex#accessibility_concerns)), I also added hover state for each card div (another accessiblity concern) and with the help of z-index made each card/div expand their grid values on hover. This is just to experiment some CSS properties and try different possbilities of overlapping grid items. Most of the experiment parameters I set were a success, only thing I wasn't happy about was the transition animation effects I wanted to add to the card's hover, the effects weren't very pleasant because the padding would make the text dance around differently in each card on hover.
 
-### Continued Development & Learning
+## Continued Development & Learning
 
 Learn more about animation and transition to make it look consistent and linear across similar elements.
 

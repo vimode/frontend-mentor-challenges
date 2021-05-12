@@ -24,10 +24,10 @@ Your users should:
 
 This challenge was simpler than any of the previous challenges, Flexbox is powerful for such cards, helps centering everything in less lines of code. At first I wanted to use grid but the offset boxes made it difficult to have a proper grid. 
 
-### Built with
-- HTML5
-- CSS3
-- Flexbox
+## Built with
+- HTML
+- CSS
+- CSS Flexbox
 
 ---
 

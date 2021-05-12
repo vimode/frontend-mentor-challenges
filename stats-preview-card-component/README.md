@@ -19,18 +19,18 @@ Your users should be able to:
 
 - View the optimal layout depending on their device's screen size
 
-### Built with
+## Built with
 - HTML
 - CSS
 - CSS Grid
 - CSS Flexbox
 - CSS Animations
 
-### Experience & Challenges
+## Experience & Challenges
 Most of the challenge was straightforward except the hero image's position and color tint.
 I tried using CSS background properties for the hero image and its  color tint, I struggled with its positioning and getting the perfect color tint as per the challenge specs. A lot to learn about CSS background image properties. 
 
-### Continued Development & Learning
+## Continued Development & Learning
 Need to do some more reading and practice of the CSS background image and color properties. 
 
 ---

@@ -22,7 +22,7 @@ Your users should be able to:
 
 - Semantic HTML5 markup
 - CSS Variables
-- Flexbox
+- CSS Flexbox
 - CSS Grid
 
 ### What I learned

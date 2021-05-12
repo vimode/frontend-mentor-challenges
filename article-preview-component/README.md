@@ -21,15 +21,15 @@ Your users should be able to:
 - View the optimal layout for the component depending on their device's screen size
 - See the social media share links when they click the share icon
 
-### Built with
+## Built with
 
-- HTML5
-- CSS3
-- Grid
-- Flexbox
-- Vanilla JavaScript
+- HTML
+- CSS
+- CSS Grid
+- CSS Flexbox
+-  JavaScript
 
-### What I learned
+## What I learned
 
 It is easier to use relative and absolute position for elements with fixed height and width. At first I built  the article component with responsive sizing but had to switch to fixed sizing for it to make the share menu to be positioned properly.
 
@@ -38,7 +38,7 @@ Learned about some new elements related to the element `article`. [MDN link](htt
 Re-learned and used the `fill` attribute for SVGs. [MDN link](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/fill)
 
 
-### Continued Learning
+## Continued Learning
 
 This challenge was done with the design principles of mobile-first philosophy. Slowly and surely getting the hang of it and moving away from desktop-view first.
 

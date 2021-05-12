@@ -19,13 +19,13 @@ Your users should be able to:
 - View the optimal layout for the page depending on their device's screen size
 - See hover states for all interactive elements on the page
 
-### Built with
+## Built with
 - HTML
 - CSS
-- Grid
-- Flexbox
+- CSS Grid
+- CSS Flexbox
 
-### Experience & Challenges
+## Experience & Challenges
 Layout had some tricky elements but overall a quick challenge. Background image positioning is still a hit and miss. Requires more reading. 
 
 ---

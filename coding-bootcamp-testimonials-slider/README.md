@@ -23,11 +23,11 @@ Your users should be able to:
 ## Experience
 
 ### Built with
-- HTML5
-- CSS3
-- Vanilla JS
-- Grid
-- Flexbox
+- HTML
+- CSS
+- CSS Grid
+- CSS Flexbox
+- JavaScript
 
 ### What I learned
 

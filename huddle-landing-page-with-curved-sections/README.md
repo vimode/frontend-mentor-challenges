@@ -19,7 +19,7 @@ Your users should be able to:
 - View the optimal layout for the site depending on their device's screen size
 - See hover states for all interactive elements on the page
 
-### Built with
+## Built with
 - HTML
 - CSS
 - CSS Grid
@@ -27,7 +27,7 @@ Your users should be able to:
 - CSS Animations
 - JavaScript
 
-### Experience, Challenges and Learning
+## Experience, Challenges and Learning
 
 This challenge was particularly longer than most I have done in past. Overall the layout was easy to understand and replicate, the difficult parts were the background images/patterns  provided in the challenge. 
 The footer was challenging, and the positioning of its inner elements took  more time than expected. I was still not satisified with the way I ended up doing the footer but its very close to the design specs. 

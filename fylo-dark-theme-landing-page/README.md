@@ -18,16 +18,16 @@ Your users should be able to:
 - View the optimal layout for the site depending on their device's screen size
 - See hover states for all interactive elements on the page
 
-### Built with
+## Built with
 
 - HTML
 - CSS
 - CSS Grid
 - CSS Flexbox
 - CSS Animations
-- Javascript
+- JavaScript
 
-### Experience, Challenegs and Learning
+## Experience, Challenegs and Learning
 
 The layout was big  and had several components but most of it was easy to structure properly. 
 There are few things I could not figure out how to do, I was unable to 

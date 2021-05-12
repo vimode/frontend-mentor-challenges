@@ -18,7 +18,7 @@ Your users should be able to:
 
 - View the optimal layout for the site depending on their device's screen size
 
-### Built with
+## Built with
 
 - HTML
 - CSS
@@ -26,7 +26,7 @@ Your users should be able to:
 - CSS Flexbox
 - CSS Animations
 
-### Experience, Challenges and Learning
+## Experience, Challenges and Learning
 
 The layout was simple. Challenge was short and easy to finish. This component had elements which inspired some animations to play with. 
 CSS Animations still need more reading, the current animations I do to any challenge are very fast and mostly end up being similar to my previous attempt at CSS Animations.

@@ -21,13 +21,13 @@ Your users should be able to:
   - The `Email address` field is empty should show "Oops! Please add your email"
   - The email is not formatted correctly should show "Oops! Please check your email"
 
-### Built with
+## Built with
 - HTML
 - CSS
-- Flexbox
+- CSS Flexbox
 - JavaScript
 
-### Experience & Challenges
+## Experience & Challenges
 
 The layout itself had some challenges with the CTA box being moved around for different screen sizes. It wasn't a complicated layout but a tricky one.
 The other challenging part was to adjust the background image(s) as it not only had a multpile images to be placed in the page but also required adding a color tint to it. I ended up creating a pseudo element to the main container. 
@@ -35,7 +35,7 @@ Since FM challenges like to add background images for most of their challenges, 
 
 I added animations to the the error and success of form validation but I was no happy with the end result.
 
-### Continued Development & Learning
+## Continued Development & Learning
 
 CSS Animations requires more reading to make them  look smooth and meaningful.
 Background images, pseude elements required more reading and experimenting. 

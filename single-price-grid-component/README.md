@@ -16,13 +16,13 @@ Your users should be able to:
 - See a hover state on desktop for the Sign Up call-to-action
 
 
-### Built with
+## Built with
  
  - HTML
  - CSS
- - Grid
+ - CSS Grid
 
-### Experience & Challenges
+## Experience & Challenges
 
 This challenge was quick and easy. I used CSS Grid for layout. 
 There was nothing really to struggle with apart from the time spent on typography. 
