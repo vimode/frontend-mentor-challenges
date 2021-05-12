@@ -13,6 +13,7 @@
   --ff-serif : 'Bai Jamjuree', sans-serif;
 
   --fs-body : 18px;
+  --fs-body-desktop : 20px;
   --fs-att: 11px;
 
   --fw-reg: 400;
@@ -107,7 +108,7 @@ p {
 
 /* BUTTON */
 .btn {
-  padding: 0.8em 3em;
+  padding: 0.8em 2em;
   margin: 0 auto;
   border-radius: 50px;
   width: 80%;
@@ -201,6 +202,7 @@ p {
 /* FOOTER */
 
 footer {
+  margin-top:5em;
   background: var(--clr-neutral-body-light);
   padding: 2em;
 }
@@ -231,6 +233,7 @@ footer {
     background: url(/clipboard-landing-page/images/bg-header-desktop.png) no-repeat;
     background-size: contain;
     background-position: top;
+    font-size: var(--fs-body-desktop);
   }
 
   .wrapper {padding:0;}
@@ -309,8 +312,7 @@ footer {
   .footer_items {
     grid-template-areas: 
     "logo nav1 nav2 nav3 - social"
-    "att att att att att att"
-    ;
+    "att att att att att att";
     grid-template-columns: repeat(6,1fr);
     max-width:1200px;
     margin: 0 auto;
@@ -331,4 +333,13 @@ footer {
 
   .social_icons{grid-area: social;}
   .attribution{grid-area: att;} 
+}
+
+@media( min-width:2000px) {
+
+  .itemOne .itemOne_content_list:nth-child(2) img {
+    object-fit:none;
+    object-position:unset;
+  }
+
 }
