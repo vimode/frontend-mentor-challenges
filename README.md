@@ -16,7 +16,7 @@ Challenges on FrontendMentor are categorised based on a difficulty level.
 
 ## Difficulty Level
 
-- [Newbie](#newbie)
+- [Newbie](##newbie)
 
 - [Junior](#junior)
 
