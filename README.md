@@ -16,18 +16,7 @@ Challenges on FrontendMentor are categorised based on a difficulty level.
 
 ## Difficulty Level
 
-- [Newbie](##newbie)
-
-- [Junior](#junior)
-
-- [Intermediate](#intermediate)
-
-- [Advanced](#advanced)
-
-- [Guru](#guru)
-
-
-## Newbie (15)
+### Newbie (15)
   - Huddle landing page with single introductory section
   - Ping single column coming soon page
   - Single price grid component
@@ -44,7 +33,7 @@ Challenges on FrontendMentor are categorised based on a difficulty level.
   - Meet landing page
   - Stats preview card component
 
-## Junior(8)
+### Junior(8)
   - Testimonials grid section
   - Huddle landing page with curved sections
   - Fylo landing page with two column layout
@@ -54,15 +43,17 @@ Challenges on FrontendMentor are categorised based on a difficulty level.
   - Project tracking intro component
   - Clipboard landing page
 
-## Intermediate
+### Intermediate
 
-## Advanced
+### Advanced
 
-## Guru
+### Guru
 
 ### Author 
 
 Discord vimo#6620
+
+---
 
 ###### Pending tasks for the repo
 
