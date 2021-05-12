@@ -17,13 +17,13 @@ Your users should be able to:
 - View the optimal layout for the site depending on their device's screen size
 - See hover states for all interactive elements on the page
 
-### Built with
+## Built with
 - HTML5
 - CSS3
 - CSS Grid
 - CSS Flexbox
 
-### Experience, Challenges and Learning
+## Experience, Challenges and Learning
 
 Challenge was long but done much easier with grid. 
 I forced myself to use a lot of general styling so not to repeat myself further along. I think it helped a lot as at the end as my CSS ended being very short for such a long landing/home page like this. 
