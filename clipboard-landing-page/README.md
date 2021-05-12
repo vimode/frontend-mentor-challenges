@@ -42,6 +42,6 @@ In this challenge, the image in the desktop view had to be cut off, I used the f
 ---
 ##### Pending tasks
 
-- Finish the media queries and typography.
+- BUG :  Beyond 2200px width, the grid starts having margin on both sides and messes up the image position  with `object-position` by floating it in the canvas instead of touching the viewport, for now added a media query to unset `object-position` beyond 2000px. But need to investigate  why it stops touching the viewport beyond 2200px without having a max-width or any sort of margin. 
 - Live solution screenshot(s)
 - Submit to frontendmentor and add Solution submitted  at Frontend Mentor - [Submission link]()
