@@ -290,6 +290,7 @@ footer {
 
   .itemThree_content_list ul {
     grid-template-columns: repeat(3,1fr);
+    grid-template-rows: unset;
     place-content: center;
     place-items:center;
     gap:1em;
