@@ -117,7 +117,8 @@ header {
 
 .item_highlight {width: 100%;}
 
-.item_highlight a:hover {
+.item_highlight a:hover,
+.item_highlight a:focus {
   color: var(--clr-neutral-dark-text);
   border-bottom: 1px solid transparent;
   transition: 400ms linear; 
@@ -138,7 +139,7 @@ header {
   padding: 4em 1.5em;
   background:top left url(/insure-landing-page/images/bg-pattern-intro-left-mobile.svg) no-repeat;
   position:relative;
-  height: 33em;
+  height: 100%;
 }
 
 .content_text hr {display:none;}
@@ -169,6 +170,7 @@ header {
 /* BUTTON */
 
 .btn {
+  cursor:pointer;
   color: var(--clr-neutral-light-text);
   display:block;
   border: 2px solid var(--clr-neutral-light-text);
@@ -314,7 +316,10 @@ footer {
     margin: 0 auto;
   }
 
+  h1 {font-size: 4rem;}
+
   .wrapper {text-align:left;}
+
   /* NAV */
 
   .nav_btn {display:none;}
@@ -352,13 +357,17 @@ footer {
     padding: 0.5em 1em;
   }
 
-  .nav_items.item_highlight:hover{
+  .nav_items.item_highlight:hover,
+  .nav_items.item_highlight:focus,
+  .item_highlight a:hover,
+  .item_highlight a:focus{
     background: var(--clr-primary-dark-bg);
     color: var(--clr-neutral-light-text);
+    transition: 400ms linear; 
   }
   
-  .item_highlight a:hover {
-    color: var(--clr-neutral-light-text);
+  .item_highlight a:hover,
+  .item_highlight a:focus {
     border-bottom: none;
     transition: 400ms linear; 
   }
@@ -379,6 +388,7 @@ footer {
     grid-row: span 1;
     background:unset;    
     position: unset;
+    margin-top: 3em;
   }
 
   .content_img {
@@ -387,8 +397,8 @@ footer {
   }
 
   .content_img img {
-    transform: translateY(80px);
-    width: 30em;
+    transform: translateY(160px);
+    width: 33em;
   }
 
   .content_text hr {
@@ -426,7 +436,7 @@ footer {
 
   .features {
     width: 80%;
-    margin: 5em auto;
+    margin: 15em auto;
     max-width:1500px;
   }
 
@@ -435,7 +445,10 @@ footer {
     width: 6em;
   }
 
-  .features_tabs {grid-template-columns: repeat(3,1fr);}
+  .features_tabs {
+    grid-template-columns: repeat(3,1fr);
+    margin: 5em auto 0;
+  }
 
   .feature_item {place-items:flex-start;}
 
@@ -449,9 +462,14 @@ footer {
   .bottom_items {
     display:flex;
     padding: 2em 4em;
+    place-items:center; 
   }
 
-  .bottom_items h1 {width: 80%;}
+  .bottom_items h1 {
+    width: 80%;
+    font-size: 3rem;
+  }
+
   .bottom_items h1 span{display:block;}
   .bottom_items a {width: 20%;}
 
