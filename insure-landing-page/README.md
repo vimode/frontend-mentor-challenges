@@ -6,7 +6,7 @@ This is a solution to the [Insure landing page challenge on Frontend Mentor](htt
 
 ![Design preview for the Insure landing page coding challenge](./design/desktop-preview.jpg)
 
- 
+
 ## The challenge
 
 Your challenge is to build out this landing page and get it looking as close to the design as possible.
@@ -29,6 +29,8 @@ Your users should be able to:
 Background image patterns were difficult to position as per the design specs and had to do a hybrid approach with them as some are as background images and some as img elements. 
 
 The overall layout was simple with the help of grid and flexbox but I overlooked the equal whitespace margins and how the elements were centered which required adding a fix width at the end to all sections to leave equal whitespace in the margins in all sections. 
+
+There is no good tablet view for this challenge that I could think, currently it stretches to cover the viewport which isn't pleasant but its not very bad. 
 
 -----
  ##### Pending tasks
