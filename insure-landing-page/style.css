@@ -104,7 +104,7 @@ header {
 .nav_items a {
   color: var(--clr-neutral-light-text);
   font-size: 1rem;
-  font-weight: var(--fw-reg);
+  font-weight: var(--fw-bold);
   letter-spacing: 1.5px;
   border-bottom: 1px solid transparent;
 }
@@ -115,13 +115,9 @@ header {
   transition: 400ms linear;  
 }
 
-.item_highlight {width: 100%;}
-
-.item_highlight a:hover,
-.item_highlight a:focus {
-  color: var(--clr-neutral-dark-text);
-  border-bottom: 1px solid transparent;
-  transition: 400ms linear; 
+.item_highlight {
+  width: 100% !important;
+  border-bottom : 1px solid var(--clr-neutral-light-text) !important;
 }
 
 /* HERO ITEM */
@@ -339,7 +335,6 @@ footer {
   .nav_items a {
     color: var(--clr-neutral-dark-text);
     font-size: 1rem;
-    font-weight: var(--fw-bold);
     letter-spacing: 1.1px;
     border-bottom: 1px solid transparent;
   }
@@ -351,25 +346,16 @@ footer {
     transition: 400ms linear;  
   }
 
-  .nav_items.item_highlight {
-    width: unset;
-    border: 2px solid var(--clr-primary-dark-bg);
-    padding: 0.5em 1em;
+  .item_highlight {
+    border: 1px solid var(--clr-neutral-dark-text);
+    border-bottom: 1px solid var(--clr-neutral-dark-text) !important;
+    padding: 0.6em 1.1em;
   }
 
-  .nav_items.item_highlight:hover,
-  .nav_items.item_highlight:focus,
-  .item_highlight a:hover,
-  .item_highlight a:focus{
+  .item_highlight:hover,
+  .item_highlight:focus {
     background: var(--clr-primary-dark-bg);
-    color: var(--clr-neutral-light-text);
-    transition: 400ms linear; 
-  }
-  
-  .item_highlight a:hover,
-  .item_highlight a:focus {
-    border-bottom: none;
-    transition: 400ms linear; 
+    color: var(--clr-neutral-light-text) !important;
   }
 
   /* HERO ITEM */
