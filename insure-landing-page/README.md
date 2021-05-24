@@ -34,6 +34,7 @@ There is no good tablet view for this challenge that I could think, currently it
 
 -----
  ##### Pending tasks
-
+ 
+- Fix : mobile hero image is different 
 - Live solution screenshot(s)
 - Submit to frontendmentor and add Solution submitted  at Frontend Mentor - [Submission link]()

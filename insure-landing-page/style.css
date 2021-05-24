@@ -304,7 +304,10 @@ footer {
 /* MEDIA QUERIES */
 
 @media(min-width: 1000px) {
-  body {font-size: var(--fs-body-desktop);}
+  body {
+    font-size: var(--fs-body-desktop);
+    overflow-x: hidden;
+  }
 
   header {
     padding: 1em 1.5em;
@@ -341,7 +344,6 @@ footer {
 
   .nav_items a:hover,
   .nav_items a:focus {
-    border-bottom: 1px solid var(--clr-neutral-dark-text);
     color: var(--clr-primary-dark-bg);
     transition: 400ms linear;  
   }
@@ -360,7 +362,9 @@ footer {
 
   /* HERO ITEM */
 
-  .hero_item {position: relative;}
+  .hero_item {
+    position: relative;
+  }
 
   .hero_content {
     grid-template-columns: repeat(2,1fr);
@@ -436,7 +440,10 @@ footer {
     margin: 5em auto 0;
   }
 
-  .feature_item {place-items:flex-start;}
+  .feature_item {
+    place-items:flex-start;
+    grid-template-rows:100px 100px 180px;
+  }
 
   .bottom_cta{
     margin: 0 auto 5em;
