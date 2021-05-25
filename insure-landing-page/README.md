@@ -1,4 +1,4 @@
-# Frontend Mentor - Insure landing page
+# Insure landing page
 
 Solution : [Live Site URL](https://frontend-mentor-challenges-ecru.vercel.app/insure-landing-page/)
 
