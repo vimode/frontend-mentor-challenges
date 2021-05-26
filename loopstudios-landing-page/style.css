@@ -56,7 +56,7 @@ ul li {list-style: none;}
 .wrapper {
   width: 90%;
   margin: 0 auto;
-  max-width: 1400px;
+  max-width: 1200px;
 }
 
 ul li a {position:relative;}
@@ -336,9 +336,21 @@ footer {
 
 @media(min-width:600px) {
   :root{--fs-body: 18px;}
+
+  header {
+    background-position:center;
+    background-size:cover;
+    height: unset;
+  }
   
-  .header_text {align-self: start;}
+  .header_text {
+    padding: 5em 0 10em;
+    align-self: start;
+  }
+
   .header_text h1 span {display:inline;}
+  
+  .hero_text h1 {font-size: 2rem;}
 
   .showcase h1 {font-size:2.5rem;}
   .showcase figure figcaption{font-size:1.8rem;}
@@ -425,7 +437,7 @@ footer {
   }
 
   .hero_text h1 {margin-bottom: 0;}
-  .hero_text p {font-size: 1.2vw;}
+  .hero_text p {font-size: 1rem;}
 
   .desktop_showcase{display:block}
   .mobile_showcase{display:none}
