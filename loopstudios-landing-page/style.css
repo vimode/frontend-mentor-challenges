@@ -368,6 +368,8 @@ footer {
     place-content:center;
     padding: unset;
     transform:unset;
+    transform-origin:unset;
+    animation:unset;
   }
 
   .nav_items img {display:none;}
