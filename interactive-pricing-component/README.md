@@ -42,7 +42,7 @@ If the visitor switches the toggle to yearly billing, a 25% discount should be a
 
 I learned a lot about input elements and input events in this challenge. 
 
-[appearance](https://developer.mozilla.org/en-US/docs/Web/CSS/appearance)
+- [appearance](https://developer.mozilla.org/en-US/docs/Web/CSS/appearance)
 
 ```CSS
 appearance: none;
@@ -52,14 +52,14 @@ appearance: none;
 
 Using this I was able to hide the input element's default styling and display it with custom styling for toggle and range slider. 
 
-Customising [range](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range) slider is a very complicated process but in this challenge I learned how to customise the range track as well as the thumb control which the user interacts with. 
+- Customising [range](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range) slider is a very complicated process but in this challenge I learned how to customise the range track as well as the thumb control which the user interacts with. 
 This [CSS-Tricks](https://css-tricks.com/styling-cross-browser-compatible-range-inputs-css/) article was a great resource for that. Since this requires vendor prefixes it sure has its risks and I did not do the IE vendor prefix for now. 
 
 There are few more resources that helped with during this challenge,
 
-Managing the [range events](https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oninput) as I had never used them before. 
+- Managing the [range events](https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oninput) as I had never used them before. 
 
-[animate()](https://developer.mozilla.org/en-US/docs/Web/API/Element/animate) method to create new animations through javascript. I used this to show a visual change in the values which are updated in the DOM by the javascript funtions for toggle and slider. I use this method in a very basic way to change the font-color of the updates values.
+- [animate()](https://developer.mozilla.org/en-US/docs/Web/API/Element/animate) method to create new animations through javascript. I used this to show a visual change in the values which are updated in the DOM by the javascript funtions for toggle and slider. I use this method in a very basic way to change the font-color of the updates values.
 
 ```javascript
   pageviews.animate([
