@@ -27,7 +27,7 @@ function updateCost(sliderPosition){
   pageviews.textContent = Object.keys(sliderValues)[sliderPosition];
   
   total = Object.values(sliderValues)[sliderPosition];
-  discountTotal = (total - (total *.25))
+  discountTotal = (total - (total *.25));
   
   if(billingToggle.checked) {
     cost.textContent = `$` + discountTotal + `.00`;
@@ -45,12 +45,10 @@ function updateCost(sliderPosition){
     {color:'initial'}
   ], 1500)
 
-
 }
 
 function sliderColor (sliderPosition) {
   let percent = (sliderPosition) * (100/slider.max) +"%";
-  
   slider.style.background = `linear-gradient( 90deg, var(--clr-primary-slider-bar) ${percent}, var(--clr-neutral-slider-empty-bg)  ${percent})`
 }
 
