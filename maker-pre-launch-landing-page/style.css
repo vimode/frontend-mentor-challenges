@@ -322,7 +322,7 @@ footer {
     grid-template-areas: 
     "img title"
     "img text";
-    grid-template-columns: auto;
+    grid-template-columns: 150px 300px;
     grid-template-rows: auto;
     place-items: start;
     text-align:left;
