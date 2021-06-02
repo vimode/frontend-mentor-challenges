@@ -18,8 +18,6 @@ Your users should be able to:
 - See hover states for all interactive elements on the page
 - Use the slider and toggle to see prices for different page view numbers (details provided below)
 
-Want some support on the challenge? [Join our Slack community](https://www.frontendmentor.io/slack) and ask questions in the **#help** channel.
-
 ### Page view and pricing totals
 
 Here are the different page view ranges and the corresponding monthly price totals:
@@ -31,6 +29,7 @@ Here are the different page view ranges and the corresponding monthly price tota
 - 1M pageviews / $36 per month
 
 If the visitor switches the toggle to yearly billing, a 25% discount should be applied to all prices.
+
 ## Built with
 - HTML
 - CSS
