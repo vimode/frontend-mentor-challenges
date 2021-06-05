@@ -147,7 +147,6 @@ input[type="checkbox"]:hover{background-image: linear-gradient(to right, var(--c
 .social_proof_cards {
   display:grid;
   gap: 1em;
-  place-items: center;
   place-content: center;
   grid-template-columns: repeat(auto-fit, 300px); ;
 }
