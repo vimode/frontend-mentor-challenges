@@ -210,7 +210,6 @@ input[type="checkbox"]:hover{background-image: linear-gradient(to right, var(--c
   opacity: 0.8;
 }
 
-
 /* SOCIAL TODAY STATS CARDS */
 
 .active_title {
@@ -335,6 +334,28 @@ footer.dark a{color: var(--clr-card-main-text-white);}
   .social_today_stats li{background: var(--clr-card-bg-dark);}
 }
 
+@media ( min-width: 1000px) {
+
+  .wrapper {gap: 2em;}
+
+  .title hr {display:none;}
+
+  .heading {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .switch {
+    align-items: center;
+    gap: 1em;
+  }
+
+  .switch input[type="checkbox"]::before {top: 3.5px;}
+
+}
+
 @media(min-width: 1270px) and (min-width:700px) {
+
   body{height:100vh;}
+
 }
