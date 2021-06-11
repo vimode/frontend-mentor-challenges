@@ -1,0 +1,411 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+}
+
+/* ROOT */
+
+:root {
+  --ff-primary: 'Barlow', sans-serif;
+
+  --fw-reg: 500;
+  --fw-med: 700;
+  --fw-bold: 900;
+
+  --fs-heading-big: 56px;
+  --fs-heading-med: 32px;
+  --fs-heading-small: 24px;
+  --fs-body: 16px;
+  --fs-att: 11px;
+
+  --fs-heading-med-d: 36px;
+  --fs-heading-small-d: 28px;
+  --fs-body-d:26px;
+
+  --clr-white : hsl(0, 0%, 100%);
+  --clr-primary: hsl(22, 89%, 52%);
+  --clr-primary-light:hsl(22, 100%, 69%);
+  --clr-secondary: hsl(220, 50%, 17%);
+  --clr-secondary-light: hsl(221, 23%, 58%);
+  --clr-light-bg : hsl(198, 28%, 93%) ;
+
+}
+
+/* GENERAL */
+
+body {
+  font-family: var(--ff-primary);
+  font-weight: var(--fw-reg);
+  font-size: var(--fs-body);
+  color : var(--clr-secondary-light);
+  width: 100vw;
+}
+
+h1, h2 {
+  color: var(--clr-secondary);
+  text-transform: uppercase;
+  font-weight: var(--fw-bold)
+}
+
+h1 {
+  font-size: var(--fs-heading-big);
+  line-height: 1;
+}
+
+img {
+  display:block;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+section img {
+  border-radius: 20px;
+}
+
+.outer_wrapper {
+  display:grid;
+  gap: 1em;
+}
+
+.inner_wrapper {
+  padding: 1.5em;
+}
+
+
+.btn{
+  display:inline-block;
+  padding: 1em;
+  border-radius: 10px;
+  font-weight: var(--fw-med); 
+  width: 10em;
+}
+
+p {line-height: 1.5;}
+
+/* HEADER */
+
+header {
+  display:flex;
+  justify-content: space-between;
+  place-items: center;
+}
+
+header figure {cursor: text ;}
+
+.btn_light {
+  background: var(--clr-light-bg);
+  color: var(--clr-secondary);
+}
+
+
+.btn_light:hover,
+.btn_light:focus {
+  background: var(--clr-secondary);
+  color: var(--clr-light-bg);
+  transition: 350ms;
+}
+
+/* HERO CTA */
+
+.hero_cta {
+  display:flex;
+  flex-direction: column;
+  place-items: center;
+  gap:  3em;
+  overflow:hidden;
+}
+
+.hero_cta_content {
+  display:flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.hero_cta_content h1 span {display:block;}
+
+.hero_cta_img {
+  background: url(/typemaster-pre-launch-landing-page/assets/mobile/image-keyboard.jpg) no-repeat;
+  background-size:cover;
+  width: 100%;
+  height: 350px;
+  transform: translateX(1.5em);
+  border-radius: 20px;
+}
+
+.content_lower {
+  display:flex;
+  place-items:center;
+  justify-content: space-between;
+}
+
+.hero_cta_content .alert {
+  display:inline-block;
+  text-transform: uppercase;
+  font-weight: var(--fw-med);
+  margin: 0 auto;
+}
+
+.btn_highlight { 
+  background: var(--clr-primary);
+  color: var(--clr-light-bg);
+}
+
+.btn_highlight:hover,
+.btn_highlight:focus {
+  background:var(--clr-primary-light);
+  transition: 350ms;
+}
+
+/* Feature focus */
+
+.feature_focus {
+  display:grid;
+  grid-template-areas :
+  "img1 img2 "
+  "content content";
+  grid-template-rows: auto auto;
+  grid-template-columns: 40% 60%;
+  gap: 1em;
+  overflow: hidden;
+}
+
+.feature_img1 {
+  grid-area: img1;
+  background: url(/typemaster-pre-launch-landing-page/assets/mobile/image-phone-and-keyboard.jpg) no-repeat, var(--clr-primary);
+  background-size:cover;
+  height: 190px;
+  border-radius: 20px;
+  background-blend-mode:  multiply;
+  transform: translateX(-2em);
+}
+
+.feature_img2 {
+  grid-area: img2;
+  background: url(/typemaster-pre-launch-landing-page/assets/mobile/image-glass-and-keyboard.jpg) no-repeat;
+  background-size:cover;
+  height: 190px;
+  border-radius: 20px;
+  transform: translateX(-2em);
+}
+
+.feature_content {
+  grid-area:content;
+  text-align: center;
+}
+
+.feature_content h1 {
+  font-size: var(--fs-heading-med);
+  margin: 1.5em auto 1em;
+}
+
+.feature_content h1 span {
+  display:block;
+}
+
+/* FEATURES */
+
+
+.features{
+  display:grid;
+  place-items:center;
+  place-content: center;
+  gap: 2em;
+}
+
+.feature_item  {
+  display:flex;
+  flex-direction: column;
+  gap:1em;
+  text-align: center;
+}
+
+.feature_item figure {
+  width: 4em;
+  height: 4em;
+  align-self:center;
+  background-color: var(--clr-primary);
+  border-radius: 15px;
+  display:flex;
+  place-items:center;
+}
+
+.feature_item figure img{
+  width:1.5em;
+  margin: 0 auto;
+  border-radius:unset;
+}
+
+.feature_item h2 span {
+  display:block;
+}
+
+
+/* FOOTER */
+
+footer {text-align:center;}
+.copy span {font-weight:var(--fw-med);}
+.att  {
+  margin-top: 1em;
+  font-size: var(--fs-att);
+}
+
+.att a {text-transform: unset;}
+
+/* MEDIA QUERIES */
+
+@media(min-width: 768px) {
+
+  .inner_wrapper{padding:3em;}
+
+  .hero_cta {flex-direction:row;}
+
+  .hero_cta_content {margin-top: 2em;}
+
+  .hero_cta_img {
+    background: url(/typemaster-pre-launch-landing-page/assets/tablet/image-keyboard.jpg) no-repeat cover;
+  }
+
+  .feature_img1 {
+    grid-area: img1;
+    background: url(/typemaster-pre-launch-landing-page/assets/tablet/image-phone-and-keyboard.jpg) no-repeat, var(--clr-primary);
+    background-size:cover;
+    height: 350px;
+    margin-left:4em;
+  }
+  
+  .feature_img2 {
+    grid-area: img2;
+    background: url(/typemaster-pre-launch-landing-page/assets/tablet/image-glass-and-keyboard.jpg) no-repeat;
+    background-size:cover;
+    height: 350px;
+    margin-right:2em;
+  }
+
+  .feature_content {
+    display:flex;
+    place-items: center;
+    gap: 1em;
+    text-align:left;
+  }
+
+  .feature_content  h1 {width: 40%;}
+
+  .feature_content p {max-width: 45ch;}
+
+  .features {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  .feature_item {text-align: left;}
+
+  .feature_item figure {align-self: start ;}
+
+  .feature_item p {max-width: 35ch;}
+
+}
+
+@media (min-width: 1220px) {
+
+  .outer_wrapper{
+    gap: 5em;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1200px;
+  }
+  
+  .inner_wrapper {
+    padding: 1em 0;
+  }
+
+  header {
+    width: 100%;
+  }
+
+  .hero_cta_content {
+    gap:2em;
+    width: 60%;
+  }
+
+  .hero_cta_content  p{
+    max-width:45ch;
+  }
+
+  .hero_cta_img {
+    background: url(/typemaster-pre-launch-landing-page/assets/desktop/image-keyboard.jpg) no-repeat;
+    background-size:contain;
+    width: 57%;
+    height: 500px;
+    transform: unset;
+    border-radius: 20px;
+  }
+
+  .feature_img1 {
+    grid-area: img1;
+    background: url(/typemaster-pre-launch-landing-page/assets/desktop/image-phone-and-keyboard.jpg) no-repeat, var(--clr-primary);
+    background-size:cover;
+    height: 500px;
+  }
+  
+  .feature_img2 {
+    grid-area: img2;
+    background: url(/typemaster-pre-launch-landing-page/assets/desktop/image-glass-and-keyboard.jpg) no-repeat;
+    background-size:cover;
+    height: 500px;
+  }
+
+  .hero_cta_content .alert {
+    margin-left: 2em;
+  }
+
+  .feature_focus {
+    width: 100%;
+    display:grid;
+    grid-template-areas :
+    "img1 img2 content ";
+    grid-template-rows: 1fr;
+    grid-template-columns: 30% 40% 20%;
+    gap: 1em;
+  }
+
+  .feature_content {
+    flex-direction: column;
+    place-items:flex-start;
+    gap:0;
+  }
+
+  .feature_content h1 {
+    width: 100%;
+  }
+
+  .feature_content p {
+    width: 26ch;
+  }
+
+  .features {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows:1fr;
+  }
+
+}
+
+@media (min-width: 1400px) {
+  /* :root {
+    --fs-heading-med: 36px;
+    --fs-heading-small: 28px;
+    --fs-body:26px;
+  } */
+
+  body {
+    background: top 160px right -15% url(/typemaster-pre-launch-landing-page/assets/shared/pattern-square.svg) no-repeat,
+    top 1000px left -10% url(/typemaster-pre-launch-landing-page/assets/shared/pattern-square.svg) no-repeat;
+    overflow-x:hidden;
+  }
+}
