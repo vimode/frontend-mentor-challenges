@@ -2,8 +2,9 @@
 
 Solution : [Live Site URL](https://frontend-mentor-challenges-ecru.vercel.app/fylo-landing-page-with-two-column-layout/)
 
-
 This is a solution to the [Fylo landing page with two column layout challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/fylo-landing-page-with-two-column-layout-5ca5ef041e82137ec91a50f5)
+
+Solution submitted at Frontend Mentor - [Submission link](https://www.frontendmentor.io/solutions/fylo-landing-page-with-two-column-layout-WN7TjlEuE)
 
 ![Design preview for the Fylo landing page with two column layout challenge](./design/desktop-preview.jpg)
  
@@ -36,8 +37,6 @@ There also seems to be a horizontal scroll on Chrome and not on Firefox, haven't
 
 ##### Pending tasks
 
-
 - Email validation
 - Updated readme after javascript work
 - Live solution screenshot(s)
-- Submit to frontendmentor and add Solution submitted  at Frontend Mentor - [Submission link]()

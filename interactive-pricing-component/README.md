@@ -4,6 +4,8 @@ Solution : [Live Site URL](https://frontend-mentor-challenges-ecru.vercel.app/in
 
 This is a solution to the [Interactive pricing component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/interactive-pricing-component-t0m8PIyY8).
 
+Solution submitted at Frontend Mentor - [Submission link](https://www.frontendmentor.io/solutions/interactive-pricing-component-2-kA9Qp9v)
+
 ![Design preview for the Interactive pricing component coding challenge](./design/desktop-preview.jpg)
 
 ## The challenge
@@ -77,4 +79,3 @@ There are few more resources that helped with during this challenge,
  ##### Pending tasks
 
 - Live solution screenshot(s)
-- Submit to frontendmentor and add Solution submitted  at Frontend Mentor - [Submission link]()

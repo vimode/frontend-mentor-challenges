@@ -4,6 +4,8 @@ Solution : [Live Site URL](https://frontend-mentor-challenges-ecru.vercel.app/so
 
 This is a solution to the [Social media dashboard with theme switcher challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/social-media-dashboard-with-theme-switcher-6oY8ozp_H)
 
+Solution submitted at Frontend Mentor - [Submission link](https://www.frontendmentor.io/solutions/social-media-dashboard-with-theme-switcher-5wgSPKypl)
+
 ![Design preview for the Social media dashboard with theme switcher coding challenge](./design/desktop-preview.jpg)
 
 ## The challenge
@@ -47,4 +49,3 @@ MDN [prefers-color-sceheme](https://developer.mozilla.org/en-US/docs/Web/CSS/@me
  ##### Pending tasks
  
 - Live solution screenshot(s)
-- Submit to frontendmentor and add Solution submitted  at Frontend Mentor - [Submission link]()
