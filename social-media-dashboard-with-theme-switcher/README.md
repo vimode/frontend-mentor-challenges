@@ -21,31 +21,36 @@ Your users should be able to:
 - Toggle color theme to their preference
 
 ## Built with
-- HTML 
-- CSS 
+
+- HTML
+- CSS
 - CSS Grid
 - CSS Flexbox
 - JavaScript
 
 ## Experience, Challenges and Learning
 
-The layout standard and had too many cards so too many repetitive lines of codes.  
+The layout standard and had too many cards so too many repetitive lines of codes.
 
 This was my first attempt at doing a theme switcher. So I was not prepared to name the classes and have the structure of the markup in such a way that least amount of changes will be required when the theme is switched. So it ended up being about 15-20lines of extra code to switch themes which isn't very bad.
 
-I also learned about CSS media feature `prefers-color-scheme` 
+I also learned about CSS media feature `prefers-color-scheme`
+
 ```CSS
-@media(prefers-color-scheme: dark) 
+@media(prefers-color-scheme: dark)
 .....
 ```
 
-So if your system is set to show dark theme, the site should load dark theme by default. 
+So if your system is set to show dark theme, the site should load dark theme by default.
 
-My implementation might not the best but it works very well I think. 
+My implementation might not the best but it works very well I think.
 
 MDN [prefers-color-sceheme](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme)
 
------
- ##### Pending tasks
- 
+---
+
+##### Pending tasks
+
+- Add hover for cards in dark mode
+- Lower section small numbers should align with the base of the big number.
 - Live solution screenshot(s)
