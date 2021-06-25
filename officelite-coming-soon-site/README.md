@@ -50,5 +50,6 @@ I did not finish the all the bonus tasks but I will come back to it later.
 
 - Finish the bonus task (custom-styled `select` form control)
 - Learn to scale svgs and fix the illustration svg.
+- Form validation and form submission.
 - Live solution screenshots(s)
 - On submit update README with : Solution submitted at Frontend Mentor - [Submission Link]()
