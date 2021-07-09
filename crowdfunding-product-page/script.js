@@ -76,8 +76,8 @@ modalButton.forEach((button, index) => {
     numBackers++;
     updateNumbers()
 
-    spots[index - 1].textContent = spots[index - 1].textContent - 1;
-    modalSpots[index - 1].textContent = modalSpots[index - 1].textContent - 1;
+    // spots[index - 1].textContent = spots[index - 1].textContent - 1;
+    // modalSpots[index - 1].textContent = modalSpots[index - 1].textContent - 1;
 
     successOne.click()
     successTwo.click()
