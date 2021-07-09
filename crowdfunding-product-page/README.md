@@ -37,6 +37,7 @@ Will update soon.
 
 ##### Pending tasks
 
+- If backers number is less than 0 then disable the item.
 - Input element validation
 - Add $ sign/icon to the input element in modal.
 - Live solution screenshot(s)
