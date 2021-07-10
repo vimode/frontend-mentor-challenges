@@ -48,7 +48,7 @@ const radioItem = document.querySelectorAll('.radioInput');
 const inputAmount = document.querySelectorAll('#amount');
 const modalSpots = document.querySelectorAll('.modal_number span');
 
-const spots = document.querySelectorAll('.card_item_footer span');
+const spots = document.querySelectorAll('.content_card_item .card_item_footer span');
 const contentCard = document.querySelectorAll('.content_card_item');
 
 function removeClass() {
@@ -64,34 +64,41 @@ modalItem.forEach((item, index) => {
       // radioItem[index].checked ? item.classList.add("checkedItem") : modalItem.classList.remove("checkedItem")
       removeClass();
       item.classList.add("checkedItem")
+      // console.log(item.childNodes[5].childNodes);
     })
   }
 })
 
 modalButton.forEach((button, index) => {
-
   button.addEventListener('click', (e) => {
     e.preventDefault();
     backedAmount += +form[index].elements[0].value;
     numBackers++;
+
+    if (!index == 0) {
+      spots[index - 1].textContent = spots[index - 1].textContent - 1;
+      modalSpots[index - 1].textContent = modalSpots[index - 1].textContent - 1;
+    }
+    spotCheck()
     updateNumbers()
-
-    // spots[index - 1].textContent = spots[index - 1].textContent - 1;
-    // modalSpots[index - 1].textContent = modalSpots[index - 1].textContent - 1;
-
     successOne.click()
     successTwo.click()
   })
 })
 
 
-// modalSpots.forEach((item, index) => {
-//   if (item.innerText <= 0) { modalItem[index + 1].classList.add('disabled_item') }
-// })
+// Checks the available spots, disables item if 0 spots available.
+function spotCheck() {
+  modalSpots.forEach((item, index) => {
+    if (item.innerText <= 0) { modalItem[index + 1].classList.add('disabled_item') }
+  })
 
-// spots.forEach((item, index) => {
-//   if (item.innerText <= 0) { contentCard[index].classList.add('disabled_item') }
-// })
+  spots.forEach((item, index) => {
+    if (item.innerText <= 0) { contentCard[index].classList.add('disabled_item') }
+  })
+}
+spotCheck()
+
 
 // form.forEach((form, index) => {
 //   form.addEventListener("submit", (event) => {

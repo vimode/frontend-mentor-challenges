@@ -37,8 +37,7 @@ Will update soon.
 
 ##### Pending tasks
 
-- Number of slots should decrease on every pledge
-- If number of slot left is less >= 0, disable the item.
+- Reset the input fields on submit
 - modal Input value validation for
 - Add $ sign/icon to the input element in modal.
 - Live solution screenshot(s)
