@@ -6,7 +6,6 @@ navToggle.addEventListener('click', () => {
   nav.classList.toggle('open');
 })
 
-
 // Bookmark-ed
 const bookmarkBtn = document.querySelector("#bookmark");
 const bookmarkText = document.querySelector("#bookmark span")
@@ -15,7 +14,6 @@ bookmarkBtn.addEventListener('click', () => {
   bookmarkBtn.classList.toggle('saved');
   bookmarkBtn.classList.contains('saved') ? bookmarkText.innerText = "Bookmarked" : bookmarkText.innerText = "Bookmark";
 })
-
 
 // Numbers game
 const backed = document.getElementById('backed');
@@ -37,7 +35,6 @@ function updateNumbers() {
 }
 updateNumbers();
 
-
 // Modal Operandi
 const form = document.querySelectorAll('.modal_form');
 const successOne = document.querySelector('.successClickOne');
@@ -45,7 +42,6 @@ const successTwo = document.querySelector('.successClickTwo');
 const modalItem = document.querySelectorAll('.modal_card');
 const modalButton = document.querySelectorAll('.btn_modal');
 const radioItem = document.querySelectorAll('.radioInput');
-const inputAmount = document.querySelectorAll('#amount');
 const modalSpots = document.querySelectorAll('.modal_number span');
 
 const spots = document.querySelectorAll('.content_card_item .card_item_footer span');
@@ -61,10 +57,8 @@ modalItem.forEach((item, index) => {
   if (!item.classList.contains('disabled_item')) {
     item.addEventListener('click', () => {
       radioItem[index].checked = true;
-      // radioItem[index].checked ? item.classList.add("checkedItem") : modalItem.classList.remove("checkedItem")
       removeClass();
-      item.classList.add("checkedItem")
-      // console.log(item.childNodes[5].childNodes);
+      item.classList.add("checkedItem");
     })
   }
 })
@@ -72,8 +66,11 @@ modalItem.forEach((item, index) => {
 modalButton.forEach((button, index) => {
   button.addEventListener('click', (e) => {
     e.preventDefault();
+
     backedAmount += +form[index].elements[0].value;
     numBackers++;
+
+    form[index].elements[0].value = form[index].elements[0].defaultValue;
 
     if (!index == 0) {
       spots[index - 1].textContent = spots[index - 1].textContent - 1;
@@ -85,7 +82,6 @@ modalButton.forEach((button, index) => {
     successTwo.click()
   })
 })
-
 
 // Checks the available spots, disables item if 0 spots available.
 function spotCheck() {
@@ -99,14 +95,20 @@ function spotCheck() {
 }
 spotCheck()
 
+// Input number validation
+const inputNum = document.querySelectorAll('.modal_form #amount')
+
+inputNum.forEach(field => {
+  field.addEventListener('keyup', () => {
+    if (+field.value > +field.max) {
+      alert(`Please enter a value between ${+field.min} and ${+field.max}.`)
+      field.value = field.defaultValue;
+    }
+  })
+})
 
 // form.forEach((form, index) => {
 //   form.addEventListener("submit", (event) => {
 //     // event.preventDefault();
 //   });
 // })
-
-
-
-
-
