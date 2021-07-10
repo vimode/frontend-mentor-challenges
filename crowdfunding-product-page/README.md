@@ -31,13 +31,23 @@ Your users should be able to:
 
 ## Experience, Challenges and Learning
 
-Will update soon.
+_This will be updated periodically while the pending tasks are being worked on._
+
+The CSS was fairly straightfoward and enjoyble. The modal required a little work than usual but otherwise the really enjoyable layout.
+The real struggle and timesuck for this challenge was the javascript for the buttons, input elements, the change in state of the numbers displayed on the homepage+progress bar.
+
+I learnt a few lessons along the way.
+
+Lesson : Always wrap `<input>` field in a `<form>` even if there isn't a submit button. It just gets easier to work with the input element for field and form validation.
+
+Lesson : If there are multiple items that will change, make sure their corresponding identical items are sharing the same class. Do not add a id to them, makes things really hard later on.
+
+Lesson : Create independent forms even if they work identically, its much easier to manipulate the form functions with shared functions if required.
 
 ---
 
 ##### Pending tasks
 
-- Reset the input fields on submit
-- modal Input value validation for
+- Input validation only exists for max value, for min value it simply doesn't let user enter below certain value without helping the user understand why thats the case.
 - Add $ sign/icon to the input element in modal.
 - Live solution screenshot(s)
