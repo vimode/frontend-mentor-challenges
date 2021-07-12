@@ -38,11 +38,13 @@ The real struggle and timesuck for this challenge was the javascript for the but
 
 I learnt a few lessons along the way.
 
-Lesson : Always wrap `<input>` field in a `<form>` even if there isn't a submit button. It just gets easier to work with the input element for field and form validation.
+- Always wrap `<input>` field in a `<form>` even if there isn't a submit button. It just gets easier to work with the input element for field and form validation.
 
-Lesson : If there are multiple items that will change, make sure their corresponding identical items are sharing the same class. Do not add a id to them, makes things really hard later on.
+- If there are multiple items that will change, make sure their corresponding identical items are sharing the same class. Do not add a id to them, makes things really hard later on.
 
-Lesson : Create independent forms even if they work identically, its much easier to manipulate the form functions with shared functions if required.
+- Create independent forms even if they work identically, its much easier to manipulate the form functions with shared functions if required.
+
+- Add form input validation as a function on submit but end the submit process in the validation function.
 
 ---
 
