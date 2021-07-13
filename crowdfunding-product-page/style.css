@@ -396,6 +396,7 @@ header img {width: 8em;}
   -moz-appearance: none;
   -webkit-appearance: none;
   position:relative;
+  cursor:pointer;
 }
 
 .modal_card_radio input[type="radio"]::before {
