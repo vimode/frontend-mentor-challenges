@@ -106,9 +106,3 @@ inputNum.forEach(field => {
     }
   })
 })
-
-// form.forEach((form, index) => {
-//   form.addEventListener("submit", (event) => {
-//     // event.preventDefault();
-//   });
-// })
