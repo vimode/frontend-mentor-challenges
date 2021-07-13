@@ -52,6 +52,5 @@ I learnt a few lessons along the way.
 
 - Input validation only exists for max value, for min value it simply doesn't let user enter below certain value without helping the user understand why thats the case.
 - Change disabled button innerText to 'Out of stock'
-- Add 'Esc' button escape for modal(s).
 - Add $ sign/icon to the input element in modal.
 - Live solution screenshot(s)
