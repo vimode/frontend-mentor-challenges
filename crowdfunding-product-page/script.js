@@ -106,3 +106,10 @@ inputNum.forEach(field => {
     }
   })
 })
+
+//  Escape
+document.body.addEventListener('keydown', function (e) {
+  if (e.key == "Escape") {
+    successOne.click()
+  }
+});
