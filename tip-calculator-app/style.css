@@ -68,6 +68,11 @@ a {text-decoration: none;}
   flex-direction: column;
 }
 
+input[type]::-webkit-outer-spin-button,
+input[type]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
 .wrapper {
   place-items:center;
