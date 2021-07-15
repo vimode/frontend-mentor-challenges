@@ -661,9 +661,7 @@ header img {width: 8em;}
     place-content:flex-end;
   }
 
-  .checkedItem .card_item_footer_title {
-    text-align: left;
-  }
+  .checkedItem .card_item_footer_title {text-align: left;}
 
   .checkedItem .modal_form {
     place-content: flex-end;

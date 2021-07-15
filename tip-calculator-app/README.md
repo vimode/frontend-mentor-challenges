@@ -30,7 +30,7 @@ Your users should be able to:
 
 When it comes to CSS for the Input elements and form elements, they always trip me up. Theres always more to finer details to look at. Surprising the CSS took more time than expected.
 
-The JS started being very simple, the custom tip amount input required some special work all around. But as I kept adding eventListeners to all the input fields more and more edge cases started showing up. I think I covered almost most of them.
+The JS started being very simple, the custom tip amount input required some special work all around. But as I kept adding eventListeners to all the input fields more and more edge cases started showing up. I think I covered all of the edgecases I could think of.
 
 There are eventListeners for
 
@@ -38,9 +38,9 @@ There are eventListeners for
 - tip selection (each selection + custom tip input)
 - number of people
 
-  Editing, adding or updating any of those fields should calculate the tip amount and show it in the output field immediately.
+Editing, adding or updating any of those fields should calculate the tip amount and show it in the output field immediately.
 
-  The reset button resets everything to the default state.
+The reset button resets everything to the default state.
 
 ---
 
