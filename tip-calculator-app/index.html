@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <!-- CUSTOM CSS -->
+  <link rel="stylesheet" href="/tip-calculator-app/style.css">
+
+  <!-- CUSTOM FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+
+  <!-- SCRIPT -->
+  <script src="/tip-calculator-app/script.js" defer></script>
+
+  <title>Tip calculator app</title>
+
+</head>
+
+<body>
+
+  <div class="main">
+
+    <header>
+      <figure class="logo"><img src="/tip-calculator-app/images/logo.svg" alt="SPLITTER"></figure>
+    </header>
+
+    <section class="wrapper">
+
+      <form action="" class="user_input">
+
+        <div class="bill_amount_details">
+          <label for="bill_amount">Bill</label>
+          <div class="bill_amount_input_field">
+            <input class="bill_input" type="number" name="bill_amount" id="bill_amount" placeholder="0" min="1"
+              step="0.01"><span class="dollar_icon"><img src="/tip-calculator-app/images/icon-dollar.svg"
+                alt="dollar"></span>
+          </div>
+
+
+          <div class="tip_amount_details">
+            <label for="tip_option">Select Tip %</label>
+            <div class="tip_option_buttons">
+              <button type="button" value="0.05" class="btn btn_tip">5%</button>
+              <button type="button" value="0.1" class="btn btn_tip">10%</button>
+              <button type="button" value="0.15" class="btn btn_tip">15%</button>
+              <button type="button" value="0.25" class="btn btn_tip">25%</button>
+              <button type="button" value="0.5" class="btn btn_tip">50%</button>
+              <input type="number" placeholder="Custom" class="btn btn_custom"></button>
+            </div>
+          </div>
+
+          <div class="people_details">
+            <label for="totalPeople">Number of People</label>
+            <small class="error_text">Can't be zero</small></input>
+            <input type="number" placeholder="1" min="1" name="totalPeople" value="1" id="totalPeople">
+            <span class="person_icon"><img src="/tip-calculator-app/images/icon-person.svg" alt="person"></span>
+          </div>
+      </form>
+  </div><!-- user input-->
+
+  <div class="output_results">
+
+    <div class="output_numbers">
+      <div class="output_amount">
+        <p>Tip Amount <span>/ person</span></p>
+        <p class="final_amount" id="finalAmount">$0.00</p>
+      </div>
+      <div class="output_total">
+        <p>Total <span>/ person</span></p>
+        <p class="total_amount" id="totalAmount">$0.00</p>
+      </div>
+    </div>
+
+    <div class="output_btn">
+      <button class="btn btn_reset" disabled>Reset</button>
+    </div>
+  </div><!-- output / results-->
+  </section>
+  <footer class="att">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="https://github.com/ppusher/frontend-mentor-challenges">ppusher</a>.
+  </footer>
+
+  </div>
+
+</body>
+
+</html>
