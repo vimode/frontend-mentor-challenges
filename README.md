@@ -33,7 +33,7 @@ Challenges on FrontendMentor are categorised based on a difficulty level.
 - Meet landing page
 - Stats preview card component
 
-### Junior(17)
+### Junior(19)
 
 - Testimonials grid section
 - Huddle landing page with curved sections
@@ -52,6 +52,8 @@ Challenges on FrontendMentor are categorised based on a difficulty level.
 - Sunnyside agency landing page
 - Officelit Coming Soon Site
 - Crowdfunding Product Page
+- Tip Calculator App
+- Huddle Landing page with alternating feature blocks
 
 ### Intermediate
 
