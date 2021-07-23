@@ -313,7 +313,7 @@ footer {
 
 @media (min-width: 900px) {
   header {
-    background: url(/huddle-landing-page-with-alternating-feature-blocks/images/bg-hero-desktop.svg) no-repeat, var(--clr-neutral-light-text);
+    background: center url(/huddle-landing-page-with-alternating-feature-blocks/images/bg-hero-desktop.svg) no-repeat, var(--clr-neutral-light-text);
   }
 
   .logo {width: 8em;}
