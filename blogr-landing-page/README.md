@@ -37,6 +37,7 @@ The nest navigation items needed proper planning which I clearly did not think t
 ##### Pending tasks
 
 - Position the image properly as per specs.
+- Fix the overflow-x
 - Navbar bug > each dropdown item opens on click but doesn't close when clicked on itself. Closes when clicked on any other nav item.
 - Typography is terrible.
 - Add some animations or transtions to the nav bar items.
