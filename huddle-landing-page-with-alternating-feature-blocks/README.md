@@ -53,4 +53,9 @@ This is what I ended up with that worked perfectly.
 
 ##### Pending tasks
 
+- Fix typography on all views.
+- Add map icon for the address in footer.
+- Tablet view add % width to the images, they look too big.
+- Laptop view add some more padding to the content.
+- footer icons in a list instead of div.
 - Live solution screenshot(s)
