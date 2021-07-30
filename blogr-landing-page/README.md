@@ -36,7 +36,8 @@ The nest navigation items needed proper planning which I clearly did not think t
 
 ##### Pending tasks
 
-- Navbar bug > each dropdown item opens on click but doesn't close when clicked on itself. Closes when clicked on any other nav item.
+- Navbar bug : the dropdown items should close when clicked on themselves again or on the next item.
+- Images do not work properly on widescreen
 - Typography is terrible.
 - Add some animations or transtions to the nav bar items.
 - Live solution screenshot(s)
