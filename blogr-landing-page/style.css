@@ -420,6 +420,8 @@ footer {
     width: 0.75rem;    
   }
 
+  .openItem .desktop_icon {transform: rotate(180deg);}
+
   .openItem .primary_sub_nav {
     place-items:start;
     position:absolute;
