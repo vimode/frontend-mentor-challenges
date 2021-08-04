@@ -36,8 +36,14 @@ The nest navigation items needed proper planning which I clearly did not think t
 
 ##### Pending tasks
 
-- Navbar bug : the dropdown items should close when clicked on themselves again or on the next item.
-- Images do not work properly on widescreen
+- Navbar bug : the dropdown items should close when clicked on themselves again or when next item is clicked.
+- Images do not work properly on widescreen.
+- Image start cutting off slowly as the vw expands.
+- laptop view : too much whitespace between each element.
+- laptop view : illustrations can be a little big.
+- laptop view : too much space between illustration and corresponding text (maybe related to above issue)
+- mobile view : some more gap between top nav/branding and hero content.
+- add :active properties same as :hover and :focus
 - Typography is terrible.
 - Add some animations or transtions to the nav bar items.
 - Live solution screenshot(s)
