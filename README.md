@@ -50,12 +50,16 @@ Challenges on FrontendMentor are categorised based on a difficulty level.
 - Social media dashboard with theme switcher
 - Typemaster pre-launch landing page
 - Sunnyside agency landing page
-- Officelit Coming Soon Site
+- Officelite Coming Soon Site
 - Crowdfunding Product Page
 - Tip Calculator App
 - Huddle Landing page with alternating feature blocks
+- Blogr landing page
 
 ### Intermediate
+
+- Bookmark landing page
+- Launch Countdown Timer
 
 ### Advanced
 
