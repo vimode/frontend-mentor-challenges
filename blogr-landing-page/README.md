@@ -47,3 +47,4 @@ The nest navigation items needed proper planning which I clearly did not think t
 - Typography is terrible.
 - Add some animations or transtions to the nav bar items.
 - Live solution screenshot(s)
+- On submit update README with : Solution submitted at Frontend Mentor - [Submission Link]()
