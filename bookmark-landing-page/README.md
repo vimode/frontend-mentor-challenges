@@ -36,10 +36,17 @@ For this challenge you'll need to:
 ## Experience, Challenges and Learning
 
 _This will be updated periodically while the pending tasks are being worked on._
+The idea of having a utlitiy class is to use it for layout or for repeated CSS propeties, it really does save a lot of time. I have started using them and used a few in this one was for creating flex item and it saved a lot of repeated typing but when using for layout like adding max-width to every element's inner items to keep them centered on widescreen, I failed using it properly here as the background image patterns required in this would not break out of the restricions I set with my inner_layout, so I need to figure out how to use ultility classes efficiently and not adandon them halfway through the project.  
+The form elements are a little messed up and I am yet to figure out why.
 
 ---
 
 ##### Pending tasks
 
+- Paddings on all elements need to be fixed.
+- Nav bug > mobile nav : When nav is opened the body scroll is restricted, but figure out a better way so that in active state if screen size is changed the body scroll is switched back to normal/unset
+- Nav bug > mobile nav : Clicking on any link should close the nav.
+- Email validation
+- In the `features` section fix the highlight when clicked, currently its on/off whereas it need to be coordinated with the item being displayed.
 - Live solution screenshot(s)
 - On submit update README with : Solution submitted at Frontend Mentor - [Submission Link]()
