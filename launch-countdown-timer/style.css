@@ -181,13 +181,13 @@ footer {align-self:end;}
 .flip_card_top {
   transform-origin: bottom;
   z-index: 100;
-  animation: 1s linear running infinite flipDown;
+  /* animation: 1s linear running infinite flipDown; */
 }
 
 .flip_card_bottom {
   transform-origin: top;
   z-index:200;
-  animation: 1s linear running infinite flipLower;
+  /* animation: 1s linear running infinite flipLower; */
 }
 
 
@@ -210,15 +210,14 @@ footer {align-self:end;}
   gap: 3em;
 }
 
-.socials a {
-  font-size:2.5em;
-  color: var(--clr-primary-text);
-  transition:color 350ms ease-out;
+.socials a svg path{
+  fill: var(--clr-primary-text);
+  transition:fill 350ms ease-out;
 }
 
-.socials a:hover,
-.socials a:focus {
-  color: var(--clr-primary-highlight);
+.socials a:hover svg path,
+.socials a:focus svg path {
+  fill: var(--clr-primary-highlight);
 }
 
 .footer p a{
@@ -295,6 +294,12 @@ footer {align-self:end;}
   0% {
     transform: rotate3d(0);
   }
+  25% {
+    transform: rotate3d(-1, 0, 0, 30deg);
+  }
+  50% {
+    transform: rotate3d(-1,0, 0, 60deg);
+  }
   100% {
     transform: rotate3d(-1, 0, 0, 90deg);
   }
@@ -304,6 +309,12 @@ footer {align-self:end;}
 @keyframes flipLower {
   0% {
     transform: rotate3d(1, 0, 0 , 90deg);
+  }
+  25% {
+    transform : rotate3d(1, 0, 0, 60deg);
+  }
+  50%{ 
+    transform: rotate3D(1, 0, 0, 30deg);
   }
   100% {
     transform: rotate3d(0);
