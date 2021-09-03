@@ -14,6 +14,7 @@ question.forEach((item) => item.addEventListener("click", () => {
 
 // Nav
 // todo : try body position fixed or 100vh or touchaction none
+// todo : on clicking link close the nav modal.
 
 const nav = document.querySelector('nav');
 const navOpen = document.querySelector('.nav_open_icon');
@@ -35,11 +36,8 @@ navClose.addEventListener('click', () => {
 // Features
 
 const featureTitle = document.querySelectorAll('.features_title li');
-
 const featureItem = document.querySelectorAll('.features_content li')
-
 const featureTitleParent = document.querySelectorAll('.features_title');
-
 
 // featureTitleParent.forEach((item) => item.addEventListener('click', () => {
 
