@@ -13,6 +13,7 @@ navBtn.addEventListener('click', () => {
 navItems.forEach(item => {
   item.addEventListener('click', () => {
     nav.classList.toggle('open')
+    body.classList.toggle('open')
   })
 })
 
