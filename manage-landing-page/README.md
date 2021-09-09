@@ -32,9 +32,13 @@ Your users should be able to:
 ## Experience, Challenges and Learning
 
 _This will be updated periodically while the pending tasks are being worked on._
+
 The backgorund patterns always have me in the bind as they are responsive but not implemented the best way by adjusting them in each media query. Doing it that way will simply give undesirable view of the pattern's position at some obscure viewport size.
 The horizontal slider was a little confusing for me, as per the design specs the slider doesn't have its dots to represent the active card but only shows 3 cards out of 4 cards in total. having them animated would simply create a whitespace when the cards end. So I chose to have the horizontal slider on mobile view but removed it as slider in desktop view. On desktop view it simply is a list of items horizontally positioned.
-I am getting using to using utlity classes and find them really helpful now. Although I struggled with the proper usage of inner_wrapper but I tried my best to use it wherever I can.
+
+I am getting used to using utlity classes and find them really helpful now. Although I struggled with the proper usage of inner_wrapper but I tried my best to use it wherever I can.
+
+For numbering the ordered item list I used `counter-increment` which was fun to use and makes the list items reusable in some ways. Read on [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/counter-increment) or Josh Comeau's [article](https://www.joshwcomeau.com/css/styling-ordered-lists-with-css-counters/) about that, he explains it in a fun way.
 
 ---
 
