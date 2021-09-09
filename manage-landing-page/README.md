@@ -42,5 +42,8 @@ I am getting using to using utlity classes and find them really helpful now. Alt
 
 - Email validation pending
 - Fix button box-shadows
+- Gap between button and bold cta
+- Fix list alignment (with itself and hero)
+- Fix bold cta text position in iPad
 - Live solution screenshot(s)
 - On submit update README with : Solution submitted at Frontend Mentor - [Submission Link]()
