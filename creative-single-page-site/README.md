@@ -30,24 +30,9 @@ Your users should be able to:
 
 _This will be updated periodically while the pending tasks are being worked on._
 
-In the world of flex and grid to streamline the position of elements on the page, overlapping patterns and elements are truly challening. I started with the intention of using grid for the complete layout but really struggled with it so ended up not using 100% grid for the elements. The overlap was tricky to work with to make it responsive. But I think it does not look that bad.
-
-The floating wave patterns definitely need more work as their positioning is not very responsive friendly.
-
-For most of my challenges, the typography ends up being the most neglected part so I worked on it from the beginning and played around updating the root variables for typography in the media queries. I think it turned out alright. Might need some more tinkering.
-
-For numbering the ordered item list I used `counter-increment` which was fun to use and makes the list items reusable in some ways. Read on [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/counter-increment) or Josh Comeau's [article](https://www.joshwcomeau.com/css/styling-ordered-lists-with-css-counters/) about that, he explains it in a fun way.
-
-The js slider works well but the images have to completely switch for the mobile, tablet and desktop view. I couldn't figure out how to do that in a more streamline way so I ended up switching applying them all on click but only showing the relevant ones with the help of CSS. It worked out well but not sure it is the most elegant way to do that.
-
-The mobile nav is badly positioned, with absolute values all around. Not the best way to it. The elegant way would hav been to position the overlay first and then move the navitems inside it to position them accordingly. So that needs to be updated.
-
 ---
 
 ##### Pending tasks
 
-- Add animations to the mobile nav and horizontal slider.
-- Fix wave pattern positioning.
-- Fix mobile nav positioning.
 - Live solution screenshot(s)
 - On submit update README with : Solution submitted at Frontend Mentor - [Submission Link]()
