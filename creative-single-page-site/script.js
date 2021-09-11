@@ -7,6 +7,7 @@ navButton.addEventListener('click', () => {
   nav.classList.toggle('open');
 })
 
+// handle nav link clicks
 navItems.forEach(item => {
   item.addEventListener('click', () => {
     nav.classList.toggle('open')
@@ -15,6 +16,7 @@ navItems.forEach(item => {
 
 // sliiider
 
+// slider data
 const slider_content = [
   {
     heading: `Brand naming & guidelines`,
@@ -54,40 +56,58 @@ const itemDesktopImg = document.querySelector(".slider_desktop_img");
 
 let slideStatus = 0;
 
+// load next slide
+function nextSlide() {
+  slideStatus++;
+  if (slideStatus < slider_content.length) {
+    slideData(slideStatus)
+  } else {
+    slideStatus = 0;
+    slideData(slideStatus)
+  }
+}
+
+// load previous slide
+function prevSlide() {
+  slideStatus--;
+  if (slideStatus >= 0) {
+    slideData(slideStatus)
+  } else {
+    slideStatus = slider_content.length - 1;
+    slideData(slideStatus)
+  }
+}
+
+// insert slide data
+function slideData(slideNumber) {
+  itemHeading.textContent = slider_content[slideNumber].heading;
+  itemTitle.textContent = slider_content[slideNumber].title;
+  itemDate.textContent = slider_content[slideNumber].date;
+  itemMobileImg.src = `${slider_content[slideNumber].imgMobileSrc}`;
+  itemTabletImg.src = `${slider_content[slideNumber].imgTabletSrc}`;
+  itemDesktopImg.src = `${slider_content[slideNumber].imgDesktopSrc}`;
+}
+
+// handle arrow button clicks
 sliderButtons.addEventListener('click', (e) => {
   let clickedArrow = e.target.classList.value;
-
-  let slideData = function (slideNumber) {
-    itemHeading.textContent = slider_content[slideNumber].heading;
-    itemTitle.textContent = slider_content[slideNumber].title;
-    itemDate.textContent = slider_content[slideNumber].date;
-    itemMobileImg.src = `${slider_content[slideNumber].imgMobileSrc}`;
-    itemTabletImg.src = `${slider_content[slideNumber].imgTabletSrc}`;
-    itemDesktopImg.src = `${slider_content[slideNumber].imgDesktopSrc}`;
-  }
-
   switch (clickedArrow) {
     case "next_arrow":
-      slideStatus++;
-      if (slideStatus < slider_content.length) {
-        slideData(slideStatus)
-      } else {
-        slideStatus = 0;
-        slideData(slideStatus)
-      }
+      nextSlide()
       break;
     case "prev_arrow":
-      slideStatus--;
-      if (slideStatus >= 0) {
-        slideData(slideStatus)
-      } else {
-        slideStatus = slider_content.length - 1;
-        slideData(slideStatus)
-      }
+      prevSlide()
       break;
     default:
-      console.log("⚠")
+      console.log("🤮")
   }
+})
 
-}
-)
+// handle keyboard events
+window.addEventListener('keydown', function (event) {
+  if (event.code === "ArrowRight") {
+    nextSlide()
+  } else if (event.code === "ArrowLeft") {
+    prevSlide()
+  }
+})
