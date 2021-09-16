@@ -44,11 +44,9 @@ https://web.dev/prefers-color-scheme
 
 ##### Pending tasks
 
-- Mobile view footer element padding
-- 950px whitespace between hero and next element
-- slider title alignment fix
-- Add animations to the mobile nav and horizontal slider.
-- Fix wave pattern positioning.
-- Fix mobile nav positioning.
+- Toggle is buggy
+- read todo in js
+- change text color if data received is null
+- change svg color for dark theme
 - Live solution screenshot(s)
 - On submit update README with : Solution submitted at Frontend Mentor - [Submission Link]()
