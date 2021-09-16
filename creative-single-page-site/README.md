@@ -46,6 +46,9 @@ The mobile nav is badly positioned, with absolute values all around. Not the bes
 
 ##### Pending tasks
 
+- Mobile view footer element padding
+- 950px whitespace between hero and next element
+- slider title alignment fix
 - Add animations to the mobile nav and horizontal slider.
 - Fix wave pattern positioning.
 - Fix mobile nav positioning.
