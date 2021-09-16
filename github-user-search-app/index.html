@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+
+  <link rel="stylesheet" href="/github-user-search-app/style.css">
+
+  <script src="/github-user-search-app/script.js" defer></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+
+  <title> GitHub user search app</title>
+</head>
+
+<body>
+
+  <div class="outer_wrapper flex_">
+
+    <header class="inner_wrapper flex_">
+      <h1>devfinder</h1>
+      <div class="theme_switcher flex_">
+        <input type="checkbox" class="toggle_theme" name="theme_switch" id="theme_checkbox">
+        <label for="theme_checkbox" name="mode" id="mode">DARK</label>
+        <!-- <p class="switch_theme_text">Dark</p>
+        <button class="btn btn_theme"></button> -->
+      </div> <!-- theme toggle switch-->
+    </header>
+
+    <main class="card inner_wrapper flex_">
+      <form class="search_bar" onsubmit="searchUser(event)">
+        <img src="/github-user-search-app/img/icon-search.svg" alt="search icon" class="search_icon">
+        <input type="search" id="dev_search" name="search" placeholder="Search Github username..."
+          aria-label="Search for a Github profile">
+        <button type="submit" class="btn btn_search">Search</button>
+        <p class="error_text">No results</p>
+      </form>
+
+      <section class="profile_card grid_">
+        <figure class="profile_image">
+          <img src="https://avatars.githubusercontent.com/u/583231?v=4" alt="profile image" class="profile_img_src">
+        </figure>
+
+        <h2 class="profile_name">The Octocat</h2>
+        <a href="https://github.com" class="profile_username">@octocat</a>
+        <p class="profile_date">Joined 25 Jan 2011</p>
+        <p class="profile_bio">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati, eum? Eveniet, ullam
+          vel laborum corrupt.</p>
+
+        <ul class="profile_stats flex_">
+          <li class="stats_repo">
+            <p class="repo_title stats_title">
+              Repos
+            </p>
+            <p class="repo_number stats_number">
+              8
+            </p>
+          </li>
+          <li class="stats_followers">
+            <p class="followers_title stats_title">
+              Followers
+            </p>
+            <p class="followers_number stats_number">
+              3000
+            </p>
+          </li>
+          <li class="stats_following">
+            <p class="following_title stats_title">
+              Following
+            </p>
+            <p class="following_number stats_number">
+              9
+            </p>
+          </li>
+        </ul>
+
+        <ul class="profile_info_a profile_info flex_">
+          <li class="info_location info_text flex_">
+            <img src="/github-user-search-app/img/icon-location.svg" alt="location icon">
+            <p class="info_location_text">San Francisco</p>
+          </li>
+          <li class="info_website info_text flex_">
+            <img src="/github-user-search-app/img/icon-website.svg" alt="website link icon">
+            <a class="info_website_text" href="https://github.blog">https://github.blog</a>
+          </li>
+        </ul>
+
+        <ul class="profile_info_b profile_info flex_">
+          <li class="info_twitter info_text flex_">
+            <img src="/github-user-search-app/img/icon-twitter.svg" alt="twitter icon">
+            <p class="info_twitter_text">Not Available</p>
+          </li>
+          <li class="info_company info_text flex_">
+            <img src="/github-user-search-app/img/icon-company.svg" alt="company  icon">
+            <p class="info_company_text">@github</p>
+          </li>
+        </ul>
+      </section>
+
+
+    </main>
+
+
+  </div><!-- outer wrapper-->
+
+
+
+</body>
+
+</html>
