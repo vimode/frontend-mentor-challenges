@@ -34,13 +34,13 @@ Your users should be able to:
 
 _This will be updated periodically while the pending tasks are being worked on._
 
-https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/sidebarAction/toggle
+This challenge was supposed to be a practice for using an API but with the dark mode it turned out solid CSS learning experieince for me.
+The API call and handling its response was fairly simple ( with my very basic implemention) but the dark mode especailly with `prefers-color-sceheme` meant it had to be done systematically.
 
-https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia
+I learned a lot of new things in CSS. This Google/web.dev [article](https://web.dev/prefers-color-scheme) was epsecially very helpful. I learned about `window.matchMedia` [MDN link](https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia) and how it can be used to switch media queries or trigger an action based on the browser setting.  
+Using the same function I did the toggle switch for dark and light mode.
 
-https://web.dev/prefers-color-scheme
-
-https://css-tricks.com/cascading-svg-fill-color/
+And surprisingly a new thing about `toggle()` method, how it accepts an optional token too! [MDN for `toggle()`](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/sidebarAction/toggle)
 
 ---
 

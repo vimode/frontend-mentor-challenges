@@ -22,6 +22,7 @@
   --fs-h3: 16px;
   --fs-h4: 13px;
   --fs-btn-text: 14px;
+  --fs-att : 11px;
 
 
   --lh-body: 25px;
@@ -347,6 +348,12 @@ header {
   font-size: var(--fs-bold-text);
 }
 
+.footer {
+  font-size: var(--fs-att);
+  text-align: center;
+  margin-bottom: auto;
+}
+
 /* media queries */
 
 @media(min-width: 768px) {
@@ -363,6 +370,7 @@ header {
     --fs-btn-text: 16px;
     --fs-bold-text: 26px;
     --fs-placeholder-text: 18px;
+    --fs-att : 12px;
   
     --lh-body: 25px;
     --lh-h1: 38px;
