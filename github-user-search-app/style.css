@@ -339,11 +339,6 @@ header {
   place-content: center;
 }
 
-.profile_info img {
-  width: auto;
-  height: 1.5em;
-}
-
 .info_text {gap: 1em;}
 
 .stats_number {

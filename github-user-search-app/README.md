@@ -40,6 +40,8 @@ https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia
 
 https://web.dev/prefers-color-scheme
 
+https://css-tricks.com/cascading-svg-fill-color/
+
 ---
 
 ##### Pending tasks
@@ -47,6 +49,5 @@ https://web.dev/prefers-color-scheme
 - Toggle is buggy
 - read todo in js
 - change text color if data received is null
-- change svg color for dark theme
 - Live solution screenshot(s)
 - On submit update README with : Solution submitted at Frontend Mentor - [Submission Link]()
