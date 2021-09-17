@@ -55,6 +55,7 @@ Challenges on FrontendMentor are categorised based on a difficulty level.
 - Tip Calculator App
 - Huddle Landing page with alternating feature blocks
 - Blogr landing page
+- Github User Search App
 
 ### Intermediate
 
@@ -77,4 +78,4 @@ Discord vimo#6620
 
 - Build a custom showcase page to display all the challenges/submitted solutions.
 - Fill `README.md` for this as well as each challenge with challenge information, my experience, new technologies learned, new experiments in the challenge, time to complete each (approx. hours for each challenge)
-- Fill the index below
+- Fill the index
