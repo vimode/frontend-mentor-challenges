@@ -1,16 +1,6 @@
-
-// fetch changes
-
-
 const searchForm = document.querySelector('.search_bar')
 const searchInput = document.querySelector('#dev_search')
 const btn = document.querySelectorAll('.btn');
-
-// btn.forEach(item => item.addEventListener('click', (e) => e.preventDefault()))
-
-// searchForm.addEventListener('submit', () => {
-//   console.log(searchForm.value)
-// })
 
 const formData = new FormData();
 const errorText = document.querySelector('.error_text');
@@ -29,7 +19,6 @@ const pLocation = document.querySelector(".info_location_text");
 const pURL = document.querySelector(".info_website_text");
 const pTwitter = document.querySelector(".info_twitter_text");
 const pCompany = document.querySelector(".info_company_text");
-
 
 // fetch data
 async function searchUser(event) {
@@ -91,7 +80,6 @@ themeSwitcherToggle.addEventListener('change', () => {
   darkSideStatus(themeSwitcherToggle.checked)
 })
 
-
 // switch media queries
 
 function darkSideStatus(status) {
@@ -116,7 +104,3 @@ darkSideStatus(darkSide.matches)
 darkSide.addListener((e) => {
   darkSideStatus(e.matches)
 })
-
-
-
-
