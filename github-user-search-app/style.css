@@ -129,6 +129,7 @@ input {
 .inner_wrapper {
   width: 90%;
   margin: 0 auto;
+  max-width: 550px;
 }
 
 /* header */
@@ -213,6 +214,8 @@ header {
 .search_bar input[type="search"]::placeholder {
   color: var(--clr-text-body);
 }
+
+input[type="search"]:focus::placeholder { color: transparent; }
 
 .btn_search {
   position: absolute;
@@ -382,6 +385,8 @@ header {
 
   }
 
+  .inner_wrapper{max-width: 800px;}
+
   .error_text{right: 130px;}
 
   .profile_card {
@@ -411,8 +416,6 @@ header {
 }
 
 @media (min-width: 900px) { 
-
-  .inner_wrapper {max-width: 800px;}
 
   .profile_card {
     padding: 2em 3em;
