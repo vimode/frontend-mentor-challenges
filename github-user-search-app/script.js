@@ -50,11 +50,11 @@ async function searchUser(event) {
     pRepo.textContent = public_repos;
     pFollowers.textContent = followers;
     pFollowing.textContent = following;
-    location ? pLocation.textContent = location : pLocation.textContent = `Not Available`;
-    blog ? pURL.href = `https://${blog}` : pURL.href = "https:/github.com";
-    blog ? pURL.textContent = blog : pURL.textContent = `Not Available`;
-    twitter_username ? pTwitter.textContent = twitter_username : pTwitter.textContent = 'Not Available';
-    company ? pCompany.textContent = company : pCompany.textContent = "Not Available";
+    location ? (pLocation.textContent = location, pLocation.style.opacity = "1") : (pLocation.textContent = `Not Available`, pLocation.style.opacity = "0.5");
+    blog ? pURL.href = `${blog}` : pURL.href = "";
+    blog ? (pURL.textContent = blog, pURL.style.opacity = "1") : (pURL.textContent = `Not Available`, pURL.style.opacity = "0.5");
+    twitter_username ? (pTwitter.textContent = twitter_username, pTwitter.style.opacity = "1") : (pTwitter.textContent = 'Not Available', pTwitter.style.opacity = "0.5");
+    company ? (pCompany.textContent = company, pCompany.style.opacity = "1") : (pCompany.textContent = "Not Available", pCompany.style.opacity = "0.5");
 
     pCard.classList.add('show');
 
@@ -84,7 +84,6 @@ themeSwitcherToggle.addEventListener('change', () => {
 
 function darkSideStatus(status) {
   body.classList.toggle('dark_theme', status);
-  console.log(status)
   if (status) {
     labelText.textContent = 'LIGHT';
     // themeSwitcherToggle.checked = "true"
