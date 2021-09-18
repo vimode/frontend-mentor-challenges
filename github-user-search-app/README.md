@@ -48,6 +48,7 @@ And surprisingly a new thing about `toggle()` method, how it accepts an optional
 
 - Toggle is buggy
 - read todo in js
-- change text color if data received is null
+- mobile to table design is too stretched.
+- check laptop view padding
 - Live solution screenshot(s)
 - On submit update README with : Solution submitted at Frontend Mentor - [Submission Link]()
