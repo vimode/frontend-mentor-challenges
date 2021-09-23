@@ -63,6 +63,7 @@ Challenges on FrontendMentor are categorised based on a difficulty level.
 - Launch Countdown Timer
 - Manage Landing Page
 - Creative Single Page Site
+- Clock App
 
 ### Advanced
 
