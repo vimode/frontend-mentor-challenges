@@ -363,7 +363,6 @@ footer .att a{color : var(--clr-text);}
 
 }
 
-
 @media(min-width: 900px) {
   :root {
     --fs-h1: 200px;

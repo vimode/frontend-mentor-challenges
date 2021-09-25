@@ -7,12 +7,12 @@ let daysCount = document.querySelector('.days_count');
 let weekDay = document.querySelector('.week_day');
 let WeekCount = document.querySelector('.week_count');
 let greeting = document.querySelector('.clock_greeting');
-let outerWrapper = document.querySelector('.outer_wrapper')
+let outerWrapper = document.querySelector('.outer_wrapper');
 
 
 
 const getTime = async () => {
-  const response = await fetch("http://worldtimeapi.org/api/ip")
+  const response = await fetch("https://worldtimeapi.org/api/ip")
 
   try {
     const data = await response.json();
