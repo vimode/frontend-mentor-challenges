@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <link rel="stylesheet" href="/time-tracking-dashboard/style.css">
+
+  <script src="/time-tracking-dashboard/script.js" defer></script>
+
+  <title>Time tracking dashboard</title>
+
+</head>
+
+<body>
+
+  <div class="outer_wrapper grid_">
+    <main class="main_content grid_">
+      <section class="profile_content flex_">
+        <div class="profile_top flex_">
+          <figure>
+            <img src="/time-tracking-dashboard/images/image-jeremy.png" alt="Jeremy Robson">
+          </figure>
+          <div class="profile_details">
+            <p class="profile_title">Report for</p>
+            <h2 class="profile_username">Jeremy Robson</h2>
+          </div>
+        </div>
+        <ul class="profile_bottom flex_">
+          <li>
+            <h3 class="display_daily">Daily</h3>
+          </li>
+          <li class="display_active">
+            <h3 class="display_weekly">Weekly</h3>
+          </li>
+          <li>
+            <h3 class="display_monthly">Monthly</h3>
+          </li>
+        </ul>
+      </section>
+
+      <ul class="time_cards grid_">
+
+        <li class="single_card card_one">
+          <div class="inner_card flex_">
+            <div class="inner_title flex_">
+              <h3>Work</h3>
+              <img src="/time-tracking-dashboard/images/icon-ellipsis.svg" alt="more">
+            </div>
+
+            <div class="inner_timeframes flex_">
+              <h1 class="current_time" id="w_hrs">32hrs</h1>
+              <div class="previous_data flex_">
+                <p class="previous_time_title" id="w_text">Last Week - </p>
+                <p class="previous_time" id="w_prev">36hrs</p>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="single_card card_two">
+          <div class="inner_card flex_">
+            <div class="inner_title flex_">
+              <h3>Play</h3>
+              <img src="/time-tracking-dashboard/images/icon-ellipsis.svg" alt="more">
+            </div>
+
+            <div class="inner_timeframes flex_">
+              <h1 class="current_time" id="p_hrs">10hrs</h1>
+              <div class="previous_data flex_">
+                <p class="previous_time_title" id="p_text">Last Week - </p>
+                <p class="previous_time" id="p_prev">8hrs</p>
+              </div>
+            </div>
+          </div>
+        </li>
+
+
+        <li class="single_card card_three">
+          <div class="inner_card flex_">
+            <div class="inner_title flex_">
+              <h3>Study</h3>
+              <img src="/time-tracking-dashboard/images/icon-ellipsis.svg" alt="more">
+            </div>
+
+            <div class="inner_timeframes flex_">
+              <h1 class="current_time">4hrs</h1>
+              <div class="previous_data flex_">
+                <p class="previous_time_title">Last Week - </p>
+                <p class="previous_time">7hrs</p>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="single_card card_four">
+          <div class="inner_card flex_">
+            <div class="inner_title flex_">
+              <h3>Exercise</h3>
+              <img src="/time-tracking-dashboard/images/icon-ellipsis.svg" alt="more">
+            </div>
+
+            <div class="inner_timeframes flex_">
+              <h1 class="current_time">4hrs</h1>
+              <div class="previous_data flex_">
+                <p class="previous_time_title">Last Week - </p>
+                <p class="previous_time">5hrs</p>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="single_card card_five">
+          <div class="inner_card flex_">
+            <div class="inner_title flex_">
+              <h3>Social</h3>
+              <img src="/time-tracking-dashboard/images/icon-ellipsis.svg" alt="more">
+            </div>
+
+            <div class="inner_timeframes flex_">
+              <h1 class="current_time">5hrs</h1>
+              <div class="previous_data flex_">
+                <p class="previous_time_title">Last Week - </p>
+                <p class="previous_time">10hrs</p>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="single_card card_six">
+          <div class="inner_card flex_">
+            <div class="inner_title flex_">
+              <h3>Self Care</h3>
+              <img src="/time-tracking-dashboard/images/icon-ellipsis.svg" alt="more">
+            </div>
+
+            <div class="inner_timeframes flex_">
+              <h1 class="current_time">2hrs</h1>
+              <div class="previous_data flex_">
+                <p class="previous_time_title">Last Week - </p>
+                <p class="previous_time">2hrs</p>
+              </div>
+            </div>
+          </div>
+        </li>
+
+      </ul>
+
+      <footer>
+        <p class="att"> Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend
+            Mentor</a>
+          <br>
+          Coded by <a href="https://github.com/ppusher/frontend-mentor-challenges">ppusher</a>
+        </p>
+      </footer>
+    </main>
+
+
+  </div>
+
+
+</body>
+
+</html>
