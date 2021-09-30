@@ -56,6 +56,7 @@ Challenges on FrontendMentor are categorised based on a difficulty level.
 - Huddle Landing page with alternating feature blocks
 - Blogr landing page
 - Github User Search App
+- Time Tracking Dashboard
 
 ### Intermediate
 
