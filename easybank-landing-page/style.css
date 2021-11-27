@@ -163,7 +163,6 @@ header{
   border-bottom: 4px transparent solid;
   padding-block: 30px;
   transition: border 350ms linear, color 350ms linear;
-  
 }
 
 .nav_item_link:hover,
