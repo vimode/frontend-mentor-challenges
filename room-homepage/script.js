@@ -1,5 +1,6 @@
 const navBtn = document.querySelector('.navbar_buttons');
 const body = document.querySelector('body');
+const navItems = document.querySelectorAll('.nav_item')
 
 const arrowButtons = document.querySelector('.hero_buttons')
 
@@ -57,6 +58,12 @@ arrowButtons.addEventListener('click', (e) => {
 // nav
 navBtn.addEventListener('click', () => {
   body.classList.toggle('open')
-  console.log('clicked')
+})
+
+//close nav when link is clicked 
+navItems.forEach(item => {
+  item.addEventListener('click', () => {
+    body.classList.remove('open')
+  })
 })
 
