@@ -62,3 +62,5 @@ Experience : Desktop first CSS feels more comfortable to use and creating the mo
 #### Pending tasks
 
 - Hero section alignment with the rest of sections. Its off because of the image, find a better way to create a layout that aligns with rest of the sections.
+- image under blog_snippet_item grid_ for chrome needs to remove max-width:max-content. Its offset on chrome. 
+        
