@@ -5,14 +5,14 @@
 
 /* theme toggle */
 
-.theme_switcher input[type="checkbox"]:checked {
+.theme_switcher input[type="checkbox"] {
   appearance: none;
   background: url('./../assets/img/icon-moon.svg') no-repeat;
   width: 1.5em;
   height: 1.5em;
 }
 
-.theme_switcher input[type="checkbox"] {
+.theme_switcher input[type="checkbox"]:checked{
   appearance: none;
   background: url('./../assets/img/icon-sun.svg') no-repeat;
   width: 1.5em;

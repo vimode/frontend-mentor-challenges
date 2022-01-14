@@ -26,9 +26,9 @@ const Header = ({updateSearchQuery, fetchError}) => {
   // switch theme
   useEffect(() => {
     if(switchTheme) {
-      document.querySelector('body').classList.remove('dark_theme')
+      document.querySelector('body').classList.add('dark_theme')
     }else {
-    document.querySelector('body').classList.add('dark_theme')
+    document.querySelector('body').classList.remove('dark_theme')
     }
   }, [switchTheme]);
 
@@ -46,7 +46,7 @@ const Header = ({updateSearchQuery, fetchError}) => {
           onChange = {handleChange} 
           checked={switchTheme}
           id="theme_checkbox" />
-          <label htmlFor="theme_checkbox" name="mode" id="mode">{switchTheme ? "DARK" : "LIGHT"}</label>
+          <label htmlFor="theme_checkbox" name="mode" id="mode">{switchTheme ? "LIGHT" : "DARK"}</label>
         </div>
       </div>
 
