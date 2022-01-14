@@ -5,7 +5,7 @@ import './Header.css';
 const Header = ({updateSearchQuery, fetchError}) => {
   
   const [searchQuery, setSearchQuery] = useState("");
-  const [switchTheme, setSwitchTheme] = useState(true)
+  const [switchTheme, setSwitchTheme] = useState(false)
 
   // handle search input change
   const handleChange = (event) => {
@@ -25,7 +25,11 @@ const Header = ({updateSearchQuery, fetchError}) => {
 
   // switch theme
   useEffect(() => {
-    document.querySelector('body').classList.toggle('dark_theme')
+    if(switchTheme) {
+      document.querySelector('body').classList.remove('dark_theme')
+    }else {
+    document.querySelector('body').classList.add('dark_theme')
+    }
   }, [switchTheme]);
 
 
