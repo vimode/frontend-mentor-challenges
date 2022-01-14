@@ -1,0 +1,105 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  font-size: var(--fs-body);
+}
+
+/* ROOT */
+
+:root {
+  --ff-primary : 'Space Mono', monospace; 
+  
+  --fw-reg: 400;
+  --fw-bold: 700;
+
+  --fs-body: 13px;
+  --fs-title-text : 11px;
+  --fs-bold-text: 16px;
+  --fs-h1: 26px;
+  --fs-h2: 22px;
+  --fs-h3: 16px;
+  --fs-h4: 13px;
+  --fs-btn-text: 14px;
+  --fs-att : 11px;
+
+
+  --lh-body: 25px;
+  --lh-h1: 38px;
+  --lh-h2: 33px;
+  --lh-h3: 24px;
+  --lh-h4: 20px;
+
+  --ls-switch-text : 2.5px;
+  
+  --clr-text-title: hsl(217, 20%, 51%);
+  --clr-text-body : hsl(217, 35%,45%);
+  --clr-heading-text : hsl(217, 35%, 45%);
+  --clr-name-text : hsl(220, 40%, 13%);
+  --clr-link : hsl(212, 100%, 50%);
+  --clr-body-bg: hsl(227, 100%, 98%);
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-main-bg: hsl(0,0%,100%);
+
+  
+  --clr-box-shadow-light: hsla(220, 40%, 13%, 0.2);
+  
+  --clr-primary-btn : hsl(212, 100%, 50%);
+  --clr-primary-btn-hover: hsl(212, 100%, 69%);
+  --clr-error-red: hsl(0, 91%, 62%);
+
+}
+
+.dark_theme {
+  --clr-body-bg: hsl(220, 40%, 13%);
+  --clr-main-bg: hsl(222, 41%, 20%);
+  --clr-text-body :hsl(0, 0%, 100%);
+  --clr-name-text : hsl(0, 0%, 100%);
+  --clr-link : hsl(0,0%, 100%);
+}
+
+/* general */
+
+body {
+  font-family: var(--ff-primary);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  height: 100vh;
+  width: 100vw;
+  color: var(--clr-text-body);
+}
+
+#root {height: 100vh;}
+
+/* media queries */
+
+@media(min-width: 768px) {
+
+  :root {
+    
+    --fs-body: 15px;
+    --fs-title-text : 13px;
+    --fs-bold-text: 22px;
+    --fs-h1: 26px;
+    --fs-h2: 22px;
+    --fs-h3: 16px;
+    --fs-h4: 13px;
+    --fs-btn-text: 16px;
+    --fs-bold-text: 26px;
+    --fs-placeholder-text: 18px;
+    --fs-att : 12px;
+  
+    --lh-body: 25px;
+    --lh-h1: 38px;
+    --lh-h2: 33px;
+    --lh-h3: 24px;
+    --lh-h4: 20px;
+
+    --ls-switch-text : 2.5px;
+
+  }
+  
+}

@@ -1,0 +1,152 @@
+/* card */
+
+.card {
+  flex-direction: column;
+  place-items: center;
+  gap: 2em;
+}
+
+
+/* profile card */
+
+.profile_card {
+  place-content: center;
+  grid-template-areas:
+  "p_img p_name p_name"
+  "p_img p_username p_username"
+  "p_img p_date p_date"
+  "p_bio p_bio p_bio"
+  "p_stats p_stats p_stats"
+  "p_info_b p_info_b p_info_b"
+  "p_info_a p_info_a p_info_a";
+  background: var(--clr-main-bg);
+  border-radius: 10px;
+  box-shadow: 0px 6px 20px var(--clr-box-shadow-light);  
+  padding: 2em;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.profile_card a:hover,
+.profile_card a:focus {
+  text-decoration: underline;
+}
+
+/* profile inner card details */
+
+.profile_image {
+  grid-area: p_img;
+  margin: 0 auto;
+}
+
+.profile_image img {
+  width: 80%;
+  border-radius: 100%;
+}
+
+.profile_name {
+  grid-area: p_name;
+  color: var(--clr-name-text);
+  font-size: var(--fs-bold-text);
+  align-self: flex-end;
+}
+
+.profile_username {
+  grid-area: p_username;
+  color: var(--clr-primary-btn);
+  align-self: flex-start;
+}
+
+.profile_date {
+  grid-area: p_date;
+  align-self: flex-end;
+}
+
+.profile_bio {
+  grid-area: p_bio;
+  margin-top: 2em;
+}
+
+.profile_stats {
+  grid-area: p_stats;
+  place-content: center;
+  text-align: center;
+  justify-content: space-between;
+  padding: 0 2em;
+  margin: 2em 0;
+  background: var(--clr-body-bg);
+  padding: 1em 2em;
+  border-radius: 10px;
+}
+
+.profile_info_b {
+  grid-area: p_info_a;
+  margin-top: 1em;
+}
+
+.profile_info_a {grid-area: p_info_b;}
+
+.profile_info  {
+  flex-direction: column;
+  gap: 1em;
+  place-content: center;
+}
+
+.info_text {gap: 1em;}
+
+.stats_number {
+  color: var(--clr-name-text);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-bold-text);
+}
+
+@media(min-width: 768px) {
+
+  .profile_card {
+    padding: 2em 3em;
+    grid-template-areas:
+    "p_img p_name p_name -"
+    "p_img p_username p_username - "
+    "p_img p_date p_date - "
+    "p_bio p_bio p_bio p_bio"
+    "p_stats p_stats p_stats p_stats"
+    "p_info_b p_info_b p_info_a p_info_a"
+    "p_info_b p_info_b p_info_a p_info_a";
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .profile_image img{width: 80%;}
+
+  .profile_date {align-self: unset;}
+
+  .profile_info {place-content: unset;}
+
+  .profile_stats {text-align: left;}
+
+  .stats_number {font-size: 22px;}
+
+  .profile_info_b {margin-top: unset;}
+}
+
+@media (min-width: 900px) { 
+
+  .profile_card {
+    padding: 2em 3em;
+    grid-template-areas:
+    "p_img p_name p_date"
+    "p_img p_username p_username "
+    "p_img p_bio p_bio "
+    "- p_stats p_stats"
+    "- p_info_b p_info_a"
+    "- p_info_b p_info_a";
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .profile_image img {width: 60%;}
+
+  .profile_name{align-self: unset;}
+
+  .profile_date {justify-self: flex-end;}
+
+  .profile_info_b{margin-left: 2em;}
+}
+
