@@ -43,5 +43,7 @@ The layout of this one was a little challenging as the image whic his part of th
 
 ##### Pending tasks
 
+- Fix the scroll issue for laptop view.
+- Typography fixes
 - Live solution screenshot(s)
 - Submit to frontendmentor and add Solution submitted at Frontend Mentor - [Submission link]()
