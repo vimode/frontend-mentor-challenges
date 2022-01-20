@@ -1,0 +1,58 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: var(--fs-body);
+}
+
+/* ROOT */
+
+:root {
+  --ff-primary : 'Spartan', sans-serif;
+
+  --fs-body : 15px;
+
+  --fw-med : 500;
+  --fw-bold: 700;
+
+  --clr-primary : hsl(180, 29%, 50%);
+  --clr-primary-bg : hsl(180, 52%, 96%);
+  --clr-filter-bg : hsl(180, 31%, 95%);
+  --clr-highlight-new: hsl(180, 8%, 52%);
+  --clr-highlight-features : hsl(180, 14%, 20%);
+
+}
+
+/* GENERAL */
+
+body {
+  font-family: var(--ff-primary);
+  background: var(--clr-primary-bg);
+  font-weight: var(--fw-med);
+}
+
+img {
+  display:block;
+  width: 100%;
+}
+
+ul li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.flex_ {display:flex;}
+
+.grid_ {display:grid;}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+/* MEDIA QUERIES */

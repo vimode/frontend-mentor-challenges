@@ -1,0 +1,14 @@
+.header_wrapper {
+  background: var(--clr-primary);
+  width: 100%;
+}
+
+.desktop_header_img {
+  display:none;
+}
+
+@media (min-width: 600px) {
+  .desktop_header_img {display: block;}
+
+  .mobile_header_img {display:none;}
+}
