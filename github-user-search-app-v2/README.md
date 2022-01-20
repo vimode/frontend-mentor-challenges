@@ -1,3 +1,10 @@
+Pending tasks
+
+- cursor pointer on toggle text
+- hover properties for hover
+- opacity change for not available data
+- API error handling and error text bug
+
 This is a redo of [GitHub user Search app](https://github.com/ppusher/frontend-mentor-challenges/tree/master/github-user-search-app) in React
 
 # Getting Started with Create React App
