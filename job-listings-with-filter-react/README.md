@@ -47,7 +47,7 @@ To add a filter, the user needs to click on the tablets on the right-side of the
 - [React](https://reactjs.org/) - JS library
 - Snowpack
 
-### What I learned and continious development
+### What I learned and continuous development
 
 Using snowpack really was fun. Its easy and as much as I like the CRA to spin up a quick React project it feels like a blackbox which I cannot probe.
 
