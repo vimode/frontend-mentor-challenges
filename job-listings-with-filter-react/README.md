@@ -49,6 +49,10 @@ To add a filter, the user needs to click on the tablets on the right-side of the
 
 ### What I learned and continuous development
 
+_WIP_
+
+Fulfilling the option 2 of the challenge.
+
 Using snowpack really was fun. Its easy and as much as I like the CRA to spin up a quick React project it feels like a blackbox which I cannot probe.
 
 Snowpack on the other hand gives a lot of freedom + also helps understanding whats happening under the hood.
