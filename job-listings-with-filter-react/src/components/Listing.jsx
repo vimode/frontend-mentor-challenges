@@ -3,8 +3,8 @@ import React, { useState, useEffect } from 'react';
 import './Listing.css'
 import listingData from '../assets/data.json';
 
-import SingleItem from './SingleItem.jsx';
-import Filters from './Filters.jsx';
+import SingleItem from './SingleItem';
+import Filters from './Filters';
 
 const Listing = () => {
 

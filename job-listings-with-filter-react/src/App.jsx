@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
 
-import  Header from './components/Header.jsx';
-import Listing from './components/Listing.jsx';
+import Header from './components/Header';
+import Listing from './components/Listing';
 
 const App = () => {
   
