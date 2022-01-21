@@ -1,7 +1,6 @@
 .filter_wrapper  {
   background: #fff;
   padding: 1.5em;
-  max-width: 1440px;
   width: 90%;
   justify-content: space-between;
   box-shadow: 0 10px 30px -20px var(--clr-primary);
@@ -71,7 +70,7 @@
   }
 
   .filter_wrapper {
-    max-width: 1440px;
+    max-width: 1300px;
   }
 
 }

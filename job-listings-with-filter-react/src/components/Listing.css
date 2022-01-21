@@ -11,6 +11,10 @@
   padding-block: 150px;
 }
 
+.unexpected_error {
+  place-content: center;
+}
+
 @media( min-width: 600px) {
   .listing_wrapper {
     padding-block: 100px;

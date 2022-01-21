@@ -53,7 +53,7 @@ _WIP_
 
 Fulfilling the option 2 of the challenge.
 
-Using snowpack really was fun. Its easy and as much as I like the CRA to spin up a quick React project it feels like a blackbox which I cannot probe.
+Using snowpack was fun. Its easy and as much as I like the CRA to spin up a quick React project it always feels like a blackbox which I cannot probe to fully understand.
 
 Snowpack on the other hand gives a lot of freedom + also helps understanding whats happening under the hood.
 

@@ -36,6 +36,7 @@ const Listing = () => {
 
   // accepts the above filter function
   const filteredListing = listingItems.filter(filterFunction);
+  
 
   // delete the single filter 
   const handleRemoveFilter = (filter) => {
@@ -66,14 +67,21 @@ const Listing = () => {
         )}
 
       <section className="listing_wrapper flex_">
-        
-          {filteredListing.map((listingItem)=> 
+
+        {filteredListing.length > 0 ?         
+          filteredListing.map((listingItem)=> 
             <SingleItem
               listingItem = {listingItem}
               key = {listingItem.id}
               handleTagClick = {handleTagClick}
             />            
-          )}
+          ) : 
+
+          <div className="unexpected_error flex_">
+            <p>Send Help!😱</p>
+          </div>
+
+        }
 
       </section>
     </main>
