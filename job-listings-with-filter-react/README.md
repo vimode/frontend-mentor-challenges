@@ -66,3 +66,9 @@ In this current project build, the hover state on click is retained for the tag.
 - [Snowpack : Getting Started with React](https://www.snowpack.dev/tutorials/react)
 - [.filter()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
 - [.every()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every)
+
+##### Pending Tasks
+
+- Make the listing generation dynamic. currently its just filtering and updating the DOM.
+- Fix typography.
+- Fix tablet view.
