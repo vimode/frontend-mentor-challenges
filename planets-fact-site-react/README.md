@@ -22,13 +22,20 @@ Your users should be able to:
 
 - Semantic HTML5 markup
 - CSS custom properties
-- Flexbox
+- CSS Grid
+- CSS Flexbox
 - [React](https://reactjs.org/) - JS library
 - Snowpack
 
 ### What I learned and continuous development
 
 _WIP_
+
+This was the first time typing react-router-dom and ContextAPI.
+The usage of ContextAPI was unnecessary, but this was a good introduction and implementation attempt at it. ContextAPI is simple to use and is looks very useful. After using it for the wrong purpose in this challenge, I am understanding where it can be used more effectively.
+Understanding react-router-dom was not difficult, but its nuances are a little hard to get used to. I failed to make it work properly, but it works partially.
+Doing a mobile nav in React is a little simple than doing in vanilla JS projects. A lot of edge cases to handle. In vanilla JS you can rely on CSS to cover most of the issues but not in here.
+The CSS was very detailed and extensive but fairly simple.
 
 ### Useful resources
 
