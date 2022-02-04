@@ -1,0 +1,253 @@
+.nav_items {
+  position:absolute;
+  flex-direction: column;
+  height: 88vh;
+  left: 0;
+  padding-inline: 1.5em;
+  top: 80px;
+  width: 100%;
+  background: var(--clr-body-bg);
+  z-index: 300;
+}
+
+.nav_items_hidden {
+  display:none;
+}
+
+.nav_icon_opacity {opacity: 0.5;}
+
+.nav_item {
+  place-items:center;
+  justify-content: space-between;
+  padding-block: 2.75em;
+  border-bottom: 1px solid var(--clr-white-alt);
+  position:relative;
+}
+
+.nav_item a {
+  padding-left: 2.5em;
+}
+
+.nav_item:last-of-type {
+  border-bottom:unset;
+}
+
+.nav_item::before {
+  content: "";
+  position:absolute;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+}
+
+.nav_item:nth-child(1)::before {
+  background:var(--clr-primary-highlight-one-alt);
+}
+
+.nav_item:nth-child(2)::before {
+  background:var(--clr-primary-highlight-two-alt);
+}
+
+.nav_item:nth-child(3)::before {
+  background:var(--clr-primary-highlight-three-alt);
+}
+
+.nav_item:nth-child(4)::before {
+  background:var(--clr-primary-highlight-four-alt);
+}
+
+.nav_item:nth-child(5)::before {
+  background:var(--clr-primary-highlight-five-alt);
+}
+
+.nav_item:nth-child(6)::before {
+  background:var(--clr-primary-highlight-six-alt);
+}
+
+.nav_item:nth-child(7)::before {
+  background:var(--clr-primary-highlight-seven-alt);
+}
+
+.nav_item:nth-child(8)::before {
+  background:var(--clr-primary-highlight-eight-alt);
+}
+
+.nav_items li a {
+  font-size: 15px;
+  font-weight: var(--fw-bold);
+  line-height: 25px;
+  letter-spacing: 1.4px;
+}
+
+.mobile_nav_icons {
+  cursor:pointer;
+}
+
+@media( min-width: 768px) {
+
+  .mobile_nav_icons,
+  .mobile_chevron{
+    display:none;
+  }
+
+  .navbar {width: 100%;}
+
+  .nav_items_hidden {
+    display:flex;
+    gap: 4em;
+    font-size: var(--fs-body);
+    letter-spacing: var(--ls-body);
+    line-height: var(--lh-body);
+    font-weight: var(--fw-bold);
+    position:unset;
+    height: unset;
+    padding-inline: unset;
+    background: unset;
+    max-width: max-content;
+    margin: 0 auto;
+  }
+
+  .nav_item {
+    place-items:unset;
+    padding-block: unset;
+    border-bottom:unset;
+  }
+
+  .nav_link {
+    opacity: 0.75;
+    border-bottom: 4px solid transparent;
+  }
+
+  .nav_link:hover {
+    opacity: 1;
+    transition: 350ms opacity, border-top linear;
+  }
+
+  .nav_items_hidden a {
+    padding-block: 2em; 
+  }
+
+  .nav_item a {
+    padding-left: unset;
+  }
+
+  .nav_item::before {
+    content:none;
+  }
+
+  .nav_link_Mercury,
+  .nav_item_Mercury .nav_link:hover{
+    border-bottom: 4px solid var(--clr-primary-highlight-one);
+  }
+
+  .nav_link_Venus,
+  .nav_item_Venus .nav_link:hover {
+    border-bottom: 4px solid var(--clr-primary-highlight-two);
+  }
+
+  .nav_link_Earth,
+  .nav_item_Earth .nav_link:hover {
+    border-bottom: 4px solid var(--clr-primary-highlight-three)
+  }
+
+  .nav_link_Mars,
+  .nav_item_Mars .nav_link:hover {
+    border-bottom: 4px solid var(--clr-primary-highlight-four);
+  }
+
+  .nav_link_Jupiter,
+  .nav_item_Jupiter .nav_link:hover {
+    border-bottom: 4px solid var(--clr-primary-highlight-five);
+  }
+
+  .nav_link_Saturn,
+  .nav_item_Saturn .nav_link:hover {
+    border-bottom: 4px solid var(--clr-primary-highlight-six);
+  }
+
+  .nav_link_Uranus,
+  .nav_item_Uranus .nav_link:hover {
+    border-bottom: 4px solid var(--clr-primary-highlight-seven);
+  }
+
+  .nav_link_Neptune,
+  .nav_item_Neptune .nav_link:hover {
+    border-bottom: 4px solid var(--clr-primary-highlight-eight);
+  }
+}
+
+@media(min-width: 1200px) {
+
+  .navbar {width: unset;}
+
+  .nav_items_hidden {
+    font-size: var(--fs-h4);
+    letter-spacing: var(--ls-h4);
+    line-height: var(--lh-h4);
+    width: max-content;
+    gap: 2em;
+  }
+
+  .nav_link {
+    opacity: 0.75;
+    border-top: 4px solid transparent;
+  }
+
+  .nav_items_hidden a {
+    padding-block: 2.5em; 
+  }
+
+  .nav_items_hidden .nav_link:hover {
+    border-bottom: unset;
+  }
+
+  .nav_items_hidden li a {
+    border-bottom:unset;
+  }
+
+  .nav_items_hidden li .nav_link {
+    border-bottom: unset;
+  }
+
+  .nav_link_Mercury,
+  .nav_item_Mercury .nav_link:hover{
+    border-top: 4px solid var(--clr-primary-highlight-one);
+  }
+
+  .nav_link_Venus,
+  .nav_item_Venus .nav_link:hover {
+    border-top: 4px solid var(--clr-primary-highlight-two);
+  }
+
+  .nav_link_Earth,
+  .nav_item_Earth .nav_link:hover {
+    border-top: 4px solid var(--clr-primary-highlight-three)
+  }
+
+  .nav_link_Mars,
+  .nav_item_Mars .nav_link:hover {
+    border-top: 4px solid var(--clr-primary-highlight-four);
+  }
+
+  .nav_link_Jupiter,
+  .nav_item_Jupiter .nav_link:hover {
+    border-top: 4px solid var(--clr-primary-highlight-five);
+  }
+
+  .nav_link_Saturn,
+  .nav_item_Saturn .nav_link:hover {
+    border-top: 4px solid var(--clr-primary-highlight-six);
+  }
+
+  .nav_link_Uranus,
+  .nav_item_Uranus .nav_link:hover {
+    border-top: 4px solid var(--clr-primary-highlight-seven);
+  }
+
+  .nav_link_Neptune,
+  .nav_item_Neptune .nav_link:hover {
+    border-top: 4px solid var(--clr-primary-highlight-eight);
+  }
+
+}

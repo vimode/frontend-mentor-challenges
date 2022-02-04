@@ -1,0 +1,6 @@
+.outer_wrapper {
+  background: url(./assets/background-stars.svg), var(--clr-body-bg);
+  min-height: 100vh;
+  height: 100%;
+  flex-direction: column;
+}

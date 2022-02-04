@@ -1,0 +1,33 @@
+.brand_header {
+  place-content : space-between;
+  padding : 2em 3em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--clr-white-alt);
+}
+
+.brand_logo {
+  font-family: var(--ff-secondary);
+  font-size: 28px;
+  letter-spacing: -1.05px;
+}
+
+.brand_header a {
+  color: var(--clr-white);
+}
+
+@media(min-width: 768px) {
+  .brand_header {
+    padding: 2em 3em 0 3em;
+    flex-direction: column;
+    place-items: center;
+    gap: 1em;
+  }
+}
+
+@media(min-width: 1200px) {
+  .brand_header {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 3em;
+  }
+}
