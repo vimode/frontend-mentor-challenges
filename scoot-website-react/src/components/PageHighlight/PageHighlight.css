@@ -1,0 +1,136 @@
+
+.pageHighlight { 
+  padding-block: 6em;
+  position:relative;
+}
+
+.pageHighlight_wrapper {
+  flex-direction: column;
+  place-items: center;
+}
+
+.highlight_content {
+  flex-direction: column;
+  row-gap: 2em;
+  order: 2;
+  place-items: center;
+  text-align: center;
+}
+
+.highlight_content p {
+  max-width:35ch;
+}
+
+.highlight_content h2 {
+  max-width: 15ch;
+}
+
+.highlight_image {order: 1;}
+
+.highlight_image img {
+  border-radius: 50%;
+  position:relative;
+  z-index: -100;
+  margin: 0 auto;
+  width: 80%
+}
+
+.feature_highlight_a.pageHighlight:before {
+  background:  url(./assets/patterns/left-downward-arrow.svg) no-repeat top 20% right 100%;
+  position:absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+}
+
+.feature_highlight_b.pageHighlight:before {
+  background:url(./assets/patterns/right-arrow.svg) no-repeat top left -100px;
+  position:absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+}
+
+
+/* MEDIA QUERIES */
+
+@media ( min-width: 768px) {
+
+  .highlight_content p {
+    max-width: 60ch;
+  }
+  
+  .feature_highlight_a {
+    background: 
+    url(./assets/patterns/circle.svg) no-repeat top 40px right -350px;
+    position:relative;
+  }
+
+  .feature_highlight_b {
+    background: 
+    url(./assets/patterns/circle.svg) no-repeat center left -350px;
+    position:relative;
+  }
+
+  .highlight_image img {
+    width: 80%;
+  }
+
+  .pageHighlight_wrapper {
+    gap: 2em;
+  }
+
+}
+
+
+@media( min-width: 1000px) {
+
+  .pageHighlight_wrapper {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: unset;
+  }
+
+  .feature_highlight_a.pageHighlight:before {
+    background:  url(./assets/patterns/left-downward-arrow.svg) no-repeat bottom 150px right -100px;
+    position:absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+  }
+  
+  .feature_highlight_b.pageHighlight:before {
+    background:  
+    url(./assets/patterns/right-arrow.svg) no-repeat top left -100px;
+    position:absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+  }
+
+  .flex_inverted .pageHighlight_wrapper{
+    flex-direction: row-reverse;
+  }
+
+  .highlight_content h2 {
+    max-width: 15ch;
+  }
+
+  .highlight_content p {
+    max-width: 50ch;
+  }
+
+  .highlight_content { 
+    order: 1;
+    place-items: unset;
+    text-align: left;
+  }
+
+  .highlight_image { order: 2;}
+
+  .highlight_image img {
+    width: 100%;
+  }
+  
+}
+

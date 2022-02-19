@@ -1,0 +1,172 @@
+/* * {border: 1px solid red;} */
+
+.heroHomePage > * {
+  color: var(--clr-white);
+}
+
+.heroHomePage .hero_title {
+  min-width: 12ch;
+  color: var(--clr-white);
+}
+
+.heroHomePage {
+  background: 
+  url(./assets/patterns/right-arrow.svg) no-repeat bottom 10% left 800%,     
+  url(./assets/images/home-hero-mobile.jpg) no-repeat center/cover;
+  padding-block: 10em;
+}
+
+.hero_wrapper {
+  flex-direction: column;
+  place-items: center;
+  text-align: center;
+  gap : 2em;
+}
+
+.hero_features {
+  padding-block: 3em;
+}
+
+.hero_features_cards {
+  flex-direction: column;
+  gap: 3em;
+}
+
+.heroHomePage p {
+  min-width: 35ch;
+}
+
+.feature_card {
+  flex-direction: column;
+  place-items: center;
+  text-align: center;
+  gap: 1em;
+  align-self: center;
+}
+
+.feature_card_content {
+  flex-direction: column;
+  gap: 1em;
+}
+
+.feature_card svg {
+  transform: scale(0.75);
+}
+
+.feature_card p {
+  width: 35ch;
+}
+
+
+/* MEDIA QUERIES */
+
+@media ( min-width: 768px) {
+
+  .heroHomePage {
+    background: 
+    url(./assets/patterns/white-circles.svg) no-repeat bottom 10% right -40px, 
+    url(./assets/patterns/right-arrow.svg) no-repeat bottom 10% left -45%,     
+    url(./assets/images/home-hero-tablet.jpg) no-repeat center/cover;
+  }
+
+  .hero_title {
+    max-width: 15ch;
+  }
+
+  .hero_content_text  p {
+    max-width: 60ch;
+  }
+
+  .feature_card {
+    flex-direction: row;
+  }
+
+  .feature_card {
+    text-align: left;
+    gap: 2em 4em;
+
+  }
+
+  .feature_card svg {
+    align-self: flex-start;
+  }
+
+  .hero_features {
+    position:relative;
+    padding-block:5em;
+  }
+
+  .herolines {
+    background: url(./assets/patterns/line.svg) repeat-x 100%;
+    width: 70%;
+    height: 50px;
+    position: absolute;
+    transform: rotate(90deg);
+    top:30%;
+    left: -8.5%;
+    z-index: -100;
+    filter :  contrast(240%) grayscale(100%);
+  }
+
+}
+
+@media (min-width: 1000px) {
+  .heroHomePage {
+    background: 
+    url(./assets/patterns/white-circles.svg) no-repeat bottom 28% right -40px, 
+    url(./assets/patterns/line.svg) no-repeat top 55% left, 
+    url(./assets/patterns/right-arrow.svg) no-repeat bottom 30% right 25%,     
+    url(./assets/images/home-hero-desktop.jpg) no-repeat center/cover;
+  }
+
+  .heroHomePage .hero_title {
+    max-width: 15ch;
+  }
+  
+  .hero_content_text p {
+    max-width: 45ch;
+    transform: translateX(150px);
+  }
+
+  .heroHeaderBtn {
+    transform: translateX(150px);
+  }
+
+  .hero_wrapper{
+    flex-direction: column;
+    gap: 2em;
+    text-align: left;
+    place-items: unset;
+  }
+  .hero_features {
+    padding-block: 4em;
+    position: relative;
+  }
+
+  .herolines {
+    background: url(./assets/patterns/line.svg) repeat-x 100%;
+    width: 75%;
+    height: 50px;
+    position: absolute;
+    top: 20%;
+    z-index: -100;
+    filter :  contrast(240%) grayscale(100%);
+    transform: rotate(0);
+    left: 0;
+  }
+
+  .hero_features_cards {
+    flex-direction: row;
+    column-gap: 2em;
+    justify-content: space-between;
+  }
+
+  .feature_card {
+    flex-direction: column;
+    row-gap: 2em;
+  }
+
+  .feature_card p {
+    max-width: 38ch;
+  }
+}

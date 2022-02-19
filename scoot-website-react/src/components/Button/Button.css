@@ -1,0 +1,21 @@
+.btn {
+  background: var(--clr-primary-highlight);
+  border: 2px solid transparent;
+  width: max-content;
+  height: max-content;
+  padding: 1em 2em;
+  color: var(--clr-white);
+  font-family: var(--ff-secondary);
+  cursor: pointer;
+  transition: border, color 350ms linear;
+  z-index: 200;
+}
+
+.btn:hover,
+.btn:focus {
+  border: 2px solid var(--clr-primary-highlight);
+  /* background: var(--clr-white); */
+  background: transparent;
+  color: var(--clr-primary-highlight);
+  transition: all 350ms linear;
+}

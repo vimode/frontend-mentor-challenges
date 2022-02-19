@@ -1,0 +1,48 @@
+.download_cta{
+  background: url(./assets/patterns/semi-circles.svg) no-repeat bottom right -100px, var(--clr-dark-bg);
+  padding-block: 5em;
+}
+
+.cta_wrapper {
+  place-items:center;
+  place-content: center;
+  flex-direction: column;
+  gap: 2em;
+  text-align: center;
+}
+
+.download_cta_title {
+  max-width: 15ch;
+  color: var(--clr-white);
+}
+
+.cta_download_buttons {
+  gap: 2.5em;
+}
+
+.cta_download_buttons a svg {
+  transform: scale(0.85);
+  margin: -25px;
+}
+
+/* MEDIA QUERIES */
+@media( min-width: 768px) {
+
+  .cta_wrapper {
+    flex-direction: row;
+    gap : unset;
+    text-align: left;
+  }
+
+  .cta_download_buttons {
+    justify-content: flex-end;
+    width: 100%;
+    gap: 1em;
+  }  
+
+  .cta_download_buttons a svg {
+    transform: unset;
+    margin: unset;
+  }
+
+}

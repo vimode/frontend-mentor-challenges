@@ -1,9 +1,14 @@
 import React, { useState }from "react";
 import { PlanetConsumer } from "./Context.jsx";
+import { useParams } from "react-router-dom";
 
 import "./Planet.css";
 
 const Planet = () => {
+
+  
+  const params = useParams()
+  console.log(params)
 
   const [contentOption, setContentOption] = useState('overview')
 

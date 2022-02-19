@@ -37,6 +37,15 @@ Understanding react-router-dom was not difficult, but its nuances are a little h
 Doing a mobile nav in React is a little simple than doing in vanilla JS projects. A lot of edge cases to handle. In vanilla JS you can rely on CSS to cover most of the issues but not in here.
 The CSS was very detailed and extensive but fairly simple.
 
+PENDING TASKS
+
+- widescreen fixes
+- Disabled scroll when mobile nav is open
+- Images are too big
+- Align tabs with content
+- Add some gap between text
+- All should fit in single vh for tablet.
+
 ### Useful resources
 
 > ✨ Bootstrapped with Create Snowpack App (CSA).

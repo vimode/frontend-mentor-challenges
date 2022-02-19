@@ -1,0 +1,17 @@
+.careersPage {
+  background:
+  url(./assets/images/careers-locations-hero-mobile.jpg) no-repeat center/cover;
+  text-align: center;
+}
+
+
+/* MEDIA QUERIES */
+
+@media ( min-width:768px ) {
+  .careersPage {
+    background:
+    url(./assets/patterns/white-circles.svg) no-repeat center right -30px,
+    url(./assets/images/careers-locations-hero-desktop.jpg) no-repeat center/cover;
+    text-align: unset;
+  }
+}

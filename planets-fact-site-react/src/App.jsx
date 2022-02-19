@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation, useParams } from "react-router-dom";
 
 import { PlanetProvider } from './components/Context.jsx';
 
@@ -12,15 +12,16 @@ import "./App.css";
 
 const App = () => {
 
-  const [activePlanet, setActivePlanet] = useState();
+  const [activePlanet, setActivePlanet] = useState("Mercury");
   const [activePlanetData, setActivePlanetData] = useState();
 
   const location = useLocation()
+  const params = useParams()
 
-// useEffect(() => {
-//   let pData = PlanetsData.find(planet => planet.name === activePlanet)
-//   setActivePlanetData(pData)
-// }, [activePlanet]);
+useEffect(() => {
+  let pData = PlanetsData.find(planet => planet.name === activePlanet)
+  setActivePlanetData(pData)
+}, [activePlanet]);
 
   
   return (
