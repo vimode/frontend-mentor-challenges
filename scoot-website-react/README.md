@@ -51,8 +51,26 @@ Your users should be able to:
 ### What I learned and continuous development
 
 _WIP_
+This was my first multipe pages react project, I think I ended up creating way too many components than required but it really made things very easy when it came to the CSS as having common classes for shared components made it easy to just tweak things per page if required otherwise most things worked properly.
+Still unsure if smaller components like Buttons need to be created as buttons or not.
+
+React router dom is fairly simpler but internal linking is a challenge, especially anchor tags to scroll within the page, my current approaches (tried multiple ways) might not be the best but it works fine.
+
+Creating the FAQ component and its functionality (show open item open all the time but have an accordion style of questions) was a little tricky, I tried various methods but I think I managed to find the most simplest way by doing it in multiple ways.
+
+With shared components on multiple pages comes the challenge of conditional rendering of certain parts of the components based on the requirement of the page. I ended up going back and editing a lot of shared components to accomodate those edits.
+
+As always mobile navs are tricky to handle for me and this one was not different. It took more time than it should have. So the navbar component and its CSS has the most hacky stuff to make it work properly.
+
+Creating data objects or adding data to props certainly helps a lot with bringing in data than filling all the data in the markup. Keeps the component very easy to modify and re-use if required.
+
+Background images and patterns need a lot of work and fixes.
 
 PENDING TASKS
+
+- Background images, patterns, location page background needs fixing.
+- Setup all Button links as per readme
+- Widescreen approach.
 
 ### Useful resources
 
