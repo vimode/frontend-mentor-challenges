@@ -25,7 +25,7 @@ footer {
   color: var(--clr-white);
 }
 
-.socialIcons li {
+.socialIcons {
   place-content: center;
   place-items:center;
   gap: 1.5em;
@@ -54,7 +54,7 @@ footer {
     flex-direction: row;
   }
 
-  .socialIcons li {
+  .socialIcons {
     gap : 2em;
     place-items:center;
   }

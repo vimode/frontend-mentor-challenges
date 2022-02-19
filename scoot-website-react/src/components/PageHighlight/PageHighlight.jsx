@@ -14,7 +14,6 @@ const PageHighlight = ( {pageClass,  pageHighlight_title, pageHighlight_content,
           <p>{pageHighlight_content}</p>
           {pageButton && <Button
             btnClassName = "highlightButton"
-            // handleButtonClick = {but}
             buttonText = {`${pageButtonText ? pageButtonText : "Learn More"} `}
           />}
         </div>
