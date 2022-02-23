@@ -50,10 +50,13 @@
   .location_tab {
     background: var(--clr-primary-highlight);
     min-width: max-content;
-    width: 200px;
+    width: 150px;
     font-family: var(--ff-secondary);
     text-align:center;
     margin: unset;
+    padding: 0.5em;
+    font-size: 15px;
+    line-height: 28px;
   }
 
   .location_map {
@@ -72,27 +75,27 @@
     border-bottom: 15px solid transparent;
     position:absolute;
     bottom: -30px;
-    left: 80px;
+    left: 55px;
   }
 
   .location_tab_wrapper:nth-child(1) {
-    top: 80px;
-    left: 80px;
+    top: 130px;
+    left: 90px;
   }
 
   .location_tab_wrapper:nth-child(2) {
-    top: 90px;
-    left: 390px;
+    top: 80px;
+    left: 250px;
   }
 
   .location_tab_wrapper:nth-child(3) {
-    top: 150px;
-    right: 60px;
+    top: 130px;
+    right: 25px;
   }
 
   .location_tab_wrapper:nth-child(4) {
-    bottom :300px;
-    right: 140px;
+    bottom :230px;
+    right: 90px;
   }
 
   .location_info h2 {
@@ -106,6 +109,11 @@
 }
 
 @media ( min-width: 1000px ) {
+
+  .location_tab {
+    width:200px;
+    padding: 1em;
+  }
 
   .location_tab_wrapper:nth-child(1) {
     top: 150px;

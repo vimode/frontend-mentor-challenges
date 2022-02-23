@@ -8,6 +8,7 @@
   font-family: var(--ff-secondary);
   cursor: pointer;
   transition: border, color 350ms linear;
+  position:relative;
   z-index: 200;
 }
 
