@@ -73,6 +73,7 @@ Background images and patterns need a lot of work and fixes. They are not respon
 PENDING TASKS
 
 - Background images, patterns, location page background needs fixing.
+- Disable scroll when mobile nav is open
 - Widescreen approach.
 
 ### Useful resources
