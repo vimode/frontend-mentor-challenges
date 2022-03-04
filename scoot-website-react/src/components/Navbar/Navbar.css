@@ -97,6 +97,11 @@
     padding: 1em;
   }
 
+  .navItem a {
+    font-family: var(--ff-secondary);
+    color: var(--clr-body-text);
+  }
+
   .footerNav {
     width: 50%;
   }
