@@ -7,6 +7,7 @@
 .pageHighlight_wrapper {
   flex-direction: column;
   place-items: center;
+  gap: 2em;
 }
 
 .highlight_content {
@@ -74,10 +75,6 @@
 
   .highlight_image img {
     width: 80%;
-  }
-
-  .pageHighlight_wrapper {
-    gap: 2em;
   }
 
 }

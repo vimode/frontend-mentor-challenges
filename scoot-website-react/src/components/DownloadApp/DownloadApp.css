@@ -28,6 +28,14 @@
 /* MEDIA QUERIES */
 @media( min-width: 768px) {
 
+  .cta_download_buttons a svg {
+    transform: unset;
+    margin: unset;
+  }
+
+}
+
+@media( min-width: 1000px) {
   .cta_wrapper {
     flex-direction: row;
     gap : unset;
@@ -39,10 +47,4 @@
     width: 100%;
     gap: 1em;
   }  
-
-  .cta_download_buttons a svg {
-    transform: unset;
-    margin: unset;
-  }
-
 }
