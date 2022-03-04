@@ -68,7 +68,7 @@ As always mobile navs are tricky to handle for me and this one was not different
 
 Creating data objects or adding data to props certainly helps a lot with bringing in data than filling all the data in the markup. Keeps the component very easy to modify and re-use if required.
 
-Background images and patterns need a lot of work and fixes. Tjey are not responsive as they should be. (>re)
+Background images and patterns need a lot of work and fixes. They are not responsive as they should be. (>re)
 
 PENDING TASKS
 
