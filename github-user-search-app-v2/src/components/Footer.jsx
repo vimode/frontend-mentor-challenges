@@ -7,7 +7,7 @@ const Footer = () => {
         <p className="att">
           Challenge by
           <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noreferrer"> Frontend Mentor</a>. Coded by <a
-            href="https://github.com/ppusher/frontend-mentor-challenges">ppusher</a>
+            href="https://github.com/vimode/frontend-mentor-challenges">vimode</a>
         </p>
     </footer>
   )
