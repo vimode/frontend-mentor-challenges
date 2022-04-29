@@ -1,6 +1,6 @@
 # Intro section with dropdown navigation
 
-This is a solution to the [Job listings with filtering challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/intro-section-with-dropdown-navigation-ryaPetHE5).
+This is a solution to the [Intro section with dropdown navigattion](https://www.frontendmentor.io/challenges/intro-section-with-dropdown-navigation-ryaPetHE5).
 
 ![Design preview for the Job listings with filtering coding challenge](./public/design/desktop-preview.jpg)
 
@@ -66,7 +66,7 @@ _This list will be removed once everything is checked or project is considered a
 
 - [ ] Update the file/folder structure
 - [ ] Bring in the data from the starter code
-- [ ] Build the necessray components
+- [ ] Build the necessary components
 - [ ] Add a onclick wherever necessary to close dropdown if link is clicked or any other place clicked
 
 ### Styling
@@ -80,3 +80,5 @@ _This list will be removed once everything is checked or project is considered a
 ### Extra
 
 ### Repo
+
+- [ ] Add resources, hurdles and a small write up about experience
