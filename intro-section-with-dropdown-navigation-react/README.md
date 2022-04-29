@@ -73,8 +73,8 @@ _This list will be removed once everything is checked or project is considered a
 
 - [ ] Convert all tags to styled components
 - [ ] Add aria tags to buttons especially dropdown (read more)
-- [ ] Media Queries
 - [ ] Conditional dropdown rendering
+- [ ] Media Queries
 - [ ] Mobile Nav
 
 ### Extra
