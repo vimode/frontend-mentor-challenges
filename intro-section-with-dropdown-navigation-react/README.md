@@ -67,11 +67,15 @@ _This list will be removed once everything is checked or project is considered a
 - [ ] Update the file/folder structure
 - [ ] Bring in the data from the starter code
 - [ ] Build the necessray components
+- [ ] Add a onclick wherever necessary to close dropdown if link is clicked or any other place clicked
 
 ### Styling
 
 - [ ] Convert all tags to styled components
 - [ ] Add aria tags to buttons especially dropdown (read more)
+- [ ] Media Queries
+- [ ] Conditional dropdown rendering
+- [ ] Mobile Nav
 
 ### Extra
 
