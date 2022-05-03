@@ -1,15 +1,16 @@
 
+import { DropdownList, DropdownLinkItems } from "./Navigation.styles";
 
 function DropdownMenu( {dropdownLinks}) {
 
   return (
-    <ul>
+    <DropdownList>
       {dropdownLinks.map((linkItem,index) => (
-        <li key={index}>
+        <DropdownLinkItems key={index}>
           <a>{linkItem.title}</a>
-        </li>
+        </DropdownLinkItems>
       ))}
-    </ul>
+    </DropdownList>
   )
 };
 

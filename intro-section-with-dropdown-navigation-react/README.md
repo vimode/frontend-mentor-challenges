@@ -82,3 +82,4 @@ _This list will be removed once everything is checked or project is considered a
 ### Repo
 
 - [ ] Add resources, hurdles and a small write up about experience
+- [ ] Update parent README with updated project status

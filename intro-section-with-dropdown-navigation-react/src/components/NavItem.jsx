@@ -2,6 +2,7 @@ import { useState } from "react";
 
 // components
 import DropdownMenu from "./DropdownMenu";
+import { NavItems, NavStyledLink, ButtonWrapper, DropdownButton } from "./Navigation.styles"
 
 
 function NavItem ({navLink}) {
@@ -10,18 +11,18 @@ function NavItem ({navLink}) {
 
   return (
 
-    <li>
+    <NavItems>
       { navLink.dropdownItems ? (
-        <>
-        <button
+        <ButtonWrapper>
+        <DropdownButton
           onClick={() => setDropdown((prev) => !prev)}
-        >{navLink.title}</button>
-        <DropdownMenu dropdownLinks={navLink.dropdownItems} />
-        </>
+        >{navLink.title}</DropdownButton>
+        {dropdown && <DropdownMenu dropdownLinks={navLink.dropdownItems} />}
+        </ButtonWrapper>
       ) : (
-        <a>{navLink.title}</a>
+        <NavStyledLink href="#">{navLink.title}</NavStyledLink>
       )}
-    </li>
+    </NavItems>
 
   )
 };

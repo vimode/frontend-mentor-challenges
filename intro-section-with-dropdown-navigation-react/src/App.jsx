@@ -1,10 +1,9 @@
 import { useState } from 'react'
 
 // pcackages
-import styled from 'styled-components';
 
 // styles
-import { OuterWrapper } from './App.styles';
+import { OuterWrapper} from './App.styles';
 
 // components
 import Header from './components/Header';

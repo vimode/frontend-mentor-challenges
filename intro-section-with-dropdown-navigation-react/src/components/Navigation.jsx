@@ -1,15 +1,18 @@
 
 // data
-import { navItems } from "../navItems";
+import { navItems } from "../data/navItems";
 
 // components
 import NavItem from "./NavItem";
 
+//styles
+import { Nav, NavList, NavItems, NavStyledLink, SignUpLink } from "./Navigation.styles";
+
 function Navigation () {
   
   return (
-    <nav>
-      <ul>
+    <Nav>
+      <NavList>
     {navItems.map((navLink,index)=> {
       return (
         <NavItem 
@@ -18,19 +21,19 @@ function Navigation () {
         />
       )
     })}
-      </ul>
+      </NavList>
 
-      <ul>
-        <li>
-          <a>Login</a>
-        </li>
-        <li>
-          <a>Register</a>
-        </li>
-      </ul>
+      <NavList>
+        <NavItems>
+          <NavStyledLink href="#">Login</NavStyledLink>
+        </NavItems>
+        <NavItems>
+          <SignUpLink href="#">Register</SignUpLink>
+        </NavItems>
+      </NavList>
 
       
-    </nav>
+    </Nav>
   )
 }
 

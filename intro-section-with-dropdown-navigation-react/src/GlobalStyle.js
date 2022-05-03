@@ -26,7 +26,7 @@ export const GlobalStyle = createGlobalStyle`
 
 body {
   font-family: var(--ff-primary);
-  color: var(--clr-alt-black);
+  color: var(--clr-gray);
   background: var(--clr-off-white);
   font-weight: var(--fw-med);
   min-height: 100vh;
@@ -39,6 +39,25 @@ body {
 
 #root {
 
+}
+
+ul li {
+  list-style: none;
+}
+
+a { 
+  text-decoration : none;
+}
+
+img {
+  display:block;
+  width: 100%;
+}
+
+h1 {
+  font-size: 3em;
+  font-weight: var(--fw-bold);
+  color: var(--clr-alt-black);
 }
 `
 
