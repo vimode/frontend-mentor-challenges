@@ -37,6 +37,7 @@ export const TextWrapper = styled(FlexWrapper)`
 
   @media( min-width: 768px) {
     place-items:left;
+    place-items: start;
   }
 `
 

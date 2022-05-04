@@ -38,7 +38,7 @@ body {
 }
 
 #root {
-
+  height: 100%;
 }
 
 ul li {
