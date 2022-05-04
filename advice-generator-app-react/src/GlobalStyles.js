@@ -21,6 +21,7 @@ export const GlobalStyle = createGlobalStyle`
   --clr-neutral-bg-blue: hsl(218, 23%, 16%);
   --clr-neutral-gray-blue: hsl(217, 19%, 38%);
   --clr-neutral-dark-blue: hsl(217, 19%, 24%);
+
 }
 
 body {

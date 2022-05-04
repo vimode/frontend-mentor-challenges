@@ -51,8 +51,15 @@ export const Button = styled.button`
   }
 `
 
-export const QuoteImage = styled.img`
-  margin-bottom: 1.5em;
+export const QuoteImage = styled.div`
+width: 100%;
+height: 20px;
+background: no-repeat center/cover url("./images/pattern-divider-mobile.svg");
+margin-bottom: 1.5em;
+
+@media(min-width: 768px) {
+  background: no-repeat center/cover url("./images/pattern-divider-desktop.svg");
+}
 `
 
 const ring = keyframes`
@@ -76,7 +83,7 @@ export const CircleLoader = styled.div`
     height: 50px;
     margin: 0 auto;
     border-radius: 50%;
-    border: 6px solid var(--clr-primary-green);
+    border: 4px solid var(--clr-primary-green);
     border-color: var(--clr-primary-green) transparent var(--clr-primary-green) transparent;
     animation: ${ring} 1s linear infinite;
   }

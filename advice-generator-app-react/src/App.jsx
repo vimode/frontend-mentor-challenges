@@ -5,8 +5,8 @@ import { QuoteWrapper, QuoteTitle, QuoteText,
 
 function App() {
 
-const [newQuote, setNewQuote] = useState();
-const [isLoading, setisLoading] = useState(false);
+  const [isLoading, setisLoading] = useState(false);
+  const [newQuote, setNewQuote] = useState();
 
   function fetchAdvice() {
     setisLoading(true)
@@ -35,8 +35,8 @@ const [isLoading, setisLoading] = useState(false);
         <QuoteText>
           "{newQuote.slip.advice}"
         </QuoteText>
-        <QuoteImage src="./images/pattern-divider-desktop.svg"/>
-        </>
+        <QuoteImage/>
+      </>
         :  
       <CircleLoader /> }
 
