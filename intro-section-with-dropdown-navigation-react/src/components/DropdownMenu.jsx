@@ -7,7 +7,8 @@ function DropdownMenu( {dropdownLinks}) {
     <DropdownList>
       {dropdownLinks.map((linkItem,index) => (
         <DropdownLinkItems key={index}>
-          <a>{linkItem.title}</a>
+          {linkItem.icon && <img src={linkItem.icon} />}
+          <a href={linkItem.link}>{linkItem.title}</a>
         </DropdownLinkItems>
       ))}
     </DropdownList>

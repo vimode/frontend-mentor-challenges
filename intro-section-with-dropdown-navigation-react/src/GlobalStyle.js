@@ -29,7 +29,6 @@ body {
   color: var(--clr-gray);
   background: var(--clr-off-white);
   font-weight: var(--fw-med);
-  min-height: 100vh;
 }
 
 .btn, button, input {
@@ -60,9 +59,3 @@ h1 {
   color: var(--clr-alt-black);
 }
 `
-
-// @media (prefers-reduced-motion: no-preference) {
-//   .App-logo {
-//     animation: App-logo-spin infinite 20s linear;
-//   }
-// }

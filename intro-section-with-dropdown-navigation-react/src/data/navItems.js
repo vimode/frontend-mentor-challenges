@@ -4,19 +4,23 @@ export const navItems = [
     dropdownItems: [
       {
         title: "Todo List",
-        icon: "/images/icon-todo.svg"
+        icon: "/images/icon-todo.svg",
+        link: "#"
       },
       {
-        title: "Todo List",
-        icon: "/images/icon-todo.svg"
+        title: "Calendar",
+        icon: "/images/icon-calendar.svg",
+        link: "#"
       },
       {
-        title: "Todo List",
-        icon: "/images/icon-todo.svg"
+        title: "Reminders",
+        icon: "/images/icon-reminders.svg",
+        link: "#"
       },
       {
-        title: "Todo List",
-        icon: "/images/icon-todo.svg"
+        title: "Planning",
+        icon: "/images/icon-planning.svg",
+        link: "#"
       },
     ]
   },
@@ -24,20 +28,25 @@ export const navItems = [
     title: "Company",
     dropdownItems: [
       {
-        title: "History"
+        title: "History",
+        link: "#"
       },
       {
-        title: "History"
+        title: "Our Team",
+        link: "#"
       },
       {
-        title: "History"
+        title: "Blog",
+        link: "#"
       },
     ]
   },
   {
-    title: "Careers"
+    title: "Careers",
+    link: "#"
   },
   {
-    title: "About"
+    title: "About",
+    link: "#"
   }
 ];

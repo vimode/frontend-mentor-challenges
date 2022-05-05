@@ -4,11 +4,16 @@ import styled, { keyframes } from 'styled-components'
 import { GridWrapper } from './Utility.style'
 
 export const OuterWrapper = styled(GridWrapper)`
-  min-height: 100vh;
+  height: 100%;
   width: 100vw;
-  padding: 2em;
   max-width: 1600px;
   margin: 0 auto;
+  min-height: 100vh;
+
+  @media(min-width: 900px) {
+    padding: 2em;
+  }
+
 `
 
 export const FooterWrapper = styled.footer`
@@ -16,4 +21,5 @@ export const FooterWrapper = styled.footer`
   align-self:end;
   font-size: 11px;
   opacity: 0.5;
+  padding-top: 1em;
 `

@@ -6,12 +6,19 @@ export const HeaderSection = styled(FlexWrapper)`
   flex-direction: row;
   justify-content: space-between;
   place-items: center;
-  height:  max-content;
+  height: max-content;
   gap: 2em;
-  padding-block: 10px;
+  
+    img {
+      width: 100px;
+      align-self: top;
+      padding: 20px;
+    }
 
-  img {
-    width: 85px;
-    align-self: top;
-  }
+    @media (min-width: 768px) {
+
+      img {
+        width: 150px;
+      }
+    }
 `

@@ -20,7 +20,7 @@ function NavItem ({navLink}) {
         {dropdown && <DropdownMenu dropdownLinks={navLink.dropdownItems} />}
         </ButtonWrapper>
       ) : (
-        <NavStyledLink href="#">{navLink.title}</NavStyledLink>
+        <NavStyledLink href={navLink.link}>{navLink.title}</NavStyledLink>
       )}
     </NavItems>
 
