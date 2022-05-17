@@ -7,7 +7,7 @@ Thank for checking out this Frontend Mentor Challenges Repo.
 This repo is single mega repo for all my submissions for the Frontend Mentor Challenges.
 Challenges on FrontendMentor are categorised based on a difficulty level. So I am just using the same to categorise them for now.
 
-This repo currently holds 49 projects. The earlier challenges are vanilla JS projects and the later ones are in React. I have titled them to easily find them.
+This repo currently holds 50 projects. The earlier challenges are vanilla JS projects and the later ones are in React. I have titled them to easily find them.
 
 The goal of this challenge is to keep coding everyday even if the progress of the project is in small increments and learn and experiment new things along the way. I try to document my process, my difficulties and what I learned from each project in the project's repo. I would appreciate any feedback you have for me.
 
@@ -32,7 +32,7 @@ The goal of this challenge is to keep coding everyday even if the progress of th
 - [Meet landing page](/meet-landing-page/)
 - [Stats preview card component](/stats-preview-card-component/)
 
-### Junior(22)
+### Junior(23)
 
 - [Testimonials grid section](/testimonials-grid-section/)
 - [Huddle landing page with curved sections](/huddle-landing-page-with-curved-sections/)
@@ -56,8 +56,10 @@ The goal of this challenge is to keep coding everyday even if the progress of th
 - [Blogr landing page](/blogr-landing-page/)
 - [Github User Search App](/github-user-search-app/)
 - [Time Tracking Dashboard](/time-tracking-dashboard/)
+- [Advice generator app(React)](/advice-generator-app-react/)
 
-### Intermediate (11)
+
+### Intermediate (12)
 
 - [Bookmark landing page](/bookmark-landing-page/)
 - [Launch Countdown Timer](/launch-countdown-timer/)
@@ -70,6 +72,7 @@ The goal of this challenge is to keep coding everyday even if the progress of th
 - [Job Listing with filtering (React)](/job-listings-with-filter-react/)
 - [Planets Fact Side (React)](/planets-fact-site-react/)
 - [Scoot Multipage Website (React)](/scoot-website-react/)
+- [Intro Section with Dropdown Nav (React)](/intro-section-with-dropdown-navigation-react/)
 
 ### Advanced
 
