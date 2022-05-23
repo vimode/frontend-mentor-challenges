@@ -1,7 +1,5 @@
 # Welcome! 👋
 
-Thank for checking out this Frontend Mentor Challenges Repo.
-
 [Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
 
 This repo is single mega repo for all my submissions for the Frontend Mentor Challenges.
@@ -23,7 +21,7 @@ The goal of this challenge is to keep coding everyday even if the progress of th
 - [Base Apparel coming soon page](/base-apparel-coming-soon/)
 - [Four card feature section](/four-card-feature-section/)
 - [Coding bootcamp testimonials slider](/coding-bootcamp-testimonials-slider/)
-- [Article rpeview component](/article-preview-component/)
+- [Article preview component](/article-preview-component/)
 - [Social proof section](/social-proof-section/)
 - [FAQ accordion card](/faq-accordion-card/)
 - [Profile card component](/profile-card-component/)
