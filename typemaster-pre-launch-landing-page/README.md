@@ -26,7 +26,7 @@ Your users should be able to:
 
 ## Experience, Challenges and Learning
 
-Positioning images responsively is a struggle. An image can look good for most screen sizes but then theres one obscure screen size where the image positioning just doesn't work and changing it would affect most other screen sizes so the same thing happened with me in this challenge I was not able to line all my images and thet background pattern to be satisfactory to my liking for all screen sizes. 
+Positioning images responsively is a struggle. An image can look good for most screen sizes but then there's one obscure screen size where the image positioning just doesn't work and changing it would affect most other screen sizes so the same thing happened with me in this challenge I was not able to line all my images and that background pattern to be satisfactory to my liking for all screen sizes. 
 For now I tried and did the best I could but this needs to be fixed sooner or later by learning more about background images and its available properties. 
 
 -----
