@@ -30,7 +30,7 @@ Your users should be able to:
 
 Learnt from the previous challenge I am using grid shorthand once again to understand it better. Its very intuitive the way areas, rows and columns can be defined together in one.
 
-The layout of this one was a little challenging as the image whic his part of the navigation/header had to change and the complete layout was full width not leaving much whitespace between elements. But by forcing grid items to overlap/stack on each other, it became a litle easy. Read at [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout#control_of_overlapping_content)
+The layout of this one was a little challenging as the image which his part of the navigation/header had to change and the complete layout was full width not leaving much whitespace between elements. But by forcing grid items to overlap/stack on each other, it became a little easy. Read at [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout#control_of_overlapping_content)
 
 ```css
 .brand_header > * {
