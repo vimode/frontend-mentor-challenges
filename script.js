@@ -144,7 +144,7 @@ ulWrapper.innerHTML = displayList.join('');
 
 
 
-// fetch all the  data from GITHUB API
+// fetch all my repo data using GITHUB API
 // async function fetchRepoData() {
 //   const fetchURI = "https://api.github.com/repos/vimode/frontend-mentor-challenges/contents/"
 //   const response = await fetch(fetchURI);
