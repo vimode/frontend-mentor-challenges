@@ -26,12 +26,12 @@ Your users should be able to:
 ## Experience, Challenges and Learning
 
 Challenge was long but done much easier with grid. 
-I forced myself to use a lot of general styling so not to repeat myself further along. I think it helped a lot as at the end as my CSS ended being very short for such a long landing/home page like this. 
+I forced myself to use a lot of general styling so not to repeat myself further along. I think it helped a lot as at the end as my CSS ended up  being very short for such a long landing/home page. 
 I also added some transitions and some extra hover effects on the buttons. 
 
-I learned a really nice way to position images in anyway you want using `object-position` [MDN Link](https://developer.mozilla.org/en-US/docs/Web/CSS/object-position)
+I learned a really nice way to position images in any way you want using `object-position` [MDN Link](https://developer.mozilla.org/en-US/docs/Web/CSS/object-position)
 
-In this challenge, the image in the desktop view had to be cut off, I used the following CSS properties to move it off the viewport as per the design specs. 
+In this challenge, the image in the desktop view had to be cut off at the edge of the window, I used the following CSS properties to move it off the viewport as per the design specs. 
 ```
 .itemOne .itemOne_content_list:nth-child(2) img {
     object-fit:cover;

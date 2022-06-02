@@ -27,10 +27,9 @@ Your users should be able to:
 
 ## Experience, Challenges and Learning
 
-_This will be updated periodically while the pending tasks are being worked on._
+The various elements of the page were a bit challenging and I struggled throughout the challenge to get them match the design specs especially the images.
 
-The various elements of the page were a bit challegning and I struggled throughout the challenge to get them match the design specs especially the iamges.
-The nest navigation items needed proper planning which I clearly did not think through properly so had to redo most of the navbar markup while doing the CSS and then some more when I did the javascript for it.
+The nested navigation items needed proper planning which I clearly did not think through properly so had to redo most of the navbar markup while doing the CSS and then some more when I did the javascript for it.
 
 ---
 
@@ -45,6 +44,6 @@ The nest navigation items needed proper planning which I clearly did not think t
 - mobile view : some more gap between top nav/branding and hero content.
 - add :active properties same as :hover and :focus
 - Typography is terrible.
-- Add some animations or transtions to the nav bar items.
+- Add some animations or transitions to the nav bar items.
 - Live solution screenshot(s)
 - On submit update README with : Solution submitted at Frontend Mentor - [Submission Link]()

@@ -50,9 +50,7 @@ Your users should be able to:
 
 ## Experience, Challenges and Learning
 
-_This will be updated periodically while the pending tasks are being worked on._
-
-This was a fun challenge, it felt more like doing an App page than anything else. The CSS is a little mess as I tried a different way to do typography but the end result lead to a lot of excess CSS.
+This was a fun challenge, it felt more like doing an App page than anything else. The CSS is a little messy as I tried a different way to do typography but the end result lead to a lot of excess CSS.
 The API calls were fun to do. Connecting APIs to each other was a fun task especially when one was dependent on another.
 
 ##### Pending tasks

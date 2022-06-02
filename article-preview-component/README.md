@@ -31,7 +31,7 @@ Your users should be able to:
 
 ## What I learned
 
-It is easier to use relative and absolute position for elements with fixed height and width. At first I built  the article component with responsive sizing but had to switch to fixed sizing for it to make the share menu to be positioned properly.
+It is easier to use relative and absolute position for elements with fixed height and width. At first I built the article component with responsive sizing but had to switch to fixed sizing for the share menu to be positioned properly.
 
 Learned about some new elements related to the element `article`. [MDN link](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/article)
 

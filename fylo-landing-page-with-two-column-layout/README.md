@@ -31,7 +31,7 @@ Your users should be able to:
 Layout was simple but tedious compared to newbie challenges. Footer had weird quirks mostly because of my markup decisions.
 The javascript for two email validations need to be worked on yet which seems a little different from previous challenges.
 
-There also seems to be a horizontal scroll on Chrome and not on Firefox, haven't found the problem yet. 
+There also seems to be a horizontal scroll on Chrome and not on Firefox, haven't figured out the problem yet. 
 
 ----
 

@@ -31,7 +31,7 @@ Your users should be able to:
 
 ### What I learned
 
-When creating a slider do not create buttons for each slide, there is a reason everyone keeps the slider buttons common across slides. Even though I made individual buttons on each slide work for the slider its a little messy way to do it. Not the most efficient way to do it. 
+When creating a slider do not create buttons for each slide, there is a reason everyone keeps the slider buttons common across slides. Even though I made individual buttons on each slide work for the slider its a little messy way to do it. And it isn't the most efficient way to do it either. 
 
 `place-content` is a shorthand for `align-content` and `justify-content` - [MDN Link](https://developer.mozilla.org/en-US/docs/Web/CSS/place-content)
 

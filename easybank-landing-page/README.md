@@ -23,9 +23,8 @@ Users should be able to:
 
 ## Experience, Challenges and learning
 
-_outline_
 
-Learning : Effectively create and use utlity classes for layout. (inner*container, grid*, flex\_ )
+Learning : Effectively create and use utility classes for layout. (inner*container, grid*, flex\_ )
 
 Learning : Slowly building my own CSS reset.
 

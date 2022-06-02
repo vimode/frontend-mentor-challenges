@@ -84,6 +84,5 @@ Discord vimo#6620
 
 ###### Pending tasks for the repo
 
-- Build a custom showcase page to display all the completed challenges.
-- Fill `README.md` for this as well as each challenge with challenge information, my experience, new technologies learned, new experiments in the challenge, time to complete each (approx. hours for each challenge)
-- Fill the index
+- Filter projects to show in the showcase page  
+

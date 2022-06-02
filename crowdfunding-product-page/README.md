@@ -31,9 +31,7 @@ Your users should be able to:
 
 ## Experience, Challenges and Learning
 
-_This will be updated periodically while the pending tasks are being worked on._
-
-The CSS was fairly straightfoward and enjoyble. The modal required a little work than usual but otherwise the really enjoyable layout.
+The CSS was fairly straightforward and enjoyable. The modal required a little work than usual but otherwise the layout was really fun.
 The real struggle and timesuck for this challenge was the javascript for the buttons, input elements, the change in state of the numbers displayed on the homepage+progress bar.
 
 I learnt a few lessons along the way.
