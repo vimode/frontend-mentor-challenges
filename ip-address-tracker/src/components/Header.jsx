@@ -1,12 +1,11 @@
-import {useState} from "react";
-
-import styled from "styled-components";
+import { useState, useRef, useEffect } from "react";
 
 import { HeaderWrapper, Form, Input, Title, Button } from "./Header.styles";
 
 
 function Header ({ userInputIP }) {
   const [inputData, setInputData] = useState("");
+  const inputRef = useRef()
 
   function handleSubmit(event) {
     event.preventDefault()
@@ -16,6 +15,11 @@ function Header ({ userInputIP }) {
   function handleChange(event) {
     setInputData(event.target.value)
   }
+
+  //to force autofocus the input element
+  useEffect(() => {
+    inputRef.current.focus();
+  },[]);
 
 
   return (
@@ -27,6 +31,7 @@ function Header ({ userInputIP }) {
           id="ip address"
           placeholder="Search for any IP address"
           onChange={handleChange}
+          ref= {inputRef}
         />
         <Button>
           <img src="./images/icon-arrow.svg"/>
