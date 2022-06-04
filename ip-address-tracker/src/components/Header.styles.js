@@ -17,15 +17,18 @@ export const Title = styled.h1 `
   font-size: 2rem;
   color: var(--color-white);
   font-weight: var(--fw-med);
-`
+  `
 
 export const Form = styled.form`
   display:flex;
+  place-content:center;
+  width: 80%;
 `
 
 export const Input = styled.input`
   padding: 15px;
-  min-width: 350px;
+  width: 80%;
+  max-width: 350px;
   border-radius: 10px 0px 0px 10px;
   border:  transparent;
   font-weight: var(--fw-med);
