@@ -27,7 +27,9 @@ Your users should be able to:
 
 ### What I learned and continuous development
 
-_WIP_
+The navigation in react and styled components together was a little tricky to understand. Especially handling the dropdown nav items. 
+I ended up creating a data file for dropdown items to handle them easily but I am not sure this is the correct approach to it.
+The mobile nav can be drastically improved. 
 
 ### Installation
 
@@ -58,28 +60,4 @@ npm run preview
 
 ViteJS - https://vitejs.dev/guide/#scaffolding-your-first-vite-project
 
-## TODO
-
-_This list will be removed once everything is checked or project is considered as completed_
-
-### Basic
-
-- [ ] Update the file/folder structure
-- [ ] Bring in the data from the starter code
-- [ ] Build the necessary components
-- [ ] Add a onclick wherever necessary to close dropdown if link is clicked or any other place clicked
-
-### Styling
-
-- [ ] Convert all tags to styled components
-- [ ] Add aria tags to buttons especially dropdown (read more)
-- [ ] Conditional dropdown rendering
-- [ ] Media Queries
-- [ ] Mobile Nav
-
-### Extra
-
-### Repo
-
-- [ ] Add resources, hurdles and a small write up about experience
-- [ ] Update parent README with updated project status
+ 

@@ -39,7 +39,7 @@ Your users should be able to:
 
 ### What I learned and continuous development
 
-_WIP_
+This was quick and small project.  Just to practice more of styled components.
 
 ### Installation
 
@@ -69,24 +69,3 @@ yarn preview
 ### Useful resources
 
 ViteJS - https://vitejs.dev/guide/#scaffolding-your-first-vite-project
-
-## TODO
-
-_This list will be removed once everything is checked or project is considered as completed_
-
-### Basic
-
-- [ ] Update the file/folder structure
-- [ ] Bring the data from the starter code
-- [ ] Build the necessary components
-
-### Styling
-
-- [ ] Create a globalstyle
-- [ ] Convert all tags to styled components
-- [ ] Add aria tags to buttons
-- [ ] Media Queries
-
-### Extra
-
-### Repo
