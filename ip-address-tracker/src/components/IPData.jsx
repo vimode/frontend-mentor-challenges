@@ -1,5 +1,3 @@
-import styled from "styled-components";
-
 import { DataWrapper, DataList, ListItem, Title, Content } from "./IPData.styles"
 
 function IPData ({IPinfo}) {
@@ -22,7 +20,7 @@ function IPData ({IPinfo}) {
             </ListItem>
             <ListItem>
               <Title>ISP</Title>
-              <Content>{IPinfo.isp}</Content>
+              <Content ispinfo>{IPinfo.isp}</Content>
             </ListItem>
           </DataList> }
       </DataWrapper> 
