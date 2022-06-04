@@ -1,5 +1,7 @@
 # IP address tracker
 
+[Live link](https://fm-ip-address-tracker-react.vercel.app/)
+
 This is a solution to the [IP address tracker challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/ip-address-tracker-I8-0yYAH0).
 
 ![Design preview for the Job listings with filtering coding challenge](./design/desktop-preview.jpg)
@@ -36,7 +38,7 @@ Since Leaflet JS does not directly support React I used React-Leaflet library wh
 
 Since the recommended API wasn't free and/or required API access key I used a few other APIs together for this project. Unfortunately this means domain search functionality is not available. 
 
-https://api64.ipify.org/ is used to auto-detect visitor API.
+https://api.my-ip.io/ip  is used to auto-detect visitor API.
 http://ip-api.com/ and https://freeipapi.com/api is used to gather all the IP info (IP, geolocation, tz and ISP)  expected to be shown in the project. 
 
 
@@ -47,7 +49,7 @@ http://ip-api.com/ and https://freeipapi.com/api is used to gather all the IP in
 - [React](https://reactjs.org/) - JS library
 - [LeafletJS](https://leafletjs.com) - JS library
 - [React Leaflet](https://react-leaflet.js.org/)
-- https://api64.ipify.org/  
+- https://api.my-ip.io/ip
 - https://ip-api.com/docs/
 - https://freeipapi.com/api
 
