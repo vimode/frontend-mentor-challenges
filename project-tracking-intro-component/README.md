@@ -26,12 +26,13 @@ Your users should be able to:
  - JavaScript
 
 ## Experience, Challenges and Learning
-Simple layout but had some tricky elements like the background blue pattern behind the illustration which spreads to the top navbar. It positioned well at the end but the way its done is not very smart. I struggled with a lot of small things. Illustration position is done in not so elegant way which makes it fit itself to the canvas at various different proportions in varied screen sizes.  The JS for the navbar is incomplete.
+
+Simple layout but had some tricky elements like the background blue pattern behind the illustration which spreads to the top navbar. It positioned well at the end but the way its done is not very smart. I struggled with a lot of small things. Illustration position is done in not so elegant way either which makes it fit itself to the canvas at various different proportions in varied screen sizes.  The JS for the navbar is incomplete.
 
 -----
  ##### Pending tasks
 
-- Complete the javascript for the navbar.
+- Complete the JavaScript for the navbar.
 - Redo this challenge with a different layout structure to make a very responsive page through various devices.
 - Live solution screenshot(s)
 - Submit to frontendmentor and add Solution submitted  at Frontend Mentor - [Submission link]()

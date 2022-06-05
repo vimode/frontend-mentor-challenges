@@ -24,6 +24,7 @@ Your users should be able to:
 - CSS Flexbox
 
 ## Experience & Challenges
+
 The challenge took time but had a very detailed layout. Enjoyed this challenge. I wasn't able to get the hero background image to look exactly like the design specs but its very close to it. There is a small bug with my footer overlay which causes the footer items to have a huge margin, not sure what caused that but I fixed that with negative margins which isn't the best way but fixes the bug. 
 
 ---

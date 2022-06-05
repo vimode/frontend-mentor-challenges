@@ -31,11 +31,11 @@ Your users should be able to:
 
 ## Experience, Challenges and Learning
 
-Full-bleed designs aren't always the best to work with for me as I am clueless what I should do for widescreen layouts. I did not try to make it diffeent on widescreen but let it run across the screen no matter the screensize. It might not be pretty and could break but the image sizes limits what can be done or maybe I am not sure what I should rather do for wider screens as limiting the cotent would make it look boxed in and cut off.
-Setting images while making them responsive for all screen sizes in an empty div is a difficult task especially when there are different size images for different sizes, adding them in an <img> tag does not make it pretty as too many breakpoints could be required and unncessary extra markup. Adding them as background image is the only solution but its not that easy to work with images as background images for me.
-I liked the modern design asthetics, playful colors and font choices. The layout too was fun to work wih.
+Full-bleed designs aren't always the best to work with for me as I am clueless what I should do for widescreen layouts. I did not try to make it different on widescreen but let it run across the screen no matter the screen size. 
+Setting images while making them responsive for all screen sizes in an empty div is a difficult task especially when there are different size images for different screen sizes, adding them in an <img> tag does not make it look seamless or pretty as too many breakpoints could be required and unnecessary extra markup. Adding them as background image is the only solution but its not that easy to work with images as background images for me.
+I liked the modern design aesthetics, playful colors and font choices. The layout too was fun to work with.
 
-The mobile navigation has a simple transition effect but I tried and failed at various animation / transition styles with transform but I couldn't come up with something that would make it look natural especially with the right corner triangle. Maybe I could breakdown each part of the navbar and animate them indiviually to make them appear one after another with animation delay. Might do this later.
+The mobile navigation has a simple transition effect but I tried and failed at various animation / transition styles with transform but I couldn't come up with something that would make it look natural especially with the right corner triangle. Maybe I could breakdown each part of the navbar and animate them individually to make them appear one after another with animation delay. Might do this later.
 
 ---
 

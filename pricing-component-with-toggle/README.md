@@ -29,7 +29,7 @@ Your users should be able to:
 
 ## Experience, Challenges and Learning
 
-Challenge was extremely enjoyable. The challenge specs says in the bonus to complete the challenge with just HTML and CSS but I couldn't figure out how to change or switch classes when the toggle switch is pressed. At first I thought by adding a checkbox, I could change the state of some classes when input checkbox is either checked or unchecked but couldn't figure a way to do that. So I ended up doing it with simple javascript. 
+Challenge was extremely enjoyable. The challenge specs says in the bonus to complete the challenge with just HTML and CSS but I couldn't figure out how to change or switch classes when the toggle switch is pressed. At first I thought by adding a checkbox, I could change the state of some classes when input checkbox is either checked or unchecked but couldn't figure a way to do that. So I ended up doing it with simple but minimal JavaScript. 
 
 ---
 ##### Pending tasks

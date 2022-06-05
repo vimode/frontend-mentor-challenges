@@ -67,6 +67,6 @@ I struggled with positioning the background images properly. They are close to t
 
 ###### Pending Tasks 
 
-- Final challenge screenshot(s) (desktop and mobile)
 - Background image positioning fixes.
+- Final challenge screenshot(s) (desktop and mobile)
 - Submit the challenge at frontendmentor

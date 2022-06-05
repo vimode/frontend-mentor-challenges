@@ -1,6 +1,6 @@
 # Intro section with dropdown navigation
 
-This is a solution to the [Intro section with dropdown navigattion](https://www.frontendmentor.io/challenges/intro-section-with-dropdown-navigation-ryaPetHE5).
+This is a solution to the [Intro section with dropdown navigation](https://www.frontendmentor.io/challenges/intro-section-with-dropdown-navigation-ryaPetHE5).
 
 ![Design preview for the Job listings with filtering coding challenge](./public/design/desktop-preview.jpg)
 
@@ -20,7 +20,7 @@ Your users should be able to:
 
 ### Built with
 
-- Semantic HTML5 markup
+- Semantic HTML5 mark-up
 - [React](https://reactjs.org/) - JS library
 - [Styled Components](https://styled-components.com/) - For styles
 - ViteJS

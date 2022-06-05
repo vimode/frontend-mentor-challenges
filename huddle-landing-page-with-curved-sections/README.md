@@ -30,7 +30,7 @@ Your users should be able to:
 ## Experience, Challenges and Learning
 
 This challenge was particularly longer than most I have done in past. Overall the layout was easy to understand and replicate, the difficult parts were the background images/patterns  provided in the challenge. 
-The footer was challenging, and the positioning of its inner elements took  more time than expected. I was still not satisified with the way I ended up doing the footer but its very close to the design specs. 
+The footer was challenging, and the positioning of its inner elements took  more time than expected. I am still not satisfied with the way I ended up doing the footer but its very close to the design specs. 
 Most of the layout was done with Grid and with the help of flexbox I was able to align the inner elements well. I added some transition effects and animations to hover elements (buttons, social buttons) and animation for email validation success. 
 
 ----

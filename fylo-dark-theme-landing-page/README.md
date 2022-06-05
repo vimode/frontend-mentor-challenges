@@ -29,7 +29,7 @@ Your users should be able to:
 
 ## Experience, Challenges and Learning
 
-The layout was big  and had several components but most of it was easy to structure. 
+The layout was big and had several components but most of it was easy to structure. 
 There are few things I could not figure out how to do, I was unable to 
   - position the background image as per the specs. 
   - `.feature_link` has a svg icon with it. On hover, the link + the icon switch to color white, I am unable to change the svg's fill color to white with the link, it does only when hovered on the icon but not on the link. 
@@ -41,4 +41,4 @@ Apart from those hurdles everything else is as close to the specs as I can make 
 ##### Pending tasks
 
 - Live solution screenshot(s)
-- Submit to frontendmentor and add Solution submitted  at Frontend Mentor - [Submission link]()
+- Submit to frontendmentor and add Solution submitted at Frontend Mentor - [Submission link]()

@@ -60,7 +60,7 @@ There are few more resources that helped with during this challenge,
 
 - Managing the [range events](https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oninput) as I had never used them before. 
 
-- [animate()](https://developer.mozilla.org/en-US/docs/Web/API/Element/animate) method to create new animations through javascript. I used this to show a visual change in the values which are updated in the DOM by the javascript funtions for toggle and slider. I use this method in a very basic way to change the font-color of the updates values.
+- [animate()](https://developer.mozilla.org/en-US/docs/Web/API/Element/animate) method to create new animations through JavaScript. I used this to show a visual change in the values which are updated in the DOM by the JavaScript functions for toggle and slider. I use this method in a very basic way to change the font-color of the updates values.
 
 ```javascript
   pageviews.animate([

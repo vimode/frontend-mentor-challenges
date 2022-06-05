@@ -33,13 +33,13 @@ Your users should be able to:
 
 ## Experience, Challenges and Learning
 
-The layout of the challenge was very intuitive, liner and fun.  Almost all the images had some type of different effect on them. Enjoyed manipulating images by using filter for some, had to create a overlay for few images and even a color box for an image. 
-The positioning of the hero image is not exactly as per the specs but very close to it and I am quite happy about it works responsively. 
-Despite adding minimal gap and margin to the grid of images, I could not make it line up with the rest of the content of the site. It looks a  little offset. And on widescreen the grid adds a lot of gap between the images which I could not fix despite having a max-width to everything. 
+The layout of the challenge was very intuitive, liner and fun. Almost all the images had some type of different effect on them. Enjoyed manipulating images by using filter for some, had to create a overlay for few images and even a color box for an image. 
+The positioning of the hero image is not exactly as per the specs but very close to it and I am quite happy about it working  responsively. 
+Despite adding minimal gap and margin to the grid of images, I could not make it line up with the rest of the content of the site. It looks a little offset to me. And on widescreen the grid adds a lot of gap between the images which I could not fix despite having a max-width to everything. 
 
-The mobile nav is here is very different than I usually do. I wanted to fix a few things in my usual implementation of mobile navigation
+The mobile nav in here is very different than I usually do. I wanted to fix a few things in my usual implementation of mobile navigation
 - Remove the body scroll when nav is open. This was done by adding `overflowY:hidden` to the body when nav is opened. Other approach is to add `position:fixed` to the body which works too. 
-- Add some animation when the nav is opened like nav slides in from outside the viewport. To achieve this effect I opted to rotate from `transform:rotate(-90deg)` to  `transform:rotate(0deg)` but it isn't possible to do by simply adding transition effects to the element which changes from `display:none` to any other display property. The transition effects do not take place from nothing to 100%, it needs to be in 0% state for which `visibility:hidden` is perfect but that only hides the element from the view while taking up space in the canvas like invisible units in a game. So instead of transition animations, I added `@keyframes` CSS animations which I am still learning about. Now it works as intended but it does not work as beautifully as transition does. I think its the timing that needs to the tweaked. 
+- Add some animation when the nav is opened like nav slides in from outside the viewport. To achieve this effect I opted to rotate from `transform:rotate(-90deg)` to `transform:rotate(0deg)` but it isn't possible to do by simply adding transition effects to the element which changes from `display:none` to any other display property. The transition effects do not take place from nothing to 100%, it needs to be in 0% state for which `visibility:hidden` is perfect but that only hides the element from the view while taking up space in the canvas like invisible units in a game. So instead of transition animations, I added `@keyframes` CSS animations which I am still learning about. Now it works as intended but it does not work as beautifully as transition does. I think its the timing that needs to the tweaked. 
 
 -----
  ##### Pending tasks

@@ -26,8 +26,8 @@ Your users should be able to:
 
 ## Experience, Challenges and Learning
 
-Surprisingly the only thing that I struggled with was having a circle around fontawesome icons.
-The easier way would be to utilise [stacking icons](https://fontawesome.com/v5.15/how-to-use/on-the-web/styling/stacking-icons) but its result isn't very elegant and the circle is very thick so had to do custom CSS instead, which turned out to be not very straightfoward.
+Surprisingly the only thing that I struggled with was having a circle around font awesome icons.
+The easier way would be to utilise [stacking icons](https://fontawesome.com/v5.15/how-to-use/on-the-web/styling/stacking-icons) but its result isn't very elegant and the circle is very thick so had to do custom CSS instead, which turned out to be not very straightforward.
 
 I started with adding ```
 

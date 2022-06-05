@@ -27,11 +27,11 @@ Your users should be able to:
 
 ### What I learned
 
-I am used to starting with the desktop view first so tried the mobile first approach. At first it felt really easy but this challenge had a unique desktop view which meant I had to do a lot of things  in the media queries which felt a little backwards as I am not used to this type of work flow. 
+I am used to starting with the desktop view first so tried the mobile first approach. At first it felt really easy but this challenge had a unique desktop view which meant I had to do a lot of things in the media queries which felt a little backwards as I am not used to this type of work flow. 
 
 ### Challenges
 
-I am learning a lof about manipulating background images in CSS with the  vast number of unique properties it has but I still failed to position them to match the design. 
+I am learning a lot about manipulating background images in CSS with the  vast number of unique properties it has but I still failed to position them to match the design. 
 
 Mobile first is something either I will embrace or reject, I am not sure yet. I had to rewrite a lot of CSS properties after I started writing the media queries. 
 

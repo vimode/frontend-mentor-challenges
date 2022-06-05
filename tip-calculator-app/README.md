@@ -28,9 +28,9 @@ Your users should be able to:
 
 ## Experience, Challenges and Learning
 
-When it comes to CSS for the Input elements and form elements, they always trip me up. Theres always more to finer details to look at. Surprising the CSS took more time than expected.
+When it comes to CSS for the Input elements and form elements, they always trip me up. There's always more to finer details to look at. Surprising the CSS took more time than expected.
 
-The JS started being very simple, the custom tip amount input required some special work all around. But as I kept adding eventListeners to all the input fields more and more edge cases started showing up. I think I covered all of the edgecases I could think of.
+The JS started being very simple, the custom tip amount input required some special work all around. But as I kept adding eventListeners to all the input fields more and more edge cases started showing up. I think I covered all of the edge cases I could think of.
 
 There are eventListeners for
 

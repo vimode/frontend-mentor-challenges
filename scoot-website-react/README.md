@@ -50,12 +50,10 @@ Your users should be able to:
 
 ### What I learned and continuous development
 
-_WIP_
-
-This was my first multipe pages react project, I think I ended up creating way too many components than required but it also made things very easy when it came to the CSS as having common classes for shared components made it easy to just tweak things per page if required otherwise most CSS for common components worked properly.
+This was my first multiple pages react project, I think I ended up creating way too many components than required but it also made things very easy when it came to the CSS as having common classes for shared components made it easy to just tweak things per page if required otherwise most CSS for common components worked properly.
 Still unsure if smaller components like Buttons need to be created as buttons or not. (>re)
 
-React router dom is fairly simpler but internal linking is a challenge, especially anchor tags to scroll within the page, my current approaches (tried multiple ways) might not be the best but it works fine.
+React router dom is fairly simple but internal linking is a challenge, especially anchor tags to scroll within the page, my current approaches (tried multiple ways) might not be the best but it works fine.
 
 Creating the FAQ component and its functionality (show open item open all the time but have an accordion style of questions) was a little tricky, I tried various methods but I think I managed to settle the most simplest way by doing it in multiple ways.
 
@@ -70,7 +68,7 @@ Creating data objects or adding data to props certainly helps a lot with bringin
 
 Background images and patterns need a lot of work and fixes. They are not responsive as they should be. (>re)
 
-PENDING TASKS
+##### PENDING TASKS
 
 - Background images, patterns, location page background needs fixing.
 - Disable scroll when mobile nav is open

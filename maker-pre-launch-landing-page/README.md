@@ -30,11 +30,10 @@ Your users should be able to:
 
 ## Experience, Challenges and Learning
 
-The layout was a little challenging for me. I spent more time than I should have with the layout structure for each element. After almost finishing the challenge I have had bright ideas how I could do this differently, and if I had to do it again I think I've some better strutural ideas for the layout. 
-The background images/pattern are not very well positioned mostly because the way I did my markup based on the layout I had in mind did not work out at the end. But I think I know how I could do it better. 
-I like how customised each element of this layout is, very diifferent flow than usual challenges. 
-I was able to use some very specific CSS selectors for this challenge which I am very happy about as I don't usually find instances where I could use them but  I am always looking for where I can use them. 
-
+The layout was a little challenging for me. I spent more time than I should have with the layout structure for each element. After almost finishing the challenge I have had bright ideas how I could do this differently, and if I had to do it again I think I've some better structural ideas for the layout. 
+The background images/pattern are not very well positioned mostly because the way I did my markup based on the layout I had in mind. But I think I know how I could do it better. 
+I like how customised each element of this layout is, very different flow than usual challenges. 
+I was able to use some very specific CSS selectors for this challenge which I am very happy about as I don't usually find instances where I could use them but I am always looking for where I can use them. 
 
 ----
 

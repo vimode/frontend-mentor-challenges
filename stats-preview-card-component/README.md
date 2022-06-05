@@ -27,6 +27,7 @@ Your users should be able to:
 - CSS Animations
 
 ## Experience & Challenges
+
 Most of the challenge was straightforward except the hero image's position and color tint.
 I tried using CSS background properties for the hero image and its  color tint, I struggled with its positioning and getting the perfect color tint as per the challenge specs. A lot to learn about CSS background image properties. 
 

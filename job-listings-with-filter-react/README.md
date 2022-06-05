@@ -49,13 +49,11 @@ To add a filter, the user needs to click on the tablets on the right-side of the
 
 ### What I learned and continuous development
 
-_WIP_
+I finished the project filtering with option 2 of the challenge.
 
-Fulfilling the option 2 of the challenge.
+Using snowpack was fun. Its easy and as much as I like the CRA to spin up a quick React project it always feels like a black box which I cannot probe to fully understand.
 
-Using snowpack was fun. Its easy and as much as I like the CRA to spin up a quick React project it always feels like a blackbox which I cannot probe to fully understand.
-
-Snowpack on the other hand gives a lot of freedom + also helps understanding whats happening under the hood.
+Snowpack on the other hand gives a lot of freedom + also helps understanding what's happening under the hood.
 
 In this current project build, the hover state on click is retained for the tag. Unable to fix it as of now.
 

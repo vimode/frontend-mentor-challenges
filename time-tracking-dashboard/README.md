@@ -36,7 +36,7 @@ For monthly, it should read "Last Month" e.g. "Last Month - 19hrs".
 - CSS
 - CSS Grid
 - CSS Flexbox
-- Javascript
+- JavaScript
 - Local JSON
 
 ## Experience, Challenges and Learning

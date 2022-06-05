@@ -32,10 +32,9 @@ Your users should be able to:
 ## Experience & Challenges
 
 This challenge was quick and easy.
-I use flex and/or grid any and everywhere, as much and I like using them I wanted  to not use them if not required. There were few instances where using flex would have really helped and made things easy but otherwise this was done without using flex or grid. 
+I use flex and/or grid any and everywhere, as much and I like using them I wanted to not use them if not required. There were few instances where using flex would have really helped and made things easy but otherwise this was done without using flex or grid. 
 
 I forgot about the error message and only at the end had to add it which took a lot of time as its position was a bit tricky without using flex especially when I had to add it after I had finished everything.
-
 
 ---
 

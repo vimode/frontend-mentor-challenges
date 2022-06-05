@@ -30,7 +30,7 @@ Your users should be able to:
 
 ## Experience, Challenges and Learning
 
-The layout standard and had too many cards so too many repetitive lines of codes.
+The layout is standard and had too many cards so too many repetitive lines of codes.
 
 This was my first attempt at doing a theme switcher. So I was not prepared to name the classes and have the structure of the markup in such a way that least amount of changes will be required when the theme is switched. So it ended up being about 15-20lines of extra code to switch themes which isn't very bad.
 
