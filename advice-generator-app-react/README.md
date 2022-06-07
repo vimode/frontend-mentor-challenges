@@ -1,5 +1,7 @@
 # Advice generator app
 
+[Live Link](https://fm-advice-generator-app-react.vercel.app/)
+
 This is a solution to the [Advice generator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/advice-generator-app-QdUG-13db).
 
 ![Design preview for the Advice generator app coding challenge](./public/design/desktop-preview.jpg)
