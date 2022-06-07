@@ -11,27 +11,6 @@ let projectList =
     text: "Many responsive images of different sizes with some hover effects. Animated mobile navigation to the playful theme of the landing page."
   },
   {
-    id: "n2",
-    difficulty: "junior",
-    tags: ["HTML", "CSS", "JS"],
-    title: "Social media dashboard with theme switcher",
-    img_src: "./social-media-dashboard-with-theme-switcher/design/desktop-design-dark.jpg",
-    repo_url: "https://github.com/vimode/frontend-mentor-challenges/tree/master/social-media-dashboard-with-theme-switcher",
-    live_url: "https://frontend-mentor-challenges-ecru.vercel.app/social-media-dashboard-with-theme-switcher/",
-    text: "Theme switcher for light and dark mode which auto switch theme based on user's browser preference."
-  },
-
-  {
-    id: "n3",
-    difficulty: "junior",
-    tags: ["HTML", "CSS", "JS"],
-    title: "Tip Calculator App",
-    img_src: "./tip-calculator-app/design/desktop-design-completed.jpg",
-    repo_url: "https://github.com/vimode/frontend-mentor-challenges/tree/master/tip-calculator-app",
-    live_url: "https://frontend-mentor-challenges-ecru.vercel.app/tip-calculator-app/",
-    text: "Tip calculator with the option to split. Custom inputs design and small tweaks to show the final amount."
-  },
-  {
     id: "n4",
     difficulty: "junior",
     tags: ["HTML", "CSS", "JS"],
@@ -59,7 +38,7 @@ let projectList =
     img_src: "./clock-app/preview.jpg",
     repo_url: "https://github.com/vimode/frontend-mentor-challenges/tree/master/clock-app",
     live_url: "https://frontend-mentor-challenges-ecru.vercel.app/clock-app/",
-    text: "Use of multiple APIs to display quote, time and IP location. "
+    text: "Used multiple APIs to display a quote, local time and visitor's IP location. "
   },
   {
     id: "n7",
@@ -68,28 +47,18 @@ let projectList =
     title: "Github User Search",
     img_src: "./github-user-search-app/preview.jpg",
     repo_url: "https://github.com/vimode/frontend-mentor-challenges/tree/master/github-user-search-app-v2",
-    live_url: "https://github.com/vimode/frontend-mentor-challenges/tree/master/github-user-search-app-v2",
-    text: "Use of Github API to show user data and a theme switcher built using React. "
-  },
-  {
-    id: "n8",
-    difficulty: "intermediate",
-    tags: ["HTML", "CSS", "JS", "React"],
-    title: "Job Listing with filtering",
-    img_src: "./job-listings-with-filter-react/design/desktop-design.jpg",
-    repo_url: "https://github.com/vimode/frontend-mentor-challenges/tree/master/job-listings-with-filter-react",
-    live_url: "https://github.com/vimode/frontend-mentor-challenges/tree/master/job-listings-with-filter-react",
-    text: "The listings are filtered based on tags selected by the user."
+    live_url: "https://github-user-search-app-v2-beta.vercel.app",
+    text: "Used Github API to show user data and a theme switcher."
   },
   {
     id: "n9",
     difficulty: "intermediate",
     tags: ["HTML", "CSS", "JS", "React"],
-    title: "Planet facts site",
-    img_src: "./planets-fact-site-react/preview.jpg",
-    repo_url: "https://github.com/vimode/frontend-mentor-challenges/blob/master/planets-fact-site-react",
-    live_url: "https://github.com/vimode/frontend-mentor-challenges/blob/master/planets-fact-site-react",
-    text: "Learned to use ContextAPI to carry data between all pages created using react routerr. "
+    title: "IP Adddress Tracker",
+    img_src: "./ip-address-tracker/design/desktop-design.jpg",
+    repo_url: "https://github.com/vimode/frontend-mentor-challenges/blob/master/ip-address-tracker",
+    live_url: "https://fm-ip-address-tracker-react.vercel.app/",
+    text: "This API tracker uses multiple APIs to fetch the necessary data. Map is drawn using LeaftetJS and styled components for CSS."
   }
   ];
 
@@ -104,7 +73,7 @@ let displayList = projectList.reverse().map((project) => {
       <img src="${project.img_src}" alt="" class="w-full h-56 object-cover align-start">
         <div class="p-4">
           <h2 class="text-xl font-bold">${project.title}</h2>
-          <p class="mt-4">${project.text}.</p>
+          <p class="mt-4">${project.text}</p>
           <div class="flex justify-between mt-4">
             <span class="font-bold text-sm uppercase text-orange-500">${project.tags[0]}</span>
             <span class="font-bold text-sm uppercase text-blue-400">${project.tags[1]}</span>
