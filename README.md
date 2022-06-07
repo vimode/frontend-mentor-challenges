@@ -2,12 +2,12 @@
 
 [Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
 
-This repo is single mega repo for all my submissions for the Frontend Mentor Challenges.
+This repo is a single mega repo of all my submissions for the Frontend Mentor Challenges.
 Challenges on FrontendMentor are categorised based on a difficulty level. So I am just using the same to categorise them for now.
 
 This repo currently holds 52 projects. The earlier challenges are vanilla JS projects and the later ones are in React. I have titled them accordingly.
 
-The goal of this challenge is to keep coding everyday even if the progress of the project is in small increments and learn and experiment new things along the way. I try to document my process, my difficulties and what I learned from each project in the project's repo. I would appreciate any feedback you have for me.
+The goal of this challenge is to keep coding everyday even if the progress of the project is in small increments, learn and experiment new things along the way. I try to document my process, my difficulties and learnings from each project in the project's repo. I would appreciate any feedback you have for me.
 
 ## Difficulty Level
 
