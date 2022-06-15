@@ -4,7 +4,7 @@
 
 This is a solution to the [IP address tracker challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/ip-address-tracker-I8-0yYAH0).
 
-![Design preview for the Job listings with filtering coding challenge](./design/desktop-preview.jpg)
+![Design preview for the IP address tracker coding challenge](./design/desktop-preview.jpg)
 
 ### The challenge
 

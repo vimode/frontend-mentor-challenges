@@ -4,7 +4,7 @@
 
 This is a solution to the [Intro section with dropdown navigation](https://www.frontendmentor.io/challenges/intro-section-with-dropdown-navigation-ryaPetHE5).
 
-![Design preview for the Job listings with filtering coding challenge](./public/design/desktop-preview.jpg)
+![Design preview for the Intro Section with dropdown navigation coding challenge](./public/design/desktop-preview.jpg)
 
 ## The challenge
 
