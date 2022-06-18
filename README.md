@@ -86,3 +86,4 @@ Discord vimo#6620
 ###### Pending tasks for the repo
 
 - Filter projects to show selected few on the showcase page.
+- Showcase page mobile icons and actions need to be distinct.
