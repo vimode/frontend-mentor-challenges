@@ -36,13 +36,11 @@ If you would like to make your contact form actually send you the data, you coul
 
 ### What I learned and continuous development
 
-*I am still working on this project, so this section currently is used to just dump all the links and data want to use towards the end of this project when I write my thoughts*
+*This is a WIP project, currently README is being used to just dump all the links and data I want to use towards the end of this project when I write my thoughts*
 
 https://reactrouterdotcom.fly.dev/docs/en/v6/hooks/use-params
 
 For SC styled(Link), import <Link> in styles and then import the styled link in component along with <Link> 
-
-
 
 
 ### Useful resources
