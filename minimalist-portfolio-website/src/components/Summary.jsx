@@ -1,16 +1,18 @@
 import { Link } from "react-router-dom";
+import { SummaryWrapper, ContentWrapper } from "./Summary.styles"
+
 
 function Summary ({title, content, link, linktext, imgsrc}) {
   return (
-    <div>
+    <SummaryWrapper>
       <img src = {imgsrc} />
-      <div>
+      <ContentWrapper>
         <h2>{title}</h2>
         <p>{content}</p>
         {link && <Link to={link}>{linktext}</Link>}
-      </div>
+      </ContentWrapper>
 
-    </div>
+    </SummaryWrapper>
   )
 }
 

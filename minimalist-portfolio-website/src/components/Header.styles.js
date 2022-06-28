@@ -1,9 +1,7 @@
 import styled from "styled-components"
 
 export const HeaderWrapper = styled.header `
-
-  img {
-    width: 5%;
-  }
-
+  display: flex;
+  place-content: space-between;
+  padding-block: var(--space-8);
 `
