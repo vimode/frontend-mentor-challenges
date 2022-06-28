@@ -1,0 +1,52 @@
+.valueCards_wrapper {
+  flex-direction: column;
+  gap: 2em;
+  place-items: center;
+  padding-block: 6em;
+  text-align: center;
+}
+
+.valueCards {
+  flex-direction: column;
+}
+
+.valueCards { gap: 2em; }
+
+.valueCard {
+  flex-direction: column;
+  gap: 1em;
+  place-items: center;
+  place-content: center;
+}
+
+.valueCard img {
+  max-width: 200px;
+  border-radius: 50%;
+}
+
+.valueCard h4 {margin-top: -2em;}
+
+.valueCard p { max-width: 40ch; }
+
+.img_number {
+  transform: translateY(-80%);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--clr-primary-highlight);
+  place-items: center;
+  place-content:center;
+  font-family: var(--ff-secondary);
+  font-size: var(--fs-h4);
+  color: var(--clr-dark-bg);
+}
+
+/* MEDIA QUERIES */
+
+@media (min-width: 1000px) {
+
+  .valueCards {
+    flex-direction: row;
+  }
+  
+}

@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap');
+
+*,
+*::before,
+*::after {box-sizing:border-box;}
+
+/* CUSTOM PROPERTIES */
+
+:root {
+  --ff-sans:'Inter', sans-serif;
+
+  --fw-light : 300;
+  --fw-reg : 500;
+  --fw-bold : 700;
+
+  --fs-body : 32px; 
+  --fs-att : 11px;
+  
+  --clr-white :hsl(0, 0%, 100%);
+  --clr-primary-title-text : hsl(240, 38%, 20%);
+  --clr-primary-text : hsl(240, 18%, 77%);
+  --clr-a: hsl(228, 45%, 44%);
+
+}
+
+/* GENERAL STYLES */
+body {
+  font-family: var(--ff-sans);
+  font-size:var(--fs-body);
+  color: var(--clr-primary-text);
+  padding: 0;
+  font-weight:var(--fw-light);
+  background-image: url(/coding-bootcamp-testimonials-slider/images/pattern-curve.svg);
+  background-position: center bottom;
+  background-size:contain;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+  height: 100vh;
+}
+
+img {max-width: 100%;}
+
+/* CONTAINER */
+.container {
+  height: 100vh;
+  margin: 0 auto;
+  width: 100vw;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* SLIDER */
+
+.slide {
+  display:grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2,1fr);
+}
+
+.slider_img {
+  margin-top: 1rem;
+  grid-row: 1/2;
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: center;
+  background-image: url(/coding-bootcamp-testimonials-slider/images/pattern-bg.svg);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+}
+
+.slider_img img {
+  height: auto;
+  max-width: 300px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 60px 40px -7px;
+}
+
+.slider_nav {
+  display:inline-block;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+  border-radius: 30px;
+  z-index: 2;  
+  background-color: var(--clr-white);
+  transform:translateY(-20px);
+  
+}
+
+.prev {background-image: url(/coding-bootcamp-testimonials-slider/images/icon-prev.svg);}
+.next { background-image: url(/coding-bootcamp-testimonials-slider/images/icon-next.svg);}
+
+.prev,
+.next {
+  padding: 1rem 1.5rem;
+  margin: 0 auto;
+  cursor:pointer;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size:auto;
+  display: inline;
+}
+
+.next:active {
+  padding-right: 3px;
+  margin-right: 3px;
+}
+.prev:active {
+  padding-left: 3px;
+  margin-left: 3px;
+}
+
+.next:hover {
+  background-position: 70% 50%;
+  transition: all 300ms 100ms;
+}
+
+.prev:hover {
+  background-position: 30% 50%;
+  transition: all 300ms 100ms;
+}
+
+.slider_quote {
+  margin-top: 2rem;
+  height: 100%;
+  grid-row: 2/3;
+  color: var(--clr-primary-title-text);
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.slider_quote img  {height: 15%;}
+.slider_quote >p {margin-top: -1.5rem;}
+.slider_name {text-align:center;}
+
+.slider_name > .name {
+  font-size: 1rem;
+  color: var(--clr-primary-title-text);
+}
+
+.slider_name .role {
+  color: var(--clr-primary-text);
+  display:block;
+}
+
+/* FOOTER */
+.footer {
+  margin: 0 auto;
+  text-align: center;
+  font-weight:var(--fw-light);
+  color: var(--clr-primary-text);
+  font-size: var(--fs-att);
+}
+
+.footer a {color :var(--clr-a);}
+
+/* MEDIA QUERIES */
+
+@media (min-width: 800px) {
+
+  body {background-position: -100% 130%;}
+
+  .container {height: 100vh;}
+
+  .slide {
+    max-width: 1200px;
+    grid-template-columns:repeat(2,1fr);
+    grid-template-rows: auto;
+    place-items: flex-start center;
+  }
+
+  .slider_img { grid-column: 2/3;}
+
+  .slider_nav {transform: translate(-60% , -20px);}
+
+  .slider_quote {
+    align-self: center;
+    grid-column: 1/2;
+    grid-row:unset;
+    transform:translate(200px, 10%);
+  }
+
+  .slider_quote img  {transform: translateX(-200px);}
+
+  .slider_quote > p {
+    font-size:var(--fs-body);
+    text-align:left;
+  }
+
+  .slider_name {text-align: left;}
+  .slider_name .role {display:unset;}
+
+  .footer {margin-top: 5rem;}
+}

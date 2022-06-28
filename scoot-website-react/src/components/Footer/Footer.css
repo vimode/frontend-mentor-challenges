@@ -1,0 +1,62 @@
+footer {
+  background: var(--clr-footer-bg);
+  width: 100%;
+  padding-block: 2em;
+  place-items:center;
+}
+
+.brand_logo_alt path {
+  fill : var(--clr-white);
+}
+
+.footer_wrapper {
+  place-items:center;
+  gap: 3em;
+  flex-direction: column;
+}
+
+.footerNav .navItems {
+  flex-direction: column;
+  place-items: center;
+  gap: 2em;
+}
+
+.footer_wrapper .brandName > *{
+  color: var(--clr-white);
+}
+
+.socialIcons {
+  place-content: center;
+  place-items:center;
+  gap: 1.5em;
+}
+
+.social_icon:hover path,
+.social_icon:focus path{
+  fill : var(--clr-white);
+  transition : all 450ms ease-in-out;
+}
+
+/* MEDIA QUERIES */
+
+@media (min-width: 768px) {
+
+  .footer_wrapper {
+    flex-direction: row;
+  }
+
+  .socialIcons {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .footerNav .navItems {
+    flex-direction: row;
+  }
+
+  .socialIcons {
+    gap : 2em;
+    place-items:center;
+  }
+
+}

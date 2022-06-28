@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;700&display=swap');
+
+*,
+*::before,
+*::after {box-sizing:border-box;}
+
+/* CUSTOM PROPERTIES */
+
+:root {
+  --ff-sans:'Kumbh Sans', sans-serif;
+
+  --fw-light: 300;
+  --fw-reg: 400;
+  --fw-bold: 700;
+
+  --fs-body : 13px;
+  --fs-att: 11px;
+  
+  --clr-bg-content: #fff;
+  --clr-white: #fff;
+  --clr-primary-text-blue : hsl(238, 29%, 16%);
+  --clr-primary-text-red : hsl(14, 88%, 65%);
+  --clr-neutral-text-dark-gray: hsl(237, 12%, 33%);
+  --clr-neutral-text-light-gray:hsl(240, 6%, 50%);
+  --clr--divider-blue: hsl(240, 5%, 91%);
+  --clr-bg-gradient-violet : hsl(273, 75%, 66%);
+  --clr-bg-gradient-blue: hsl(240, 73%, 65%);
+  --clr-a-blue: hsl(228, 45%, 44%);
+}
+
+/*  GENERAL STYLES*/
+
+body {
+  font-family: var(--ff-sans);
+  font-size:var(--fs-body);
+  color: var(--clr-neutral-text-dark-gray);
+  margin: 0 auto;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(var(--clr-bg-gradient-violet), var(--clr-bg-gradient-blue));
+  display:grid;
+  justify-content:center;
+  align-content:center;
+}
+
+
+.wrapper {
+  background : var(--clr-bg-content);
+  border-radius: 2em;
+  max-width: 900px;
+  width: 95vw;
+  height: 500px;
+  display:grid;
+  grid-template-columns: 400px 1fr;
+  gap:4rem;
+  background-image: url(/faq-accordion-card/images/bg-pattern-desktop.svg);
+  background-repeat:no-repeat;
+  background-position:850% 69%;
+  box-shadow: 0px 4px 40px 0px var(--clr-primary-text-blue);
+  transition: all 0.5s;
+}
+
+
+/* IMAGE WRAPPER */
+
+.wrapper_img{position:relative;}
+
+.wrapper_img__inner {
+  background-image: url(/faq-accordion-card/images/illustration-woman-online-desktop.svg);
+  background-repeat:no-repeat;
+  height: 100%;
+  background-position: 100% center;
+}
+
+.wrapper_img_box {
+  position:absolute;
+  top:42%;
+  left: -30%;
+}
+
+/* FAQ WRAPPER */
+
+.wrapper_accordion {
+  margin-top: 5em;
+  display:flex;
+  flex-direction:column;
+}
+
+.accordion_title {
+  font-size: 2rem;
+  color: var(--clr-primary-text-blue);
+}
+
+.accordion_entries {
+  height: 100%;
+  display:flex;
+  flex-direction:column;
+}
+
+.entries_single {
+  width: 90%;
+  border-bottom: 1px solid var(--clr--divider-blue);
+}
+
+.single_question {
+  display:flex;
+  justify-content:space-between;
+  align-items: center;
+  cursor:pointer;
+}
+
+.question_title {
+  font-weight: 400;
+  margin: 1rem 0;  
+}
+
+.question_title:hover,
+.question_title:focus {color:var(--clr-primary-text-red);}
+
+.entries_single > .question_answer {
+  opacity:0;
+  height:0;
+  overflow:hidden;
+  transition: all 0.5s ease-out;
+  }
+
+/* ACTIVE  */
+
+.active > .question_answer {
+  opacity:1;
+  height:auto;
+  padding-bottom : 1rem;
+}
+
+.active > .single_question > .question_title {
+  color : var(--clr-primary-text-blue);
+  font-weight: var(--fw-bold);
+}
+
+.active img {transform: rotate(180deg);}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  color: var(--clr-primary-dark-blue);
+  font-size: var(--fs-att);
+  padding:3em;
+}
+
+.footer a {color :var(--clr-link);}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 950px ) {
+  
+  .wrapper {
+    max-width: 95vw;
+    width: 350px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px auto ;
+    gap:0.5em;
+    position:relative;
+    top: 10%;
+    height: 75vh;
+    padding-left:1em;
+  }
+
+  .wrapper_img {
+    background-image: url(/faq-accordion-card/images/bg-pattern-mobile.svg);
+    background-repeat:no-repeat;
+    background-position: center 50%;
+  }
+
+  .wrapper_img__inner {
+    background-image:url(/faq-accordion-card/images/illustration-woman-online-mobile.svg);
+    position:absolute;
+    width: 100%;
+    height: 200px;
+    background-position: 20%;
+    background-size: 80%;
+    top: -110%;
+  }
+
+  .wrapper_accordion {
+    padding-left:1rem;
+    margin-top: 0;
+  }
+
+  .accordion_title {text-align:center;}
+
+  .wrapper_img_box {display:none;}
+  
+  .footer {
+    position: relative;
+    top: 80%;
+  }
+}

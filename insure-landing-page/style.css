@@ -1,0 +1,491 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Karla:wght@400;700&display=swap');
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ROOT */
+
+:root {
+
+  --ff-heading : 'DM Serif Display', serif;
+  --ff-body :'Karla', sans-serif;
+
+  --fw-reg: 400;
+  --fw-bold: 700;
+
+  --fs-body-mobile : 16px;
+  --fs-body-desktop: 18px;
+  --fs-att: 11px;
+
+  
+  --clr-primary-dark-bg : hsl(256, 26%, 20%);
+  --clr-primary-blue: hsl(216, 30%, 68%);
+  --clr-neutral-footer-nav : hsl(270, 9%, 17%);
+  --clr-neutral-dark-text : hsl(273, 4%, 51%);
+  --clr-neutral-light-text : hsl(0, 0%, 98%);
+
+  --clr-footer-a : hsl(228, 45%, 44%);
+  --clr-white : hsl(0,0%, 100%);
+
+}
+
+/* BODY */
+
+body {
+  font-family: var(--ff-body);
+  font-size: var(--fs-body-mobile);
+  font-weight: var(--fw-reg);
+}
+
+img {
+  display:block;
+  width: 100%;
+}
+
+h1, h2 {
+  font-family: var(--ff-heading);
+  font-weight: var(--fw-bold);
+}
+
+h1 { font-size:2.8rem;}
+
+a {text-decoration: none;}
+
+a, ul {text-transform: uppercase;}
+
+ul li {list-style:none;}
+
+.wrapper {
+  display:grid;
+  text-align:center;
+}
+
+/* HEADER */
+
+header {
+  display:flex;
+  justify-content: space-between;
+  padding: 2em 1.5em;
+  place-items:center;
+  position:relative;
+}
+  /* NAVIGATION */
+
+.nav_btn {
+  width: 2em;
+  cursor: pointer;
+}
+
+.nav_close {display:none;}
+
+.navbar {
+  position:absolute;
+  z-index: 50;
+  display:flex;
+  flex-direction: column;
+  place-items:center;
+  padding: 3em 1em;
+  gap: 3em;
+  background: bottom no-repeat url(/insure-landing-page/images/bg-pattern-mobile-nav.svg), var(--clr-neutral-footer-nav);
+  background-size: contain;
+  width: 100vw;
+  top: 95px;
+  right: 0px;
+  height: 89vh;
+  display: none;
+  transition: 500ms ease-in;
+}
+
+.nav_items a {
+  color: var(--clr-neutral-light-text);
+  font-size: 1rem;
+  font-weight: var(--fw-bold);
+  letter-spacing: 1.5px;
+  border-bottom: 1px solid transparent;
+}
+
+.nav_items a:hover,
+.nav_items a:focus {
+  border-bottom: 1px solid var(--clr-neutral-light-text);
+  transition: 400ms linear;  
+}
+
+.item_highlight {
+  width: 100% !important;
+  border-bottom : 1px solid var(--clr-neutral-light-text) !important;
+}
+
+/* HERO ITEM */
+
+.hero_item {
+  height: 100%;
+  background: var(--clr-primary-dark-bg);
+}
+
+.hero_content{display:grid;}
+
+.content_text {
+  grid-row: 2/3;
+  color: var(--clr-neutral-light-text);
+  padding: 4em 1.5em;
+  background:top left url(/insure-landing-page/images/bg-pattern-intro-left-mobile.svg) no-repeat;
+  position:relative;
+  height: 100%;
+}
+
+.content_text hr {display:none;}
+
+.content_text p {
+  max-width: 50ch;
+  margin: 1.5em auto;
+  line-height: 1.8;
+}
+
+.bg_intro_right_mobile {
+  display:block;
+  position:absolute;
+  width: 8em;
+  right: 0;
+  bottom: -150px;
+}
+
+.bg_intro_left_desktop,
+.bg_intro_right_desktop {display:none}
+
+.btn_a { 
+  margin: 0 auto;
+  max-width: 20em;
+  width:50%;
+}
+
+/* BUTTON */
+
+.btn {
+  cursor:pointer;
+  color: var(--clr-neutral-light-text);
+  display:block;
+  border: 2px solid var(--clr-neutral-light-text);
+  font-weight: var(--fw-bold);
+  text-align: center;
+  padding: 1em 2em;
+}
+
+.btn:hover,
+.btn:focus {
+  background: var(--clr-neutral-light-text);
+  color: var(--clr-primary-dark-bg);
+  transition:350ms linear;
+}
+
+/* FEATURES */
+
+.features {margin-top: 5em;}
+
+hr {
+  border: 1px solid hsl(256, 26%, 70%);
+  width: 10em;
+  margin: 2em auto;
+  opacity: 0.5;
+}
+
+.features img {width: 5em;}
+
+.features_tabs,
+.feature_item {
+  display:grid;
+  place-items: center;
+  place-content:center;
+  gap: 2em;
+}
+
+.features_tabs {
+  margin: 5em auto;
+  gap: 3.5em;
+}
+
+.feature_item h2 {font-size: 2rem;}
+.feature_item p {
+  color: var(--clr-neutral-dark-text);
+  line-height: 1.8;
+  max-width: 50ch;
+}
+
+/* BOTTOM CTA */
+.bottom_cta  {
+  background: url(/insure-landing-page/images/bg-pattern-how-we-work-mobile.svg) no-repeat right, var(--clr-primary-dark-bg);
+  background-size: contain;
+  color: var(--clr-neutral-light-text);
+  margin: 10em auto;
+  width: 90vw;
+}
+
+.bottom_items {padding: 3em 2em;}
+.bottom_items h1 { font-size: 2rem;}
+
+.btn_bottom {
+  width: 70%;
+  font-size: 0.8rem;
+  margin: 2em auto;
+}
+
+/* FOOTER */
+footer {
+  background: url(/insure-landing-page/images/bg-pattern-footer-mobile.svg) no-repeat top, var(--clr-neutral-light-text);
+  background-size: 100% 18%;
+}
+
+.footer_branding {
+  display:flex;
+  flex-direction: column;
+  place-items: center;
+  gap: 3em;
+  padding-top:5em;
+}
+
+.footer_branding figure {width: 7em;}
+.footer_branding .socials {
+  display:flex;
+  gap: 1em;
+  place-items:center;
+}
+
+.socials svg path:hover,
+.socials svg path:focus {
+  fill:  var(--clr-neutral-footer-nav);
+  transition:350ms;
+}
+
+.footer_content hr {
+  width:  90vw;
+  border: 1px solid hsl(256, 26%, 70%);
+}
+
+.footer_nav {
+  display:grid;
+  gap:3em;
+}
+
+.footer_navbar{
+  display:flex;
+  flex-direction: column;
+  gap: 1em;
+  color: var(--clr-neutral-dark-text);
+  font-weight: var(--fw-bold);
+  font-size: 0.9rem;
+  letter-spacing: 1.2px;
+}
+
+.footer_navbar li a {
+  color: var(--clr-neutral-footer-nav);
+  border-bottom: 1px solid transparent;
+}
+
+.footer_navbar li:nth-child(1) {margin-top: 1.5em;}
+
+.footer_navbar li a:hover,
+.footer_navbar li a:focus {
+  border-bottom: 1px solid var(--clr-neutral-dark-text);
+  transition: 400ms linear;  
+}
+
+.attribution {
+  font-size:var(--fs-att);
+  text-align: center;
+  margin: 2em auto 1em;
+}
+
+.attribution a {text-transform: unset;}
+
+/* MEDIA QUERIES */
+
+@media(min-width: 1000px) {
+  body {
+    font-size: var(--fs-body-desktop);
+    overflow-x: hidden;
+  }
+
+  header {
+    padding: 1em 1.5em;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  h1 {font-size: 4rem;}
+
+  .wrapper {text-align:left;}
+
+  /* NAV */
+
+  .nav_btn {display:none;}
+
+  .navbar {
+    position:unset;
+    display:flex;
+    flex-direction: row;
+    place-items:center;
+    background:unset;
+    height: unset;
+    width: unset;
+    gap: 2em;
+    padding: 1em;
+  }
+
+  .nav_items a {
+    color: var(--clr-neutral-dark-text);
+    font-size: 1rem;
+    letter-spacing: 1.1px;
+    border-bottom: 1px solid transparent;
+  }
+
+  .nav_items a:hover,
+  .nav_items a:focus {
+    color: var(--clr-primary-dark-bg);
+    transition: 400ms linear;  
+  }
+
+  .item_highlight {
+    border: 1px solid var(--clr-neutral-dark-text);
+    border-bottom: 1px solid var(--clr-neutral-dark-text) !important;
+    padding: 0.6em 1.1em;
+  }
+
+  .item_highlight:hover,
+  .item_highlight:focus {
+    background: var(--clr-primary-dark-bg);
+    color: var(--clr-neutral-light-text) !important;
+  }
+
+  /* HERO ITEM */
+
+  .hero_item {
+    position: relative;
+  }
+
+  .hero_content {
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: 1fr;
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  .content_text {
+    grid-column: 1/2;
+    grid-row: span 1;
+    background:unset;    
+    position: unset;
+    margin-top: 3em;
+  }
+
+  .content_img {
+    grid-column: 2/3;
+    grid-row: span 1;
+  }
+
+  .content_img img {
+    transform: translateY(160px);
+    width: 33em;
+  }
+
+  .content_text hr {
+    display:block;
+    margin: 2em 0;
+  }
+
+  .content_text h1 {max-width: 15ch;}
+  .content_text p {margin:1.5em 0;}
+
+  .content_text .btn_a {
+    margin: unset;
+    padding: 0.5em 1em;
+    width: 10em;
+  }
+
+  .bg_intro_right_mobile {display:none;}
+
+  .bg_intro_right_desktop {
+    display:block;
+    position:absolute;
+    width: 22em;
+    top: 0;
+    right: 0;
+    z-index: 10;
+  }
+
+  .bg_intro_left_desktop {
+    display:block;
+    position:absolute;
+    width: 11em;
+    bottom: -280px;
+    left: -10px;
+  }
+
+  .features {
+    width: 80%;
+    margin: 15em auto;
+    max-width:1500px;
+  }
+
+  .features hr {
+    margin: 1em 0;
+    width: 6em;
+  }
+
+  .features_tabs {
+    grid-template-columns: repeat(3,1fr);
+    margin: 5em auto 0;
+  }
+
+  .feature_item {
+    place-items:flex-start;
+    grid-template-rows:100px 100px 180px;
+  }
+
+  .bottom_cta{
+    margin: 0 auto 5em;
+    background: url(/insure-landing-page/images/bg-pattern-how-we-work-desktop.svg) no-repeat right, var(--clr-primary-dark-bg);
+    background-size: contain;
+    width: 80%;
+  }
+
+  .bottom_items {
+    display:flex;
+    padding: 2em 4em;
+    place-items:center; 
+  }
+
+  .bottom_items h1 {
+    width: 80%;
+    font-size: 3rem;
+  }
+
+  .bottom_items h1 span{display:block;}
+  .bottom_items a {width: 20%;}
+
+  footer {background: url(/insure-landing-page/images/bg-pattern-footer-desktop.svg) no-repeat top left, var(--clr-neutral-light-text);}
+
+  .footer_content {
+    display:flex;
+    flex-direction:column;
+    place-items:center;
+  }
+
+  .footer_content hr {width: 80%;}
+
+  .footer_branding{
+    flex-direction: row;
+    width: 80%;
+    justify-content: space-between;
+    padding-top:3em;
+    gap: 0;
+  }
+
+  .footer_nav {
+    grid-template-columns: repeat(4, 1fr);
+    width: 80%
+  }
+}

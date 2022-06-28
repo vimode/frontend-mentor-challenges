@@ -1,0 +1,14 @@
+
+.page_header {
+  padding-block: 5em;
+}
+
+.page_header h1 {
+  color: var(--clr-white);
+}
+
+/* MEDIA QUERIES  */
+@media( min-width: 1000px) {
+
+
+}

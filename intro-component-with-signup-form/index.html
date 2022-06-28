@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <!-- CUSTOM CSS -->
+  <link rel="stylesheet" href="/intro-component-with-signup-form/style.css">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Intro component with sign up form</title>
+
+
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="header">
+      <h1 class="title">Learn to code by <br> watching others</h1>
+      <p class="content">
+        See how experienced developers solve problems in real-time. Watching scripted tutorials is great,
+        but understanding how developers think is invaluable.
+      </p>
+    </div> <!--  header-->
+
+    <div class="side-form">
+      <div class="box form-highlight">Try it free 7 days <span class="light-text">then</span> <span
+          class="light-text highlight-next">$20/mo. thereafter</span></div>
+
+      <form id="form" class="sign-up-form box" autocomplete="on" novalidate>
+        <div class="form-elements">
+          <input type="text" placeholder="First Name" aria-label="First Name" id="first_name" name="user_first_name"
+            required>
+          <img src="/intro-component-with-signup-form/images/icon-error.svg" alt="">
+          <p class="error-text">First Name cannot be empty</p>
+        </div>
+        <div class="form-elements">
+          <input type="text" placeholder="Last Name" aria-label="Last Name" id="last_name" name="user_last_name"
+            required>
+          <img src="/intro-component-with-signup-form/images/icon-error.svg" alt="">
+          <p class="error-text">Last Name cannot be empty</p>
+        </div>
+        <div class="form-elements">
+          <input type="email" placeholder="Email Address" aria-label="Email Address" id="email" name="user_email"
+            required
+            pattern='^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$'>
+          <img src="/intro-component-with-signup-form/images/icon-error.svg" alt="">
+          <p class="error-text"> Looks like this is not an email</p>
+        </div>
+        <div class="form-elements">
+          <input type="password" placeholder="Password" aria-label="Password" id="password" name="user_email" required>
+          <img src="/intro-component-with-signup-form/images/icon-error.svg" alt="">
+          <p class="error-text">Password cannot be empty</p>
+        </div>
+
+        <button class="btn">Claim your free trial</button>
+        <p class="small-text">By clicking the button, you are agreeing to our <a href="">Terms and Services</a></p>
+
+        <div class="toast-success">
+          <p>Success<br> Thank you</p>
+        </div>
+
+      </form>
+    </div>
+    <!--side form-->
+
+  </div> <!-- container-->
+  <footer class="footer">
+    Challenge by
+    <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a
+      href="https://github.com/vimode/frontend-mentor-challenges">vimode</a>
+  </footer>
+
+  <script src="/intro-component-with-signup-form/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  
+  <link rel="stylesheet" href="/pod-request-access-landing-page/style.css">
+  <script src="/pod-request-access-landing-page/script.js" defer></script>
+  <title>Pod request access landing page</title>
+</head>
+<body>
+
+  <main class="container">
+    <header>
+      <img src="/pod-request-access-landing-page/images/logo.svg" alt="pod logo" class="logo">
+    </header>
+
+    <section class="hero-content inner-container">
+      
+      <h1 class="hero-title">
+        Publish your podcasts <span>everywhere.</span>
+      </h1>
+      
+      <p class="hero-text ">
+        Upload your audio to Pod with a single click. We’ll then distribute your podcast to Spotify, Apple Podcasts, Google Podcasts, Pocket Casts and more!
+      </p>
+      
+      <div class="hero-partner-logos">
+        <img src="/pod-request-access-landing-page/images/spotify.svg" alt="Spotify" class="spot-podcast">
+        <img src="/pod-request-access-landing-page/images/apple-podcast.svg" alt="Apple Podcast" class="aapl-podcast">
+        <img src="/pod-request-access-landing-page/images/google-podcasts.svg" alt="Google  Podcast" class="goog-podcast">
+        <img src="/pod-request-access-landing-page/images/pocket-casts.svg" alt="Pocket Casts" class="pc-podcast">
+      </div>
+
+      <form id="form" class="request-access-form" autocomplete="on" novalidate>
+
+        <input type="email" required placeholder="Email address"  aria-label="Email Address"  id="email" name="user_email" pattern='^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$'>
+
+        <small class="error-text">Error</small>
+
+        <button type="submit" class="btn">Request Access</button>
+      </form>
+      <div class="toast-success"><p>Ding! Ding! Ding!</div>
+      
+    </section>
+    
+  </main>
+</body>
+</html>

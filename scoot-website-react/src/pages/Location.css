@@ -1,0 +1,155 @@
+.locationPage {
+  text-align:center;
+  background:
+  url(./assets/images/careers-locations-hero-mobile.jpg) no-repeat center/cover;
+}
+
+.desktop_image { display:none;}
+
+.location_tab {
+  background: var(--clr-light-bg-alt);
+  width: 100%;
+  padding: 1em;
+  max-width: 350px;
+  font-family: var(--ff-secondary);
+  text-align:center;
+  margin: 1em auto;
+}
+
+.location_map {
+  padding-block: 3em;
+}
+
+.location_info {
+  flex-direction: column;
+  place-content: center;
+  place-items: center;
+  text-align: center;
+  gap: 1.5em;
+  padding-block: 2em;
+}
+
+.location_info p {
+  max-width: 40ch;
+}
+
+
+/* MEDIA QUERIES */
+
+@media ( min-width: 768px) {
+  .locationPage {
+    text-align: left;
+    background:
+    url(./assets/patterns/white-circles.svg) no-repeat center right -30px,
+    url(./assets/images/careers-locations-hero-desktop.jpg) no-repeat center/cover;
+  }
+
+  .mobile_image {display:none;}
+  .desktop_image {display:block;}
+
+  .location_tab {
+    background: var(--clr-primary-highlight);
+    min-width: max-content;
+    width: 150px;
+    font-family: var(--ff-secondary);
+    text-align:center;
+    margin: unset;
+    padding: 0.5em;
+    font-size: 15px;
+    line-height: 28px;
+  }
+
+  .location_map {
+    position:relative;
+    padding-block: 5em;
+  }
+
+  .location_tab_wrapper  {
+    position: absolute;
+  }
+
+  .yellow_triangle {
+    border-left : 15px solid transparent;
+    border-right : 15px solid transparent;
+    border-top : 15px solid var(--clr-primary-highlight);
+    border-bottom: 15px solid transparent;
+    position:absolute;
+    bottom: -30px;
+    left: 55px;
+  }
+
+  .location_tab_wrapper:nth-child(1) {
+    top: 130px;
+    left: 90px;
+  }
+
+  .location_tab_wrapper:nth-child(2) {
+    top: 80px;
+    left: 250px;
+  }
+
+  .location_tab_wrapper:nth-child(3) {
+    top: 130px;
+    right: 25px;
+  }
+
+  .location_tab_wrapper:nth-child(4) {
+    bottom :230px;
+    right: 90px;
+  }
+
+  .location_info h2 {
+    max-width: 15ch;
+  }
+
+  .location_info p {
+    max-width: 65ch;
+  }
+
+}
+
+@media ( min-width: 1000px ) {
+
+  .location_tab {
+    width:200px;
+    padding: 1em;
+  }
+
+  .location_tab_wrapper:nth-child(1) {
+    top: 150px;
+    left: 150px;
+  }
+
+  .location_tab_wrapper:nth-child(2) {
+    top: 90px;
+    left: 390px;
+  }
+
+  .location_tab_wrapper:nth-child(3) {
+    top: 150px;
+    right: 60px;
+  }
+
+  .location_tab_wrapper:nth-child(4) {
+    bottom :300px;
+    right: 140px;
+  }
+  
+  .location_info {
+    flex-direction: row;
+    justify-content: space-between;
+    place-items:center;
+    padding-block: 8em;
+    text-align: unset;
+    gap: unset;
+  }
+
+  .location_info h2{
+    max-width: 12ch;
+  }
+
+  .location_info p{
+    max-width: 50ch;
+  }
+
+}

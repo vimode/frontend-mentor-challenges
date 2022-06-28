@@ -1,0 +1,27 @@
+.aboutPage {
+  text-align: center;
+  background:
+  url(./assets/images/about-hero-mobile.jpg) no-repeat center/cover;
+}
+
+.section_title {text-align:center;}
+
+.faq_outer_wrapper {
+  flex-direction: column;
+  gap: 2em;
+  margin-bottom: 5em;
+}
+
+
+
+/* MEDIA QUERIES */
+
+@media ( min-width: 1000px ) {
+  .aboutPage {
+    text-align : left;
+    background:
+    url(./assets/patterns/white-circles.svg) no-repeat center right -30px,
+    url(./assets/images/about-hero-desktop.jpg) no-repeat center;
+  }
+
+}

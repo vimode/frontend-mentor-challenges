@@ -1,0 +1,44 @@
+.listing_item_wrapper {
+  flex-direction: column;
+  place-items: center;
+  gap: 1em;
+  padding-block: 5em;
+}
+
+.listing_item {
+  background: var(--clr-light-bg);
+  flex-direction: column;
+  place-items: center;
+  text-align: center;
+  gap : 1em;
+  width: 100%;
+  max-width: 450px;
+  padding: 2em;
+}
+
+.btn.careerListing {width:80%;}
+
+.careerListing {padding: 1em 4em;}
+
+/* MEDIA QUERIES */
+
+
+@media (min-width: 768px) {
+  .listing_item_wrapper {
+    padding-block: 5em;
+  }
+
+  .listing_item {
+    flex-direction: row;
+    width:100%;
+    max-width: unset;
+    justify-content: space-between;
+    place-items: unset;
+    gap: unset;
+  }
+
+  .btn.careerListing {
+    width: unset;
+  }
+}
+

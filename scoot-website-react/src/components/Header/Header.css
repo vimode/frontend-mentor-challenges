@@ -1,0 +1,26 @@
+.brand_logo > *:visited{
+  color: var(--clr-title-text);
+}
+
+.header {
+  place-items:center;
+  gap: 3em;
+  padding-block: 1em;
+}
+
+.header_brand { 
+  text-align:center;
+  width: 100%;
+}
+
+
+
+/* MEDIA QUERIES */
+
+@media ( min-width: 768px) {
+  .header_brand { 
+    text-align:unset;
+    width: unset;
+  }
+  
+}

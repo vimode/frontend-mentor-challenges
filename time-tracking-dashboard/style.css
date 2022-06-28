@@ -1,0 +1,326 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+}
+
+/* ROOT */
+:root {
+  --ff-primary : 'Rubik', sans-serif;
+
+  --fw-light: 300;
+  --fw-reg: 400;
+  --fw-med: 500;
+
+  --fs-secondary-text :15px;
+  --fs-h1: 32px;
+  --fs-h2: 24px;
+  --fs-h3: 18px;
+  --fs-att: 11px;
+  --fs-profile-title : 24px;
+
+  --clr-body-bg: hsl(226, 43%, 10%);
+  --clr-card-bg: hsl(235, 46%, 20%);
+  --clr-card-bg-hover: hsl(236, 41%, 34%);
+
+  --clr-card-profile-highlight: hsl(246, 80%, 60%);
+  --clr-card-one-highlight: hsl(15, 100%,70%);
+  --clr-card-two-highlight: hsl(195, 74%, 62%);
+  --clr-card-three-highlight: hsl(348, 100%, 68%);
+  --clr-card-four-highlight: hsl(145, 58%, 55%);
+  --clr-card-five-highlight: hsl(264, 64%, 52%);
+  --clr-card-six-highlight: hsl(43, 84%, 65%);
+
+  --clr-text-white: hsl(0, 0%, 98%);
+  --clr-profile-secondary-text : hsl(235, 45%, 61%);
+  --clr-card-secondary-text : hsl(236, 100%, 87%);
+  
+  --clr-att-a: hsl(228, 45%, 44%);
+}
+
+body {
+  font-family:var(--ff-primary);
+  color: var(--clr-text-white);
+}
+
+h1 {
+  font-size: var(--fs-h1);
+  font-weight: var(--fw-light);
+}
+
+h2 {
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-light);
+}
+
+h3 {
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-reg);
+}
+
+img, 
+svg {
+  display:block;
+  width: 100%;
+}
+
+.grid_ {display:grid;}
+
+.flex_ {display:flex;}
+
+ul li {list-style:none;}
+
+.inner_wrapper {padding: 0 2em 0;}
+
+/* GENERAL */
+
+.outer_wrapper {
+  background : var(--clr-body-bg);
+  height: 100%;
+  min-height: 100vh;
+  width: 100%;
+  place-items:center;
+}
+
+.main_content {
+  gap: 2em;
+  width: 100%;
+  padding-top: 5em;
+}
+
+/*  profile card*/
+
+.profile_content {
+  place-self: center;
+  flex-direction: column;
+  width: 350px;
+  max-width:90%;
+  border-radius: 15px;
+  background: var(--clr-card-bg);
+  overflow: hidden;
+}
+
+.profile_content img{
+  border: 2px solid var(--clr-text-white);
+  border-radius: 50%;
+}
+
+.profile_top {
+  background: var(--clr-card-profile-highlight);
+  place-content: center;
+  place-items: center;
+  padding: 2em;
+  gap: 1em;
+  border-radius: 15px;
+}
+
+.profile_top figure {width: 25%;}
+
+.profile_bottom {
+  padding: 1.2em;
+  place-content: space-evenly;
+}
+
+.profile_bottom li {cursor: pointer;}
+
+li:hover h3{
+  color: var(--clr-text-white);
+  transition: 350ms linear;
+}
+
+.profile_title {
+  font-size: var(--fs-secondary-text);
+  color: var(--clr-card-secondary-text);
+  font-weight: var(--fw-reg);
+}
+
+li h3 {color: var(--clr-profile-secondary-text);}
+
+.display_active h3{color: var(--clr-text-white);}
+
+
+/* cards */
+
+.time_cards {gap: 2em;}
+
+.single_card {
+  place-self:center;
+  width: 350px;
+  max-width: 90%;
+  height: 160px;
+  border-radius: 15px;
+  position: relative;
+  cursor: pointer;
+}
+
+.card_one {
+  background: top -10% right url(/time-tracking-dashboard/images/icon-work.svg) no-repeat, var(--clr-card-one-highlight);
+}
+
+.card_two {
+  background: top -10% right url(/time-tracking-dashboard/images/icon-play.svg) no-repeat, var(--clr-card-two-highlight);
+}
+
+.card_three {
+  background: top -10% right url(/time-tracking-dashboard/images/icon-study.svg) no-repeat, var(--clr-card-three-highlight);
+}
+
+.card_four {
+  background: top -10% right url(/time-tracking-dashboard/images/icon-exercise.svg) no-repeat, var(--clr-card-four-highlight);
+}
+
+.card_five {
+  background: top -10% right url(/time-tracking-dashboard/images/icon-social.svg) no-repeat, var(--clr-card-five-highlight);
+}
+
+.card_six {
+  background: top -10% right url(/time-tracking-dashboard/images/icon-self-care.svg) no-repeat, var(--clr-card-six-highlight);
+}
+
+.inner_card {
+  flex-direction: column;
+  position:absolute;
+  background: var(--clr-card-bg);
+  width: 100%;
+  height: 80%;
+  bottom: -2px;
+  border-radius: 15px;
+  padding: 0.5em;
+}
+
+.single_card:hover .inner_card,
+.single_card:focus .inner_card {
+  background: var(--clr-card-bg-hover);
+  transition: 450ms linear;
+}
+
+.inner_card img {width: 1em;}
+
+.inner_title,
+.inner_timeframes {
+  place-items: center;
+  place-content: space-between;
+}
+
+.inner_title {padding: 1em 1em 0.5em;}
+
+.inner_title h3 {
+  font-weight: var(--fw-med);
+  color: var(--clr-text-white);
+}
+
+.inner_timeframes {padding: 0em 1em 1em;}
+
+.previous_data{
+  color: var(--clr-card-secondary-text);
+  font-size: var(--fs-secondary-text);
+}
+
+.att {
+  text-align: center;
+  font-size: var(--fs-att);
+}
+
+.att a{
+  text-decoration: none;
+  color : var(--clr-att-a);
+}
+
+/* MEDIA QUERIES */
+
+@media(min-width: 768px) {
+
+  .profile_content {width: 750px;}
+
+  .time_cards {
+    grid-template-areas: 
+    "cardOne cardTwo"
+    "cardThree cardFour"
+    "cardFive cardSix";
+    gap: 1em 40px;
+    place-content: center;
+  }
+
+  .card_one {grid-area: cardOne;}
+  .card_two {grid-area: cardTwo;}
+  .card_three {grid-area: cardThree;}
+  .card_four {grid-area: cardFour;}
+  .card_five {grid-area: cardFive;}
+  .card_six {grid-area: cardSix;}
+
+}
+
+@media (min-width:1200px) {
+  :root {
+  --fs-secondary-text :15px;
+  --fs-h1: 56px;
+  --fs-h2: 40px;
+  --fs-h3: 18px;
+  --fs-att: 11px;
+  --fs-profile-title : 24px;
+  }
+
+  .outer_wrapper{height: 100vh;}
+  
+  .main_content {
+    grid-template-areas: 
+    "profile cards"
+    "profile cards"
+    "footer footer"
+    ;
+    padding-top: unset;
+  }
+
+  .profile_content{
+    grid-area: profile;
+    width: 255px;
+    height: 518px;
+    justify-self: flex-end;
+  }
+
+  .profile_top {
+    flex-direction: column;
+    place-items: start;
+    height: 70%;
+    place-content: start;
+    gap: 2em;
+  }
+
+  .profile_username {max-width: 6ch;}
+
+  .profile_top figure {width: 40%;}
+
+  .profile_bottom {
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  .time_cards {
+    grid-area: cards;
+    grid-template-areas: 
+    "cardOne cardTwo cardThree"
+    "cardFour cardFive cardSix";
+    gap: 1.5em;
+    justify-self: flex-start;
+  }
+
+  .single_card {
+    width: 255px;
+    height: 244px;
+    max-width: 100%;
+  }
+
+  .inner_title {height: 50%;}
+
+  .inner_timeframes {
+    flex-direction: column;
+    place-items: start;
+    gap: 1em;
+  }
+
+  footer {grid-area: footer;}
+}

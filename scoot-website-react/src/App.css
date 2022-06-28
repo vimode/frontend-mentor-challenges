@@ -1,0 +1,25 @@
+.App {
+
+}
+
+/* TEMP  */
+.outer_wrapper {
+  width: 100%;
+  /* max-width: 1440px; */
+  margin: 0 auto;
+}
+
+.image_not_found{
+  object-fit: cover;
+
+}
+
+.inner_wrapper {
+  max-width: 1250px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+@media (max-width: 1000px ) {
+
+}

@@ -1,0 +1,433 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin:0;
+  padding: 0;
+}
+
+/* ROOT */
+
+:root {
+  
+  --ff-primary : 'Inter', sans-serif;
+
+  --fw-h1 : 700;
+  --fw-h2 : 700;
+  --fw-h3 : 700;
+  --fw-h4 : 400;
+  --fw-h5: 700;
+  --fw-h6: 700;
+  --fw-body: 400;
+
+  --fs-h1: 100px;
+  --fs-h2: 20px;
+  --fs-h3: 15px;
+  --fs-h4: 15px;
+  --fs-h5: 18px;
+  --fs-h6: 10px;
+  --fs-body: 12px;
+  --fs-clock-span: 40px;
+  --fs-btn: 12px;
+  --fs-att: 12px;
+
+  --lh-h1: 100px;
+  --lh-h2: 24.2px; 
+  --lh-h3: 28px;
+  --lh-h4: 25px;
+  --lh-h5: 28px;
+  --lh-h6: 28px;
+  --lh-body:22px;
+  --lh-clock-span: 28px;
+  --lh-btn: 14px;
+
+  --ls-h1: -2.5px;
+  --ls-h3: 3px;
+  --ls-h4: 3px;
+  --ls-h6: 2px;
+  --ls-btn: 3.75px;
+
+  --clr-text: hsl(0,0%,100%);
+  --clr-black: hsl(0,0%,0%);
+  --clr-dark: hsl(0, 0%, 19%);
+  --clr-button-hover: hsl(0,0%,60%);
+  --clr-text-overlay: hsl(0,0%,19%);
+  --clr-btn-text: hsla(0, 0%, 0%, 0.5);
+  --clr-overlay-bg: hsla(0,0%,100%,0.75);
+
+  --bg-img : url(/clock-app/mobile/bg-image-daytime.jpg);
+  --bg-bright-icon : url(/clock-app/desktop/icon-sun.svg); 
+
+}
+
+.night_theme {
+  --clr-overlay-bg: hsla(0,0%,0%,0.75);
+  --clr-text-overlay: hsl(0,0%,100%);
+  --bg-img : url(/clock-app/mobile/bg-image-nighttime.jpg);
+  --bg-bright-icon : url(/clock-app/desktop/icon-moon.svg); 
+}
+
+/* GENERAL */
+
+body {
+  font-family: var(--ff-primary);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color:var(--clr-text);
+  height: 100vh;
+  width: 100vw;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: var(--fs-h1) ;
+  font-weight: var(--fw-h1);
+  line-height: var(--lh-h1);
+  letter-spacing: var(--ls-h1);
+}
+
+h2 {
+  font-size: var(--fs-h2) ;
+  font-weight: var(--fw-h2);
+  line-height: var(--lh-h2);
+  letter-spacing: var(--ls-h2);
+}
+
+h3 {
+  font-size: var(--fs-h3) ;
+  font-weight: var(--fw-h3);
+  line-height: var(--lh-h3);
+  letter-spacing: var(--ls-h3);
+}
+
+h4 {
+  font-size: var(--fs-h4) ;
+  font-weight: var(--fw-h4);
+  line-height: var(--lh-h4);
+  letter-spacing: var(--ls-h4);
+}
+
+h5 {
+  font-size: var(--fs-h5) ;
+  font-weight: var(--fw-h5);
+  line-height: var(--lh-h5);
+  letter-spacing: var(--ls-h5);
+}
+
+h6 {
+  font-size: var(--fs-h6) ;
+  font-weight: var(--fw-h6);
+  line-height: var(--lh-h6);
+  letter-spacing: var(--ls-h6);
+}
+
+img {
+  display:block;
+  width: 100%;
+}
+
+svg {width: 100%;}
+
+.flex_ {display:flex;}
+.grid_ {display:grid;}
+
+ul li {list-style: none;}
+
+a {text-decoration: none;}
+
+.outer_wrapper {
+  background:linear-gradient(to bottom, hsla(0, 0%,0%,0.3), hsla(0, 0%,0%,0.4)),var(--bg-img) no-repeat ;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.inner_wrapper {
+  grid-template-areas: 
+  "section-quote"
+  "section-blank"
+  "section-clock"
+  "footer"
+  ;
+  height: 100%;
+  padding-top:3em;
+  grid-template-rows: 1fr 1fr 1fr 0.5fr;
+}
+
+.inner_content {padding: 0 2em;}
+
+.btn {
+  font-family: inherit;
+  font-size: var(--fs-btn);
+  font-weight: var(--fw-h1);
+  color: var(--clr-btn-text);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-btn);
+  line-height: var(--lh-btn);
+  cursor: pointer;
+  border-radius: 50px;
+  width: 120px;
+  height: 45px;
+  outline:none;
+  border:none;
+  padding-right:2em;
+  text-align: center;
+}
+
+.icon_arrow {
+  cursor: pointer;
+  position:absolute;
+  display:inline-block;
+  width: max-content;
+  top: 3px;
+  right:3px;
+  transform: scale(0.875) rotate(180deg);
+  transition: transform 400ms linear;
+}
+
+
+/* QUOTE */
+
+.quote_block {
+  grid-area:section-quote;
+  place-content: flex-start;
+  text-transform: none;
+}
+
+.quote_block figcaption {
+  margin-top: 1em;
+  font-weight: bold; 
+}
+
+.quote_block .icon_refresh {
+  width: 20%;
+  cursor:pointer;
+}
+
+/* CLOCK */
+
+.clock_block {
+  grid-area: section-clock;
+  gap: 1em;
+}
+
+.clock_block_title {gap: 1em;}
+
+.clock_block_title svg{width: auto;}
+
+.bright_icon {background: var(--bg-bright-icon) no-repeat;}
+
+.hide_icon{visibility:hidden;}
+
+.clock_time_group {gap: 1.5em;}
+
+.clock_tz {
+  display:inline-block;
+  font-size:var(--fs-h4);
+  font-weight: var(--fw-body);
+  line-height: var(--lh-body);
+  letter-spacing: normal;
+  align-self: end;
+  margin-bottom:0.75em;
+}
+
+.extra_greeting {display:none;}
+
+.button_group {
+  position: relative;
+  width:max-content;
+}
+
+/* OVERLAY */
+
+.show_overlay.inner_wrapper{
+  grid-template-areas: 
+  "section-clock"
+  "section-overlay"
+  ; 
+  grid-template-rows: repeat(2,1fr);
+  gap: 1em;
+}
+
+.show_overlay .quote_block {display:none;}
+
+.show_overlay .clock_block {gap:1em;}
+
+.show_overlay .clock_time{height:max-content;}
+
+.show_overlay .clock_block_title  {align-self: flex-end;}
+
+.overlay_extra {
+  grid-area: section-overlay;
+  display:none;
+}
+
+.show_overlay .overlay_extra {
+  display:flex;
+  flex-direction: column;
+  background: var(--clr-overlay-bg);
+  height: 100%;
+  padding: 4em 2em;
+}
+
+.show_overlay footer {grid-column: footer;}
+
+.extra_info {
+  flex-direction: column;
+  justify-content: space-around;
+  color: var(--clr-text-overlay);
+  height: 50%;
+}
+
+.info_details {
+  margin-left: auto;
+  text-transform: none;
+}
+
+.show_overlay .icon_arrow {
+  transform: scale(0.875) rotate(0deg);
+  transition: transform 400ms linear;
+}
+
+.show_overlay footer {display:none;}
+
+/* FOOTER */
+
+footer {
+  grid-area: footer;
+  text-transform: none;
+  align-self: end;
+  text-align: center;
+  z-index: 100;
+  font-size: var(--fs-att);
+}
+
+footer .att a{color : var(--clr-text);}
+
+/* MEDIA QUERIES */
+
+@media(min-width: 768px) {
+
+  :root {
+    --fs-h1: 170px;
+    --fs-h2: 40px;
+    --fs-h4: 18px;
+    --fs-h6: 13px;
+    --fs-body: 18px;
+    --fs-btn: 16px;
+  
+    --lh-h1: 170px;
+    --lh-h4: 28px;
+    --lh-body:28px;
+    --lh-btn: 14px;
+  
+    --ls-h1: -4.4px;
+    --ls-h4: 3.6px;
+    --ls-h6: 2.6px;
+  
+    --bg-img : url(/clock-app/tablet/bg-image-daytime.jpg);
+  }
+
+  .night_theme {
+    --bg-img : url(/clock-app/tablet/bg-image-nighttime.jpg);
+  }
+
+  .btn {
+    width: 8em;
+    height: 3em;
+  }
+
+  .inner_content {padding: 0 3em;}
+
+  .extra_greeting{display:inline-block;}
+
+  .extra_info {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .show_overlay .overlay_extra {flex-direction: row;}
+
+  .extra_info li {
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2em;
+    gap: 1em;
+  }
+
+  .info_details {margin-left:0;}
+
+  .greeting_group  {place-items: center;}
+
+}
+
+@media(min-width: 900px) {
+  :root {
+    --fs-h1: 200px;
+    --fs-h2: 56px;
+    --fs-h3: 24px;
+    --fs-h4: 20px;
+    --fs-h5: 18px;
+    --fs-h6: 15px;
+    --fs-body: 18px;
+    --fs-btn: 16px;
+  
+    --lh-h1: 200px;
+    --lh-h2: 68px; 
+    --lh-h4: 28px;
+    --lh-btn: 28px;
+  
+    --ls-h1: -5px;
+    --ls-h3: 4.8px;
+    --ls-h4: 4px;
+    --ls-h6: 3px;
+    --ls-btn: 5px;
+
+    --bg-img : url(/clock-app/desktop/bg-image-daytime.jpg);
+  }
+
+  .night_theme {
+    --bg-img : url(/clock-app/desktop/bg-image-nighttime.jpg);
+  }
+
+
+  .clock_block {
+    grid-template-areas:
+    "title -"
+    "time -"
+    "location button"
+    ;
+  }
+
+  .clock_block_title {grid-area: title;}
+
+  .clock_time_group {
+    grid-area: time;
+    gap: 1em;
+  }
+
+  .inner_content {padding: 0 5em;}
+  
+  .clock_location {grid-area: location;}
+
+  .button_group {
+    grid-area: button;
+    justify-self: flex-end;
+  }
+
+  .show_overlay .clock_location {margin-top: unset;}
+
+  .show_overlay .overlay_extra {padding: 0 5em;}  
+
+  .extra_info li {padding:0;}
+
+  .extra_info {
+    height:unset;
+    width: 50%;
+    flex-direction: column;
+    justify-content: space-evenly; 
+  }
+
+}

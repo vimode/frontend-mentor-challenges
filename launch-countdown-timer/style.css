@@ -1,0 +1,323 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+}
+
+:root {
+  --ff-primary:'Red Hat Text', sans-serif;
+  --fw-bold: 700;
+  
+  --fs-body: 14px;
+  --fs-att: 11px;
+
+  --clr-primary-text: hsl(237, 18%, 59%);
+  --clr-primary-highlight: hsl(345, 95%, 68%);
+  --clr-neutral-white: hsl(0, 0%, 100%);
+  --clr-neutral-card-bg : hsl(236, 21%, 26%);
+  --clr-neutral-card-bg-light : hsla(236, 21%, 26%,0.7);
+  --clr-neutral-dark-blue: hsl(235, 16%, 14%);
+  --clr-neutral-darkest-blue : hsl(234, 17%, 12%);
+  --clr-att-a: hsl(228, 45%, 44%);
+  --clr-main-bg: hsl(257, 19%, 14%);
+}
+
+/* GENERAL */
+body {
+  font-family:var(--ff-primary);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-bold);
+  height: 100vh;
+  width: 100vw;
+  color: var(--clr-neutral-white);
+}
+
+ul li {list-style: none;}
+
+a {text-decoration: none;}
+
+.outer_wrapper {
+  display:grid;
+  place-items:center;
+  height:100%;
+  background:url(/launch-countdown-timer/images/bg-stars.svg), var(--clr-main-bg);
+}
+
+footer {align-self:end;}
+
+.flex_item {display:flex;}
+
+.inner_wrapper {
+  flex-direction: column;
+  gap: 8em;
+  place-items: center;
+}
+
+/* Countdown */
+
+.title {
+  text-transform: uppercase;
+  letter-spacing: 8px;
+  font-size:1.5rem;
+}
+
+.countdown {
+  flex-direction: column;
+  place-items:center;
+  gap: 1em;
+  position:relative;
+}
+
+.countdown_timer {
+  gap: 3em;
+  place-items: center;
+}
+
+.countdown_timer p {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: var(--clr-primary-text);
+  letter-spacing: 5px;
+}
+
+.countdown_timer span {
+  color: var(--clr-primary-highlight);
+  font-size: 5rem;
+}
+
+.countdown_card,
+.flip_card{
+  width:10em;
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 0.6em var(--clr-neutral-darkest-blue);
+}
+
+.top_card,
+.bottom_card,
+.flip_card_top,
+.flip_card_bottom {
+  width: 100%;
+  height:5em;
+  border-radius: 10px 10px 0 0;
+  background: var(--clr-neutral-card-bg-light);
+  transform-origin: bottom;
+  overflow: hidden;
+  position: relative;
+  opacity:0.8;
+}
+
+.bottom_card,
+.flip_card_bottom{
+  border-radius: 0 0 10px 10px;
+  background: var(--clr-neutral-card-bg);
+  opacity: 1;
+}
+
+.top_card::before,
+.top_card::after,
+.bottom_card::before,
+.bottom_card::after,
+.flip_card_top::before,
+.flip_card_top::after,
+.flip_card_bottom::before,
+.flip_card_bottom::after {
+  content: " ";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-radius: 0 100% 0 0;
+  background: var(--clr-neutral-dark-blue);
+  width: 0.5em;
+  height: 0.5em;
+}
+
+.top_card::after,
+.flip_card_top::after{
+  left:unset;
+  right:0;
+  border-radius: 100% 0 0 0;
+}
+
+.bottom_card::before,
+.flip_card_bottom::before{
+  top: 0;
+  left:0;
+  bottom:unset;
+  border-radius: 0 0 100% 0;
+}
+
+.bottom_card::after,
+.flip_card_bottom::after {
+  top: 0;
+  right:0;
+  bottom:unset;
+  left:unset;
+  border-radius: 0 0 0 100%;
+}
+
+.top_card span,
+.flip_card_top span {
+  position:absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
+
+.bottom_card span,
+.flip_card_bottom span {
+  position:absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.flip_card {
+  position: absolute;
+  top:0;
+}
+
+.flip_card_top {
+  transform-origin: bottom;
+  z-index: 100;
+  /* animation: 1s linear running infinite flipDown; */
+}
+
+.flip_card_bottom {
+  transform-origin: top;
+  z-index:200;
+  /* animation: 1s linear running infinite flipLower; */
+}
+
+
+/* FOOTER */
+.footer {
+  background:bottom url(/launch-countdown-timer/images/pattern-hills.svg) no-repeat;
+  background-size:contain;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  place-items:center;
+  place-content: flex-end;
+  font-size: var(--fs-att);
+  padding-bottom: 1em;
+}
+
+.socials {
+  margin-bottom: 3em;
+  display:flex;
+  gap: 3em;
+}
+
+.socials a svg path{
+  fill: var(--clr-primary-text);
+  transition:fill 350ms ease-out;
+}
+
+.socials a:hover svg path,
+.socials a:focus svg path {
+  fill: var(--clr-primary-highlight);
+}
+
+.footer p a{
+  color: var(--clr-att-a);
+  transition: color 350ms linear;
+}
+
+.footer p a:hover,
+.footer p a:focus {
+  color: rebeccapurple;
+}
+
+/* MEDIA QUERIES */
+
+@media(max-width: 768px) {
+
+  .outer_wrapper{
+    width: 100%;
+  }
+
+  .title {text-align: center;}
+
+  .countdown_timer {gap: 2em;}
+
+  .countdown_card,
+  .flip_card {
+    width: 6em;
+  }
+
+  .top_card,
+  .bottom_card,
+  .flip_card_top,
+  .flip_card_bottom {
+    height: 3em;
+  }
+
+  .countdown_timer span {font-size: 3rem;}
+
+  .countdown_timer p {font-size: 0.6rem;}
+
+  .footer {
+    background-size:cover;
+    height: 50%;
+  }
+
+}
+
+@media( max-width: 500px ) {
+  
+  .countdown_timer {gap: 1em;}
+
+  .countdown_card,
+  .flip_card {
+    width: 5em;
+  }
+
+  .top_card,
+  .bottom_card,
+  .flip_card_top,
+  .flip_card_bottom {
+    height: 2.5em;
+  }
+
+  .countdown_timer span {font-size: 2.5rem;}
+
+  .countdown_timer p {font-size: 0.5rem;}
+
+}
+
+
+/* ANIMATION */
+
+@keyframes flipDown {
+  0% {
+    transform: rotate3d(0);
+  }
+  25% {
+    transform: rotate3d(-1, 0, 0, 30deg);
+  }
+  50% {
+    transform: rotate3d(-1,0, 0, 60deg);
+  }
+  100% {
+    transform: rotate3d(-1, 0, 0, 90deg);
+  }
+  
+}
+
+@keyframes flipLower {
+  0% {
+    transform: rotate3d(1, 0, 0 , 90deg);
+  }
+  25% {
+    transform : rotate3d(1, 0, 0, 60deg);
+  }
+  50%{ 
+    transform: rotate3D(1, 0, 0, 30deg);
+  }
+  100% {
+    transform: rotate3d(0);
+  }
+  
+}

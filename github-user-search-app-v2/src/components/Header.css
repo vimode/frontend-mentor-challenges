@@ -1,0 +1,114 @@
+.header {
+  justify-content: space-between;
+  place-items: center;
+}
+
+/* theme toggle */
+
+.theme_switcher input[type="checkbox"] {
+  appearance: none;
+  background: url('./../assets/img/icon-moon.svg') no-repeat;
+  width: 1.5em;
+  height: 1.5em;
+}
+
+.theme_switcher input[type="checkbox"]:checked{
+  appearance: none;
+  background: url('./../assets/img/icon-sun.svg') no-repeat;
+  width: 1.5em;
+  height: 1.5em;
+}
+
+.theme_switcher label {
+  text-transform: uppercase;
+  letter-spacing: var(--ls-switch-text);
+  font-weight: var(--fw-bold);
+  order: -10;
+}
+
+.theme_switcher {
+  gap: 1em;
+  place-content: flex-start;
+  place-items:center;
+}
+
+.btn_theme {
+  display:inline-block;
+  border:none;
+  background: url('./../assets/img/icon-moon.svg') no-repeat;
+  width: 1.5em;
+  height: 1.5em;  
+}
+
+/* searrch */
+
+.search_bar {
+  width: 100%;
+  position: relative;
+}
+
+.search_icon {
+  position: absolute;
+  height: 25px;
+  width: auto;
+  top: 20px;
+  left: 20px;
+}
+
+.search_bar input[type="search"] {
+  width: 100%;
+  border-radius: 10px;
+  height: 60px;
+  border:none;
+  padding: 1em 4em;
+  font-size: var(--fs-btn-text);
+  box-shadow: 0px 6px 20px var(--clr-box-shadow-light);  
+  background: var(--clr-main-bg);
+  outline:none;
+  color: var(--clr-text-body);
+}
+
+.search_bar input[type="search"]::placeholder {
+  color: var(--clr-text-body);
+}
+
+input[type="search"]:focus::placeholder { color: transparent; }
+
+.btn_search {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  background: var(--clr-primary-btn);
+  color: var(--clr-white);
+  padding:0 1.5em;
+  height: 50px;
+  border:none;
+  outline: none;
+  border-radius: 10px;
+  transition: background 350ms linear;
+}
+
+.btn_search:hover,
+.btn_search:focus {
+  background: var(--clr-primary-btn-hover);
+}
+
+.error_text {
+  position: absolute;
+  top: 20px;
+  right: 110px;
+  color: var(--clr-error-red);
+  font-weight: var(--fw-bold);
+  /* visibility: hidden; */
+  /* opacity: 0; */
+}
+
+.error_text.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+@media (min-width: 768px) {
+  .error_text{right: 130px;}
+}

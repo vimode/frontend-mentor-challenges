@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+}
+
+/* ROOT */
+
+:root {
+  --ff-body : 'Montserrat', sans-serif;
+
+  --fw-bold: 700;
+  --fw-reg: 400;
+  
+  --fs-body: 15px;
+  --fs-att: 11px;
+
+  --clr-white : hsl(0, 0%, 100%);
+  --clr-primary-gradient : to right, hsl(236, 72%, 79%),hsl(237, 63%, 64%);
+  --clr-primary-gradient2 : hsl(236, 72%, 79%),hsl(237, 63%, 64%);
+  --clr-primary-fill : hsl(237, 63%, 64%);
+  --clr-neutral-bg : hsl(240, 78%, 98%);
+  --clr-neutral-light-bg: hsl(234, 14%, 74%);
+  --clr-neutral-heading: hsl(233, 13%, 49%);
+  --clr-neutral-body: hsl(232, 13%, 33%);
+  --clr-att-a : hsl(228, 45%, 44%);
+}
+
+/* GENERAL */
+
+body {
+  font-family: var(--ff-body);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-body);
+  color: var(--clr-neutral-body);
+  background:  top right url(/pricing-component-with-toggle/images/bg-top.svg) no-repeat, bottom left url(/pricing-component-with-toggle/images/bg-bottom.svg) no-repeat var(--clr-neutral-bg);
+  background-size: contain contain;
+  width: 100vw;
+  height: 100%;
+  text-align: center;
+}
+
+h1,
+h2,
+h3 {color: var(--clr-neutral-heading);}
+
+ul li {list-style: none;}
+
+a {text-decoration: none;}
+
+.wrapper {
+  display:grid;
+  gap: 3em;
+  place-items: center;
+  place-content: center;
+  padding : 3em 2em;
+}
+
+/* WRAPPER */
+
+/* INPUT TOGGLE */
+
+.pricing_options {
+  margin-top: 2em;
+  display:flex;
+  gap: 1em;
+  place-items: center;
+}
+
+.pricing_options:hover {
+  opacity: 0.5;
+  transition:300ms;
+}
+
+.pricing_toggle {
+  display:inline-block;
+  width: 55px;
+  height: 30px;
+  position:relative;
+}
+
+input[type="checkbox"] {
+  opacity: 0;
+  width: 0;
+  height:0;
+}
+
+.toggle {
+  position:absolute;
+  top:0;
+  right: 0;
+  bottom: 0;
+  left:0;
+  background: linear-gradient(var(--clr-primary-gradient));
+  cursor:pointer;
+  border-radius: 30px;
+}
+
+.toggle::before{
+  position:absolute;
+  content : "";
+  height: 24px;
+  width: 24px;
+  right: 27px;
+  bottom: 3px;
+  background: var(--clr-white);
+  border-radius: 50%;
+  transition: 350ms;
+}
+
+input:checked + .toggle:before {transform: translateX(24px);}
+
+/* PRICING TABLE */
+
+.pricing_table {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.pricing_table .table {
+  background: var(--clr-white);
+  border-radius: 10px;
+  padding: 30px;
+  margin: 10px;
+  box-shadow: 0 10px 10px hsl(232, 13%, 90%);
+}
+
+.table p {
+  font-size: 4em;
+  margin: 15px 0;
+  width: 250px;
+}
+
+.table p .monthly {display:block;}
+.table p .annually {display:none;}
+
+.show_annual p .monthly{display:none;}
+.show_annual p .annually{display:block;}
+
+.table:nth-child(2) {
+  background:linear-gradient(var(--clr-primary-gradient2));
+  color:var(--clr-white)
+}
+
+.table:nth-child(2)  h3,
+.table:nth-child(2)  .features {color:var(--clr-white)}
+
+ul {border-top: 1px solid var( --clr-neutral-light-bg);}
+
+.features {
+  border-bottom: 1px solid var( --clr-neutral-light-bg);
+  font-size: var(--fs-body);
+  padding: 1em 0;
+  color: var(--clr-neutral-heading);
+}
+
+.btn {
+  border: none;
+  border-radius: 5px;
+  color: var(--clr-white);
+  letter-spacing: 2px;
+  padding: 15px;
+  width: 100%;
+}
+
+.btn_filled {
+  background:linear-gradient(var(--clr-primary-gradient));
+  border: 1px solid transparent;
+}
+
+.btn_filled:hover,
+.btn_filled:focus {
+  background: transparent;
+  color:  var(--clr-primary-fill);
+  border: 1px solid var(--clr-neutral-light-bg);
+  transition: 450ms;
+}
+
+.btn_empty {
+  color:  var(--clr-primary-fill);
+  background:var(--clr-white);
+  border: 1px solid transparent;
+}
+
+.btn_empty:hover,
+.btn_empty:focus{
+  color: var(--clr-white);
+  background:linear-gradient(var(--clr-primary-fill));
+  border: 1px solid var(--clr-neutral-bg);
+  transition: 450ms;
+}
+
+.btn_a {
+  display: block;
+  margin-top: 20px;
+  text-transform: uppercase;
+}
+
+/* FOOTER */
+
+.attribution {
+  font-size: var(--fs-att);
+  font-weight: var(--fw-reg);
+  margin-bottom: 1.1em;
+}
+
+/* MEDIA QUERIES */
+
+@media(min-width: 1000px) {
+
+  body {height: 100vh;}
+
+  .heading h1 {font-size: 2rem;}
+
+  .wrapper {
+    height: 90%;
+    padding: 0;
+  }
+
+  .pricing_table{flex-direction: row;}
+  .pricing_table .table {margin: 10px 0;}
+
+  .table:nth-child(2) {transform: scale(1.1);}
+
+  .attribution{margin-top:1.1em;}
+}

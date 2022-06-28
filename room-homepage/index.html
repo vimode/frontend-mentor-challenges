@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <!-- css -->
+  <link rel="stylesheet" href="/room-homepage/style.css">
+
+  <!-- custom fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- js -->
+  <script defer src="/room-homepage/script.js"></script>
+
+  <title> Room homepage</title>
+
+
+</head>
+
+<body>
+
+  <div class="hidden_overlay"></div>
+
+  <div class="outer_container grid_">
+
+    <section class="brand_header grid_">
+
+      <header class="flex_">
+
+        <div class="navbar_buttons">
+          <img src="/room-homepage/images/icon-hamburger.svg" alt="" class="nav_open">
+          <img src="/room-homepage/images/icon-close.svg" alt="" class="nav_close">
+        </div>
+
+        <img src="/room-homepage/images/logo.svg" alt="brand logo" class="brand_logo">
+
+
+        <nav>
+          <ul class="header_nav flex_">
+            <li class="nav_item"><a href="#">Home</a></li>
+            <li class="nav_item"><a href="#shop">Shop</a></li>
+            <li class="nav_item"><a href="#about">About</a></li>
+            <li class="nav_item"><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+
+      </header>
+
+      <img src="/room-homepage/images/desktop-image-hero-1.jpg" alt="" class="header_image main_image desktop_image">
+      <img src="/room-homepage/images/mobile-image-hero-1.jpg" alt="" class="header_image main_image mobile_image">
+
+      <div class="hero_buttons flex_">
+        <img src="/room-homepage/images/icon-angle-left.svg" alt="arrow left" class="arrow_icon arrow_left">
+        <img src="/room-homepage/images/icon-angle-right.svg" alt="arrow right" class="arrow_icon arrow_right">
+      </div>
+
+    </section>
+
+    <section class="hero_content content_container flex_" id="shop">
+      <h1 class="hero_title">Discover innovative ways to decorate</h1>
+      <p class="hero_text"> We provide unmatched quality, comfort, and style for property owners across the country.
+        Our experts combine form and function in bringing your vision to life. Create a room in your
+        own style with our collection and make your property a reflection of you and what you love.</p>
+      <a class="hero_cta">Shop Now <img src="/room-homepage/images/icon-arrow.svg" alt="arrow icon" class="cta_arrow">
+      </a>
+    </section>
+
+
+    <img src="/room-homepage/images/image-about-dark.jpg" alt="dark furniture image"
+      class="image_about_dark main_image">
+
+    <section class="about_content content_container flex_" id="about">
+      <h2 class="about_title">About our furniture</h2>
+      <p class="about_text"> Our multifunctional collection blends design and function to suit your individual taste.
+        Make each room unique, or pick a cohesive theme that best express your interests and what
+        inspires you. Find the furniture pieces you need, from traditional to contemporary styles
+        or anything in between. Product specialists are available to help you create your dream space.</p>
+
+      <footer>
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor.</a> Coded by <a
+          href="https://github.com/vimode/frontend-mentor-challenges">vimode</a>
+      </footer>
+
+    </section>
+
+    <img src="/room-homepage/images/image-about-light.jpg" alt="light furniture image"
+      class="image_about_light main_image">
+
+  </div>
+
+</body>
+
+</html>

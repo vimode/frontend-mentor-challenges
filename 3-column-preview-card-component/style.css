@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+
+*,
+*::after,
+*::before {box-sizing:border-box;}
+
+/* ROOT */
+:root {
+  --ff-title : 'Big Shoulders Display', cursive;
+  --ff-body : 'Lexend Deca', sans-serif;
+
+  --fw-reg : 400;
+  --fw-bold: 700;
+
+  --fs-body : 15px;
+  --fs-att : 11px;
+  
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-primary-bg-one : hsl(31, 77%, 52%);
+  --clr-primary-bg-two : hsl(184, 100%, 22%);
+  --clr-primary-bg-three : hsl(179, 100%, 13%); 
+  --clr-neutral-text : hsla(0, 0%, 100%, 0.75);
+  --clr-light-gray : hsl(0, 0%, 95%); /*background headings buttons*/
+  --clr-a : hsl(228, 45%, 44%);
+
+}
+
+/* GENERAL */
+body {
+  background-color: var(--clr-light-gray);
+  font-family:   var(--ff-body);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-reg);
+  color : var(--clr-neutral-text);
+  margin: 0 auto;
+}
+
+.container {
+  margin: 5rem auto;
+  height: 100%;
+  width: 100vw;
+}
+
+h2 {
+  font-family: var(--ff-title);
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  font-weight: var(--fw-bold);
+  color: var(--clr-light-gray);
+  letter-spacing: 1px;
+}
+
+a {text-decoration: none;}
+
+.card-component {
+  width: 90%;
+  margin: 0 auto;
+  display:flex;
+  flex-flow: row wrap;
+  place-items:center;
+  place-content: center;
+}
+
+.card {
+  padding: 3rem 2rem;
+  box-shadow:inset 0 0 5px 2px hsla(0, 0%, 0%, 0.2);
+  display:grid;
+  grid-template-rows: repeat(4, auto);
+  width: 100%;
+}
+
+/* BOXES */
+.card-text {
+  line-height: 1.5;
+  letter-spacing: 1px;
+  color:var(--clr-neutral-text);
+  max-width: 40ch;
+}
+
+.box-one {
+  background: var(--clr-primary-bg-one);
+  border-radius :10px 10px 0 0; 
+}
+
+.box-two {background: var(--clr-primary-bg-two);}
+
+.box-three {
+  background: var(--clr-primary-bg-three);
+  border-radius: 0 0 10px 10px;
+}
+
+.box-one .learn-more {color: var(--clr-primary-bg-one);}
+.box-two .learn-more {color: var(--clr-primary-bg-two);}
+.box-three .learn-more {color: var(--clr-primary-bg-three);}
+
+.learn-more {
+  display:block;
+  width: 10rem;
+  background: var(--clr-light-gray);
+  padding: 0.8rem 1.3rem;
+  text-align:center;
+  border-radius: 50px;
+  margin-top: 1rem;
+  align-self: center;
+  border: 2.5px solid var(--clr-light-gray);
+  transition: background-color;
+}
+
+.learn-more:hover,
+.learn-more:focus {
+  background: transparent;
+  color: var(--clr-light-gray);
+  transition: 350ms ease-out;
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  color: var(--clr-primary-bg-three);
+  font-size: var(--fs-att);
+  opacity: 0.6;
+  margin: 0 auto;
+}
+
+.footer a {color :var(--clr-a);}
+
+/* EXPERIMENTAL/FUN MEDIA QUERIES  */
+
+@media(min-width: 600px)  and (max-width: 998px) {
+  .container{
+    width: 100vw;
+    height:100vh;
+    margin: 0 auto;
+    display:flex;
+    place-items:center;
+    flex-direction:column;
+    place-content:center;
+  }
+
+  .card-component {
+    display:grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  .card {
+    height: 35rem;
+    grid-row : 1/3;
+    padding : 3rem 1rem;
+  }
+
+  .card-text {max-width: unset;}
+
+  .box-three {
+    grid-column: 9/13 ;
+    border-radius: 0 10px 10px 0;
+  }
+
+  .box-two {grid-column: 5/9;}
+
+  .box-one {
+    grid-column: 1/5 ;
+    border-radius: 10px 0 0 10px;    
+  }
+
+  @media(hover:hover) {
+    .card:hover {
+      border-radius: 10px;
+      z-index: 10;
+      padding: 3rem;
+    }
+    
+    .box-one:hover,
+    .box-one:focus {grid-column: 1/7;}
+
+    .box-two:hover,
+    .box-two:focus {grid-column: 4/10;}
+    
+    .box-three:hover,
+    .box-three:focus {grid-column: 7/13;}
+  }
+
+}
+
+/* REGULAR MEDIA QUERIES */
+
+@media (min-width: 600px) {
+  .container{
+    height:100vh;
+    margin: 0 auto;
+    display:flex;
+    place-items:center;
+    flex-direction:column;
+    place-content:center;
+  }
+}
+
+@media (min-width: 999px ) {
+  .card {max-width: 300px;}
+  .box-one {border-radius: 10px 0 0 10px;}
+  .box-three {border-radius: 0 10px 10px 0;}
+  .card-text {margin-top: 0;}
+  .learn-more {margin-top: 5rem;}
+}
