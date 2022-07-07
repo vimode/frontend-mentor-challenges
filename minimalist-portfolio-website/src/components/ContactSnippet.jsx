@@ -1,11 +1,14 @@
 import { Link } from "react-router-dom";
+import { SnippetWrapper } from "./ContactSnippet.styles";
+import { PrimaryStyledLink } from "./LinkButton.styles";
 
 function ContactSnippet () {
   return (
-    <div>
+    <SnippetWrapper>
       <h1>Interested in doing a project together?</h1>
-      <Link to="/contact">Contact Me</Link>
-    </div>
+      <hr></hr>
+      <PrimaryStyledLink to="/contact">Contact Me</PrimaryStyledLink>
+    </SnippetWrapper>
   )
 }
 

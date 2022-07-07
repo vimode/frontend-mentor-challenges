@@ -9,7 +9,7 @@ export const StyledNavLink = styled(NavLink)`
  text-decoration: none; 
  text-transform: uppercase;
  font-size: var(--text-sm);
- color: var(--color-primary-gray-blue);
+ color: var(--color-primary-grey-blue);
 
  &:hover,
  &:focus {

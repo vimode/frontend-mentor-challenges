@@ -28,13 +28,15 @@ export default createGlobalStyle  `
 
     --color-primary-cyan-600: hsl(167, 36%, 54%);
     --color-primary-dark-blue-700: hsl(205, 41%, 21%);
-    --color-primary-gray-blue-800: hsl(245, 10%, 22%);
+    --color-primary-grey-blue-800: hsl(245, 10%, 22%);
     
     --color-secondary-grey-100: hsl(0, 0%, 98%);
     --color-secondary-grey-300: hsl(240, 2%, 92%);
     --color-secondary-red-400: hsl(0, 90%, 57%);
 
-    --color-button-secondary-border: var(--color-primary-gray-blue-800);
+    --color-neutral-white: hsl(0, 0%, 100%);
+
+    --color-button-secondary-border: var(--color-primary-grey-blue-800);
     --color-input-active-border: var(--color-primary-cyan-600);
     --color-input-error-border: var(--color-secondary-red-400);
     
@@ -69,7 +71,8 @@ export default createGlobalStyle  `
 
   body {
     font-family: var(--font-primary);
-    font-weight: var(--font-regular);
+    font-weight: var(--font-weight-regular);
+    color: var(--color-primary-grey-blue-800);
   }
 
   ul {
