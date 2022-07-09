@@ -8,7 +8,7 @@ export const summaryData = [
   }
 ]
 
-const projectData = [
+export const projectData = [
   {
     name: "Manage",
     intro: "This project required me to build a fully responsive landing page to the designs provided. I used HTML5, along with CSS Grid and JavaScript for the areas that required interactivity, such as the testimonial slider.",
@@ -17,7 +17,10 @@ const projectData = [
     background: `This project was a front-end  challenge from Frontend Mentor. It’s a platform that enables you to practice building websites to a design and project brief. Each challenge includes mobile and desktop designs to show how the website should look at different screen sizes. Creating these projects has helped me refine my workflow and solve real-world coding problems. I’ve learned something new with each project, helping me to improve and adapt my style.`,
     coverimg: "/images/detail/desktop/image-manage-hero@2x.jpg",
     previews: ["/images/detail/desktop/image-manage-preview-1@2x.jpg","/images/detail/desktop/image-manage-preview-2@2x.jpg"],
-    livelink : "#"
+    portfolioImg: ["/images/portfolio/desktop/image-portfolio-manage.jpg","/images/portfolio/desktop/image-portfolio-manage@2x.jpg"],
+    link: "/portfolio/manage",
+    livelink: "#",
+    order: "left"
   },
   {
     name: "Bookmark",
@@ -27,7 +30,10 @@ const projectData = [
     background: `This project was a front-end  challenge from Frontend Mentor. It’s a platform that enables you to practice building websites to a design and project brief. Each challenge includes mobile and desktop designs to show how the website should look at different screen sizes. Creating these projects has helped me refine my workflow and solve real-world coding problems. I’ve learned something new with each project, helping me to improve and adapt my style.`,
     coverimg: "/images/detail/desktop/image-bookmark-hero@2x.jpg",
     previews: ["/images/detail/desktop/image-bookmark-preview-1@2x.jpg","/images/detail/desktop/image-bookmark-preview-2@2x.jpg"],
-    livelink : "#"
+    portfolioImg: ["/images/portfolio/desktop/image-portfolio-bookmark.jpg","/images/portfolio/desktop/image-portfolio-bookmark@2x.jpg"],
+    link: "/portfolio/bookmark",
+    livelink: "#",
+    order: "right"
   },
   {
     name: "Insure",
@@ -37,7 +43,10 @@ const projectData = [
     background: `This project was a front-end  challenge from Frontend Mentor. It’s a platform that enables you to practice building websites to a design and project brief. Each challenge includes mobile and desktop designs to show how the website should look at different screen sizes. Creating these projects has helped me refine my workflow and solve real-world coding problems. I’ve learned something new with each project, helping me to improve and adapt my style.`,
     coverimg: "/images/detail/desktop/image-insure-hero@2x.jpg",
     previews: ["/images/detail/desktop/image-insure-preview-1@2x.jpg","/images/detail/desktop/image-insure-preview-2@2x.jpg"],
-    livelink : "#"
+    portfolioImg: ["/images/portfolio/desktop/image-portfolio-insure.jpg","/images/portfolio/desktop/image-portfolio-insure@2x.jpg"],
+    link: "/portfolio/insure",
+    livelink: "#",
+    order: "left"
   },
   {
     name: "Fylo",
@@ -47,15 +56,13 @@ const projectData = [
     background: `This project was a front-end  challenge from Frontend Mentor. It’s a platform that enables you to practice building websites to a design and project brief. Each challenge includes mobile and desktop designs to show how the website should look at different screen sizes. Creating these projects has helped me refine my workflow and solve real-world coding problems. I’ve learned something new with each project, helping me to improve and adapt my style.`,
     coverimg: "/images/detail/desktop/image-fylo-hero@2x.jpg",
     previews: ["/images/detail/desktop/image-fylo-preview-1@2x.jpg","/images/detail/desktop/image-fylo-preview-2@2x.jpg"],
-    livelink : "#"
+    portfolioImg: ["/images/portfolio/desktop/image-portfolio-fylo.jpg","/images/portfolio/desktop/image-portfolio-fylo@2x.jpg"],
+    link: "/portfolio/fylo",
+    livelink: "#",
+    order: "right"
   }
 ]
 
-
-
-export function getProjectData() {
-  return projectData;
-}
 
 export function getProject(name) {
   return projectData.find((project) => project.name.toLowerCase() === name.toLowerCase());
