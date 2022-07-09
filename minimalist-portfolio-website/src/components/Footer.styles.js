@@ -14,19 +14,7 @@ export const FooterWrapper = styled.div `
     gap: var(--space-10);
   }
 
-  & .social_icons {
-    list-style: none;
-    display:flex; 
-    gap:var(--space-8);
-    place-items: center;
-  }
-
-  & li {
-    // list-style: none;
-  }
-
   & svg path {
     fill : var(--color-neutral-white);
   }
-
 `

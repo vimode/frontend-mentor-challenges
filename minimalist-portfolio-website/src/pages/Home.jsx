@@ -3,7 +3,7 @@ import { summaryData} from "../data/data.js";
 
 function Home () {
   return (
-    <main>
+    <>
       <HeroContent />
       <Summary
         title= {summaryData[0].title} 
@@ -13,7 +13,7 @@ function Home () {
         imgsrc ={summaryData[0].imgsrc}
       />
       <ContactSnippet />
-    </main>
+    </>
   )
 }
 

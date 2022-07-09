@@ -7,6 +7,7 @@ export const HeroWrapper = styled.section`
     "content-area content-area -"
     "content-area content-area -"
     "image-area-two image-area-two image-area-two";
+    max-width: 1920px;
 
     & img {
       grid-row: image-area-one / image-area-two;

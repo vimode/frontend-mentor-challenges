@@ -1,7 +1,7 @@
 import { Routes, Route } from  'react-router-dom';
 import { Home, Portfolio, Contact } from './pages'
 import { Footer, Header, Project, PortfolioDefault } from './components'
-import { OuterWrapper, HeaderWrapper, Main, FooterWrapper } from './App.styles'
+import { OuterWrapper, HeaderWrapper, MainWrapper, FooterWrapper } from './App.styles'
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
       <HeaderWrapper>
         <Header />
       </HeaderWrapper>
-      <Main>
+      <MainWrapper>
         <Routes>
           <Route path="/" element={<Home />}  />
           <Route path="/portfolio" element={<Portfolio />}>
@@ -19,7 +19,7 @@ function App() {
           <Route path="/contact" element={<Contact />}  />
           <Route path="*" element={<p>There's nothing here</p>} />
         </Routes>
-      </Main>
+      </MainWrapper>
       <FooterWrapper>
         <Footer />
       </FooterWrapper>

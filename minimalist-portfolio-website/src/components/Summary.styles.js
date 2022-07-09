@@ -2,9 +2,18 @@ import styled from "styled-components"
 import { Link } from "react-router-dom"
 
 export const SummaryWrapper = styled.section `
- display:flex; 
- place-items:center;
- column-gap: var(--space-16);
+  display:flex; 
+  place-items:center;
+  place-content:center;
+  column-gap: var(--space-20);
+  max-height:500px;
+  max-width: 1200px;
+
+
+  & picture.right {
+    order: 10;
+  }
+
 `
 
 export const ContentWrapper = styled.div `
@@ -13,6 +22,9 @@ export const ContentWrapper = styled.div `
   border-top: 2px solid var(--color-secondary-grey-300);
   border-bottom: 2px solid var(--color-secondary-grey-300);
   padding-block: var(--space-16);
+  height: 500px;
+  place-content: center; 
+  width: 50%;
 
   & h2 {
     font-family:  var(--font-secondary);
