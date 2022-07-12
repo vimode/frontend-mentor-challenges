@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import { Link } from "react-router-dom"
 
 export const SummaryWrapper = styled.section `
   display:flex; 
@@ -9,9 +8,15 @@ export const SummaryWrapper = styled.section `
   max-height:500px;
   max-width: 1200px;
 
-
   & picture.right {
     order: 10;
+  }
+
+  & img.summary {
+    width: auto;
+    object-fit: contain;
+    height: 500px;
+    overflow: hidden;
   }
 
 `
@@ -24,17 +29,18 @@ export const ContentWrapper = styled.div `
   padding-block: var(--space-16);
   height: 500px;
   place-content: center; 
-  width: 50%;
+  width: max-content;
 
   & h2 {
     font-family:  var(--font-secondary);
-    font-size: var(--text-3xl);
+    font-size: var(--text-2xl);
   }
 
   & p {
     margin-block: var(--space-4);
     max-width: 36ch;
     line-height: 2;
+    font-size: var(--text-md);
   }
 `
 export const ImageWrapper = styled.div `
