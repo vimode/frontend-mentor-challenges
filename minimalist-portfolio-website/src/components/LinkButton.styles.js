@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export const StyledLink = styled(Link)`
   text-decoration: none;
   text-transform: uppercase;
-  font-size: var(--text-sm);
+  font-size: var(--text-xs);
   letter-spacing: 1px;
   width: max-content;
 
