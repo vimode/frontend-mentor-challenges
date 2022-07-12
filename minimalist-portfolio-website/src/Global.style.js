@@ -40,6 +40,7 @@ export default createGlobalStyle  `
     --color-input-active-border: var(--color-primary-cyan-600);
     --color-input-error-border: var(--color-secondary-red-400);
     
+    --text-xs: 0.75rem;
     --text-sm: 0.875rem;
     --text-md: 1rem;
     --text-reg: 1.25rem;
