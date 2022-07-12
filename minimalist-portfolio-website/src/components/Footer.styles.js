@@ -1,12 +1,14 @@
 import styled from "styled-components"
 
 export const FooterWrapper = styled.div `
-  background: var(--color-primary-grey-blue-800);
   display: flex;
   color: var(--color-neutral-white);
   place-items:center;
   justify-content: space-between;
   padding-block: var(--space-5);
+  max-width:1200px;
+  width: 95%;
+  margin: 0 auto; 
 
   & div {    
     display:flex;
