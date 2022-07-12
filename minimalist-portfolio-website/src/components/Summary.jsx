@@ -9,7 +9,7 @@ function Summary ({title, content, link, linktext, imgsrc, order}) {
       <picture className={order}>
         <source srcSet={imgsrc[0]} media = "(min-width: 1920px)"/>
         <source srcSet={imgsrc[1]} media="(min-width: 400px)" />
-        <img src ={imgsrc[1]} alt={title} />
+        <img src ={imgsrc[1]} alt={title} className="summary" />
       </picture>
       <ContentWrapper>
         <h2>{title}</h2>
