@@ -8,8 +8,9 @@ export const StyledNav = styled.nav`
 export const StyledNavLink = styled(NavLink)`
  text-decoration: none; 
  text-transform: uppercase;
- font-size: var(--text-sm);
+ font-size: var(--text-xs);
  color: var(--color-primary-grey-blue);
+ letter-spacing: 2px;
 
  &:hover,
  &:focus {
