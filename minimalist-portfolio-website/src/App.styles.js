@@ -11,10 +11,11 @@ export const HeaderWrapper = styled.header`
 export const MainWrapper= styled.main`
   display: flex;
   flex-direction: column;
-  gap: var(--space-16);
+  gap: var(--space-40);
   place-items:center;
   max-width: 1200px;
   margin: 0 auto;
+  width: 95%;
 `
 export const FooterWrapper = styled.footer`
     background: var(--color-primary-grey-blue-800);
