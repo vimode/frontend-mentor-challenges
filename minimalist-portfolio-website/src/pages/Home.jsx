@@ -11,6 +11,7 @@ function Home () {
         linktext ={summaryData[0].linktext}
         link = {summaryData[0].link}
         imgsrc ={summaryData[0].imgsrc}
+        homepage
       />
       <ContactSnippet />
     </>
