@@ -15,7 +15,7 @@ export const ContentWrapper = styled.main`
   gap: var(--space-8);
 `
 
-export const SideIntro = styled.aside `
+export const SideIntro = styled.aside`
   grid-area: aside;
   border-top: 2px solid var(--color-secondary-grey-300);
   border-bottom: 2px solid var(--color-secondary-grey-300);
@@ -23,7 +23,6 @@ export const SideIntro = styled.aside `
   padding-block: var(--space-10);
 
   & h1 {
-    font-family: var(--font-secondary);
     font-size: var(--text-2xl);
   }
 
@@ -32,7 +31,11 @@ export const SideIntro = styled.aside `
     opacity: var(--opacity-75);
     line-height: 2;
     max-width: 40ch;
-    padding-block: var(--space-6);
+    padding-block: var(--space-3);
+  }
+
+  & p:nth-of-type(3) {
+    margin-bottom: var(--space-3);
   }
 
   & span {
@@ -44,6 +47,20 @@ export const SideIntro = styled.aside `
 
 export const ProjectInfo = styled.section `
   grid-area: content;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+
+  &  h2 {
+    font-size: var(--text-xl);
+    font-weight: var(--font-weight-regular);
+  }
+
+  & p {
+    font-size:var(--text-sm); 
+    line-height: 2;
+    opacity: var(--opacity-75);
+  }
 `
 
 export const Pagination = styled.nav`
@@ -61,10 +78,26 @@ export const Pagination = styled.nav`
     display: flex;
     place-items: center;
     gap: var(--space-6);
+    border-top: 2px solid var(--color-secondary-grey-300);
+    border-bottom: 2px solid var(--color-secondary-grey-300);
+    width: 100%;
+    padding-block: var(--space-4);
+  }
+
+  & li:nth-of-type(2) {
+    justify-content: end;
+    border-left: 2px solid var(--color-secondary-grey-300);
   }
 
   & p {
     width: max-content;
+    font-size: var(--text-md);
+    opacity: var(--opacity-50);
+  }
+
+  & h2 {
+    font-size: var(--text-xl);
+    font-weight: var(--font-weight-normal);
   }
 
 
