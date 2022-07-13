@@ -16,16 +16,15 @@ export const HeroWrapper = styled.section`
 `
 
  export const HeroContentWrapper = styled.div `
-    grid-area: content-area;
-    background: var(--color-neutral-white);
-    grid-row: 2 / 5;
+  grid-area: content-area;
+  background: var(--color-neutral-white);
+  grid-row: 2 / 5;
 
-    & h1 {
-      font-family: var(--font-secondary);
-      font-size: var(--text-3xl);
-      max-width: 16ch;
-      padding: var(--space-12) var(--space-12) var(--space-12) 0; 
-      line-height: 1;
-    }
+  & h1 {
+    font-size: var(--text-3xl);
+    max-width: 16ch;
+    padding: var(--space-12) var(--space-12) var(--space-12) 0; 
+    line-height: 1;
+  }
 
 `
