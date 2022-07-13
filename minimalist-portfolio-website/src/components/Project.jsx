@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom'
 import { getProject } from '../data/data.js'
 import ContactSnippet from './ContactSnippet.jsx'
 import { ImageWrapper, ContentWrapper, SideIntro, ProjectInfo, Pagination } from './Project.styles.js'
+import { PrimaryStyledLink } from './LinkButton.styles.js'
 
 function Project () {
   let params = useParams()
@@ -25,7 +26,7 @@ function Project () {
             <span> {project.tags[2]}</span>
           </p>
 
-          <a href={project.livelink}>Visit Website</a>
+        <PrimaryStyledLink to={project.livelink}>Visit Website</PrimaryStyledLink>
         </SideIntro>
 
         <ProjectInfo>
@@ -39,18 +40,18 @@ function Project () {
         <Pagination>
           <ul>
             <li>
-              <img src="/images/icons/arrow-left.svg"/>
+            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="16"><path fill="none" stroke="#33323D" d="M9 0L1 8l8 8"/></svg>
               <div>
-                <a href="#">Fylo</a>
+                <h2>Fylo</h2>
                 <p>Previous Project</p>
               </div>
             </li>
             <li>
               <div>
-                <a href="#">Bookmark</a>
+                <h2>Bookmark</h2>
                 <p>Previous Project</p>
                </div>
-              <img src="/images/icons/arrow-right.svg"/>
+              <svg xmlns="http://www.w3.org/2000/svg" width="10" height="16"><path fill="none" stroke="#33323D" d="M1 0l8 8-8 8"/></svg>
             </li>
           </ul>
         </Pagination>
