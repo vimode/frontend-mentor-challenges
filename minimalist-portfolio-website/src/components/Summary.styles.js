@@ -6,7 +6,9 @@ export const SummaryWrapper = styled.section `
   place-content:center;
   column-gap: var(--space-20);
   max-height:500px;
+  width: 100%;
   max-width: 1200px;
+  justify-content: ${props => props.homepage ? "space-between": "center"};
 
   & picture.right {
     order: 10;
@@ -15,7 +17,7 @@ export const SummaryWrapper = styled.section `
   & img.summary {
     width: auto;
     object-fit: contain;
-    height: 500px;
+    height: ${props => props.homepage ? "600px": "500px"};
     overflow: hidden;
   }
 
@@ -27,12 +29,11 @@ export const ContentWrapper = styled.div `
   border-top: 2px solid var(--color-secondary-grey-300);
   border-bottom: 2px solid var(--color-secondary-grey-300);
   padding-block: var(--space-16);
-  height: 500px;
+  height: ${props => props.homepage ? "max-content" : "500px"};
   place-content: center; 
   width: max-content;
 
   & h2 {
-    font-family:  var(--font-secondary);
     font-size: var(--text-2xl);
   }
 
@@ -41,6 +42,7 @@ export const ContentWrapper = styled.div `
     max-width: 36ch;
     line-height: 2;
     font-size: var(--text-md);
+    margin-right: ${props => props.homepage ? "var(--space-6)"  :  ""};
   }
 `
 export const ImageWrapper = styled.div `
