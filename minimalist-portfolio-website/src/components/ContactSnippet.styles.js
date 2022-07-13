@@ -5,9 +5,9 @@ export const SnippetWrapper = styled.section`
   width: 100%;
   place-content: space-between;
   place-items: center;
+  padding: var(--space-16)  0 var(--space-24) 0;
 
   & h1 {
-    font-family: var(--font-secondary);
     font-size: var(--text-2xl);
     max-width: 14ch;
   }
