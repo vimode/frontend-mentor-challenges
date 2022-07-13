@@ -62,6 +62,10 @@ export default createGlobalStyle  `
     --space-16: 4rem;
     --space-20: 5rem;
     --space-24: 6rem;
+    --space-28: 7rem;
+    --space-32: 8rem;
+    --space-36: 9rem;
+    --space-40: 10rem;
     
     --opacity-25: 0.25;
     --opacity-50: 0.5;
@@ -87,6 +91,11 @@ export default createGlobalStyle  `
   img {
     display: block;
     width:100%;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-secondary);
+    font-weight: var(--font-weight-bold);
   }
 
 `
