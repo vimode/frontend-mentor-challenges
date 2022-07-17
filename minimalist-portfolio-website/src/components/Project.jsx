@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom'
 import { getProject } from '../data/data.js'
 import ContactSnippet from './ContactSnippet.jsx'
-import { ImageWrapper, ContentWrapper, SideIntro, ProjectInfo, Pagination } from './Project.styles.js'
+import { ImageWrapper, ContentWrapper, SideIntro, ProjectTags, ProjectInfo, Pagination } from './Project.styles.js'
 import { PrimaryStyledLink } from './LinkButton.styles.js'
 
 function Project () {
@@ -16,15 +16,17 @@ function Project () {
         <SideIntro>
           <h1>{project.name}</h1>
           <p>{project.intro}</p>
-          <p>
-            <span>{project.type[0]} &#47; </span>   
-            <span>  {project.type[1]}</span>
-          </p>
-          <p>
-            <span> {project.tags[0]} &#47; </span>  
-            <span> {project.tags[1]} &#47; </span>  
-            <span> {project.tags[2]}</span>
-          </p>
+          <ProjectTags>
+            <p>
+              <span>{project.type[0]} &#47; </span>   
+              <span>  {project.type[1]}</span>
+            </p>
+            <p>
+              <span> {project.tags[0]} &#47; </span>  
+              <span> {project.tags[1]} &#47; </span>  
+              <span> {project.tags[2]}</span>
+            </p>
+          </ProjectTags>
 
         <PrimaryStyledLink to={project.livelink}>Visit Website</PrimaryStyledLink>
         </SideIntro>
