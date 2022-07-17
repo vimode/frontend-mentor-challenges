@@ -21,6 +21,33 @@ export const SummaryWrapper = styled.section `
     overflow: hidden;
   }
 
+  @media(max-width : 1000px ) {  
+
+    & img.summary {
+      width: ${props => props.homepage ? "350px" : "330px"};
+      object-fit: ${props => props.homepage ? "cover": "contain"};
+      object-position :${props => props.homepage ? "right" : "center"}
+    }
+  }
+
+  @media(max-width:700px ) {
+    flex-direction: column;
+    max-height: max-content;
+
+    & img.summary {
+      width: 80%;
+      text-align: center;
+      height: auto;
+      object-fit: contain;
+      object-position: center;
+      margin: 0 auto;
+    }
+
+    & picture.right {
+      order: unset; 
+    }
+  }
+
 `
 
 export const ContentWrapper = styled.div `
@@ -39,11 +66,18 @@ export const ContentWrapper = styled.div `
 
   & p {
     margin-block: var(--space-4);
-    max-width: 36ch;
+    width: 100%;
+    max-width: 35ch;
     line-height: 2;
     font-size: var(--text-md);
+    opacity: var(--opacity-75);
     margin-right: ${props => props.homepage ? "var(--space-6)"  :  ""};
   }
+
+  @media(max-width: 700px) {
+    border-top: none;
+  }
+
 `
 export const ImageWrapper = styled.div `
 `

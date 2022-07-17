@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
-import Navbar from "./Navbar"
-import SocialIcons from "./SocialIcons"
-import { FooterWrapper } from "./Footer.styles"
+import Navbar from "./Navbar.jsx"
+import SocialIcons from "./SocialIcons.jsx"
+import { FooterWrapper } from "./Footer.styles.js"
 
 function Footer () {
   return (

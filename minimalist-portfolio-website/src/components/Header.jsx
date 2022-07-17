@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
-import Navbar from "./Navbar";
-import { HeaderWrapper } from "./Header.styles";
+import Navbar from "./Navbar.jsx";
+import { HeaderWrapper } from "./Header.styles.js";
 
 function Header () {
   return (

@@ -1,5 +1,5 @@
-import LinkButton from "./LinkButton"
-import { HeroContentWrapper, HeroWrapper } from "./HeroContent.styles"
+import LinkButton from "./LinkButton.jsx"
+import { HeroContentWrapper, HeroWrapper } from "./HeroContent.styles.js"
 
 function HeroContent () {
   return (

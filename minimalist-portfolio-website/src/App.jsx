@@ -1,7 +1,7 @@
 import { Routes, Route } from  'react-router-dom';
 import { Home, Portfolio, Contact } from './pages'
 import { Footer, Header, Project, PortfolioDefault } from './components'
-import { OuterWrapper, MainWrapper, FooterWrapper } from './App.styles'
+import { OuterWrapper, MainWrapper, FooterWrapper } from './App.styles.js'
 
 function App() {
   return (

@@ -19,4 +19,15 @@ export const FooterWrapper = styled.div `
   & svg path {
     fill : var(--color-neutral-white);
   }
+
+  @media(max-width: 600px){
+    flex-direction: column;
+    text-align: center;
+    gap: var(--space-4);
+
+    & div,
+    & nav ul{
+    flex-direction: column;
+    }
+  }
 `

@@ -1,5 +1,5 @@
 import { ContactSnippet, Summary } from ".";
-import { projectData } from "../data/data";
+import { projectData } from "../data/data.js";
 
 function PortfolioDefault () {
   return (

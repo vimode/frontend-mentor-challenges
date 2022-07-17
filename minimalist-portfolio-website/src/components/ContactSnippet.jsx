@@ -1,6 +1,5 @@
-import { Link } from "react-router-dom";
-import { SnippetWrapper } from "./ContactSnippet.styles";
-import { PrimaryStyledLink } from "./LinkButton.styles";
+import { SnippetWrapper } from "./ContactSnippet.styles.js";
+import { PrimaryStyledLink } from "./LinkButton.styles.js";
 
 function ContactSnippet () {
   return (

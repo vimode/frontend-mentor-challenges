@@ -13,7 +13,7 @@ export const StyledLink = styled(Link)`
   color: var(--color-neutral-white);
 
   svg {
-    margin-right: var(--space-12);
+    margin-right: var(--space-8);
     background: var(--color-primary-dark-blue-800);
   }
 `

@@ -1,5 +1,4 @@
-import { NavLink } from "react-router-dom";
-import { StyledNav, StyledNavLink, List, ListItem } from "./Navbar.styles"
+import { StyledNav, StyledNavLink, List, ListItem } from "./Navbar.styles.js"
 
 function Navbar () {
   return (
