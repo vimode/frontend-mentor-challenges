@@ -1,5 +1,4 @@
-import { Link } from "react-router-dom";
-import { StyledLink } from "./LinkButton.styles";
+import { StyledLink } from "./LinkButton.styles.js";
 
 function LinkButton ({linkText, link}) {
   return (
