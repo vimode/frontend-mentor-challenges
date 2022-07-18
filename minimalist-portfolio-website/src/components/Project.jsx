@@ -1,5 +1,5 @@
-import { useParams } from 'react-router-dom'
-import { getProject } from '../data/data.js'
+import { useParams, Link } from 'react-router-dom'
+import { projectData, getProject } from '../data/data.js'
 import ContactSnippet from './ContactSnippet.jsx'
 import { ImageWrapper, ContentWrapper, SideIntro, ProjectTags, ProjectInfo, Pagination } from './Project.styles.js'
 import { PrimaryStyledLink } from './LinkButton.styles.js'
@@ -7,6 +7,21 @@ import { PrimaryStyledLink } from './LinkButton.styles.js'
 function Project () {
   let params = useParams()
   let project =  getProject(params.projectname)
+  
+  let [prevItem, nextItem]= new Array(2) 
+
+  function paginationNumbers () {
+    nextItem = project.id % projectData.length 
+    
+    if(project.id === 1) {
+      return prevItem = projectData.length -1
+    } 
+      prevItem = project.id - 2
+    }
+    
+    paginationNumbers()
+
+
   return (
     <>
       <ImageWrapper>
@@ -42,18 +57,22 @@ function Project () {
         <Pagination>
           <ul>
             <li>
-            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="16"><path fill="none" stroke="#33323D" d="M9 0L1 8l8 8"/></svg>
-              <div>
-                <h2>Fylo</h2>
-                <p>Previous Project</p>
-              </div>
+              <Link to={projectData[prevItem].link}>
+              <svg xmlns="http://www.w3.org/2000/svg" width="10" height="16"><path fill="none" stroke="#33323D" d="M9 0L1 8l8 8"/></svg>
+                <div>
+                  <h2>{projectData[prevItem].name}</h2>
+                  <p>Previous Project</p>
+                </div>
+              </Link>
             </li>
             <li>
-              <div>
-                <h2>Bookmark</h2>
-                <p>Previous Project</p>
-               </div>
-              <svg xmlns="http://www.w3.org/2000/svg" width="10" height="16"><path fill="none" stroke="#33323D" d="M1 0l8 8-8 8"/></svg>
+              <Link to={projectData[nextItem].link}>
+                <div>
+                  <h2>{projectData[nextItem].name}</h2>
+                  <p>Previous Project</p>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="16"><path fill="none" stroke="#33323D" d="M1 0l8 8-8 8"/></svg>
+              </Link>
             </li>
           </ul>
         </Pagination>

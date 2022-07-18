@@ -118,16 +118,27 @@ export const Pagination = styled.nav`
   }
 
   & li {
-    display: flex;
-    place-items: center;
-    gap: var(--space-6);
     border-top: 2px solid var(--color-secondary-grey-300);
     border-bottom: 2px solid var(--color-secondary-grey-300);
     width: 100%;
     padding-block: var(--space-4);
   }
+  
+  & a {
+    display: flex;
+    gap: var(--space-6);
+    place-items: center;
+    color: var(--color-primary-grey-blue-800);
+    text-decoration: none;
+    transition: color 300ms linear;
 
-  & li:nth-of-type(2) {
+    &:hover {
+      color: var(--color-primary-cyan-600);
+    }
+  }
+  
+
+  & li:nth-of-type(2) a {
     justify-content: end;
     border-left: 2px solid var(--color-secondary-grey-300);
   }
