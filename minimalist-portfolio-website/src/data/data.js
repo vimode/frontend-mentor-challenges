@@ -69,5 +69,5 @@ export const projectData = [
 
 
 export function getProject(name) {
-  return projectData.find((project) => project.name.toLowerCase() === name.toLowerCase());
+  return projectData.find((project) => project.name.toLowerCase() === name.toLowerCase()) ;
 }

@@ -1,5 +1,5 @@
 import { Routes, Route } from  'react-router-dom';
-import { Home, Portfolio, Contact } from './pages'
+import { Home, Portfolio, Contact, Page404 } from './pages'
 import { Footer, Header, Project, PortfolioDefault } from './components'
 import { OuterWrapper, MainWrapper, FooterWrapper } from './App.styles.js'
 
@@ -15,7 +15,7 @@ function App() {
             <Route path=":projectname" element={<Project />} />
           </Route>
           <Route path="/contact" element={<Contact />}  />
-          <Route path="*" element={<p>There's nothing here</p>} />
+          <Route path="*" element={<Page404 />} />
         </Routes>
       </MainWrapper>
       <FooterWrapper>
