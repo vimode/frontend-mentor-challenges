@@ -15,7 +15,7 @@ function Contact () {
   function handleChange(event) {
     const {name, email, message, value} = event.target
     setFormData(prevFormData => {
-      return{
+      return {
         ...prevFormData,
         [name]: value
       }
@@ -27,7 +27,14 @@ function Contact () {
       setInfoText(message)
     }else {
       setSuccessText(message)
-    }
+      setFormData(prevData => {
+        return {
+          name:"", 
+          email:"", 
+          message:"",
+        }
+    })
+  }
     setTimeout( () => {
       setInfoText('')
       setSuccessText('')
@@ -70,7 +77,9 @@ function Contact () {
             id="name" 
             value={formData.name} 
             onChange={handleChange}
+            required
             placeholder="Jane Appleseed"/>
+
           
           <label htmlFor="email">Email Address</label>
           <input 
@@ -79,6 +88,7 @@ function Contact () {
             id="email" 
             value={formData.email}
             onChange={handleChange}
+            required
             placeholder="email@example.com" />
           
           <label htmlFor="message">Message</label>
@@ -87,6 +97,7 @@ function Contact () {
             id="message" 
             value={formData.message}
             onChange={handleChange}
+            required
             placeholder="How can I help?" />
           
           <button>Send Message</button>
