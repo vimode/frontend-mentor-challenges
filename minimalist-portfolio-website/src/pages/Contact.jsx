@@ -1,7 +1,53 @@
+import { useState } from "react";
 import { SocialIcons } from "../components";
 import { AboutWrapper, ContactWrapper, ContactForm } from "./Contact.styles.js";
 
 function Contact () {
+
+  const [formData, setFormData] = useState ({
+    name: "",
+    email: "",
+    message: ""
+  })
+  const [infoText, setInfoText] = useState("")
+  const [successText, setSuccessText] = useState("")
+  
+  function handleChange(event) {
+    const {name, email, message, value} = event.target
+    setFormData(prevFormData => {
+      return{
+        ...prevFormData,
+        [name]: value
+      }
+    })
+  }
+
+  function handleInfoText(type, message){
+    if(type === "error") {
+      setInfoText(message)
+    }else {
+      setSuccessText(message)
+    }
+    setTimeout( () => {
+      setInfoText('')
+      setSuccessText('')
+    }, 2000)
+  }
+
+   function handleSubmit(event) {
+    event.preventDefault()
+    let {name, email, message} = event.target
+    let  emailRegex = /^[\w.!#$%&’*+\/=?^_`{|}~-]+@[\w-]+\.\w+$/
+    if(!name.value.trim() || !email.value.trim() || !message.value.trim()) {
+      handleInfoText("error", "All fields are required")
+    } else if (!email.value.trim().match(emailRegex)) {
+      handleInfoText("error", "Please use a valid email address")
+    } else {
+      handleInfoText("success", "Message sent. Thank you.")
+    }
+
+   }
+
   return (
     <>
       <AboutWrapper>
@@ -14,14 +60,38 @@ function Contact () {
 
       <ContactWrapper>
         <h1>Contact Me</h1>
-        <ContactForm>
+        <ContactForm
+          onSubmit= {handleSubmit}
+        >
           <label htmlFor="name">Name</label>
-          <input type="text" name="name" id="name" placeholder="Jane Appleseed"/>
+          <input 
+            type="text" 
+            name="name" 
+            id="name" 
+            value={formData.name} 
+            onChange={handleChange}
+            placeholder="Jane Appleseed"/>
+          
           <label htmlFor="email">Email Address</label>
-          <input type="text" name="email" id="email" placeholder="email@example.com" />
+          <input 
+            type="text" 
+            name="email" 
+            id="email" 
+            value={formData.email}
+            onChange={handleChange}
+            placeholder="email@example.com" />
+          
           <label htmlFor="message">Message</label>
-          <textarea name="message" id="message" placeholder="How can I help?" />
+          <textarea 
+            name="message" 
+            id="message" 
+            value={formData.message}
+            onChange={handleChange}
+            placeholder="How can I help?" />
+          
           <button>Send Message</button>
+          <span className={infoText ?  "errorText" : ""}>{infoText ?  infoText : successText}</span>
+
 
         </ContactForm>
       </ContactWrapper>

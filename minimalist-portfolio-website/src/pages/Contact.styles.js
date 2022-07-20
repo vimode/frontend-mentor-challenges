@@ -82,8 +82,14 @@ export const ContactForm = styled.form`
     background: var(--color-secondary-grey-300);
     font-family: inherit;
     padding: var(--space-3);
-    border: none;
+    border: 1px solid transparent;
+    outline: 1px solid transparent;
     resize: none;
+  }
+
+  & input:active, & input:focus, & textarea:active, & textarea:focus {
+    border: 1px solid var(--color-input-active-border);
+    outline: 1px solid var(--color-input-active-border);
   }
 
   & button {
@@ -96,6 +102,15 @@ export const ContactForm = styled.form`
     letter-spacing: 2px;
     border: var(--color-primary-dark-blue-700);
     cursor: pointer;
+  }
+
+  & span {
+    color: var(--color-primary-cyan-600);
+    font-size: var(--text-md);
+
+    &.errorText {
+      color: var(--color-secondary-red-400);
+    }
   }
 
   @media(max-width:  900px) {
