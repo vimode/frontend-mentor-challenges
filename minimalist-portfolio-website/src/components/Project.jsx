@@ -2,7 +2,7 @@ import { useParams, Link } from 'react-router-dom'
 import { projectData, getProject } from '../data/data.js'
 import ContactSnippet from './ContactSnippet.jsx'
 import { ImageWrapper, ContentWrapper, SideIntro, ProjectTags, ProjectInfo, Pagination } from './Project.styles.js'
-import { PrimaryStyledLink } from './LinkButton.styles.js'
+import { PrimaryStyledLink, ExternalStyledLink } from './LinkButton.styles.js'
 
 function Project () {
   let params = useParams()
@@ -25,7 +25,7 @@ function Project () {
   return (
     <>
       <ImageWrapper>
-        <img src={project.coverimg} alt="" />
+        <img src={project.coverimg} alt={project.name} />
       </ImageWrapper>
       <ContentWrapper>
         <SideIntro>
@@ -43,15 +43,15 @@ function Project () {
             </p>
           </ProjectTags>
 
-        <PrimaryStyledLink to={project.livelink}>Visit Website</PrimaryStyledLink>
+        <ExternalStyledLink href={project.livelink}>Visit Website</ExternalStyledLink>
         </SideIntro>
 
         <ProjectInfo>
           <h2>Project Background</h2>
           <p>{project.background}</p>
           <h2>Static Previews</h2>
-          <img src = {project.previews[0]} alt="" />
-          <img src = {project.previews[1]} alt="" />
+          <img src = {project.previews[0]} alt={project.name}/>
+          <img src = {project.previews[1]} alt={project.name} />
         </ProjectInfo>
 
         <Pagination>

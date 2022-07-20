@@ -102,6 +102,13 @@ export const ContactForm = styled.form`
     letter-spacing: 2px;
     border: var(--color-primary-dark-blue-700);
     cursor: pointer;
+    transition: all 250ms linear;
+    
+    &:hover,
+    &:focus {
+     background: var(--color-primary-cyan-600);
+     color: var(--color-neutral-white);
+    }
   }
 
   & span {

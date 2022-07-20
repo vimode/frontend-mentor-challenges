@@ -20,7 +20,7 @@ export const projectData = [
     previews: ["/images/detail/desktop/image-manage-preview-1@2x.jpg","/images/detail/desktop/image-manage-preview-2@2x.jpg"],
     portfolioImg: ["/images/portfolio/desktop/image-portfolio-manage.jpg","/images/portfolio/desktop/image-portfolio-manage@2x.jpg"],
     link: "/portfolio/manage",
-    livelink: "#",
+    livelink: "https://frontend-mentor-challenges-ecru.vercel.app/manage-landing-page",
     order: "left"
   },
   {
@@ -34,7 +34,7 @@ export const projectData = [
     previews: ["/images/detail/desktop/image-bookmark-preview-1@2x.jpg","/images/detail/desktop/image-bookmark-preview-2@2x.jpg"],
     portfolioImg: ["/images/portfolio/desktop/image-portfolio-bookmark.jpg","/images/portfolio/desktop/image-portfolio-bookmark@2x.jpg"],
     link: "/portfolio/bookmark",
-    livelink: "#",
+    livelink: "https://frontend-mentor-challenges-ecru.vercel.app/bookmark-landing-page",
     order: "right"
   },
   {
@@ -48,7 +48,7 @@ export const projectData = [
     previews: ["/images/detail/desktop/image-insure-preview-1@2x.jpg","/images/detail/desktop/image-insure-preview-2@2x.jpg"],
     portfolioImg: ["/images/portfolio/desktop/image-portfolio-insure.jpg","/images/portfolio/desktop/image-portfolio-insure@2x.jpg"],
     link: "/portfolio/insure",
-    livelink: "#",
+    livelink: "https://frontend-mentor-challenges-ecru.vercel.app/insure-landing-page/",
     order: "left"
   },
   {
@@ -62,7 +62,7 @@ export const projectData = [
     previews: ["/images/detail/desktop/image-fylo-preview-1@2x.jpg","/images/detail/desktop/image-fylo-preview-2@2x.jpg"],
     portfolioImg: ["/images/portfolio/desktop/image-portfolio-fylo.jpg","/images/portfolio/desktop/image-portfolio-fylo@2x.jpg"],
     link: "/portfolio/fylo",
-    livelink: "#",
+    livelink: "https://frontend-mentor-challenges-ecru.vercel.app/fylo-dark-theme-landing-page/",
     order: "right"
   }
 ]

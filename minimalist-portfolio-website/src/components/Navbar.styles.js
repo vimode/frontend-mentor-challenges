@@ -11,6 +11,7 @@ export const StyledNavLink = styled(NavLink)`
  font-size: var(--text-xs);
  color: var(--color-primary-grey-blue);
  letter-spacing: 2px;
+ transition: all 300ms linear;
 
  &:hover,
  &:focus {

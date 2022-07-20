@@ -130,7 +130,7 @@ export const Pagination = styled.nav`
     place-items: center;
     color: var(--color-primary-grey-blue-800);
     text-decoration: none;
-    transition: color 300ms linear;
+    transition: color 250ms linear;
 
     &:hover {
       color: var(--color-primary-cyan-600);
