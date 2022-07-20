@@ -57,7 +57,7 @@ function Project () {
         <Pagination>
           <ul>
             <li>
-              <Link to={projectData[prevItem].link}>
+              <Link to={projectData[prevItem].link} aria-label="Previous">
               <svg xmlns="http://www.w3.org/2000/svg" width="10" height="16"><path fill="none" stroke="#33323D" d="M9 0L1 8l8 8"/></svg>
                 <div>
                   <h2>{projectData[prevItem].name}</h2>
@@ -66,7 +66,7 @@ function Project () {
               </Link>
             </li>
             <li>
-              <Link to={projectData[nextItem].link}>
+              <Link to={projectData[nextItem].link} aria-label="Next">
                 <div>
                   <h2>{projectData[nextItem].name}</h2>
                   <p>Previous Project</p>

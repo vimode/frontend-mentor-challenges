@@ -5,8 +5,8 @@ import { HeaderWrapper } from "./Header.styles.js";
 function Header () {
   return (
     <HeaderWrapper>
-      <NavLink to="/">
-        <img src="/images/logo.svg"  alt=""/>
+      <NavLink to="/" tabIndex={0}>
+        <img src="/images/logo.svg"  alt="Logo"/>
       </NavLink>
       <Navbar />
     </HeaderWrapper>
