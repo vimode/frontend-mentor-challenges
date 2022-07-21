@@ -1,15 +1,16 @@
 // data
 let projectList =
-  [{
-    id: "n1",
-    difficulty: "junior",
-    tags: ["HTML", "CSS", "JS"],
-    title: "Loopstudios landing page",
-    img_src: "./loopstudios-landing-page/design/desktop-design.jpg",
-    repo_url: "https://github.com/vimode/frontend-mentor-challenges/tree/master/loopstudios-landing-page",
-    live_url: "https://frontend-mentor-challenges-ecru.vercel.app/loopstudios-landing-page/",
-    text: "Many responsive images of different sizes with some hover effects. Animated mobile navigation to the playful theme of the landing page."
-  },
+  [
+  //   {
+  //   id: "n1",
+  //   difficulty: "junior",
+  //   tags: ["HTML", "CSS", "JS"],
+  //   title: "Loopstudios landing page",
+  //   img_src: "./loopstudios-landing-page/design/desktop-design.jpg",
+  //   repo_url: "https://github.com/vimode/frontend-mentor-challenges/tree/master/loopstudios-landing-page",
+  //   live_url: "https://frontend-mentor-challenges-ecru.vercel.app/loopstudios-landing-page/",
+  //   text: "Many responsive images of different sizes with some hover effects. Animated mobile navigation to the playful theme of the landing page."
+  // },
   {
     id: "n4",
     difficulty: "junior",
@@ -18,7 +19,7 @@ let projectList =
     img_src: "./crowdfunding-product-page/design/desktop-design.jpg",
     repo_url: "https://github.com/vimode/frontend-mentor-challenges/tree/master/crowdfunding-product-page",
     live_url: "https://frontend-mentor-challenges-ecru.vercel.app/crowdfunding-product-page/",
-    text: "Custom radio buttons with form validation to limit the pledge amount. Pledge changes update the homepage stats."
+    text: "The page has custom radio buttons with form validation to limit the pledge amount. Page elements dynamically updates based on pledges."
   },
   {
     id: "n5",
@@ -28,7 +29,7 @@ let projectList =
     img_src: "./launch-countdown-timer/design/desktop-design.jpg",
     repo_url: "https://github.com/vimode/frontend-mentor-challenges/tree/master/launch-countdown-timer",
     live_url: "https://frontend-mentor-challenges-ecru.vercel.app/launch-countdown-timer",
-    text: "Used CSS animations to flip the cards and the animationend javascript event to continue the animation every second."
+    text: "The countdown timer uses CSS animations to flip the cards and the animationend javascript event to continue the animation every second."
   },
   {
     id: "n6",
@@ -38,7 +39,7 @@ let projectList =
     img_src: "./clock-app/preview.jpg",
     repo_url: "https://github.com/vimode/frontend-mentor-challenges/tree/master/clock-app",
     live_url: "https://frontend-mentor-challenges-ecru.vercel.app/clock-app/",
-    text: "Used multiple APIs to display a quote, local time and visitor's IP location. "
+    text: "This web app uses multiple APIs to display a quote, local time and visitor's IP location"
   },
   {
     id: "n7",
@@ -48,7 +49,7 @@ let projectList =
     img_src: "./github-user-search-app/preview.jpg",
     repo_url: "https://github.com/vimode/frontend-mentor-challenges/tree/master/github-user-search-app-v2",
     live_url: "https://github-user-search-app-v2-beta.vercel.app",
-    text: "Used Github API to show user data and a theme switcher."
+    text: "The search App uses Github API to show github user profile data."
   },
   {
     id: "n9",
@@ -56,10 +57,20 @@ let projectList =
     tags: ["HTML", "CSS", "JS", "React"],
     title: "IP Adddress Tracker",
     img_src: "./ip-address-tracker/design/desktop-design.jpg",
-    repo_url: "https://github.com/vimode/frontend-mentor-challenges/blob/master/ip-address-tracker",
+    repo_url: "https://github.com/vimode/frontend-mentor-challenges/tree/master/ip-address-tracker",
     live_url: "https://fm-ip-address-tracker-react.vercel.app/",
-    text: "This API tracker uses multiple APIs to fetch the necessary data. Map is drawn using LeaftetJS and styled components for CSS."
-  }
+    text: "This API tracker uses multiple APIs to fetch the necessary data. Map is drawn using LeaftetJS and CSS is done using styled components."
+  },
+  {
+    id: "n10",
+    difficulty: "intermediate",
+    tags: ["HTML", "CSS", "JS", "React"],
+    title: "Minimalist Portfolio Website",
+    img_src: "./minimalist-portfolio-website/design/preview.jpg",
+    repo_url: "https://github.com/vimode/frontend-mentor-challenges/tree/master/minimalist-portfolio-website/",
+    live_url: "https://fm-minimalist-portfolio-website-react.vercel.app/",
+    text: "This react project uses React Router and styled components for CSS."
+  },
   ];
 
 
@@ -77,11 +88,11 @@ let displayList = projectList.reverse().map((project) => {
           <div class="flex justify-between mt-4">
             <span class="font-bold text-sm uppercase text-orange-500">${project.tags[0]}</span>
             <span class="font-bold text-sm uppercase text-blue-400">${project.tags[1]}</span>
-            <span class="font-bold text-s uppercase text-yellow-400">${project.tags[2]}</span>
+            <span class="font-bold text-s uppercase text-yellow-500">${project.tags[2]}</span>
             ${project.tags[3] ? `<span class="font-bold text-sm uppercase text-cyan-400">${project.tags[3]}</span>`: ``}
           </div>
           <div class="flex flex-none justify-between mt-3">
-            <a href=${project.live_url ? project.live_url : project.repo_url} class="focus:outline-dotted">
+            <a href=${project.live_url ? project.live_url : project.repo_url} class="focus:outline-dotted" aria-label="Live">
               <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
                 role="img" class="iconify iconify--ion w-6 fill-currentColor hover:fill-yellow-400 transition-all"
                 width="32" height="32" preserveAspectRatio="xMidYMid meet" viewBox="0 0 512 512">
@@ -94,7 +105,7 @@ let displayList = projectList.reverse().map((project) => {
               </path>
             </svg>
           </a>
-          <a href=${project.repo_url} class="focus:outline-dotted">
+          <a href=${project.repo_url} class="focus:outline-dotted" aria-label="Github Repo">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
               role="img" class="iconify iconify--ion w-6 fill-currentColor hover:fill-yellow-400 transition-all"
               width="32" height="32" preserveAspectRatio="xMidYMid meet" viewBox="0 0 512 512">
