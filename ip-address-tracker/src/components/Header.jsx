@@ -33,8 +33,8 @@ function Header ({ userInputIP }) {
           onChange={handleChange}
           ref= {inputRef}
         />
-        <Button>
-          <img src="./images/icon-arrow.svg"/>
+        <Button aria-label="Search">
+          <img src="./images/icon-arrow.svg" aria-label="Search"/>
         </Button>
       </Form>
     </HeaderWrapper>
