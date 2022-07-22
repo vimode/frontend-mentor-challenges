@@ -28,7 +28,7 @@ function Navigation () {
 
   
   return (
-    <Nav>
+    <Nav aria-label="navigation">
        <MobileButtonWrapper 
         onClick = {mobileNavClick}
         >

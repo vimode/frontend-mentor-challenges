@@ -8,7 +8,7 @@ import Navigation from './Navigation';
 
 function Header () {
   return (
-    <HeaderSection>
+    <HeaderSection aria-label="header">
       <img 
         src="./images/logo.svg"
         alt="logo"
