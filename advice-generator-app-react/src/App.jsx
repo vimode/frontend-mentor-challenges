@@ -40,7 +40,7 @@ function App() {
         :  
       <CircleLoader /> }
 
-  <Button onClick = {()=>fetchAdvice()}><img src="./images/icon-dice.svg"></img></Button>
+  <Button onClick = {()=>fetchAdvice()} aria-label="Generate new advice"><img src="./images/icon-dice.svg" alt="dice"></img></Button>
     </QuoteWrapper>
 
   )
