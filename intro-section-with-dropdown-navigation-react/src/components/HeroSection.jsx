@@ -4,7 +4,7 @@ import {HeroWrapper, ContentWrapper, ImageWrapper, TextWrapper, IllustrationWrap
 
 function HeroSection () {
   return (
-    <HeroWrapper>
+    <HeroWrapper aria-label="main">
       <ContentWrapper>
         <TextWrapper>
           <HeroTitle>Make <span>remote work </span></HeroTitle>
