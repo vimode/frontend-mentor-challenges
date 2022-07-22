@@ -28,13 +28,13 @@ function Header ({ userInputIP }) {
       <Form onSubmit = {handleSubmit}>
         <Input 
           type="text"
-          id="ip address"
+          id="ipAddress"
           placeholder="Search for any IP address"
           onChange={handleChange}
           ref= {inputRef}
         />
         <Button aria-label="Search">
-          <img src="./images/icon-arrow.svg" aria-label="Search"/>
+          <img src="./images/icon-arrow.svg" alt="search" aria-label="Search"/>
         </Button>
       </Form>
     </HeaderWrapper>
