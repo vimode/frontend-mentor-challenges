@@ -12,7 +12,7 @@ function App() {
     setisLoading(true)
     setNewQuote()
     const uri = "https://api.adviceslip.com/advice";    
-   fetch(uri)
+   fetch(uri, {cache: 'no-cache'})
       .then((r) => { if (r.ok)  return r.json()
       throw new Error(`Network response ${r.status}`)
       })
