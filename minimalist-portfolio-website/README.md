@@ -1,6 +1,6 @@
 # Minimalist portfolio website
 
-[Link Link](https://fm-minimalist-portfolio-website-react.vercel.app/)
+[Live Link](https://fm-minimalist-portfolio-website-react.vercel.app/)
 
 This is a solution to the [Minimalist portfolio website challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/minimalist-portfolio-website-LMy-ZRyiE)
 
