@@ -1,0 +1,142 @@
+@use '../base';
+
+%todo-wrapper {
+  width: 100%;
+  max-width: 650px;
+  min-width: 90%;
+}
+
+%inherit-style{
+  font: inherit;
+}
+
+%li-style-reset {
+  list-style: none;
+  padding: 0;
+}
+
+%checkbox-reset {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  max-width:30px;
+  width: 100%;
+  margin-right: 20px;
+  border-radius:50%;
+  height: 30px;
+  border: 1px solid base.$dark-gray-blue-300;
+}
+
+@supports(-webkit-appearance: none) or (-moz-appearance:none) {
+  input[type="checkbox"] {
+    @extend %checkbox-reset;
+  }
+}
+
+form {
+  @extend %todo-wrapper;
+  background-color: base.$dark-desaturated-blue;
+  border-radius: 5px;
+  display:flex;
+  place-items:center;
+  place-content: center;
+  padding: 20px 30px;
+
+
+  input[type="checkbox"]{
+
+      &:disabled {
+        opacity: 0.5;
+      }
+  }
+
+  input[type="text"] {
+    @extend %inherit-style;
+    width: 100%;
+    background-color: transparent;
+    color: base.$dark-gray-blue-100;
+    border: none;
+  }
+  
+  input[type="text"]:focus {
+    outline: none;
+  }
+}
+
+.todoList{
+  @extend %todo-wrapper;
+  // background-color: base.$dark-gray-blue-500;
+
+  .todoItem { 
+    padding:0;
+    background-color: base.$dark-desaturated-blue;
+    border-radius: 5px;
+
+    li { 
+      @extend %li-style-reset;
+      padding: 20px 30px;
+      border-bottom: 1px solid base.$dark-gray-blue-500;
+      width: 100%;
+      display:flex;
+      place-items:center;
+      place-content:space-between;
+      cursor:pointer;
+      
+      div {
+        display:flex;
+        place-items:center;
+        width: 95%;
+      }
+
+      input[type="checkbox"] {
+        
+        // &:hover {
+        //   border: 1px solid transparent;
+        //   border-image: linear-gradient(base.$checked-bg) 10%;
+        // }
+          &:hover {
+          }
+
+          &:checked {
+            background: url("./images/icon-check.svg") center no-repeat, linear-gradient(base.$checked-bg);
+          }
+
+          &:checked + label {
+          text-decoration: line-through;
+          color: base.$dark-gray-blue-300;
+        }
+      }
+    }
+  }
+    .todoListActions {
+      display:flex;
+      place-content:space-between;
+      place-items:center;
+      font-size: 1rem;
+      padding: 10px 30px;
+      background-color: base.$dark-desaturated-blue;
+      color: base.$dark-gray-blue-400;
+      
+
+      ul {
+        display:flex;
+
+        li {
+           @extend %li-style-reset;
+        }
+      }
+
+      button {
+        @extend %inherit-style;
+        background-color: transparent;
+        color: base.$dark-gray-blue-400; 
+        border: none;
+        transition: color 350ms linear;
+
+        &:hover {
+          color: base.$dark-gray-blue-200-hover;
+        }
+      }
+      
+    }
+}
+

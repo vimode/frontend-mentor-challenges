@@ -1,0 +1,41 @@
+@use 'base';
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* { margin: 0;}
+
+body {
+  font-family: base.$font-primary, sans-serif;
+  font-weight: base.$font-weight-primary;
+  font-size: base.$font-size-primary;
+}
+
+#root {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: base.$dark-main-bg;
+  color: base.$dark-gray-blue-100;
+  background:top/contain base.$bg-desktop-dark no-repeat base.$dark-main-bg;
+}
+
+.App {
+  margin: 0 auto;
+  display:grid;
+  grid: auto / auto;
+  gap: 30px;
+  place-content:center;
+  min-height:100vh;
+  height: 100%;
+  padding: 70px 30px;
+}
+
+header {
+    h1 {
+    letter-spacing: 10px; 
+    font-size: 2.5rem;;
+    color: base.$light-gray;
+  }
+}
+

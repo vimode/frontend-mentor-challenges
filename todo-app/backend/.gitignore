@@ -1,0 +1,11 @@
+*.DS_STORE
+*.sketch
+*.fig
+*.xd
+
+.prettierignore
+
+dist
+build
+node_modules
+.env
