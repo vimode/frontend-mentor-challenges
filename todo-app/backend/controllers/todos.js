@@ -1,10 +1,15 @@
 const todosRouter = require("express").Router();
 const Todo = require("../models/todo.js");
+const User = require("../models/user.js");
 
 const middleware = require("../utils/middleware.js");
 
 todosRouter.get("/", async (request, response) => {
-  const todos = await Todo.find({});
+  const todos = await Todo.find({}).populate("user", {
+    username: 1,
+    name: 1,
+    id: 1,
+  });
   response.json(todos);
 });
 
@@ -23,10 +28,10 @@ todosRouter.post("/", async (request, response) => {
 });
 
 todosRouter.delete("/clearCompleted", async (request, response) => {
-  let theseTodos = await Todo.deleteMany({ completed : true})
-  console.log(theseTodos)
-  response.status(204).end()
-})
+  let theseTodos = await Todo.deleteMany({ completed: true });
+  console.log(theseTodos);
+  response.status(204).end();
+});
 
 todosRouter.delete("/:id", async (request, response) => {
   await Todo.findByIdAndRemove(request.params.id);
@@ -49,6 +54,5 @@ todosRouter.put("/:id", async (request, response) => {
     console.log(err);
   }
 });
-
 
 module.exports = todosRouter;

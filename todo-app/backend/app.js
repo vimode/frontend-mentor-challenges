@@ -5,6 +5,7 @@ const app = express();
 const cors = require("cors");
 
 const todosRouter = require("./controllers/todos.js");
+const usersRouter = require("./controllers/users.js")
 
 const logger = require("./utils/logger.js");
 const middleware = require('./utils/middleware.js')
@@ -16,6 +17,7 @@ mongoose.connect(mongoUrl);
 app.use(cors());
 app.use(express.json());
 
+app.use("/api/users", usersRouter);
 app.use("/api/todos", todosRouter);
 
 app.use(middleware.unknownEndpoint)
