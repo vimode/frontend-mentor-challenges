@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 
 const todoSchema = new mongoose.Schema({
   title: String,
+  date: Date,
   completed: Boolean,
   user: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
 });
