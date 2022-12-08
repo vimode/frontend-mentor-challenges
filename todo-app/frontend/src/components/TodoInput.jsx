@@ -20,7 +20,7 @@ function TodoInput({ updateTodoList }) {
   };
 
   return (
-    <form onSubmit={addTodo}>
+    <form onSubmit={addTodo} className="todoInputForm">
       <input type="checkbox" name="addtodoCheck" id="addtodoCheck" disabled />
       <input
         type="text"
