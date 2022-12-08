@@ -25,7 +25,9 @@ body {
   display:grid;
   grid: auto / auto;
   gap: 30px;
-  place-content:center;
+  place-content:start;
+  max-width: 650px;
+  width: 90%;
   min-height:100vh;
   height: 100%;
   padding: 70px 30px;

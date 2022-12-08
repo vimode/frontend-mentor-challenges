@@ -37,6 +37,15 @@ h1 {
   line-height: 1.1;
 }
 
+img, picture, svg, video {
+  max-width: 100%;
+  display:block;
+}
+
+input, textarea, button, select {
+  font: inherit;
+}
+
 button {
   border-radius: 8px;
   border: 1px solid transparent;

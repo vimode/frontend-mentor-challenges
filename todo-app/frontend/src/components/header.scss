@@ -1,0 +1,88 @@
+@use "../base";
+
+%inherit-style {
+  font: inherit;
+}
+
+header {
+    display:grid;
+    grid-template-areas: 
+    "logo actions"
+    "actionForm actionForm";
+    gap: 10px;
+
+    h1 {
+    grid-area: logo;
+  }
+
+    .userItems {
+      grid-area: actions;
+      display:flex;
+      gap: 8px;
+      justify-self: end;
+
+      button {
+        background-color: transparent;
+        padding:10px 20px;
+        outline: none;
+        border: none;
+        opacity: 1;
+        transition: opacity 250ms linear;
+      
+        &:hover {
+          opacity: 0.5;
+        }
+        &:focus {
+          opacity: 0.5;
+          outline: 1px solid base.$dark-gray-blue-100;
+        }
+      }
+    }
+
+    .loginWrapper, .regWrapper {
+      grid-area:actionForm;
+
+      form {
+        display: flex;
+        gap: 1em;
+        flex-wrap: wrap;
+
+      @media(max-width: 500px) {
+        flex-direction: column;
+      }
+
+        button {
+          background: base.$dark-main-bg;
+          color: base.$dark-gray-blue-100;
+
+          &:hover {
+            background: base.$dark-gray-blue-200-hover;
+            color: base.$dark-gray-blue-300;
+          }
+        }
+      }
+
+      input {
+        @extend %inherit-style;
+        background-color: base.$dark-main-bg;
+        padding: 10px 20px;
+        outline:none;
+        border: none;
+        color: base.$dark-gray-blue-100;
+        border-radius: 8px;
+      } 
+    
+      .formUsername, .formPassword {
+        min-width: 30%;
+        width: 100%;
+        flex: 1;
+      }
+      
+      .regName {
+        flex-basis:100%;
+      }
+      
+
+    }
+
+}

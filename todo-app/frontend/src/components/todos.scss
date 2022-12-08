@@ -65,6 +65,11 @@ form {
 .todoList{
   @extend %todo-wrapper;
   // background-color: base.$dark-gray-blue-500;
+  
+  .tempItem {
+    text-align: center;
+    padding: 10px;
+  }
 
   .todoItem { 
     padding:0;
@@ -115,7 +120,11 @@ form {
       padding: 10px 30px;
       background-color: base.$dark-desaturated-blue;
       color: base.$dark-gray-blue-400;
-      
+
+      p {
+        width: max-content;
+        min-width: 100px;
+      }
 
       ul {
         display:flex;
