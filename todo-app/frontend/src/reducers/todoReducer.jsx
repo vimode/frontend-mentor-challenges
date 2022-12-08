@@ -17,15 +17,15 @@ const todoSlice = createSlice({
       );
     },
     deleteTodo(state, action) {
-      return state.filter((todo) => todo.id !== action.payload.id)
+      return state.filter((todo) => todo.id !== action.payload.id);
     },
     updateCompleted(state) {
-      return state.filter((todo) => todo.completed === false)
-    }
+      return state.filter((todo) => todo.completed === false);
+    },
   },
 });
 
-export const intializeTodos = () => {
+export const initializeTodos = () => {
   return async (dispatch) => {
     const todos = await todoService.getAll();
     dispatch(setTodos(todos));
@@ -49,22 +49,27 @@ export const toggleTodoComplete = (todoItem) => {
 };
 
 export const removeTodoItem = (todoItem) => {
-  return async(dispatch) => {
-    await todoService.remove(todoItem)
-    dispatch(deleteTodo(todoItem))
-  }
-}
+  return async (dispatch) => {
+    await todoService.remove(todoItem);
+    dispatch(deleteTodo(todoItem));
+  };
+};
 
 export const removeCompleted = () => {
-  return async (dispatch, getState) => {
-    const completedTodos = getState().todos.filter(
-      (t) => t.completed === true
-    );
-    await todoService.clearCompleted()
+  return async (dispatch) => {
+    await todoService.clearCompleted();
     await dispatch(updateCompleted());
   };
 };
 
-export const { setTodos, appendTodo, updateTodo, deleteTodo, updateCompleted} = todoSlice.actions;
+// user logged out:  Clear local state of the todo store
+export const clearLocalState = () => {
+  return async (dispatch) => {
+    await dispatch(setTodos([]));
+  };
+};
+
+export const { setTodos, appendTodo, updateTodo, deleteTodo, updateCompleted } =
+  todoSlice.actions;
 
 export default todoSlice.reducer;
