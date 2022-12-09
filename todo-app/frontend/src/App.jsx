@@ -11,7 +11,6 @@ import { loginUser, authUser, logoutUser } from "./reducers/userReducer.jsx";
 
 function App() {
   const dispatch = useDispatch();
-  const loggedUser = useSelector((state) => state.user);
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");

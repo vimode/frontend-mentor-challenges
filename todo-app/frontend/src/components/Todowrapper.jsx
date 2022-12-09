@@ -4,7 +4,6 @@ import TodoInput from "./TodoInput.jsx";
 import TodoList from "./TodoList.jsx";
 
 function TodoWrapper() {
-  const loggedUser = useSelector((state) => state.user);
   const dispatch = useDispatch();
 
   function updateTodoList(todoItem) {
@@ -20,13 +19,3 @@ function TodoWrapper() {
 }
 
 export default TodoWrapper;
-
-//temp wrapper component
-function TempWrapper () {
-  return (
-    <>
-      <div>temp</div>
-    </>
-  )
-
-}
