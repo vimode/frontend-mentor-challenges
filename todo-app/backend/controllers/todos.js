@@ -7,7 +7,8 @@ todosRouter.get("/", async (request, response) => {
     username: 1,
     name: 1,
     id: 1,
-  });
+    date: 1,
+  }).sort('-date');
   response.json(todos);
 });
 

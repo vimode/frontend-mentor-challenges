@@ -9,7 +9,8 @@ const todoSlice = createSlice({
       return action.payload;
     },
     appendTodo(state, action) {
-      return state.concat(action.payload);
+      return [action.payload, ...state]
+      // return state.concat(action.payload);
     },
     updateTodo(state, action) {
       return state.map((todo) =>
