@@ -1,7 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import loginService from "../services/login.js";
 import todoService from "../services/todos.js";
-import { clearLocalState } from "./todoReducer.jsx";
 
 const userSlice = createSlice({
   name: "user",

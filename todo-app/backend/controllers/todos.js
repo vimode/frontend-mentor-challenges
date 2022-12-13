@@ -7,7 +7,6 @@ todosRouter.get("/", async (request, response) => {
     username: 1,
     name: 1,
     id: 1,
-    date: 1,
   }).sort('-date');
   response.json(todos);
 });
@@ -35,7 +34,7 @@ todosRouter.post("/", async (request, response) => {
 });
 
 todosRouter.delete("/clearCompleted", async (request, response) => {
-  let theseTodos = await Todo.deleteMany({ completed: true });
+  await Todo.deleteMany({ completed: true });
   response.status(204).end();
 });
 
