@@ -70,6 +70,7 @@ export const clearLocalState = () => {
   };
 };
 
+
 export const { setTodos, appendTodo, updateTodo, deleteTodo, updateCompleted } =
   todoSlice.actions;
 

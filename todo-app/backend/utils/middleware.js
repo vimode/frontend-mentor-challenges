@@ -3,7 +3,7 @@ const jwt = require("jsonwebtoken");
 const User = require("../models/user.js");
 
 const unknownEndpoint = (request, response) => {
-  res.status(404).send({ error: "uknown endpoint" });
+  response.status(404).send({ error: "unknown endpoint" });
 };
 
 const errorHandler = (error, request, response, next) => {

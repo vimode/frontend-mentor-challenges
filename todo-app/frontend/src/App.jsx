@@ -1,4 +1,4 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 
 import TodoWrapper from "./components/Todowrapper.jsx";
@@ -41,7 +41,7 @@ function App() {
     const userDetails = { name, username, password };
     try {
       await registrationService.register(userDetails);
-      setName("")
+      setName("");
       setUsername("");
       setPassword("");
     } catch (exception) {
