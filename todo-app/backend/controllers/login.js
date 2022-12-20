@@ -28,14 +28,13 @@ loginRouter.post("/", async (request, response) => {
     "todos"
   );
 
-  response
-    .status(200)
-    .send({
-      token,
-      username: userData.username,
-      name: userData.name,
-      todos: userData.todos,
-    });
+  response.status(200).send({
+    token,
+    username: userData.username,
+    name: userData.name,
+    todos: userData.todos,
+    id: userData.id,
+  });
 });
 
 module.exports = loginRouter;
