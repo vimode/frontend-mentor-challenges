@@ -3,10 +3,34 @@ const usersRouter = require("express").Router();
 const User = require("../models/user");
 const { userExtractor, tokenExtractor } = require("../utils/middleware.js");
 
-usersRouter.get("/", tokenExtractor, userExtractor, async (request, response) => {
-  const users = await User.find({}).populate("todos");
-  response.json(users);
-});
+usersRouter.get(
+  "/",
+  tokenExtractor,
+  userExtractor,
+  async (request, response) => {
+    const users = await User.find({}).populate("todos")
+    response.json(users);
+  }
+);
+
+usersRouter.get(
+  "/:id",
+  tokenExtractor,
+  userExtractor,
+  async (request, response) => {
+    const userData = await User.findById(request.user.id).populate("todos")
+    const token = request.token;
+    
+    const user = {
+      username: userData.username,
+      name: userData.name,
+      id: userData.id,
+      todos: userData.todos,
+      token: token,
+    };
+    response.json(user);
+  }
+);
 
 usersRouter.post("/", async (request, response) => {
   const { username, name, password } = request.body;
@@ -35,11 +59,9 @@ usersRouter.post("/", async (request, response) => {
     const savedUser = await user.save();
     response.status(201).json(savedUser);
   } catch (error) {
-    return response
-      .status(400)
-      .json({
-        error: "Username and/or password too short, minimum 3 characters long.",
-      });
+    return response.status(400).json({
+      error: "Username and/or password too short, minimum 3 characters long.",
+    });
   }
 });
 
