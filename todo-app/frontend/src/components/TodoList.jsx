@@ -19,7 +19,7 @@ function TodoList() {
 
   useEffect(() => {
     if (loggedUser.hasOwnProperty("token")) {
-      dispatch(initializeTodos());
+       dispatch(initializeTodos(loggedUser));
     }
   }, [loggedUser]);
 
@@ -75,6 +75,7 @@ export default TodoList;
 // TodoItem Component
 function TodoItem({ todo }) {
   const [itemHovered, setItemHovered] = useState(false);
+  const loggedUser = useSelector((state) => state.user)
   const dispatch = useDispatch();
 
   function todoCompleteStatus(todo) {

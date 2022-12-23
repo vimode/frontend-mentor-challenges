@@ -3,12 +3,20 @@ const Todo = require("../models/todo.js");
 const User = require("../models/user.js");
 
 todosRouter.get("/", async (request, response) => {
-  const todos = await Todo.find({}).populate("user", {
-    username: 1,
-    name: 1,
-    id: 1,
-  }).sort('-date');
-  response.json(todos);
+  const authUser = request.user.username;
+  const todos = await Todo.find({})
+    .populate("user", {
+      username: 1,
+      name: 1,
+      id: 1,
+    })
+    .sort("-date");
+
+  const userTodos = await todos.filter(
+    (todo) => todo.user.username === authUser
+  );
+
+  response.json(userTodos);
 });
 
 todosRouter.post("/", async (request, response) => {

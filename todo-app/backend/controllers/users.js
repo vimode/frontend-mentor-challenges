@@ -18,14 +18,13 @@ usersRouter.get(
   tokenExtractor,
   userExtractor,
   async (request, response) => {
-    const userData = await User.findById(request.user.id).populate("todos")
+    const userData = await User.findById(request.user.id)
     const token = request.token;
     
     const user = {
       username: userData.username,
       name: userData.name,
       id: userData.id,
-      todos: userData.todos,
       token: token,
     };
     response.json(user);
