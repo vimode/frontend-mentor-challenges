@@ -6,11 +6,13 @@ function TodoInput({ updateTodoList }) {
 
   const addTodo = (event) => {
     event.preventDefault();
-    updateTodoList({
-      title: todoItem,
-      completed: false,
-    });
-    setTodoItem("");
+    if (todoItem) {
+      updateTodoList({
+        title: todoItem.trim(),
+        completed: false,
+      });
+      setTodoItem("");
+    }
   };
 
   return (
