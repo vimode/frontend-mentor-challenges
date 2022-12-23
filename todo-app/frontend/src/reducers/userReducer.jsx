@@ -7,7 +7,13 @@ const userSlice = createSlice({
   initialState: [],
   reducers: {
     setUser(state, action) {
-      if(action.payload) window.localStorage.setItem("loggedTodoUser", JSON.stringify(action.payload));
+      if (action.payload.token) window.localStorage.setItem("loggedTodoUser", JSON.stringify(
+        {
+          username: action.payload.username,
+          token: action.payload.token,
+          id: action.payload.id
+        }
+      ));
       return action.payload;
     },
   },
@@ -30,6 +36,7 @@ export const authUser = (user) => {
 
 export const logoutUser = () => {
   return async (dispatch) => {
+    todoService.setToken('')
     window.localStorage.clear();
     dispatch(setUser([]));
   };
