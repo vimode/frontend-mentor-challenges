@@ -1,12 +1,18 @@
-@use '../base';
+@use "../base";
 
 %todo-wrapper {
   width: 100%;
   max-width: 650px;
-  min-width: 90%;
+  min-width: 550px;
+  // min-width: 100%;
+
+    @media only screen and (max-width: 600px) {
+      min-width:300px;
+      max-width: 90%;
+    }
 }
 
-%inherit-style{
+%inherit-style {
   font: inherit;
 }
 
@@ -18,15 +24,17 @@
 %checkbox-reset {
   -webkit-appearance: none;
   -moz-appearance: none;
-  max-width:30px;
+  appearance: none;
+  max-width: 30px;
   width: 100%;
   margin-right: 20px;
-  border-radius:50%;
+  border-radius: 50%;
   height: 30px;
   border: 1px solid base.$dark-gray-blue-300;
+  cursor: pointer;
 }
 
-@supports(-webkit-appearance: none) or (-moz-appearance:none) {
+@supports (-webkit-appearance: none) or (-moz-appearance: none) {
   input[type="checkbox"] {
     @extend %checkbox-reset;
   }
@@ -36,17 +44,16 @@ form {
   @extend %todo-wrapper;
   background-color: base.$dark-desaturated-blue;
   border-radius: 5px;
-  display:flex;
-  place-items:center;
+  display: flex;
+  place-items: center;
   place-content: center;
   padding: 20px 30px;
+  height:max-content;
 
-
-  input[type="checkbox"]{
-
-      &:disabled {
-        opacity: 0.5;
-      }
+  input[type="checkbox"] {
+    &:disabled {
+      opacity: 0.5;
+    }
   }
 
   input[type="text"] {
@@ -56,96 +63,110 @@ form {
     color: base.$dark-gray-blue-100;
     border: none;
   }
-  
+
   input[type="text"]:focus {
     outline: none;
   }
 }
 
-.todoList{
+.todoList {
   @extend %todo-wrapper;
   // background-color: base.$dark-gray-blue-500;
-  
+
   .tempItem {
     text-align: center;
     padding: 10px;
   }
 
-  .todoItem { 
-    padding:0;
+  .todoItem {
+    padding: 0;
     background-color: base.$dark-desaturated-blue;
     border-radius: 5px;
 
-    li { 
+    li {
       @extend %li-style-reset;
       padding: 20px 30px;
       border-bottom: 1px solid base.$dark-gray-blue-500;
       width: 100%;
-      display:flex;
-      place-items:center;
-      place-content:space-between;
-      cursor:pointer;
-      
+      display: flex;
+      place-items: center;
+      place-content: space-between;
+      cursor: pointer;
+
       div {
-        display:flex;
-        place-items:center;
+        display: flex;
+        place-items: center;
         width: 95%;
       }
 
       input[type="checkbox"] {
-        
         // &:hover {
         //   border: 1px solid transparent;
         //   border-image: linear-gradient(base.$checked-bg) 10%;
         // }
-          &:hover {
-          }
+        &:hover {
+        }
 
-          &:checked {
-            background: url("./images/icon-check.svg") center no-repeat, linear-gradient(base.$checked-bg);
-          }
+        &:checked {
+          background: url("./images/icon-check.svg") center no-repeat,
+            linear-gradient(base.$checked-bg);
+        }
 
-          &:checked + label {
+        &:checked + label {
           text-decoration: line-through;
           color: base.$dark-gray-blue-300;
         }
       }
     }
   }
-    .todoListActions {
-      display:flex;
-      place-content:space-between;
-      place-items:center;
-      font-size: 1rem;
-      padding: 10px 30px;
-      background-color: base.$dark-desaturated-blue;
-      color: base.$dark-gray-blue-400;
-
-      p {
-        width: max-content;
-        min-width: 100px;
-      }
-
-      ul {
-        display:flex;
-
-        li {
-           @extend %li-style-reset;
-        }
-      }
-
-      button {
-        @extend %inherit-style;
-        background-color: transparent;
-        color: base.$dark-gray-blue-400; 
-        border: none;
-        transition: color 350ms linear;
-
-        &:hover {
-          color: base.$dark-gray-blue-200-hover;
-        }
-      }
-      
-    }
 }
 
+.todoListActions {
+  display: grid;
+  grid-template-areas: "taskCount taskFilter taskClear";
+  place-items: center;
+  font-size: 0.9rem;
+  padding: 10px 30px;
+  background-color: base.$dark-desaturated-blue;
+  color: base.$dark-gray-blue-400;
+
+  @media screen and (max-width: 600px) {
+    grid-template-areas:
+      "taskCount - taskClear"
+      "taskFilter taskFilter taskFilter";
+    row-gap: 10px;
+  }
+
+  p {
+    grid-area: taskCount;
+    min-width: max-content;
+    justify-self: start;
+  }
+
+  ul {
+    grid-area: taskFilter;
+    display: flex;
+    gap: 1rem;
+    padding: 0;
+
+    li {
+      @extend %li-style-reset;
+    }
+  }
+
+  button {
+    @extend %inherit-style;
+    background-color: transparent;
+    grid-area: taskClear;
+    color: base.$dark-gray-blue-400;
+    border: none;
+    transition: color 350ms linear;
+    min-width: max-content;
+    padding: 0;
+    justify-self: end;
+
+    &:hover {
+      color: base.$dark-gray-blue-200-hover;
+    }
+  }
+}
