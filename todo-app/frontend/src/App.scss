@@ -29,12 +29,9 @@ body {
   display: grid;
   grid: auto / auto;
   gap: 30px;
-  // place-content: start;
   max-width: 650px;
   width: 100%;
-  min-height: 100vh;
   height: 100%;
-  // padding: 70px 30px;
   padding-block: 70px;
 
   @media only screen and (max-width: 600px) {

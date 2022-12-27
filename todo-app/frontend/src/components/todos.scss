@@ -97,15 +97,17 @@ form {
         display: flex;
         place-items: center;
         width: 95%;
+
+        label {
+        cursor: pointer;
+        }
       }
 
       input[type="checkbox"] {
-        // &:hover {
-        //   border: 1px solid transparent;
-        //   border-image: linear-gradient(base.$checked-bg) 10%;
-        // }
-        &:hover {
-        }
+         // &:hover {
+         //  border: 1px solid transparent;
+         //  border-image: linear-gradient(base.$checked-bg) 10%;
+         // }
 
         &:checked {
           background: url("./images/icon-check.svg") center no-repeat,
@@ -168,5 +170,9 @@ form {
     &:hover {
       color: base.$dark-gray-blue-200-hover;
     }
+  }
+
+  .filterHighlight { 
+    color: base.$bright-blue;
   }
 }
