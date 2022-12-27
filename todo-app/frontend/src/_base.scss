@@ -1,49 +1,73 @@
-$bright-blue: hsl(220, 98%, 61%);
-$checked-bg: to bottom right, hsl(192,100%, 67%) , hsl(280, 87%, 65%);
-$light-theme: (
-
-);
-
-$dark-theme: (
-
-);
-
-$light-gray: hsl(0, 0%, 98%);
-$light-gray-blue-100: hsl(236, 33%, 92%);
-$light-gray-blue-200: hsl(233, 11%, 84%);
-$light-dark-gray-blue-100: hsl(236, 9%, 61%);
-$light-dark-gray-blue-200:  hsl(235, 19%, 35%);
-
-$dark-main-bg: hsl(235, 21%, 11%);
+// colors from the style guide
+$dark-main-bg:hsl(235, 21%, 11%) ; 
 $dark-desaturated-blue: hsl(235, 24%, 19%);
 $dark-gray-blue-100: hsl(234, 39%, 85%);
 $dark-gray-blue-200-hover: hsl(236, 33%, 92%);
 $dark-gray-blue-300: hsl(234, 11%, 52%);
 $dark-gray-blue-400: hsl(233, 14%, 35%);
 $dark-gray-blue-500: hsl(237, 14%, 26%);
+$light-gray: hsl(0, 0%, 98%);
+$light-gray-blue-100: hsl(236, 33%, 92%);
+$light-gray-blue-200: hsl(233, 11%, 84%);
+$light-dark-gray-blue-100: hsl(236, 9%, 61%);
+$light-dark-gray-blue-200: hsl(235, 19%, 35%);
+
+
+// defaults to dark theme
+$light-theme: false !default ;
+// dark theme
+$bright-blue: hsl(220, 98%, 61%);
+$checked-bg: to bottom right, hsl(192, 100%, 67%), hsl(280, 87%, 65%);
+$main-bg: $dark-main-bg !default;
+$section-bg: $dark-desaturated-blue !default;
+$root-text-color: $dark-gray-blue-100;
+$text-color: $dark-gray-blue-100 !default;
+$border-color: $dark-gray-blue-300 !default;
+$divider-line: $dark-gray-blue-500 !default;
+$checked-text-color: $dark-gray-blue-300 !default;
+$alt-text-color: $dark-gray-blue-500 !default;
+$alt-button-text-color: $dark-gray-blue-400 !default;
+$alt-button-text-color-hover: $dark-gray-blue-200-hover !default;
+$login-button-color-bg-hover: $dark-gray-blue-200-hover !default;
+$login-button-color-hover:$dark-gray-blue-300 !default;
+
+$bg-desktop: url("./images/bg-desktop-dark.jpg") !default;
+$bg-mobile: url("./images/bg-mobile-dark.jpg") !default;
+
+// light theme
+@if $light-theme {
+  $main-bg: $light-gray-blue-100; 
+  $section-bg: $light-gray; 
+  $text-color: $light-dark-gray-blue-200;
+  $root-text-color: $text-color;
+  $alt-text-color:$light-dark-gray-blue-100;
+  $alt-button-text-color: $alt-text-color;
+  $alt-button-text-color-hover: $light-dark-gray-blue-200;
+  $border-color: $light-gray-blue-200;
+  $divider-line: $light-gray-blue-100;
+  $checked-text-color: $light-gray-blue-200;
+  $login-button-color-bg-hover: $light-dark-gray-blue-100;
+  $login-button-color-hover: $light-gray-blue-100;
+
+  $bg-desktop: url("./images/bg-desktop-light.jpg");
+  $bg-mobile: url("./images/bg-mobile-light.jpg");
+}
 
 $font-size-primary: 18px;
-$font-primary: 'Josefin-Sans';
-$font-weight-primary:normal;
+$font-primary: "Josefin-Sans";
+$font-weight-primary: normal;
 $font-weight-title: bold;
-
-$bg-desktop-dark: url('./images/bg-desktop-dark.jpg');
-$bg-mobile-dark: url('./images/bg-mobile-dark.jpg');
-
-$bg-desktop-light: url('./images/bg-desktop-light.jpg');
-$bg-mobile-light: url('./images/bg-mobile-light.jpg');
 
 @font-face {
   font-family: "Josefin-Sans";
-  src: url('./font/static/JosefinSans-Regular.ttf') format('truetype');
+  src: url("./font/static/JosefinSans-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Josefin-Sans";
-  src: url('./font/static/JosefinSans-Bold.ttf') format('truetype');
+  src: url("./font/static/JosefinSans-Bold.ttf") format("truetype");
   font-weight: bold;
   font-style: normal;
 }
-

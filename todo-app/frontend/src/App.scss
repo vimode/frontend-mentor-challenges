@@ -19,9 +19,13 @@ body {
 #root {
   width: 100vw;
   min-height: 100vh;
-  background-color: base.$dark-main-bg;
-  color: base.$dark-gray-blue-100;
-  background: top/contain base.$bg-desktop-dark no-repeat base.$dark-main-bg;
+  background-color: base.$main-bg;
+  color: base.$root-text-color;
+  background: top/contain base.$bg-desktop no-repeat base.$main-bg;
+
+    @media screen and (max-width: 600px) {
+      background: top/contain base.$bg-mobile no-repeat base.$main-bg; 
+    }
 }
 
 .App {

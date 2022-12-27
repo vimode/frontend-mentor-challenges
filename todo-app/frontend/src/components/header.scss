@@ -5,84 +5,83 @@
 }
 
 header {
-    display:grid;
-    grid-template-areas: 
+  display: grid;
+  grid-template-areas:
     "logo actions"
     "actionForm actionForm";
-    gap: 10px;
+  gap: 10px;
 
-    h1 {
+  h1 {
     grid-area: logo;
   }
 
-    .userItems {
-      grid-area: actions;
-      display:flex;
-      gap: 8px;
-      justify-self: end;
+  .userItems {
+    grid-area: actions;
+    display: flex;
+    gap: 8px;
+    justify-self: end;
 
-      button {
-        background-color: transparent;
-        padding:10px 20px;
-        outline: none;
-        border: none;
-        opacity: 1;
-        transition: opacity 250ms linear;
-      
-        &:hover {
-          opacity: 0.5;
-        }
-        &:focus {
-          opacity: 0.5;
-          outline: 1px solid base.$dark-gray-blue-100;
-        }
+    button {
+      background-color: transparent;
+      padding: 10px 20px;
+      outline: none;
+      border: none;
+      opacity: 1;
+      transition: opacity 250ms linear;
+
+      &:hover {
+        opacity: 0.5;
+      }
+      &:focus {
+        opacity: 0.5;
+        outline: 1px solid base.$text-color;
       }
     }
+  }
 
-    .loginWrapper, .regWrapper {
-      grid-area:actionForm;
+  .loginWrapper,
+  .regWrapper {
+    grid-area: actionForm;
 
-      form {
-        display: flex;
-        gap: 1em;
-        flex-wrap: wrap;
+    form {
+      display: flex;
+      gap: 1em;
+      flex-wrap: wrap;
 
-      @media(max-width: 500px) {
+      @media (max-width: 500px) {
         flex-direction: column;
       }
 
-        button {
-          background: base.$dark-main-bg;
-          color: base.$dark-gray-blue-100;
+      button {
+        background: base.$main-bg;
+        color: base.$text-color;
 
-          &:hover {
-            background: base.$dark-gray-blue-200-hover;
-            color: base.$dark-gray-blue-300;
-          }
+        &:hover {
+          background: base.$login-button-color-bg-hover;
+          color: base.$login-button-color-hover;
         }
       }
-
-      input {
-        @extend %inherit-style;
-        background-color: base.$dark-main-bg;
-        padding: 10px 20px;
-        outline:none;
-        border: none;
-        color: base.$dark-gray-blue-100;
-        border-radius: 8px;
-      } 
-    
-      .formUsername, .formPassword {
-        min-width: 30%;
-        width: 100%;
-        flex: 1;
-      }
-      
-      .regName {
-        flex-basis:100%;
-      }
-      
-
     }
 
+    input {
+      @extend %inherit-style;
+      background-color: base.$main-bg;
+      padding: 10px 20px;
+      outline: none;
+      border: none;
+      color: base.$text-color;
+      border-radius: 8px;
+    }
+
+    .formUsername,
+    .formPassword {
+      min-width: 30%;
+      width: 100%;
+      flex: 1;
+    }
+
+    .regName {
+      flex-basis: 100%;
+    }
+  }
 }
