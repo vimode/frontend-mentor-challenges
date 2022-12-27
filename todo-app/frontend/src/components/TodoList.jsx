@@ -19,7 +19,7 @@ function TodoList() {
 
   useEffect(() => {
     if (loggedUser.hasOwnProperty("token")) {
-       dispatch(initializeTodos(loggedUser));
+      dispatch(initializeTodos(loggedUser));
     }
   }, [loggedUser]);
 
@@ -41,31 +41,29 @@ function TodoList() {
 
   return (
     <section className="todoList">
-      {loggedUser.token ? 
-      <ul className="todoItem">
-        {filteredTodos.map((todo) => (
-          <TodoItem key={todo.id} todo={todo} />
-        ))}
-      </ul> : 
-      <p className="tempItem">Please Login or Register</p>
+      {loggedUser.token ?
+        <ul className="todoItem">
+          {filteredTodos.map((todo) => (
+            <TodoItem key={todo.id} todo={todo} />
+          ))}
+        </ul> :
+        <p className="tempItem">Please Login or Register to get started</p>
       }
-      <div className="todoListActions">
+      {allTodos.length > 0 && <div className="todoListActions">
         <p>{activeTodoCount.length} tasks left</p>
         <ul>
           <li>
-            <button onClick={() => setListFilter("all")}>All</button>
+            <button onClick={() => setListFilter('all')} className={`${listFilter === 'all' ? 'filterHighlight' : ""}`}>All</button>
           </li>
           <li>
-            <button onClick={() => setListFilter("active")}>Active</button>
+            <button onClick={() => setListFilter('active')} className={`${listFilter === 'active' ? 'filterHighlight' : ""}`}>Active</button>
           </li>
           <li>
-            <button onClick={() => setListFilter("completed")}>
-              Completed
-            </button>
+            <button onClick={() => setListFilter('completed')} className={`${listFilter === 'completed' ? 'filterHighlight' : ""}`}>Completed</button>
           </li>
         </ul>
         <button onClick={deleteCompleted}>Clear Completed</button>
-      </div>  
+      </div>}
     </section>
   );
 }
