@@ -24,6 +24,7 @@ dist-ssr
 *.sln
 *.sw?
 .prettierignore
+.eslintrc.json
 
 # Avoid accidental upload of 
 *.sketch
