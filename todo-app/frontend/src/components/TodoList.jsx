@@ -15,7 +15,7 @@ function TodoList() {
   const allTodos = useSelector((state) => state.todos);
   const loggedUser = useSelector((state) => state.user);
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   useEffect(() => {
     if (loggedUser.hasOwnProperty("token")) {
@@ -41,29 +41,51 @@ function TodoList() {
 
   return (
     <section className="todoList">
-      {loggedUser.token ?
+      {loggedUser.token ? (
         <ul className="todoItem">
           {filteredTodos.map((todo) => (
             <TodoItem key={todo.id} todo={todo} />
           ))}
-        </ul> :
-        <p className="tempItem">Please Login or Register to get started</p>
-      }
-      {allTodos.length > 0 && <div className="todoListActions">
-        <p>{activeTodoCount.length} tasks left</p>
-        <ul>
-          <li>
-            <button onClick={() => setListFilter('all')} className={`${listFilter === 'all' ? 'filterHighlight' : ""}`}>All</button>
-          </li>
-          <li>
-            <button onClick={() => setListFilter('active')} className={`${listFilter === 'active' ? 'filterHighlight' : ""}`}>Active</button>
-          </li>
-          <li>
-            <button onClick={() => setListFilter('completed')} className={`${listFilter === 'completed' ? 'filterHighlight' : ""}`}>Completed</button>
-          </li>
         </ul>
-        <button onClick={deleteCompleted}>Clear Completed</button>
-      </div>}
+      ) : (
+        <p className="tempItem">Please Login or Register to get started</p>
+      )}
+      {allTodos.length > 0 && (
+        <div className=" todoListActions">
+          <p>{activeTodoCount.length} tasks left</p>
+          <ul>
+            <li>
+              <button
+                onClick={() => setListFilter("all")}
+                className={`${listFilter === "all" ? "filterHighlight" : ""}`}
+              >
+                All
+              </button>
+            </li>
+            <li>
+              <button
+                onClick={() => setListFilter("active")}
+                className={`${
+                  listFilter === "active" ? "filterHighlight" : ""
+                }`}
+              >
+                Active
+              </button>
+            </li>
+            <li>
+              <button
+                onClick={() => setListFilter("completed")}
+                className={`${
+                  listFilter === "completed" ? "filterHighlight" : ""
+                }`}
+              >
+                Completed
+              </button>
+            </li>
+          </ul>
+          <button onClick={deleteCompleted}>Clear Completed</button>
+        </div>
+      )}
     </section>
   );
 }
@@ -73,7 +95,7 @@ export default TodoList;
 // TodoItem Component
 function TodoItem({ todo }) {
   const [itemHovered, setItemHovered] = useState(false);
-  const loggedUser = useSelector((state) => state.user)
+  const loggedUser = useSelector((state) => state.user);
   const dispatch = useDispatch();
 
   function todoCompleteStatus(todo) {

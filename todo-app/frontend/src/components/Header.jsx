@@ -2,36 +2,46 @@ import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import "./header.scss";
 
-function Header({ username, setUsername, password, setPassword, name, setName, handleLogin, handleRegistration, handleLogout }) {
+function Header({
+  username,
+  setUsername,
+  password,
+  setPassword,
+  name,
+  setName,
+  handleLogin,
+  handleRegistration,
+  handleLogout,
+}) {
   const loggedUser = useSelector((state) => state.user);
   const [loginVisible, setLoginVisible] = useState(false);
   const [registerVisible, setRegisterVisible] = useState(false);
 
   function handleFormToggle(event) {
-    const { name } = event.target
-    if (name === 'loginButton') {
-      setLoginVisible(!loginVisible)
-      setRegisterVisible(false)
-    } else if (name === 'registerButton') {
-      setLoginVisible(false)
-      setRegisterVisible(!registerVisible)
+    const { name } = event.target;
+    if (name === "loginButton") {
+      setLoginVisible(!loginVisible);
+      setRegisterVisible(false);
+    } else if (name === "registerButton") {
+      setLoginVisible(false);
+      setRegisterVisible(!registerVisible);
     }
   }
 
   function handleUserLogin(event) {
-    handleLogin(event)
-    setLoginVisible(!loginVisible)
+    handleLogin(event);
+    setLoginVisible(!loginVisible);
   }
 
   function handleUserRegistration(event) {
-    handleRegistration(event)
-    setRegisterVisible(!registerVisible)
+    handleRegistration(event);
+    setRegisterVisible(!registerVisible);
   }
 
   function handleUserLogout(event) {
-    handleLogout()
-    setLoginVisible(false)
-    setRegisterVisible(false)
+    handleLogout();
+    setLoginVisible(false);
+    setRegisterVisible(false);
   }
 
   return (
@@ -39,14 +49,24 @@ function Header({ username, setUsername, password, setPassword, name, setName, h
       <h1>TODO</h1>
       <div className="userItems">
         {loggedUser.length === 0 && (
-          <button name="loginButton" onClick={(event) => handleFormToggle(event)}>Login</button>
+          <button
+            name="loginButton"
+            onClick={(event) => handleFormToggle(event)}
+          >
+            Login
+          </button>
         )}
         {loggedUser.length === 0 && (
-          <button name="registerButton" onClick={(event) => handleFormToggle(event)}>Register</button>
+          <button
+            name="registerButton"
+            onClick={(event) => handleFormToggle(event)}
+          >
+            Register
+          </button>
         )}
         {loggedUser.token && <button onClick={handleUserLogout}>Logout</button>}
         {/* TODO: make this a radio input*/}
-        <button>theme</button>
+        {/* <button>theme</button> */}
       </div>
 
       {loggedUser.length === 0 && (
