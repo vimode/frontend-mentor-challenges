@@ -1,26 +1,26 @@
-@use "../base";
+@import "../base.scss";
 
-%todo-wrapper {
+@mixin todo-wrapper {
   width: 100%;
   max-width: 650px;
   min-width: 550px;
 
-    @media only screen and (max-width: 600px) {
-      min-width:300px;
-      max-width: 90%;
-    }
+  @media only screen and (max-width: 600px) {
+    min-width: 300px;
+    max-width: 90%;
+  }
 }
 
-%inherit-style {
+@mixin inherit-style {
   font: inherit;
 }
 
-%li-style-reset {
+@mixin li-style-reset {
   list-style: none;
   padding: 0;
 }
 
-%checkbox-reset {
+@mixin checkbox-reset {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -29,25 +29,25 @@
   margin-right: 20px;
   border-radius: 50%;
   height: 30px;
-  border: 1px solid base.$border-color;
+  border: 1px solid $border-color;
   cursor: pointer;
 }
 
 @supports (-webkit-appearance: none) or (-moz-appearance: none) {
   input[type="checkbox"] {
-    @extend %checkbox-reset;
+    @include checkbox-reset;
   }
 }
 
 form {
-  @extend %todo-wrapper;
-  background-color: base.$section-bg;
+  @include todo-wrapper;
+  background-color: $section-bg;
   border-radius: 5px;
   display: flex;
   place-items: center;
   place-content: center;
   padding: 20px 30px;
-  height:max-content;
+  height: max-content;
 
   input[type="checkbox"] {
     &:disabled {
@@ -56,10 +56,10 @@ form {
   }
 
   input[type="text"] {
-    @extend %inherit-style;
+    @include inherit-style;
     width: 100%;
     background-color: transparent;
-    color: base.$text-color;
+    color: $text-color;
     border: none;
   }
 
@@ -69,7 +69,7 @@ form {
 }
 
 .todoList {
-  @extend %todo-wrapper;
+  @include todo-wrapper;
 
   .tempItem {
     text-align: center;
@@ -78,13 +78,13 @@ form {
 
   .todoItem {
     padding: 0;
-    background-color: base.$section-bg;
+    background-color: $section-bg;
     border-radius: 5px;
 
     li {
-      @extend %li-style-reset;
+      @include li-style-reset;
       padding: 20px 30px;
-      border-bottom: 1px solid base.$divider-line;
+      border-bottom: 1px solid $divider-line;
       width: 100%;
       display: flex;
       place-items: center;
@@ -97,24 +97,26 @@ form {
         width: 95%;
 
         label {
-        cursor: pointer;
+          cursor: pointer;
+          transition: color 250ms linear, text-decoration 250ms linear;
         }
       }
 
       input[type="checkbox"] {
-         // &:hover {
-         //  border: 1px solid transparent;
-         //  border-image: linear-gradient(base.$checked-bg) 10%;
-         // }
+        transition: background 100ms linear;
+        // &:hover {
+        //  border: 1px solid transparent;
+        //  border-image: linear-gradient(base.$checked-bg) 10%;
+        // }
 
         &:checked {
           background: url("./images/icon-check.svg") center no-repeat,
-            linear-gradient(base.$checked-bg);
+            linear-gradient($checked-bg);
         }
 
         &:checked + label {
           text-decoration: line-through;
-          color: base.$checked-text-color;
+          color: $checked-text-color;
         }
       }
     }
@@ -127,8 +129,8 @@ form {
   place-items: center;
   font-size: 0.9rem;
   padding: 10px 30px;
-  background-color: base.$section-bg;
-  color: base.$alt-text-color;
+  background-color: $section-bg;
+  color: $alt-text-color;
 
   @media screen and (max-width: 600px) {
     grid-template-areas:
@@ -150,15 +152,15 @@ form {
     padding: 0;
 
     li {
-      @extend %li-style-reset;
+      @include li-style-reset;
     }
   }
 
   button {
-    @extend %inherit-style;
+    @include inherit-style;
     background-color: transparent;
     grid-area: taskClear;
-    color: base.$alt-button-text-color;
+    color: $alt-button-text-color;
     border: none;
     transition: color 350ms linear;
     min-width: max-content;
@@ -166,11 +168,11 @@ form {
     justify-self: end;
 
     &:hover {
-      color: base.$alt-button-text-color-hover;
+      color: $alt-button-text-color-hover;
     }
   }
 
-  .filterHighlight { 
-    color: base.$bright-blue;
+  .filterHighlight {
+    color: $bright-blue;
   }
 }

@@ -1,6 +1,6 @@
-@use "../base";
+@import "../base";
 
-%inherit-style {
+@mixin inherit-style {
   font: inherit;
 }
 
@@ -34,7 +34,7 @@ header {
       }
       &:focus {
         opacity: 0.5;
-        outline: 1px solid base.$text-color;
+        outline: 1px solid $text-color;
       }
     }
   }
@@ -53,23 +53,23 @@ header {
       }
 
       button {
-        background: base.$main-bg;
-        color: base.$text-color;
+        background: $main-bg;
+        color: $text-color;
 
         &:hover {
-          background: base.$login-button-color-bg-hover;
-          color: base.$login-button-color-hover;
+          background: $login-button-color-bg-hover;
+          color: $login-button-color-hover;
         }
       }
     }
 
     input {
-      @extend %inherit-style;
-      background-color: base.$main-bg;
+      @include inherit-style;
+      background-color: $main-bg;
       padding: 10px 20px;
       outline: none;
       border: none;
-      color: base.$text-color;
+      color: $text-color;
       border-radius: 8px;
     }
 

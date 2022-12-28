@@ -1,4 +1,4 @@
-@use "base";
+@import "./base";
 
 *,
 *::before,
@@ -11,21 +11,22 @@
 }
 
 body {
-  font-family: base.$font-primary, sans-serif;
-  font-weight: base.$font-weight-primary;
-  font-size: base.$font-size-primary;
+  font-family: $font-primary, sans-serif;
+  font-weight: $font-weight-primary;
+  font-size: $font-size-primary;
 }
 
 #root {
   width: 100vw;
   min-height: 100vh;
-  background-color: base.$main-bg;
-  color: base.$root-text-color;
-  background: top/contain base.$bg-desktop no-repeat base.$main-bg;
+  color: $root-text-color;
+  background: top/contain $bg-desktop no-repeat $main-bg;
+  transition: color 900ms linear, border 900ms linear,
+    background-color 1000ms ease-in;
 
-    @media screen and (max-width: 600px) {
-      background: top/contain base.$bg-mobile no-repeat base.$main-bg; 
-    }
+  @media screen and (max-width: 600px) {
+    background: top/contain $bg-mobile no-repeat $main-bg;
+  }
 }
 
 .App {
@@ -47,6 +48,6 @@ header {
   h1 {
     letter-spacing: 10px;
     font-size: 2.5rem;
-    color: base.$light-gray;
+    color: $light-gray;
   }
 }
