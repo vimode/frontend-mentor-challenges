@@ -10,6 +10,8 @@ header {
     "logo actions"
     "actionForm actionForm";
   gap: 10px;
+  place-items: space-between;
+  width: 90%;
 
   h1 {
     grid-area: logo;
@@ -22,12 +24,15 @@ header {
     justify-self: end;
 
     button {
+      @include inherit-style;
+      color: $text-color;
       background-color: transparent;
       padding: 10px 20px;
-      outline: none;
-      border: none;
+      border: 1px solid transparent;
+      border-radius: 8px;
       opacity: 1;
       transition: opacity 250ms linear;
+      height: max-content;
 
       &:hover {
         opacity: 0.5;
@@ -44,6 +49,7 @@ header {
     grid-area: actionForm;
 
     form {
+      @include inherit-style;
       display: flex;
       gap: 1em;
       flex-wrap: wrap;
@@ -53,8 +59,13 @@ header {
       }
 
       button {
+        @include inherit-style;
+        border: 1px solid transparent;
+        border-radius: 8px;
         background: $main-bg;
         color: $text-color;
+        height: max-content;
+        padding: 0.6em 1.2em;
 
         &:hover {
           background: $login-button-color-bg-hover;

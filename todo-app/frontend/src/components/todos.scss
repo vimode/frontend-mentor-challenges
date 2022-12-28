@@ -1,7 +1,7 @@
 @import "../base.scss";
 
 @mixin todo-wrapper {
-  width: 100%;
+  width: 95%;
   max-width: 650px;
   min-width: 550px;
 
@@ -128,7 +128,7 @@ form {
   grid-template-areas: "taskCount taskFilter taskClear";
   place-items: center;
   font-size: 0.9rem;
-  padding: 10px 30px;
+  padding: 20px 40px;
   background-color: $section-bg;
   color: $alt-text-color;
 
@@ -164,7 +164,7 @@ form {
     border: none;
     transition: color 350ms linear;
     min-width: max-content;
-    padding: 0;
+    padding: 10px;
     justify-self: end;
 
     &:hover {
