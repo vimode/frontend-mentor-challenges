@@ -9,8 +9,7 @@ const todoSlice = createSlice({
       return action.payload;
     },
     appendTodo(state, action) {
-      return [action.payload, ...state]
-      // return state.concat(action.payload);
+      return [action.payload, ...state];
     },
     updateTodo(state, action) {
       return state.map((todo) =>
@@ -69,7 +68,6 @@ export const clearLocalState = () => {
     await dispatch(setTodos([]));
   };
 };
-
 
 export const { setTodos, appendTodo, updateTodo, deleteTodo, updateCompleted } =
   todoSlice.actions;

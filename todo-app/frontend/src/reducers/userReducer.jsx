@@ -7,13 +7,15 @@ const userSlice = createSlice({
   initialState: [],
   reducers: {
     setUser(state, action) {
-      if (action.payload.token) window.localStorage.setItem("loggedTodoUser", JSON.stringify(
-        {
-          username: action.payload.username,
-          token: action.payload.token,
-          id: action.payload.id
-        }
-      ));
+      if (action.payload.token)
+        window.localStorage.setItem(
+          "loggedTodoUser",
+          JSON.stringify({
+            username: action.payload.username,
+            token: action.payload.token,
+            id: action.payload.id,
+          })
+        );
       return action.payload;
     },
   },
@@ -29,14 +31,14 @@ export const loginUser = (username, password) => {
 
 export const authUser = (user) => {
   return async (dispatch) => {
-    dispatch(setUser(user))
-    todoService.setToken(user.token)
-  }
-}
+    dispatch(setUser(user));
+    todoService.setToken(user.token);
+  };
+};
 
 export const logoutUser = () => {
   return async (dispatch) => {
-    todoService.setToken('')
+    todoService.setToken("");
     window.localStorage.clear();
     dispatch(setUser([]));
   };
