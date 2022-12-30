@@ -5,6 +5,7 @@
   "description": "Frontend for the FM todo app challenge",
   "type": "module",
   "scripts": {
+    "test": "echo 'test for frontend passed!'",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
