@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseurl = "http://localhost:6003/api/todos";
+const baseurl = "/api/todos";
 
 let token = null;
 
