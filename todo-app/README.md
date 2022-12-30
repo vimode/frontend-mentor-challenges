@@ -64,6 +64,23 @@ Terrible CSS. Super rusty CSS, SCSS can be better. Refactor, re-organize and use
 
 Learn to commit more and more often. New feature additions should be commited. New render logic should be committed. Big CSS changes, should be committed.
 
+How am I deploying it? 
+
+Since I didn't think of setting up a proper monorepo beforehand I am currently serving my static files from the node server directly. The `dist` folder is build into the backend folder, and the express server serves the static files along with the backend API on the same origin.
+
+changes to the app.js I did for production
+
+```javascript
+const path = require('path')
+
+app.use(express.static(path.join(__dirname, 'dist')))
+
+app.get('/', (request, response) => {
+    response.send(path.join(__dirname, 'dist', 'index.html'))
+  })
+
+```
+
 
 ### Useful resources
 
