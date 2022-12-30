@@ -1,0 +1,13 @@
+{
+  "name": "@todo-app/root",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "backend/*",
+    "frontend/*"
+  ],
+  "scripts": {
+    "build": "cd ./backend/ && npm run build:ui",
+    "start": "cd ./backend/ && npm run start"
+  }
+}
