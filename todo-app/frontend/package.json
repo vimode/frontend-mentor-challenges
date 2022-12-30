@@ -1,13 +1,15 @@
 {
-  "name": "todo-app",
+  "name": "@todo-app/frontend",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "Frontend for the FM todo app challenge",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "server": "json-server -p4001 --watch db.json"
+    "server": "json-server -p4001 --watch db.json",
+    "start": "npx http-server ./dist"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.0",

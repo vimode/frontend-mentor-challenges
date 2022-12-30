@@ -110,7 +110,7 @@ form {
         // }
 
         &:checked {
-          background: url("./images/icon-check.svg") center no-repeat,
+          background: url("/images/icon-check.svg") center no-repeat,
             linear-gradient($checked-bg);
         }
 

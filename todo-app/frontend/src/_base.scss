@@ -30,8 +30,8 @@ $alt-button-text-color-hover: $dark-gray-blue-200-hover !default;
 $login-button-color-bg-hover: $dark-gray-blue-200-hover !default;
 $login-button-color-hover: $dark-gray-blue-300 !default;
 
-$bg-desktop: url("./images/bg-desktop-dark.jpg") !default;
-$bg-mobile: url("./images/bg-mobile-dark.jpg") !default;
+$bg-desktop: url("/images/bg-desktop-dark.jpg") !default;
+$bg-mobile: url("/images/bg-mobile-dark.jpg") !default;
 
 // light theme
 @if $light-theme {
@@ -48,8 +48,8 @@ $bg-mobile: url("./images/bg-mobile-dark.jpg") !default;
   $login-button-color-bg-hover: $light-dark-gray-blue-100;
   $login-button-color-hover: $light-gray-blue-100;
 
-  $bg-desktop: url("./images/bg-desktop-light.jpg");
-  $bg-mobile: url("./images/bg-mobile-light.jpg");
+  $bg-desktop: url("/images/bg-desktop-light.jpg");
+  $bg-mobile: url("/images/bg-mobile-light.jpg");
 }
 
 // @mixin theme-colors($light-theme: true) {
@@ -97,7 +97,7 @@ $themes: (
     border-color: $light-gray-blue-200,
     login-button-color-bg-hover: $light-dark-gray-blue-100,
     login-button-color-hover: $light-gray-blue-100,
-    bg-mobile: url("./images/bg-mobile-light.jpg"),
+    bg-mobile: url("/images/bg-mobile-light.jpg"),
   ),
   dark: (
     main-bg: $dark-main-bg,
@@ -112,8 +112,8 @@ $themes: (
     alt-button-text-color-hover: $dark-gray-blue-200-hover,
     login-button-color-bg-hover: $dark-gray-blue-200-hover,
     login-button-color-hover: $dark-gray-blue-300,
-    bg-desktop: url("./images/bg-desktop-dark.jpg"),
-    bg-mobile: url("./images/bg-mobile-dark.jpg"),
+    bg-desktop: url("/images/bg-desktop-dark.jpg"),
+    bg-mobile: url("/images/bg-mobile-dark.jpg"),
   ),
 );
 
@@ -147,14 +147,14 @@ $font-weight-title: bold;
 
 @font-face {
   font-family: "Josefin-Sans";
-  src: url("./font/static/JosefinSans-Regular.ttf") format("truetype");
+  src: url("/font/static/JosefinSans-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Josefin-Sans";
-  src: url("./font/static/JosefinSans-Bold.ttf") format("truetype");
+  src: url("/font/static/JosefinSans-Bold.ttf") format("truetype");
   font-weight: bold;
   font-style: normal;
 }
