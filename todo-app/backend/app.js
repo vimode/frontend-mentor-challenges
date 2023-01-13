@@ -16,14 +16,17 @@ const mongoose = require("mongoose");
 const mongoUrl = config.MONGODB_URI;
 mongoose.connect(mongoUrl);
 
-app.use(cors());
+let corsOptions = {
+  origin: 'https://fm-todo-fs.vercel.app/'
+}
+app.use(cors(corsOptions));
 app.use(express.json());
 
-app.use(express.static(path.join(__dirname, 'dist')))
+// app.use(express.static(path.join(__dirname, 'dist')))
 
-app.get('/', (request, response) => {
-  response.sendFile(path.join(__dirname, 'dist', 'index.html'))
-})
+// app.get('/', (request, response) => {
+//   response.sendFile(path.join(__dirname, 'dist', 'index.html'))
+// })
 
 app.use("/api/login", loginRouter);
 app.use("/api/users", usersRouter);
