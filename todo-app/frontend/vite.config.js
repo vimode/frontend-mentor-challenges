@@ -11,25 +11,26 @@ const defaultConfig = {
 };
 
 export default defineConfig(({ command, mode }) => {
+  const env = loadEnv(mode, process.cwd(), "");
 
-  const env = loadEnv(mode, process.cwd(), '')
-
-  const apiURL = `${env.VITE_BACKEND_URL}`
+  const apiURL = `${env.VITE_BACKEND_URL}`;
   if (command === "serve") {
     return {
       ...defaultConfig,
       server: {
         proxy: {
-          "/api":  "http://localhost:6003",
+          "/api": "http://localhost:6003",
         },
       },
     };
   } else {
     return {
       ...defaultConfig,
-      proxy: {
-        '/api' : apiURL,
-      }
+      server: {
+        proxy: {
+          "/api": apiURL,
+        },
+      },
     };
   }
 });
