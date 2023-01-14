@@ -31,7 +31,7 @@ export default defineConfig(({ command, mode }) => {
         proxy: {
           "/api": {
             target: `https://${apiURL}/`,
-            changeOrigin: true,
+            changeOrigin: false,
             secure: false,
           },
         },
