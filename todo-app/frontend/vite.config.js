@@ -13,7 +13,7 @@ const defaultConfig = {
 export default defineConfig(({ command, mode }) => {
   const env = loadEnv(mode, process.cwd(), "");
 
-  const apiURL = env.VITE_BACKEND_URL;
+  const apiURL = `https://${env.VITE_BACKEND_URL}`;
 
   if (command === "serve") {
     return {
@@ -30,7 +30,7 @@ export default defineConfig(({ command, mode }) => {
       server: {
         proxy: {
           "/api": {
-            target: `'https://${apiURL}'`,
+            target: apiURL,
             changeOrigin: true,
           },
         },
