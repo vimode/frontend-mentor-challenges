@@ -24,11 +24,9 @@ var corsOptions  = {
 app.use(cors(corsOptions));
 app.use(express.json());
 
-// app.use(express.static(path.join(__dirname, 'dist')))
-
-// app.get('/', (request, response) => {
-//   response.sendFile(path.join(__dirname, 'dist', 'index.html'))
-// })
+app.get('/', (request, response) => {
+  response.send('Hello World!')
+})
 
 app.use("/api/login", loginRouter);
 app.use("/api/users", usersRouter);
