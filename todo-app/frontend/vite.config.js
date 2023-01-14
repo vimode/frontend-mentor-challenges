@@ -30,8 +30,8 @@ export default defineConfig(({ command, mode }) => {
       server: {
         proxy: {
           "/api": {
-            target: `https://${apiURL}/`,
-            changeOrigin: false,
+            target: `https://${apiURL}`,
+            changeOrigin: true,
             secure: false,
           },
         },
