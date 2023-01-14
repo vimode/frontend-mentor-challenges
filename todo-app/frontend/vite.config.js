@@ -30,9 +30,8 @@ export default defineConfig(({ command, mode }) => {
       server: {
         proxy: {
           "/api": {
-            target: `https://${apiURL}`,
+            target: "https://fm-todo-backend-production.up.railway.app",
             changeOrigin: true,
-            secure: false,
           },
         },
       },
