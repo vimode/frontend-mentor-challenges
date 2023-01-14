@@ -16,10 +16,7 @@ const mongoose = require("mongoose");
 const mongoUrl = config.MONGODB_URI;
 mongoose.connect(mongoUrl);
 
-let corsOptions = {
-  origin: 'https://fm-todo-fs.vercel.app/'
-}
-app.use(cors(corsOptions));
+app.use(cors());
 app.use(express.json());
 
 // app.use(express.static(path.join(__dirname, 'dist')))
