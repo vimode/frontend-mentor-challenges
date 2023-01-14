@@ -8,6 +8,11 @@ import react from "@vitejs/plugin-react";
 
 const defaultConfig = {
   plugins: [react()],
+  server: {
+    proxy: {
+      '/api': "https://fm-todo-backend-production.up.railway.app"
+    }
+  }
 };
 
 export default defineConfig(({ command, mode }) => {
@@ -15,26 +20,28 @@ export default defineConfig(({ command, mode }) => {
 
   const apiURL = `https://${env.VITE_BACKEND_URL}`;
 
-  if (command === "serve") {
-    return {
-      ...defaultConfig,
-      server: {
-        proxy: {
-          "/api": "http://localhost:6003",
-        },
-      },
-    };
-  } else {
-    return {
-      ...defaultConfig,
-      server: {
-        proxy: {
-          "/api": {
-            target:'https://fm-todo-backend-production.up.railway.app',
-            changeOrigin: true,
-          },
-        },
-      },
-    };
-  }
+  return defaultConfig
+
+  // if (command === "serve") {
+  //   return {
+  //     ...defaultConfig,
+  //     server: {
+  //       proxy: {
+  //         "/api": "http://localhost:6003",
+  //       },
+  //     },
+  //   };
+  // } else {
+  //   return {
+  //     ...defaultConfig,
+  //     server: {
+  //       proxy: {
+  //         "/api": {
+  //           target:'https://fm-todo-backend-production.up.railway.app',
+  //           changeOrigin: true,
+  //         },
+  //       },
+  //     },
+  //   };
+  // }
 });
