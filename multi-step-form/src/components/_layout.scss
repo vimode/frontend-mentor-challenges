@@ -1,0 +1,74 @@
+@import "./../variables";
+
+.wrapper {
+  display:flex;
+  // place-items:center;
+  place-content:center;
+  max-width: 940px;
+  max-height: 600px;
+  background-color: $color-white;
+  padding: $space-4;
+  border-radius: $space-4;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  background-image: url('/images/bg-sidebar-desktop.svg');
+  background-size: cover;
+  gap: $space-10;
+  min-height: 500px;
+  border-radius: $space-4;
+  padding-block-start: $space-8;
+  font-size: $text-sm;
+
+  .formStep {
+    display:flex;
+    place-items: center;
+    padding-inline: $space-10 $space-20;
+    gap: $space-4;
+
+    > p {
+      border: 1px solid $color-white;
+      border-radius: 50%;
+      width: $space-8;
+      height: $space-8;
+      text-align:center;
+      line-height: $space-8;
+      color: $color-white;
+      background-color: transparent;
+      font-weight: $text-bold;
+
+      &.active {
+        border: 1px solid $highlight-blue;
+        background: $highlight-blue;
+        color: $title-text;
+      }
+    }
+
+    div {
+      display:flex;
+      flex-direction:column;
+      text-transform: uppercase;
+      gap: $space-1;
+
+      p:nth-child(1){
+        color:$pastel-blue;
+        font-size: $text-xs;
+      }
+
+      p:nth-child(2) {
+        color: $color-white;
+        font-weight: $text-bold;
+        letter-spacing: 1.25px;
+      }
+    }
+  }
+}
+
+main {
+  display:flex;
+  flex-direction: column;
+  padding-block-start: $space-5;
+  padding-inline: $space-16;
+}

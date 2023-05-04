@@ -1,5 +1,6 @@
 import {  useState } from "react";
 import { useLocalStorageData } from "./useLocalStorageData";
+import "./_app.scss"
 
 import Layout from "./components/Layout";
 import UserInfo from "./components/UserInfo";
@@ -21,7 +22,11 @@ function App() {
   switch (formStep) {
     case "info":
       return (
-        <Layout nextStep="plan" updateFormStep={updateFormStep}>
+        <Layout 
+          nextStep="plan" 
+          formStep={formStep} 
+          updateFormStep={updateFormStep}
+        >
           <UserInfo
             updateFormStep={updateFormStep}
             multiStepFormData={multiStepFormData}
@@ -33,6 +38,7 @@ function App() {
         <Layout
           prevStep="info"
           nextStep="addons"
+          formStep={formStep}
           updateFormStep={updateFormStep}
         >
           <SubscriptionPlans />
@@ -43,6 +49,7 @@ function App() {
         <Layout
           prevStep="plan"
           nextStep="summary"
+          formStep={formStep}
           updateFormStep={updateFormStep}
         >
           <Addons />
@@ -53,6 +60,7 @@ function App() {
         <Layout
           prevStep="addons"
           nextStep="thankyou"
+          formStep={formStep}
           updateFormStep={updateFormStep}
         >
           <FormSummary changePlan={updateFormStep} />

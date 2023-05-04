@@ -1,0 +1,19 @@
+@import "./variables";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+*{
+  margin: 0;
+}
+
+body {
+  font-family: $font-primary, sans-serif;
+  font-weight: $text-regular;
+  background-color: $color-bg;
+  font-size: $font-size-primary;
+}

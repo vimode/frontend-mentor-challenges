@@ -1,0 +1,20 @@
+@import "./variables";
+
+@mixin inhert-style {
+  font: inherit;
+}
+
+@mixin checkbox-reset {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  max-width: 30px;
+  width: 100%;
+  cursor:pointer;
+}
+
+@supports(-webkit-appearance: none) or (-moz-appearance: none) {
+  input[type="checkbox"] {
+    @include checkbox-reset;
+  }
+}
