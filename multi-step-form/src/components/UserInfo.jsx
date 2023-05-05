@@ -1,4 +1,5 @@
 import { useLocalStorageData } from "../useLocalStorageData";
+import "./_userinfo.scss";
 
 function UserInfo() {
 
@@ -16,8 +17,10 @@ function UserInfo() {
 
   return (
     <>
-      <h1>Personal Info</h1>
-      <p>Please provide your name, email address, and phone number.</p>
+      <div className="title">
+        <h1>Personal Info</h1>
+        <p>Please provide your name, email address, and phone number.</p>
+      </div>
       {thisFormData && 
       <form>
         <div>
@@ -44,6 +47,7 @@ function UserInfo() {
         </div>
         <div>
           <label htmlFor="phone">Phone Number</label>
+          <p>error text</p>
           <input
             type="tel"
             id="phone"

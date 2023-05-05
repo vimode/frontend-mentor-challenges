@@ -1,0 +1,64 @@
+@import '../variables';
+@import "../mixins";
+
+.title {
+  display:flex;
+  flex-direction: column;
+  gap: $space-2;
+
+  p {
+    color: $cool-gray;
+  }
+}
+
+form {
+  display:flex;
+  flex-direction: column;
+  gap: $space-5;
+  max-width: 450px;
+  width: 100%;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: $space-1;
+
+    label {
+      font-size: $text-sm;
+    }
+
+    input{
+      @include inherit-style;
+      border-radius: $space-1;
+      padding: $space-3;
+      color: $title-text;
+      font-weight: $text-medium;
+      outline:none;
+      border: 1px solid $border-color;
+      width: 100%;
+
+
+      &::placeholder {
+        font-size: $text-md;
+        font-weight: $text-medium;
+        color: $cool-gray;
+      }
+
+      &:active, &:focus{
+        border: 1px solid $highlight-purple;
+      }
+
+      &:invalid {
+        border: 1px solid $error;
+      }
+    }
+
+    p {
+      margin-left: auto;
+      font-size: $text-sm;
+      color: $error;
+      font-weight: $text-medium;
+     }
+
+  }
+}

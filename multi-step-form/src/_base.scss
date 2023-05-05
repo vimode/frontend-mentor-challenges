@@ -15,5 +15,13 @@ body {
   font-family: $font-primary, sans-serif;
   font-weight: $text-regular;
   background-color: $color-bg;
+  color: $title-text;
   font-size: $font-size-primary;
 }
+
+h1 {
+  font-weight: $text-bold;
+  font-size: $text-xl;
+  color: $title-text;
+}
+
