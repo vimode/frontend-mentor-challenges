@@ -11,7 +11,7 @@
   }
 }
 
-form {
+.userForm {
   display:flex;
   flex-direction: column;
   gap: $space-5;
@@ -27,7 +27,7 @@ form {
       font-size: $text-sm;
     }
 
-    input{
+    input {
       @include inherit-style;
       border-radius: $space-1;
       padding: $space-3;

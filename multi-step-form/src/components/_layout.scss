@@ -78,6 +78,30 @@ main {
   width: 100%;
 }
 
-button {
- @include inherit-style;
+.buttonGroup {
+  display:flex;
+  justify-content: space-between;
+
+  .primaryButton {
+    color:  $color-white;
+    background-color:  $title-text;
+    border-radius: $space-2;
+    padding: $space-4;
+    transition: 350ms linear background-color;
+
+    &:hover {
+      background-color: $highlight-purple;
+    }
+  }
+
+  .altButton{
+    color:  $cool-gray;
+    background-color: transparent;
+    padding: none;
+    transition: 300ms linear color;
+
+    &:hover {
+      color: $title-text;
+    }
+  }
 }
