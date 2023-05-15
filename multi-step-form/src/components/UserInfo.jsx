@@ -22,7 +22,7 @@ function UserInfo() {
         <p>Please provide your name, email address, and phone number.</p>
       </div>
       {thisFormData && 
-      <form>
+      <form className="userForm">
         <div>
           <label htmlFor="name">Name</label>
           <input
