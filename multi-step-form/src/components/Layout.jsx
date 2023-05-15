@@ -35,12 +35,12 @@ function Layout({ children, prevStep, nextStep, formStep, updateFormStep }) {
       </div>
       <main>
       {children}
-      <div>
+      <div className="buttonGroup">
         {prevStep && (
-          <button onClick={() => updateFormStep(prevStep)}>Go back</button>
+          <button className="altButton" onClick={() => updateFormStep(prevStep)}>Go back</button>
         )}
         {nextStep && (
-          <button onClick={() => updateFormStep(nextStep)}>Next Step</button>
+          <button className="primaryButton" onClick={() => updateFormStep(nextStep)}>Next Step</button>
         )}
       </div>
       </main>
