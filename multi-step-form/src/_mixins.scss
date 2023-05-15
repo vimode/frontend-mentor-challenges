@@ -12,9 +12,3 @@
   width: 100%;
   cursor:pointer;
 }
-
-@supports(-webkit-appearance: none) or (-moz-appearance: none) {
-  input[type="checkbox"] {
-    @include checkbox-reset;
-  }
-}
