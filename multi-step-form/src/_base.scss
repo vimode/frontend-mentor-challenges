@@ -1,11 +1,11 @@
 @import "./variables";
+@import "./mixins";
 
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
-
 
 *{
   margin: 0;
@@ -25,3 +25,14 @@ h1 {
   color: $title-text;
 }
 
+button {
+  @include inherit-style;
+  border: none;
+  cursor: pointer;
+  font-weight: $text-medium;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
