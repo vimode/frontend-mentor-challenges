@@ -10,6 +10,8 @@
   background-color: $color-white;
   padding: $space-4;
   border-radius: $space-4;
+  width: 95%;
+  justify-content: space-between;
 }
 
 .sidebar {
@@ -71,6 +73,7 @@
 main {
   display:flex;
   flex-direction: column;
+  justify-content: space-between;
   padding-block-start: $space-5;
   padding-inline: $space-16;
   gap: $space-10;
