@@ -3,7 +3,6 @@
 
 .wrapper {
   display:flex;
-  // place-items:center;
   place-content:center;
   max-width: 940px;
   height: 600px;
@@ -11,7 +10,7 @@
   padding: $space-4;
   border-radius: $space-4;
   width: 95%;
-  justify-content: space-between;
+  justify-content: start;
 }
 
 .sidebar {
@@ -76,8 +75,8 @@ main {
   justify-content: space-between;
   padding-block-start: $space-5;
   padding-inline: $space-16;
-  gap: $space-10;
-  max-width: 550px;
+  gap: $space-2;
+  max-width: 100%;
   width: 100%;
 }
 
