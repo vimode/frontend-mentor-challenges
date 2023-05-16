@@ -1,0 +1,48 @@
+@import '../variables';
+@import "../mixins";
+
+.addonCard {
+  border: 1px solid $light-text;
+  border-radius: $space-2;
+  padding: $space-4;
+  font-size: $text-sm;
+  width: 100%;
+  display: flex;
+  place-items:center;
+  gap: $space-4;
+
+  &--isActive {
+    @extend .addonCard;
+    border: 1px solid $highlight-purple;
+    background-color: $border-color;
+  }
+
+  input[type="checkbox"] {
+    @include checkbox-reset;
+    width: $space-5;
+    height: $space-5;
+    border-radius: $space-1;
+    border: 1px solid $border-color;
+    margin-right: $space-1;
+    outline:none;
+
+    &:checked::before {
+      content: "\2713";
+      font-size: $text-reg;
+      color: $color-white;
+      position: absolute;
+      right: 1px;
+      top: -5px;
+    }
+
+    &:checked {
+      border: 1px solid $highlight-purple;
+      position: relative;
+      background-color: $highlight-purple;
+    }
+  }
+
+}
+
+
+
