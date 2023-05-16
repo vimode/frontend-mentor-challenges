@@ -1,5 +1,6 @@
 import { useLocalStorageData } from "../useLocalStorageData";
 import { planAddons as addonsData } from "../data";
+import "./_addons.scss";
 
 function Addons() {
   const [thisFormData, setThisFormData] = useLocalStorageData("localFormData");
@@ -16,14 +17,17 @@ function Addons() {
 
   return (
     <>
+      <h1>Pick add-ons</h1>
+      <p>Add-ons help enhance your gaming experience.</p>
       { addonsData.map( addon => {
         return (
-      <div key={addon.id}>
+      <div key={addon.id} className={thisFormData.addons[addon.name] === true ? "addonCard--isActive" : "addonCard"}>
         <input 
           type="checkbox" 
           id={addon.id} 
           name={addon.name} 
           checked={thisFormData.addons[addon.name]}
+          className="inputAddons"
           onChange={handleAddonsChange} />
         <label htmlFor={addon.id}>
           <h2>{addon.title}</h2>
