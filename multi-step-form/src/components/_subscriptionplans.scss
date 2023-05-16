@@ -1,0 +1,53 @@
+@import '../variables';
+@import '../mixins';
+
+.subscriptionForm {
+  display:flex;
+  flex-direction: column;
+  gap: $space-5;
+
+  @supports(-webkit-appearance: none) or (-moz-appearance: none) {
+    input[type="checkbox"] {
+      @include checkbox-reset;
+    }
+
+    input[type="radio"] {
+      @include checkbox-reset;
+    }
+  }
+
+  .planOptions {
+    display: flex;
+    gap: $space-3;
+
+    .iconImage {
+      width: 30%;
+    }
+
+    .planCard {
+      display:flex;
+      flex-direction: column;
+      background-color: $color-white;
+      border: 1px solid $title-text;
+      border-radius: $space-4;
+      padding: $space-3;
+      min-height: 180px;
+      min-width: 136px;
+      justify-content: space-between;
+
+      label {
+        color: $title-text;
+        font-weight: $text-medium;
+      }
+
+      p {
+          color: $cool-gray;
+      }
+      
+      .promoText {
+        color: $title-text;
+      }
+    }
+  }
+
+}

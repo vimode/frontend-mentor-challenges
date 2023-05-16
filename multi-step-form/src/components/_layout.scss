@@ -6,7 +6,7 @@
   // place-items:center;
   place-content:center;
   max-width: 940px;
-  max-height: 600px;
+  height: 600px;
   background-color: $color-white;
   padding: $space-4;
   border-radius: $space-4;
@@ -15,13 +15,13 @@
 .sidebar {
   display: flex;
   flex-direction: column;
-  background-image: url('/images/bg-sidebar-desktop.svg');
-  background-size: cover;
+  background: no-repeat 100%/cover url('/images/bg-sidebar-desktop.svg');
   gap: $space-10;
-  min-height: 500px;
+  max-height: 570px;
   border-radius: $space-4;
   padding-block-start: $space-8;
   font-size: $text-sm;
+  height: 100%;
 
   .formStep {
     display:flex;
@@ -79,8 +79,10 @@ main {
 }
 
 .buttonGroup {
-  display:flex;
-  justify-content: space-between;
+  display:grid;
+  grid-template-areas: "button1 button2";
+  place-items: center;
+  place-content: space-between;
 
   .primaryButton {
     color:  $color-white;
@@ -88,6 +90,8 @@ main {
     border-radius: $space-2;
     padding: $space-4;
     transition: 350ms linear background-color;
+    align-self:end;
+    grid-area: button2;
 
     &:hover {
       background-color: $highlight-purple;
@@ -99,6 +103,8 @@ main {
     background-color: transparent;
     padding: none;
     transition: 300ms linear color;
+    grid-area: button1;
+    align-self :center;
 
     &:hover {
       color: $title-text;
