@@ -18,6 +18,17 @@
   max-width: 450px;
   width: 100%;
 
+  .labelError {
+    flex-direction: row;
+
+    .errorText {
+      margin-left: auto;
+      font-size: $text-sm;
+      color: $error;
+      font-weight: $text-medium;
+    }
+  }
+
   div {
     display: flex;
     flex-direction: column;
@@ -53,12 +64,6 @@
       }
     }
 
-    p {
-      margin-left: auto;
-      font-size: $text-sm;
-      color: $error;
-      font-weight: $text-medium;
-     }
 
   }
 }
