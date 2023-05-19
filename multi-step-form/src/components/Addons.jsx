@@ -21,7 +21,9 @@ function Addons() {
       <p>Add-ons help enhance your gaming experience.</p>
       { addonsData.map( addon => {
         return (
-      <div key={addon.id} className={thisFormData.addons[addon.name] === true ? "addonCard--isActive" : "addonCard"}>
+      <div 
+            key={addon.id} 
+            className={thisFormData.addons[addon.name] === true ? "addonCard--isActive" : "addonCard"}>
         <input 
           type="checkbox" 
           id={addon.id} 
