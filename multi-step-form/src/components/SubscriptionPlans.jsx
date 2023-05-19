@@ -6,8 +6,7 @@ function SubscriptionPlans() {
   const [thisFormData, setThisFormData] = useLocalStorageData("localFormData");
 
   // change plans
-  const handleTypeChange = (event) => {
-    let {value} = event.target
+  const handleTypeChange = (value) => {
     setThisFormData((prevData) => {
       return {
         ...prevData,
@@ -31,18 +30,21 @@ function SubscriptionPlans() {
       <h1>Select your plan</h1>
       <p>You have the option of monthly or annual billing</p>
       <form className="subscriptionForm">
-        <div className="planOptions">
+        <div className="planOptions"  >
           { plansData.map(plan => {
             return (
-              <div className="planCard" key={plan.id}>
+              <div 
+                className={thisFormData.plan.type === plan.name ? "planCard--isActive" : "planCard"}
+                  onClick={() => handleTypeChange(plan.name)} 
+                  key={plan.id}>               
                 <img className="iconImage" src="images/icon-pro.svg"/>
                 <input type="radio" 
                     id={plan.name} 
                     name={plan.name} 
                     value={plan.name} 
-                    onChange={handleTypeChange} 
+                    onChange={() => handleTypeChange(event.value)} 
                     checked={thisFormData.plan.type === plan.name}/>
-                <div>
+                <div className="planCardText">
                   <label htmlFor={plan.name}>{plan.name}</label>
                   <p>{thisFormData.plan.period ? `$${plan.yearly}/yr` : `$${plan.monthly}/mo`}</p>
                   {thisFormData.plan.period && <p className="promoText">2 months free</p>}
@@ -51,7 +53,7 @@ function SubscriptionPlans() {
             })
           }
         </div>
-        <div>
+        <div className="periodOptions">
           <label htmlFor="period">Monthly</label>
           <input
             type="checkbox"
@@ -63,6 +65,8 @@ function SubscriptionPlans() {
             aria-label="Toggle Annual Billing"
             name="period"
           />
+          <label className="periodToggle"htmlFor="period"><span className="toggle"></span></label>
+
           <label htmlFor="period">Annual</label>
         </div>
       </form>
