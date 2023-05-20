@@ -74,10 +74,10 @@ main {
   flex-direction: column;
   justify-content: space-between;
   padding-block-start: $space-5;
-  padding-inline: $space-16;
   gap: $space-2;
-  max-width: 100%;
+  max-width:450px;
   width: 100%;
+  margin: 0 auto;
 }
 
 .buttonGroup {

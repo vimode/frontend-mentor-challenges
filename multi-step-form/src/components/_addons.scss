@@ -14,7 +14,25 @@
   &--isActive {
     @extend .addonCard;
     border: 1px solid $highlight-purple;
-    background-color: $border-color;
+    //FIX: replace with hsl color variable
+    background-color: #F8F9FF;
+    transition: all 350ms linear;
+  }
+
+  label {
+      display:flex;
+      width: 100%;
+      flex-direction: row;
+      place-items: center;
+      place-content: space-between;
+
+    h2 {
+      font-size: $text-md;
+    }
+
+    p {
+      font-size: $text-sm;
+    }
   }
 
   input[type="checkbox"] {

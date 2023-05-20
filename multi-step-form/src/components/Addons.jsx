@@ -32,8 +32,10 @@ function Addons() {
           className="inputAddons"
           onChange={handleAddonsChange} />
         <label htmlFor={addon.id}>
-          <h2>{addon.title}</h2>
-          <p>{addon.description}</p>
+          <div>
+            <h2>{addon.title}</h2>
+            <p>{addon.description}</p>
+          </div>
           <p>{thisFormData.plan.period ? `+${addon.yearly}/yr`: `+${addon.monthly}/mo`}</p>
         </label>
       </div>
