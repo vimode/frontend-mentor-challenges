@@ -1,5 +1,5 @@
 import { useLocalStorageData } from "../useLocalStorageData";
-import { findPlan, findAddons } from "../data";
+import { findPlan, findAddons, planAddons } from "../data";
 
 function FormSummary({ changePlan }) {
 
@@ -16,9 +16,18 @@ function FormSummary({ changePlan }) {
   const selectedAddons = findAddons(thisFormData.addons)
 
   const calculateGrandTotal = () => {
-    let selectedPlan = findPlan(thisFormData.plan.type)
-    let planCost = thisFormData.plan.period ? selectedPlan[0].yearly : selectedPlan[0].monthly 
+    const selectedPlan = findPlan(thisFormData.plan.type)
+    const planPeriod =  thisFormData.plan.period ? "yearly" : "monthly"
+    const planCost = thisFormData.plan.period ? selectedPlan[0].yearly : selectedPlan[0].monthly 
+// thisFormData.addons[addon.name]
+    const selectedAddons = Object.entries(thisFormData.addons).filter(([key,value]) => value == true)
+    const filterValues = selectedAddons.map(addon => addon[0])
+    const filteredAddons = planAddons.map((addon) => filterValues.includes(addon.name) )
+    const selectedFilteredAddons = Object.fromEntries(selectedAddons)
+    const addonCost =  planAddons.reduce((acc, curVal) => curVal)
+    console.log(filteredAddons)
   }
+  calculateGrandTotal()
 
   return (
     <>
