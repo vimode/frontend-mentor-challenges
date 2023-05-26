@@ -9,4 +9,9 @@
   place-content:center;
 }
 
-
+@media (max-width: $layout-breakpoint-med) {
+  #root {
+    place-items: start;
+    place-content: stretch;
+  }
+}
