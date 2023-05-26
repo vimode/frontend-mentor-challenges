@@ -22,10 +22,14 @@ function FormSummary({ changePlan }) {
 // thisFormData.addons[addon.name]
     const selectedAddons = Object.entries(thisFormData.addons).filter(([key,value]) => value == true)
     const filterValues = selectedAddons.map(addon => addon[0])
-    const filteredAddons = planAddons.map((addon) => filterValues.includes(addon.name) )
+    const filteredAddons = planAddons.filter((addon) => {
+        if(filterValues.includes(addon.name)) {
+        return addon 
+      }
+    })
     const selectedFilteredAddons = Object.fromEntries(selectedAddons)
     const addonCost =  planAddons.reduce((acc, curVal) => curVal)
-    console.log(filteredAddons)
+    console.log(filterValues)
   }
   calculateGrandTotal()
 
