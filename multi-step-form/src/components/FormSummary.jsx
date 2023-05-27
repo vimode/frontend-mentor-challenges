@@ -1,10 +1,11 @@
 import { useLocalStorageData } from "../useLocalStorageData";
-import { findPlan, findAddons, planAddons } from "../data";
+import { findPlan, findAddons } from "../data";
 
 function FormSummary({ changePlan }) {
 
   const [thisFormData, setThisFormData] = useLocalStorageData("localFormData");
 
+  // render selected subscription plan/price
   const calculatePlanPrice = () => {
     let selectedPlan = findPlan(thisFormData.plan.type)
     if(thisFormData.plan.period) {
@@ -13,23 +14,22 @@ function FormSummary({ changePlan }) {
     return `$${selectedPlan[0].monthly}/mo`
   }
 
-  const selectedAddons = findAddons(thisFormData.addons)
+  // render only the selectedAddons 
+  const selectedAddons = Object.entries(thisFormData.addons).filter(([,value]) => value == true)
+  const filterValues = selectedAddons.map(addon => addon[0])
+  const showAddons = findAddons(filterValues)
 
+  // calculate total 
+  // TODO: refactor 
   const calculateGrandTotal = () => {
     const selectedPlan = findPlan(thisFormData.plan.type)
-    const planPeriod =  thisFormData.plan.period ? "yearly" : "monthly"
     const planCost = thisFormData.plan.period ? selectedPlan[0].yearly : selectedPlan[0].monthly 
-// thisFormData.addons[addon.name]
-    const selectedAddons = Object.entries(thisFormData.addons).filter(([key,value]) => value == true)
-    const filterValues = selectedAddons.map(addon => addon[0])
-    const filteredAddons = planAddons.filter((addon) => {
-        if(filterValues.includes(addon.name)) {
-        return addon 
-      }
-    })
-    const selectedFilteredAddons = Object.fromEntries(selectedAddons)
-    const addonCost =  planAddons.reduce((acc, curVal) => curVal)
-    console.log(filterValues)
+    const addonCosts = showAddons.reduce((total, addon) => {
+      const planPeriod = thisFormData.plan.period ? "yearly" : "monthly"
+      return total + addon[planPeriod]
+    }, 0)
+
+    return addonCosts + planCost;
   }
   calculateGrandTotal()
 
@@ -46,13 +46,17 @@ function FormSummary({ changePlan }) {
           <p>{calculatePlanPrice()}</p>
         </div>
         <hr />
-        {selectedAddons.map(addon => {
+        {showAddons && showAddons.map(addon => {
           return (
             <div key={addon.id}>
             <p>{addon.title}</p>
             <p>{thisFormData.plan.period ? `+${addon.yearly}/yr`: `+${addon.monthly}/mo`}</p>
             </div>)
         })}
+        <div>
+          <p>Total (per {thisFormData.plan.period ? "year" : "month"})</p>
+          <p>+${calculateGrandTotal()}{thisFormData.plan.period ? "mo" : "yr"}</p>
+        </div>
       </div>
     </>
   );
