@@ -1,5 +1,6 @@
 import { useLocalStorageData } from "../useLocalStorageData";
 import { findPlan, findAddons } from "../data";
+import "./_summary.scss";
 
 function FormSummary({ changePlan }) {
 
@@ -37,9 +38,9 @@ function FormSummary({ changePlan }) {
     <>
       <h1>Finishing Up</h1>
       <p>Double-check everything looks OK before confirming.</p>
-      <div>
-        <div>
-          <div>
+      <div className="section_outer_wrapper">
+        <div className="wrapper_sub">
+          <div className="sub_inner_wrapper">
             <h2>{thisFormData.plan.type}({thisFormData.plan.period ? 'Annual' : 'Monthly'})</h2>
             <button onClick={() => changePlan("plan")}>Change</button>
           </div>
@@ -48,15 +49,15 @@ function FormSummary({ changePlan }) {
         <hr />
         {showAddons && showAddons.map(addon => {
           return (
-            <div key={addon.id}>
+            <div key={addon.id} className="wrapper_section_addon">
             <p>{addon.title}</p>
             <p>{thisFormData.plan.period ? `+${addon.yearly}/yr`: `+${addon.monthly}/mo`}</p>
             </div>)
         })}
-        <div>
-          <p>Total (per {thisFormData.plan.period ? "year" : "month"})</p>
-          <p>+${calculateGrandTotal()}{thisFormData.plan.period ? "mo" : "yr"}</p>
-        </div>
+      </div>
+      <div className="wrapper_grandtotal">
+        <p>Total (per {thisFormData.plan.period ? "year" : "month"})</p>
+        <p>+${calculateGrandTotal()}{thisFormData.plan.period ? "/mo" : "/yr"}</p>
       </div>
     </>
   );
