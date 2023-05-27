@@ -2,8 +2,9 @@
 @import "../mixins";
 
 .addonCard {
-  border: 1px solid $light-text;
-  border-radius: $space-2;
+  border: 1px solid $light-text {
+    radius: $space-2;
+  };
   padding: $space-4;
   font-size: $text-sm;
   width: 100%;
@@ -23,8 +24,10 @@
       display:flex;
       width: 100%;
       flex-direction: row;
-      place-items: center;
-      place-content: space-between;
+      place : {
+        items: center;
+        content: space-between;
+      }
 
     h2 {
       font-size: $text-md;
@@ -39,8 +42,9 @@
     @include checkbox-reset;
     width: $space-5;
     height: $space-5;
-    border-radius: $space-1;
-    border: 1px solid $border-color;
+    border: 1px solid $border-color {
+      radius: $space-1;
+    };
     margin-right: $space-1;
     outline:none;
 
@@ -61,6 +65,3 @@
   }
 
 }
-
-
-

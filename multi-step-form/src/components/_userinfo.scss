@@ -40,18 +40,21 @@
 
     input {
       @include inherit-style;
-      border-radius: $space-1;
       padding: $space-3;
       color: $title-text;
       font-weight: $text-medium;
       outline:none;
-      border: 1px solid $border-color;
+      border: 1px solid $border-color {
+        radius: $space-1;
+      };
       width: 100%;
 
 
       &::placeholder {
-        font-size: $text-md;
-        font-weight: $text-medium;
+        font: {
+          size: $text-md;
+          weight: $text-medium;
+        }
         color: $cool-gray;
       }
 
@@ -63,7 +66,6 @@
         border: 1px solid $error;
       }
     }
-
 
   }
 }

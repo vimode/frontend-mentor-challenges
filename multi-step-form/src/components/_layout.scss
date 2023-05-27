@@ -31,8 +31,9 @@
     gap: $space-4;
 
     > p {
-      border: 1px solid $color-white;
-      border-radius: 50%;
+      border: 1px solid $color-white {
+        radius: 50%;
+      };
       width: $space-8;
       height: $space-8;
       text-align:center;
@@ -83,8 +84,10 @@ main {
 .buttonGroup {
   display:grid;
   grid-template-areas: "button1 button2";
-  place-items: center;
-  place-content: space-between;
+  place: {
+    items: center;
+    content: space-between;
+  }
 
   .primaryButton {
     color:  $color-white;

@@ -29,8 +29,9 @@
       display:flex;
       flex-direction: column;
       background-color: $color-white;
-      border: 1px solid $cool-gray;
-      border-radius: $space-4;
+      border: 1px solid $cool-gray {
+        radius: $space-4;
+      };
       padding: $space-3;
       height: 160px;
       width: 140px;
@@ -55,8 +56,8 @@
         gap: $space-1;
 
         p {
-            color: $cool-gray;
-            font-size: $text-sm;
+          color: $cool-gray;
+          font-size: $text-sm;
         }
         
         .promoText {
@@ -70,8 +71,10 @@
   .periodOptions {
     display:flex;
     gap: $space-2;
-    place-items:center;
-    place-content:center;
+    place: {
+      items: center;
+      content:center;
+    }
     //FIX: replace with hsl color variable
     background-color: #F8F9FF;
     height:50px;
