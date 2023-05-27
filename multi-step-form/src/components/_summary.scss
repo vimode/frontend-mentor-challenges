@@ -22,9 +22,7 @@
 
     .sub_inner_wrapper {
 
-      h2 {
-        font-size: $text-md;
-      }
+      h2 { font-size: $text-md; }
 
       button {
         background: none;
@@ -42,11 +40,8 @@
     color: $cool-gray;
     font-size: $text-md;
 
-    p:nth-child(2) {
-      color: $title-text;
-    }
+    p:nth-child(2) { color: $title-text; }
   }
-
 
 }  
 
@@ -58,9 +53,7 @@
   .wrapper_grandtotal {
     padding: $space-4;
 
-    p {
-      color: $cool-gray;
-    }
+    p { color: $cool-gray; }
     
     p:nth-child(2) {
       color: $highlight-purple;

@@ -27,8 +27,10 @@ function SubscriptionPlans() {
 
   return (
     <>
-      <h1>Select your plan</h1>
-      <p>You have the option of monthly or annual billing</p>
+      <div className="title">
+        <h1>Select your plan</h1>
+        <p>You have the option of monthly or annual billing</p>
+      </div>
       <form className="subscriptionForm">
         <div className="planOptions"  >
           { plansData.map(plan => {

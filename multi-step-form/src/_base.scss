@@ -7,16 +7,18 @@
   box-sizing: border-box;
 }
 
-*{
+* {
   margin: 0;
 }
 
 body {
-  font-family: $font-primary, sans-serif;
-  font-weight: $text-regular;
+  font: {
+    family: $font-primary, sans-serif;
+    weight: $text-regular;
+    size: $font-size-primary;
+  }
   background-color: $color-bg;
   color: $title-text;
-  font-size: $font-size-primary;
 }
 
 h1 {

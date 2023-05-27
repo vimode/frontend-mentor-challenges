@@ -36,8 +36,10 @@ function FormSummary({ changePlan }) {
 
   return (
     <>
-      <h1>Finishing Up</h1>
-      <p>Double-check everything looks OK before confirming.</p>
+      <div className="title">
+        <h1>Finishing Up</h1>
+        <p>Double-check everything looks OK before confirming.</p>
+      </div>
       <div className="section_outer_wrapper">
         <div className="wrapper_sub">
           <div className="sub_inner_wrapper">

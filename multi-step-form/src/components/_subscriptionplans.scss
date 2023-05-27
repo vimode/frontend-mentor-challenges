@@ -21,8 +21,17 @@
     gap: $space-3;
     place-content: space-between;
 
+    @media (max-width: $layout-breakpoint-med) {
+      flex-direction: column;
+    }
     .iconImage {
-      width: 30%;
+      width: 40%;
+      height: auto;
+
+      @media(max-width: $layout-breakpoint-med) {
+        width: auto;
+        height: 80%;
+      }
     }
 
     .planCard {
@@ -36,6 +45,16 @@
       height: 160px;
       width: 140px;
       justify-content: space-between;
+      place-items: start;
+
+      @media (max-width: $layout-breakpoint-med) {
+        width: 100%;
+        height: 80px;
+        flex-direction: row;
+        justify-content: unset;
+        gap: $space-2;
+        place-items:center;
+      }
 
       &--isActive {
         @extend .planCard;
@@ -60,9 +79,7 @@
           font-size: $text-sm;
         }
         
-        .promoText {
-          color: $title-text;
-        }
+        .promoText { color: $title-text; }
       }
 
     }

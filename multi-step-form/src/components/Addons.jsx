@@ -17,8 +17,10 @@ function Addons() {
 
   return (
     <>
-      <h1>Pick add-ons</h1>
-      <p>Add-ons help enhance your gaming experience.</p>
+      <div className="title">
+        <h1>Pick add-ons</h1>
+        <p>Add-ons help enhance your gaming experience.</p>
+      </div>
       { addonsData.map( addon => {
         return (
       <div 
@@ -36,7 +38,7 @@ function Addons() {
             <h2>{addon.title}</h2>
             <p>{addon.description}</p>
           </div>
-          <p>{thisFormData.plan.period ? `+${addon.yearly}/yr`: `+${addon.monthly}/mo`}</p>
+          <p className="highlight_text">{thisFormData.plan.period ? `+${addon.yearly}/yr`: `+${addon.monthly}/mo`}</p>
         </label>
       </div>
         )
