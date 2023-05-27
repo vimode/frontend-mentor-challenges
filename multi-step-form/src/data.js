@@ -50,7 +50,10 @@ export const planAddons = [
   },
 ]
 
-//FIX: This does not work well, not only if it includes but also if its TRUE
 export const findAddons = (addons) => {
-  return planAddons.filter((addon) => Object.keys(addons).includes(addon.name))
+  return planAddons.filter((addon) => {
+    if (addons.includes(addon.name)) {
+      return addon
+    }
+  })
 }
