@@ -48,7 +48,7 @@ function UserInfo() {
         <div>
           <div className="labelError">
             <label htmlFor="phone">Phone Number</label>
-            <p className="errorText">error text</p>
+            {/* <p className="errorText">error text</p> */}
           </div>
           <input
             type="tel"
