@@ -17,7 +17,8 @@
       font: {
         size: $text-md;
         weight: $text-bold;
-      }
+      };
+      margin-top: $space-2;
     }
 
     .sub_inner_wrapper {
@@ -27,9 +28,17 @@
       button {
         background: none;
         text-decoration: underline;
-        font-size: $text-md;
+        font: {
+          size: $text-md;
+          weight: $text-regular;
+        };
         color: $cool-gray;
         margin-bottom: $space-4;
+        transition: color 300ms;
+
+        &:hover, :focus {
+          color: $highlight-purple;
+        }
       }
     }
 

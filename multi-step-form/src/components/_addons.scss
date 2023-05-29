@@ -11,6 +11,12 @@
   display: flex;
   place-items:center;
   gap: $space-4;
+  cursor: pointer;
+  transition: border 300ms;
+
+  &:hover, :focus {
+    border: 1px solid $highlight-purple;
+  }
 
   &--isActive {
     @extend .addonCard;
@@ -24,6 +30,7 @@
       display:flex;
       width: 100%;
       flex-direction: row;
+      cursor: pointer;
       place : {
         items: center;
         content: space-between;

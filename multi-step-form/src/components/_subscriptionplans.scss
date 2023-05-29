@@ -46,6 +46,12 @@
       width: 140px;
       justify-content: space-between;
       place-items: start;
+      cursor: pointer;
+      transition: border 300ms;
+
+      &:hover, :focus {
+        border: 1px solid $highlight-purple;
+      }
 
       @media (max-width: $layout-breakpoint-med) {
         width: 100%;
@@ -67,6 +73,7 @@
       label {
         color: $title-text;
         font-weight: $text-medium;
+        cursor: pointer;
       }
 
       .planCardText {

@@ -5,28 +5,28 @@ function Layout({ children, prevStep, nextStep, formStep, updateFormStep }) {
     <div className="wrapper">
       <div className="sidebar">
         <div className="formStep">
-          <p>1</p>
+          <p className={ formStep === "info" ? "active" : ""}>1</p>
           <div>
             <p>Step 1</p>
             <p>Your Info</p>
           </div>
         </div>
         <div className="formStep">
-          <p>2</p>
+          <p className={ formStep === "plan" ? "active" : ""}>2</p>
           <div>
             <p>Step 2</p>
             <p>Select Plan</p>
           </div>
         </div>
         <div className="formStep">
-          <p>3</p>
+          <p className={ formStep === "addons" ? "active" : ""}>3</p>
           <div>
             <p>Step 3</p>
             <p>Add-ons</p>
           </div>
         </div>
         <div className="formStep">
-          <p>4</p>
+          <p className={ formStep === "summary" ? "active" : ""}>4</p>
           <div>
             <p>Step 4</p>
             <p>Summary</p>
