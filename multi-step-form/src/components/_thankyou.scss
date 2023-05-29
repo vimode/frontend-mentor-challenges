@@ -1,0 +1,19 @@
+@import '../variables';
+@import "../mixins";
+
+.wrapper_thankyou {
+  display:flex;
+  flex-direction: column;
+  place: {
+    items:center;
+    content: center;
+  }
+  gap: $space-5;
+  height: 100%;
+
+  p {
+    text-align: center;
+    color: $cool-gray;
+    font-size: $text-md;
+  }
+}
