@@ -25,8 +25,6 @@ export const useLocalStorageData = (key,initValue )  => {
   })
 
   useEffect(() => {
-    // TODO: remove consolelog
-    console.log(savedData)
     if(savedData !== null && savedData !== undefined ) {
     window.localStorage.setItem(key,JSON.stringify(savedData))
     }
