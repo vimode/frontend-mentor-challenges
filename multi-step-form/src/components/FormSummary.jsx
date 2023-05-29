@@ -32,7 +32,7 @@ function FormSummary({ changePlan }) {
 
     return addonCosts + planCost;
   }
-  calculateGrandTotal()
+
 
   return (
     <>
@@ -48,7 +48,7 @@ function FormSummary({ changePlan }) {
           </div>
           <p>{calculatePlanPrice()}</p>
         </div>
-        <hr />
+        {showAddons.length > 0 && <hr />}
         {showAddons && showAddons.map(addon => {
           return (
             <div key={addon.id} className="wrapper_section_addon">
