@@ -55,7 +55,7 @@ function UserInfo() {
             id="phone"
             name="phone"
             value={thisFormData.phone}
-            placeholder="eg. +123 456 789"
+            placeholder="1 123 123 123"
             pattern="[0-9]{1} [0-9]{3} [0-9]{3} [0-9]{3}"
             onChange={handleChange}
           />

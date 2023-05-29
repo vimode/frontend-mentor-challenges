@@ -41,10 +41,11 @@
       color: $color-white;
       background-color: transparent;
       font-weight: $text-bold;
+      transition: background-color 300ms ,color 300ms;
 
       &.active {
         border: 1px solid $highlight-blue;
-        background: $highlight-blue;
+        background-color: $highlight-blue;
         color: $title-text;
       }
     }
@@ -73,9 +74,8 @@
 main {
   display:flex;
   flex-direction: column;
-  justify-content: space-between;
   padding-block-start: $space-5;
-  gap: $space-2;
+  gap: $space-4;
   max-width:450px;
   width: 100%;
   margin: 0 auto;
@@ -92,6 +92,7 @@ main {
 }
 
 .buttonGroup {
+  margin-top: auto;
   display:grid;
   grid-template-areas: "button1 button2";
   place: {
