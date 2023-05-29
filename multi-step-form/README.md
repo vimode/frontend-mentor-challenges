@@ -34,9 +34,10 @@ The datafile does some filtering of data but most of the javascript to calculate
 
 ### Useful Resources
 
-[Sass Docs](https://sass-lang.com/documentation/style-rules)
-[Custom Hooks](https://react.dev/learn/reusing-logic-with-custom-hooks)
-[createContext](https://react.dev/reference/react/createContext)
+- [Sass Docs](https://sass-lang.com/documentation/style-rules)
+- [SCSS file structure](https://sharkcoder.com/tools/scss)
+- [Custom Hooks](https://react.dev/learn/reusing-logic-with-custom-hooks)
+- [createContext](https://react.dev/reference/react/createContext)
 
 ### TODO
 

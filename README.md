@@ -57,7 +57,7 @@ The goal of this challenge is to keep coding everyday even if the progress of th
 - [Advice generator app(React)](/advice-generator-app-react/)
 
 
-### Intermediate (14)
+### Intermediate (15)
 
 - [Bookmark landing page](/bookmark-landing-page/)
 - [Launch Countdown Timer](/launch-countdown-timer/)
@@ -74,6 +74,7 @@ The goal of this challenge is to keep coding everyday even if the progress of th
 - [IP Address Tracker(React)](/ip-address-tracker/)
 - [Minimalist Portfolio website(React)](/minimalist-portfolio-website)
 - [Todo App(Full Stack App)](/todo-app)
+- [Multi-step form(React)](/multi-step-form)
 
 ### Advanced
 
