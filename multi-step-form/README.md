@@ -1,6 +1,8 @@
 #  Multi-step form
 This is a solution to the Multi-Step Form challenge on Frontend Mentor.
 
+[Live Link](https://multi-step-form-vimo.vercel.app/)
+
 ## The challenge
 
 Your users should be able to:
@@ -19,8 +21,26 @@ Your users should be able to:
 
 ### Built with
 - Semantic HTML5 markup
+- SCSS
+- React
 
 ### What I learned and continued development
 
+This project heavily relies on usage of `localStorage`. This would have been best served  with the usage of React's `ContextAPI` as passing data from one step to another would be much easier with `useContext` instead I use a custom hook to use the `localStorage` data for each step and update the local state.
+
+I learned more about SCSS to nest CSS properties, adding suffixes to parent selector and some basic SCSS aspects for organizing CSS which I was unaware of.   
+
+The datafile does some filtering of data but most of the javascript to calculate the grandtotal is done in the FormSummary page. Its a little too confusing and can be refactored to make it more readable. In hindsight, the data file could have more data to help with the calculation at the summary page.
+
 ### Useful Resources
+
+[Sass Docs](https://sass-lang.com/documentation/style-rules)
+[Custom Hooks](https://react.dev/learn/reusing-logic-with-custom-hooks)
+[createContext](https://react.dev/reference/react/createContext)
+
+### TODO
+
+- Add proper form validation
+- Disable next/prev buttons wherever needed (based on form data)
+- Fix mobile view button positions
 
