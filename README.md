@@ -57,7 +57,7 @@ The goal of this challenge is to keep coding everyday even if the progress of th
 - [Advice generator app(React)](/advice-generator-app-react/)
 
 
-### Intermediate (15)
+### Intermediate (16)
 
 - [Bookmark landing page](/bookmark-landing-page/)
 - [Launch Countdown Timer](/launch-countdown-timer/)
