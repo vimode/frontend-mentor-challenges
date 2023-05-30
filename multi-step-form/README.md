@@ -3,6 +3,8 @@ This is a solution to the Multi-Step Form challenge on Frontend Mentor.
 
 [Live Link](https://multi-step-form-vimo.vercel.app/)
 
+[!Design Preview](./design/desktop-preview.jpg)
+
 ## The challenge
 
 Your users should be able to:
