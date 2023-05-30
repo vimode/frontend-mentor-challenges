@@ -73,16 +73,6 @@ let projectList =
   },
   {
     id: "n11",
-    difficulty: "advanced",
-    tags: ["HTML", "CSS", "JS", "React"],
-    title: "Mutli-Step Form",
-    img_src: "./multi-step-form/design/design/desktop-preview.jpg",
-    repo_url: "https://github.com/vimode/frontend-mentor-challenges/tree/master/multi-step-form/",
-    live_url: "https://multi-step-form-vimo.vercel.app/",
-    text: "This react project uses React and SCSS for CSS."
-  },
-  {
-    id: "n12",
     difficulty: "intermediate",
     tags: ["HTML", "CSS", "JS", "React"],
     title: "Todo App",
@@ -90,6 +80,16 @@ let projectList =
     repo_url: "https://github.com/vimode/frontend-mentor-challenges/tree/master/todo-app/",
     live_url: "",
     text: "This is a full stack app that uses React, React Redux and RTK for the frontend; Express.JS, MongoDB with Mongoose for the backend."
+  },
+  {
+    id: "n12",
+    difficulty: "advanced",
+    tags: ["HTML", "CSS", "JS", "React"],
+    title: "Mutli-Step Form",
+    img_src: "./multi-step-form/design/desktop-preview.jpg",
+    repo_url: "https://github.com/vimode/frontend-mentor-challenges/tree/master/multi-step-form/",
+    live_url: "https://multi-step-form-vimo.vercel.app/",
+    text: "This react project uses React and SCSS for CSS."
   },
   ];
 
