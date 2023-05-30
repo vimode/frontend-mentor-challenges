@@ -85,7 +85,7 @@ let projectList =
     id: "n12",
     difficulty: "advanced",
     tags: ["HTML", "SCSS", "JS", "React"],
-    title: "Mutli-Step Form",
+    title: "Multi-Step Form",
     img_src: "./multi-step-form/design/desktop-preview.jpg",
     repo_url: "https://github.com/vimode/frontend-mentor-challenges/tree/master/multi-step-form/",
     live_url: "https://multi-step-form-vimo.vercel.app/",
