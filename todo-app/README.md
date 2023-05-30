@@ -2,7 +2,7 @@
 
 This is a solution to the [Todo app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW).
 
-![Design preview for the Minimalist portfolio website coding challenge](./design/preview.jpg)
+![Design preview for the Minimalist portfolio website coding challenge](./design/desktop-preview.jpg)
 
 ### The challenge
 

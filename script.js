@@ -76,7 +76,7 @@ let projectList =
     difficulty: "advanced",
     tags: ["HTML", "CSS", "JS", "React"],
     title: "Mutli-Step Form",
-    img_src: "./multi-step-form/project_data/design/desktop-preview.jpg",
+    img_src: "./multi-step-form/design/design/desktop-preview.jpg",
     repo_url: "https://github.com/vimode/frontend-mentor-challenges/tree/master/multi-step-form/",
     live_url: "https://multi-step-form-vimo.vercel.app/",
     text: "This react project uses React and SCSS for CSS."
