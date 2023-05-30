@@ -74,7 +74,7 @@ let projectList =
   {
     id: "n11",
     difficulty: "intermediate",
-    tags: ["HTML", "CSS", "JS", "React"],
+    tags: ["HTML", "SCSS", "JS", "React"],
     title: "Todo App",
     img_src: "./todo-app/design/desktop-preview.jpg",
     repo_url: "https://github.com/vimode/frontend-mentor-challenges/tree/master/todo-app/",
@@ -84,12 +84,12 @@ let projectList =
   {
     id: "n12",
     difficulty: "advanced",
-    tags: ["HTML", "CSS", "JS", "React"],
+    tags: ["HTML", "SCSS", "JS", "React"],
     title: "Mutli-Step Form",
     img_src: "./multi-step-form/design/desktop-preview.jpg",
     repo_url: "https://github.com/vimode/frontend-mentor-challenges/tree/master/multi-step-form/",
     live_url: "https://multi-step-form-vimo.vercel.app/",
-    text: "This react project uses React and SCSS for CSS."
+    text: "This react project leverages the use of localStorage to store & retrieve data between each step of the form. The styling is done using SCSS."
   },
   ];
 
