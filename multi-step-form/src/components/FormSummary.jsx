@@ -59,7 +59,7 @@ function FormSummary({ changePlan }) {
       </div>
       <div className="wrapper_grandtotal">
         <p>Total (per {thisFormData.plan.period ? "year" : "month"})</p>
-        <p>+${calculateGrandTotal()}{thisFormData.plan.period ? "/mo" : "/yr"}</p>
+        <p>+${calculateGrandTotal()}{thisFormData.plan.period ? "/yr" : "/mo"}</p>
       </div>
     </>
   );
