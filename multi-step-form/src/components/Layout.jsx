@@ -40,7 +40,7 @@ function Layout({ children, prevStep, nextStep, formStep, updateFormStep }) {
           <button className="altButton" onClick={() => updateFormStep(prevStep)}>Go back</button>
         )}
         {nextStep && (
-          <button className="primaryButton" onClick={() => updateFormStep(nextStep)}>Next Step</button>
+          <button className="primaryButton" onClick={() => updateFormStep(nextStep)}>{formStep === "summary" ? "Confirm" : "Next Step"}</button>
         )}
       </div>
       </main>
