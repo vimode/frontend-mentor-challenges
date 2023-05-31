@@ -37,14 +37,14 @@ function SubscriptionPlans() {
             return (
               <div 
                 className={thisFormData.plan.type === plan.name ? "planCard--isActive" : "planCard"}
-                  onClick={() => handleTypeChange(plan.name)} 
-                  key={plan.id}>               
-                <img className="iconImage" src="images/icon-pro.svg"/>
-                <input type="radio" 
-                    id={plan.name} 
-                    name={plan.name} 
-                    value={plan.name} 
-                    onChange={() => handleTypeChange(event.value)} 
+                  onClick={() => handleTypeChange(plan.name)}
+                  key={plan.id}>
+                <img className="iconImage" src={plan.imgSrc}/>
+                <input type="radio"
+                    id={plan.name}
+                    name={plan.name}
+                    value={plan.name}
+                    onChange={() => handleTypeChange(event.value)}
                     checked={thisFormData.plan.type === plan.name}/>
                 <div className="planCardText">
                   <label htmlFor={plan.name}>{plan.name}</label>
