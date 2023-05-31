@@ -26,7 +26,7 @@ function Layout({ children, prevStep, nextStep, formStep, updateFormStep }) {
           </div>
         </div>
         <div className="formStep">
-          <p className={ formStep === "summary" ? "active" : ""}>4</p>
+          <p className={ formStep === "summary" ? "active" : formStep === "thankyou" ? "active": ""}>4</p>
           <div>
             <p>Step 4</p>
             <p>Summary</p>

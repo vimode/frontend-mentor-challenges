@@ -68,7 +68,9 @@ function App() {
       );
     case "thankyou":
       return (
-        <Layout>
+        <Layout
+          formStep={formStep}
+        >
           <ThankYou />
         </Layout>
       );
