@@ -56,7 +56,7 @@ function SubscriptionPlans() {
           }
         </div>
         <div className="periodOptions">
-          <label htmlFor="period">Monthly</label>
+          <label htmlFor="period" className={thisFormData.plan.period ? "" : "activePeriod"} >Monthly</label>
           <input
             type="checkbox"
             id="period"
@@ -69,7 +69,7 @@ function SubscriptionPlans() {
           />
           <label className="periodToggle"htmlFor="period"><span className="toggle"></span></label>
 
-          <label htmlFor="period">Annual</label>
+          <label htmlFor="period" className={thisFormData.plan.period ? "activePeriod" : ""}>Annual</label>
         </div>
       </form>
       {/* TODO: Enable Next Button only when one of the plan is selected. */}

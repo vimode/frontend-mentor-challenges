@@ -107,6 +107,10 @@
     label {
       font-weight: $text-medium;
       color: $cool-gray;
+
+      &.activePeriod {
+        color: $title-text;
+      }
     }
 
     .periodToggle {

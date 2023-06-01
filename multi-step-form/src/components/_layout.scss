@@ -81,7 +81,10 @@ main {
   margin: 0 auto;
 
   .title {
-    margin-bottom: $space-2;
+    margin: {
+      top: $space-3;
+      bottom: $space-2;
+    }
 
     p {
       color: $cool-gray;
@@ -92,7 +95,10 @@ main {
 }
 
 .buttonGroup {
-  margin-top: auto;
+  margin: {
+    top: auto;
+    bottom: $space-4;
+  }
   display:grid;
   grid-template-areas: "button1 button2";
   place: {
