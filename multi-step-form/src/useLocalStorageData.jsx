@@ -6,8 +6,8 @@ const initialValue = {
   email: "",
   phone: "",
   plan: {
-    type: "",
-    period: "",
+    type: "Arcade",
+    period: false,
   },
   addons: {
   },
