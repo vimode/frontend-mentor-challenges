@@ -1,0 +1,12 @@
+{
+  "name": "@entertainment-web-app/root",
+  "version": "1.0.0",
+  "description": "This is a solution to the Entertainment web app challenge on Frontend Mentor.",
+  "workspaces": ["./server/*",  "./client/*"],
+  "main": "index.js",
+  "scripts": {
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

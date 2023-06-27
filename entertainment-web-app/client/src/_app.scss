@@ -1,0 +1,22 @@
+#root {
+  width: 100vw;
+  min-height: 100vh;
+  max-width: 1440px;
+  display: grid;
+  gap: $space-4;
+  padding: $space-8 0 $space-8 $space-8;
+  grid:
+    "nav  search" 30%
+    "nav content" auto
+    / 10% 90%;
+}
+
+body {
+  @include body-medium;
+  font: {
+    family: $font-primary, sans-serif;
+    size: $font-size-primary;
+  }
+  background-color: $dark-bg;
+  color: $color-white;
+}

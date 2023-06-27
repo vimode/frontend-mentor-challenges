@@ -1,0 +1,41 @@
+@mixin heading-large {
+  font: {
+    weight: $font-light;
+    size: $text-xl;
+  }
+}
+
+@mixin heading-medium {
+  font: {
+    weight: $font-light;
+    size: $text-lg;
+  }
+}
+
+@mixin heading-small {
+  font: {
+    weight: $font-medium;
+    size: $text-lg;
+  }
+}
+
+@mixin heading-xs {
+  font: {
+    weight: $font-light;
+    size: $text-reg;
+  }
+}
+
+@mixin body-medium {
+  font: {
+    weight: $font-light;
+    size: $text-md;
+  }
+}
+
+@mixin body-small {
+  font: {
+    weight: $font-light;
+    size: $text-sm;
+  }
+}

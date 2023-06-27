@@ -1,0 +1,23 @@
+.grid-trending {
+  display: grid;
+  grid-auto-flow: column;
+  overflow-x: auto;
+  overflow-y: hidden;
+  gap: $space-10;
+  padding: $space-5 0 $space-5 $space-5;
+}
+
+.grid-listing {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: $space-10;
+  padding: $space-5;
+
+  @media (max-width: $layout-breakpoint-med) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
