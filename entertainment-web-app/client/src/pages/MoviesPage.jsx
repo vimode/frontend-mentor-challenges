@@ -17,7 +17,7 @@ const MoviesPage = () => {
         <section>
           {" "}
           <h1>Movies</h1>
-          <div className="grid-listing">
+          <div className="grid_listing">
             {moviesData.map((media) => (
               <MediaCard key={media.id} type="Movie" media={media} />
             ))}

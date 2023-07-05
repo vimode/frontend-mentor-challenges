@@ -17,7 +17,7 @@ const TVShowsPage = () => {
       <main>
         <section>
           <h1>TV Shows</h1>
-          <div className="grid-listing">
+          <div className="grid_listing">
             {tvShowData.map((media) => (
               <MediaCard key={media.id} type="TV Series" media={media} />
             ))}

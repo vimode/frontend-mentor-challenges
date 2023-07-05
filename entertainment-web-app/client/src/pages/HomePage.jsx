@@ -17,15 +17,15 @@ const HomePage = () => {
       <main>
         <section>
           <h1>Trending</h1>
-          <div className="grid-trending">
+          <div className="grid_trending">
             {moviesData.slice(0, 5).map((media) => (
               <MediaCard type="Movie" key={media.id} trending media={media} />
             ))}
           </div>
         </section>
-        <section>
+        <section className="grid_listing_wrapper">
           <h1>Recommended for you</h1>
-          <div className="grid-listing">
+          <div className="grid_listing">
             {moviesData.slice(8).map((media) => (
               <MediaCard type="Movie" key={media.id} media={media} />
             ))}

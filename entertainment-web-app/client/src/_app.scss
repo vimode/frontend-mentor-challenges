@@ -2,13 +2,15 @@
   width: 100vw;
   min-height: 100vh;
   max-width: 1440px;
+  width: 100%;
   display: grid;
-  gap: $space-4;
+  gap: $space-8;
   padding: $space-8 0 $space-8 $space-8;
   grid:
     "nav  search" 30%
     "nav content" auto
-    / 10% 90%;
+    / 8% 89%;
+  margin: 0 auto;
 }
 
 body {

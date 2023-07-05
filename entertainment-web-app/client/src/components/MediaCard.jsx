@@ -1,8 +1,8 @@
 const MediaCard = ({ trending, media, type }) => {
   return (
-    <div className={`mediaCard${trending ? "-trending" : ""}`}>
+    <div className={`mediaCard${trending ? "_trending" : ""}`}>
       <img
-        className="movieimg"
+        className="mediaimg"
         src={`https://image.tmdb.org/t/p/original${media.backdrop_path}`}
       />
       <div className="mediaCard_data">

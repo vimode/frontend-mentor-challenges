@@ -1,17 +1,21 @@
-.grid-trending {
+.grid_trending {
   display: grid;
   grid-auto-flow: column;
   overflow-x: auto;
   overflow-y: hidden;
   gap: $space-10;
-  padding: $space-5 0 $space-5 $space-5;
+  padding: $space-5 0;
 }
 
-.grid-listing {
+.grid_listing_wrapper {
+  padding: 0 $space-5;
+}
+
+.grid_listing {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: $space-10;
-  padding: $space-5;
+  padding: $space-5 0;
 
   @media (max-width: $layout-breakpoint-med) {
     grid-template-columns: repeat(3, 1fr);
