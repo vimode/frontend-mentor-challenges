@@ -11,6 +11,14 @@
     "nav content" auto
     / 8% 89%;
   margin: 0 auto;
+
+  @media (max-width: $layout-breakpoint-med) {
+    grid:
+      "nav" 10%
+      "search" 20%
+      "content" auto
+      / auto;
+  }
 }
 
 body {

@@ -9,6 +9,10 @@ nav {
   padding: $space-8;
   width: 100%;
 
+  @media (max-width: $layout-breakpoint-med) {
+    flex-direction: row;
+  }
+
   ul {
     display: flex;
     flex-direction: column;
@@ -16,9 +20,28 @@ nav {
     padding: unset;
     margin-top: $space-20;
 
+    @media (max-width: $layout-breakpoint-med) {
+      margin-top: unset;
+    }
+
+    @media (max-width: $layout-breakpoint-med) {
+      flex-direction: row;
+    }
+
     li {
       list-style: none;
       width: $space-5;
+
+      a {
+        &.active {
+          svg {
+            path {
+              fill: $color-white;
+              transition: fill linear 300ms;
+            }
+          }
+        }
+      }
     }
   }
 

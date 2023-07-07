@@ -13,11 +13,12 @@ import TVShowsPage, {
 import Login from "./pages/Login.jsx";
 import Signup from "./pages/Signup.jsx";
 import Error from "./components/Error.jsx";
+import BookmarksPage from "./pages/BookmarksPage.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
-      <Route path="/" element={<Layout />}>
+      <Route path="/" element={<Layout />} errorElement={<Error />}>
         <Route
           index
           element={<HomePage />}
@@ -34,6 +35,11 @@ const router = createBrowserRouter(
           path="tvshows"
           element={<TVShowsPage />}
           loader={tvshowsPageLoader}
+          errorElement={<Error />}
+        />
+        <Route
+          path="bookmarks"
+          element={<BookmarksPage />}
           errorElement={<Error />}
         />
       </Route>
