@@ -1,14 +1,15 @@
 .grid_trending {
   display: grid;
-  grid-auto-flow: column;
   overflow-x: auto;
   overflow-y: hidden;
   gap: $space-10;
   padding: $space-5 0;
+  grid-auto-flow: column;
+  grid-template-columns: repeat(5, calc(50% - 50px));
 }
 
 .grid_listing_wrapper {
-  padding: 0 $space-5;
+  padding: $space-8 $space-5;
 }
 
 .grid_listing {

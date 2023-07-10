@@ -7,10 +7,15 @@ nav {
   background-color: $midnight-bg;
   border-radius: $space-4;
   padding: $space-8;
+  max-width: 100px;
   width: 100%;
 
   @media (max-width: $layout-breakpoint-med) {
     flex-direction: row;
+    // TODO: fix this hack with #root layout  grid as margin content margin...
+    max-width: 98%;
+    place-content: space-between;
+    max-height: 80px;
   }
 
   ul {
@@ -50,6 +55,10 @@ nav {
     border: 1px solid $color-white;
     border-radius: 50%;
     width: 40px;
+    
+  @media (max-width: $layout-breakpoint-med) {
+    margin-top: unset;
+  }
   }
 }
 

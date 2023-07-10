@@ -1,7 +1,18 @@
 .mediaCard {
   cursor: pointer;
+  position: relative;
   .mediaimg {
     border-radius: 10px;
+  }
+
+  .bookmarkIcon {
+    position: absolute;
+    top: 10%;
+    right: 6%;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    background: gray;
+    padding: $space-4;
   }
 }
 
@@ -37,7 +48,6 @@
 
 .mediaCard_trending {
   @extend .mediaCard;
-  width: 470px;
   position: relative;
 
   @media (max-width: $layout-breakpoint-small) {

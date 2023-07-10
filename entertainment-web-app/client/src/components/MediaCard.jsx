@@ -1,6 +1,9 @@
 const MediaCard = ({ trending, media, type }) => {
   return (
     <div className={`mediaCard${trending ? "_trending" : ""}`}>
+      <button className="bookmarkIcon">
+        <img src="/images/icon-bookmark-empty.svg" alt="bookmark" />
+      </button>
       <img
         className="mediaimg"
         src={`https://image.tmdb.org/t/p/original${media.backdrop_path}`}
