@@ -4,7 +4,7 @@ const Layout = () => {
   return (
     <>
       <nav>
-        <img src="./images/logo.svg" />
+        <img src="/images/logo.svg" />
         <ul>
           <li>
             <NavLink
@@ -59,7 +59,7 @@ const Layout = () => {
             </NavLink>
           </li>
         </ul>
-        <img className="profile_avatar" src="./images/image-avatar.png" />
+        <img className="profile_avatar" src="/images/image-avatar.png" />
       </nav>
       <Outlet />
     </>

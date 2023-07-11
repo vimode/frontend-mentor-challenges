@@ -1,6 +1,11 @@
-const MediaCard = ({ trending, media, type }) => {
+import { Link } from "react-router-dom";
+
+const MediaCard = ({ trending, media, type, id }) => {
   return (
-    <div className={`mediaCard${trending ? "_trending" : ""}`}>
+    <a
+      href={`${type === "Movie" ? `movies/${id}` : `tvshows/${id}`}`}
+      className={`mediaCard${trending ? "_trending" : ""}`}
+    >
       <button className="bookmarkIcon">
         <img src="/images/icon-bookmark-empty.svg" alt="bookmark" />
       </button>
@@ -28,7 +33,7 @@ const MediaCard = ({ trending, media, type }) => {
         </div>
         {media.title ? <h2>{media.title}</h2> : <h2>{media.name}</h2>}
       </div>
-    </div>
+    </a>
   );
 };
 

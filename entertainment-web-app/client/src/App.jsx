@@ -10,6 +10,7 @@ import MoviesPage, { loader as moviesPageLoader } from "./pages/MoviesPage.jsx";
 import TVShowsPage, {
   loader as tvshowsPageLoader,
 } from "./pages/TVShowsPage.jsx";
+import MediaPage from "./pages/MediaPage.jsx";
 import Login from "./pages/Login.jsx";
 import Signup from "./pages/Signup.jsx";
 import Error from "./components/Error.jsx";
@@ -31,6 +32,7 @@ const router = createBrowserRouter(
           loader={moviesPageLoader}
           errorElement={<Error />}
         />
+        <Route path="movies/:id" element={<MediaPage />} />
         <Route
           path="tvshows"
           element={<TVShowsPage />}

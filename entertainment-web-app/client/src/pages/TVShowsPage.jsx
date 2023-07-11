@@ -4,6 +4,7 @@ import MediaCard from "../components/MediaCard";
 import Search from "../components/Search";
 
 export async function loader() {
+  // TODO: Add defer data
   return getPopularTVShows();
 }
 
@@ -19,7 +20,12 @@ const TVShowsPage = () => {
           <h1>TV Shows</h1>
           <div className="grid_listing">
             {tvShowData.map((media) => (
-              <MediaCard key={media.id} type="TV Series" media={media} />
+              <MediaCard
+                key={media.id}
+                id={media.id}
+                type="TV Series"
+                media={media}
+              />
             ))}
           </div>
         </section>

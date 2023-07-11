@@ -1,6 +1,8 @@
 .mediaCard {
   cursor: pointer;
   position: relative;
+  color: unset;
+  text-decoration: none;
   .mediaimg {
     border-radius: 10px;
   }
@@ -60,5 +62,10 @@
     padding: $space-6;
     bottom: 0;
     background: linear-gradient(0deg, hsla(0, 0%, 0%, 0.75), 60%, transparent);
+
+    h2 {
+      word-break: normal;
+      overflow-wrap: break-word;
+    }
   }
 }
