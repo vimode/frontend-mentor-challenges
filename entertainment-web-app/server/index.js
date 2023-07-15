@@ -10,14 +10,12 @@ const port = process.env.PORT || 3001;
 const app = express();
 
 app.use(express.json());
+
 app.use(cors());
 
 // app.use('/api/users', userRoutes);
-
 app.use("/api/movies", movieRoutes);
 app.use("/api/tvshows", tvShowRoutes);
-
-// app.use('/api/tvshows', tvshowRoutes)
 
 // catch-all route?
 app.get("*", (req, res) => {

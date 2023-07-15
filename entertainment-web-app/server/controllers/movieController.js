@@ -1,4 +1,5 @@
 import axios from "axios";
+import { moviesCache } from "../middleware/dataCache.js";
 
 const getTrendingMovies = async (req, res) => {
   let time_window = "day";
@@ -13,9 +14,9 @@ const getTrendingMovies = async (req, res) => {
 
   try {
     let response = await axios(trendingMoviesURL, options);
-    let data = response.data;
+    await moviesCache.store.mset([["trending-movies", response.data]])
     console.log("accesssed /trending");
-    res.status(200).send(data);
+    res.status(200).send(response.data);
   } catch (err) {
     console.error(err);
     res
@@ -36,9 +37,9 @@ const getPopularMovies = async (req, res) => {
 
   try {
     let response = await axios(topRatedMoviesURL, options);
-    let data = response.data;
+    await moviesCache.store.mset([["popular-movies", response.data]]);
     console.log(`accessed / popular`);
-    res.status(200).send(data);
+    res.status(200).send(response.data);
   } catch (err) {
     console.log(err);
     res.status(401).send("Data currently unavailable, try again");
