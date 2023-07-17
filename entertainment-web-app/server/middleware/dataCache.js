@@ -9,7 +9,8 @@ const cachedMoviesDataMiddleware = async (req, res, next) => {
     let cache = await moviesCache.store.get(key)
     if (cache) {
       console.log("cached  data")
-      return res.send(await moviesCache.store.mget(key)).status(200);
+      let cachedMovieData = await moviesCache.store.mget(key)
+      return res.send(cachedMovieData[0]).status(200);
     }
     return next();
   }
