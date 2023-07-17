@@ -9,6 +9,7 @@ const MediaCard = ({ trending, media, type, id }) => {
       <button className="bookmarkIcon">
         <img src="/images/icon-bookmark-empty.svg" alt="bookmark" />
       </button>
+      {/* TODO: Add <picture> to make it responsive with different size than original ref API config  */}
       <img
         className="mediaimg"
         src={`https://image.tmdb.org/t/p/original${media.backdrop_path}`}

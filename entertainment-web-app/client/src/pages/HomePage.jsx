@@ -5,8 +5,8 @@ import { getTrendingMovies } from "../services/movies";
 import Search from "../components/Search";
 
 export async function loader() {
-  // return getTrendingMovies();
-  return defer({ moviesData: getTrendingMovies() });
+  let moviesData = await getTrendingMovies()
+  return defer({ moviesData });
 }
 
 const HomePage = () => {

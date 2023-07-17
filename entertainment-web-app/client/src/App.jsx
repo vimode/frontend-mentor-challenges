@@ -15,6 +15,7 @@ import Login from "./pages/Login.jsx";
 import Signup from "./pages/Signup.jsx";
 import Error from "./components/Error.jsx";
 import BookmarksPage from "./pages/BookmarksPage.jsx";
+import { getMovieDetails } from "./services/movies.js";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -32,13 +33,17 @@ const router = createBrowserRouter(
           loader={moviesPageLoader}
           errorElement={<Error />}
         />
-        <Route path="movies/:id" element={<MediaPage />} />
+        <Route path="movies/:id" 
+          element={<MediaPage />} 
+          loader={({params}) => {return getMovieDetails(params.id) }}
+        />
         <Route
           path="tvshows"
           element={<TVShowsPage />}
           loader={tvshowsPageLoader}
           errorElement={<Error />}
         />
+        <Route path="tvshows/:id" element={<MediaPage />} />
         <Route
           path="bookmarks"
           element={<BookmarksPage />}

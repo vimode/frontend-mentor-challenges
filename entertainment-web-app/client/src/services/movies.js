@@ -9,7 +9,7 @@ const getTrendingMovies = async () => {
     };
   }
   const data = await res.json();
-  return data.results;
+  return await data.results;
 };
 
 const getPopularMovies = async () => {
@@ -24,4 +24,16 @@ const getPopularMovies = async () => {
   return data.results;
 };
 
-export { getTrendingMovies, getPopularMovies };
+const getMovieDetails = async (id) => {
+  const res = await fetch(`${baseURL}movies/${id}`);
+  if (!res.ok) {
+    throw {
+      message: "failed to load movie details, please try again later",
+      status: res.status,
+    };
+  }
+  const data = await res.json();
+  return await data;
+};
+
+export { getTrendingMovies, getPopularMovies, getMovieDetails };

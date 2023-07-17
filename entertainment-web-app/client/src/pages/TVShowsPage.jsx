@@ -10,7 +10,6 @@ export async function loader() {
 
 const TVShowsPage = () => {
   const tvShowData = useLoaderData();
-  console.log(tvShowData[0]);
 
   return (
     <>
