@@ -51,7 +51,7 @@ const getPopularMovies = async (req, res) => {
 
 const getMovieDetails = async(req,res) => {
   const {id}= req.params
-  let findMovieURL = `https://api.themoviedb.org/3/movie/${id}?append_to_response=credits`;
+  let findMovieURL = `https://api.themoviedb.org/3/movie/${id}?append_to_response=credits,videos`;
 
   const options = {
     method: "GET",
