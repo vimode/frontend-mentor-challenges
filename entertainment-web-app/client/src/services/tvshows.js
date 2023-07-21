@@ -12,4 +12,16 @@ const getPopularTVShows = async () => {
   return data.results;
 };
 
-export { getPopularTVShows };
+const getTVShowDetails = async (id) => {
+  const res = await fetch(`${baseURL}tvshows/${id}`);
+  if (!res.ok) {
+    throw {
+      message: "failed to load tv show details, please try again later",
+      status: res.status,
+    };
+  }
+  const data = await res.json();
+  return await data;
+};
+
+export { getPopularTVShows, getTVShowDetails };

@@ -10,12 +10,14 @@ import MoviesPage, { loader as moviesPageLoader } from "./pages/MoviesPage.jsx";
 import TVShowsPage, {
   loader as tvshowsPageLoader,
 } from "./pages/TVShowsPage.jsx";
-import MoviePage from "./pages/MoviePage.jsx";
+import MovieItem from "./pages/MovieItem.jsx";
 import Login from "./pages/Login.jsx";
 import Signup from "./pages/Signup.jsx";
 import Error from "./components/Error.jsx";
 import BookmarksPage from "./pages/BookmarksPage.jsx";
 import { getMovieDetails } from "./services/movies.js";
+import TVShowItem from "./pages/TVShowItem.jsx";
+import { getTVShowDetails } from "./services/tvshows.js";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -35,7 +37,7 @@ const router = createBrowserRouter(
         />
         <Route
           path="movies/:id"
-          element={<MoviePage />}
+          element={<MovieItem />}
           loader={({ params }) => {
             return getMovieDetails(params.id);
           }}
@@ -46,7 +48,13 @@ const router = createBrowserRouter(
           loader={tvshowsPageLoader}
           errorElement={<Error />}
         />
-        {/* <Route path="tvshows/:id" element={<MediaPage />} /> */}
+        <Route
+          path="tvshows/:id"
+          element={<TVShowItem />}
+          loader={({ params }) => {
+            return getTVShowDetails(params.id);
+          }}
+        />
         <Route
           path="bookmarks"
           element={<BookmarksPage />}
