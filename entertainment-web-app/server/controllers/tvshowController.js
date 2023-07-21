@@ -21,4 +21,25 @@ const getPopularTVShows = async (req, res) => {
   }
 };
 
-export { getPopularTVShows };
+const getTVShowDetails = async (req, res) => {
+  const { id } = req.params;
+  let tvshowURL = `https://api.themoviedb.org/3/tv/${id}?append_to_response=credits,videos`;
+
+  const options = {
+    method: "GET",
+    headers: {
+      accept: "application/json",
+      Authorization: `Bearer ${process.env.TMDB_ACCESS_TOKEN}`,
+    },
+  };
+
+  try {
+    let tvshowData = await axios(tvshowURL, options);
+    console.log(`accessed /${id}`);
+    res.status(200).send(await tvshowData.data);
+  } catch (err) {
+    console.log(err);
+    res.status(401).send("Data currently unavailable, try again later");
+  }
+};
+export { getPopularTVShows, getTVShowDetails };

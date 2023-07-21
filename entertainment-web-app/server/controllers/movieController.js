@@ -1,7 +1,6 @@
 import axios from "axios";
 import { moviesCache } from "../middleware/dataCache.js";
 
-
 const getTrendingMovies = async (req, res) => {
   let time_window = "day";
   let trendingMoviesURL = `https://api.themoviedb.org/3/trending/movie/${time_window}`;
@@ -16,7 +15,7 @@ const getTrendingMovies = async (req, res) => {
 
   try {
     let trendingMovies = await axios(trendingMoviesURL, options);
-    await moviesCache.store.mset([["trending-movies",trendingMovies.data]])
+    await moviesCache.store.mset([["trending-movies", trendingMovies.data]]);
     console.log("accesssed /trending");
     res.status(200).send(trendingMovies.data);
   } catch (err) {
@@ -40,7 +39,7 @@ const getPopularMovies = async (req, res) => {
 
   try {
     let popularMovies = await axios(topRatedMoviesURL, options);
-    await moviesCache.store.mset([["popular-movies",popularMovies.data]]);
+    await moviesCache.store.mset([["popular-movies", popularMovies.data]]);
     console.log(`accessed / popular`);
     res.status(200).send(popularMovies.data);
   } catch (err) {
@@ -49,8 +48,8 @@ const getPopularMovies = async (req, res) => {
   }
 };
 
-const getMovieDetails = async(req,res) => {
-  const {id}= req.params
+const getMovieDetails = async (req, res) => {
+  const { id } = req.params;
   let findMovieURL = `https://api.themoviedb.org/3/movie/${id}?append_to_response=credits,videos`;
 
   const options = {
@@ -64,10 +63,10 @@ const getMovieDetails = async(req,res) => {
   try {
     let movieData = await axios(findMovieURL, options);
     console.log(`accessed /${id}`);
-    res.status(200).send(await movieData.data)
+    res.status(200).send(await movieData.data);
   } catch (err) {
     console.log(err);
-    res.status(401).send("Data currently unavailable, try again later")
+    res.status(401).send("Data currently unavailable, try again later");
   }
 };
 
