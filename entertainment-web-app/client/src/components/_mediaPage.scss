@@ -1,0 +1,25 @@
+.mediapage_wrapper {
+  display: grid;
+  grid:
+    "title ."
+    "small_data ."
+    "posterimage videoiframe"
+    "mediadata ."
+    / 30% auto;
+
+  .media_title {
+    grid-area: title;
+  }
+
+  .posterImg {
+    grid-area: posterimage;
+  }
+
+  .small_data {
+    grid-area: small_data;
+  }
+
+  .media_data {
+    grid-area: mediadata;
+  }
+}

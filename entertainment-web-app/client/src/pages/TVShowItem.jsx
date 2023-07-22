@@ -1,6 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import CastGrid from "../components/CastGrid";
 import MediaDetails from "../components/MediaDetails";
+import MediaPage from "../components/MediaPage";
 
 export default function TVShowItem() {
   const mediaData = useLoaderData();
@@ -13,8 +14,8 @@ export default function TVShowItem() {
   )[0];
 
   return (
-    <section>
-      <h1>
+    <MediaPage>
+      <h1 className="media_title">
         {mediaData.original_name}
         <span>
           {" "}
@@ -26,7 +27,6 @@ export default function TVShowItem() {
         className="posterImg"
         src={`https://image.tmdb.org/t/p/${poster_size}/${mediaData.poster_path}`}
       />
-      <p>{mediaData.overview}</p>
       <MediaDetails>
         <li>
           <h2>TV Network</h2>
@@ -34,15 +34,15 @@ export default function TVShowItem() {
         </li>
         <li>
           <h2>Seasons</h2>
-          <p>{mediaData.networks[0].number_of_seasons}</p>
+          <p>{mediaData.number_of_seasons}</p>
         </li>
         <li>
           <h2>Episodes</h2>
-          <p>{mediaData.networks[0].number_of_episodes} mins</p>
+          <p>{mediaData.number_of_episodes}</p>
         </li>
         <li>
           <h2>Rating</h2>
-          <p>{mediaData.vote_average}</p>
+          <p>{mediaData.vote_average.toFixed(1)}</p>
         </li>
         <li>
           <h2>Language</h2>
@@ -60,14 +60,20 @@ export default function TVShowItem() {
           allow="accelerometer; clipboard-write; autoplay; encrypted-media"
         ></iframe>
       </div>
-      <div>
-        <h2>Created by</h2>
-        <p>{mediaData.created_by[0].name}</p>
+      <div className="media_data">
+        <div>
+          <h2>Created by</h2>
+          <p>{mediaData.created_by[0].name}</p>
+        </div>
+        <div>
+          <h2>Description</h2>
+          <p>{mediaData.overview}</p>
+        </div>
+        <div>
+          <h2>Cast</h2>
+          <CastGrid cast={mediaData.credits.cast} />
+        </div>
       </div>
-      <div>
-        <h2>Cast</h2>
-        <CastGrid cast={mediaData.credits.cast} />
-      </div>
-    </section>
+    </MediaPage>
   );
 }

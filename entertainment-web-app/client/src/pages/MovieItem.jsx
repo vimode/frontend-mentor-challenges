@@ -1,6 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import CastGrid from "../components/CastGrid";
 import MediaDetails from "../components/MediaDetails";
+import MediaPage from "../components/MediaPage";
 
 function MovieItem() {
   const mediaData = useLoaderData();
@@ -16,7 +17,7 @@ function MovieItem() {
   )[0];
 
   return (
-    <section>
+    <MediaPage>
       <h1>{mediaData.original_title}</h1>
       <MediaDetails>
         <li>
@@ -72,7 +73,7 @@ function MovieItem() {
         <h2>Cast</h2>
         <CastGrid cast={mediaData.credits.cast} />
       </div>
-    </section>
+    </MediaPage>
   );
 }
 
