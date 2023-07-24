@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 import movieRoutes from "./routes/movieRoutes.js";
 import tvShowRoutes from "./routes/tvShowRoutes.js";
+import searchRoutes from "./routes/searchRoutes.js";
 
 dotenv.config();
 const port = process.env.PORT || 3001;
@@ -16,6 +17,7 @@ app.use(cors());
 // app.use('/api/users', userRoutes);
 app.use("/api/movies", movieRoutes);
 app.use("/api/tvshows", tvShowRoutes);
+app.use("/api/search", searchRoutes);
 
 // catch-all route?
 app.get("*", (req, res) => {
