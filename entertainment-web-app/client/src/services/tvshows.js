@@ -9,7 +9,7 @@ const getPopularTVShows = async () => {
     };
   }
   const data = await res.json();
-  return data.results;
+  return data;
 };
 
 const getTVShowDetails = async (id) => {
@@ -21,7 +21,7 @@ const getTVShowDetails = async (id) => {
     };
   }
   const data = await res.json();
-  return await data;
+  return data;
 };
 
 export { getPopularTVShows, getTVShowDetails };

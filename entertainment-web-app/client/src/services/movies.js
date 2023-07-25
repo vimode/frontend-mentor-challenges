@@ -9,7 +9,7 @@ const getTrendingMovies = async () => {
     };
   }
   const data = await res.json();
-  return await data.results;
+  return data;
 };
 
 const getPopularMovies = async () => {
@@ -21,7 +21,7 @@ const getPopularMovies = async () => {
     };
   }
   const data = await res.json();
-  return data.results;
+  return data;
 };
 
 const getMovieDetails = async (id) => {
@@ -33,7 +33,7 @@ const getMovieDetails = async (id) => {
     };
   }
   const data = await res.json();
-  return await data;
+  return data;
 };
 
 export { getTrendingMovies, getPopularMovies, getMovieDetails };

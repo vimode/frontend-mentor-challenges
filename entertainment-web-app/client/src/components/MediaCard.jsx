@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-
 const MediaCard = ({ trending, media, type, id }) => {
   return (
     <a
@@ -16,12 +14,7 @@ const MediaCard = ({ trending, media, type, id }) => {
       />
       <div className="mediaCard_data">
         <div className="mediaCard_data_info">
-          {media.release_date && (
-            <p>{media.release_date.slice(0, 4)} &#8226;</p>
-          )}
-          {media.first_air_date && (
-            <p>{media.first_air_date.slice(0, 4)} &#8226;</p>
-          )}
+          {media.release_date && <p>{media.release_date} &#8226;</p>}
           <p className="media_type">
             {type === "Movie" ? (
               <img src="/images/icon-category-movie.svg" alt="movie icon" />
@@ -30,7 +23,7 @@ const MediaCard = ({ trending, media, type, id }) => {
             )}{" "}
             {type} &#8226;
           </p>
-          <p>&#x2605; {media.vote_average.toFixed(1)}</p>
+          <p>&#x2605; {media.rating}</p>
         </div>
         {media.title ? <h2>{media.title}</h2> : <h2>{media.name}</h2>}
       </div>

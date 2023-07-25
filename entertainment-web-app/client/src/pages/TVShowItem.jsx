@@ -6,21 +6,15 @@ import MediaPage from "../components/MediaPage";
 export default function TVShowItem() {
   const mediaData = useLoaderData();
   let poster_size = "w185";
-
-  const videoEmbedId = mediaData.videos.results.filter(
-    (video) =>
-      video.name === "Official Trailer" ||
-      (video.name.includes("Trailer") && video.site === "YouTube")
-  )[0];
+  let profileImg_size = "h632";
 
   return (
     <MediaPage>
       <h1 className="media_title">
-        {mediaData.original_name}
+        {mediaData.title}
         <span>
           {" "}
-          ({mediaData.first_air_date.slice(0, 4)} -{" "}
-          {mediaData.last_air_date.slice(0, 4)} )
+          ({mediaData.first_air_date} - {mediaData.last_air_date})
         </span>
       </h1>
       <img
@@ -30,7 +24,7 @@ export default function TVShowItem() {
       <MediaDetails>
         <li>
           <h2>TV Network</h2>
-          <p>{mediaData.networks[0].name}</p>
+          <p>{mediaData.network}</p>
         </li>
         <li>
           <h2>Seasons</h2>
@@ -42,7 +36,7 @@ export default function TVShowItem() {
         </li>
         <li>
           <h2>Rating</h2>
-          <p>{mediaData.vote_average.toFixed(1)}</p>
+          <p>{mediaData.rating}</p>
         </li>
         <li>
           <h2>Language</h2>
@@ -50,20 +44,36 @@ export default function TVShowItem() {
         </li>
       </MediaDetails>
       <div className="video-player">
-        <iframe
-          src={`https://www.youtube.com/embed/${videoEmbedId.key}`}
-          frameBorder="0"
-          width="560"
-          height="315"
-          allowFullScreen
-          title="Embedded video player"
-          allow="accelerometer; clipboard-write; autoplay; encrypted-media"
-        ></iframe>
+        {/* TODO: Add a placeholder video? or update backend call to return any available video. */}
+        {mediaData.videoEmbedId && (
+          <iframe
+            src={`https://www.youtube.com/embed/${mediaData.videoEmbedId.key}`}
+            frameBorder="0"
+            width="560"
+            height="315"
+            allowFullScreen
+            title="Embedded video player"
+            allow="accelerometer; clipboard-write; autoplay; encrypted-media"
+          ></iframe>
+        )}
       </div>
       <div className="media_data">
         <div>
           <h2>Created by</h2>
-          <p>{mediaData.created_by[0].name}</p>
+          <div>
+            {mediaData.created_by.profile_path ? (
+              <img
+                className="castImg"
+                src={`https://image.tmdb.org/t/p/${profileImg_size}/${mediaData.created_by.profile_path}`}
+              />
+            ) : (
+              <img
+                className="castImg"
+                src={`https://ui-avatars.com/api/?size=512&font-size=0.25&background=171e31&color=fff&&name=${mediaData.created_by.name}`}
+              />
+            )}
+            <p>{mediaData.created_by.name}</p>
+          </div>
         </div>
         <div>
           <h2>Description</h2>
@@ -71,7 +81,7 @@ export default function TVShowItem() {
         </div>
         <div>
           <h2>Cast</h2>
-          <CastGrid cast={mediaData.credits.cast} />
+          <CastGrid cast={mediaData.cast} />
         </div>
       </div>
     </MediaPage>

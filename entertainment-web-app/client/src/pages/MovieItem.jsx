@@ -7,26 +7,19 @@ function MovieItem() {
   const mediaData = useLoaderData();
 
   let poster_size = "w185";
-
-  const mediaDirector = mediaData.credits.crew.filter(
-    (item) => item.job === "Director"
-  )[0].name;
-
-  const videoEmbedId = mediaData.videos.results.filter(
-    (video) => video.name.includes("Trailer") && video.site === "YouTube"
-  )[0];
+  let profileImg_size = "h632";
 
   return (
     <MediaPage>
-      <h1>{mediaData.original_title}</h1>
+      <h1>{mediaData.title}</h1>
       <MediaDetails>
         <li>
           <h2>Year</h2>
-          <p>{mediaData.release_date.slice(0, 4)}</p>
+          <p>{mediaData.release_year}</p>
         </li>
         <li>
           <h2>Rating</h2>
-          <p>{mediaData.vote_average.toFixed(1)}</p>
+          <p>{mediaData.rating}</p>
         </li>
         <li>
           <h2>Runtime</h2>
@@ -53,7 +46,7 @@ function MovieItem() {
       <div>
         <div className="video-player">
           <iframe
-            src={`https://www.youtube.com/embed/${videoEmbedId.key}`}
+            src={`https://www.youtube.com/embed/${mediaData.videoEmbedId.key}`}
             frameBorder="0"
             width="560"
             height="315"
@@ -67,11 +60,17 @@ function MovieItem() {
       </div>
       <div>
         <h2>Director</h2>
-        <p>{mediaDirector}</p>
+        <div>
+          <img
+            className="castImg"
+            src={`https://image.tmdb.org/t/p/${profileImg_size}/${mediaData.director.profile_path}`}
+          />
+          <p>{mediaData.director.name}</p>
+        </div>
       </div>
       <div>
         <h2>Cast</h2>
-        <CastGrid cast={mediaData.credits.cast} />
+        <CastGrid cast={mediaData.cast} />
       </div>
     </MediaPage>
   );

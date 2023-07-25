@@ -6,7 +6,7 @@ import { useCallback, useState } from "react";
 import debounce from "lodash.debounce";
 
 export async function loader() {
-  // TODO: Add defer data
+  //TODO: Add defer data
   return getPopularMovies();
 }
 
@@ -29,7 +29,6 @@ const MoviesPage = () => {
   const searchMovies = (e) => {
     e.preventDefault();
     const { value } = e.target;
-    console.log(value.length);
     if (value.length === 0) return setFilteredMoviesData(moviesData);
     if (value.length >= 1) debounceFilter(value);
   };
