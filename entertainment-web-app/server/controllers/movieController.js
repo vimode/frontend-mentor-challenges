@@ -3,7 +3,7 @@ import { moviesCache } from "../middleware/dataCache.js";
 
 const getTrendingMovies = async (req, res) => {
   let time_window = "day";
-  let trendingMoviesURL = `https://api.themoviedb.org/3/trending/movie/${time_window}`;
+  let url = `https://api.themoviedb.org/3/trending/movie/${time_window}`;
 
   const options = {
     method: "GET",
@@ -14,10 +14,20 @@ const getTrendingMovies = async (req, res) => {
   };
 
   try {
-    let trendingMovies = await axios(trendingMoviesURL, options);
-    await moviesCache.store.mset([["trending-movies", trendingMovies.data]]);
+    let response = await axios(url, options);
+    let cleanedResponse = response.data.results.map((movie) => {
+      return {
+        id: movie.id,
+        backdrop_path: movie.backdrop_path,
+        title: movie.title,
+        release_year: movie.release_date.slice(0, 4),
+        type: movie.media_type,
+        rating: movie.vote_average.toFixed(1),
+      };
+    });
+    await moviesCache.store.mset([["trending-movies", cleanedResponse]]);
     console.log("accesssed /trending");
-    res.status(200).send(trendingMovies.data);
+    res.status(200).send(cleanedResponse);
   } catch (err) {
     console.error(err);
     res
@@ -27,7 +37,7 @@ const getTrendingMovies = async (req, res) => {
 };
 
 const getPopularMovies = async (req, res) => {
-  let topRatedMoviesURL = `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&with_original_language=en&page=1&sort_by=popularity.desc`;
+  let url = `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&with_original_language=en&page=1&sort_by=popularity.desc`;
 
   const options = {
     method: "GET",
@@ -38,10 +48,20 @@ const getPopularMovies = async (req, res) => {
   };
 
   try {
-    let popularMovies = await axios(topRatedMoviesURL, options);
-    await moviesCache.store.mset([["popular-movies", popularMovies.data]]);
+    let response = await axios(url, options);
+    let cleanedResponse = response.data.results.map((movie) => {
+      return {
+        id: movie.id,
+        backdrop_path: movie.backdrop_path,
+        title: movie.title,
+        release_year: movie.release_date.slice(0, 4),
+        type: movie.media_type,
+        rating: movie.vote_average.toFixed(1),
+      };
+    });
+    await moviesCache.store.mset([["popular-movies", cleanedResponse]]);
     console.log(`accessed / popular`);
-    res.status(200).send(popularMovies.data);
+    res.status(200).send(cleanedResponse);
   } catch (err) {
     console.log(err);
     res.status(401).send("Data currently unavailable, try again");
@@ -50,7 +70,7 @@ const getPopularMovies = async (req, res) => {
 
 const getMovieDetails = async (req, res) => {
   const { id } = req.params;
-  let findMovieURL = `https://api.themoviedb.org/3/movie/${id}?append_to_response=credits,videos`;
+  let url = `https://api.themoviedb.org/3/movie/${id}?append_to_response=credits,videos`;
 
   const options = {
     method: "GET",
@@ -61,9 +81,28 @@ const getMovieDetails = async (req, res) => {
   };
 
   try {
-    let movieData = await axios(findMovieURL, options);
+    let response = await axios(url, options);
+    let cleanedResponse = {
+      id: response.data.id,
+      backdrop_path: response.data.backdrop_path,
+      poster_path: response.data.poster_path,
+      title: response.data.original_title,
+      overview: response.data.overview,
+      runtime: response.data.runtime,
+      videoEmbedId: response.data.videos.results.filter(
+        (video) => video.name.includes("Trailer") && video.site === "YouTube"
+      )[0],
+      director: response.data.credits.crew.filter(
+        (item) => item.job === "Director"
+      )[0],
+      release_year: response.data.release_date.slice(0, 4),
+      type: response.data.media_type,
+      rating: response.data.vote_average.toFixed(1),
+      genres: response.data.genres,
+      cast: response.data.credits.cast,
+    };
     console.log(`accessed /${id}`);
-    res.status(200).send(await movieData.data);
+    res.status(200).send(cleanedResponse);
   } catch (err) {
     console.log(err);
     res.status(401).send("Data currently unavailable, try again later");
