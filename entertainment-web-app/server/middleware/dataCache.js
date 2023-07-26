@@ -13,6 +13,7 @@ const cachedMoviesDataMiddleware = async (req, res, next) => {
     return next();
   }
   let pathname = req.url;
+  console.log(pathname.slice(1));
   switch (pathname.slice(1)) {
     case "popular":
       try {

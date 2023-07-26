@@ -1,9 +1,10 @@
-import express from "express";
-import dotenv from "dotenv";
 import cors from "cors";
+import dotenv from "dotenv";
+import express from "express";
 import movieRoutes from "./routes/movieRoutes.js";
-import tvShowRoutes from "./routes/tvShowRoutes.js";
+import multiRoutes from "./routes/multiRoutes.js";
 import searchRoutes from "./routes/searchRoutes.js";
+import tvShowRoutes from "./routes/tvShowRoutes.js";
 
 dotenv.config();
 const port = process.env.PORT || 3001;
@@ -18,6 +19,7 @@ app.use(cors());
 app.use("/api/movies", movieRoutes);
 app.use("/api/tvshows", tvShowRoutes);
 app.use("/api/search", searchRoutes);
+app.use("/api/multi", multiRoutes);
 
 // catch-all route?
 app.get("*", (req, res) => {
