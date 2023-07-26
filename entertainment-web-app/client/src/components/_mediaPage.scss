@@ -1,10 +1,10 @@
 .mediapage_wrapper {
   display: grid;
   grid:
-    "title ."
-    "small_data ."
-    "posterimage videoiframe"
-    "mediadata ."
+    "title title" auto
+    "small_data small_data" auto
+    "posterimage videoiframe" auto
+    "big_data big_data" auto
     / 30% auto;
 
   .media_title {
@@ -17,9 +17,24 @@
 
   .small_data {
     grid-area: small_data;
+    display: flex;
+    place-content: space-between;
+    list-style: none;
+    place-items: start;
+
+    li {
+      div {
+        & .genre_list {
+          display: flex;
+          flex-wrap: wrap;
+          column-gap: 5px;
+          max-width: 15ch;
+        }
+      }
+    }
   }
 
   .media_data {
-    grid-area: mediadata;
+    grid-area: big_data;
   }
 }

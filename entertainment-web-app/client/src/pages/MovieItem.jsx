@@ -11,7 +11,7 @@ function MovieItem() {
 
   return (
     <MediaPage>
-      <h1>{mediaData.title}</h1>
+      <h1 className="media_title">{mediaData.title}</h1>
       <MediaDetails>
         <li>
           <h2>Year</h2>
@@ -43,34 +43,36 @@ function MovieItem() {
         className="posterImg"
         src={`https://image.tmdb.org/t/p/${poster_size}/${mediaData.poster_path}`}
       />
-      <div>
-        <div className="video-player">
-          <iframe
-            src={`https://www.youtube.com/embed/${mediaData.videoEmbedId.key}`}
-            frameBorder="0"
-            width="560"
-            height="315"
-            allowFullScreen
-            title="Embedded video player"
-            allow="accelerometer; clipboard-write; autoplay; encrypted-media"
-          ></iframe>
-        </div>
-        <h2>Synopsis</h2>
-        <p>{mediaData.overview}</p>
+      <div className="video-player">
+        <iframe
+          src={`https://www.youtube.com/embed/${mediaData.videoEmbedId.key}`}
+          frameBorder="0"
+          width="560"
+          height="315"
+          allowFullScreen
+          title="Embedded video player"
+          allow="accelerometer; clipboard-write; autoplay; encrypted-media"
+        ></iframe>
       </div>
-      <div>
-        <h2>Director</h2>
+      <div className="media_data">
         <div>
-          <img
-            className="castImg"
-            src={`https://image.tmdb.org/t/p/${profileImg_size}/${mediaData.director.profile_path}`}
-          />
-          <p>{mediaData.director.name}</p>
+          <h2>Synopsis</h2>
+          <p>{mediaData.overview}</p>
         </div>
-      </div>
-      <div>
-        <h2>Cast</h2>
-        <CastGrid cast={mediaData.cast} />
+        <div>
+          <h2>Director</h2>
+          <div>
+            <img
+              className="castImg"
+              src={`https://image.tmdb.org/t/p/${profileImg_size}/${mediaData.director.profile_path}`}
+            />
+            <p>{mediaData.director.name}</p>
+          </div>
+        </div>
+        <div>
+          <h2>Cast</h2>
+          <CastGrid cast={mediaData.cast} />
+        </div>
       </div>
     </MediaPage>
   );

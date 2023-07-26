@@ -1,10 +1,17 @@
 const MediaCard = ({ trending, media, type, id }) => {
+  const handleBookmark = (e) => {
+    e.stopPropagation();
+    console.log("clicked");
+  };
+
   return (
-    <a
-      href={`${type === "Movie" ? `movies/${id}` : `tvshows/${id}`}`}
-      className={`mediaCard${trending ? "_trending" : ""}`}
-    >
-      <button className="bookmarkIcon">
+    <div className={`mediaCard${trending ? "_trending" : ""}`}>
+      <a
+        href={`${type === "Movie" ? `movies/${id}` : `tvshows/${id}`}`}
+        className="media_link"
+        aria-label={`Read more about ${media.title}`}
+      ></a>
+      <button className="bookmarkIcon" onClick={handleBookmark}>
         <img src="/images/icon-bookmark-empty.svg" alt="bookmark" />
       </button>
       {/* TODO: Add <picture> to make it responsive with different size than original ref API config  */}
@@ -27,7 +34,7 @@ const MediaCard = ({ trending, media, type, id }) => {
         </div>
         {media.title ? <h2>{media.title}</h2> : <h2>{media.name}</h2>}
       </div>
-    </a>
+    </div>
   );
 };
 

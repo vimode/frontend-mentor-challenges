@@ -3,8 +3,19 @@
   position: relative;
   color: unset;
   text-decoration: none;
+  position: relative;
+
   .mediaimg {
     border-radius: 10px;
+  }
+
+  .media_link {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    top: 0;
+    left: 0;
   }
 
   .bookmarkIcon {
@@ -15,6 +26,17 @@
     border-radius: 50%;
     background: gray;
     padding: $space-4;
+    z-index: 20;
+
+    &:hover {
+      cursor: pointer;
+      opacity: $opacity-75;
+      transition: opacity 300ms linear;
+    }
+  }
+
+  @media (max-width: $layout-breakpoint-small) {
+    width: 240px;
   }
 }
 
