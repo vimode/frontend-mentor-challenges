@@ -1,5 +1,17 @@
 const baseURL = import.meta.env.VITE_BACKEND_URL;
 
+const getTrendingMoviesAndShows = async () => {
+  const res = await fetch(`${baseURL}multi/trending`);
+  if (!res.ok) {
+    throw {
+      message: "Failed to load Trending Data",
+      status: res.status,
+    };
+  }
+  const data = await res.json();
+  return data;
+};
+
 const getTrendingMovies = async () => {
   const res = await fetch(`${baseURL}movies/trending`);
   if (!res.ok) {
@@ -36,4 +48,9 @@ const getMovieDetails = async (id) => {
   return data;
 };
 
-export { getTrendingMovies, getPopularMovies, getMovieDetails };
+export {
+  getTrendingMoviesAndShows,
+  getTrendingMovies,
+  getPopularMovies,
+  getMovieDetails,
+};

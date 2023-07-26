@@ -14,7 +14,7 @@ const MediaCard = ({ trending, media, type, id }) => {
       />
       <div className="mediaCard_data">
         <div className="mediaCard_data_info">
-          {media.release_date && <p>{media.release_date} &#8226;</p>}
+          {media.release_year && <p>{media.release_year} &#8226;</p>}
           <p className="media_type">
             {type === "Movie" ? (
               <img src="/images/icon-category-movie.svg" alt="movie icon" />
