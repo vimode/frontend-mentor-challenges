@@ -86,7 +86,7 @@ const getMovieDetails = async (req, res) => {
       id: response.data.id,
       backdrop_path: response.data.backdrop_path,
       poster_path: response.data.poster_path,
-      title: response.data.original_title,
+      title: response.data.title,
       overview: response.data.overview,
       runtime: response.data.runtime,
       videoEmbedId: response.data.videos.results.filter(
