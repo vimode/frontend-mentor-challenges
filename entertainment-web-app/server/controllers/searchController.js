@@ -8,8 +8,7 @@ const searchMovies = async (req, res) => {
     method: "GET",
     headers: {
       accept: "application/json",
-      Authorization:
-        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiNjYzZWQzZWRjZGQzMGUzODQ5N2M3MzYzZmE0ZmYzNiIsInN1YiI6IjYwZGM1MDNmNTY5MGI1MDAyZTNiMTQ1YiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.6Vwc2FqAfnCmvr3JoxXgsqnB265lEMbw-zu8G1clhwA",
+      Authorization: `Bearer ${process.env.TMDB_ACCESS_TOKEN}`,
     },
   };
 
@@ -30,8 +29,7 @@ const searchShows = async (req, res) => {
     method: "GET",
     headers: {
       accept: "application/json",
-      Authorization:
-        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiNjYzZWQzZWRjZGQzMGUzODQ5N2M3MzYzZmE0ZmYzNiIsInN1YiI6IjYwZGM1MDNmNTY5MGI1MDAyZTNiMTQ1YiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.6Vwc2FqAfnCmvr3JoxXgsqnB265lEMbw-zu8G1clhwA",
+      Authorization: `Bearer ${process.env.TMDB_ACCESS_TOKEN}`,
     },
   };
 
@@ -52,8 +50,7 @@ const searchMoviesAndShows = async (req, res) => {
     method: "GET",
     headers: {
       accept: "application/json",
-      Authorization:
-        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiNjYzZWQzZWRjZGQzMGUzODQ5N2M3MzYzZmE0ZmYzNiIsInN1YiI6IjYwZGM1MDNmNTY5MGI1MDAyZTNiMTQ1YiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.6Vwc2FqAfnCmvr3JoxXgsqnB265lEMbw-zu8G1clhwA",
+      Authorization: `Bearer ${process.env.TMDB_ACCESS_TOKEN}`,
     },
   };
 
