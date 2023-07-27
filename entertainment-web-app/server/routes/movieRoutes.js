@@ -10,6 +10,6 @@ const router = express.Router();
 
 router.get("/trending", cachedMoviesDataMiddleware, getTrendingMovies);
 router.get("/popular", cachedMoviesDataMiddleware, getPopularMovies);
-router.get("/:id", getMovieDetails);
+router.get("/:id", cachedMoviesDataMiddleware, getMovieDetails);
 
 export default router;

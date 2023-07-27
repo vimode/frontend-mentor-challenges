@@ -1,4 +1,5 @@
 import axios from "axios";
+import { tvshowsCache } from "../middleware/dataCache.js";
 
 const getPopularTVShows = async (req, res) => {
   let url = `https://api.themoviedb.org/3/discover/tv?include_adult=false&original_language=en-US&with_original_language=en&page=1&sort_by=popularity.desc`;
@@ -21,6 +22,7 @@ const getPopularTVShows = async (req, res) => {
         rating: show.vote_average.toFixed(1),
       };
     });
+    await tvshowsCache.store.mset([["popular-tvshows", cleanedResponse]]);
     console.log(`accessed / populartvshows`);
     res.status(200).send(cleanedResponse);
   } catch (err) {
@@ -43,7 +45,6 @@ const getTVShowDetails = async (req, res) => {
 
   try {
     let response = await axios(url, options);
-    console.log(`accessed /${id}`);
     let cleanedResponse = {
       id: response.data.id,
       backdrop_path: response.data.backdrop_path,
@@ -63,6 +64,8 @@ const getTVShowDetails = async (req, res) => {
       genres: response.data.genres,
       cast: response.data.credits.cast,
     };
+    await tvshowsCache.store.mset([[`${id}`, cleanedResponse]], 900 * 1000);
+    console.log(`accessed /${id}`);
     res.status(200).send(cleanedResponse);
   } catch (err) {
     console.log(err);

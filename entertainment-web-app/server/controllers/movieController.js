@@ -101,6 +101,7 @@ const getMovieDetails = async (req, res) => {
       genres: response.data.genres,
       cast: response.data.credits.cast,
     };
+    await moviesCache.store.mset([[`${id}`, cleanedResponse]], 900 * 1000);
     console.log(`accessed /${id}`);
     res.status(200).send(cleanedResponse);
   } catch (err) {
