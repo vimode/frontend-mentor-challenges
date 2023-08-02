@@ -7,6 +7,6 @@ import {
 const router = express.Router();
 
 router.get("/bookmarks", getUserBookmarks);
-router.post("/bookmarks/:id", addNewBookmark);
+router.put("/:id", addNewBookmark);
 
 export default router;
