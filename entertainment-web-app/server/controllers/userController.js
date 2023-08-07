@@ -108,4 +108,13 @@ const addNewBookmark = async (req, res) => {
   }
 };
 
-export { getUserBookmarks, addNewBookmark };
+const getBookmarksDev = async (req, res) => {
+  try {
+    const users = await User.find();
+    res.json({ users });
+  } catch (e) {
+    console.log(e);
+  }
+};
+
+export { getUserBookmarks, addNewBookmark, getBookmarksDev };
