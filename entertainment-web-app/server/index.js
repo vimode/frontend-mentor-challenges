@@ -1,6 +1,7 @@
 import cors from "cors";
 import dotenv from "dotenv";
 import express from "express";
+import morgan from "morgan";
 import mongoose from "mongoose";
 
 import movieRoutes from "./routes/movieRoutes.js";
@@ -11,7 +12,7 @@ import userRoutes from "./routes/userRoutes.js";
 
 dotenv.config();
 
-const mongoUrl= process.env.MONGODB_URI;
+const mongoUrl = process.env.MONGODB_URI;
 if (!mongoUrl) {
   throw new Error("Please add the MONGO_URI enviornment variable");
 }
@@ -27,6 +28,7 @@ const port = process.env.PORT || 3001;
 const app = express();
 
 app.use(express.json());
+app.use(morgan("dev"));
 app.use(cors());
 
 app.use("/api/user", userRoutes);
