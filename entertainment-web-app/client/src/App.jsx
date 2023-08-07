@@ -10,12 +10,13 @@ import MoviesPage, { loader as moviesPageLoader } from "./pages/MoviesPage.jsx";
 import TVShowsPage, {
   loader as tvshowsPageLoader,
 } from "./pages/TVShowsPage.jsx";
+import { loader as userBookmarkLoader } from "./pages/BookmarksPage.jsx";
 import MovieItem from "./pages/MovieItem.jsx";
 import Login from "./pages/Login.jsx";
 import Signup from "./pages/Signup.jsx";
 import Error from "./components/Error.jsx";
 import BookmarksPage from "./pages/BookmarksPage.jsx";
-import { getMovieDetails } from "./services/movies.js";
+import { getMovieDetails, getUserBookmarks } from "./services/movies.js";
 import TVShowItem from "./pages/TVShowItem.jsx";
 import { getTVShowDetails } from "./services/tvshows.js";
 
@@ -58,6 +59,7 @@ const router = createBrowserRouter(
         <Route
           path="bookmarks"
           element={<BookmarksPage />}
+          loader={userBookmarkLoader}
           errorElement={<Error />}
         />
       </Route>

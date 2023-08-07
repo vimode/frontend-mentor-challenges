@@ -48,9 +48,41 @@ const getMovieDetails = async (id) => {
   return data;
 };
 
+// maybe create a different file for this and multi
+const saveToBookmark = async (userId, mediaId, type) => {
+  const options = {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ userId, mediaId, type }),
+  };
+  const res = await fetch(`${baseURL}user/bookmarks`, options);
+  if (!res.ok) {
+    throw {
+      message: "failed to saved data, please try again later",
+      status: res.status,
+    };
+  }
+  const data = await res.json();
+  return data;
+};
+
+const getUserBookmarks = async (userId) => {
+  const res = await fetch(`${baseURL}user/bookmarks/${userId}`);
+  if (!res.ok) {
+    throw {
+      message: "failed to get user data. please try again later",
+      status: res.status,
+    };
+  }
+  const data = await res.json();
+  return data;
+};
+
 export {
   getTrendingMoviesAndShows,
   getTrendingMovies,
   getPopularMovies,
   getMovieDetails,
+  saveToBookmark,
+  getUserBookmarks,
 };

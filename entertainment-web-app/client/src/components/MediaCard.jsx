@@ -1,7 +1,11 @@
+import { saveToBookmark } from "../services/movies";
+
 const MediaCard = ({ trending, media, type, id }) => {
-  const handleBookmark = (e) => {
+  const handleBookmark = async (e) => {
     e.stopPropagation();
-    console.log("clicked");
+    const userId = localStorage.getItem("UUID");
+    let data = await saveToBookmark(userId, id, type);
+    console.log(data);
   };
 
   return (
