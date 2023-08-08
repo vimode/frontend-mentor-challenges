@@ -1,10 +1,7 @@
 import { Suspense } from "react";
 import { useLoaderData, defer, Await } from "react-router-dom";
 import MediaCard from "../components/MediaCard";
-import {
-  getTrendingMovies,
-  getTrendingMoviesAndShows,
-} from "../services/movies";
+import { getTrendingMoviesAndShows } from "../services/movies";
 import Search from "../components/Search";
 
 export async function loader() {

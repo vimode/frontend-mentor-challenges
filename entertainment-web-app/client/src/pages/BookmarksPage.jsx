@@ -10,43 +10,91 @@ export async function loader() {
   return userBookmarkData;
 }
 
+// TODO: Handle error page when there are no bookmarks to show.
+// TODO: defer data
+
 function BookmarksPage() {
-  const [userBookmark, setUserBookmark] = useState(useLoaderData());
-  const filteredUserBookmarks = userBookmark;
+  const userBookmarkData = useLoaderData();
+  const [userBookmark, setUserBookmark] = useState(userBookmarkData);
+  const [allBookmarks, setAllBookmarks] = useState([
+    ...userBookmarkData.movieData,
+    ...userBookmarkData.tvData,
+  ]);
+  const [isSearch, setIsSearch] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const handleSearch = (e) => {
+    setSearchQuery(e.target.value);
+  };
+
+  const filteredBookmarks = allBookmarks.filter((bookmark) =>
+    bookmark.title.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
     <>
-      <Search />
+      {/* <Search /> */}
+      <>
+        <form className="search_form">
+          <input
+            type="search"
+            placeholder="Search for Movies or TV Series"
+            value={searchQuery}
+            onChange={handleSearch}
+          />
+        </form>
+      </>
       <main>
-        <section className="grid_listing_wrapper">
-          <h1>Bookmarked Movies</h1>
-          <div className="grid-listing">
-            {filteredUserBookmarks.movieData.map((media) => {
-              return (
-                <MediaCard
-                  type={media.type}
-                  key={media.id}
-                  id={media.id}
-                  media={media}
-                />
-              );
-            })}
-          </div>
-        </section>
-        <section className="grid_listing_wrapper">
-          <h1>Bookmarked Shows</h1>
-          <div className="grid-listing">
-            {filteredUserBookmarks.tvData.map((media) => {
-              return (
-                <MediaCard
-                  type={media.type}
-                  key={media.id}
-                  id={media.id}
-                  media={media}
-                />
-              );
-            })}
-          </div>
-        </section>
+        {filteredBookmarks.length > 1 ? (
+          <section className="grid_listing_wrapper">
+            <h1>Your Bookmarks</h1>
+            <div className="grid_listing">
+              {filteredBookmarks.map((media) => {
+                return (
+                  <MediaCard
+                    type={media.type}
+                    key={media.id}
+                    id={media.id}
+                    media={media}
+                  />
+                );
+              })}
+            </div>
+          </section>
+        ) : (
+          <>
+            <section className="grid_listing_wrapper">
+              <h1>Bookmarked Movies</h1>
+              <div className="grid_listing">
+                {userBookmarkData.movieData.map((media) => {
+                  return (
+                    <MediaCard
+                      type={media.type}
+                      key={media.id}
+                      id={media.id}
+                      media={media}
+                    />
+                  );
+                })}
+              </div>
+            </section>
+            <section className="grid_listing_wrapper">
+              <h1>Bookmarked Shows</h1>
+              <div className="grid_listing">
+                {userBookmarkData.tvData.map((media) => {
+                  return (
+                    <MediaCard
+                      type={media.type}
+                      key={media.id}
+                      id={media.id}
+                      media={media}
+                    />
+                  );
+                })}
+              </div>
+            </section>
+          </>
+        )}
       </main>
     </>
   );
