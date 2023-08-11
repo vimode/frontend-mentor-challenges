@@ -12,44 +12,38 @@ export async function loader() {
 
 // TODO: Handle error page when there are no bookmarks to show.
 // TODO: defer data
+//
+
+const filterBookmarks = (bookmarks, searchQuery) => {
+  if (!searchQuery) return bookmarks;
+  let query = searchQuery.toLowerCase().trim();
+
+  const movieData = bookmarks.movieData.filter((movie) =>
+    movie.title.toLowerCase().includes(query)
+  );
+  const tvData = bookmarks.tvData.filter((tv) =>
+    tv.name.toLowerCase().includes(query)
+  );
+
+  return { movieData, tvData };
+};
 
 function BookmarksPage() {
   const userBookmarkData = useLoaderData();
   const [userBookmark, setUserBookmark] = useState(userBookmarkData);
-  const [allBookmarks, setAllBookmarks] = useState([
-    ...userBookmarkData.movieData,
-    ...userBookmarkData.tvData,
-  ]);
-  const [isSearch, setIsSearch] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
 
-  const handleSearch = (e) => {
-    setSearchQuery(e.target.value);
-  };
-
-  const filteredBookmarks = allBookmarks.filter((bookmark) =>
-    bookmark.title.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  const filteredBookmarks = filterBookmarks(userBookmark, searchQuery);
 
   return (
     <>
-      {/* <Search /> */}
-      <>
-        <form className="search_form">
-          <input
-            type="search"
-            placeholder="Search for Movies or TV Series"
-            value={searchQuery}
-            onChange={handleSearch}
-          />
-        </form>
-      </>
+      <Search searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
       <main>
-        {filteredBookmarks.length > 1 ? (
+        <>
           <section className="grid_listing_wrapper">
-            <h1>Your Bookmarks</h1>
+            <h1>Bookmarked Movies</h1>
             <div className="grid_listing">
-              {filteredBookmarks.map((media) => {
+              {filteredBookmarks.movieData.map((media) => {
                 return (
                   <MediaCard
                     type={media.type}
@@ -61,40 +55,22 @@ function BookmarksPage() {
               })}
             </div>
           </section>
-        ) : (
-          <>
-            <section className="grid_listing_wrapper">
-              <h1>Bookmarked Movies</h1>
-              <div className="grid_listing">
-                {userBookmarkData.movieData.map((media) => {
-                  return (
-                    <MediaCard
-                      type={media.type}
-                      key={media.id}
-                      id={media.id}
-                      media={media}
-                    />
-                  );
-                })}
-              </div>
-            </section>
-            <section className="grid_listing_wrapper">
-              <h1>Bookmarked Shows</h1>
-              <div className="grid_listing">
-                {userBookmarkData.tvData.map((media) => {
-                  return (
-                    <MediaCard
-                      type={media.type}
-                      key={media.id}
-                      id={media.id}
-                      media={media}
-                    />
-                  );
-                })}
-              </div>
-            </section>
-          </>
-        )}
+          <section className="grid_listing_wrapper">
+            <h1>Bookmarked Shows</h1>
+            <div className="grid_listing">
+              {filteredBookmarks.tvData.map((media) => {
+                return (
+                  <MediaCard
+                    type={media.type}
+                    key={media.id}
+                    id={media.id}
+                    media={media}
+                  />
+                );
+              })}
+            </div>
+          </section>
+        </>
       </main>
     </>
   );
