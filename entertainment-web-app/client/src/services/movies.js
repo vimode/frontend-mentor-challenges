@@ -1,7 +1,7 @@
-const baseURL = import.meta.env.VITE_BACKEND_URL;
+const baseURL = `${import.meta.env.VITE_BACKEND_URL}`;
 
 const getTrendingMoviesAndShows = async () => {
-  const res = await fetch(`${baseURL}multi/trending`);
+  const res = await fetch(`${baseURL}/multi/trending`);
   if (!res.ok) {
     throw {
       message: "Failed to load Trending Data",
@@ -13,7 +13,7 @@ const getTrendingMoviesAndShows = async () => {
 };
 
 const getTrendingMovies = async () => {
-  const res = await fetch(`${baseURL}movies/trending`);
+  const res = await fetch(`${baseURL}/movies/trending`);
   if (!res.ok) {
     throw {
       message: "Failed to load Trending movies",
@@ -25,7 +25,7 @@ const getTrendingMovies = async () => {
 };
 
 const getPopularMovies = async () => {
-  const res = await fetch(`${baseURL}movies/popular`);
+  const res = await fetch(`${baseURL}/movies/popular`);
   if (!res.ok) {
     throw {
       message: "failed to load Popular Movies",
@@ -37,40 +37,10 @@ const getPopularMovies = async () => {
 };
 
 const getMovieDetails = async (id) => {
-  const res = await fetch(`${baseURL}movies/${id}`);
+  const res = await fetch(`${baseURL}/movies/${id}`);
   if (!res.ok) {
     throw {
       message: "failed to load movie details, please try again later",
-      status: res.status,
-    };
-  }
-  const data = await res.json();
-  return data;
-};
-
-// maybe create a different file for this and multi
-const saveToBookmark = async (userId, mediaId, type) => {
-  const options = {
-    method: "PUT",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ userId, mediaId, type }),
-  };
-  const res = await fetch(`${baseURL}user/bookmarks`, options);
-  if (!res.ok) {
-    throw {
-      message: "failed to saved data, please try again later",
-      status: res.status,
-    };
-  }
-  const data = await res.json();
-  return data;
-};
-
-const getUserBookmarks = async (userId) => {
-  const res = await fetch(`${baseURL}user/bookmarks/${userId}`);
-  if (!res.ok) {
-    throw {
-      message: "failed to get user data. please try again later",
       status: res.status,
     };
   }
@@ -83,6 +53,4 @@ export {
   getTrendingMovies,
   getPopularMovies,
   getMovieDetails,
-  saveToBookmark,
-  getUserBookmarks,
 };
