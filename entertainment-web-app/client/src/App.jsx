@@ -16,7 +16,7 @@ import Login from "./pages/Login.jsx";
 import Signup from "./pages/Signup.jsx";
 import Error from "./components/Error.jsx";
 import BookmarksPage from "./pages/BookmarksPage.jsx";
-import { getMovieDetails, getUserBookmarks } from "./services/movies.js";
+import { getMovieDetails } from "./services/movies.js";
 import TVShowItem from "./pages/TVShowItem.jsx";
 import { getTVShowDetails } from "./services/tvshows.js";
 
