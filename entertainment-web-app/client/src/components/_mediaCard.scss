@@ -4,10 +4,13 @@
   color: unset;
   text-decoration: none;
   position: relative;
-  height:max-content;
+  height: max-content;
 
   .mediaimg {
     border-radius: 10px;
+    object-fit: cover;
+    width: 100%;
+    aspect-ratio: 16/9;
   }
 
   .media_link {
