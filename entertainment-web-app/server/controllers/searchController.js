@@ -14,7 +14,17 @@ const searchMovies = async (req, res) => {
 
   try {
     let searchResults = await axios(url, options);
-    res.status(200).send(searchResults.data);
+    const results = await searchResults.data.results.map((media) => {
+      return {
+        id: media.id,
+        backdrop_path: media.backdrop_path || media.poster_path || null,
+        title: media.title || media.name,
+        release_year: media.release_date?.slice(0, 4),
+        type: media.media_type,
+        rating: media.vote_average.toFixed(1),
+      };
+    });
+    res.status(200).send(results);
   } catch (err) {
     console.error(err);
     res.status(401).send({ message: "Something went wrong", Error: err });
@@ -35,7 +45,17 @@ const searchShows = async (req, res) => {
 
   try {
     let searchResults = await axios(url, options);
-    res.status(200).send(searchResults);
+    const results = await searchResults.data.results.map((media) => {
+      return {
+        id: media.id,
+        backdrop_path: media.backdrop_path || media.poster_path || null,
+        title: media.title || media.name,
+        release_year: media.release_date?.slice(0, 4),
+        type: media.media_type,
+        rating: media.vote_average.toFixed(1),
+      };
+    });
+    res.status(200).send(results);
   } catch (err) {
     console.error(err);
     res.status(401).send({ message: "Something went wrong", Error: err });
@@ -59,8 +79,18 @@ const searchMoviesAndShows = async (req, res) => {
     let filteredSeachResults = await searchResults.data.results.filter(
       (media) => media.media_type !== "person"
     );
+    const results = await filteredSeachResults.map((media) => {
+      return {
+        id: media.id,
+        backdrop_path: media.backdrop_path || media.poster_path || null,
+        title: media.title || media.name,
+        release_year: media.release_date?.slice(0, 4),
+        type: media.media_type,
+        rating: media.vote_average.toFixed(1),
+      };
+    });
     // res.status(200).send(searchResults.data);
-    res.status(200).send(filteredSeachResults);
+    res.status(200).send(results);
   } catch (err) {
     console.error(err);
     res.status(401).send({ message: "Something went wrong", Error: err });

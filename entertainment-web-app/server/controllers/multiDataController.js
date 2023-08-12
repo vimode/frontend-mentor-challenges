@@ -34,7 +34,7 @@ const getTrendingMoviesAndShows = async (req, res) => {
           backdrop_path: movie.backdrop_path,
           title: movie.title,
           release_year: movie.release_date.slice(0, 4),
-          type: "Movie",
+          type: "movie",
           rating: movie.vote_average.toFixed(1),
         };
       });
@@ -46,7 +46,7 @@ const getTrendingMoviesAndShows = async (req, res) => {
           backdrop_path: show.backdrop_path,
           name: show.name,
           release_year: show.first_air_date.slice(0, 4),
-          type: "TV Show",
+          type: "tv",
           rating: show.vote_average.toFixed(1),
         };
       });
