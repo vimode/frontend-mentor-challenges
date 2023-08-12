@@ -1,8 +1,8 @@
-import { useLoaderData } from "react-router-dom";
-import Search from "../components/Search";
-import { getUserBookmarks } from "../services/movies";
 import { useState } from "react";
+import { useLoaderData } from "react-router-dom";
 import MediaCard from "../components/MediaCard";
+import Search from "../components/Search";
+import { getUserBookmarks } from "../services/user.js";
 
 export async function loader() {
   const userId = localStorage.getItem("UUID");
@@ -14,24 +14,24 @@ export async function loader() {
 // TODO: defer data
 //
 
-const filterBookmarks = (bookmarks, searchQuery) => {
-  if (!searchQuery) return bookmarks;
-  let query = searchQuery.toLowerCase().trim();
-
-  const movieData = bookmarks.movieData.filter((movie) =>
-    movie.title.toLowerCase().includes(query)
-  );
-  const tvData = bookmarks.tvData.filter((tv) =>
-    tv.name.toLowerCase().includes(query)
-  );
-
-  return { movieData, tvData };
-};
-
 function BookmarksPage() {
   const userBookmarkData = useLoaderData();
   const [userBookmark, setUserBookmark] = useState(userBookmarkData);
   const [searchQuery, setSearchQuery] = useState("");
+
+  const filterBookmarks = (bookmarks, searchQuery) => {
+    if (!searchQuery) return bookmarks;
+    let query = searchQuery.toLowerCase().trim();
+
+    const movieData = bookmarks.movieData.filter((movie) =>
+      movie.title.toLowerCase().includes(query)
+    );
+    const tvData = bookmarks.tvData.filter((tv) =>
+      tv.name.toLowerCase().includes(query)
+    );
+
+    return { movieData, tvData };
+  };
 
   const filteredBookmarks = filterBookmarks(userBookmark, searchQuery);
 
