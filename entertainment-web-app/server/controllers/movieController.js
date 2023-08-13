@@ -55,7 +55,7 @@ const getPopularMovies = async (req, res) => {
         backdrop_path: movie.backdrop_path,
         title: movie.title,
         release_year: movie.release_date.slice(0, 4),
-        type: movie.media_type,
+        type: movie.media_type || "movie",
         rating: movie.vote_average.toFixed(1),
       };
     });
