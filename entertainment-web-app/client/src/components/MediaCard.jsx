@@ -1,17 +1,17 @@
 import { saveToBookmark } from "../services/user.js";
 
-const MediaCard = ({ trending, media, type, id }) => {
+const MediaCard = ({ trending, media, id }) => {
   const handleBookmark = async (e) => {
     e.stopPropagation();
     const userId = localStorage.getItem("UUID");
-    let data = await saveToBookmark(userId, id, type);
+    let data = await saveToBookmark(userId, id, media.type);
     console.log(data);
   };
 
   return (
     <div className={`mediaCard${trending ? "_trending" : ""}`}>
       <a
-        href={`${type === "movie" ? `movies/${id}` : `tvshows/${id}`}`}
+        href={`${media.type === "movie" ? `movies/${id}` : `tvshows/${id}`}`}
         className="media_link"
         aria-label={`Read more about ${media.title}`}
       ></a>
@@ -27,13 +27,13 @@ const MediaCard = ({ trending, media, type, id }) => {
         <div className="mediaCard_data_info">
           {media.release_year && <p>{media.release_year} &#8226;</p>}
           <p className="media_type">
-            {type === "movie" ? (
+            {media.type === "movie" ? (
               <img src="/images/icon-category-movie.svg" alt="movie icon" />
             ) : (
               <img src="/images/icon-category-tv.svg" alt="tv series icon" />
             )}{" "}
-            {type === "movie"
-              ? type.charAt(0).toUpperCase() + type.slice(1)
+            {media.type === "movie"
+              ? media.type.charAt(0).toUpperCase() + media.type.slice(1)
               : "TV"}{" "}
             &#8226;
           </p>
