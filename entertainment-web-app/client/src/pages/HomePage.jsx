@@ -47,7 +47,10 @@ const HomePage = () => {
 
   return (
     <>
-      <Search searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+      <Search
+        value={searchQuery ?? ""}
+        onChange={(value) => setSearchQuery(value)}
+      />
       <main>
         {searchQuery.length > 1 ? (
           renderSearchResults()

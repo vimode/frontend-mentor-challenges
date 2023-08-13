@@ -4,7 +4,6 @@ import { getPopularMovies } from "../services/movies";
 import MediaCard from "../components/MediaCard";
 import Search from "../components/Search";
 import { searchMovies } from "../services/search";
-import debounce from "lodash.debounce";
 
 export async function loader() {
   //TODO: Add defer data
@@ -46,27 +45,12 @@ const MoviesPage = () => {
     );
   };
 
-  // const debounceFilter = useCallback(
-  //   debounce((query) => {
-  //     setFilteredMoviesData(
-  //       filteredMoviesData.filter((movie) =>
-  //         movie.title.toLowerCase().includes(query.toLowerCase())
-  //       )
-  //     );
-  //   }, 3000),
-  //   []
-  // );
-  //
-  // const searchMovies = (e) => {
-  //   e.preventDefault();
-  //   const { value } = e.target;
-  //   if (value.length === 0) return setFilteredMoviesData(moviesData);
-  //   if (value.length >= 1) debounceFilter(value);
-  // };
-  //
   return (
     <>
-      <Search searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+      <Search
+        value={searchQuery ?? ""}
+        onChange={(value) => setSearchQuery(value)}
+      />
       <main>
         {searchQuery.length > 1 ? (
           renderSearchResults()
@@ -75,12 +59,7 @@ const MoviesPage = () => {
             <h1>Movies</h1>
             <div className="grid_listing">
               {moviesData.map((media) => (
-                <MediaCard
-                  key={media.id}
-                  id={media.id}
-                  type="Movie"
-                  media={media}
-                />
+                <MediaCard key={media.id} id={media.id} media={media} />
               ))}
             </div>
           </section>

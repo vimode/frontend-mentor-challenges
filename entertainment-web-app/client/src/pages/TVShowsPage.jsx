@@ -46,7 +46,10 @@ const TVShowsPage = () => {
   };
   return (
     <>
-      <Search searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+      <Search
+        value={searchQuery ?? ""}
+        onChange={(value) => setSearchQuery(value)}
+      />
       <main>
         {searchQuery.length > 1 ? (
           renderSearchResults()
@@ -55,12 +58,7 @@ const TVShowsPage = () => {
             <h1>TV Shows</h1>
             <div className="grid_listing">
               {tvShowData.map((media) => (
-                <MediaCard
-                  key={media.id}
-                  id={media.id}
-                  type="TV Series"
-                  media={media}
-                />
+                <MediaCard key={media.id} id={media.id} media={media} />
               ))}
             </div>
           </section>
