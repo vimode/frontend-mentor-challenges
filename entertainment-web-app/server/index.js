@@ -37,13 +37,14 @@ app.use("/api/tvshows", tvShowRoutes);
 app.use("/api/search", searchRoutes);
 app.use("/api/multi", multiRoutes);
 
+app.get("/", (req, res) => {
+  res.send({message: "API Server OK"});
+});
+
 // catch-all route?
 app.get("*", (req, res) => {
   res.send(`Nothing to see at ${req.params[0]}`);
 });
 
-app.get("/", (req, res) => {
-  res.send("API Server OK");
-});
 
 app.listen(port, () => console.log(`Server started on port ${port}`));

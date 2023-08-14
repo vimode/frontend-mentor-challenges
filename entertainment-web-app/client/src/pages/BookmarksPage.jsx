@@ -37,7 +37,10 @@ function BookmarksPage() {
 
   return (
     <>
-      <Search searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+      <Search
+        value={searchQuery ?? ""}
+        onChange={(value) => setSearchQuery(value)}
+      />
       <main>
         <>
           <section className="grid_listing_wrapper">

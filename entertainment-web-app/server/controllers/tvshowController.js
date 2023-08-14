@@ -67,6 +67,7 @@ const getTVShowDetails = async (req, res) => {
     };
     await tvshowsCache.store.mset([[`${id}`, cleanedResponse]], 900 * 1000);
     console.log(`accessed /${id}`);
+    console.log(response.data);
     res.status(200).send(cleanedResponse);
   } catch (err) {
     console.log(err);

@@ -1,12 +1,6 @@
 import { useEffect, useState } from "react";
 
-const Search = ({
-  value: initialValue,
-  debounce = 500,
-  onChange,
-  searchQuery,
-  setSearchQuery,
-}) => {
+const Search = ({ value: initialValue, debounce = 500, onChange }) => {
   const [value, setValue] = useState(initialValue);
 
   const handleInputChange = (event) => {
