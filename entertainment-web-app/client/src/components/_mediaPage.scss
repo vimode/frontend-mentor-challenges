@@ -2,17 +2,36 @@
   display: grid;
   grid:
     "title title" auto
-    "small_data small_data" auto
     "posterimage videoiframe" auto
+    "small_data small_data" auto
     "big_data big_data" auto
     / 30% auto;
+  gap: $space-5;
+  padding : {
+    top: $space-8;
+    right: $space-8;
+  }
+
+  @media (max-width: $layout-breakpoint-small) {
+    grid:
+      " title title "
+      " posterimage small_data"
+      " videoiframe videoiframe"
+      "big_data big_data"
+      /70% auto;
+  }
 
   .media_title {
     grid-area: title;
+    font-size: $text-2xl;
   }
 
   .posterImg {
     grid-area: posterimage;
+    place-self: center;
+    width: 100%;
+    height: auto;
+    border-radius: $space-4;
   }
 
   .small_data {
@@ -20,7 +39,12 @@
     display: flex;
     place-content: space-between;
     list-style: none;
+    padding: 0;
     place-items: start;
+
+    @media (max-width: $layout-breakpoint-small) {
+      flex-direction: column;
+    }
 
     li {
       div {
@@ -36,5 +60,8 @@
 
   .media_data {
     grid-area: big_data;
+    display: flex;
+    flex-direction: column;
+    gap: $space-6;
   }
 }

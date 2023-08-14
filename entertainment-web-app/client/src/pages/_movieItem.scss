@@ -1,9 +1,10 @@
 .video-player {
   height: 0;
   overflow: hidden;
-  padding-bottom: 50%;
+  padding-bottom: 66%;
   position: relative;
   grid-area: videoiframe;
+  border-radius: $space-4;
 
   iframe {
     left: 0;

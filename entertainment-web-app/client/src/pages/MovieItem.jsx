@@ -6,7 +6,7 @@ import MediaPage from "../components/MediaPage";
 function MovieItem() {
   const mediaData = useLoaderData();
 
-  let poster_size = "w185";
+  let poster_size = "w500";
   let profileImg_size = "h632";
 
   return (
@@ -41,7 +41,7 @@ function MovieItem() {
       {/* TODO: Add <picture> to make it responsive with different poster_size ref API config  */}
       <img
         className="posterImg"
-        src={`https://image.tmdb.org/t/p/${poster_size}/${mediaData.poster_path}`}
+        src={`https://image.tmdb.org/t/p/${poster_size}${mediaData.poster_path}`}
       />
       <div className="video-player">
         <iframe

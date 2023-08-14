@@ -52,7 +52,7 @@ const HomePage = () => {
         onChange={(value) => setSearchQuery(value)}
       />
       <main>
-        {searchQuery.length > 1 ? (
+        {searchQuery?.length > 1 ? (
           renderSearchResults()
         ) : (
           <>

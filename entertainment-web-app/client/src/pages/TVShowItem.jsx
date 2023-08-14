@@ -61,18 +61,20 @@ export default function TVShowItem() {
         <div>
           <h2>Created by</h2>
           <div>
-            {mediaData.created_by.profile_path ? (
+            {mediaData.created_by && mediaData.created_by.profile_path ? (
               <img
                 className="castImg"
-                src={`https://image.tmdb.org/t/p/${profileImg_size}/${mediaData.created_by.profile_path}`}
+                src={`https://image.tmdb.org/t/p/${profileImg_size}/${mediaData.created_by?.profile_path}`}
               />
             ) : (
               <img
                 className="castImg"
-                src={`https://ui-avatars.com/api/?size=512&font-size=0.25&background=171e31&color=fff&&name=${mediaData.created_by.name}`}
+                src={`https://ui-avatars.com/api/?size=512&font-size=0.25&background=171e31&color=fff&&name=${
+                  mediaData.created_by?.name || "John Doe"
+                }`}
               />
             )}
-            <p>{mediaData.created_by.name}</p>
+            <p>{mediaData.created_by?.name || "John Doe"}</p>
           </div>
         </div>
         <div>

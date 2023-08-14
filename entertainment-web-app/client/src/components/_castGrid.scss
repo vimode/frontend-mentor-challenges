@@ -1,7 +1,19 @@
+div {
+  ul {
+    display: flex;
+    padding: 0;
+    flex-wrap: wrap;
+    gap: $space-6;
+
+    li {
+      list-style: none;
+    }
+  }
+}
 .castImg {
-  width: 200px;
+  max-width: 200px;
   height: 200px;
-  border-radius: 20%;
-  object-fit: cover;
+  border-radius: $space-4;
+  object-fit: contain;
   object-position: center;
 }
