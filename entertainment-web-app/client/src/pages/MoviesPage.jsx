@@ -1,13 +1,13 @@
-import { useState, useEffect, useCallback } from "react";
-import { useLoaderData } from "react-router-dom";
+import { useState, useEffect, Suspense } from "react";
+import { useLoaderData, defer, Await } from "react-router-dom";
 import { getPopularMovies } from "../services/movies";
 import MediaCard from "../components/MediaCard";
 import Search from "../components/Search";
 import { searchMovies } from "../services/search";
 
 export async function loader() {
-  //TODO: Add defer data
-  return getPopularMovies();
+  let popularMoviesData = await getPopularMovies();
+  return defer({ popularMoviesData });
 }
 
 const MoviesPage = () => {
@@ -57,11 +57,19 @@ const MoviesPage = () => {
         ) : (
           <section>
             <h1>Movies</h1>
-            <div className="grid_listing">
-              {moviesData.map((media) => (
-                <MediaCard key={media.id} id={media.id} media={media} />
-              ))}
-            </div>
+            <Suspense fallback={<>Loading...</>}>
+              <Await resolve={moviesData}>
+                {(movies) => {
+                  return (
+                    <div className="grid_listing">
+                      {movies.popularMoviesData.map((media) => (
+                        <MediaCard key={media.id} id={media.id} media={media} />
+                      ))}
+                    </div>
+                  );
+                }}
+              </Await>
+            </Suspense>
           </section>
         )}
       </main>

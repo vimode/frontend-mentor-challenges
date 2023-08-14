@@ -1,13 +1,13 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, defer, Await } from "react-router-dom";
 import { getPopularTVShows } from "../services/tvshows";
 import MediaCard from "../components/MediaCard";
 import Search from "../components/Search";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { searchTVshows } from "../services/search";
 
 export async function loader() {
-  // TODO: Add defer data
-  return getPopularTVShows();
+  let popularShowsData = await getPopularTVShows();
+  return defer({ popularShowsData });
 }
 
 const TVShowsPage = () => {
@@ -44,6 +44,7 @@ const TVShowsPage = () => {
       </section>
     );
   };
+
   return (
     <>
       <Search
@@ -56,11 +57,19 @@ const TVShowsPage = () => {
         ) : (
           <section>
             <h1>TV Shows</h1>
-            <div className="grid_listing">
-              {tvShowData.map((media) => (
-                <MediaCard key={media.id} id={media.id} media={media} />
-              ))}
-            </div>
+            <Suspense fallback={<>Loading...</>}>
+              <Await resolve={tvShowData}>
+                {(tvshows) => {
+                  return (
+                    <div className="grid_listing">
+                      {tvshows.popularShowsData.map((media) => (
+                        <MediaCard key={media.id} id={media.id} media={media} />
+                      ))}
+                    </div>
+                  );
+                }}
+              </Await>
+            </Suspense>
           </section>
         )}
       </main>
