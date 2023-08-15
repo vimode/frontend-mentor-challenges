@@ -1,6 +1,7 @@
 import { caching } from "cache-manager";
 const moviesCache = await caching("memory", { max: 100, ttl: 300 * 1000 });
 const tvshowsCache = await caching("memory", { max: 100, ttl: 300 * 1000 });
+const multiCache = await caching("memory", { max: 100, ttl: 300 * 1000 });
 
 const cachedMoviesDataMiddleware = async (req, res, next) => {
   async function getCacheData(key) {
@@ -30,6 +31,7 @@ const cachedMoviesDataMiddleware = async (req, res, next) => {
       }
     default:
       try {
+        console.log(pathname);
         return getCacheData(pathname);
       } catch (err) {
         console.log(err);

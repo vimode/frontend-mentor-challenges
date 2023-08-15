@@ -3,6 +3,7 @@ import { NavLink, Outlet } from "react-router-dom";
 
 const Layout = () => {
   const [uuid, setUuid] = useState(localStorage.getItem("UUID") || null);
+
   useEffect(() => {
     if (!uuid) {
       let randomId = self.crypto.randomUUID();
