@@ -14,7 +14,7 @@ dotenv.config();
 
 const mongoUrl = process.env.MONGODB_URI;
 if (!mongoUrl) {
-  throw new Error("Please add the MONGO_URI enviornment variable");
+  throw new Error("Please add the MONGO_URI environment variable");
 }
 
 mongoose.connect(mongoUrl);
@@ -38,13 +38,12 @@ app.use("/api/search", searchRoutes);
 app.use("/api/multi", multiRoutes);
 
 app.get("/", (req, res) => {
-  res.send({message: "API Server OK"});
+  res.send({ message: "API Server OK" });
 });
 
 // catch-all route?
 app.get("*", (req, res) => {
   res.send(`Nothing to see at ${req.params[0]}`);
 });
-
 
 app.listen(port, () => console.log(`Server started on port ${port}`));
