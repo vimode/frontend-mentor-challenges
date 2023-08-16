@@ -55,7 +55,7 @@ const MoviesPage = () => {
         {searchQuery.length > 1 ? (
           renderSearchResults()
         ) : (
-          <section>
+          <section className="grid_listing_wrapper">
             <h1>Movies</h1>
             <Suspense fallback={<>Loading...</>}>
               <Await resolve={moviesData}>

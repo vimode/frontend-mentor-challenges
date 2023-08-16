@@ -56,7 +56,7 @@ const HomePage = () => {
           renderSearchResults()
         ) : (
           <>
-            <section>
+            <section className="grid_trending_wrapper">
               <h1>Trending</h1>
               {/* TODO: Create a loading component */}
               <Suspense fallback={<>Loading...</>}>

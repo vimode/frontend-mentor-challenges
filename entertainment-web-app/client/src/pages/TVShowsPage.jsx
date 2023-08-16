@@ -55,7 +55,7 @@ const TVShowsPage = () => {
         {searchQuery.length > 1 ? (
           renderSearchResults()
         ) : (
-          <section>
+          <section className="grid_listing_wrapper">
             <h1>TV Shows</h1>
             <Suspense fallback={<>Loading...</>}>
               <Await resolve={tvShowData}>

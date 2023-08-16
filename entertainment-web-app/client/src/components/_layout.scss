@@ -7,13 +7,13 @@ nav {
   background-color: $midnight-bg;
   border-radius: $space-4;
   padding: $space-8;
-  max-width: 100px;
+  max-width: 1440px;
   width: 100%;
 
   @media (max-width: $layout-breakpoint-med) {
     flex-direction: row;
     // TODO: fix this hack with #root layout  grid as margin content margin...
-    max-width: 98%;
+    max-width: 100vw;
     place-content: space-between;
     max-height: 80px;
   }
@@ -55,23 +55,23 @@ nav {
     border: 1px solid $color-white;
     border-radius: 50%;
     width: 40px;
-    
-  @media (max-width: $layout-breakpoint-med) {
-    margin-top: unset;
-  }
+
+    @media (max-width: $layout-breakpoint-med) {
+      margin-top: unset;
+    }
   }
 }
 
 .search_form {
   grid-area: search;
-  height: 80px;
-  margin-top: $space-8;
+  height: max-content;
+  padding: $space-8 $space-5;
+  max-width: 100vw;
 
   input[type="search"] {
-    background-color: transparent;
-    background: left / 28px no-repeat url("/images/icon-search.svg");
+    background: left / 28px no-repeat url("/images/icon-search.svg") transparent;
     padding-left: 56px;
-    max-height: 32px;
+    height: 32px;
     height: 100%;
     width: 100%;
     caret-color: $color-white;
@@ -79,6 +79,10 @@ nav {
     outline: none;
     color: $color-white;
     @include heading-medium;
+
+    @media (max-width: $layout-breakpoint-med) {
+      @include heading-xs;
+    }
 
     &::placeholder {
       color: $color-white;

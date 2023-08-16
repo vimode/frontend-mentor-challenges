@@ -1,15 +1,30 @@
-.grid_trending {
-  display: grid;
+.grid_trending_wrapper {
+  padding: $space-5 0 $space-5 $space-5;
+  display: flex;
+  flex-direction: column;
+  gap: $space-5;
   overflow-x: auto;
   overflow-y: hidden;
-  gap: $space-10;
-  padding: $space-5 0;
-  grid-auto-flow: column;
-  grid-template-columns: repeat(5, calc(50% - 50px));
+
+  .grid_trending {
+    display: grid;
+    gap: $space-10;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(5, calc(50% - 150px));
+    width: 95vw;
+    max-width: 1260px;
+
+    @media (max-width: $layout-breakpoint-med) {
+      grid-template-columns: repeat(5, 60%);
+      gap: $space-8;
+      width: 100vw;
+    }
+  }
 }
 
 .grid_listing_wrapper {
   padding: $space-8 $space-5;
+  max-width: 100vw;
 }
 
 .grid_listing {
@@ -24,5 +39,6 @@
 
   @media (max-width: 600px) {
     grid-template-columns: repeat(2, 1fr);
+    gap: $space-5;
   }
 }

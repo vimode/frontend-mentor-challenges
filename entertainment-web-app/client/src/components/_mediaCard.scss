@@ -28,59 +28,65 @@
     right: 6%;
     border: 1px solid transparent;
     border-radius: 50%;
-    background: gray;
+    background: $dark-bg;
     padding: $space-4;
     z-index: 20;
+    opacity: $opacity-75;
+
+    @media (max-width: $layout-breakpoint-med) {
+      padding: $space-3;
+    }
 
     &:hover {
       cursor: pointer;
-      opacity: $opacity-75;
+      opacity: $opacity-50;
       transition: opacity 300ms linear;
     }
   }
 
-  @media (max-width: $layout-breakpoint-small) {
-    width: 240px;
-  }
-}
+  .mediaCard_data {
+    .mediaCard_data_info {
+      display: flex;
+      flex-direction: row;
+      gap: $space-2;
+      margin-top: $space-2;
 
-.mediaCard_data_info {
-  display: flex;
-  flex-direction: row;
-  gap: $space-2;
+      p {
+        @include body-medium;
+        opacity: $opacity-75;
 
-  p {
-    @include body-medium;
-    opacity: $opacity-75;
-  }
+        @media (max-width: $layout-breakpoint-med) {
+          @include body-small;
+        }
+      }
 
-  .media_type {
-    img {
-      display: inline-block;
+      .media_type {
+        img {
+          display: inline-block;
+        }
+      }
+    }
+    h2 {
+      @include heading-xs;
+    }
+    .mediaimg:hover {
+      -webkit-mask-image: linear-gradient(
+        90deg,
+        rgba(198, 198, 198, 0.5) 0%,
+        rgba(199, 199, 199, 0.5) 100%
+      );
+      mask-image: linear-gradient(
+        90deg,
+        rgba(198, 198, 198, 0.5) 0%,
+        rgba(199, 199, 199, 0.5) 100%
+      );
     }
   }
-}
-
-.mediaimg:hover {
-  -webkit-mask-image: linear-gradient(
-    90deg,
-    rgba(198, 198, 198, 0.5) 0%,
-    rgba(199, 199, 199, 0.5) 100%
-  );
-  mask-image: linear-gradient(
-    90deg,
-    rgba(198, 198, 198, 0.5) 0%,
-    rgba(199, 199, 199, 0.5) 100%
-  );
 }
 
 .mediaCard_trending {
   @extend .mediaCard;
   position: relative;
-
-  @media (max-width: $layout-breakpoint-small) {
-    width: 240px;
-  }
 
   .mediaCard_data {
     position: absolute;
@@ -88,6 +94,11 @@
     padding: $space-6;
     bottom: 0;
     background: linear-gradient(0deg, hsla(0, 0%, 0%, 0.75), 60%, transparent);
+    border-radius: 10px;
+
+    @media (max-width: $layout-breakpoint-small) {
+      padding: $space-4;
+    }
 
     h2 {
       word-break: normal;
