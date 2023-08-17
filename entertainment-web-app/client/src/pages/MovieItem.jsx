@@ -6,9 +6,6 @@ import MediaPage from "../components/MediaPage";
 function MovieItem() {
   const mediaData = useLoaderData();
 
-  let poster_size = "w500";
-  let profileImg_size = "h632";
-
   return (
     <MediaPage>
       <h1 className="media_title">{mediaData.title}</h1>
@@ -38,11 +35,20 @@ function MovieItem() {
           <p>English</p>
         </li>
       </MediaDetails>
-      {/* TODO: Add <picture> to make it responsive with different poster_size ref API config  */}
-      <img
-        className="posterImg"
-        src={`https://image.tmdb.org/t/p/${poster_size}${mediaData.poster_path}`}
-      />
+      <picture>
+        <source
+          srcSet={`https://image.tmdb.org/t/p/w342${mediaData.poster_path}`}
+          media="(max-width:1200px)"
+        />
+        <source
+          srcSet={`https://image.tmdb.org/t/p/w500${mediaData.poster_path}`}
+          media="(max-width:1440px)"
+        />
+        <img
+          className="posterImg"
+          src={`https://image.tmdb.org/t/p/w500${mediaData.poster_path}`}
+        />
+      </picture>
       <div className="video-player">
         <iframe
           src={`https://www.youtube.com/embed/${mediaData.videoEmbedId.key}`}
@@ -62,10 +68,16 @@ function MovieItem() {
         <div>
           <h2>Director</h2>
           <div>
-            <img
-              className="castImg"
-              src={`https://image.tmdb.org/t/p/${profileImg_size}/${mediaData.director.profile_path}`}
-            />
+            <picture>
+              <source
+                srcSet={`https://image.tmdb.org/t/p/w185${mediaData.director.profile_path}`}
+                media="(max-width:1440px)"
+              />
+              <img
+                className="castImg"
+                src={`https://image.tmdb.org/t/p/h632${mediaData.director.profile_path}`}
+              />
+            </picture>
             <p>{mediaData.director.name}</p>
           </div>
         </div>

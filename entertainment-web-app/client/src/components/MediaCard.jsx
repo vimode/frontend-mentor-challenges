@@ -18,11 +18,20 @@ const MediaCard = ({ trending, media, id }) => {
       <button className="bookmarkIcon" onClick={handleBookmark}>
         <img src="/images/icon-bookmark-empty.svg" alt="bookmark" />
       </button>
-      {/* TODO: Add <picture> to make it responsive with different size than original ref API config  */}
-      <img
-        className="mediaimg"
-        src={`https://image.tmdb.org/t/p/original${media.backdrop_path}`}
-      />
+      <picture>
+        <source
+          srcSet={`https://image.tmdb.org/t/p/w300${media.backdrop_path}`}
+          media="(max-width:500px)"
+        />
+        <source
+          srcSet={`https://image.tmdb.org/t/p/w780${media.backdrop_path}`}
+          media="(max-width:1440px)"
+        />
+        <img
+          className="mediaimg"
+          src={`https://image.tmdb.org/t/p/w1280${media.backdrop_path}`}
+        />
+      </picture>
       <div className="mediaCard_data">
         <div className="mediaCard_data_info">
           {media.release_year && <p>{media.release_year} &#8226;</p>}

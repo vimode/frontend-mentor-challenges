@@ -12,7 +12,6 @@ export async function loader() {
 
 // TODO: Handle error page when there are no bookmarks to show.
 // TODO: defer data
-//
 
 function BookmarksPage() {
   const userBookmarkData = useLoaderData();

@@ -87,6 +87,7 @@
 .mediaCard_trending {
   @extend .mediaCard;
   position: relative;
+  padding-right: $space-4;
 
   .mediaCard_data {
     position: absolute;

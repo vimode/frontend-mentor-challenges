@@ -7,10 +7,7 @@
     "big_data big_data" auto
     / 30% auto;
   gap: $space-5;
-  padding : {
-    top: $space-8;
-    right: $space-8;
-  }
+  padding: $space-8 $space-5;
 
   @media (max-width: $layout-breakpoint-small) {
     grid:
@@ -19,6 +16,16 @@
       " videoiframe videoiframe"
       "big_data big_data"
       /70% auto;
+  }
+
+  @media (max-width: $layout-breakpoint-med) {
+    p {
+      @include body-small;
+    }
+
+    h2 {
+      @include heading-xs;
+    }
   }
 
   .media_title {

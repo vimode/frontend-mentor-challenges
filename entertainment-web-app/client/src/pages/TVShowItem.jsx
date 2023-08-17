@@ -17,10 +17,20 @@ export default function TVShowItem() {
           ({mediaData.first_air_date} - {mediaData.last_air_date})
         </span>
       </h1>
-      <img
-        className="posterImg"
-        src={`https://image.tmdb.org/t/p/${poster_size}/${mediaData.poster_path}`}
-      />
+      <picture>
+        <source
+          srcSet={`https://image.tmdb.org/t/p/w342${mediaData.poster_path}`}
+          media="(max-width:1200px)"
+        />
+        <source
+          srcSet={`https://image.tmdb.org/t/p/w500${mediaData.poster_path}`}
+          media="(max-width:1440px)"
+        />
+        <img
+          src={`https://image.tmdb.org/t/p/w500${mediaData.poster_path}`}
+          className="posterImg"
+        />
+      </picture>
       <MediaDetails>
         <li>
           <h2>TV Network</h2>
@@ -62,10 +72,16 @@ export default function TVShowItem() {
           <h2>Created by</h2>
           <div>
             {mediaData.created_by && mediaData.created_by.profile_path ? (
-              <img
-                className="castImg"
-                src={`https://image.tmdb.org/t/p/${profileImg_size}/${mediaData.created_by?.profile_path}`}
-              />
+              <picture>
+                <source
+                  srcSet={`https://image.tmdb.org/t/p/w185${mediaData.created_by?.profile_path}`}
+                  media="(max-width:1440px)"
+                />
+                <img
+                  className="castImg"
+                  src={`https://image.tmdb.org/t/p/h632/${mediaData.created_by?.profile_path}`}
+                />
+              </picture>
             ) : (
               <img
                 className="castImg"
