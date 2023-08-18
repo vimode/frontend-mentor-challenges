@@ -10,11 +10,6 @@ const MediaCard = ({ trending, media, id }) => {
 
   return (
     <div className={`mediaCard${trending ? "_trending" : ""}`}>
-      <a
-        href={`${media.type === "movie" ? `movies/${id}` : `tvshows/${id}`}`}
-        className="media_link"
-        aria-label={`Read more about ${media.title}`}
-      ></a>
       <button className="bookmarkIcon" onClick={handleBookmark}>
         <img src="/images/icon-bookmark-empty.svg" alt="bookmark" />
       </button>

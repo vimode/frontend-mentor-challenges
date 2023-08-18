@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { NavLink, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 
 const Layout = () => {
   const [uuid, setUuid] = useState(localStorage.getItem("UUID") || null);
@@ -15,7 +15,9 @@ const Layout = () => {
   return (
     <>
       <nav>
-        <img src="/images/logo.svg" />
+        <Link to="/">
+          <img src="/images/logo.svg" />
+        </Link>
         <ul>
           <li>
             <NavLink
@@ -70,7 +72,9 @@ const Layout = () => {
             </NavLink>
           </li>
         </ul>
-        <img className="profile_avatar" src="/images/image-avatar.png" />
+        <Link to="/bookmarks" className="user_profile_icon">
+          <img className="profile_avatar" src="/images/image-avatar.png" />
+        </Link>
       </nav>
       <Outlet />
     </>

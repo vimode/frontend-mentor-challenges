@@ -51,15 +51,17 @@ nav {
     }
   }
 
-  .profile_avatar {
+  .user_profile_icon {
     margin-top: auto;
-    border: 1px solid $color-white;
-    border-radius: 50%;
-    width: 40px;
 
     @media (max-width: $layout-breakpoint-med) {
       margin-top: unset;
     }
+  }
+  .profile_avatar {
+    border: 1px solid $color-white;
+    border-radius: 50%;
+    width: 40px;
   }
 }
 
