@@ -20,7 +20,7 @@ const searchMovies = async (req, res) => {
         backdrop_path: media.backdrop_path || media.poster_path || null,
         title: media.title || media.name,
         release_year: media.release_date?.slice(0, 4),
-        type: media.media_type,
+        type: media.media_type || "movie",
         rating: media.vote_average.toFixed(1),
       };
     });
@@ -51,7 +51,7 @@ const searchShows = async (req, res) => {
         backdrop_path: media.backdrop_path || media.poster_path || null,
         title: media.title || media.name,
         release_year: media.release_date?.slice(0, 4),
-        type: media.media_type,
+        type: media.media_type || "tv",
         rating: media.vote_average.toFixed(1),
       };
     });
@@ -89,7 +89,6 @@ const searchMoviesAndShows = async (req, res) => {
         rating: media.vote_average.toFixed(1),
       };
     });
-    // res.status(200).send(searchResults.data);
     res.status(200).send(results);
   } catch (err) {
     console.error(err);

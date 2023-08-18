@@ -90,7 +90,9 @@ const getMovieDetails = async (req, res) => {
       overview: response.data.overview,
       runtime: response.data.runtime,
       videoEmbedId: response.data.videos.results.filter(
-        (video) => video.name.includes("Trailer") && video.site === "YouTube"
+        (video) =>
+          video.name.toLowerCase().includes("trailer") &&
+          video.site === "YouTube"
       )[0],
       director: response.data.credits.crew.filter(
         (item) => item.job === "Director"

@@ -3,7 +3,6 @@ import { User } from "../models/user.js";
 
 const getUserBookmarks = async (req, res) => {
   const { userId } = req.params;
-  console.log(userId);
   const savedUser = await User.findOne({ userId });
 
   if (!savedUser) {
@@ -74,7 +73,6 @@ const getUserBookmarks = async (req, res) => {
 
 const addNewBookmark = async (req, res) => {
   const { userId, mediaId, type } = req.body;
-  console.log(userId, mediaId, type);
 
   const existingUser = await User.findOne({ userId });
 

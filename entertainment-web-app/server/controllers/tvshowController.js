@@ -51,14 +51,16 @@ const getTVShowDetails = async (req, res) => {
       backdrop_path: response.data.backdrop_path,
       poster_path: response.data.poster_path,
       title: response.data.original_name,
-      first_air_date: response.data.first_air_date.slice(0, 4),
-      last_air_date: response.data.last_air_date.slice(0, 4),
-      network: response.data.networks[0].name,
+      first_air_date: response.data.first_air_date?.slice(0, 4),
+      last_air_date: response.data.last_air_date?.slice(0, 4),
+      network: response.data.networks[0]?.name,
       number_of_seasons: response.data.number_of_seasons,
       number_of_episodes: response.data.number_of_episodes,
       overview: response.data.overview,
-      videoEmbedId: response.data.videos.results.filter(
-        (video) => video.name.includes("Trailer") && video.site === "YouTube"
+      videoEmbedId: response.data.videos.results?.filter(
+        (video) =>
+          video.name.toLowerCase().includes("trailer") &&
+          video.site === "YouTube"
       )[0],
       created_by: response.data.created_by[0],
       rating: response.data.vote_average.toFixed(1),
@@ -67,7 +69,6 @@ const getTVShowDetails = async (req, res) => {
     };
     await tvshowsCache.store.mset([[`${id}`, cleanedResponse]], 900 * 1000);
     console.log(`accessed /${id}`);
-    console.log(response.data);
     res.status(200).send(cleanedResponse);
   } catch (err) {
     console.log(err);
