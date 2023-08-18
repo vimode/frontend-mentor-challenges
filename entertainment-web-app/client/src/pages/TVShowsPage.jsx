@@ -1,4 +1,4 @@
-import { useLoaderData, defer, Await } from "react-router-dom";
+import { useLoaderData, defer, Await, Link } from "react-router-dom";
 import { getPopularTVShows } from "../services/tvshows";
 import MediaCard from "../components/MediaCard";
 import Search from "../components/Search";
@@ -33,12 +33,14 @@ const TVShowsPage = () => {
         <h1>Search Results</h1>
         <div className="grid_listing">
           {searchData.map((media) => (
-            <MediaCard
-              type={media.type}
+            <Link
+              to={`${media.id}`}
+              className="media_link"
+              aria-label={`Read more about ${media.title}`}
               key={media.id}
-              id={media.id}
-              media={media}
-            />
+            >
+              <MediaCard type={media.type} id={media.id} media={media} />
+            </Link>
           ))}
         </div>
       </section>
@@ -63,7 +65,14 @@ const TVShowsPage = () => {
                   return (
                     <div className="grid_listing">
                       {tvshows.popularShowsData.map((media) => (
-                        <MediaCard key={media.id} id={media.id} media={media} />
+                        <Link
+                          to={`${media.id}`}
+                          className="media_link"
+                          aria-label={`Read more about ${media.title}`}
+                          key={media.id}
+                        >
+                          <MediaCard id={media.id} media={media} />
+                        </Link>
                       ))}
                     </div>
                   );

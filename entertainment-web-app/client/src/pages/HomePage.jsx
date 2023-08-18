@@ -1,5 +1,5 @@
 import { Suspense, useEffect, useState } from "react";
-import { useLoaderData, defer, Await } from "react-router-dom";
+import { useLoaderData, defer, Await, Link } from "react-router-dom";
 import MediaCard from "../components/MediaCard";
 import { getTrendingMoviesAndShows } from "../services/movies";
 import { searchAllData } from "../services/search";
@@ -14,7 +14,6 @@ const HomePage = () => {
   const trending = useLoaderData();
   const { search } = window.location;
   const query = new URLSearchParams(search).get("s");
-  console.log(query);
 
   const [searchQuery, setSearchQuery] = useState(query || "");
   const [searchData, setSearchData] = useState([]);
@@ -37,12 +36,23 @@ const HomePage = () => {
         <h1>Search Results</h1>
         <div className="grid_listing">
           {searchData.map((media) => (
-            <MediaCard
-              type={media.type}
+            <Link
+              to={`${
+                media.type === "movie"
+                  ? `movies/${media.id}`
+                  : `tvshows/${media.id}`
+              }`}
+              className="media_link"
+              aria-label={`Read more about ${media.title}`}
               key={media.id}
-              id={media.id}
-              media={media}
-            />
+            >
+              <MediaCard
+                type={media.type}
+                key={media.id}
+                id={media.id}
+                media={media}
+              />
+            </Link>
           ))}
         </div>
       </section>
@@ -71,13 +81,19 @@ const HomePage = () => {
                         {movies.trendingData.moviesData
                           .slice(0, 5)
                           .map((media) => (
-                            <MediaCard
-                              type={media.type}
+                            <Link
+                              to={`movies/${media.id}`}
+                              className="media_link"
+                              aria-label={`Read more about ${media.title}`}
                               key={media.id}
-                              id={media.id}
-                              trending
-                              media={media}
-                            />
+                            >
+                              <MediaCard
+                                type={media.type}
+                                id={media.id}
+                                trending
+                                media={media}
+                              />
+                            </Link>
                           ))}
                       </div>
                     );
@@ -95,12 +111,18 @@ const HomePage = () => {
                         {movies.trendingData.moviesData
                           .slice(6, 14)
                           .map((media) => (
-                            <MediaCard
-                              type={media.type}
+                            <Link
+                              to={`movies/${media.id}`}
+                              className="media_link"
+                              aria-label={`Read more about ${media.title}`}
                               key={media.id}
-                              id={media.id}
-                              media={media}
-                            />
+                            >
+                              <MediaCard
+                                type={media.type}
+                                id={media.id}
+                                media={media}
+                              />
+                            </Link>
                           ))}
                       </div>
                     );
@@ -118,12 +140,18 @@ const HomePage = () => {
                         {shows.trendingData.showsData
                           .slice(0, 8)
                           .map((media) => (
-                            <MediaCard
-                              type={media.type}
+                            <Link
+                              to={`tvshows/${media.id}`}
+                              className="media_link"
+                              aria-label={`Read more about ${media.title}`}
                               key={media.id}
-                              id={media.id}
-                              media={media}
-                            />
+                            >
+                              <MediaCard
+                                type={media.type}
+                                id={media.id}
+                                media={media}
+                              />
+                            </Link>
                           ))}
                       </div>
                     );

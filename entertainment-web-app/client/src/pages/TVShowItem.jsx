@@ -2,11 +2,14 @@ import { useLoaderData } from "react-router-dom";
 import CastGrid from "../components/CastGrid";
 import MediaDetails from "../components/MediaDetails";
 import MediaPage from "../components/MediaPage";
+import { useEffect } from "react";
 
 export default function TVShowItem() {
   const mediaData = useLoaderData();
-  let poster_size = "w185";
-  let profileImg_size = "h632";
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <MediaPage>

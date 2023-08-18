@@ -2,9 +2,14 @@ import { useLoaderData } from "react-router-dom";
 import CastGrid from "../components/CastGrid";
 import MediaDetails from "../components/MediaDetails";
 import MediaPage from "../components/MediaPage";
+import { useEffect } from "react";
 
 function MovieItem() {
   const mediaData = useLoaderData();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <MediaPage>
