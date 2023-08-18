@@ -49,17 +49,19 @@ function MovieItem() {
           src={`https://image.tmdb.org/t/p/w500${mediaData.poster_path}`}
         />
       </picture>
-      <div className="video-player">
-        <iframe
-          src={`https://www.youtube.com/embed/${mediaData.videoEmbedId.key}`}
-          frameBorder="0"
-          width="560"
-          height="315"
-          allowFullScreen
-          title="Embedded video player"
-          allow="accelerometer; clipboard-write; autoplay; encrypted-media"
-        ></iframe>
-      </div>
+      {mediaData.videoEmbedId && (
+        <div className="video-player">
+          <iframe
+            src={`https://www.youtube.com/embed/${mediaData.videoEmbedId.key}`}
+            frameBorder="0"
+            width="560"
+            height="315"
+            allowFullScreen
+            title="Embedded video player"
+            allow="accelerometer; clipboard-write; autoplay; encrypted-media"
+          ></iframe>
+        </div>
+      )}
       <div className="media_data">
         <div>
           <h2>Synopsis</h2>

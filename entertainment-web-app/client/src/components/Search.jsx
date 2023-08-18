@@ -3,10 +3,6 @@ import { useEffect, useState } from "react";
 const Search = ({ value: initialValue, debounce = 500, onChange }) => {
   const [value, setValue] = useState(initialValue);
 
-  const handleInputChange = (event) => {
-    setValue(event.target.value);
-  };
-
   useEffect(() => {
     setValue(initialValue);
   }, [initialValue]);
@@ -22,13 +18,13 @@ const Search = ({ value: initialValue, debounce = 500, onChange }) => {
   }, [value]);
 
   return (
-    <form className="search_form">
+    <form action="/" method="get" className="search_form">
       <input
         value={value}
-        onChange={handleInputChange}
+        onChange={(e) => setValue(e.target.value)}
         type="search"
         placeholder="Search for Movies or TV Series"
-        name="Search"
+        name="s"
       />
     </form>
   );

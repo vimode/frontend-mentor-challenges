@@ -12,7 +12,11 @@ export async function loader() {
 
 const HomePage = () => {
   const trending = useLoaderData();
-  const [searchQuery, setSearchQuery] = useState("");
+  const { search } = window.location;
+  const query = new URLSearchParams(search).get("s");
+  console.log(query);
+
+  const [searchQuery, setSearchQuery] = useState(query || "");
   const [searchData, setSearchData] = useState([]);
 
   const searchFilter = async (searchQuery) => {
