@@ -28,7 +28,7 @@ const getPopularMovies = async () => {
   const res = await fetch(`${baseURL}/movies/popular`);
   if (!res.ok) {
     throw {
-      message: "failed to load Popular Movies",
+      message: "Failed to load Popular Movies",
       status: res.status,
     };
   }
@@ -40,7 +40,7 @@ const getMovieDetails = async (id) => {
   const res = await fetch(`${baseURL}/movies/${id}`);
   if (!res.ok) {
     throw {
-      message: "failed to load movie details, please try again later",
+      message: "Failed to load movie details, please try again later",
       status: res.status,
     };
   }

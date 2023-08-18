@@ -4,7 +4,7 @@ const getPopularTVShows = async () => {
   const res = await fetch(`${baseURL}/popular`);
   if (!res.ok) {
     throw {
-      message: "failed to load Popular tvshows",
+      message: "Failed to load Popular tvshows",
       status: res.status,
     };
   }
@@ -16,7 +16,7 @@ const getTVShowDetails = async (id) => {
   const res = await fetch(`${baseURL}/${id}`);
   if (!res.ok) {
     throw {
-      message: "failed to load tv show details, please try again later",
+      message: "Failed to load TV show details, please try again later",
       status: res.status,
     };
   }

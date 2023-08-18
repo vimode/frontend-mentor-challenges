@@ -9,7 +9,7 @@ const saveToBookmark = async (userId, mediaId, type) => {
   const res = await fetch(`${baseURL}/bookmarks`, options);
   if (!res.ok) {
     throw {
-      message: "failed to saved data, please try again later",
+      message: "Failed to save data, please try again later",
       status: res.status,
     };
   }
@@ -21,7 +21,7 @@ const getUserBookmarks = async (userId) => {
   const res = await fetch(`${baseURL}/bookmarks/${userId}`);
   if (!res.ok) {
     throw {
-      message: "failed to get user data. please try again later",
+      message: "Bookmarks unavailable. Try saving some bookmarks again.",
       status: res.status,
     };
   }
