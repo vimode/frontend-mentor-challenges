@@ -2,11 +2,15 @@
   "name": "@entertainment-web-app/root",
   "version": "1.0.0",
   "description": "This is a solution to the Entertainment web app challenge on Frontend Mentor.",
-  "workspaces": ["./server/*",  "./client/*"],
-  "main": "index.js",
+  "workspaces": [
+    "./server/",
+    "./client/"
+  ],
   "scripts": {
+    "start:app": "npm run dev --workspace @entertainment-web-app/client & npm run server --workspace @entertainment-web-app/server",
+    "start:all": "concurrently \"npm run dev --workspace @entertainment-web-app/client\"  \"npm run server --workspace @entertainment-web-app/server\""
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "devDependencies": {
+    "concurrently": "^8.2.1"
+  }
 }
