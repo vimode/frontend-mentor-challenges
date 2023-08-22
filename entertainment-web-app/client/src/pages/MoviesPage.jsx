@@ -33,14 +33,18 @@ const MoviesPage = () => {
         <h1>Search Results</h1>
         <div className="grid_listing">
           {searchData.map((media) => (
-            <Link
-              to={`${media.id}`}
-              className="media_link"
-              aria-label={`Read more about ${media.title}`}
+            <MediaCard
+              type={media.type}
+              id={media.id}
+              media={media}
               key={media.id}
             >
-              <MediaCard type={media.type} id={media.id} media={media} />
-            </Link>
+              <Link
+                to={`${media.id}`}
+                className="media_link"
+                aria-label={`Read more about ${media.title}`}
+              />
+            </MediaCard>
           ))}
         </div>
       </section>
@@ -65,14 +69,13 @@ const MoviesPage = () => {
                   return (
                     <div className="grid_listing">
                       {movies.popularMoviesData.map((media) => (
-                        <Link
-                          to={`${media.id}`}
-                          className="media_link"
-                          aria-label={`Read more about ${media.title}`}
-                          key={media.id}
-                        >
-                          <MediaCard id={media.id} media={media} />
-                        </Link>
+                        <MediaCard id={media.id} media={media} key={media.id}>
+                          <Link
+                            to={`${media.id}`}
+                            className="media_link"
+                            aria-label={`Read more about ${media.title}`}
+                          />
+                        </MediaCard>
                       ))}
                     </div>
                   );

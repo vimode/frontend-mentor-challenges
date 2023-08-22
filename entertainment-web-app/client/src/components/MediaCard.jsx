@@ -1,6 +1,6 @@
 import { saveToBookmark } from "../services/user.js";
 
-const MediaCard = ({ trending, media, id }) => {
+const MediaCard = ({ trending, media, id, children }) => {
   const handleBookmark = async (e) => {
     e.stopPropagation();
     const userId = localStorage.getItem("UUID");
@@ -10,6 +10,7 @@ const MediaCard = ({ trending, media, id }) => {
 
   return (
     <div className={`mediaCard${trending ? "_trending" : ""}`}>
+      {children}
       <button className="bookmarkIcon" onClick={handleBookmark}>
         <img src="/images/icon-bookmark-empty.svg" alt="bookmark" />
       </button>

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, Link } from "react-router-dom";
 import MediaCard from "../components/MediaCard";
 import Search from "../components/Search";
 import { getUserBookmarks } from "../services/user.js";
@@ -52,7 +52,13 @@ function BookmarksPage() {
                     key={media.id}
                     id={media.id}
                     media={media}
-                  />
+                  >
+                    <Link
+                      to={`/movies/${media.id}`}
+                      className="media_link"
+                      aria-label={`Read more about ${media.title}`}
+                    />
+                  </MediaCard>
                 );
               })}
             </div>
@@ -67,7 +73,13 @@ function BookmarksPage() {
                     key={media.id}
                     id={media.id}
                     media={media}
-                  />
+                  >
+                    <Link
+                      to={`/tvshows/${media.id}`}
+                      className="media_link"
+                      aria-label={`Read more about ${media.title}`}
+                    />
+                  </MediaCard>
                 );
               })}
             </div>
