@@ -1,7 +1,5 @@
-const baseURL = `${import.meta.env.VITE_BACKEND_URL}/tvshows`;
-
 const getPopularTVShows = async () => {
-  const res = await fetch(`${baseURL}/popular`);
+  const res = await fetch(`/api/tvshows/popular`);
   if (!res.ok) {
     throw {
       message: "Failed to load Popular tvshows",
@@ -13,7 +11,7 @@ const getPopularTVShows = async () => {
 };
 
 const getTVShowDetails = async (id) => {
-  const res = await fetch(`${baseURL}/${id}`);
+  const res = await fetch(`/api/tvshows/${id}`);
   if (!res.ok) {
     throw {
       message: "Failed to load TV show details, please try again later",

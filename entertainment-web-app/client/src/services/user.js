@@ -1,12 +1,10 @@
-const baseURL = `${import.meta.env.VITE_BACKEND_URL}/user`;
-
 const saveToBookmark = async (userId, mediaId, type) => {
   const options = {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ userId, mediaId, type }),
   };
-  const res = await fetch(`${baseURL}/bookmarks`, options);
+  const res = await fetch(`/api/user/bookmarks`, options);
   if (!res.ok) {
     throw {
       message: "Failed to save data, please try again later",
@@ -18,7 +16,7 @@ const saveToBookmark = async (userId, mediaId, type) => {
 };
 
 const getUserBookmarks = async (userId) => {
-  const res = await fetch(`${baseURL}/bookmarks/${userId}`);
+  const res = await fetch(`/api/user/bookmarks/${userId}`);
   if (!res.ok) {
     throw {
       message: "Bookmarks unavailable. Try saving some bookmarks again.",

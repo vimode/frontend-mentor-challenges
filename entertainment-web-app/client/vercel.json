@@ -1,7 +1,11 @@
 {
   "rewrites": [
     {
-      "source": "/(*)",
+      "source": "/api/:path*",
+      "destination": "https://frontend-mentor-challenges-production.up.railway.app/api/:path*"
+    },
+    {
+      "source": "/(.*)",
       "destination": "/"
     }
   ]
