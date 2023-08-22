@@ -1,8 +1,8 @@
-#  Entertainment web app
+# Entertainment web app
 
 This is a solution to the Entertainment web app challenge on Frontend Mentor.
 
-![Design Preview](./design/desktop-preview.jpg)
+![Design Preview](./design/preview.jpg)
 
 ## The challenge
 
@@ -37,11 +37,59 @@ Users should be able to:
 
 ### Built with
 
-### What I learned and continued development
+#### Frontend
 
+- Vite + React
+- SASS
+- npm workspaces
+
+#### Backend
+
+- NodeJS
+- ExpressJS
+- Cache-Manager
+- Mongoose
+- MongoDB
+
+## How to Setup this Project Locally
+
+### Project root folder structure
+
+```
+|-client\           # Frontend
+|-design\           # Design preview
+|-server\           # Backend
+|-package.json      # Workspace setup and  root scripts
+```
+
+### Install
+
+Install dependencies from the project root, this will install all the dependencies for frontend and the backend
+
+```bash
+npm install --workspaces
+```
+
+Rename .env.sample to .env and update the necessary details.
+
+### Run
+
+To run the project, open the root folder in your terminal and run this command
+
+For Linux/Mac users
+
+```bash
+npm run start:app
+```
+
+For Windows users
+
+```bash
+npm run start:all
+```
+
+### What I learned and continued development
 
 ### Useful Resources
 
 ### TODO
-
-
