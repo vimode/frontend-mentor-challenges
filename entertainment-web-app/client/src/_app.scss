@@ -6,15 +6,15 @@
   gap: $space-8;
   padding: $space-8 0 $space-8 $space-8;
   grid:
-    "nav search" 30%
+    "nav search" minmax(100px, 30%)
     "nav content" auto
     / 8% 89%;
   margin: 0 auto;
 
   @media (max-width: $layout-breakpoint-med) {
     grid:
-      "nav" 10%
-      "search" 20%
+      "nav" minmax(100px, 10%)
+      "search" minmax(100px,20%)
       "content" auto
       / auto;
     gap: unset;
