@@ -18,7 +18,7 @@ const getPopularTVShows = async (req, res) => {
         id: show.id,
         backdrop_path: show.backdrop_path,
         name: show.name,
-        release_year: show.first_air_date.slice(0, 4),
+        release_year: show.first_air_date?.slice(0, 4),
         rating: show.vote_average.toFixed(1),
         type: show.media_type || "tv",
       };
