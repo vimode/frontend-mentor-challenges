@@ -42,6 +42,7 @@ const router = createBrowserRouter(
           loader={({ params }) => {
             return getMovieDetails(params.id);
           }}
+          errorElement={<Error />}
         />
         <Route
           path="tvshows"
@@ -55,6 +56,7 @@ const router = createBrowserRouter(
           loader={({ params }) => {
             return getTVShowDetails(params.id);
           }}
+          errorElement={<Error />}
         />
         <Route
           path="bookmarks"
