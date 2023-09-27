@@ -1,6 +1,10 @@
+import { useContext, useState, useEffect } from "react";
+import { UserDataContext } from "../context/userDataContext.jsx";
 import { saveToBookmark } from "../services/user.js";
 
 const MediaCard = ({ trending, media, id, children }) => {
+  const { bookmarks } = useContext(UserDataContext);
+  const [isBookmarked, setisBookmarked] = useState(false);
   const handleBookmark = async (e) => {
     e.stopPropagation();
     const userId = localStorage.getItem("UUID");
@@ -8,11 +12,24 @@ const MediaCard = ({ trending, media, id, children }) => {
     console.log(data);
   };
 
+  useEffect(() => {
+    if (bookmarks) {
+      const isBookmark =
+        !!bookmarks?.movieData.find((item) => item.id === id) ||
+        !!bookmarks?.tvData.find((item) => item.id === id);
+      setisBookmarked(isBookmark);
+    }
+  }, [bookmarks]);
+
   return (
     <div className={`mediaCard${trending ? "_trending" : ""}`}>
       {children}
       <button className="bookmarkIcon" onClick={handleBookmark}>
-        <img src="/images/icon-bookmark-empty.svg" alt="bookmark" />
+        {isBookmarked ? (
+          <img src="/images/icon-bookmark-full.svg" alt="bookmark" />
+        ) : (
+          <img src="/images/icon-bookmark-empty.svg" alt="bookmark" />
+        )}
       </button>
       <picture>
         <source

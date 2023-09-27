@@ -1,21 +1,12 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useLoaderData, Link } from "react-router-dom";
 import MediaCard from "../components/MediaCard";
 import Search from "../components/Search";
-import { getUserBookmarks } from "../services/user.js";
-
-export async function loader() {
-  const userId = localStorage.getItem("UUID");
-  const userBookmarkData = await getUserBookmarks(userId);
-  return userBookmarkData;
-}
-
-// TODO: Handle error page when there are no bookmarks to show.
-// TODO: defer data
+import { UserDataContext } from "../context/userDataContext";
 
 function BookmarksPage() {
-  const userBookmarkData = useLoaderData();
-  const [userBookmark, setUserBookmark] = useState(userBookmarkData);
+  const { bookmarks } = useContext(UserDataContext);
+  const [userBookmark, setUserBookmark] = useState(bookmarks);
   const [searchQuery, setSearchQuery] = useState("");
 
   const filterBookmarks = (bookmarks, searchQuery) => {
@@ -33,6 +24,14 @@ function BookmarksPage() {
   };
 
   const filteredBookmarks = filterBookmarks(userBookmark, searchQuery);
+
+  if (!bookmarks) {
+    return (
+      <main className="error_wrapper">
+        <h2>No bookmarks saved</h2>
+      </main>
+    );
+  }
 
   return (
     <>

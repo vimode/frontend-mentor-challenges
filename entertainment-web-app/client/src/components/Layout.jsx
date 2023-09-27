@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink, Outlet } from "react-router-dom";
+import UserDataContextProvider from "../context/userDataContext";
 
 const Layout = () => {
   const [uuid, setUuid] = useState(localStorage.getItem("UUID") || null);
@@ -76,7 +77,9 @@ const Layout = () => {
           <img className="profile_avatar" src="/images/image-avatar.png" />
         </Link>
       </nav>
-      <Outlet />
+      <UserDataContextProvider>
+        <Outlet />
+      </UserDataContextProvider>
     </>
   );
 };
