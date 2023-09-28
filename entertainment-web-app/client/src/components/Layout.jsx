@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink, Outlet } from "react-router-dom";
-import UserDataContextProvider from "../context/userDataContext";
+import { getUserBookmarks } from "../services/user";
 
 const Layout = () => {
   const [uuid, setUuid] = useState(localStorage.getItem("UUID") || null);
+  const [bookmarks, setBookmarks] = useState(null);
 
   useEffect(() => {
     if (!uuid) {
@@ -12,6 +13,21 @@ const Layout = () => {
       setUuid(randomId);
     }
   }, []);
+
+  useEffect(() => {
+    if (!uuid) {
+      setBookmarks(null);
+    }
+    (async function fetchData() {
+      try {
+        const data = await getUserBookmarks(uuid);
+        setBookmarks(data);
+      } catch (err) {
+        //TODO: Handle error properly
+        return;
+      }
+    })();
+  }, [uuid]);
 
   return (
     <>
@@ -77,9 +93,7 @@ const Layout = () => {
           <img className="profile_avatar" src="/images/image-avatar.png" />
         </Link>
       </nav>
-      <UserDataContextProvider>
-        <Outlet />
-      </UserDataContextProvider>
+      <Outlet context={[bookmarks, setBookmarks]} />
     </>
   );
 };

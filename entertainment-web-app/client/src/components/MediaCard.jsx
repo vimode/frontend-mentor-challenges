@@ -1,15 +1,16 @@
-import { useContext, useState, useEffect } from "react";
-import { UserDataContext } from "../context/userDataContext.jsx";
-import { saveToBookmark } from "../services/user.js";
+import { useState, useEffect } from "react";
+import { getUserBookmarks, saveToBookmark } from "../services/user.js";
+import { useOutletContext } from "react-router-dom";
 
 const MediaCard = ({ trending, media, id, children }) => {
-  const { bookmarks } = useContext(UserDataContext);
+  const [bookmarks, setBookmarks] = useOutletContext();
   const [isBookmarked, setisBookmarked] = useState(false);
   const handleBookmark = async (e) => {
     e.stopPropagation();
     const userId = localStorage.getItem("UUID");
-    let data = await saveToBookmark(userId, id, media.type);
-    console.log(data);
+    await saveToBookmark(userId, id, media.type);
+    let data = await getUserBookmarks(userId);
+    await setBookmarks(data);
   };
 
   useEffect(() => {

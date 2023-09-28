@@ -1,12 +1,10 @@
-import { useContext, useState } from "react";
-import { useLoaderData, Link } from "react-router-dom";
+import { useState } from "react";
+import { Link, useOutletContext } from "react-router-dom";
 import MediaCard from "../components/MediaCard";
 import Search from "../components/Search";
-import { UserDataContext } from "../context/userDataContext";
 
 function BookmarksPage() {
-  const { bookmarks } = useContext(UserDataContext);
-  const [userBookmark, setUserBookmark] = useState(bookmarks);
+  const [userBookmark, setUserBookmark] = useOutletContext();
   const [searchQuery, setSearchQuery] = useState("");
 
   const filterBookmarks = (bookmarks, searchQuery) => {
@@ -25,7 +23,7 @@ function BookmarksPage() {
 
   const filteredBookmarks = filterBookmarks(userBookmark, searchQuery);
 
-  if (!bookmarks) {
+  if (!userBookmark) {
     return (
       <main className="error_wrapper">
         <h2>No bookmarks saved</h2>
