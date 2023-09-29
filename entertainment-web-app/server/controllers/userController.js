@@ -1,6 +1,7 @@
 import axios from "axios";
 import { User } from "../models/user.js";
 
+// GET all user Bookmarks
 const getUserBookmarks = async (req, res) => {
   const { userId } = req.params;
   const savedUser = await User.findOne({ userId });
@@ -71,6 +72,7 @@ const getUserBookmarks = async (req, res) => {
   }
 };
 
+// POST - Add a new Bookmark
 const addNewBookmark = async (req, res) => {
   const { userId, mediaId, type } = req.body;
 
@@ -78,13 +80,15 @@ const addNewBookmark = async (req, res) => {
 
   async function addItem(user, type) {
     if (type === "movie") {
-      user.bookmarks.movies.indexOf(mediaId) === -1
+      let itemIndex = user.bookmarks.movies.indexOf(mediaId);
+      itemIndex === -1
         ? user.bookmarks.movies.push(mediaId)
-        : null;
+        : user.bookmarks.movies.splice(itemIndex, 1);
     } else {
-      user.bookmarks.tv.indexOf(mediaId) === -1
+      let itemIndex = user.bookmarks.tv.indexOf(mediaId);
+      itemIndex === -1
         ? user.bookmarks.tv.push(mediaId)
-        : null;
+        : user.bookmarks.tv.splice(itemIndex, 1);
     }
   }
 
@@ -106,6 +110,7 @@ const addNewBookmark = async (req, res) => {
   }
 };
 
+// FIX: Only for dev testing. Remove this
 const getBookmarksDev = async (req, res) => {
   try {
     const users = await User.find();
