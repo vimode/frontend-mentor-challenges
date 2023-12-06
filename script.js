@@ -98,9 +98,7 @@ let projectList =
 const ulWrapper = document.querySelector("#inner_wrapper");
 
 let displayList = projectList.reverse().map((project) => {
-  return `<li class="relative bg-transparent max-w-sm">
-    <div
-      class="flex flex-none flex-col align-center bg-amber-50 justify-between border-4 border-brown-900 shadow shadow-brown-900 h-[500px]">
+  return `<li class="relative bg-transparent max-w-sm flex flex-grow flex-col align-center bg-amber-50 justify-between border-4 border-brown-900 shadow shadow-brown-900">
       <img src="${project.img_src}" alt="" class="w-full h-56 object-cover align-start">
         <div class="p-4">
           <h2 class="text-xl font-bold">${project.title}</h2>
@@ -136,7 +134,6 @@ let displayList = projectList.reverse().map((project) => {
           </a>
         </div>
     </div>
-  </div>
   </li>`
 })
 
