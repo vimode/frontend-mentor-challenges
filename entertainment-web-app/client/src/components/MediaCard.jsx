@@ -5,10 +5,29 @@ import { useOutletContext } from "react-router-dom";
 const MediaCard = ({ trending, media, id, children }) => {
   const [bookmarks, setBookmarks] = useOutletContext();
   const [isBookmarked, setisBookmarked] = useState(false);
+
   const handleBookmark = async (e) => {
     e.stopPropagation();
     const userId = localStorage.getItem("UUID");
-    await saveToBookmark(userId, id, media.type);
+
+    function updateContextState(type, id) {
+      // console.log(bookmarks);
+      setBookmarks((prevState) => {
+        console.log(prevState);
+        //   let itemIndex = prevState.type.indexOf(id);
+        //   console.log(itemIndex);
+        //   prevState.type.splice(itemIndex, 1);
+      });
+    }
+
+    let saved = await saveToBookmark(userId, id, media.type);
+    if (!!saved && isBookmarked) {
+      if (media.type === "movie") {
+        updateContextState("movieData", id);
+      } else {
+        updateContextState("tvData", id);
+      }
+    }
     let data = await getUserBookmarks(userId);
     await setBookmarks(data);
   };
