@@ -1,3 +1,13 @@
 body {
   font-family: $font-sans-serif;
 }
+
+.skip-to-main-link {
+  left:50%;
+  position: absolute;
+  transform: translateY(-100%);
+
+  &:focus {
+    transform:translateY(0%);
+  }
+}
