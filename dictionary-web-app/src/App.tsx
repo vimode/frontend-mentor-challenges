@@ -1,45 +1,33 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
+import Header from "./components/Header";
+import NotFound from "./components/NotFound";
 
-function Header () {
-  return (
-    <header>
-      <img src="/images/logo.svg" alt="logo" />
-      <div>
-        <p>select font</p>
-        <p>theme toggle</p>
-      </div>
-    </header>
-  )
-}
-
-function NotFound ({notFound, word}) {
-  return (
-    <>
-      <h1>{notFound.title} for {word}</h1>
-      <p>{notFound.message}</p>
-      <p>{notFound.resolution}</p>
-    </>
-  )
-}
+export type NotFoundState<T> =  T;
 
 function App() {
-  const [ value, setValue ] = useState('')
+  const [ value, setValue ] = useState()
   const [ debouncedSearchValue, setDebouncedSearchValue ] = useState('')
   const [ definitions, setDefinitions ] = useState([])
-  const [ notFound, setNotFound ] = useState({})
+  const [ notFound, setNotFound ] = useState<NotFoundState<T>>({});
   const [ error, setError ] = useState(null)
+  const [ font,setFont] = useState("serif")
 
   useEffect(() => {
     const timeout = setTimeout(() => {
       setDebouncedSearchValue(value.toLowerCase().trim());
     },500);
     return () => {
-      clearTimeout(timeout)    
-    }  
+      clearTimeout(timeout)
+    }
   },[value])
 
   useEffect(() => {
-    if(debouncedSearchValue.length){
+    if(debouncedSearchValue.length === 0) {
+      setNotFound({})
+      setError(null)
+      setDefinitions([])
+    }
+    if(debouncedSearchValue.length > 0){
       (async () => {
         const url = `https://api.dictionaryapi.dev/api/v2/entries/en/${debouncedSearchValue}`
         try {
@@ -66,10 +54,10 @@ function App() {
   },[debouncedSearchValue])
 
   return (
-    <>
-      <Header />
+    <div className={font === "mono" ? "fontMono" : font === "serif" ? "fontSerif": "fontSans"}>
+      <Header setFont={setFont}/>
       <main id="main-content">
-        <header >
+        <header>
           <label>
             <input 
               type="search"
@@ -114,7 +102,7 @@ function App() {
         }
         </ul>
       </main>
-    </>
+    </div>
   )
 }
 

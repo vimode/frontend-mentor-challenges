@@ -23,7 +23,7 @@ input,
 button,
 textarea,
 select {
-  font: inhert;
+  font: inherit;
 }
 
 h1 {
@@ -49,4 +49,8 @@ h6 {
 [type="radio"] {
   box-sizing: border-box;
   padding: 0;
+}
+
+ul li {
+  list-style:none;
 }

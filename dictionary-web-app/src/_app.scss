@@ -11,3 +11,15 @@ body {
     transform:translateY(0%);
   }
 }
+
+.fontMono {
+  font-family: $font-mono;
+}
+
+.fontSerif {
+  font-family: $font-serif;
+}
+
+.fontSans {
+  font-family: $font-sans-serif;
+}
