@@ -1,17 +1,20 @@
-interface Props {
-  setFont: React.Dispatch<React.SetStateAction<string>>;
-}
+import { useContext } from "react";
+import { ThemeContext } from "../context/themeContext";
+import { FontContext } from "../context/fontContext";
 
-function Header ({setFont}:Props) {
+function Header () {
+  const { theme,updateTheme } = useContext(ThemeContext)
+  const { font, updateFont } = useContext(FontContext);
   return (
     <header>
       <img src="/images/logo.svg" alt="logo" />
       <div>
-        <select aria-label ="Select Font "name="fonts" defaultValue="sans" id="font-select" onChange={e => setFont(e.target.value)}>
-          <option value="sans">Sans Serif</option>
-          <option value="serif">Serif</option>
-          <option value="mono">Mono</option>
+        <select aria-label ="Select Font "name="fonts" defaultValue="sans" id="font-select" onChange={e => updateFont(e.target.value)}>
+          <option value="Sans">Sans Serif</option>
+          <option value="Serif">Serif</option>
+          <option value="Mono">Mono</option>
         </select>
+        <button onClick = {updateTheme}>Change {theme}</button>
         <p>theme toggle</p>
       </div>
     </header>
