@@ -1,13 +1,14 @@
-import { useEffect, useState, createContext, useContext } from "react";
+import { useEffect, useState, useContext } from "react";
 import Header from "./components/Header";
 import NotFound from "./components/NotFound";
 import { ThemeContext } from "./context/themeContext";
 import { FontContext } from "./context/fontContext";
+import { Definition } from "./types";
 
 function App() {
   const [ value, setValue ] = useState('')
   const [ debouncedSearchValue, setDebouncedSearchValue ] = useState('')
-  const [ definitions, setDefinitions ] = useState([]);
+  const [ definitions, setDefinitions ] = useState<Definition [] |undefined>([]);
   const [ notFound, setNotFound ] = useState({});
   const [ error, setError ] = useState(null);
   const { theme }= useContext(ThemeContext)
@@ -69,7 +70,7 @@ function App() {
                 <img src="/images/icon-search.svg" alt="search" />
               </label>
             </header>
-            {notFound.message && <NotFound notFound={notFound} word={debouncedSearchValue}/>}
+            {notFound?.message && <NotFound notFound={notFound} word={debouncedSearchValue}/>}
             {error && <div>There was a problem fetching definition : {error}</div>}
             <ul>
             {definitions && definitions.length > 0 && 

@@ -1,10 +1,21 @@
 import { createContext, useState } from "react";
 
-const ThemeContext = createContext(null);
+type ThemeContextType = {
+  theme: Theme;
+  updateTheme: () => void;
+}
 
-const ThemeProvider = ({children}) => {
-  const [theme,setTheme] = useState("default");
-  const updateTheme= () => {
+type Theme = "default" | "switchTheme";
+
+type Props = {
+  children: React.ReactNode;
+}
+
+const ThemeContext = createContext<ThemeContextType | null>(null);
+
+const ThemeProvider = ({children}:Props) => {
+  const [theme,setTheme] = useState<Theme>("default");
+  const updateTheme  = () =>  {
     setTheme( theme === "default" ? "switchTheme": "default");
   };
 
