@@ -12,6 +12,26 @@ body {
   }
 }
 
+
+.main_wrapper {
+  @include styles("lightTheme");
+  background-color: var(--bg-color);
+  color: var(--body-text);
+  min-height: 100vh;
+
+  &.switchTheme{
+    @include styles('darkTheme');
+  }
+
+  @media (prefers-color-scheme: dark) {
+    @include styles("darkTheme");
+    &.switchTheme {
+      @include styles('lightTheme');
+    }
+  }
+
+}
+
 .fontMono {
   font-family: $font-mono;
 }

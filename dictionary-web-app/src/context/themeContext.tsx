@@ -5,18 +5,18 @@ type ThemeContextType = {
   updateTheme: () => void;
 }
 
-type Theme = "default" | "switchTheme";
+type Theme = boolean;
 
 type Props = {
   children: React.ReactNode;
 }
 
-const ThemeContext = createContext<ThemeContextType | null>(null);
+const ThemeContext = createContext<ThemeContextType| null >(null);
 
 const ThemeProvider = ({children}:Props) => {
-  const [theme,setTheme] = useState<Theme>("default");
+  const [theme,setTheme] = useState<Theme>(false);
   const updateTheme  = () =>  {
-    setTheme( theme === "default" ? "switchTheme": "default");
+    setTheme(!theme);
   };
 
   return (

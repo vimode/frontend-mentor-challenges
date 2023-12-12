@@ -1,3 +1,4 @@
+// Typography
 @mixin heading-large {
   font: {
     weight: $font-bold;
@@ -36,4 +37,16 @@
     size: $text-sm;
   };
   line-height: 17px;
+}
+
+//Themes
+
+@mixin styles($mode) {
+  @each $key, $map in $themes {
+    @each $prop, $color in $map {
+      @if $prop == $mode {
+        --#{$key}: #{$color};
+      }
+    }
+  }
 }

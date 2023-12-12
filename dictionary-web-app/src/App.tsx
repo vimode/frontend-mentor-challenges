@@ -56,7 +56,7 @@ function App() {
   },[debouncedSearchValue])
 
   return (
-        <div className={`${theme} font${font}`}>
+        <div className={`main_wrapper ${theme ? "switchTheme" : ""} font${font}`}>
           <Header/>
           <main id="main-content">
             <header>

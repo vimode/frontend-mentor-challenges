@@ -51,3 +51,21 @@ $opacity-100: 1;
 
 $layout-breakpoint-med: 1200px;
 $layout-breakpoint-small: 500px;
+
+// Themes map
+
+$themes: (
+  bg-color: (
+    lightTheme: $white,
+    darkTheme: $black,
+  ),
+  body-text: (
+    lightTheme: $black-3,
+    darkTheme: $white,
+  ),
+  title-text: (
+    lightTheme: $black-3,
+    darkTheme: $white,
+  ),
+)
+
