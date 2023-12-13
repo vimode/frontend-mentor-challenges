@@ -7,7 +7,7 @@ export type Definition = {
   sourceUrls?: SourceUrls[]; 
 }
 
-type Phonetics = {
+export type Phonetics = {
   text: string;
   audio?: string;
   sourceUrl?: SourceUrls;
@@ -35,3 +35,9 @@ type License  = {
 }
 
 type SourceUrls = string;
+
+export type NotFoundError = {
+  title:string;
+  message:string;
+  resolution: string;
+}
