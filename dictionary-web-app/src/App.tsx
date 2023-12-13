@@ -3,13 +3,13 @@ import Header from "./components/Header";
 import NotFound from "./components/NotFound";
 import { ThemeContext } from "./context/themeContext";
 import { FontContext } from "./context/fontContext";
-import { Definition } from "./types";
+import { Definition, NotFoundError, Phonetics } from "./types";
 
 function App() {
   const [ value, setValue ] = useState('')
   const [ debouncedSearchValue, setDebouncedSearchValue ] = useState('')
   const [ definitions, setDefinitions ] = useState<Definition [] |undefined>([]);
-  const [ notFound, setNotFound ] = useState({});
+  const [ notFound, setNotFound ] = useState<NotFoundError | undefined>()
   const [ error, setError ] = useState(null);
   const { theme }= useContext(ThemeContext)
   const { font } = useContext(FontContext)
@@ -25,7 +25,7 @@ function App() {
 
   useEffect(() => {
     if(debouncedSearchValue.length === 0) {
-      setNotFound({})
+      setNotFound()
       setError(null)
       setDefinitions([])
     }
@@ -47,13 +47,31 @@ function App() {
             setError(null)
           }
         }catch(error){
-            setError(error.message);
+            setError(error);
             setDefinitions([])
             setNotFound({})
           }
       })();
     }
   },[debouncedSearchValue])
+
+  function phoneticFAudioFinder(phonetic:Phonetics []) {
+    const valid = phonetic.filter((p:Phonetics) => p.text && p.audio)
+    const audioTrack = new Audio(valid[0].audio)
+    return {
+      text: valid[0].text,
+      audio: audioTrack,
+    }
+  }
+
+  function audioControl (audioTrack) {
+    if(!audioTrack.playing) {
+      audioTrack.play()
+    } else {
+      audioTrack.pause()
+    }
+  }
+
 
   return (
         <div className={`main_wrapper ${theme ? "switchTheme" : ""} font${font}`}>
@@ -75,31 +93,46 @@ function App() {
             <ul>
             {definitions && definitions.length > 0 && 
               definitions.map((d)=> 
-                <li>
-                  <div>
-                    <p>{d.word}</p>
-                    <p>{d.phonetic}</p>
-                    <p>player</p>
-                  </div>
-                  {d.meanings.map((dm) => 
-                    <ul>
-                      <div>{dm.partOfSpeech}<span><hr /></span></div>
-                      <header>Meaning</header>
+                <>
+                  <li>
+                    <div>
+                      <p>{d.word}</p>
+                      {d.phonetics && 
+                      <>
+                        <p>{phoneticFAudioFinder(d.phonetics).text}</p>
+                        <button onClick={() => audioControl(phoneticFAudioFinder(d.phonetics).audio)}>
+                          <img src="/images/icon-play.svg" />
+                        </button>
+                        <audio>
+                          <source src={phoneticFAudioFinder(d.phonetics).audio}/>
+                        </audio>
+                        {/* <p>{phoneticFAudioFinder(d.phonetics).audio}</p> */}
+                      </>
+                    }
+                      <p>player</p>
+                    </div>
+                    {d.meanings.map((dm) => 
                       <ul>
-                        {dm.definitions.map((dmd) => 
-                            <li>{dmd.definition}</li>
-                        )}
-                      </ul>
-                      <div>Synonyms : 
+                        <div>{dm.partOfSpeech}<span><hr /></span></div>
+                        <header>Meaning</header>
                         <ul>
-                        {dm.synonyms.map((dmss) => 
-                        <li>{dmss}</li>
-                        )}
+                          {dm.definitions.map((dmd) => 
+                              <li>{dmd.definition}</li>
+                          )}
                         </ul>
-                      </div>
-                    </ul>
-                  )}
-                </li>
+                        {dm.synonyms.length > 0 && <div>Synonyms : 
+                          <ul>
+                          {dm.synonyms.map((dmss) => 
+                          <li>{dmss}</li>
+                          )}
+                          </ul>
+                        </div>}
+                      </ul>
+                    )}
+                  </li>
+                <hr/>
+                <p>Source {' '} <a href={d.sourceUrls[0]}>{d.sourceUrls[0]}</a></p>
+                </>
               )
             }
             </ul>
