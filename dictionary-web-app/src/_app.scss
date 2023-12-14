@@ -43,3 +43,16 @@ body {
 .fontSans {
   font-family: $font-sans-serif;
 }
+
+// Header
+.app_header { 
+  display:flex; 
+  place-items:center;
+  place-content: space-between;
+
+  div {
+    display:flex;
+    gap: $space-8;
+  }
+}
+

@@ -9,7 +9,7 @@ function App() {
   const [ value, setValue ] = useState('')
   const [ debouncedSearchValue, setDebouncedSearchValue ] = useState('')
   const [ definitions, setDefinitions ] = useState<Definition [] |undefined>([]);
-  const [ notFound, setNotFound ] = useState<NotFoundError | undefined>()
+  const [ notFound, setNotFound ] = useState<NotFoundError | null>(null)
   const [ error, setError ] = useState(null);
   const { theme }= useContext(ThemeContext)
   const { font } = useContext(FontContext)
@@ -25,7 +25,7 @@ function App() {
 
   useEffect(() => {
     if(debouncedSearchValue.length === 0) {
-      setNotFound()
+      setNotFound(null)
       setError(null)
       setDefinitions([])
     }
@@ -43,24 +43,24 @@ function App() {
           if(response.status === 200) {
             const data = await response.json()
             setDefinitions(data)
-            setNotFound({})
+            setNotFound(null)
             setError(null)
           }
         }catch(error){
             setError(error);
             setDefinitions([])
-            setNotFound({})
+            setNotFound(null)
           }
       })();
     }
   },[debouncedSearchValue])
 
-  function phoneticFAudioFinder(phonetic:Phonetics []) {
-    const valid = phonetic.filter((p:Phonetics) => p.text && p.audio)
-    const audioTrack = new Audio(valid[0].audio)
+  function phoneticFAudioFinder(phonetics:Phonetics []) {
+    const valid = phonetics.filter((p:Phonetics) => p.text && p.audio)
+    const audioTrack = valid.length > 0 ? new Audio(valid[0].audio) : null;
     return {
-      text: valid[0].text,
-      audio: audioTrack,
+      text: valid.length > 0 ? valid[0].text :  phonetics[0].text,
+      audio: audioTrack || null,
     }
   }
 
@@ -100,16 +100,14 @@ function App() {
                       {d.phonetics && 
                       <>
                         <p>{phoneticFAudioFinder(d.phonetics).text}</p>
-                        <button onClick={() => audioControl(phoneticFAudioFinder(d.phonetics).audio)}>
+                        {phoneticFAudioFinder(d.phonetics).audio !== null ?  <><button onClick={() => audioControl(phoneticFAudioFinder(d.phonetics).audio)}> 
                           <img src="/images/icon-play.svg" />
                         </button>
                         <audio>
                           <source src={phoneticFAudioFinder(d.phonetics).audio}/>
-                        </audio>
-                        {/* <p>{phoneticFAudioFinder(d.phonetics).audio}</p> */}
+                        </audio> </>: null }
                       </>
                     }
-                      <p>player</p>
                     </div>
                     {d.meanings.map((dm) => 
                       <ul>

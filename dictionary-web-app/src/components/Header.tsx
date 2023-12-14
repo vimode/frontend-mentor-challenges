@@ -6,7 +6,7 @@ function Header () {
   const { theme,updateTheme } = useContext(ThemeContext)
   const { font, updateFont } = useContext(FontContext);
   return (
-    <header>
+    <header className="app_header">
       <img src="/images/logo.svg" alt="logo" />
       <div>
         <select aria-label ="Select Font "name="fonts" defaultValue="sans" id="font-select" onChange={e => updateFont(e.target.value)}>
@@ -14,8 +14,7 @@ function Header () {
           <option value="Serif">Serif</option>
           <option value="Mono">Mono</option>
         </select>
-        <button onClick = {updateTheme}>Change {theme}</button>
-        <p>theme toggle</p>
+        <button onClick = {updateTheme}>Switch Theme</button>
       </div>
     </header>
   )
