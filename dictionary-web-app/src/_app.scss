@@ -12,12 +12,23 @@ body {
   }
 }
 
+#root {
+  display:flex;
+  place-content: center;
+  width: 100vw;
+}
 
 .main_wrapper {
   @include styles("lightTheme");
   background-color: var(--bg-color);
   color: var(--body-text);
   min-height: 100vh;
+  display:flex;
+  gap: $space-10;
+  flex-direction: column;
+  width: 100%;
+  max-width: 750px;
+  padding: $space-8 $space-6;
 
   &.switchTheme{
     @include styles('darkTheme');
@@ -56,3 +67,100 @@ body {
   }
 }
 
+// Main Content
+#main-content {
+  display: flex;
+  flex-direction: column;
+  gap: $space-8;
+
+  .inner_wrapper {
+    display:flex;
+    flex-direction: column;
+
+    header {
+      display:grid;
+      grid-template-areas: 
+      "word audio"
+      "phonetic audio";
+      gap: $space-6;
+
+      h1 {
+        @include heading-large;
+        grid-area: word;
+      }
+
+      p {
+        @include heading-medium;
+        color: $highlight;
+        grid-area: phonetic;
+      }
+
+      button {
+        grid-area: audio;
+        background-color: transparent;
+        width:max-content;
+        border: none;
+        justify-self: end;
+
+        svg  * {
+          transition: 350ms opacity linear, 350ms fill linear;
+        }
+
+        &:hover {
+          svg g circle{
+            opacity: $opacity-100;
+          }
+           svg g path {
+             fill: $white;
+           }
+        }
+      }
+
+    }
+
+    ul {
+      display:flex;
+      flex-direction: column;
+      gap: $space-4;
+
+      h2 {
+        margin-top: $space-4;
+      }
+
+      h3 {
+        @include heading-small;
+        color: $grey;
+      }
+
+      .list_style {
+        li {
+          padding-left: $space-4;
+          list-style: inside disc;
+
+          &::marker {
+            color: $highlight;
+          }
+        }
+      }
+
+      .inline_content { 
+        display:flex; 
+        flex-wrap:wrap;
+        row-gap: $space-2;
+      }
+
+      .inline_list {
+        display:flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        li {
+          @include heading-small;
+          color: $highlight;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+
+}

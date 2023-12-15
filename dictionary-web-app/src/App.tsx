@@ -90,50 +90,53 @@ function App() {
             </header>
             {notFound?.message && <NotFound notFound={notFound} word={debouncedSearchValue}/>}
             {error && <div>There was a problem fetching definition : {error}</div>}
-            <ul>
+            <div className="inner_wrapper">
             {definitions && definitions.length > 0 && 
               definitions.map((d)=> 
                 <>
-                  <li>
-                    <div>
-                      <p>{d.word}</p>
-                      {d.phonetics && 
-                      <>
-                        <p>{phoneticFAudioFinder(d.phonetics).text}</p>
-                        {phoneticFAudioFinder(d.phonetics).audio !== null ?  <><button onClick={() => audioControl(phoneticFAudioFinder(d.phonetics).audio)}> 
-                          <img src="/images/icon-play.svg" />
-                        </button>
-                        <audio>
-                          <source src={phoneticFAudioFinder(d.phonetics).audio}/>
-                        </audio> </>: null }
+                <header>
+                  <h1>{d.word}</h1>
+                  {d.phonetics && 
+                    <>
+                      <p>{phoneticFAudioFinder(d.phonetics).text}</p>
+                      {phoneticFAudioFinder(d.phonetics).audio !== null ?  <><button onClick={() => audioControl(phoneticFAudioFinder(d.phonetics).audio)}> 
+                      <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 75 75"><g fill="#A445ED" fill-rule="evenodd"><circle cx="37.5" cy="37.5" r="37.5" opacity=".25"/><path d="M29 27v21l21-10.5z"/></g></svg>
+                      </button>
+                      <audio>
+                        <source src={phoneticFAudioFinder(d.phonetics).audio}/>
+                      </audio> </>: null }
+                    </>
+                  }
+                </header>
+                {d.meanings.map((dm) => 
+                  <ul>
+                    <h2>{dm.partOfSpeech}</h2>
+                    <h3>Meaning</h3>
+                    <ul className="list_style">
+                      {dm.definitions.map((dmd) => 
+                        <>
+                          <li>{dmd.definition}</li>
+                          {dmd.example && <p>{dmd.example}</p> }
                       </>
-                    }
-                    </div>
-                    {d.meanings.map((dm) => 
-                      <ul>
-                        <div>{dm.partOfSpeech}<span><hr /></span></div>
-                        <header>Meaning</header>
-                        <ul>
-                          {dm.definitions.map((dmd) => 
-                              <li>{dmd.definition}</li>
-                          )}
-                        </ul>
-                        {dm.synonyms.length > 0 && <div>Synonyms : 
-                          <ul>
-                          {dm.synonyms.map((dmss) => 
-                          <li>{dmss}</li>
-                          )}
+                      )}
+                    </ul>
+                    {dm.synonyms.length > 0 && 
+                      <div className="inline_content">
+                        <h3 className="inline_heading">Synonyms &nbsp; &nbsp;</h3>
+                          <ul className="inline_list">
+                            {dm.synonyms.map((dmss) => 
+                            <li>{dmss}</li>
+                            )}
                           </ul>
-                        </div>}
-                      </ul>
-                    )}
-                  </li>
-                <hr/>
-                <p>Source {' '} <a href={d.sourceUrls[0]}>{d.sourceUrls[0]}</a></p>
+                      </div>
+                    }
+                  </ul>
+                )}
+              <p>Source &nbsp; &nbsp; <a href={d.sourceUrls[0]}>{d.sourceUrls[0]}</a></p>
                 </>
               )
             }
-            </ul>
+            </div>
           </main>
         </div>
   )
