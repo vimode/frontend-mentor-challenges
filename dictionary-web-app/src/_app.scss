@@ -73,9 +73,31 @@ body {
   flex-direction: column;
   gap: $space-8;
 
+  label{
+    position:relative;
+  }
+
+  input[type="search"] {
+    @include body-medium;
+    font-weight: bold;
+    width: 100%;
+    background-color: $grey-1;
+    border:none;
+    border-radius: $space-2;
+    padding: $space-3;
+    position:relative;
+  }
+
+  .searchIcon {
+    position:absolute;
+    right: 20px;
+    top:15%;
+  }
+
   .inner_wrapper {
     display:flex;
     flex-direction: column;
+    padding-block: $space-4;
 
     header {
       display:grid;
@@ -87,12 +109,14 @@ body {
       h1 {
         @include heading-large;
         grid-area: word;
+
       }
 
       p {
         @include heading-medium;
         color: $highlight;
         grid-area: phonetic;
+
       }
 
       button {
@@ -123,8 +147,21 @@ body {
       flex-direction: column;
       gap: $space-4;
 
+      .innerTitle_wrapper {
+        display:flex;
+        place-items:center;
+
       h2 {
         margin-top: $space-4;
+      }
+      .hline {
+        height:2px;
+        display:inline-flex;
+        background-color:$grey-2;
+        transform: translate(25px, 8px);
+        width: 85%;
+      }
+
       }
 
       h3 {
