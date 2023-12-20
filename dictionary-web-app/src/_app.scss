@@ -1,21 +1,22 @@
 body {
   font-family: $font-sans-serif;
+  font-size: 18px;
 }
 
 .skip-to-main-link {
-  left:50%;
+  left: 50%;
   position: absolute;
   transform: translateY(-100%);
 
   &:focus {
-    transform:translateY(0%);
+    transform: translateY(0%);
   }
 }
 
 #root {
-  display:flex;
+  display: flex;
   place-content: center;
-  width: 100vw;
+  width: 100%;
 }
 
 .main_wrapper {
@@ -23,18 +24,19 @@ body {
   background-color: var(--bg-color);
   color: var(--body-text);
   min-height: 100vh;
-  display:flex;
+  display: flex;
   gap: $space-10;
   flex-direction: column;
   width: 100%;
   padding: $space-8 $space-6;
 
-  &.switchTheme{
+  &.switchTheme {
     @include styles('darkTheme');
   }
 
   @media (prefers-color-scheme: dark) {
     @include styles("darkTheme");
+
     &.switchTheme {
       @include styles('lightTheme');
     }
@@ -55,35 +57,37 @@ body {
 }
 
 // Header
-.app_header { 
-  display:flex; 
-  place-items:center;
+.app_header {
+  display: flex;
+  place-items: center;
   place-content: space-between;
   max-width: 750px;
   width: 100%;
   margin: 0 auto;
 
   div {
-    display:flex;
+    display: flex;
     gap: $space-4;
     place-items: center;
   }
-  
-  input[type="checkbox"]{
+
+  input[type="checkbox"] {
     width: 0;
     height: 0;
     appearance: none;
-    display:none;
+    display: none;
 
     &:checked {
-      & + #toggle_theme_label {
+      &+#toggle_theme_label {
         background-color: $highlight;
+
         &::after {
           left: 22px;
         }
       }
     }
   }
+
   // add this to input:checked
   #theme_highlight path {
     stroke: $highlight;
@@ -91,23 +95,24 @@ body {
   }
 
   #toggle_theme_label {
-    display:block;
+    display: block;
     width: 40px;
     height: 20px;
     border-radius: 20px;
-    background-color: $grey;
-    position:relative;
+    background-color: $gray;
+    position: relative;
 
     &::after {
-      content:'';
-      position:absolute;
+      content: '';
+      position: absolute;
       width: 14px;
       height: 14px;
       border-radius: 100%;
       background-color: $white;
       top: 3px;
       left: 3px;
-      transition: left 250ms linear, background-color 300ms linear;;
+      transition: left 250ms linear, background-color 300ms linear;
+      ;
     }
   }
 
@@ -124,104 +129,112 @@ body {
   display: flex;
   flex-direction: column;
   gap: $space-8;
-  max-width:750px;
+  max-width: 750px;
   width: 100%;
   margin: 0 auto;
 
-  label{
-    position:relative;
+  label {
+    position: relative;
   }
 
   input[type="search"] {
     @include body-medium;
     font-weight: bold;
     width: 100%;
-    background-color: $grey-1;
-    border:none;
+    background-color: $gray-1;
+    border: none;
     border-radius: $space-2;
     padding: $space-3;
-    position:relative;
+    position: relative;
   }
 
   .searchIcon {
-    position:absolute;
+    position: absolute;
     right: 20px;
-    top:15%;
+    top: 15%;
   }
 
   .inner_wrapper {
-    display:flex;
+    display: flex;
     flex-direction: column;
-    padding-block: $space-4;
+    gap: $space-16;
+    padding-block: $space-10;
 
-    header {
-      display:grid;
-      grid-template-areas: 
-      "word audio"
-      "phonetic audio";
-      gap: $space-6;
+    .item_wrapper{
+      display:flex;
+      flex-direction: column ;
+      gap: $space-8;
 
-      h1 {
-        @include heading-large;
-        grid-area: word;
+      header {
+        display: grid;
+        grid-template-areas:
+          "word audio"
+          "phonetic audio";
+        gap: $space-6;
 
-      }
+        h1 {
+          @include heading-large;
+          grid-area: word;
 
-      p {
-        @include heading-medium;
-        color: $highlight;
-        grid-area: phonetic;
-
-      }
-
-      button {
-        grid-area: audio;
-        background-color: transparent;
-        width:max-content;
-        border: none;
-        justify-self: end;
-
-        svg  * {
-          transition: 350ms opacity linear, 350ms fill linear;
         }
 
-        &:hover {
-          svg g circle{
-            opacity: $opacity-100;
+        p {
+          @include heading-medium;
+          color: $highlight;
+          grid-area: phonetic;
+
+        }
+
+        button {
+          grid-area: audio;
+          background-color: transparent;
+          width: max-content;
+          border: none;
+          justify-self: end;
+
+          svg * {
+            transition: 350ms opacity linear, 350ms fill linear;
           }
-           svg g path {
-             fill: $white;
-           }
+
+          &:hover {
+            svg g circle {
+              opacity: $opacity-100;
+            }
+
+            svg g path {
+              fill: $white;
+            }
+          }
         }
       }
-
     }
 
     ul {
-      display:flex;
+      display: flex;
       flex-direction: column;
       gap: $space-4;
 
       .innerTitle_wrapper {
-        display:flex;
-        place-items:center;
+        display: flex;
+        place-items: center;
 
-      h2 {
-        margin-top: $space-4;
-      }
-      .hline {
-        height:2px;
-        display:inline-flex;
-        background-color:$grey-2;
-        transform: translate(25px, 8px);
-        width: 85%;
-      }
+        h2 {
+          margin-top: $space-4;
+        }
+
+        .hline {
+          height: 2px;
+          display: inline-flex;
+          background-color: $gray-2;
+          transform: translate(25px, 8px);
+          width: 85%;
+        }
 
       }
 
       h3 {
         @include heading-small;
-        color: $grey;
+        color: $gray;
       }
 
       .list_style {
@@ -235,14 +248,14 @@ body {
         }
       }
 
-      .inline_content { 
-        display:flex; 
-        flex-wrap:wrap;
+      .inline_content {
+        display: flex;
+        flex-wrap: wrap;
         row-gap: $space-2;
       }
 
       .inline_list {
-        display:flex;
+        display: flex;
         flex-direction: row;
         flex-wrap: wrap;
 
@@ -253,6 +266,46 @@ body {
         }
       }
     }
+
+    hr {
+      color: $gray-2;
+      border: 1px solid $gray-2;
+    }
+
+    .footer_text {
+      @include body-small;
+      display:inline-flex;
+      color: $gray;
+      & * {
+        text-decoration: underline;
+      }
+       
+      a {
+        color:$black-3;
+      }
+    }
   }
+
+  .loader {
+    width: 75px;
+    height: 75px;
+    display: inline-block;
+    border: 5px solid $highlight;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    animation: rotate 1s linear infinite;
+    margin: 0 auto;
+  }
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg)
+    }
+  }
+
 
 }
