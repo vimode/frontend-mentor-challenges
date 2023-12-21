@@ -5,7 +5,7 @@
 This repo is a single mega repo of all my submissions for the Frontend Mentor Challenges.
 Challenges on FrontendMentor are categorised based on a difficulty level. So I am just using the same to categorise them for now.
 
-This repo currently holds 53 projects. The earlier challenges are vanilla JS projects and the later ones are in React. I have titled them accordingly.
+This repo currently holds 54 projects. The earlier challenges are vanilla JS projects and the later ones are in React. I have titled them accordingly.
 
 The goal of this challenge is to keep coding everyday even if the progress of the project is in small increments, learn and experiment new things along the way. I try to document my process, my difficulties and learnings from each project in the project's repo. I would appreciate any feedback you have for me.
 
@@ -57,7 +57,7 @@ The goal of this challenge is to keep coding everyday even if the progress of th
 - [Advice generator app(React)](/advice-generator-app-react/)
 
 
-### Intermediate (15)
+### Intermediate (16)
 
 - [Bookmark landing page](/bookmark-landing-page/)
 - [Launch Countdown Timer](/launch-countdown-timer/)
@@ -74,6 +74,7 @@ The goal of this challenge is to keep coding everyday even if the progress of th
 - [IP Address Tracker(React)](/ip-address-tracker/)
 - [Minimalist Portfolio website(React)](/minimalist-portfolio-website)
 - [Todo App(Full Stack App)](/todo-app)
+- [Dictionary Web App(React)](/dictionary-web-app)
 
 ### Advanced
 
