@@ -12,6 +12,7 @@ export function phoneticAudioFinder(phonetics: Phonetics[]): {
   };
 }
 
+// @ts-expect-error unsure why HTMLMediaElement does not work
 export function audioControl(audioTrack) : void {
   if (!audioTrack.playing) {
     audioTrack.play();

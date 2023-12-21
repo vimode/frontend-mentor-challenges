@@ -12,10 +12,12 @@ function App() {
   const [definitions, setDefinitions] = useState<Definition[] | undefined>([]);
   const [notFound, setNotFound] = useState<NotFoundError | null>(null);
   // TODO: form validation
-  const [isValidInput, setIsValidInput] = useState(false);
+  // const [isValidInput, setIsValidInput] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
+  // @ts-expect-error theme
   const { theme } = useContext(ThemeContext);
+  // @ts-expect-error font
   const { font } = useContext(FontContext);
 
   useEffect(() => {
@@ -51,7 +53,8 @@ function App() {
             setNotFound(null);
             setError(null);
           }
-        } catch (error) {
+        } catch (error:unknown) {
+          // @ts-expect-error uknown
           setError(error);
           setDefinitions([]);
           setNotFound(null);
@@ -128,6 +131,7 @@ function App() {
                             )}
                           </button>
                           <audio>
+                             {/* @ts-expect-error unknown  */}
                             <source src={phoneticAudioFinder(d.phonetics).audio}/>
                           </audio>
                         </>
