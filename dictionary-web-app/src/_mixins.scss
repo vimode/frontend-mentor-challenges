@@ -1,0 +1,52 @@
+// Typography
+@mixin heading-large {
+  font: {
+    weight: $font-bold;
+    size: $text-3xl;
+  };
+  line-height: 29px;
+}
+
+@mixin heading-medium {
+  font: {
+    weight: $font-regular;
+    size: $text-xl;
+  };
+  line-height:29px;
+};
+
+@mixin heading-small {
+  font: {
+    weight: $font-regular;
+    size: $text-l;
+  };
+  line-height: 24px;
+}
+
+@mixin body-medium {
+  font: {
+    weight: $font-regular;
+    size: $text-m;
+  };
+  line-height: 24px;
+}
+
+@mixin body-small {
+  font:{
+    weight: $font-regular;
+    size: $text-sm;
+  };
+  line-height: 17px;
+}
+
+//Themes
+
+@mixin styles($mode) {
+  @each $key, $map in $themes {
+    @each $prop, $color in $map {
+      @if $prop == $mode {
+        --#{$key}: #{$color};
+      }
+    }
+  }
+}
