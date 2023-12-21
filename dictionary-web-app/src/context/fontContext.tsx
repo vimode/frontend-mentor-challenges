@@ -1,11 +1,11 @@
 import { createContext, useState } from "react"
 
-type FontContextType = {
+export type FontContextType = {
   font: FontType;
   updateFont : (string:FontType) => void;
 }
 
-type FontType = "Sans" | "Serif" | "Mono";
+export type FontType = "Sans" | "Serif" | "Mono";
 
 type Props = {
   children: React.ReactNode;

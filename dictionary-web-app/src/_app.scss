@@ -1,6 +1,13 @@
+html {
+  font-size: 18px;
+
+  @media (max-width: $layout-breakpoint-small){
+    font-size: 16px;
+  }
+
+}
 body {
   font-family: $font-sans-serif;
-  font-size: 18px;
 }
 
 .skip-to-main-link {
@@ -91,7 +98,6 @@ body {
   // add this to input:checked
   #theme_highlight path {
     stroke: $highlight;
-
   }
 
   #toggle_theme_label {
@@ -101,6 +107,7 @@ body {
     border-radius: 20px;
     background-color: $gray;
     position: relative;
+    cursor:pointer;
 
     &::after {
       content: '';
@@ -117,9 +124,24 @@ body {
   }
 
   select {
-    background: transparent;
+    background-color: transparent;
     border: none;
     color: var(--body-text);
+    cursor:pointer;
+
+    option {
+      background-color: var(--bg-color) ;
+      color:$white;
+      border:none;
+      font-family: inherit;
+      cursor:pointer;
+    }
+
+    optgroup {
+      background-color: transparent;
+      cursor:pointer;
+    }
+
   }
 
 }
@@ -228,6 +250,10 @@ body {
           background-color: $gray-2;
           transform: translate(25px, 8px);
           width: 85%;
+
+          @media (max-width: $layout-breakpoint-small) {
+            width: 75%;
+          }
         }
 
       }
@@ -245,6 +271,10 @@ body {
           &::marker {
             color: $highlight;
           }
+        }
+        p {
+          padding-left: $space-8;
+          color: $gray;
         }
       }
 
@@ -307,5 +337,30 @@ body {
     }
   }
 
+  .notFound_wrapper {
+    display:flex;
+    flex-direction: column;
+    place-items: center;
+    place-content: center;
+    gap: $space-6;
+
+    .emoji {
+      font-size: $text-3xl;
+    }
+
+    h1 {
+      @include heading-medium;
+      font-weight: bold;
+    }
+
+    div {
+      text-align: center;
+
+      *{
+        @include body-medium;
+        color: $gray;
+      }
+    }
+  }
 
 }

@@ -1,17 +1,20 @@
-import { NotFoundState } from "../App";
+import { NotFoundError } from "../types";
 
-interface Props {
-  notFound:object;
+type Props = {
+  notFound:NotFoundError;
   word: string;
 }
 
 function NotFound ({notFound, word}:Props) {
   return (
-    <>
+    <div className="notFound_wrapper">
+      <span role="img" className="emoji">🙁</span>
       <h1>{notFound.title} for {word}</h1>
-      <p>{notFound.message}</p>
-      <p>{notFound.resolution}</p>
-    </>
+      <div>
+        <span>{notFound.message}</span>
+        <span>{notFound.resolution}</span>
+      </div>
+    </div>
   )
 }
 

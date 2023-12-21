@@ -1,11 +1,11 @@
 import { createContext, useState } from "react";
 
-type ThemeContextType = {
+export type ThemeContextType = {
   theme: Theme;
   updateTheme: () => void;
 }
 
-type Theme = boolean;
+export type Theme = boolean;
 
 type Props = {
   children: React.ReactNode;

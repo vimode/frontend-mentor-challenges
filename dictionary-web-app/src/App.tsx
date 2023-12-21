@@ -11,6 +11,7 @@ function App() {
   const [debouncedSearchValue, setDebouncedSearchValue] = useState("");
   const [definitions, setDefinitions] = useState<Definition[] | undefined>([]);
   const [notFound, setNotFound] = useState<NotFoundError | null>(null);
+  // TODO: form validation
   const [isValidInput, setIsValidInput] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -80,7 +81,7 @@ function App() {
             />
           </label>
         </form>
-        {(isLoading && !definitions?.length > 0) ? (
+        {(isLoading && !definitions?.length ) ? (
           <div className="loader"></div>
         ) : null}
         {notFound?.message && (
@@ -127,9 +128,7 @@ function App() {
                             )}
                           </button>
                           <audio>
-                            <source
-                              src={phoneticAudioFinder(d.phonetics).audio}
-                            />
+                            <source src={phoneticAudioFinder(d.phonetics).audio}/>
                           </audio>
                         </>
                       ) : null}
@@ -149,7 +148,7 @@ function App() {
                       {dm.definitions.map((dmd) => (
                         <>
                           <li>{dmd.definition}</li>
-                          {dmd.example && <p>{dmd.example}</p>}
+                          {dmd.example && <p>"{dmd.example}"</p>}
                         </>
                       ))}
                     </ul>
@@ -168,11 +167,12 @@ function App() {
                   </ul>
                 ))}
                 <hr />
+                {d.sourceUrls && 
                 <div className="footer_text">
                   <p>Source</p>&nbsp; &nbsp;
                   <a href={d.sourceUrls[0]}>{d.sourceUrls[0]}</a>&nbsp;
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14"><path fill="none" stroke="#838383" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6.09 3.545H2.456A1.455 1.455 0 0 0 1 5v6.545A1.455 1.455 0 0 0 2.455 13H9a1.455 1.455 0 0 0 1.455-1.455V7.91m-5.091.727 7.272-7.272m0 0H9m3.636 0V5"/></svg>
-                </div>
+                </div>}
               </div>
             ))
           ) : (

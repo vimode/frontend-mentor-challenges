@@ -20,7 +20,7 @@ export function audioControl(audioTrack) : void {
   }
 }
 
-// for validation
+// TODO: for validation
 export function isEmpty(inputString:string) : boolean{
   return !inputString.trim().length;
 }
