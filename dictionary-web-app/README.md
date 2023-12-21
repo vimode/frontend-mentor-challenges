@@ -1,5 +1,7 @@
 # Dictionary web app
 
+[Live Link](https://dictionary-web-app-orcin.vercel.app/)
+
 This is a solution to the [Dictionary web app challenge](https://www.frontendmentor.io/challenges/dictionary-web-app-h5wwnyuKFL). 
 
 ![Design preview for Dictionary web app coding challenge](./design/preview.jpg)
