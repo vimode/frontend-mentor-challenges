@@ -69,7 +69,7 @@ function App() {
     <div className={`main_wrapper ${theme ? "switchTheme" : ""} font${font}`}>
       <Header />
       <main id="main-content">
-        <form onSubmit = { (e) => console.log(e)}>
+        <form onSubmit = { (e) => e.preventDefault()}>
           <label>
             <input
               type="search"
@@ -84,7 +84,7 @@ function App() {
             />
           </label>
         </form>
-        {(isLoading && !definitions?.length ) ? (
+        {(isLoading && !definitions?.length) ? (
           <div className="loader"></div>
         ) : null}
         {notFound?.message && (
