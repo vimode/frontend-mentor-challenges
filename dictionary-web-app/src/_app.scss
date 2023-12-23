@@ -155,26 +155,48 @@ body {
   width: 100%;
   margin: 0 auto;
 
-  label {
-    position: relative;
+  form {
+
+    .search_wrapper {
+      position: relative;
+
+      input[type="text"] {
+        @include body-medium;
+        font-weight: bold;
+        width: 100%;
+        background-color: $gray-1;
+        border: none;
+        border-radius: $space-2;
+        padding: $space-3;
+        position: relative;
+      }
+
+      label {
+        background-image: url("./images/icon-search.svg");
+        width: 18px;
+        height: 18px;
+        position:absolute;
+        right: 15px;
+        top: 16px;
+        z-index: 10;
+
+        span {
+          position:absolute;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 0;
+          border: 0;
+          height: 1px;
+          width: 1px;
+          overflow:hidden;
+        }
+      }
+    }
+
+
   }
 
-  input[type="search"] {
-    @include body-medium;
-    font-weight: bold;
-    width: 100%;
-    background-color: $gray-1;
-    border: none;
-    border-radius: $space-2;
-    padding: $space-3;
-    position: relative;
-  }
 
-  .searchIcon {
-    position: absolute;
-    right: 36px;
-    top: 15%;
-  }
+
 
   .inner_wrapper {
     display: flex;

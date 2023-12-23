@@ -70,19 +70,16 @@ function App() {
       <Header />
       <main id="main-content">
         <form onSubmit = { (e) => e.preventDefault()}>
-          <label>
-            <input
-              type="search"
-              value={value}
-              onChange={(e) => setValue(e.target.value)}
-              placeholder="Search for any word..."
-            />
-              <img
-                src="/images/icon-search.svg"
-                alt="search"
-                className="searchIcon"
-            />
-          </label>
+          <div role="search" className="search_wrapper">
+            <label className="searchLabel" htmlFor="search"><span>Search</span></label>
+              <input
+                type="text"
+                value={value}
+                onChange={(e) => setValue(e.target.value)}
+                placeholder="Search for any word..."
+                id="search"
+              />
+          </div>
         </form>
         {(isLoading && !definitions?.length) ? (
           <div className="loader"></div>
