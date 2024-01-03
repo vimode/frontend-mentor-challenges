@@ -21,7 +21,13 @@ export function audioControl(audioTrack) : void {
   }
 }
 
+export function randomUUID():string {
+  return self.crypto.randomUUID();
+}
+
 // TODO: for validation
 export function isEmpty(inputString:string) : boolean{
   return !inputString.trim().length;
 }
+
+

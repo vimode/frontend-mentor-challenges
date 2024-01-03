@@ -4,7 +4,7 @@ import NotFound from "./components/NotFound";
 import { ThemeContext } from "./context/themeContext";
 import { FontContext } from "./context/fontContext";
 import { Definition, NotFoundError } from "./types";
-import { phoneticAudioFinder, audioControl } from "./utils/common.utils";
+import { phoneticAudioFinder, audioControl, randomUUID } from "./utils/common.utils";
 
 function App() {
   const [value, setValue] = useState("");
@@ -54,7 +54,7 @@ function App() {
             setError(null);
           }
         } catch (error:unknown) {
-          // @ts-expect-error uknown
+          // @ts-expect-error unknown
           setError(error);
           setDefinitions([]);
           setNotFound(null);
@@ -91,7 +91,7 @@ function App() {
         <div className="inner_wrapper">
           {definitions && definitions.length > 0 ? (
             definitions.map((d) => (
-              <div className="item_wrapper">
+              <div className="item_wrapper" key = {randomUUID()}>
                 <header>
                   <h1>{d.word}</h1>
                   {d.phonetics.length > 0 ? (
@@ -139,7 +139,7 @@ function App() {
                   )}
                 </header>
                 {d.meanings.map((dm) => (
-                  <ul>
+                  <ul key={randomUUID()}>
                     <div className="innerTitle_wrapper">
                       <h2>{dm.partOfSpeech}</h2>
                       <p className="hline"></p>
@@ -148,8 +148,8 @@ function App() {
                     <ul className="list_style">
                       {dm.definitions.map((dmd) => (
                         <>
-                          <li>{dmd.definition}</li>
-                          {dmd.example && <p>"{dmd.example}"</p>}
+                          <li key={randomUUID()}>{dmd.definition}</li>
+                          {dmd.example && <p key={randomUUID()}>"{dmd.example}"</p>}
                         </>
                       ))}
                     </ul>
@@ -160,7 +160,7 @@ function App() {
                         </h3>
                         <ul className="inline_list">
                           {dm.synonyms.map((dmss) => (
-                            <li>{dmss}</li>
+                            <li key={randomUUID()}>{dmss}</li>
                           ))}
                         </ul>
                       </div>
@@ -172,7 +172,7 @@ function App() {
                 <div className="footer_text">
                   <p>Source</p>&nbsp; &nbsp;
                   <a href={d.sourceUrls[0]}>{d.sourceUrls[0]}</a>&nbsp;
-                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14"><path fill="none" stroke="#838383" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6.09 3.545H2.456A1.455 1.455 0 0 0 1 5v6.545A1.455 1.455 0 0 0 2.455 13H9a1.455 1.455 0 0 0 1.455-1.455V7.91m-5.091.727 7.272-7.272m0 0H9m3.636 0V5"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14"><path fill="none" stroke="#838383" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M6.09 3.545H2.456A1.455 1.455 0 0 0 1 5v6.545A1.455 1.455 0 0 0 2.455 13H9a1.455 1.455 0 0 0 1.455-1.455V7.91m-5.091.727 7.272-7.272m0 0H9m3.636 0V5"/></svg>
                 </div>}
               </div>
             ))
