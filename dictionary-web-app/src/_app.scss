@@ -199,7 +199,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: $space-16;
-    padding-block: $space-10;
+    padding-block: $space-4;
 
     .item_wrapper{
       display:flex;
@@ -212,6 +212,10 @@ body {
           "word audio"
           "phonetic audio";
         gap: $space-6;
+
+        @media (max-width: $layout-breakpoint-small){
+          gap: $space-1;
+        }
 
         h1 {
           @include heading-large;
@@ -285,8 +289,8 @@ body {
 
       .list_style {
         li {
-          padding-left: $space-4;
-          list-style: inside disc;
+          margin-left: $space-8;
+          list-style: outside disc;
 
           &::marker {
             color: $highlight;
