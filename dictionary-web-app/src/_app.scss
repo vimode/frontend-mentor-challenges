@@ -2,7 +2,7 @@ html {
   font-size: 18px;
 
   @media (max-width: $layout-breakpoint-small){
-    font-size: 16px;
+    font-size: 15px;
   }
 
 }
@@ -195,9 +195,6 @@ body {
 
   }
 
-
-
-
   .inner_wrapper {
     display: flex;
     flex-direction: column;
@@ -334,7 +331,7 @@ body {
       }
        
       a {
-        color:$black-3;
+        color:var(--body-text);
       }
     }
   }
