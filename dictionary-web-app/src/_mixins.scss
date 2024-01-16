@@ -4,6 +4,11 @@
     weight: $font-bold;
     size: $text-3xl;
   };
+
+  @media (max-width: $layout-breakpoint-small){
+    font-size: $text-2xl;
+  }
+
   line-height: 29px;
 }
 
