@@ -5,7 +5,7 @@
 This repo is a single mega repo of all my submissions for the Frontend Mentor Challenges.
 Challenges on FrontendMentor are categorised based on a difficulty level. So I am just using the same to categorise them for now.
 
-This repo currently holds 54 projects. The earlier challenges are vanilla JS projects and the later ones are in React. I have titled them accordingly.
+This repo currently holds 57 projects. The earlier challenges are vanilla JS projects and the later ones are in SPA React Web Apps or Full Stack Web Apps with a nodeJS backend. I have titled them accordingly.
 
 The goal of this challenge is to keep coding everyday even if the progress of the project is in small increments, learn and experiment new things along the way. I try to document my process, my difficulties and learnings from each project in the project's repo. I would appreciate any feedback you have for me.
 
@@ -76,9 +76,10 @@ The goal of this challenge is to keep coding everyday even if the progress of th
 - [Todo App(Full Stack App)](/todo-app)
 - [Dictionary Web App(React)](/dictionary-web-app)
 
-### Advanced
+### Advanced(2)
 
 - [Multi-step form(React)](/multi-step-form)
+- [Entertainment web app(Full Stack React App)](/entertainment-web-app)
 
 ### Guru
 

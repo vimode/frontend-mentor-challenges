@@ -11,86 +11,106 @@ let projectList =
   //   live_url: "https://frontend-mentor-challenges-ecru.vercel.app/loopstudios-landing-page/",
   //   text: "Many responsive images of different sizes with some hover effects. Animated mobile navigation to the playful theme of the landing page."
   // },
-  {
-    id: "n4",
-    difficulty: "junior",
-    tags: ["HTML", "CSS", "JS"],
-    title: "Crowdfunding Product Page",
-    img_src: "./crowdfunding-product-page/design/desktop-design.jpg",
-    repo_url: "https://github.com/vimode/frontend-mentor-challenges/tree/master/crowdfunding-product-page",
-    live_url: "https://frontend-mentor-challenges-ecru.vercel.app/crowdfunding-product-page/",
-    text: "The page has custom radio buttons with form validation to limit the pledge amount. Page elements dynamically updates based on pledges."
-  },
-  {
-    id: "n5",
-    difficulty: "intermediate",
-    tags: ["HTML", "CSS", "JS"],
-    title: "Launch Countdown Timer",
-    img_src: "./launch-countdown-timer/design/desktop-design.jpg",
-    repo_url: "https://github.com/vimode/frontend-mentor-challenges/tree/master/launch-countdown-timer",
-    live_url: "https://frontend-mentor-challenges-ecru.vercel.app/launch-countdown-timer",
-    text: "The countdown timer uses CSS animations to flip the cards and the animationend javascript event to continue the animation every second."
-  },
-  {
-    id: "n6",
-    difficulty: "intermediate",
-    tags: ["HTML", "CSS", "JS"],
-    title: "Clock App",
-    img_src: "./clock-app/preview.jpg",
-    repo_url: "https://github.com/vimode/frontend-mentor-challenges/tree/master/clock-app",
-    live_url: "https://frontend-mentor-challenges-ecru.vercel.app/clock-app/",
-    text: "This web app uses multiple APIs to display a quote, local time and visitor's IP location"
-  },
-  {
-    id: "n7",
-    difficulty: "intermediate",
-    tags: ["HTML", "CSS", "JS", "React"],
-    title: "Github User Search",
-    img_src: "./github-user-search-app/preview.jpg",
-    repo_url: "https://github.com/vimode/frontend-mentor-challenges/tree/master/github-user-search-app-v2",
-    live_url: "https://github-user-search-app-v2-beta.vercel.app",
-    text: "The search App uses Github API to show github user profile data."
-  },
-  {
-    id: "n9",
-    difficulty: "intermediate",
-    tags: ["HTML", "CSS", "JS", "React"],
-    title: "IP Adddress Tracker",
-    img_src: "./ip-address-tracker/design/desktop-design.jpg",
-    repo_url: "https://github.com/vimode/frontend-mentor-challenges/tree/master/ip-address-tracker",
-    live_url: "https://fm-ip-address-tracker-react.vercel.app/",
-    text: "This API tracker uses multiple APIs to fetch the necessary data. Map is drawn using LeaftetJS and CSS is done using styled components."
-  },
-  {
-    id: "n10",
-    difficulty: "intermediate",
-    tags: ["HTML", "CSS", "JS", "React"],
-    title: "Minimalist Portfolio Website",
-    img_src: "./minimalist-portfolio-website/design/preview.jpg",
-    repo_url: "https://github.com/vimode/frontend-mentor-challenges/tree/master/minimalist-portfolio-website/",
-    live_url: "https://fm-minimalist-portfolio-website-react.vercel.app/",
-    text: "This react project uses React Router and styled components for CSS."
-  },
-  {
-    id: "n11",
-    difficulty: "intermediate",
-    tags: ["HTML", "SCSS", "JS", "React"],
-    title: "Todo App",
-    img_src: "./todo-app/design/desktop-preview.jpg",
-    repo_url: "https://github.com/vimode/frontend-mentor-challenges/tree/master/todo-app/",
-    live_url: "",
-    text: "This is a full stack app that uses React, React Redux and RTK for the frontend; Express.JS, MongoDB with Mongoose for the backend."
-  },
-  {
-    id: "n12",
-    difficulty: "advanced",
-    tags: ["HTML", "SCSS", "JS", "React"],
-    title: "Multi-Step Form",
-    img_src: "./multi-step-form/design/desktop-preview.jpg",
-    repo_url: "https://github.com/vimode/frontend-mentor-challenges/tree/master/multi-step-form/",
-    live_url: "https://multi-step-form-vimo.vercel.app/",
-    text: "This react project leverages the use of localStorage to store & retrieve data between each step of the form. The styling is done using SCSS."
-  },
+    {
+      id: "n4",
+      difficulty: "junior",
+      tags: ["HTML", "CSS", "JS"],
+      title: "Crowdfunding Product Page",
+      img_src: "./crowdfunding-product-page/design/desktop-design.jpg",
+      repo_url: "https://github.com/vimode/frontend-mentor-challenges/tree/master/crowdfunding-product-page",
+      live_url: "https://frontend-mentor-challenges-ecru.vercel.app/crowdfunding-product-page/",
+      text: "The page has custom radio buttons with form validation to limit the pledge amount. Page elements dynamically updates based on pledges."
+    },
+    {
+      id: "n5",
+      difficulty: "intermediate",
+      tags: ["HTML", "CSS", "JS"],
+      title: "Launch Countdown Timer",
+      img_src: "./launch-countdown-timer/design/desktop-design.jpg",
+      repo_url: "https://github.com/vimode/frontend-mentor-challenges/tree/master/launch-countdown-timer",
+      live_url: "https://frontend-mentor-challenges-ecru.vercel.app/launch-countdown-timer",
+      text: "The countdown timer uses CSS animations to flip the cards and the animationend javascript event to continue the animation every second."
+    },
+    {
+      id: "n6",
+      difficulty: "intermediate",
+      tags: ["HTML", "CSS", "JS"],
+      title: "Clock App",
+      img_src: "./clock-app/preview.jpg",
+      repo_url: "https://github.com/vimode/frontend-mentor-challenges/tree/master/clock-app",
+      live_url: "https://frontend-mentor-challenges-ecru.vercel.app/clock-app/",
+      text: "This web app uses multiple APIs to display a quote, local time and visitor's IP location"
+    },
+    {
+      id: "n7",
+      difficulty: "intermediate",
+      tags: ["HTML", "CSS", "JS", "React"],
+      title: "Github User Search",
+      img_src: "./github-user-search-app/preview.jpg",
+      repo_url: "https://github.com/vimode/frontend-mentor-challenges/tree/master/github-user-search-app-v2",
+      live_url: "https://github-user-search-app-v2-beta.vercel.app",
+      text: "The search App uses Github API to show github user profile data."
+    },
+    {
+      id: "n9",
+      difficulty: "intermediate",
+      tags: ["HTML", "CSS", "JS", "React"],
+      title: "IP Adddress Tracker",
+      img_src: "./ip-address-tracker/design/desktop-design.jpg",
+      repo_url: "https://github.com/vimode/frontend-mentor-challenges/tree/master/ip-address-tracker",
+      live_url: "https://fm-ip-address-tracker-react.vercel.app/",
+      text: "This API tracker uses multiple APIs to fetch the necessary data. Map is drawn using LeaftetJS and CSS is done using styled components."
+    },
+    {
+      id: "n10",
+      difficulty: "intermediate",
+      tags: ["HTML", "CSS", "JS", "React"],
+      title: "Minimalist Portfolio Website",
+      img_src: "./minimalist-portfolio-website/design/preview.jpg",
+      repo_url: "https://github.com/vimode/frontend-mentor-challenges/tree/master/minimalist-portfolio-website/",
+      live_url: "https://fm-minimalist-portfolio-website-react.vercel.app/",
+      text: "This react project uses React Router and styled components for CSS."
+    },
+    {
+      id: "n11",
+      difficulty: "intermediate",
+      tags: ["HTML", "SCSS", "JS", "React"],
+      title: "Todo App",
+      img_src: "./todo-app/design/desktop-preview.jpg",
+      repo_url: "https://github.com/vimode/frontend-mentor-challenges/tree/master/todo-app/",
+      live_url: "",
+      text: "This is a full stack app that uses React, React Redux and RTK for the frontend; Express.JS, MongoDB with Mongoose for the backend."
+    },
+    {
+      id: "n12",
+      difficulty: "advanced",
+      tags: ["HTML", "SCSS", "JS", "React"],
+      title: "Multi-Step Form",
+      img_src: "./multi-step-form/design/desktop-preview.jpg",
+      repo_url: "https://github.com/vimode/frontend-mentor-challenges/tree/master/multi-step-form/",
+      live_url: "https://multi-step-form-vimo.vercel.app/",
+      text: "This react project leverages the use of localStorage to store & retrieve data between each step of the form. The styling is done using SCSS."
+    },
+    {
+      id: "n13",
+      difficulty: "advanced",
+      tags: ["HTML", "SCSS", "JS", "React"],
+      title: "Entertainment Web App",
+      img_src: "./entertainment-web-app/design/preview.jpg",
+      repo_url: "https://github.com/vimode/frontend-mentor-challenges/tree/master/entertainment-web-app",
+      live_url: "#",
+      text:"A Full Stack App that uses the TMDB API to fetch popular movies & tvshows and filter them to display in an optimized manner with a cache on the backend to not many too many API requests. With use of localStorage each unique visitor can save bookmarks which is stored in a MongoDB database." 
+    },
+    {
+      id: "n14",
+      difficulty: "intermediate",
+      tags: ["HTML", "SCSS", "TS", "React"],
+      title: "Dictionary web app",
+      img_src: "./dictionary-web-app/design/preview.jpg",
+      repo_url: "https://github.com/vimode/frontend-mentor-challenges/tree/master/dictionary-web-app",
+      live_url: "https://dictionary-web-app-orcin.vercel.app/",
+      text:"A React SPA dictionary app built using TS with a theme switcher and font switcher. The dictionary API is a dummy API with a lot of conditional rendering and challenging data to display." 
+    },
   ];
 
 
