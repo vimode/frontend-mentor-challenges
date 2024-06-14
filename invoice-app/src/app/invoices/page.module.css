@@ -1,0 +1,26 @@
+.main {
+  display:flex;
+  height: 100%
+}
+
+.sidebar {
+  height: 100%;
+  background-color:var(--neutral);
+  max-width: 100px;
+  width: 100%;
+  border-radius:0px 20px 20px 0px ;
+}
+
+.nav {
+  display:flex;
+  flex-direction:column;
+  place-items:center;
+  height: 100%;
+  place-content:end;
+}
+
+.profile_image {
+  border-radius:  50%;
+  text-align:center;
+  width: 50%;
+}
