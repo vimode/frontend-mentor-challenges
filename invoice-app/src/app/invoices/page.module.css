@@ -16,7 +16,7 @@
   flex-direction:column;
   place-items:center;
   height: 100%;
-  place-content:end;
+  place-content:flex-end;
 }
 
 .profile_image {
