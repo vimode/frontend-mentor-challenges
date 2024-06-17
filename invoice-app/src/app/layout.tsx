@@ -3,7 +3,7 @@ import { League_Spartan } from "next/font/google";
 import "./globals.css";
 
 const spartan = League_Spartan({
-	weight: ["500", "700"],
+	weight: "variable",
 	style: ["normal"],
 	subsets: ["latin"],
 	display: "swap",

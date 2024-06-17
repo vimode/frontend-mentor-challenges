@@ -44,6 +44,17 @@ a {
   text-decoration: none;
 }
 
+img, picture, video, canvas, svg {
+  display:block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {font:inherit;}
+
+li {
+  list-style:none;
+}
+
 /* Typography */
 h1 {
   font-size: 32px;

@@ -1,9 +1,10 @@
 import data from "@/data.json";
+import styles from "./styles.module.css";
 
 export default function Invoices() {
 	return (
-		<section>
-			<div>
+		<section className={styles.invoice_wrapper}>
+			<div className={styles.invoice_header}>
 				<div>
 					<h1>Invoices</h1>
 					<p>There are 7 total invoices</p>
@@ -14,9 +15,9 @@ export default function Invoices() {
 				</div>
 			</div>
 			{data ? (
-				data.map((invoice) => (
-					<ul key={invoice.id}>
-						<li>
+				<ul className={styles.invoice_inner_wrapper}>
+					{data.map((invoice) => (
+						<li key={invoice.id} className={styles.invoice}>
 							<p>{invoice.id}</p>
 							<p>{invoice.paymentDue}</p>
 							<p>{invoice.clientName}</p>
@@ -26,8 +27,8 @@ export default function Invoices() {
 								<a href={`/invoices/${invoice.id}`}>&gt;</a>
 							</p>
 						</li>
-					</ul>
-				))
+					))}
+				</ul>
 			) : (
 				<div>Nothing</div>
 			)}
