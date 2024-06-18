@@ -8,7 +8,7 @@
   --neutral: #373B53;
   --primary-text: #0C0E16;
   --secondary-text: #858BB2;
-  --tertiray-text: #7E88C3;
+  --tertiary-text: #7E88C3;
   --neutral-bg: #F9FAFE;
   --neutral-bg-alt: #DFE3FA;
   --alert-bg:#EC5757;
@@ -59,7 +59,7 @@ li {
   display:flex;
   flex-direction:column;
   place-items:center;
-  margin: auto;
+  margin: 0 auto;
   max-width: 700px;
   padding-block: 72px;
 }

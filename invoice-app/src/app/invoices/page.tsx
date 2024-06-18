@@ -18,7 +18,10 @@ export default function Invoices() {
 				<ul className={styles.invoice_inner_wrapper}>
 					{data.map((invoice) => (
 						<li key={invoice.id} className={styles.invoice}>
-							<p>{invoice.id}</p>
+							<p>
+								<span className={styles.invoiceid}>#</span>
+								{invoice.id}
+							</p>
 							<p>{invoice.paymentDue}</p>
 							<p>{invoice.clientName}</p>
 							<p>{invoice.total}</p>

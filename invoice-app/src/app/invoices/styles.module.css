@@ -28,6 +28,10 @@
   width:max-content;
 }
 
+.invoiceid {
+ color:var(--tertiary-text);
+}
+
 .invoice_options {
   display:flex;
 }

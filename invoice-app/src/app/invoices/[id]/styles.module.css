@@ -1,0 +1,101 @@
+.invoice_outer_wrapper {
+  display:grid;
+  grid-template-areas: 
+    "nav _"
+    "status options"
+    "content content";
+  place-items:start;
+  row-gap: 1rem;
+  height:max-content;
+}
+
+.invoice_nav {
+  grid-area: nav;
+}
+
+.invoice_status {
+  grid-area: status;
+  background-color:var(--secondary-bg);
+  width:100%;
+  padding:2em;
+  height: 90px;
+  display:flex;
+  gap: 1rem;
+}
+
+.invoice_options {
+  grid-area:options;
+  background-color:var(--secondary-bg);
+  width:100%;
+  padding:2em;
+  height: 90px;
+  display:flex;
+  place-content:end;
+}
+
+.invoice_content_wrapper {
+  grid-area: content;
+  display:grid;
+  grid-template-areas:
+    "id _ address"
+    "date to email"
+    "content content content";
+  background-color:var(--secondary-bg);
+  width:100%;
+  padding:1em;
+}
+
+.invoice_details {
+  grid-area: id;
+  background-color:var(--secondary-bg);
+}
+
+.invoice_add {
+  grid-area:address;
+}
+
+.invoice_add p {
+  text-align:right;
+}
+
+.invoice_dates {
+  grid-area: date;
+}
+
+.invoice_to {
+  grid-area: to;
+}
+
+.invoice_to_email {
+  grid-area: email;
+}
+
+.invoice_content {
+  grid-area:content;
+  background-color:var(--neutral-bg);
+}
+
+.invoice_total {
+
+}
+
+
+@media (){
+.invoic_outer_wrapper {
+  grid-template-areas: 
+    "nav"
+    "status"
+    "content"
+    "options";
+}
+
+.invoice_content_wrapper {
+  display:grid;
+  grid-template-areas:
+    "id"
+    "address"
+    "date to"
+    "email"
+    "content";
+}
+}
