@@ -3,13 +3,13 @@ import styles from "./styles.module.css";
 
 export default function Invoices() {
 	return (
-		<section className={styles.invoice_wrapper}>
+		<section className={`content_wrapper  ${styles.invoice_wrapper}`}>
 			<div className={styles.invoice_header}>
 				<div>
 					<h1>Invoices</h1>
 					<p>There are 7 total invoices</p>
 				</div>
-				<div>
+				<div className={styles.invoice_options}>
 					<p>Filter</p>
 					<button>New Invoice</button>
 				</div>
@@ -30,7 +30,9 @@ export default function Invoices() {
 					))}
 				</ul>
 			) : (
-				<div>Nothing</div>
+				<div>
+					<img src="./assets/illustration-empty.svg" />
+				</div>
 			)}
 		</section>
 	);

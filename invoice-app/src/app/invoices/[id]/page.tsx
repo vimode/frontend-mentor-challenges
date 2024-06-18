@@ -8,7 +8,7 @@ export default function Page({ params }: { params: { id: string } }) {
 		})[0] || data[0];
 
 	return (
-		<section>
+		<section className={"content_wrapper"}>
 			<nav>
 				<a href="/invoices">&lt; Go back</a>
 			</nav>

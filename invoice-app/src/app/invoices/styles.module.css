@@ -1,20 +1,35 @@
 .invoice_wrapper {
-  display:flex;
-  flex-direction:column;
-  place-content:center;
-  width:100%;
+}
+
+.invoice_header {
+ display:flex;
+  width: 100%;
+  justify-content:  space-between;
 }
 
 .invoice_inner_wrapper {
   display:flex;
   flex-direction:column;
   place-items:center;
+  row-gap:10px;
 }
 
 .invoice {
   display:grid;
   grid-template-areas:
     "i_id i_date c_name i_amount i_status i_link";
+  width:100%;
+  background-color: var(--secondary-bg);
+  border-radius:8px;
+}
+
+.invoice > p {
+  padding: 2rem;
+  width:max-content;
+}
+
+.invoice_options {
+  display:flex;
 }
 
 .invoice p:nth-child(1) {
@@ -40,3 +55,4 @@
 .invoice p:nth-child(6) {
   grid-area:i_link;
 }
+
