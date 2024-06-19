@@ -34,7 +34,7 @@ export default function Invoices() {
 				</ul>
 			) : (
 				<div>
-					<img src="./assets/illustration-empty.svg" />
+					<img src="./assets/illustration-empty.svg" alt="No invoices" />
 				</div>
 			)}
 		</section>
