@@ -30,7 +30,7 @@
   padding:2em;
   height: 90px;
   display:flex;
-  place-content:end;
+  place-content:flex-end;
 }
 
 .invoice_content_wrapper {
