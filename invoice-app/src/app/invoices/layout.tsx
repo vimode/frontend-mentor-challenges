@@ -10,7 +10,7 @@ export default function InvoicesLayout({
 					<p>T</p>
 					<img
 						className={styles.profile_image}
-						src="./assets/image-avatar.jpg"
+						src="/assets/image-avatar.jpg"
 					/>
 				</div>
 			</section>
