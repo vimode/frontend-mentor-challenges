@@ -3,11 +3,11 @@ import styles from "./styles.module.css";
 
 export default function Page({ params }: { params: { id: string } }) {
 	const id = params.id;
+
 	const routeInvoice =
 		data.filter((invoice) => {
-			invoice.id === id;
+			return invoice.id.toString() === id.toString();
 		})[0] || data[0];
-	console.log(routeInvoice);
 
 	return (
 		<section className={`content_wrapper ${styles.invoice_outer_wrapper}`}>
@@ -26,7 +26,10 @@ export default function Page({ params }: { params: { id: string } }) {
 
 			<div className={styles.invoice_content_wrapper}>
 				<div className={styles.invoice_details}>
-					<p>{routeInvoice.id}</p>
+					<p>
+						<span className={styles.invoiceid}>#</span>
+						{routeInvoice.id}
+					</p>
 					<p>{routeInvoice.description}</p>
 				</div>
 
