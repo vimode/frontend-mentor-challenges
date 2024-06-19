@@ -1,7 +1,13 @@
+"use client";
+
+import { useState } from "react";
 import data from "@/data.json";
 import styles from "./styles.module.css";
+import AddInvoiceModal from "@/components/AddInvoiceModal";
 
 export default function Invoices() {
+	const [addInvoiceModalOpen, setAddInvoiceModalOpen] = useState(false);
+
 	return (
 		<section className={`content_wrapper  ${styles.invoice_wrapper}`}>
 			<div className={styles.invoice_header}>
@@ -11,7 +17,9 @@ export default function Invoices() {
 				</div>
 				<div className={styles.invoice_options}>
 					<p>Filter</p>
-					<button>New Invoice</button>
+					<button onClick={() => setAddInvoiceModalOpen(true)}>
+						New Invoice
+					</button>
 				</div>
 			</div>
 			{data ? (
@@ -36,6 +44,14 @@ export default function Invoices() {
 				<div>
 					<img src="./assets/illustration-empty.svg" alt="No invoices" />
 				</div>
+			)}
+			{addInvoiceModalOpen && (
+				<AddInvoiceModal
+					handleClose={() => setAddInvoiceModalOpen(false)}
+					isOpen={addInvoiceModalOpen}
+				>
+					This is a modal
+				</AddInvoiceModal>
 			)}
 		</section>
 	);
