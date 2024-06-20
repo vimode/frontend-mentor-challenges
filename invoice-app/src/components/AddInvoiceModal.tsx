@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import ReactPortal from "./ReactPortal";
+import styles from "./addinvoice.module.css";
 
 function AddInvoiceModal({
 	children,
@@ -34,11 +35,12 @@ function AddInvoiceModal({
 
 	return (
 		<ReactPortal wrapperId="react-portal-modal-container">
-			<div className="modal">
-				<button onClick={handleClose} className="close-btn">
-					Close
-				</button>
+			<div className={styles.overlay}></div>
+			<div className={styles.modal_wrapper}>
 				<div className="modal-content">{children}</div>
+				<button onClick={handleClose} className="close-btn">
+					Discard
+				</button>
 			</div>
 		</ReactPortal>
 	);
