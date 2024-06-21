@@ -38,9 +38,6 @@ function AddInvoiceModal({
 			<div className={styles.overlay}></div>
 			<div className={styles.modal_wrapper}>
 				<div className="modal-content">{children}</div>
-				<button onClick={handleClose} className="close-btn">
-					Discard
-				</button>
 			</div>
 		</ReactPortal>
 	);

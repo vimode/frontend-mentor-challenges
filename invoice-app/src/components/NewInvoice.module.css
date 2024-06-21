@@ -1,0 +1,21 @@
+.invoice_wrapper {
+  height: 100vh;
+  max-width: 600px;
+}
+
+.invoice_wrapper form input {
+  width: 100%;
+}
+
+
+.fwinputs {
+
+}
+
+.groupedinputs {
+  display:flex;
+  gap: 10px;
+}
+
+.formButtons {
+}
