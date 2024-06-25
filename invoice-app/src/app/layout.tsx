@@ -24,7 +24,9 @@ export default function RootLayout({
 			<head>
 				<link rel="icon" href="/favicon.ico" sizes="any" />
 			</head>
-			<body className={spartan.className}>{children}</body>
+			<body className={`primary-text-size ${spartan.className}`}>
+				{children}
+			</body>
 		</html>
 	);
 }

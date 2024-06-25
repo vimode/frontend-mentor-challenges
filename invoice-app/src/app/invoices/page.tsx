@@ -31,8 +31,14 @@ export default function Invoices() {
 				</div>
 				<div className={styles.invoice_options}>
 					<p>Filter</p>
-					<button onClick={() => setAddInvoiceModalOpen(true)}>
-						New Invoice
+					<button
+						className={`primary-text-size bold-text ${styles.buttonPrimary}`}
+						onClick={() => setAddInvoiceModalOpen(true)}
+					>
+						<div>
+							<img src="./assets/icon-plus.svg" />
+							<p>New Invoice</p>
+						</div>
 					</button>
 				</div>
 			</div>
@@ -40,7 +46,7 @@ export default function Invoices() {
 				<ul className={styles.invoice_inner_wrapper}>
 					{data.map((invoice) => (
 						<li key={invoice.id} className={styles.invoice}>
-							<p className={`bold-text ${styles.title}`}>
+							<p className={`bold-text primary-text-size ${styles.title}`}>
 								<span className={styles.invoiceid}>#</span>
 								{invoice.id}
 							</p>
