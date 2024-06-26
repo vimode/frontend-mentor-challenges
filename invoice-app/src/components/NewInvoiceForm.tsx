@@ -1,16 +1,23 @@
+import { useState } from "react";
 import styles from "./NewInvoice.module.css";
+import { addNewInvoice } from "@/lib/action";
 
-function NewInvoiceForm({
-	handleSubmit,
-	handleInputChange,
-	formData,
-	handleClose,
-}: {
-	handleSubmit: () => void;
-	handleInputChange: () => void;
-	formData: HTMLFormElement;
-	handleClose: () => void;
-}) {
+function NewInvoiceForm({ handleClose }: { handleClose: () => void }) {
+	// const [formData, setFormData] = useState({});
+
+	// const handleInputChange = (e) => {
+	// 	setFormData({
+	// 		...formData,
+	// 		[e.target.name]: e.target.value,
+	// 	});
+	// };
+
+	const handleSubmit = async (FormData) => {
+		e.preventDefault();
+		// console.log(formData);
+		await addNewInvoice(FormData);
+	};
+
 	return (
 		<section className={styles.invoice_wrapper}>
 			<h2>New Invoice</h2>
@@ -24,8 +31,8 @@ function NewInvoiceForm({
 							type="text"
 							id="street-address"
 							name="streetAddress"
-							value={formData.streetAddress}
-							onChange={handleInputChange}
+							// value={formData.streetAddress}
+							// onChange={handleInputChange}
 						/>
 					</div>
 					<div className={styles.groupedinputs}>
@@ -35,8 +42,8 @@ function NewInvoiceForm({
 								type="text"
 								id="city"
 								name="city"
-								value={formData.city}
-								onChange={handleInputChange}
+								// value={formData.city}
+								// onChange={handleInputChange}
 							/>
 						</div>
 						<div>
@@ -45,8 +52,8 @@ function NewInvoiceForm({
 								type="text"
 								id="post-code"
 								name="postCode"
-								value={formData.postCode}
-								onChange={handleInputChange}
+								// value={formData.postCode}
+								// onChange={handleInputChange}
 							/>
 						</div>
 						<div>
@@ -55,8 +62,8 @@ function NewInvoiceForm({
 								type="text"
 								id="country"
 								name="country"
-								value={formData.country}
-								onChange={handleInputChange}
+								// value={formData.country}
+								// onChange={handleInputChange}
 							/>
 						</div>
 					</div>
@@ -71,8 +78,8 @@ function NewInvoiceForm({
 							type="text"
 							id="client-name"
 							name="clientName"
-							value={formData.clientName}
-							onChange={handleInputChange}
+							// value={formData.clientName}
+							// onChange={handleInputChange}
 						/>
 					</div>
 					<div className={styles.fwinputs}>
@@ -81,8 +88,8 @@ function NewInvoiceForm({
 							type="email"
 							id="client-email"
 							name="clientEmail"
-							value={formData.clientEmail}
-							onChange={handleInputChange}
+							// value={formData.clientEmail}
+							// onChange={handleInputChange}
 						/>
 					</div>
 					<div className={styles.fwinputs}>
@@ -91,8 +98,8 @@ function NewInvoiceForm({
 							type="text"
 							id="street-name"
 							name="streetName"
-							value={formData.streetName}
-							onChange={handleInputChange}
+							// value={formData.streetName}
+							// onChange={handleInputChange}
 						/>
 					</div>
 					<div className={styles.groupedinputs}>
@@ -102,8 +109,8 @@ function NewInvoiceForm({
 								type="text"
 								id="client-city"
 								name="clientCity"
-								value={formData.clientCity}
-								onChange={handleInputChange}
+								// value={formData.clientCity}
+								// onChange={handleInputChange}
 							/>
 						</div>
 						<div>
@@ -112,8 +119,8 @@ function NewInvoiceForm({
 								type="text"
 								id="client-post-code"
 								name="clientPostCode"
-								value={formData.clientPostCode}
-								onChange={handleInputChange}
+								// value={formData.clientPostCode}
+								// onChange={handleInputChange}
 							/>
 						</div>
 						<div>
@@ -122,8 +129,8 @@ function NewInvoiceForm({
 								type="text"
 								id="client-country"
 								name="clientCountry"
-								value={formData.clientCountry}
-								onChange={handleInputChange}
+								// value={formData.clientCountry}
+								// onChange={handleInputChange}
 							/>
 						</div>
 					</div>
@@ -134,8 +141,8 @@ function NewInvoiceForm({
 								type="date"
 								id="invoice-date"
 								name="invoiceDate"
-								value={formData.invoiceDate}
-								onChange={handleInputChange}
+								// value={formData.invoiceDate}
+								// onChange={handleInputChange}
 							/>
 						</div>
 						<div>
@@ -143,8 +150,8 @@ function NewInvoiceForm({
 							<select
 								id="payment-terms"
 								name="paymentTerms"
-								value={formData.paymentTerms}
-								onChange={handleInputChange}
+								// value={formData.paymentTerms}
+								// onChange={handleInputChange}
 							>
 								<option value="30days">Next 30 Days</option>
 								<option value="60days">Next 60 Days</option>
@@ -157,8 +164,8 @@ function NewInvoiceForm({
 								type="text"
 								id="project-description"
 								name="projectDescription"
-								value={formData.projectDescription}
-								onChange={handleInputChange}
+								// value={formData.projectDescription}
+								// onChange={handleInputChange}
 							/>
 						</div>
 					</div>
@@ -183,16 +190,16 @@ function NewInvoiceForm({
 									<input
 										type="text"
 										name="itemName1"
-										value={formData.itemName1}
-										onChange={handleInputChange}
+										// value={formData.itemName1}
+										// onChange={handleInputChange}
 									/>
 								</td>
 								<td>
 									<input
 										type="number"
 										name="itemQty1"
-										value={formData.itemQty1}
-										onChange={handleInputChange}
+										// value={formData.itemQty1}
+										// onChange={handleInputChange}
 									/>
 								</td>
 								<td>
@@ -200,8 +207,8 @@ function NewInvoiceForm({
 										type="number"
 										step="1.0"
 										name="itemPrice1"
-										value={formData.itemPrice1}
-										onChange={handleInputChange}
+										// value={formData.itemPrice1}
+										// onChange={handleInputChange}
 									/>
 								</td>
 								<td>156.00</td>
@@ -214,16 +221,16 @@ function NewInvoiceForm({
 									<input
 										type="text"
 										name="itemName2"
-										value={formData.itemName2}
-										onChange={handleInputChange}
+										// value={formData.itemName2}
+										// onChange={handleInputChange}
 									/>
 								</td>
 								<td>
 									<input
 										type="number"
 										name="itemQty2"
-										value={formData.itemQty2}
-										onChange={handleInputChange}
+										// value={formData.itemQty2}
+										// onChange={handleInputChange}
 									/>
 								</td>
 								<td>
@@ -231,8 +238,8 @@ function NewInvoiceForm({
 										type="number"
 										step="1.0"
 										name="itemPrice2"
-										value={formData.itemPrice2}
-										onChange={handleInputChange}
+										// value={formData.itemPrice2}
+										// onChange={handleInputChange}
 									/>
 								</td>
 								<td>400.00</td>

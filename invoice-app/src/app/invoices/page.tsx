@@ -8,19 +8,6 @@ import NewInvoiceForm from "@/components/NewInvoiceForm";
 
 export default function Invoices() {
 	const [addInvoiceModalOpen, setAddInvoiceModalOpen] = useState(false);
-	const [formData, setFormData] = useState({});
-
-	const handleInputChange = (e) => {
-		setFormData({
-			...formData,
-			[e.target.name]: e.target.value,
-		});
-	};
-
-	const handleSubmit = (e) => {
-		e.preventDefault();
-		console.log(formData);
-	};
 
 	return (
 		<section className={`content_wrapper  ${styles.invoice_wrapper}`}>
@@ -71,12 +58,7 @@ export default function Invoices() {
 					isOpen={addInvoiceModalOpen}
 					handleClose={() => setAddInvoiceModalOpen(false)}
 				>
-					<NewInvoiceForm
-						handleSubmit={handleSubmit}
-						handleClose={() => setAddInvoiceModalOpen(false)}
-						handleInputChange={handleInputChange}
-						formData={formData}
-					/>
+					<NewInvoiceForm handleClose={() => setAddInvoiceModalOpen(false)} />
 				</AddInvoiceModal>
 			)}
 		</section>
