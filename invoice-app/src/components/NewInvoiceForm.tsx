@@ -12,16 +12,20 @@ function NewInvoiceForm({ handleClose }: { handleClose: () => void }) {
 	// 	});
 	// };
 
-	const handleSubmit = async (FormData) => {
-		e.preventDefault();
-		// console.log(formData);
-		await addNewInvoice(FormData);
-	};
+	// const handleSubmit = async (FormData) => {
+	// 	console.log(FormData);
+	// 	await addNewInvoice(FormData);
+	// };
 
 	return (
 		<section className={styles.invoice_wrapper}>
 			<h2>New Invoice</h2>
-			<form className={styles.newinvoice_form} onSubmit={handleSubmit}>
+			<form
+				className={styles.newinvoice_form}
+				action={async (FormData) => {
+					await addNewInvoice(FormData);
+				}}
+			>
 				{/* Bill from */}
 				<fieldset>
 					<legend>Bill From</legend>
@@ -145,19 +149,19 @@ function NewInvoiceForm({ handleClose }: { handleClose: () => void }) {
 								// onChange={handleInputChange}
 							/>
 						</div>
-						<div>
-							<label htmlFor="payment-terms">Payment Terms</label>
-							<select
-								id="payment-terms"
-								name="paymentTerms"
-								// value={formData.paymentTerms}
-								// onChange={handleInputChange}
-							>
-								<option value="30days">Next 30 Days</option>
-								<option value="60days">Next 60 Days</option>
-								<option value="90days">Next 90 Days</option>
-							</select>
-						</div>
+						{/* <div> */}
+						{/* 	<label htmlFor="payment-terms">Payment Terms</label> */}
+						{/* 	<select */}
+						{/* 		id="payment-terms" */}
+						{/* 		name="paymentTerms" */}
+						{/* 		// value={formData.paymentTerms} */}
+						{/* 		// onChange={handleInputChange} */}
+						{/* 	> */}
+						{/* 		<option value="30days">Next 30 Days</option> */}
+						{/* 		<option value="60days">Next 60 Days</option> */}
+						{/* 		<option value="90days">Next 90 Days</option> */}
+						{/* 	</select> */}
+						{/* </div> */}
 						<div className={styles.fwinputs}>
 							<label htmlFor="project-description">Project Description</label>
 							<input

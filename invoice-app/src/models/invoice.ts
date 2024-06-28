@@ -19,7 +19,7 @@ export interface InvoiceDetails extends mongoose.Document {
 	createdAt: Date;
 	paymentDue: Date;
 	description: string;
-	paymentTerms: number;
+	// paymentTerms: any;
 	clientEmail: string;
 	clientName: string;
 	status: string;
@@ -34,7 +34,7 @@ const InvoiceSchema = new mongoose.Schema<InvoiceDetails>({
 	createdAt: { type: Date, default: Date.now },
 	paymentDue: Date,
 	description: String,
-	paymentTerms: Number,
+	// paymentTerms: mongoose.Schema.Types.Mixed,
 	clientEmail: String,
 	clientName: String,
 	status: String,
@@ -67,6 +67,8 @@ InvoiceSchema.set("toJSON", {
 	},
 });
 
-const Invoice = mongoose.model<InvoiceDetails>("Invoice", InvoiceSchema);
+const Invoice =
+	mongoose.models.Invoice ||
+	mongoose.model<InvoiceDetails>("Invoice", InvoiceSchema);
 
 export default Invoice;

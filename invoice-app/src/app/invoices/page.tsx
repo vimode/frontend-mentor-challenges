@@ -1,14 +1,26 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import data from "@/data.json";
 import styles from "./styles.module.css";
 import AddInvoiceModal from "@/components/AddInvoiceModal";
 import NewInvoiceForm from "@/components/NewInvoiceForm";
+import { allInvoices } from "@/lib/action.ts";
 
 export default function Invoices() {
 	const [addInvoiceModalOpen, setAddInvoiceModalOpen] = useState(false);
 
+	useEffect(() => {
+		const fetchData = async () => {
+			try {
+				const data = await allInvoices();
+				console.log(data);
+			} catch (error) {
+				console.error("Error fetching data:", error);
+			}
+		};
+		fetchData();
+	}, []);
 	return (
 		<section className={`content_wrapper  ${styles.invoice_wrapper}`}>
 			<div className={styles.invoice_header}>
