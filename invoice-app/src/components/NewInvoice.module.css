@@ -1,6 +1,7 @@
 .invoice_wrapper {
   height: 100vh;
   max-width: 600px;
+  padding: 20px;
 }
 
 .invoice_wrapper form input {

@@ -109,6 +109,14 @@ h4 {
   letter-spacing: -0.23px;
 }
 
+#newInvoiceDialog {
+  margin-left:100px;
+  min-height:100vh;
+  border:none;
+  max-width: 50%;
+  width:max-content;
+}
+
 #react-portal-modal-container {
   position:absolute;
   top:0;

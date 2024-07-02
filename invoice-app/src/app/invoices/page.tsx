@@ -1,14 +1,21 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import data from "@/data.json";
 import styles from "./styles.module.css";
-import AddInvoiceModal from "@/components/AddInvoiceModal";
 import NewInvoiceForm from "@/components/NewInvoiceForm";
 import { allInvoices } from "@/lib/action.ts";
 
 export default function Invoices() {
-	const [addInvoiceModalOpen, setAddInvoiceModalOpen] = useState(false);
+	const dialogRef = useRef<HTMLDialogElement | null>(null);
+
+	const openDialog = () => {
+		if (dialogRef.current) dialogRef.current.showModal();
+	};
+
+	const closeDialog = () => {
+		if (dialogRef.current) dialogRef.current.close();
+	};
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -21,6 +28,7 @@ export default function Invoices() {
 		};
 		fetchData();
 	}, []);
+
 	return (
 		<section className={`content_wrapper  ${styles.invoice_wrapper}`}>
 			<div className={styles.invoice_header}>
@@ -32,7 +40,7 @@ export default function Invoices() {
 					<p>Filter</p>
 					<button
 						className={`primary-text-size bold-text ${styles.buttonPrimary}`}
-						onClick={() => setAddInvoiceModalOpen(true)}
+						onClick={openDialog}
 					>
 						<div>
 							<img src="./assets/icon-plus.svg" />
@@ -64,15 +72,9 @@ export default function Invoices() {
 					<img src="./assets/illustration-empty.svg" alt="No invoices" />
 				</div>
 			)}
-			{/* Modal starts here */}
-			{addInvoiceModalOpen && (
-				<AddInvoiceModal
-					isOpen={addInvoiceModalOpen}
-					handleClose={() => setAddInvoiceModalOpen(false)}
-				>
-					<NewInvoiceForm handleClose={() => setAddInvoiceModalOpen(false)} />
-				</AddInvoiceModal>
-			)}
+			<dialog id="newInvoiceDialog" ref={dialogRef}>
+				<NewInvoiceForm handleClose={closeDialog} />
+			</dialog>
 		</section>
 	);
 }

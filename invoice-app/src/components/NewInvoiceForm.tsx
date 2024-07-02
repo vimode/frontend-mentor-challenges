@@ -1,4 +1,3 @@
-import { useState } from "react";
 import styles from "./NewInvoice.module.css";
 import { addNewInvoice } from "@/lib/action";
 
@@ -12,11 +11,6 @@ function NewInvoiceForm({ handleClose }: { handleClose: () => void }) {
 	// 	});
 	// };
 
-	// const handleSubmit = async (FormData) => {
-	// 	console.log(FormData);
-	// 	await addNewInvoice(FormData);
-	// };
-
 	return (
 		<section className={styles.invoice_wrapper}>
 			<h2>New Invoice</h2>
@@ -24,6 +18,7 @@ function NewInvoiceForm({ handleClose }: { handleClose: () => void }) {
 				className={styles.newinvoice_form}
 				action={async (FormData) => {
 					await addNewInvoice(FormData);
+					handleClose();
 				}}
 			>
 				{/* Bill from */}
@@ -257,7 +252,7 @@ function NewInvoiceForm({ handleClose }: { handleClose: () => void }) {
 				</fieldset>
 
 				<div className={styles.formButtons}>
-					<button onClick={handleClose} className="close-btn">
+					<button onClick={handleClose} className="close-btn" type="button">
 						Discard
 					</button>
 					<button type="button">Save as Draft</button>
