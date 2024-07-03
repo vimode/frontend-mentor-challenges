@@ -27,6 +27,7 @@ export const addNewInvoice = async (formData: FormData) => {
 		const newInvoice = await Invoice.create(newInvoiceData);
 		await newInvoice.save();
 		console.log("Created invoice:", newInvoiceData);
+		return { success: true };
 	} catch (error) {
 		console.log(error);
 	}
@@ -36,7 +37,7 @@ export const allInvoices = async () => {
 	try {
 		await connectToMongoDB();
 		const allInvoices = await Invoice.find({});
-		return allInvoices;
+		return allInvoices.toString();
 	} catch (error) {
 		console.error("Error fetching invoices:", error);
 		throw error;

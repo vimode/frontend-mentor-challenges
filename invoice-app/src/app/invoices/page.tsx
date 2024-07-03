@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import data from "@/data.json";
 import styles from "./styles.module.css";
 import NewInvoiceForm from "@/components/NewInvoiceForm";
