@@ -14,12 +14,26 @@ interface Item {
 	total: number;
 }
 
+const addressSchema = new mongoose.Schema<Address>({
+	street: String,
+	city: String,
+	postCode: String,
+	country: String,
+});
+
+const itemSchema = new mongoose.Schema<Item>({
+	name: String,
+	price: Number,
+	quantity: Number,
+	total: Number,
+});
+
 export interface InvoiceDetails extends mongoose.Document {
 	id: string;
 	createdAt: Date;
 	paymentDue: Date;
 	description: string;
-	// paymentTerms: any;
+	paymentTerms: number;
 	clientEmail: string;
 	clientName: string;
 	status: string;
@@ -34,41 +48,26 @@ const InvoiceSchema = new mongoose.Schema<InvoiceDetails>({
 	createdAt: { type: Date, default: Date.now },
 	paymentDue: Date,
 	description: String,
-	// paymentTerms: mongoose.Schema.Types.Mixed,
+	paymentTerms: Number,
 	clientEmail: String,
 	clientName: String,
 	status: String,
-	senderAddress: {
-		name: String,
-		price: Number,
-		quantity: Number,
-		total: Number,
-	},
-	clientAddress: {
-		name: String,
-		price: Number,
-		quantity: Number,
-		total: Number,
-	},
-	items: {
-		name: String,
-		price: Number,
-		quantity: Number,
-		total: Number,
-	},
+	senderAddress: addressSchema,
+	clientAddress: addressSchema,
+	items: [itemSchema],
 	total: Number,
 });
 
 InvoiceSchema.set("toJSON", {
 	transform: (document, returnedObject) => {
-		(returnedObject.id = returnedObject._id.toString()),
-			delete returnedObject._id;
+		returnedObject.id = returnedObject._id.toString();
+		delete returnedObject._id;
 		delete returnedObject.__v;
 	},
 });
 
 const Invoice =
-	mongoose.models.Invoice ||
+	(mongoose.models.Invoice as mongoose.Model<InvoiceDetails>) ||
 	mongoose.model<InvoiceDetails>("Invoice", InvoiceSchema);
 
 export default Invoice;

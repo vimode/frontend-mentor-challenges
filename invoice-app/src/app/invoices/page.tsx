@@ -1,10 +1,11 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import data from "@/data.json";
 import styles from "./styles.module.css";
 import NewInvoiceForm from "@/components/NewInvoiceForm";
 import { allInvoices } from "@/lib/action.ts";
+
+// TODO: get data from allInvoices to render data
 
 export default function Invoices() {
 	const dialogRef = useRef<HTMLDialogElement | null>(null);
@@ -16,18 +17,6 @@ export default function Invoices() {
 	const closeDialog = () => {
 		if (dialogRef.current) dialogRef.current.close();
 	};
-
-	useEffect(() => {
-		const fetchData = async () => {
-			try {
-				const data = await allInvoices();
-				console.log(data);
-			} catch (error) {
-				console.error("Error fetching data:", error);
-			}
-		};
-		fetchData();
-	}, []);
 
 	return (
 		<section className={`content_wrapper  ${styles.invoice_wrapper}`}>
