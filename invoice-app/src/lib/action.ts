@@ -37,7 +37,7 @@ export const allInvoices = async () => {
 	try {
 		await connectToMongoDB();
 		const allInvoices = await Invoice.find({});
-		return allInvoices.toString();
+		return allInvoices;
 	} catch (error) {
 		console.error("Error fetching invoices:", error);
 		throw error;
