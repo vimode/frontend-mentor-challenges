@@ -1,13 +1,29 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "./styles.module.css";
 import NewInvoiceForm from "@/components/NewInvoiceForm";
-import { allInvoices } from "@/lib/action.ts";
-
-// TODO: get data from allInvoices to render data
+import InvoiceItem from "@/components/InvoiceItem";
 
 export default function Invoices() {
+	const [invoices, setInvoices] = useState([]);
+	const fetchData = async () => {
+		try {
+			const response = await fetch("http://localhost:3000/invoices/api", {
+				method: "GET",
+			});
+			if (response.ok) {
+				const { data } = await response.json();
+				setInvoices(data);
+			}
+		} catch (error) {
+			console.error(error);
+		}
+	};
+	useEffect(() => {
+		fetchData();
+	}, []);
+
 	const dialogRef = useRef<HTMLDialogElement | null>(null);
 
 	const openDialog = () => {
@@ -23,7 +39,7 @@ export default function Invoices() {
 			<div className={styles.invoice_header}>
 				<div>
 					<h1>Invoices</h1>
-					<p>There are 7 total invoices</p>
+					<p>There are {invoices.length} total invoices</p>
 				</div>
 				<div className={styles.invoice_options}>
 					<p>Filter</p>
@@ -38,22 +54,10 @@ export default function Invoices() {
 					</button>
 				</div>
 			</div>
-			{data ? (
+			{invoices ? (
 				<ul className={styles.invoice_inner_wrapper}>
-					{data.map((invoice) => (
-						<li key={invoice.id} className={styles.invoice}>
-							<p className={`bold-text primary-text-size ${styles.title}`}>
-								<span className={styles.invoiceid}>#</span>
-								{invoice.id}
-							</p>
-							<p>{invoice.paymentDue}</p>
-							<p>{invoice.clientName}</p>
-							<p className={`tertiary-text-size`}>{invoice.total}</p>
-							<p>{invoice.status}</p>
-							<p>
-								<a href={`/invoices/${invoice.id}`}>&gt;</a>
-							</p>
-						</li>
+					{invoices.map((invoice) => (
+						<InvoiceItem key={invoice.id} data={invoice} />
 					))}
 				</ul>
 			) : (
