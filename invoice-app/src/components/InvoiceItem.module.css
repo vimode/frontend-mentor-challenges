@@ -1,0 +1,47 @@
+
+.invoice_inner_wrapper li, .invoice {
+  display:grid;
+  grid-template-areas:
+    "i_id i_date c_name i_amount i_status i_link";
+  width: 100%;
+  background-color: var(--secondary-bg);
+  border-radius:8px;
+  place-content:space-between;
+  place-items:center;
+  padding: 2rem;
+}
+
+.invoice > p {
+}
+
+.invoiceid {
+ color:var(--tertiary-text);
+}
+
+.invoice_options {
+  display:flex;
+}
+
+.invoice p:nth-child(1) {
+  grid-area:i_id;
+}
+
+.invoice p:nth-child(2) {
+  grid-area:i_date
+}
+
+.invoice p:nth-child(3) {
+  grid-area:c_name;
+}
+
+.invoice p:nth-child(4) {
+  grid-area:i_amount;
+}
+
+.invoice p:nth-child(5) {
+  grid-area:i_status;
+}
+
+.invoice p:nth-child(6) {
+  grid-area:i_link;
+}
