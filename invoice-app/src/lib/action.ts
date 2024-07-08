@@ -43,3 +43,16 @@ export const allInvoices = async () => {
 		throw error;
 	}
 };
+
+export const getInvoice = async (id) => {
+	const invoiceId = id.toString();
+	try {
+		await connectToMongoDB();
+		const invoice = await Invoice.find({ id: invoiceId });
+		console.log(invoice);
+		return invoice;
+	} catch (error) {
+		console.error(`Error fetching invoice ${id}`, error);
+		throw error;
+	}
+};
