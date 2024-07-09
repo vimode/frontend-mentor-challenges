@@ -1,13 +1,44 @@
-import data from "@/data.json";
+"use client";
+
+import { useState, useEffect, useCallback } from "react";
 import styles from "./styles.module.css";
 
 export default function Page({ params }: { params: { id: string } }) {
 	const id = params.id;
 
-	const routeInvoice =
-		data.filter((invoice) => {
-			return invoice.id.toString() === id.toString();
-		})[0] || data[0];
+	const [invoiceData, setInvoiceData] = useState([]);
+
+	const fetchData = useCallback(async (id: string) => {
+		try {
+			const response = await fetch(`http://localhost:3000/api/invoices/${id}`, {
+				method: "GET",
+			});
+			if (response.ok) {
+				const { data } = await response.json();
+				const dbInvoiceData = data[0];
+				const updateData = {
+					...dbInvoiceData,
+					createdAt: formatDate(dbInvoiceData.createdAt),
+					paymentDue: formatDate(dbInvoiceData.paymentDue),
+				};
+				setInvoiceData(updateData);
+			}
+		} catch (error) {
+			console.error(error);
+		}
+	}, []);
+
+	useEffect(() => {
+		fetchData(id);
+	}, [id, fetchData]);
+
+	function formatDate(dbdate: Date) {
+		const date = new Date(dbdate);
+		const yyyy = date.getFullYear();
+		const mm = String(date.getMonth() + 1).padStart(2, "0");
+		const dd = String(date.getDate()).padStart(2, "0");
+		return `${yyyy}-${mm}-${dd}`;
+	}
 
 	return (
 		<section className={`content_wrapper ${styles.invoice_outer_wrapper}`}>
@@ -16,7 +47,7 @@ export default function Page({ params }: { params: { id: string } }) {
 			</nav>
 			<div className={styles.invoice_status}>
 				<p>Status</p>
-				<p>{routeInvoice.status}</p>
+				<p>{invoiceData.status}</p>
 			</div>
 			<div className={styles.invoice_options}>
 				<button>Edit</button>
@@ -28,17 +59,17 @@ export default function Page({ params }: { params: { id: string } }) {
 				<div className={styles.invoice_details}>
 					<p>
 						<span className={styles.invoiceid}>#</span>
-						{routeInvoice.id}
+						{invoiceData.id}
 					</p>
-					<p>{routeInvoice.description}</p>
+					<p>{invoiceData.description}</p>
 				</div>
 
 				<div className={styles.invoice_add}>
 					<p>
-						{routeInvoice.senderAddress.street},<br />
-						{routeInvoice.senderAddress.city},<br />
-						{routeInvoice.senderAddress.postCode},<br />
-						{routeInvoice.senderAddress.country}
+						{invoiceData.senderAddress?.street},<br />
+						{invoiceData.senderAddress?.city},<br />
+						{invoiceData.senderAddress?.postCode},<br />
+						{invoiceData.senderAddress?.country}
 						<br />
 					</p>
 				</div>
@@ -46,25 +77,25 @@ export default function Page({ params }: { params: { id: string } }) {
 				<div className={styles.invoice_dates}>
 					<div>
 						<p>Invoice Date</p>
-						<p>{routeInvoice.createdAt}</p>
+						<p>{invoiceData.createdAt}</p>
 					</div>
 					<div>
 						<p>Payment Due</p>
-						<p>{routeInvoice.paymentDue}</p>
+						<p>{invoiceData.paymentDue}</p>
 					</div>
 				</div>
 				<div className={styles.invoice_to}>
 					<p>Bill To</p>
 					<div>
-						<p>{routeInvoice.clientAddress.street}</p>
-						<p>{routeInvoice.clientAddress.city}</p>
-						<p>{routeInvoice.clientAddress.postCode}</p>
-						<p>{routeInvoice.clientAddress.country}</p>
+						<p>{invoiceData.clientAddress?.street}</p>
+						<p>{invoiceData.clientAddress?.city}</p>
+						<p>{invoiceData.clientAddress?.postCode}</p>
+						<p>{invoiceData.clientAddress?.country}</p>
 					</div>
 				</div>
 				<div className={styles.invoice_to_email}>
 					<p>Sent to</p>
-					<p>{routeInvoice.clientEmail}</p>
+					<p>{invoiceData.clientEmail}</p>
 				</div>
 
 				<div className={styles.invoice_content}>
@@ -78,7 +109,7 @@ export default function Page({ params }: { params: { id: string } }) {
 							</tr>
 						</thead>
 						<tbody>
-							{routeInvoice.items.map((item, index) => (
+							{invoiceData.items?.map((item, index) => (
 								<tr key={index}>
 									<td>{item.name}</td>
 									<td>
@@ -91,7 +122,7 @@ export default function Page({ params }: { params: { id: string } }) {
 					</table>
 					<div className={styles.invoice_total}>
 						<p>Grand Total</p>
-						<p>{routeInvoice.total}</p>
+						<p>{invoiceData.total}</p>
 					</div>
 				</div>
 			</div>
