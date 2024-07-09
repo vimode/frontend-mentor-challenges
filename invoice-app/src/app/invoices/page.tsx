@@ -9,7 +9,7 @@ export default function Invoices() {
 	const [invoices, setInvoices] = useState([]);
 	const fetchData = async () => {
 		try {
-			const response = await fetch("http://localhost:3000/invoices/api", {
+			const response = await fetch("http://localhost:3000/api/invoices", {
 				method: "GET",
 			});
 			if (response.ok) {
