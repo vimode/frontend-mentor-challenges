@@ -2,8 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 import styles from "./styles.module.css";
-import NewInvoiceForm from "@/components/NewInvoiceForm";
-import InvoiceItem from "@/components/InvoiceItem";
+import NewInvoiceForm from "@/components/NewInvoiceForm.tsx";
+import InvoiceItem from "@/components/InvoiceItem.tsx";
 
 export default function Invoices() {
 	const [invoices, setInvoices] = useState([]);

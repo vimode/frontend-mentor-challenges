@@ -27,11 +27,17 @@
 }
 
 .invoice p:nth-child(2) {
-  grid-area:i_date
+  grid-area:i_date;
+  color: var(--tertiary-text);
+}
+
+.invoice p:nth-child(2) span {
+  color: #888EB0;
 }
 
 .invoice p:nth-child(3) {
   grid-area:c_name;
+  color:var(--secondary-text);
 }
 
 .invoice p:nth-child(4) {
@@ -40,6 +46,15 @@
 
 .invoice p:nth-child(5) {
   grid-area:i_status;
+  padding: 10px 40px;
+  width: 100px;
+  height: 40px;
+  text-align:center;
+  display:flex;
+  gap: 10px;
+  place-items:center;
+  place-content:center;
+  opacity:100%;
 }
 
 .invoice p:nth-child(6) {

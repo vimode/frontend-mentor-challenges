@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import styles from "./styles.module.css";
+import formatDate from "@/utils/helper.ts";
 
 export default function Page({ params }: { params: { id: string } }) {
 	const id = params.id;
@@ -31,14 +32,6 @@ export default function Page({ params }: { params: { id: string } }) {
 	useEffect(() => {
 		fetchData(id);
 	}, [id, fetchData]);
-
-	function formatDate(dbdate: Date) {
-		const date = new Date(dbdate);
-		const yyyy = date.getFullYear();
-		const mm = String(date.getMonth() + 1).padStart(2, "0");
-		const dd = String(date.getDate()).padStart(2, "0");
-		return `${yyyy}-${mm}-${dd}`;
-	}
 
 	return (
 		<section className={`content_wrapper ${styles.invoice_outer_wrapper}`}>
