@@ -24,6 +24,9 @@
 
 
 @media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
@@ -31,8 +34,84 @@
   }
 }
 
+/* DEFAULTS */
+
+* {
+  box-sizing: border-box;
+  padding:0;
+  margin:0;
+}
+
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  min-height: 100vh;
+  height: 100%;
+  position: relative;
+}
+
 body {
   background: var(--background);
+  color:var(--primary-text);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+input, button, textarea, select { 
+  font:inherit;
+}
+
+img, picture, video, canvas, svg {
+  display:block;
+  max-width: 100%;
+}
+
+li {
+  list-style: none;
+}
+
+/* TYPOGRAPHY */
+h1 {
+  font-size: 32px;
+  line-height: 36px;
+  letter-spacing: -1px;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 20px;
+  line-height: 22px;
+  letter-spacing: -0.63px;
+  font-weight: 700;
+}
+
+h3,tertiary-text-size {
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: -0.8px;
+  font-weight: 700;
+}
+
+h4 {
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: -0.25px;
+  font-weight: 700;
+}
+
+.primary-text-size {
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: -0.25px;
+}
+
+.secondary-text-size{
+  font-size: 11px;
+  line-height: 18px;
+  letter-spacing: -0.23px;
 }
 
 @layer utilities {
