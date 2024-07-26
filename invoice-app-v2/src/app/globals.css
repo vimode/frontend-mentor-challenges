@@ -88,7 +88,7 @@ h2 {
   font-weight: 700;
 }
 
-h3,tertiary-text-size {
+h3{
   font-size: 16px;
   line-height: 22px;
   letter-spacing: -0.8px;
@@ -100,18 +100,6 @@ h4 {
   line-height: 15px;
   letter-spacing: -0.25px;
   font-weight: 700;
-}
-
-.primary-text-size {
-  font-size: 12px;
-  line-height: 15px;
-  letter-spacing: -0.25px;
-}
-
-.secondary-text-size{
-  font-size: 11px;
-  line-height: 18px;
-  letter-spacing: -0.23px;
 }
 
 @layer utilities {
