@@ -1,4 +1,8 @@
-export default function Invoices() {
+import { allInvoices } from "@/lib/action";
+
+export default async function Invoices() {
+	const invoices = await allInvoices();
+
 	return (
 		<div>
 			<div>Sidebar</div>
@@ -17,14 +21,15 @@ export default function Invoices() {
 				</div>
 				<section>
 					<ul>
-						<li>
-							<p>#Invoice id</p>
-							<p>Invoice Date</p>
-							<p>Client Name</p>
-							<p>Invoice Total</p>
-							<p>Invoice Status</p>
-							<a href="#">{`>`}</a>
-						</li>
+						{invoices.map((invoice) => (
+							<li key={invoice.id}>
+								<p>{invoice.id}</p>
+								<p>{invoice.clientName}</p>
+								<p>{invoice.total}</p>
+								<p>{invoice.status}</p>
+								<a href={`/invoices/${invoice.id}`}>&gt;</a>
+							</li>
+						))}
 					</ul>
 				</section>
 			</main>
