@@ -1,4 +1,5 @@
 import { allInvoices } from "@/lib/action";
+import InvoiceList from "@/components/InvoiceList";
 
 export default async function Invoices() {
 	const invoices = await allInvoices();
@@ -10,7 +11,7 @@ export default async function Invoices() {
 				<div>
 					<div>
 						<h1>Invoices</h1>
-						<p>There are 7 total invoices</p>
+						<p>There are {invoices.length} total invoices</p>
 					</div>
 					<div>
 						<div>
@@ -20,17 +21,7 @@ export default async function Invoices() {
 					</div>
 				</div>
 				<section>
-					<ul>
-						{invoices.map((invoice) => (
-							<li key={invoice.id}>
-								<p>{invoice.id}</p>
-								<p>{invoice.clientName}</p>
-								<p>{invoice.total}</p>
-								<p>{invoice.status}</p>
-								<a href={`/invoices/${invoice.id}`}>&gt;</a>
-							</li>
-						))}
-					</ul>
+					<InvoiceList invoices={invoices} />
 				</section>
 			</main>
 		</div>

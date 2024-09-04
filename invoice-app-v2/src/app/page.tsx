@@ -8,6 +8,7 @@ export default function Home() {
 				ground up to be extensible and customizable, so that no matter what
 				you’re building you never feel like you’re fighting the framework.
 			</p>
+			<a href="/invoices">Go to Invoices</a>
 		</main>
 	);
 }
