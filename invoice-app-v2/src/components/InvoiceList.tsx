@@ -2,7 +2,7 @@ import InvoiceItem from "./InvoiceItem";
 
 export default function InvoiceList({ invoices }) {
 	return (
-		<ul>
+		<ul className="flex flex-col">
 			{invoices.map((invoice) => (
 				<InvoiceItem invoice={invoice} />
 			))}

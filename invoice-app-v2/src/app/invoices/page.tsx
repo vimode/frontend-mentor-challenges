@@ -5,9 +5,9 @@ export default async function Invoices() {
 	const invoices = await allInvoices();
 
 	return (
-		<div>
+		<div className="flex flex-row w-screen">
 			<div>Sidebar</div>
-			<main>
+			<main className="flex flex-col place-content-center w-full">
 				<div>
 					<div>
 						<h1>Invoices</h1>
