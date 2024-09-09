@@ -5,25 +5,22 @@ export default async function Invoices() {
 	const invoices = await allInvoices();
 
 	return (
-		<div className="flex flex-row w-screen">
-			<div>Sidebar</div>
-			<main className="flex flex-col place-content-center w-full">
+		<main className="flex flex-col place-content-center w-full">
+			<div>
+				<div>
+					<h1>Invoices</h1>
+					<p>There are {invoices.length} total invoices</p>
+				</div>
 				<div>
 					<div>
-						<h1>Invoices</h1>
-						<p>There are {invoices.length} total invoices</p>
-					</div>
-					<div>
-						<div>
-							<p>Filter</p>
-							<button>New Invoice</button>
-						</div>
+						<p>Filter</p>
+						<button>New Invoice</button>
 					</div>
 				</div>
-				<section>
-					<InvoiceList invoices={invoices} />
-				</section>
-			</main>
-		</div>
+			</div>
+			<section>
+				<InvoiceList invoices={invoices} />
+			</section>
+		</main>
 	);
 }
