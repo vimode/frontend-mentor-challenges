@@ -5,7 +5,7 @@ export default async function Invoices() {
 	const invoices = await allInvoices();
 
 	return (
-		<main className="flex flex-col place-content-center w-full">
+		<main className="flex flex-col place-content-center w-full max-w-[700px] m-auto">
 			<div>
 				<div>
 					<h1>Invoices</h1>
@@ -18,9 +18,7 @@ export default async function Invoices() {
 					</div>
 				</div>
 			</div>
-			<section>
-				<InvoiceList invoices={invoices} />
-			</section>
+			<InvoiceList invoices={invoices} />
 		</main>
 	);
 }
