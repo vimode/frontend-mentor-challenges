@@ -1,15 +1,15 @@
-import { allInvoices } from "@/lib/action";
 import InvoiceList from "@/components/InvoiceList";
 
 export default async function Invoices() {
-	const invoices = await allInvoices();
+	const res = await fetch(`${process.env.API_URL}/invoices/api`);
+	const invoices = await res.json();
 
 	return (
 		<main className="flex flex-col place-content-center w-full max-w-[700px] m-auto">
 			<div>
 				<div>
 					<h1>Invoices</h1>
-					<p>There are {invoices.length} total invoices</p>
+					<p>There are {invoices.data.length} total invoices</p>
 				</div>
 				<div>
 					<div>
@@ -18,7 +18,7 @@ export default async function Invoices() {
 					</div>
 				</div>
 			</div>
-			<InvoiceList invoices={invoices} />
+			<InvoiceList invoices={invoices.data} />
 		</main>
 	);
 }
