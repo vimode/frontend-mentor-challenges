@@ -1,7 +1,8 @@
 "use client";
 import { updateInvoiceStatus } from "@/lib/action";
+import { InvoiceDetails } from "@/lib/types";
 
-export default function MarkAsPaid({ invoice }) {
+export default function MarkAsPaid({ invoice }: { invoice: InvoiceDetails }) {
 	return (
 		<button
 			onClick={() => {
