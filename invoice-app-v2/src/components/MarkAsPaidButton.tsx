@@ -2,7 +2,7 @@
 import { updateInvoiceStatus } from "@/lib/action";
 import { InvoiceDetails } from "@/lib/types";
 
-export default function MarkAsPaid({ invoice }: { invoice: InvoiceDetails }) {
+export default function MarkAsPaidButton({ invoice }: { invoice: InvoiceDetails }) {
 	return (
 		<button
 			onClick={() => {
