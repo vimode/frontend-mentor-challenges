@@ -2,6 +2,7 @@
 import Invoice from "@/models/invoice";
 import { connectToMongoDB } from "./dbConnect";
 
+// Get all invoices
 export async function allInvoices() {
 	try {
 		await connectToMongoDB();
@@ -16,6 +17,7 @@ export async function allInvoices() {
 	}
 }
 
+// Mark invoice as paid
 export async function updateInvoiceStatus(data) {
 	const { id } = data;
 	const filter = { id };
@@ -36,6 +38,23 @@ export async function updateInvoiceStatus(data) {
 	}
 }
 
+// Delete a single invoice
+export async function deleteInvoice(data) {
+	const { id } = data;
+	try {
+		await connectToMongoDB();
+		const deletedInvoice = await Invoice.deleteOne({ id });
+		console.log(deletedInvoice);
+	} catch (error) {
+		console.error("Error deleting invoice: ", error);
+		return Response.json(
+			{ status: "error", message: "Failed to delete invoice" },
+			{ status: 500 },
+		);
+	}
+}
+
+// Create a new Invoice
 export async function createNewInvoice(data) {
 	return Response.json({ status: "pending action" });
 }
