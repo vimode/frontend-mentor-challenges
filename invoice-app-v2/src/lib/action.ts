@@ -1,6 +1,7 @@
 "use server";
 import Invoice from "@/models/invoice";
 import { connectToMongoDB } from "./dbConnect";
+import { InvoiceDetails } from "./types";
 
 // Get all invoices
 export async function allInvoices() {
@@ -29,6 +30,10 @@ export async function updateInvoiceStatus(data) {
 			new: true,
 		});
 		console.log(updated);
+		return {
+			status: "success",
+			message: "Invoice status updated successfully",
+		};
 	} catch (error) {
 		console.error("Error updating invoice status:", error);
 		return Response.json(
@@ -39,7 +44,7 @@ export async function updateInvoiceStatus(data) {
 }
 
 // Delete a single invoice
-export async function deleteInvoice(data) {
+export async function deleteInvoice(data: { id: string }) {
 	const { id } = data;
 	try {
 		await connectToMongoDB();
@@ -55,6 +60,6 @@ export async function deleteInvoice(data) {
 }
 
 // Create a new Invoice
-export async function createNewInvoice(data) {
+export async function createNewInvoice(data: InvoiceDetails) {
 	return Response.json({ status: "pending action" });
 }
