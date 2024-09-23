@@ -5,7 +5,7 @@ export default async function Invoices() {
 	const invoices = await res.json();
 
 	return (
-		<main className="flex flex-col place-content-center w-full max-w-[700px] m-auto">
+		<>
 			<div>
 				<div>
 					<h1>Invoices</h1>
