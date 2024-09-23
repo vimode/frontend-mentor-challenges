@@ -14,11 +14,11 @@ export default async function Invoices() {
 				<div>
 					<div>
 						<p>Filter</p>
-						<button>New Invoice</button>
+						<a href="/invoices/new">New Invoice</a>
 					</div>
 				</div>
 			</div>
 			<InvoiceList invoices={invoices.data} />
-		</main>
+		</>
 	);
 }
