@@ -39,8 +39,37 @@ export default function InvoiceForm() {
 		total: 0,
 	});
 
+	function updateFormStateValues(path, value) {
+		const keys = path.split(".");
+		console.log(keys);
+		setInvoiceFormData((prevState) => {
+			let newState = { ...prevState };
+			let current = newState;
+
+			for (let i = 0; i < keys.length; i++) {
+				const key = keys[i];
+
+				if (i === keys.length - 1) {
+					current[key] = value;
+				} else {
+					if (!current[key]) {
+						current[key] = {};
+					}
+					current = current[key];
+				}
+			}
+
+			return newState;
+		});
+	}
+
 	function handleInputChange(e) {
-		console.log(e);
+		const { name, value } = e.target;
+		updateFormStateValues(name, value);
+	}
+
+	function handleItemsListChange(updatedItems) {
+		updateFormStateValues("items", updatedItems);
 	}
 
 	return (
@@ -57,7 +86,7 @@ export default function InvoiceForm() {
 					<input
 						type="text"
 						id="street-address"
-						name="streetAddress"
+						name="senderAddress.street"
 						value={invoiceFormData.senderAddress.street}
 						onChange={handleInputChange}
 					/>
@@ -68,7 +97,7 @@ export default function InvoiceForm() {
 						<input
 							type="text"
 							id="city"
-							name="city"
+							name="senderAddress.city"
 							value={invoiceFormData.senderAddress.city}
 							onChange={handleInputChange}
 						/>
@@ -78,7 +107,7 @@ export default function InvoiceForm() {
 						<input
 							type="text"
 							id="post-code"
-							name="postCode"
+							name="senderAddress.postCode"
 							value={invoiceFormData.senderAddress.postCode}
 							onChange={handleInputChange}
 						/>
@@ -88,7 +117,7 @@ export default function InvoiceForm() {
 						<input
 							type="text"
 							id="country"
-							name="country"
+							name="senderAddress.country"
 							value={invoiceFormData.senderAddress.country}
 							onChange={handleInputChange}
 						/>
@@ -124,7 +153,7 @@ export default function InvoiceForm() {
 					<input
 						type="text"
 						id="street-name"
-						name="streetName"
+						name="clientAddress.street"
 						value={invoiceFormData.clientAddress.street}
 						onChange={handleInputChange}
 					/>
@@ -135,7 +164,7 @@ export default function InvoiceForm() {
 						<input
 							type="text"
 							id="client-city"
-							name="clientCity"
+							name="clientAddress.city"
 							value={invoiceFormData.clientAddress.city}
 							onChange={handleInputChange}
 						/>
@@ -145,7 +174,7 @@ export default function InvoiceForm() {
 						<input
 							type="text"
 							id="client-post-code"
-							name="clientPostCode"
+							name="clientAddress.postCode"
 							value={invoiceFormData.clientAddress.postCode}
 							onChange={handleInputChange}
 						/>
@@ -155,7 +184,7 @@ export default function InvoiceForm() {
 						<input
 							type="text"
 							id="client-country"
-							name="clientCountry"
+							name="clientAddress.country"
 							value={invoiceFormData.clientAddress.country}
 							onChange={handleInputChange}
 						/>
@@ -167,30 +196,30 @@ export default function InvoiceForm() {
 						<input
 							type="date"
 							id="invoice-date"
-							name="invoiceDate"
+							name="paymentDue"
 							value={invoiceFormData.paymentDue}
 							onChange={handleInputChange}
 						/>
 					</div>
-					{/* <div> */}
-					{/* 	<label htmlFor="payment-terms">Payment Terms</label> */}
-					{/* 	<select */}
-					{/* 		id="payment-terms" */}
-					{/* 		name="paymentTerms" */}
-					{/* 		// value={invoiceFormData.paymentTerms} */}
-					{/* 		// onChange={handleInputChange} */}
-					{/* 	> */}
-					{/* 		<option value="30days">Next 30 Days</option> */}
-					{/* 		<option value="60days">Next 60 Days</option> */}
-					{/* 		<option value="90days">Next 90 Days</option> */}
-					{/* 	</select> */}
-					{/* </div> */}
+					<div>
+						<label htmlFor="payment-terms">Payment Terms</label>
+						<select
+							id="payment-terms"
+							name="paymentTerms"
+							value={invoiceFormData.paymentTerms}
+							onChange={handleInputChange}
+						>
+							<option value="30days">Next 30 Days</option>
+							<option value="60days">Next 60 Days</option>
+							<option value="90days">Next 90 Days</option>
+						</select>
+					</div>
 					<div>
 						<label htmlFor="project-description">Project Description</label>
 						<input
 							type="text"
 							id="project-description"
-							name="projectDescription"
+							name="description"
 							value={invoiceFormData.description}
 							onChange={handleInputChange}
 						/>
@@ -200,7 +229,10 @@ export default function InvoiceForm() {
 
 			{/* Item List */}
 
-			<ItemsList invoiceItemData={invoiceFormData.items} />
+			<ItemsList
+				invoiceItemData={invoiceFormData.items}
+				onItemsListChange={handleItemsListChange}
+			/>
 			<div>
 				<button>Discard</button>
 				<button type="button">Save as Draft</button>

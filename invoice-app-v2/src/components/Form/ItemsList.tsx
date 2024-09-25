@@ -1,10 +1,16 @@
 "use client";
 import { Item } from "@/lib/types";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+interface ItemsListProps {
+	invoiceItemData: Item[];
+	onItemsListChange: (items: Item[]) => void;
+}
 
 export default function ItemsList({
 	invoiceItemData,
-}: { invoiceItemData: Item[] }) {
+	onItemsListChange,
+}: ItemsListProps) {
 	const [itemsList, setItemsList] = useState<Item[]>(invoiceItemData);
 
 	function handleInputChange(
@@ -12,14 +18,18 @@ export default function ItemsList({
 		field: keyof Item,
 		value: string | number,
 	) {
-		const newItems = { ...itemsList };
-		newItems[index][field] = value;
+		const newItems = [...itemsList];
+		newItems[index] = { ...newItems[index], [field]: value };
 		setItemsList(newItems);
 	}
 
 	function handleAddItem() {
-		setItemsList([...itemsList, { name: "", quantity: 0, price: 0, total: 0 }]);
+		setItemsList([...itemsList, { name: "", quantity: 0, price: 0 }]);
 	}
+
+	useEffect(() => {
+		onItemsListChange(itemsList);
+	}, [itemsList]);
 
 	return (
 		<fieldset>
