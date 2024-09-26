@@ -40,7 +40,7 @@ export interface InvoiceDetails extends mongoose.Document {
 	senderAddress: Address;
 	clientAddress: Address;
 	items: Item[];
-	total: number;
+	total?: number;
 }
 
 const InvoiceSchema = new mongoose.Schema<InvoiceDetails>(

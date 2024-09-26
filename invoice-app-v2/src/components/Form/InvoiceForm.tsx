@@ -3,6 +3,7 @@
 import { useState } from "react";
 
 import ItemsList from "@/components/Form/ItemsList";
+import { createNewInvoice } from "@/lib/action";
 
 export default function InvoiceForm() {
 	const [invoiceFormData, setInvoiceFormData] = useState({
@@ -68,15 +69,22 @@ export default function InvoiceForm() {
 		updateFormStateValues(name, value);
 	}
 
+  // updates the itemslist
 	function handleItemsListChange(updatedItems) {
 		updateFormStateValues("items", updatedItems);
 	}
 
+  // form submission
+  function handleSubmit(e) {
+    e.preventDefault();
+    console.log(invoiceFormData)
+    const formDataObject = JSON.parse(JSON.stringify(invoiceFormData)) 
+    createNewInvoice(formDataObject)
+  }
+
 	return (
 		<form
-		// action={async (FormData) => {
-		// 	await addNewInvoice(FormData);
-		// }}
+     onSubmit ={handleSubmit}
 		>
 			{/* Bill from */}
 			<fieldset>

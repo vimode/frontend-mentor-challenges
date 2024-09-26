@@ -13,8 +13,8 @@ export interface Item {
 }
 
 export interface InvoiceDetails {
-	id: string;
-	createdAt: Date;
+	id?: string;
+	createdAt?: Date;
 	paymentDue: Date;
 	description: string;
 	paymentTerms: number;
