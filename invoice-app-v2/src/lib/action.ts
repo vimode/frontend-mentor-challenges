@@ -62,6 +62,7 @@ export async function updateInvoiceStatus(data) {
   // Create a new Invoice
   export async function createNewInvoice(newInvoiceData: InvoiceDetails) {
     try {
+    await connectToMongoDB();
       const newInvoice = await Invoice.create(newInvoiceData);
       console.log(`New invoice created:`, newInvoice);
     } catch (error) {
