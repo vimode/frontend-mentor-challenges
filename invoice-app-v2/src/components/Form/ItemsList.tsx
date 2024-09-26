@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 interface ItemsListProps {
 	invoiceItemData: Item[];
-	onItemsListChange: (items: Item[]) => void;
+	onItemsListChange: (items: string | Item[]) => void;
 }
 
 export default function ItemsList({

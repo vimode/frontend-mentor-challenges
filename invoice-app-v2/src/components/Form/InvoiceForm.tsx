@@ -4,6 +4,7 @@ import { useState } from "react";
 
 import ItemsList from "@/components/Form/ItemsList";
 import { createNewInvoice } from "@/lib/action";
+import { generateInvoiceNumber } from "@/lib/helper";
 
 export default function InvoiceForm() {
 	const [invoiceFormData, setInvoiceFormData] = useState({
@@ -40,7 +41,7 @@ export default function InvoiceForm() {
 		total: 0,
 	});
 
-	function updateFormStateValues(path, value) {
+	function updateFormStateValues(path: string, value: string) {
 		const keys = path.split(".");
 		console.log(keys);
 		setInvoiceFormData((prevState) => {
@@ -64,28 +65,32 @@ export default function InvoiceForm() {
 		});
 	}
 
-	function handleInputChange(e) {
+	function handleInputChange(
+		e:
+			| React.ChangeEvent<HTMLInputElement>
+			| React.ChangeEvent<HTMLSelectElement>,
+	) {
 		const { name, value } = e.target;
 		updateFormStateValues(name, value);
 	}
 
-  // updates the itemslist
-	function handleItemsListChange(updatedItems) {
+	// updates the itemslist
+	function handleItemsListChange(updatedItems: string) {
 		updateFormStateValues("items", updatedItems);
 	}
 
-  // form submission
-  function handleSubmit(e) {
-    e.preventDefault();
-    console.log(invoiceFormData)
-    const formDataObject = JSON.parse(JSON.stringify(invoiceFormData)) 
-    createNewInvoice(formDataObject)
-  }
+	// form submission
+	function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+		e.preventDefault();
+		console.log(invoiceFormData);
+		const invoiceId = generateInvoiceNumber();
+		const newInvoiceData = { ...invoiceFormData, id: invoiceId };
+    //TODO: Add pending status by default. Add a total
+		createNewInvoice(newInvoiceData);
+	}
 
 	return (
-		<form
-     onSubmit ={handleSubmit}
-		>
+		<form onSubmit={(e) => handleSubmit(e)}>
 			{/* Bill from */}
 			<fieldset>
 				<legend>Bill From</legend>
