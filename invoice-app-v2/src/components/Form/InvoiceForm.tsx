@@ -84,8 +84,12 @@ export default function InvoiceForm() {
 		e.preventDefault();
 		console.log(invoiceFormData);
 		const invoiceId = generateInvoiceNumber();
-		const newInvoiceData = { ...invoiceFormData, id: invoiceId };
-    //TODO: Add pending status by default. Add a total
+		const newInvoiceData = {
+			...invoiceFormData,
+			id: invoiceId,
+			status: "pending",
+		};
+		//TODO:  Add a total
 		createNewInvoice(newInvoiceData);
 	}
 
