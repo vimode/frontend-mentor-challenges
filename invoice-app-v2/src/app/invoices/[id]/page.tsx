@@ -1,5 +1,5 @@
 import Link from "next/link";
-import MarkAsPaidButton from "@/components/MarkAsPaidButton";
+import UpdateStatusButton from "@/components/UpdateStatusButton";
 import DeleteInvoiceButton from "@/components/DeleteInvoiceButton";
 
 export default async function InvoiceId({
@@ -22,11 +22,10 @@ export default async function InvoiceId({
 				<div>
 					<p>Status: </p>
 					<p>{invoice.status}</p>
-				</div>
-				<div>
+					<div></div>
 					<button>Edit</button>
 					<DeleteInvoiceButton invoice={invoice} />
-					<MarkAsPaidButton invoice={invoice} />
+					<UpdateStatusButton invoice={invoice} />
 				</div>
 			</section>
 			<main>
