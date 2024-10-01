@@ -5,45 +5,53 @@ import { useState } from "react";
 import ItemsList from "@/components/Form/ItemsList";
 import { createNewInvoice } from "@/lib/action";
 import { generateInvoiceNumber } from "@/lib/helper";
+import { InvoiceDetails } from "@/lib/types";
+import { useRouter } from "next/navigation";
 
-export default function InvoiceForm() {
-	const [invoiceFormData, setInvoiceFormData] = useState({
-		paymentDue: "",
-		description: "",
-		paymentTerms: 0,
-		clientEmail: "",
-		clientName: "",
-		status: "",
-		senderAddress: {
-			street: "",
-			city: "",
-			postCode: "",
-			country: "",
-		},
-		clientAddress: {
-			street: "",
-			city: "",
-			postCode: "",
-			country: "",
-		},
-		items: [
-			{
-				name: "",
-				price: 0,
-				quantity: 0,
+interface InvoiceFormProps {
+	invoiceData?: InvoiceDetails;
+}
+
+export default function InvoiceForm({ invoiceData }: InvoiceFormProps) {
+	const router = useRouter();
+	const [invoiceFormData, setInvoiceFormData] = useState(
+		invoiceData || {
+			paymentDue: "",
+			description: "",
+			paymentTerms: 0,
+			clientEmail: "",
+			clientName: "",
+			status: "",
+			senderAddress: {
+				street: "",
+				city: "",
+				postCode: "",
+				country: "",
 			},
-			{
-				name: "",
-				price: 0,
-				quantity: 0,
+			clientAddress: {
+				street: "",
+				city: "",
+				postCode: "",
+				country: "",
 			},
-		],
-		total: 0,
-	});
+			items: [
+				{
+					name: "",
+					price: 0,
+					quantity: 0,
+				},
+				{
+					name: "",
+					price: 0,
+					quantity: 0,
+				},
+			],
+			total: 0,
+		},
+	);
 
 	function updateFormStateValues(path: string, value: string) {
 		const keys = path.split(".");
-		console.log(keys);
 		setInvoiceFormData((prevState) => {
 			let newState = { ...prevState };
 			let current = newState;
@@ -82,8 +90,7 @@ export default function InvoiceForm() {
 	// form submission
 	function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
 		e.preventDefault();
-		console.log(invoiceFormData);
-		const invoiceId = generateInvoiceNumber();
+		const invoiceId = invoiceFormData.id || generateInvoiceNumber();
 		const newInvoiceData = {
 			...invoiceFormData,
 			id: invoiceId,
@@ -91,6 +98,7 @@ export default function InvoiceForm() {
 		};
 		//TODO:  Add a total
 		createNewInvoice(newInvoiceData);
+		router.push(`/invoices/${newInvoiceData.id}`);
 	}
 
 	return (

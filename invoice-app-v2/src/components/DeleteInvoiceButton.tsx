@@ -12,6 +12,7 @@ export default function MarkAsPaidButton({
 		<button
 			className="bg-background-alert text-white py-2 px-4 rounded-full"
 			onClick={() => {
+				// TODO: Add a  confirmation dialog/popup
 				deleteInvoice({ id: invoice.id });
 				router.push("/invoices");
 			}}

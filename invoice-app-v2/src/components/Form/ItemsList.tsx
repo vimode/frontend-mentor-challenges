@@ -23,6 +23,7 @@ export default function ItemsList({
 		setItemsList(newItems);
 	}
 
+	// TODO: add total
 	function handleAddItem() {
 		setItemsList([...itemsList, { name: "", quantity: 0, price: 0 }]);
 	}

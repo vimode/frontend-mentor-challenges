@@ -19,6 +19,21 @@ export async function allInvoices() {
 	}
 }
 
+// Get Invoice by id
+export async function getInvoiceById(invoiceId: string) {
+	try {
+		await connectToMongoDB();
+		const invoice = await Invoice.findOne({ id: { $eq: invoiceId } }).exec();
+		return invoice;
+	} catch (error) {
+		console.error("Error fetching invoice:", error);
+		return Response.json({
+			status: "error",
+			message: "Failed to get invoice",
+		});
+	}
+}
+
 // Mark invoice as paid
 export async function updateInvoiceStatus(data: {
 	id: string;
@@ -75,9 +90,13 @@ export async function deleteInvoice(data: { id: string }) {
 
 // Create a new Invoice
 export async function createNewInvoice(newInvoiceData: InvoiceDetails) {
+	const filter = { id: newInvoiceData.id };
 	try {
 		await connectToMongoDB();
-		const newInvoice = await Invoice.create(newInvoiceData);
+		const newInvoice = await Invoice.findOneAndUpdate(filter, newInvoiceData, {
+			new: true,
+			upsert: true,
+		});
 		revalidatePath("/invoices");
 		console.log(`New invoice created:`, newInvoice);
 	} catch (error) {
