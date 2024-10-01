@@ -13,7 +13,7 @@ export interface Item {
 }
 
 export interface InvoiceDetails {
-	id?: string;
+	id?: string | undefined;
 	createdAt?: Date | string;
 	paymentDue: Date | string;
 	description: string;

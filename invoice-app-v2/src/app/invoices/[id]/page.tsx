@@ -1,6 +1,7 @@
 import Link from "next/link";
 import UpdateStatusButton from "@/components/UpdateStatusButton";
 import DeleteInvoiceButton from "@/components/DeleteInvoiceButton";
+import { InvoiceDetails, Item } from "@/lib/types";
 
 export default async function InvoiceId({
 	params,
@@ -9,7 +10,7 @@ export default async function InvoiceId({
 	const res = await fetch(`${process.env.API_URL}/invoices/api`);
 	const data = await res.json();
 	const invoice = data.data.filter(
-		(item) => item.id.toString() === params.id.toString(),
+		(item: InvoiceDetails) => item.id?.toString() === params.id.toString(),
 	)[0];
 
 	return (
@@ -22,8 +23,9 @@ export default async function InvoiceId({
 				<div>
 					<p>Status: </p>
 					<p>{invoice.status}</p>
-					<div></div>
-					<button>Edit</button>
+				</div>
+				<div>
+					<Link href={`/invoices/${invoice.id}/edit`}>Edit</Link>
 					<DeleteInvoiceButton invoice={invoice} />
 					<UpdateStatusButton invoice={invoice} />
 				</div>
@@ -79,7 +81,7 @@ export default async function InvoiceId({
 							</tr>
 						</thead>
 						<tbody>
-							{invoice.items?.map((item, index) => (
+							{invoice.items?.map((item: Item, index: string) => (
 								<tr key={index}>
 									<td>{item.name}</td>
 									<td>
