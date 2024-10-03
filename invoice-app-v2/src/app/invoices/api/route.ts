@@ -3,7 +3,7 @@ import {
 	updateInvoiceStatus,
 	createNewInvoice,
 	getInvoiceById,
-} from "@/lib/action";
+} from "@/lib/actions";
 import { type NextRequest } from "next/server";
 
 export const dynamic = "force-static";

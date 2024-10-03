@@ -1,19 +1,16 @@
 "use client";
 
-import { useState } from "react";
-
+import { useState, ChangeEvent, FormEvent } from "react";
 import ItemsList from "@/components/Form/ItemsList";
-import { createNewInvoice } from "@/lib/action";
+import { createNewInvoice } from "@/lib/actions";
 import { generateInvoiceNumber } from "@/lib/helper";
 import { InvoiceDetails } from "@/lib/types";
-import { useRouter } from "next/navigation";
 
 interface InvoiceFormProps {
 	invoiceData?: InvoiceDetails;
 }
 
 export default function InvoiceForm({ invoiceData }: InvoiceFormProps) {
-	const router = useRouter();
 	const [invoiceFormData, setInvoiceFormData] = useState(
 		invoiceData || {
 			paymentDue: "",
@@ -74,9 +71,7 @@ export default function InvoiceForm({ invoiceData }: InvoiceFormProps) {
 	}
 
 	function handleInputChange(
-		e:
-			| React.ChangeEvent<HTMLInputElement>
-			| React.ChangeEvent<HTMLSelectElement>,
+		e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLSelectElement>,
 	) {
 		const { name, value } = e.target;
 		updateFormStateValues(name, value);
@@ -88,7 +83,7 @@ export default function InvoiceForm({ invoiceData }: InvoiceFormProps) {
 	}
 
 	// form submission
-	function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+	function handleSubmit(e: FormEvent<HTMLFormElement>) {
 		e.preventDefault();
 		const invoiceId = invoiceFormData.id || generateInvoiceNumber();
 		const newInvoiceData = {
@@ -98,7 +93,6 @@ export default function InvoiceForm({ invoiceData }: InvoiceFormProps) {
 		};
 		//TODO:  Add a total
 		createNewInvoice(newInvoiceData);
-		router.push(`/invoices/${newInvoiceData.id}`);
 	}
 
 	return (
