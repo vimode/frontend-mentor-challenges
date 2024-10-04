@@ -11,6 +11,7 @@ interface InvoiceFormProps {
 }
 
 export default function InvoiceForm({ invoiceData }: InvoiceFormProps) {
+	const [formSubmitStatus, setFormSubmitStatus] = useState("idle");
 	const [invoiceFormData, setInvoiceFormData] = useState(
 		invoiceData || {
 			paymentDue: "",
@@ -36,11 +37,13 @@ export default function InvoiceForm({ invoiceData }: InvoiceFormProps) {
 					name: "",
 					price: 0,
 					quantity: 0,
+					total: 0,
 				},
 				{
 					name: "",
 					price: 0,
 					quantity: 0,
+					total: 0,
 				},
 			],
 			total: 0,
@@ -83,16 +86,24 @@ export default function InvoiceForm({ invoiceData }: InvoiceFormProps) {
 	}
 
 	// form submission
-	function handleSubmit(e: FormEvent<HTMLFormElement>) {
+	async function handleSubmit(e: FormEvent<HTMLFormElement>) {
 		e.preventDefault();
+		if (formSubmitStatus === "submitting") return;
 		const invoiceId = invoiceFormData.id || generateInvoiceNumber();
+		const invoiceFinalTotal = invoiceFormData.items.reduce((acc, item) => {
+			return acc + item.total;
+		}, 0);
 		const newInvoiceData = {
 			...invoiceFormData,
 			id: invoiceId,
 			status: "pending",
+			total: invoiceFinalTotal,
 		};
 		//TODO:  Add a total
-		createNewInvoice(newInvoiceData);
+		const submittedInvoice = await createNewInvoice(newInvoiceData);
+		if (submittedInvoice?.message === "success") {
+			setFormSubmitStatus("idle");
+		}
 	}
 
 	return (
@@ -253,7 +264,7 @@ export default function InvoiceForm({ invoiceData }: InvoiceFormProps) {
 				onItemsListChange={handleItemsListChange}
 			/>
 			<div>
-				<button>Discard</button>
+				<button type="button">Discard</button>
 				<button type="button">Save as Draft</button>
 				<button type="submit">Save & Send</button>
 			</div>
