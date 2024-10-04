@@ -16,9 +16,7 @@ export default function InvoiceItem({ invoice }: { invoice: InvoiceDetails }) {
 					<span>Due</span> {formatDateMedFormat(invoice.paymentDue)}
 				</p>
 				<p className="flex-1 text-text-tertiary">{invoice.clientName}</p>
-				<p className="flex-1 flex justify-end mr-4 font-bold">
-					${invoice.total}
-				</p>
+				<p className="flex-1 text-right mr-4 font-bold">${invoice.total}</p>
 				<p
 					className={`flex-1 p-1 text-center font-bold  ${invoice.status === "pending" ? "text-status-pending" : invoice.status === "draft" ? "text-status-neutral bg-background-neutral/50" : "text-status-success"}`}
 				>
