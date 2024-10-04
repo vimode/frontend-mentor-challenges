@@ -58,7 +58,6 @@ export async function updateInvoiceStatus(data: {
 			});
 		}
 		revalidatePath(`/invoices`);
-		console.log(updated);
 		return {
 			status: "success",
 			message: "Invoice status updated successfully",
@@ -84,9 +83,10 @@ export async function deleteInvoice(data: { id: string }) {
 			{ status: "error", message: "Failed to delete invoice" },
 			{ status: 500 },
 		);
+	} finally {
+		revalidatePath("/invoices");
+		redirect("/invoices");
 	}
-	revalidatePath("/invoices");
-	redirect("/invoices");
 }
 
 // Create a new Invoice
@@ -94,9 +94,17 @@ export async function createNewInvoice(newInvoiceData: InvoiceDetails) {
 	const filter = { id: newInvoiceData.id };
 	try {
 		await connectToMongoDB();
-		await Invoice.findOneAndUpdate(filter, newInvoiceData, {
-			new: true,
-			upsert: true,
+		const updatedInvoice = await Invoice.findOneAndUpdate(
+			filter,
+			newInvoiceData,
+			{
+				new: true,
+				upsert: true,
+			},
+		);
+		return Response.json({
+			message: "success",
+			newInvoice: updatedInvoice,
 		});
 	} catch (error) {
 		console.error(`Error creating new Invoice`, error);
@@ -104,7 +112,9 @@ export async function createNewInvoice(newInvoiceData: InvoiceDetails) {
 			{ status: "error", message: "Failed to create invoice" },
 			{ status: 500 },
 		);
+	} finally {
+		revalidatePath("/invoices");
+		revalidatePath(`/invoices/${newInvoiceData.id}`);
+		redirect(`/invoices/${newInvoiceData.id}`);
 	}
-	revalidatePath("/invoices");
-	redirect(`/invoices/${newInvoiceData.id}`);
 }
