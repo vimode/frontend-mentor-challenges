@@ -22,10 +22,10 @@ export default async function InvoiceId({
 			<section>
 				<div>
 					<p>Status: </p>
-					<p>{invoice.status}</p>
+					<p>{invoice?.status}</p>
 				</div>
 				<div>
-					<Link href={`/invoices/${invoice.id}/edit`}>Edit</Link>
+					<Link href={`/invoices/${invoice?.id}/edit`}>Edit</Link>
 					<DeleteInvoiceButton invoice={invoice} />
 					<UpdateStatusButton invoice={invoice} />
 				</div>
@@ -34,40 +34,40 @@ export default async function InvoiceId({
 				<div>
 					<p>
 						<span>#</span>
-						{invoice.id}
+						{invoice?.id}
 					</p>
-					<p>{invoice.description}</p>
+					<p>{invoice?.description}</p>
 				</div>
 				<div>
 					<p>
-						{invoice.senderAddress?.street}, <br />
-						{invoice.senderAddress?.city},<br />
-						{invoice.senderAddress?.postCode},<br />
-						{invoice.senderAddress?.country} <br />
+						{invoice?.senderAddress?.street}, <br />
+						{invoice?.senderAddress?.city},<br />
+						{invoice?.senderAddress?.postCode},<br />
+						{invoice?.senderAddress?.country} <br />
 					</p>
 				</div>
 				<div>
 					<div>
 						<p>Invoice Date</p>
-						<p>{invoice.createdAt}</p>
+						<p>{invoice?.createdAt}</p>
 					</div>
 					<div>
 						<p>Payment Due</p>
-						<p>{invoice.paymentDue}</p>
+						<p>{invoice?.paymentDue}</p>
 					</div>
 				</div>
 				<div>
 					<p>Bill To</p>
 					<div>
-						<p>{invoice.clientAddress?.street}</p>
-						<p>{invoice.clientAddress?.city}</p>
-						<p>{invoice.clientAddress?.postCode}</p>
-						<p>{invoice.clientAddress?.country}</p>
+						<p>{invoice?.clientAddress?.street}</p>
+						<p>{invoice?.clientAddress?.city}</p>
+						<p>{invoice?.clientAddress?.postCode}</p>
+						<p>{invoice?.clientAddress?.country}</p>
 					</div>
 				</div>
 				<div>
 					<p>Sent to</p>
-					<p>{invoice.clientEmail}</p>
+					<p>{invoice?.clientEmail}</p>
 				</div>
 
 				<div>
