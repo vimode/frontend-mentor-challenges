@@ -9,7 +9,7 @@ export interface Item {
 	name: string;
 	price: number;
 	quantity: number;
-	total?: number;
+	total: number;
 }
 
 export interface InvoiceDetails {
