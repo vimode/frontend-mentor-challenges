@@ -1,9 +1,10 @@
 import { InvoiceDetails } from "@/lib/types";
 import InvoiceItem from "./InvoiceItem";
 
-export default function InvoiceList({
-	invoices,
-}: { invoices: InvoiceDetails[] }) {
+interface InvoiceListProps {
+	invoices: InvoiceDetails[];
+}
+export default function InvoiceList({ invoices }: InvoiceListProps) {
 	return (
 		<ul className="flex flex-col gap-y-[10px]">
 			{invoices.map((invoice: InvoiceDetails) => (
