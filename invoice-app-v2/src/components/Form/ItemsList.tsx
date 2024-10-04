@@ -20,12 +20,17 @@ export default function ItemsList({
 	) {
 		const newItems = [...itemsList];
 		newItems[index] = { ...newItems[index], [field]: value };
+		if (newItems[index].quantity && newItems[index].price) {
+			newItems[index].total = newItems[index].quantity * newItems[index].price;
+		} else {
+			newItems[index].total = 0;
+		}
 		setItemsList(newItems);
 	}
 
 	// TODO: add total
 	function handleAddItem() {
-		setItemsList([...itemsList, { name: "", quantity: 0, price: 0 }]);
+		setItemsList([...itemsList, { name: "", quantity: 0, price: 0, total: 0 }]);
 	}
 
 	useEffect(() => {
@@ -87,7 +92,7 @@ export default function ItemsList({
 									}
 								/>
 							</td>
-							<td>{item.quantity * item.price}</td>
+							<td>{item.total}</td>
 							<td>
 								<button>del</button>
 							</td>
