@@ -1,4 +1,6 @@
+import { Suspense } from "react";
 import InvoiceList from "@/components/InvoiceList";
+import SelectFilter from "@/components/SelectFilter";
 
 export default async function Invoices() {
 	const res = await fetch(`${process.env.API_URL}/invoices/api`);
@@ -13,12 +15,14 @@ export default async function Invoices() {
 				</div>
 				<div>
 					<div>
-						<p>Filter</p>
+						<SelectFilter />
 						<a href="/invoices/new">New Invoice</a>
 					</div>
 				</div>
 			</div>
-			<InvoiceList invoices={invoices.data} />
+			<Suspense fallback={<p>No invoices...</p>}>
+				<InvoiceList invoices={invoices.data} />
+			</Suspense>
 		</>
 	);
 }
