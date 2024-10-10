@@ -2,6 +2,7 @@ import Link from "next/link";
 import UpdateStatusButton from "@/components/UpdateStatusButton";
 import DeleteInvoiceButton from "@/components/DeleteInvoiceButton";
 import { InvoiceDetails, Item } from "@/lib/types";
+import { Suspense } from "react";
 
 export default async function InvoiceId({
 	params,
@@ -19,85 +20,87 @@ export default async function InvoiceId({
 				{/* TODO: use history stack to go back */}
 				<Link href="/invoices">&lt; Go back</Link>
 			</nav>
-			<section>
-				<div>
-					<p>Status: </p>
-					<p>{invoice?.status}</p>
-				</div>
-				<div>
-					<Link href={`/invoices/${invoice?.id}/edit`}>Edit</Link>
-					<DeleteInvoiceButton invoice={invoice} />
-					<UpdateStatusButton invoice={invoice} />
-				</div>
-			</section>
-			<main>
-				<div>
-					<p>
-						<span>#</span>
-						{invoice?.id}
-					</p>
-					<p>{invoice?.description}</p>
-				</div>
-				<div>
-					<p>
-						{invoice?.senderAddress?.street}, <br />
-						{invoice?.senderAddress?.city},<br />
-						{invoice?.senderAddress?.postCode},<br />
-						{invoice?.senderAddress?.country} <br />
-					</p>
-				</div>
-				<div>
+			<Suspense fallback={<p>Loading...</p>}>
+				<section>
 					<div>
-						<p>Invoice Date</p>
-						<p>{invoice?.createdAt}</p>
+						<p>Status: </p>
+						<p>{invoice?.status}</p>
 					</div>
 					<div>
-						<p>Payment Due</p>
-						<p>{invoice?.paymentDue}</p>
+						<Link href={`/invoices/${invoice?.id}/edit`}>Edit</Link>
+						<DeleteInvoiceButton invoice={invoice} />
+						<UpdateStatusButton invoice={invoice} />
 					</div>
-				</div>
-				<div>
-					<p>Bill To</p>
+				</section>
+				<main>
 					<div>
-						<p>{invoice?.clientAddress?.street}</p>
-						<p>{invoice?.clientAddress?.city}</p>
-						<p>{invoice?.clientAddress?.postCode}</p>
-						<p>{invoice?.clientAddress?.country}</p>
+						<p>
+							<span>#</span>
+							{invoice?.id}
+						</p>
+						<p>{invoice?.description}</p>
 					</div>
-				</div>
-				<div>
-					<p>Sent to</p>
-					<p>{invoice?.clientEmail}</p>
-				</div>
+					<div>
+						<p>
+							{invoice?.senderAddress?.street}, <br />
+							{invoice?.senderAddress?.city},<br />
+							{invoice?.senderAddress?.postCode},<br />
+							{invoice?.senderAddress?.country} <br />
+						</p>
+					</div>
+					<div>
+						<div>
+							<p>Invoice Date</p>
+							<p>{invoice?.createdAt}</p>
+						</div>
+						<div>
+							<p>Payment Due</p>
+							<p>{invoice?.paymentDue}</p>
+						</div>
+					</div>
+					<div>
+						<p>Bill To</p>
+						<div>
+							<p>{invoice?.clientAddress?.street}</p>
+							<p>{invoice?.clientAddress?.city}</p>
+							<p>{invoice?.clientAddress?.postCode}</p>
+							<p>{invoice?.clientAddress?.country}</p>
+						</div>
+					</div>
+					<div>
+						<p>Sent to</p>
+						<p>{invoice?.clientEmail}</p>
+					</div>
 
-				<div>
-					<table>
-						<thead>
-							<tr>
-								<th>Item Name</th>
-								<th>QTY.</th>
-								<th>Price</th>
-								<th>Total</th>
-							</tr>
-						</thead>
-						<tbody>
-							{invoice.items?.map((item: Item, index: string) => (
-								<tr key={index}>
-									<td>{item.name}</td>
-									<td>
-										{item.quantity} x {item.price}
-									</td>
-									<td>{item.total}</td>
-								</tr>
-							))}
-						</tbody>
-					</table>
 					<div>
-						<p>Grand Total</p>
-						<p>{invoice.total}</p>
+						<table>
+							<thead>
+								<tr>
+									<th>Item Name</th>
+									<th>QTY.</th>
+									<th>Price</th>
+									<th>Total</th>
+								</tr>
+							</thead>
+							<tbody>
+								{invoice.items?.map((item: Item, index: string) => (
+									<tr key={index}>
+										<td>{item.name}</td>
+										<td>
+											{item.quantity} x {item.price}
+										</td>
+										<td>{item.total}</td>
+									</tr>
+								))}
+							</tbody>
+						</table>
+						<div>
+							<p>Grand Total</p>
+							<p>{invoice.total}</p>
+						</div>
 					</div>
-				</div>
-			</main>
+				</main>
+			</Suspense>
 		</>
 	);
 }
