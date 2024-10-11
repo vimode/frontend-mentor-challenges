@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import InvoiceList from "@/components/InvoiceList";
 import SelectFilter from "@/components/SelectFilter";
+import NoInvoices from "@/components/NoInvoices";
 
 export default async function Invoices() {
 	const res = await fetch(`${process.env.API_URL}/invoices/api`);
@@ -8,19 +9,24 @@ export default async function Invoices() {
 
 	return (
 		<>
-			<div>
+			<div className="flex place-items-center justify-between">
 				<div>
 					<h1>Invoices</h1>
 					<p>There are {invoices.data.length} total invoices</p>
 				</div>
 				<div>
-					<div>
+					<div className="flex gap-10">
 						<SelectFilter />
-						<a href="/invoices/new">New Invoice</a>
+						<a
+							href="/invoices/new"
+							className="p-4 bg-accent text-background-secondary rounded-3xl"
+						>
+							New Invoice
+						</a>
 					</div>
 				</div>
 			</div>
-			<Suspense fallback={<p>No invoices...</p>}>
+			<Suspense fallback={<NoInvoices />}>
 				<InvoiceList invoices={invoices.data} />
 			</Suspense>
 		</>

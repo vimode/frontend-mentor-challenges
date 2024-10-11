@@ -9,7 +9,7 @@ export default function InvoicesLayout({
 					<img src="/assets/image-avatar.jpg" className="rounded-full w-1/2" />
 				</div>
 			</section>
-			<main className="flex flex-col place-content-center w-full max-w-[700px] m-auto">
+			<main className="flex flex-col w-full max-w-[700px] mx-auto py-11">
 				{children}
 			</main>
 		</main>
