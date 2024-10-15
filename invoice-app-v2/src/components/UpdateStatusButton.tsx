@@ -10,7 +10,7 @@ export default function UpdateStatusButton({
 	}
 
 	return (
-		<button onClick={handleClick}>
+		<button className="bg-accent btn-basic" onClick={handleClick}>
 			Mark as {invoice.status !== "paid" ? "paid" : "pending"}
 		</button>
 	);

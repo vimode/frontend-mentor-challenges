@@ -11,10 +11,7 @@ export default function MarkAsPaidButton({
 	}
 
 	return (
-		<button
-			className="bg-background-alert text-white py-2 px-4 rounded-full"
-			onClick={handleClick}
-		>
+		<button className="btn-basic bg-background-alert" onClick={handleClick}>
 			Delete
 		</button>
 	);

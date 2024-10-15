@@ -113,3 +113,9 @@ h4 {
 		text-wrap: balance;
 	}
 }
+
+@layer components {
+	.btn-basic {
+		@apply text-background py-3 px-5 font-semibold  rounded-full;
+	}
+}

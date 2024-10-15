@@ -15,19 +15,26 @@ export default async function InvoiceId({
 	)[0];
 
 	return (
-		<>
+		<div className="flex flex-col gap-10">
 			<nav>
 				{/* TODO: use history stack to go back */}
-				<Link href="/invoices">&lt; Go back</Link>
+				<Link href="/invoices" className="font-bold text-primary_text">
+					&lt; Go back
+				</Link>
 			</nav>
 			<Suspense fallback={<p>Loading...</p>}>
-				<section>
+				<section className="flex justify-between bg-background-secondary p-5 rounded-xl place-items-center">
 					<div>
 						<p>Status: </p>
 						<p>{invoice?.status}</p>
 					</div>
-					<div>
-						<Link href={`/invoices/${invoice?.id}/edit`}>Edit</Link>
+					<div className="flex gap-2">
+						<Link
+							href={`/invoices/${invoice?.id}/edit`}
+							className="btn-basic text-text-tertiary bg-background-neutral"
+						>
+							Edit
+						</Link>
 						<DeleteInvoiceButton invoice={invoice} />
 						<UpdateStatusButton invoice={invoice} />
 					</div>
@@ -101,6 +108,6 @@ export default async function InvoiceId({
 					</div>
 				</main>
 			</Suspense>
-		</>
+		</div>
 	);
 }
