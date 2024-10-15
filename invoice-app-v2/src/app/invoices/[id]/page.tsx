@@ -25,8 +25,15 @@ export default async function InvoiceId({
 			<Suspense fallback={<p>Loading...</p>}>
 				<section className="flex justify-between bg-background-secondary p-5 rounded-xl place-items-center">
 					<div>
-						<p>Status: </p>
-						<p>{invoice?.status}</p>
+						<p>
+							Status
+							{/* TODO: Remove border after fixing bg opacity */}
+							<span
+								className={` ml-4 text-primary_text font-semibold rounded-lg px-4  py-2 border-2  ${invoice.status === "pending" ? "text-status-pending border-background-alert_alt bg-background-alert_alt/[50]" : invoice.status === "paid" ? "text-status-success border-status-success" : "text-status:neutral"} `}
+							>
+								{`${invoice?.status.charAt(0).toUpperCase()}${invoice?.status.slice(1)}`}
+							</span>
+						</p>
 					</div>
 					<div className="flex gap-2">
 						<Link
@@ -39,7 +46,7 @@ export default async function InvoiceId({
 						<UpdateStatusButton invoice={invoice} />
 					</div>
 				</section>
-				<main>
+				<main className="bg-background-secondary p-5 rounded-xl">
 					<div>
 						<p>
 							<span>#</span>
