@@ -31,6 +31,6 @@ export async function POST(request: NextRequest) {
 		case "createNewInvoice":
 			return await createNewInvoice(data);
 		default:
-			return Response.json({ error: "Invalid cction" }, { status: 400 });
+			return Response.json({ error: "Invalid action" }, { status: 400 });
 	}
 }
