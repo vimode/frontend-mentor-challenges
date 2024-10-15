@@ -39,9 +39,12 @@ const config: Config = {
 			},
 		},
 		fontSize: {
-			primary_txt: ["12px", { lineHeight: "25px", letterSpacing: "-0.25px" }],
-			secondary_txt: ["11px", { lineHeight: "18px", letterSpacing: "-0.23px" }],
-			tertiary_txt: [
+			primary_text: ["18px", { lineHeight: "25px", letterSpacing: "-0.25px" }],
+			secondary_text: [
+				"12px",
+				{ lineHeight: "18px", letterSpacing: "-0.23px" },
+			],
+			tertiary_text: [
 				"16px",
 				{ lineHeight: "22px", letterSpacing: "-0.8px", fontWeight: "700" },
 			],
