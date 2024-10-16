@@ -28,7 +28,6 @@ export default function ItemsList({
 		setItemsList(newItems);
 	}
 
-	// TODO: add total
 	function handleAddItem() {
 		setItemsList([...itemsList, { name: "", quantity: 0, price: 0, total: 0 }]);
 	}
@@ -94,13 +93,19 @@ export default function ItemsList({
 							</td>
 							<td>{item.total}</td>
 							<td>
-								<button>del</button>
+								<button type="button" disabled>
+									DELETE
+								</button>
 							</td>
 						</tr>
 					))}
 				</tbody>
 			</table>
-			<button type="button" onClick={handleAddItem}>
+			<button
+				className="btn-basic text-text-tertiary bg-background-secondary w-full"
+				type="button"
+				onClick={handleAddItem}
+			>
 				+ Add New Item
 			</button>
 		</fieldset>

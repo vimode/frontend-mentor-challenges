@@ -19,7 +19,7 @@ export default async function Invoices() {
 						<SelectFilter />
 						<a
 							href="/invoices/new"
-							className="p-4 bg-accent text-background-secondary rounded-3xl"
+							className="bg-accent text-background-secondary btn-basic"
 						>
 							New Invoice
 						</a>

@@ -88,18 +88,25 @@ export default function InvoiceForm({ invoiceData }: InvoiceFormProps) {
 	// form submission
 	async function handleSubmit(e: FormEvent<HTMLFormElement>) {
 		e.preventDefault();
+
+		// to avoid multiple clicks/submissions
 		if (formSubmitStatus === "submitting") return;
+
+		// generate an approprite (random) invoice number/id if it doesn't exist
 		const invoiceId = invoiceFormData.id || generateInvoiceNumber();
+
+		// grand total of all the items
 		const invoiceFinalTotal = invoiceFormData.items.reduce((acc, item) => {
 			return acc + item.total;
 		}, 0);
+
 		const newInvoiceData = {
 			...invoiceFormData,
 			id: invoiceId,
 			status: "pending",
 			total: invoiceFinalTotal,
 		};
-		//TODO:  Add a total
+
 		const submittedInvoice = await createNewInvoice(newInvoiceData);
 		if (submittedInvoice?.message === "success") {
 			setFormSubmitStatus("idle");
@@ -264,9 +271,26 @@ export default function InvoiceForm({ invoiceData }: InvoiceFormProps) {
 				onItemsListChange={handleItemsListChange}
 			/>
 			<div>
-				<button type="button">Discard</button>
-				<button type="button">Save as Draft</button>
-				<button type="submit">Save & Send</button>
+				<button
+					className="btn-basic text-text-tertiary bg-background-secondary cursor-not-allowed"
+					type="button"
+					disabled
+				>
+					Discard
+				</button>
+				<button
+					className="btn-basic text-text-tertiary bg-background-secondary cursor-not-allowed"
+					type="button"
+					disabled
+				>
+					Save as Draft
+				</button>
+				<button
+					className="btn-basic bg-accent text-background-secondary"
+					type="submit"
+				>
+					Save Changes
+				</button>
 			</div>
 		</form>
 	);

@@ -108,6 +108,14 @@ h4 {
 	font-weight: 700;
 }
 
+/* INPUT */
+input {
+	border: 2px solid var(--neutral-bg-alt);
+	padding: 10px;
+	border-radius: 5px;
+	outline: none;
+}
+
 @layer utilities {
 	.text-balance {
 		text-wrap: balance;

@@ -29,7 +29,7 @@ export default async function InvoiceId({
 							Status
 							{/* TODO: Remove border after fixing bg opacity */}
 							<span
-								className={` ml-4 text-primary_text font-semibold rounded-lg px-4  py-2 border-2  ${invoice.status === "pending" ? "text-status-pending border-background-alert_alt bg-background-alert_alt/[50]" : invoice.status === "paid" ? "text-status-success border-status-success" : "text-status:neutral"} `}
+								className={` ml-4 text-primary_text font-semibold rounded-lg px-4  py-2 border-2  ${invoice?.status === "pending" ? "text-status-pending border-background-alert_alt bg-background-alert_alt/[50]" : invoice?.status === "paid" ? "text-status-success border-status-success" : "text-status:neutral"} `}
 							>
 								{`${invoice?.status.charAt(0).toUpperCase()}${invoice?.status.slice(1)}`}
 							</span>
