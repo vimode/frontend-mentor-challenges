@@ -16,12 +16,17 @@ export default function Feed() {
 			<ul className="flex flex-col gap-8">
 				<li>
 					<h2>Step 1: Add this to your .env</h2>
+					<p>
+						Edit the env as per your own current active cluster and database at
+						start at the beginning.
+					</p>
 					<code>
-						MONGODB_URI_TEST=mongodb+srv://username:password@cluster0.s3rpaev.mongodb.net/vimo_invoice_app_fm?retryWrites=true&w=majority
+						MONGODB_URI=mongodb+srv://username:password@cluster0.s3rpaev.mongodb.net/vimo_invoice_app_fm?retryWrites=true&w=majority
 					</code>
 					<p>
 						This will add a new database by name &nbsp;
-						<code>vimo_invoice_app_fm</code>
+						<code>vimo_invoice_app_fm</code> in your active cluster without
+						disturbing your active databases.
 					</p>
 				</li>
 				<li>
@@ -42,14 +47,6 @@ export default function Feed() {
 						This will add a new collection <code>invoices</code> in the
 						previously created database with some dummy data.
 					</p>
-				</li>
-				<li>
-					<h2>Step 3: Change env in dbConnect</h2>
-					<p>Go to /src/lib/dbConnect.ts</p>
-					<p>to update the env</p>
-					<code>const MONGODB_URI = process.env.MONGODB_URI!;</code>
-					<p>to</p>
-					<code>const MONGODB_URI = process.env.MONGODB_URI_TEST!;</code>
 				</li>
 				<li>
 					<h3>

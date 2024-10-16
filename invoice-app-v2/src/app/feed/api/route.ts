@@ -4,7 +4,7 @@ import dummyData from "@/app/_data/dummy_data.json";
 
 export const dynamc = "force-dynamic";
 
-const MONGODB_URI = process.env.MONGODB_URI_TEST!;
+const MONGODB_URI = process.env.MONGODB_URI!;
 
 export async function POST() {
 	if (!MONGODB_URI) {
