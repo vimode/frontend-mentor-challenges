@@ -25,7 +25,7 @@ const config: Config = {
 			},
 			accent: {
 				DEFAULT: "var(--accent)",
-				alt: "var(--acccent-alt)",
+				alt: "var(--accent-alt)",
 			},
 			status: {
 				success: "var(--success)",
@@ -39,14 +39,14 @@ const config: Config = {
 			},
 		},
 		fontSize: {
-			primary_text: ["18px", { lineHeight: "25px", letterSpacing: "-0.25px" }],
+			primary_text: ["20px", { lineHeight: "27px", letterSpacing: "-0.25px" }],
 			secondary_text: [
-				"12px",
-				{ lineHeight: "18px", letterSpacing: "-0.23px" },
+				"18px",
+				{ lineHeight: "20px", letterSpacing: "-0.23px" },
 			],
 			tertiary_text: [
 				"16px",
-				{ lineHeight: "22px", letterSpacing: "-0.8px", fontWeight: "700" },
+				{ lineHeight: "24px", letterSpacing: "-0.8px", fontWeight: "700" },
 			],
 		},
 	},

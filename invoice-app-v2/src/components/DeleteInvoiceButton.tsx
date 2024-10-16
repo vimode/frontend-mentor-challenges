@@ -11,7 +11,10 @@ export default function MarkAsPaidButton({
 	}
 
 	return (
-		<button className="btn-basic bg-background-alert" onClick={handleClick}>
+		<button
+			className="btn-basic bg-background-alert hover:bg-background-alert_alt transition-colors"
+			onClick={handleClick}
+		>
 			Delete
 		</button>
 	);
