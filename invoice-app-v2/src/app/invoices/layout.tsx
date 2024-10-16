@@ -6,7 +6,9 @@ export default function InvoicesLayout({
 			<section className="min-h-screen max-w-[100px] rounded-r-xl bg-status-neutral">
 				<div className="flex flex-col items-center h-full place-content-between">
 					<div className="bg-accent w-full rounded-r-xl">
-						<img src="/assets/logo.svg" className="m-auto p-8" />
+						<a href="/invoices">
+							<img src="/assets/logo.svg" className="m-auto p-8" />
+						</a>
 					</div>
 					<img src="/assets/image-avatar.jpg" className="rounded-full w-1/2" />
 				</div>
