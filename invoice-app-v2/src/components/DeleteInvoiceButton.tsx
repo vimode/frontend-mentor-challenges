@@ -6,7 +6,12 @@ export default function MarkAsPaidButton({
 	invoice,
 }: { invoice: InvoiceDetails }) {
 	async function handleClick() {
-		// TODO: Add a  confirmation dialog/popup
+		const confirmAction = window.confirm(
+			"Are you sure you want to delete this invoice?",
+		);
+
+		if (!confirmAction) return;
+
 		await deleteInvoice({ id: invoice.id });
 	}
 
