@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import InvoiceList from "@/components/InvoiceList";
 import SelectFilter from "@/components/SelectFilter";
 import NoInvoices from "@/components/NoInvoices";
+import Link from "next/link";
 
 export default async function Invoices() {
 	const res = await fetch(`${process.env.API_URL}/invoices/api`);
@@ -17,12 +18,12 @@ export default async function Invoices() {
 				<div>
 					<div className="flex gap-10">
 						<SelectFilter />
-						<a
+						<Link
 							href="/invoices/new"
 							className="bg-accent text-background-secondary btn-basic"
 						>
 							New Invoice
-						</a>
+						</Link>
 					</div>
 				</div>
 			</div>

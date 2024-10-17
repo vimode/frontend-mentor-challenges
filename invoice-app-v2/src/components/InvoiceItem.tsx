@@ -1,9 +1,10 @@
 import { formatDateMedFormat } from "@/lib/helper";
 import { InvoiceDetails } from "@/lib/types";
+import Link from "next/link";
 
 export default function InvoiceItem({ invoice }: { invoice: InvoiceDetails }) {
 	return (
-		<a href={`/invoices/${invoice.id}`}>
+		<Link href={`/invoices/${invoice.id}`}>
 			<li
 				key={invoice.id}
 				className="flex flex-row  items-center max-w-3xl bg-background-secondary p-4 rounded-lg"
@@ -25,6 +26,6 @@ export default function InvoiceItem({ invoice }: { invoice: InvoiceDetails }) {
 				</p>
 				<p>&gt;</p>
 			</li>
-		</a>
+		</Link>
 	);
 }

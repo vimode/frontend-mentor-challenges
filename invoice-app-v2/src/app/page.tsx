@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Home() {
 	return (
 		<main className="flex min-h-screen flex-col p-24 justify-between">
@@ -8,12 +10,12 @@ export default function Home() {
 				ground up to be extensible and customizable, so that no matter what
 				you’re building you never feel like you’re fighting the framework.
 			</p>
-			<a
+			<Link
 				className="text-[33px] text-accent underline text-center"
 				href="/invoices"
 			>
 				Go to Invoices
-			</a>
+			</Link>
 		</main>
 	);
 }
