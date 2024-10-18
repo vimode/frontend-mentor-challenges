@@ -69,9 +69,9 @@ export default async function InvoiceId({
 							{invoice?.senderAddress?.country} <br />
 						</p>
 					</div>
-					<div className="flex flex-row flex-wrap justify-between">
-						<div>
-							<div>
+					<div className="flex flex-row flex-wrap gap-28 my-6">
+						<div className="flex flex-col gap-5">
+							<div className="flex flex-col gap-2">
 								<p className="text-secondary_text text-text-secondary">
 									Invoice Date
 								</p>
@@ -79,7 +79,7 @@ export default async function InvoiceId({
 									{formatDateMedFormat(invoice?.createdAt)}
 								</p>
 							</div>
-							<div>
+							<div className="flex flex-col gap-2">
 								<p className="text-secondary_text text-text-secondary">
 									Payment Due
 								</p>
@@ -88,27 +88,23 @@ export default async function InvoiceId({
 								</p>
 							</div>
 						</div>
-						<div>
+						<div className="flex flex-col gap-2">
 							<p className="text-secondary_text text-text-secondary">Bill To</p>
-							<div>
-								<p className="text-primary_text font-bold">
+							<p className="text-secondary_text text-text-secondary">
+								<span className="text-primary_text text-text font-bold">
 									{invoice?.clientName}
-								</p>
-								<p className="text-secondary_text text-text-secondary">
-									{invoice?.clientAddress?.street}
-								</p>
-								<p className="text-secondary_text text-text-secondary">
-									{invoice?.clientAddress?.city}
-								</p>
-								<p className="text-secondary_text text-text-secondary">
-									{invoice?.clientAddress?.postCode}
-								</p>
-								<p className="text-secondary_text text-text-secondary">
-									{invoice?.clientAddress?.country}
-								</p>
-							</div>
+								</span>
+								<br />
+								{invoice?.clientAddress?.street} <br />
+								{invoice?.clientAddress?.city}
+								<br />
+								{invoice?.clientAddress?.postCode}
+								<br />
+								{invoice?.clientAddress?.country}
+								<br />
+							</p>
 						</div>
-						<div>
+						<div className="flex flex-col gap-2">
 							<p className="text-secondary_text text-text-secondary">Sent to</p>
 							<p className="text-primary_text font-bold">
 								{invoice?.clientEmail}
@@ -117,31 +113,33 @@ export default async function InvoiceId({
 					</div>
 
 					<div>
-						<table className="bg-background-neutral_alt w-full rounded-t-lg">
-							<thead>
-								<tr className="text-secondary_text text-text-secondary">
-									<th>Item Name</th>
-									<th>QTY.</th>
-									<th>Price</th>
-									<th>Total</th>
-								</tr>
-							</thead>
-							<tbody>
+						<div className="table bg-background-neutral w-full rounded-t-lg p-5">
+							<div className="table-header-group">
+								<div className="table-row text-secondary_text text-text-secondary">
+									<div className="table-cell w-1/2 py-2">Item Name</div>
+									<div className="table-cell w-auto py-2 text-center">QTY.</div>
+									<div className="table-cell w-1/5 py-2 text-end">Price</div>
+									<div className="table-cell w-1/5 py-2 text-end">Total</div>
+								</div>
+							</div>
+							<div className="table-row-group font-bold">
 								{invoice.items?.map((item: Item, index: string) => (
-									<tr key={index}>
-										<td>{item.name}</td>
-										<td className="text-secondary_text text-text-secondary">
+									<div className="table-row" key={index}>
+										<div className="table-cell w-1/2 py-2">{item.name}</div>
+										<div className="table-cell text-secondary_text text-text-secondary w-auto text-center py-2">
 											{item.quantity}
-										</td>
-										<td className="text-secondary_text text-text-secondary">
+										</div>
+										<div className="table-cell text-secondary_text text-text-secondary w-1/5 py-2 text-end">
 											{item.price}
-										</td>
-										<td>{item.total}</td>
-									</tr>
+										</div>
+										<div className="table-cell text-secondary_text  w-1/5 py-2 text-end">
+											{item.total}
+										</div>
+									</div>
 								))}
-							</tbody>
-						</table>
-						<div className="bg-text-tertiary flex flex-row justify-between text-background-neutral items-center rounded-b-lg">
+							</div>
+						</div>
+						<div className="bg-status-neutral flex flex-row justify-between text-background-neutral items-center rounded-b-lg p-5">
 							<p>Amount Due</p>
 							<p className="text-[28px]">{invoice.total}</p>
 						</div>
