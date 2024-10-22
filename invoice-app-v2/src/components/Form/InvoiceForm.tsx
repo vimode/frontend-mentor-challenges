@@ -114,12 +114,16 @@ export default function InvoiceForm({ invoiceData }: InvoiceFormProps) {
 	}
 
 	return (
-		<form onSubmit={(e) => handleSubmit(e)}>
+		<form onSubmit={(e: FormEvent<HTMLFormElement>) => handleSubmit(e)}>
 			{/* Bill from */}
 			<fieldset>
-				<legend>Bill From</legend>
+				<legend className="text-accent font-semibold text-secondary_text">
+					Bill From
+				</legend>
 				<div>
-					<label htmlFor="street-address">Street Address</label>
+					<label htmlFor="street-address" className="form_label_basic">
+						Street Address
+					</label>
 					<input
 						type="text"
 						id="street-address"
@@ -130,7 +134,9 @@ export default function InvoiceForm({ invoiceData }: InvoiceFormProps) {
 				</div>
 				<div>
 					<div>
-						<label htmlFor="city">City</label>
+						<label htmlFor="city" className="form_label_basic">
+							City
+						</label>
 						<input
 							type="text"
 							id="city"
@@ -140,7 +146,9 @@ export default function InvoiceForm({ invoiceData }: InvoiceFormProps) {
 						/>
 					</div>
 					<div>
-						<label htmlFor="post-code">Post Code</label>
+						<label htmlFor="post-code" className="form_label_basic">
+							Post Code
+						</label>
 						<input
 							type="text"
 							id="post-code"
@@ -150,7 +158,9 @@ export default function InvoiceForm({ invoiceData }: InvoiceFormProps) {
 						/>
 					</div>
 					<div>
-						<label htmlFor="country">Country</label>
+						<label htmlFor="country" className="form_label_basic">
+							Country
+						</label>
 						<input
 							type="text"
 							id="country"
@@ -164,9 +174,13 @@ export default function InvoiceForm({ invoiceData }: InvoiceFormProps) {
 
 			{/* Bill To */}
 			<fieldset>
-				<legend>Bill To</legend>
+				<legend className="text-accent font-semibold text-secondary_text">
+					Bill To
+				</legend>
 				<div>
-					<label htmlFor="client-name">Client&apos;s Name</label>
+					<label htmlFor="client-name" className="form_label_basic">
+						Client&apos;s Name
+					</label>
 					<input
 						type="text"
 						id="client-name"
@@ -176,7 +190,9 @@ export default function InvoiceForm({ invoiceData }: InvoiceFormProps) {
 					/>
 				</div>
 				<div>
-					<label htmlFor="client-email">Client&apos;s Email</label>
+					<label htmlFor="client-email" className="form_label_basic">
+						Client&apos;s Email
+					</label>
 					<input
 						type="email"
 						id="client-email"
@@ -186,7 +202,9 @@ export default function InvoiceForm({ invoiceData }: InvoiceFormProps) {
 					/>
 				</div>
 				<div>
-					<label htmlFor="street-name">Street Name</label>
+					<label htmlFor="street-name" className="form_label_basic">
+						Street Name
+					</label>
 					<input
 						type="text"
 						id="street-name"
@@ -197,7 +215,9 @@ export default function InvoiceForm({ invoiceData }: InvoiceFormProps) {
 				</div>
 				<div>
 					<div>
-						<label htmlFor="client-city">City</label>
+						<label htmlFor="client-city" className="form_label_basic">
+							City
+						</label>
 						<input
 							type="text"
 							id="client-city"
@@ -207,7 +227,9 @@ export default function InvoiceForm({ invoiceData }: InvoiceFormProps) {
 						/>
 					</div>
 					<div>
-						<label htmlFor="client-post-code">Post Code</label>
+						<label htmlFor="client-post-code" className="form_label_basic">
+							Post Code
+						</label>
 						<input
 							type="text"
 							id="client-post-code"
@@ -217,7 +239,9 @@ export default function InvoiceForm({ invoiceData }: InvoiceFormProps) {
 						/>
 					</div>
 					<div>
-						<label htmlFor="client-country">Country</label>
+						<label htmlFor="client-country" className="form_label_basic">
+							Country
+						</label>
 						<input
 							type="text"
 							id="client-country"
@@ -229,7 +253,9 @@ export default function InvoiceForm({ invoiceData }: InvoiceFormProps) {
 				</div>
 				<div>
 					<div>
-						<label htmlFor="invoice-date">Invoice Date</label>
+						<label htmlFor="invoice-date" className="form_label_basic">
+							Invoice Date
+						</label>
 						<input
 							type="date"
 							id="invoice-date"
@@ -239,7 +265,9 @@ export default function InvoiceForm({ invoiceData }: InvoiceFormProps) {
 						/>
 					</div>
 					<div>
-						<label htmlFor="payment-terms">Payment Terms</label>
+						<label htmlFor="payment-terms" className="form_label_basic">
+							Payment Terms
+						</label>
 						<select
 							id="payment-terms"
 							name="paymentTerms"
@@ -252,7 +280,9 @@ export default function InvoiceForm({ invoiceData }: InvoiceFormProps) {
 						</select>
 					</div>
 					<div>
-						<label htmlFor="project-description">Project Description</label>
+						<label htmlFor="project-description" className="form_label_basic">
+							Project Description
+						</label>
 						<input
 							type="text"
 							id="project-description"

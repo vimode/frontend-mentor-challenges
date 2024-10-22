@@ -126,4 +126,8 @@ input {
 	.btn-basic {
 		@apply text-background py-3 px-5 font-semibold  rounded-full;
 	}
+
+	.form_label_basic {
+		@apply text-text-tertiary text-secondary_text;
+	}
 }
