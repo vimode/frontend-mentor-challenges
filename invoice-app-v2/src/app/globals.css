@@ -114,6 +114,7 @@ input {
 	padding: 10px;
 	border-radius: 5px;
 	outline: none;
+	width: 100%;
 }
 
 @layer utilities {

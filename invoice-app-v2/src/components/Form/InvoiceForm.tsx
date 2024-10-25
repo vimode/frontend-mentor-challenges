@@ -114,13 +114,16 @@ export default function InvoiceForm({ invoiceData }: InvoiceFormProps) {
 	}
 
 	return (
-		<form onSubmit={(e: FormEvent<HTMLFormElement>) => handleSubmit(e)}>
+		<form
+			className="flex flex-col  gap-12"
+			onSubmit={(e: FormEvent<HTMLFormElement>) => handleSubmit(e)}
+		>
 			{/* Bill from */}
-			<fieldset>
+			<fieldset className="flex flex-col gap-6">
 				<legend className="text-accent font-semibold text-secondary_text">
 					Bill From
 				</legend>
-				<div>
+				<div className="w-full flex flex-col">
 					<label htmlFor="street-address" className="form_label_basic">
 						Street Address
 					</label>
@@ -132,7 +135,7 @@ export default function InvoiceForm({ invoiceData }: InvoiceFormProps) {
 						onChange={handleInputChange}
 					/>
 				</div>
-				<div>
+				<div className="flex flex-row justify-between gap-3 items-center">
 					<div>
 						<label htmlFor="city" className="form_label_basic">
 							City
@@ -173,7 +176,7 @@ export default function InvoiceForm({ invoiceData }: InvoiceFormProps) {
 			</fieldset>
 
 			{/* Bill To */}
-			<fieldset>
+			<fieldset className="flex flex-col gap-6">
 				<legend className="text-accent font-semibold text-secondary_text">
 					Bill To
 				</legend>
@@ -213,7 +216,7 @@ export default function InvoiceForm({ invoiceData }: InvoiceFormProps) {
 						onChange={handleInputChange}
 					/>
 				</div>
-				<div>
+				<div className="flex flex-row justify-between gap-3 items-center">
 					<div>
 						<label htmlFor="client-city" className="form_label_basic">
 							City
@@ -251,7 +254,7 @@ export default function InvoiceForm({ invoiceData }: InvoiceFormProps) {
 						/>
 					</div>
 				</div>
-				<div>
+				<div className="flex flex-row justify-between gap-3 items-center">
 					<div>
 						<label htmlFor="invoice-date" className="form_label_basic">
 							Invoice Date
@@ -279,18 +282,18 @@ export default function InvoiceForm({ invoiceData }: InvoiceFormProps) {
 							<option value="90days">Next 90 Days</option>
 						</select>
 					</div>
-					<div>
-						<label htmlFor="project-description" className="form_label_basic">
-							Project Description
-						</label>
-						<input
-							type="text"
-							id="project-description"
-							name="description"
-							value={invoiceFormData.description}
-							onChange={handleInputChange}
-						/>
-					</div>
+				</div>
+				<div>
+					<label htmlFor="project-description" className="form_label_basic">
+						Project Description
+					</label>
+					<input
+						type="text"
+						id="project-description"
+						name="description"
+						value={invoiceFormData.description}
+						onChange={handleInputChange}
+					/>
 				</div>
 			</fieldset>
 
