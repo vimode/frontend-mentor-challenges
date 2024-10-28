@@ -24,7 +24,7 @@ export default function SelectFilter() {
 			name="status"
 			id="status-select"
 			onChange={(e) => setSelectedFilter(e.target.value)}
-			className="h-max w-max place-self-center bg-transparent"
+			className="p-3 bg-transparent place-self-center"
 		>
 			<option value="">Filter by Status</option>
 			<option value="paid">Paid</option>

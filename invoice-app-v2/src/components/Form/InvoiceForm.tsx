@@ -123,7 +123,7 @@ export default function InvoiceForm({ invoiceData }: InvoiceFormProps) {
 				<legend className="text-accent font-semibold text-secondary_text">
 					Bill From
 				</legend>
-				<div className="w-full flex flex-col">
+				<div className="input-label-group">
 					<label htmlFor="street-address" className="form_label_basic">
 						Street Address
 					</label>
@@ -131,12 +131,13 @@ export default function InvoiceForm({ invoiceData }: InvoiceFormProps) {
 						type="text"
 						id="street-address"
 						name="senderAddress.street"
+						className="font-bold"
 						value={invoiceFormData.senderAddress.street}
 						onChange={handleInputChange}
 					/>
 				</div>
 				<div className="flex flex-row justify-between gap-3 items-center">
-					<div>
+					<div className="input-label-group">
 						<label htmlFor="city" className="form_label_basic">
 							City
 						</label>
@@ -148,7 +149,7 @@ export default function InvoiceForm({ invoiceData }: InvoiceFormProps) {
 							onChange={handleInputChange}
 						/>
 					</div>
-					<div>
+					<div className="input-label-group">
 						<label htmlFor="post-code" className="form_label_basic">
 							Post Code
 						</label>
@@ -160,7 +161,7 @@ export default function InvoiceForm({ invoiceData }: InvoiceFormProps) {
 							onChange={handleInputChange}
 						/>
 					</div>
-					<div>
+					<div className="input-label-group">
 						<label htmlFor="country" className="form_label_basic">
 							Country
 						</label>
@@ -180,7 +181,7 @@ export default function InvoiceForm({ invoiceData }: InvoiceFormProps) {
 				<legend className="text-accent font-semibold text-secondary_text">
 					Bill To
 				</legend>
-				<div>
+				<div className="input-label-group">
 					<label htmlFor="client-name" className="form_label_basic">
 						Client&apos;s Name
 					</label>
@@ -192,7 +193,7 @@ export default function InvoiceForm({ invoiceData }: InvoiceFormProps) {
 						onChange={handleInputChange}
 					/>
 				</div>
-				<div>
+				<div className="input-label-group">
 					<label htmlFor="client-email" className="form_label_basic">
 						Client&apos;s Email
 					</label>
@@ -204,7 +205,7 @@ export default function InvoiceForm({ invoiceData }: InvoiceFormProps) {
 						onChange={handleInputChange}
 					/>
 				</div>
-				<div>
+				<div className="input-label-group">
 					<label htmlFor="street-name" className="form_label_basic">
 						Street Name
 					</label>
@@ -217,7 +218,7 @@ export default function InvoiceForm({ invoiceData }: InvoiceFormProps) {
 					/>
 				</div>
 				<div className="flex flex-row justify-between gap-3 items-center">
-					<div>
+					<div className="input-label-group">
 						<label htmlFor="client-city" className="form_label_basic">
 							City
 						</label>
@@ -229,7 +230,7 @@ export default function InvoiceForm({ invoiceData }: InvoiceFormProps) {
 							onChange={handleInputChange}
 						/>
 					</div>
-					<div>
+					<div className="input-label-group">
 						<label htmlFor="client-post-code" className="form_label_basic">
 							Post Code
 						</label>
@@ -241,7 +242,7 @@ export default function InvoiceForm({ invoiceData }: InvoiceFormProps) {
 							onChange={handleInputChange}
 						/>
 					</div>
-					<div>
+					<div className="input-label-group">
 						<label htmlFor="client-country" className="form_label_basic">
 							Country
 						</label>
@@ -255,7 +256,7 @@ export default function InvoiceForm({ invoiceData }: InvoiceFormProps) {
 					</div>
 				</div>
 				<div className="flex flex-row justify-between gap-3 items-center">
-					<div>
+					<div className="input-label-group">
 						<label htmlFor="invoice-date" className="form_label_basic">
 							Invoice Date
 						</label>
@@ -267,13 +268,18 @@ export default function InvoiceForm({ invoiceData }: InvoiceFormProps) {
 							onChange={handleInputChange}
 						/>
 					</div>
-					<div>
+					<div className="input-label-group">
 						<label htmlFor="payment-terms" className="form_label_basic">
 							Payment Terms
 						</label>
 						<select
 							id="payment-terms"
 							name="paymentTerms"
+							// border: 2px solid var(--neutral-bg-alt);
+							// padding: 10px;
+							// border-radius: 5px;
+							// outline: none;
+							className="p-3 rounded-lg border-2 border-background-neutral_alt"
 							value={invoiceFormData.paymentTerms}
 							onChange={handleInputChange}
 						>
@@ -283,7 +289,7 @@ export default function InvoiceForm({ invoiceData }: InvoiceFormProps) {
 						</select>
 					</div>
 				</div>
-				<div>
+				<div className="input-label-group">
 					<label htmlFor="project-description" className="form_label_basic">
 						Project Description
 					</label>

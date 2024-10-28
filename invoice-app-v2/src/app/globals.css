@@ -115,6 +115,16 @@ input {
 	border-radius: 5px;
 	outline: none;
 	width: 100%;
+	font-weight: bold;
+}
+
+input:focus {
+	outline: 1px solid var(--accent-alt);
+	border-color: transparent;
+}
+
+select {
+	background-color: transparent;
 }
 
 @layer utilities {
@@ -126,6 +136,10 @@ input {
 @layer components {
 	.btn-basic {
 		@apply text-background py-3 px-5 font-semibold  rounded-full;
+	}
+
+	.input-label-group {
+		@apply flex w-full flex-col gap-3;
 	}
 
 	.form_label_basic {
