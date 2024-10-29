@@ -139,7 +139,7 @@ select {
 	}
 
 	.input-label-group {
-		@apply flex w-full flex-col gap-3;
+		@apply flex  flex-col gap-3;
 	}
 
 	.form_label_basic {

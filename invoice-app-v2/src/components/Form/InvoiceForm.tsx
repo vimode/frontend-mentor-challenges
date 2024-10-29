@@ -136,8 +136,8 @@ export default function InvoiceForm({ invoiceData }: InvoiceFormProps) {
 						onChange={handleInputChange}
 					/>
 				</div>
-				<div className="flex flex-row justify-between gap-3 items-center">
-					<div className="input-label-group">
+				<div className="flex flex-row flex-wrap md:flex-nowrap justify-between gap-3 items-center">
+					<div className="input-label-group w-full md:w-1/3">
 						<label htmlFor="city" className="form_label_basic">
 							City
 						</label>
@@ -149,7 +149,7 @@ export default function InvoiceForm({ invoiceData }: InvoiceFormProps) {
 							onChange={handleInputChange}
 						/>
 					</div>
-					<div className="input-label-group">
+					<div className="input-label-group w-full md:w-1/3">
 						<label htmlFor="post-code" className="form_label_basic">
 							Post Code
 						</label>
@@ -161,7 +161,7 @@ export default function InvoiceForm({ invoiceData }: InvoiceFormProps) {
 							onChange={handleInputChange}
 						/>
 					</div>
-					<div className="input-label-group">
+					<div className="input-label-group w-full md:w-1/3">
 						<label htmlFor="country" className="form_label_basic">
 							Country
 						</label>
