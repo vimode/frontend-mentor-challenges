@@ -22,6 +22,9 @@ const config: Config = {
 				neutral_alt: "var(--neutral-bg-alt)",
 				alert: "var(--alert-bg)",
 				alert_alt: "var(--alert-bg-alt)",
+				success_bg: "var(--success-bg)",
+				pending_bg: "var(--pending-bg)",
+				neutral_bg: "var(--neutral-bg)",
 			},
 			accent: {
 				DEFAULT: "var(--accent)",
