@@ -19,10 +19,10 @@ export default function InvoiceItem({ invoice }: { invoice: InvoiceDetails }) {
 				<p className="flex-1 text-text-tertiary">{invoice.clientName}</p>
 				<p className="flex-1 text-right mr-4 font-bold">${invoice.total}</p>
 				<p
-					className={`flex-1 p-1 text-center font-bold  ${invoice.status === "pending" ? "text-status-pending" : invoice.status === "draft" ? "text-status-neutral bg-background-neutral/50" : "text-status-success"}`}
+					className={`flex-1 p-1 text-center font-bold  ${invoice.status === "pending" ? "text-status-pending bg-background-pending_bg" : invoice.status === "draft" ? "text-status-neutral bg-background-neutral_bg" : "text-status-success bg-background-success_bg"}`}
 				>
 					<span>&bull;</span>
-					{invoice.status}
+					{`${invoice?.status.charAt(0).toUpperCase()}${invoice?.status.slice(1)}`}
 				</p>
 				<p>&gt;</p>
 			</li>
