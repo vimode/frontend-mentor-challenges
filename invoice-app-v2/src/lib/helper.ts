@@ -9,7 +9,7 @@ export function formatDate(dbdate: Date): string {
 export function formatDateMedFormat(dbdate: Date): string {
 	const date = new Date(dbdate);
 	const yyyy = date.getFullYear();
-	const mm = new Intl.DateTimeFormat("en-US", { month: "short" }).format(date);
+	const mm = Intl.DateTimeFormat("en-US", { month: "short" }).format(date);
 	const dd = String(date.getDate()).padStart(2, "0");
 	return `${dd} ${mm} ${yyyy}`;
 }
