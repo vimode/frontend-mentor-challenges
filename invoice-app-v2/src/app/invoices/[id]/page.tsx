@@ -26,7 +26,7 @@ export default async function InvoiceId({
 
 			<Suspense fallback={<p>Loading...</p>}>
 				{/* Invoice Actions */}
-				<section className="flex md:justify-between md:flex-row flex-col bg-background-secondary p-5 rounded-xl place-items-center">
+				<section className="flex md:justify-between md:flex-row flex-col bg-background-secondary p-5 rounded-xl md:place-items-center gap-8">
 					<div>
 						<p>
 							Status
@@ -38,7 +38,7 @@ export default async function InvoiceId({
 							</span>
 						</p>
 					</div>
-					<div className="flex gap-2">
+					<div className="flex gap-2 place-self-center">
 						<Link
 							href={`/invoices/${invoice?.id}/edit`}
 							className="btn-basic text-text-tertiary bg-background-neutral hover:bg-text-tertiary hover:text-background-neutral transition-colors"
@@ -69,9 +69,9 @@ export default async function InvoiceId({
 							{invoice?.senderAddress?.country} <br />
 						</p>
 					</div>
-					<div className="flex flex-row flex-wrap gap-28 my-6">
-						<div className="flex flex-col gap-5">
-							<div className="flex flex-col gap-2">
+					<div className="flex flex-row flex-wrap gap-9 md:gap-28 my-6">
+						<div className="flex flex-col gap-3 md:gap-5">
+							<div className="flex flex-col gap-1 md:gap-2">
 								<p className="text-secondary_text text-text-secondary">
 									Invoice Date
 								</p>
@@ -79,7 +79,7 @@ export default async function InvoiceId({
 									{formatDateMedFormat(invoice?.createdAt)}
 								</p>
 							</div>
-							<div className="flex flex-col gap-2">
+							<div className="flex flex-col gap-1 md:gap-2">
 								<p className="text-secondary_text text-text-secondary">
 									Payment Due
 								</p>
