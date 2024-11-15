@@ -37,22 +37,26 @@ export default function ItemsList({
 	}, [itemsList]);
 
 	return (
-		<fieldset>
-			<legend>Item List</legend>
-			<table>
-				<thead>
-					<tr>
-						<th>Item Name</th>
-						<th>Qty.</th>
-						<th>Price</th>
-						<th>Total</th>
-						<th></th>
-					</tr>
-				</thead>
-				<tbody>
+		<fieldset className="flex flex-col gap-6">
+			<legend className="text-accent font-semibold text-secondary_text">
+				Item List
+			</legend>
+			<div className="table">
+				<div className="table-header-group">
+					<div className="table-row flex-row">
+						<div className="table-cell form_label_basic font-normal">
+							Item Name
+						</div>
+						<div className="table-cell form_label_basic font-normal">Qty.</div>
+						<div className="table-cell form_label_basic font-normal">Price</div>
+						<div className="table-cell form_label_basic font-normal">Total</div>
+						<div className="table-cell form_label_basic font-normal"></div>
+					</div>
+				</div>
+				<div className="table-row-group">
 					{itemsList.map((item, index) => (
-						<tr key={index}>
-							<td>
+						<div className="table-row" key={index}>
+							<div className="table-cell">
 								<input
 									type="text"
 									name={`item.name${index}`}
@@ -61,8 +65,8 @@ export default function ItemsList({
 										handleInputChange(index, "name", e.target.value)
 									}
 								/>
-							</td>
-							<td>
+							</div>
+							<div className="table-cell">
 								<input
 									type="number"
 									name={`item.quantity${index}`}
@@ -75,8 +79,8 @@ export default function ItemsList({
 										)
 									}
 								/>
-							</td>
-							<td>
+							</div>
+							<div className="table-cell">
 								<input
 									type="number"
 									step="1.0"
@@ -90,19 +94,19 @@ export default function ItemsList({
 										)
 									}
 								/>
-							</td>
-							<td>{item.total}</td>
-							<td>
+							</div>
+							<div className="table-cell">{item.total}</div>
+							<div className="table-cell">
 								<button type="button" disabled>
-									DELETE
+									DEL
 								</button>
-							</td>
-						</tr>
+							</div>
+						</div>
 					))}
-				</tbody>
-			</table>
+				</div>
+			</div>
 			<button
-				className="btn-basic text-text-tertiary bg-background-secondary w-full"
+				className="btn-basic text-text-tertiary bg-background-secondary w-full hover:bg-background-neutral_alt hover:transition-colors"
 				type="button"
 				onClick={handleAddItem}
 			>

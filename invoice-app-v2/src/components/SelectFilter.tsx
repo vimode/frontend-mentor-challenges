@@ -27,10 +27,10 @@ export default function SelectFilter() {
 			className="p-3 bg-transparent place-self-center"
 		>
 			<option value="">Filter by Status</option>
+			<option value="">All</option>
 			<option value="paid">Paid</option>
 			<option value="pending">Pending</option>
 			<option value="draft">Draft</option>
-			<option value="">Reset</option>
 		</select>
 	);
 }

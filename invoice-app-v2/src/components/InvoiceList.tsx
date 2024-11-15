@@ -14,7 +14,7 @@ export default function InvoiceList({ invoices }: InvoiceListProps) {
 		? invoices.filter((invoice) => invoice.status === filter)
 		: invoices;
 	return (
-		<ul className="flex flex-col gap-y-[10px]">
+		<ul className="flex flex-col gap-y-4">
 			{filteredInvoices.map((invoice: InvoiceDetails) => (
 				// key might not be needed here but nextjs shows an error otherwise
 				<InvoiceItem invoice={invoice} key={invoice.id} />

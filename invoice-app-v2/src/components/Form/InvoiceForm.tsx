@@ -136,8 +136,8 @@ export default function InvoiceForm({ invoiceData }: InvoiceFormProps) {
 						onChange={handleInputChange}
 					/>
 				</div>
-				<div className="flex flex-row flex-wrap md:flex-nowrap justify-between gap-3 items-center">
-					<div className="input-label-group w-full md:w-1/3">
+				<div className="flex flex-row flex-wrap justify-between gap-3 items-center">
+					<div className="input-label-group w-auto flex-1 md:w-1/3">
 						<label htmlFor="city" className="form_label_basic">
 							City
 						</label>
@@ -149,7 +149,7 @@ export default function InvoiceForm({ invoiceData }: InvoiceFormProps) {
 							onChange={handleInputChange}
 						/>
 					</div>
-					<div className="input-label-group w-full md:w-1/3">
+					<div className="input-label-group w-auto flex-1 md:w-1/3">
 						<label htmlFor="post-code" className="form_label_basic">
 							Post Code
 						</label>
@@ -217,8 +217,8 @@ export default function InvoiceForm({ invoiceData }: InvoiceFormProps) {
 						onChange={handleInputChange}
 					/>
 				</div>
-				<div className="flex flex-row justify-between gap-3 items-center">
-					<div className="input-label-group">
+				<div className="flex flex-row flex-wrap justify-between gap-3 items-center">
+					<div className="input-label-group w-auto flex-1 md:w-1/3">
 						<label htmlFor="client-city" className="form_label_basic">
 							City
 						</label>
@@ -230,7 +230,7 @@ export default function InvoiceForm({ invoiceData }: InvoiceFormProps) {
 							onChange={handleInputChange}
 						/>
 					</div>
-					<div className="input-label-group">
+					<div className="input-label-group w-auto flex-1 md:w-1/3">
 						<label htmlFor="client-post-code" className="form_label_basic">
 							Post Code
 						</label>
@@ -242,7 +242,7 @@ export default function InvoiceForm({ invoiceData }: InvoiceFormProps) {
 							onChange={handleInputChange}
 						/>
 					</div>
-					<div className="input-label-group">
+					<div className="input-label-group w-full md:w-1/3">
 						<label htmlFor="client-country" className="form_label_basic">
 							Country
 						</label>
@@ -255,8 +255,8 @@ export default function InvoiceForm({ invoiceData }: InvoiceFormProps) {
 						/>
 					</div>
 				</div>
-				<div className="flex flex-row justify-between gap-3 items-center">
-					<div className="input-label-group">
+				<div className="flex flex-col md:flex-row justify-between gap-3 items-center">
+					<div className="input-label-group w-full">
 						<label htmlFor="invoice-date" className="form_label_basic">
 							Invoice Date
 						</label>
@@ -268,24 +268,21 @@ export default function InvoiceForm({ invoiceData }: InvoiceFormProps) {
 							onChange={handleInputChange}
 						/>
 					</div>
-					<div className="input-label-group">
+					<div className="input-label-group w-full">
 						<label htmlFor="payment-terms" className="form_label_basic">
 							Payment Terms
 						</label>
 						<select
 							id="payment-terms"
 							name="paymentTerms"
-							// border: 2px solid var(--neutral-bg-alt);
-							// padding: 10px;
-							// border-radius: 5px;
-							// outline: none;
 							className="p-3 rounded-lg border-2 border-background-neutral_alt"
 							value={invoiceFormData.paymentTerms}
 							onChange={handleInputChange}
 						>
+							<option value="1day">Next 1 Day</option>
+							<option value="7days">Next 7 Days</option>
+							<option value="14days">Next 14 Days</option>
 							<option value="30days">Next 30 Days</option>
-							<option value="60days">Next 60 Days</option>
-							<option value="90days">Next 90 Days</option>
 						</select>
 					</div>
 				</div>
@@ -309,14 +306,14 @@ export default function InvoiceForm({ invoiceData }: InvoiceFormProps) {
 				invoiceItemData={invoiceFormData.items}
 				onItemsListChange={handleItemsListChange}
 			/>
-			<div>
-				<button
-					className="btn-basic text-text-tertiary bg-background-secondary cursor-not-allowed"
-					type="button"
-					disabled
-				>
-					Discard
-				</button>
+			<div className="flex justify-end gap-4">
+				{/* <button */}
+				{/* 	className="btn-basic text-text-tertiary bg-background-secondary cursor-not-allowed" */}
+				{/* 	type="button" */}
+				{/* 	disabled */}
+				{/* > */}
+				{/* 	Discard */}
+				{/* </button> */}
 				<button
 					className="btn-basic text-text-tertiary bg-background-secondary cursor-not-allowed"
 					type="button"
@@ -325,7 +322,7 @@ export default function InvoiceForm({ invoiceData }: InvoiceFormProps) {
 					Save as Draft
 				</button>
 				<button
-					className="btn-basic bg-accent text-background-secondary"
+					className="btn-basic bg-accent text-background-secondary hover:opacity-70 hover:transition-opacity"
 					type="submit"
 				>
 					Save Changes

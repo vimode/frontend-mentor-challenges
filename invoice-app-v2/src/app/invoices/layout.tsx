@@ -18,7 +18,7 @@ export default function InvoicesLayout({
 					/>
 				</div>
 			</section>
-			<main className="flex flex-col w-4/5 md:w-full max-w-[700px] mx-auto py-11">
+			<main className="flex flex-col gap-y-3 md:gap-y-10 w-11/12 md:w-full md:max-w-[700px] mx-auto py-11">
 				{children}
 			</main>
 		</main>
