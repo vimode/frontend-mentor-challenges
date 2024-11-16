@@ -6,7 +6,9 @@ export default async function NewInvoice() {
 		<section>
 			<nav>
 				{/* TODO: use history stack to go back */}
-				<Link href="/invoices">&lt; Go back</Link>
+				<Link href="/invoices" className="font-bold text-primary_text">
+					&lt; Go back
+				</Link>
 			</nav>
 			<main>
 				<h2>New Invoice</h2>
