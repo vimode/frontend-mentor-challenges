@@ -33,7 +33,7 @@ export default async function InvoiceId({
 							<span
 								className={` ml-4 text-primary_text font-semibold rounded-lg px-4  py-2   ${invoice?.status === "pending" ? "text-status-pending bg-background-pending_bg" : invoice?.status === "paid" ? "text-status-success bg-background-success_bg" : "text-status-neutral bg-background-neutral_bg"} `}
 							>
-								<span>&bull;</span>
+								<span>&bull;&nbsp;</span>
 								{`${invoice?.status.charAt(0).toUpperCase()}${invoice?.status.slice(1)}`}
 							</span>
 						</p>
@@ -123,7 +123,7 @@ export default async function InvoiceId({
 								</div>
 							</div>
 							<div className="table-row-group font-bold">
-								{invoice.items?.map((item: Item, index: string) => (
+								{invoice.items?.map((item: Item, index: number) => (
 									<div className="table-row" key={index}>
 										<div className="table-cell w-1/2 py-2">{item.name}</div>
 										<div className="table-cell text-secondary_text text-text-secondary w-auto text-center py-2">
