@@ -95,7 +95,7 @@ export default function ItemsList({
 									}
 								/>
 							</div>
-							<div className="table-cell">{item.total}</div>
+							<div className="table-cell">{item.total.toFixed(2)}</div>
 							<div className="table-cell">
 								<button type="button" disabled>
 									DEL

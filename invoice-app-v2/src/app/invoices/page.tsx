@@ -13,10 +13,10 @@ export default async function Invoices() {
 			<div className="flex place-items-center justify-between">
 				<div>
 					<h1>Invoices</h1>
-					{/* HACK: Offline testing invoices.data*/}
 					<p>
 						<span className="hidden md:inline">There are </span>
-						{invoices.length} <span className="hidden md:inline">total </span>
+						{invoices.data.length}{" "}
+						<span className="hidden md:inline">total </span>
 						invoices
 					</p>
 				</div>

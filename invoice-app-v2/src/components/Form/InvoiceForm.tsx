@@ -16,7 +16,7 @@ export default function InvoiceForm({ invoiceData }: InvoiceFormProps) {
 		invoiceData || {
 			paymentDue: "",
 			description: "",
-			paymentTerms: 0,
+			paymentTerms: "",
 			clientEmail: "",
 			clientName: "",
 			status: "",

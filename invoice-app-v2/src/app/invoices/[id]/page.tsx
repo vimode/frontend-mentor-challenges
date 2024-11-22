@@ -130,10 +130,10 @@ export default async function InvoiceId({
 											{item.quantity}
 										</div>
 										<div className="table-cell text-secondary_text text-text-secondary w-1/5 py-2 text-end">
-											{item.price}
+											{item.price.toFixed(2)}
 										</div>
 										<div className="table-cell text-secondary_text  w-1/5 py-2 text-end">
-											{item.total}
+											{item.total.toFixed(2)}
 										</div>
 									</div>
 								))}
@@ -141,7 +141,7 @@ export default async function InvoiceId({
 						</div>
 						<div className="bg-status-neutral flex flex-row justify-between text-background-neutral items-center rounded-b-lg p-5">
 							<p>Amount Due</p>
-							<p className="text-[28px]">{invoice.total}</p>
+							<p className="text-[28px]">{invoice.total.toFixed(2)}</p>
 						</div>
 					</div>
 				</main>
