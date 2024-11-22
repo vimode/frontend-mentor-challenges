@@ -6,8 +6,12 @@ export function formatDate(dbdate: Date): string {
 	return `${yyyy}-${mm}-${dd}`;
 }
 
-export function formatDateMedFormat(dbdate: Date): string {
+export function formatDateMedFormat(dbdate: string | Date): string {
 	const date = new Date(dbdate);
+	if (isNaN(date.getTime())) {
+		const defaultDate = new Date();
+		return formatDateMedFormat(defaultDate);
+	}
 	const yyyy = date.getFullYear();
 	const mm = Intl.DateTimeFormat("en-US", { month: "short" }).format(date);
 	const dd = String(date.getDate()).padStart(2, "0");
