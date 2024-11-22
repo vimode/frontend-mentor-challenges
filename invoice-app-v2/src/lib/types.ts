@@ -15,14 +15,14 @@ export interface Item {
 export interface InvoiceDetails {
 	id?: string | undefined;
 	createdAt?: Date | string;
-	paymentDue: Date | string;
-	description: string;
-	paymentTerms: number;
-	clientEmail: string;
+	paymentDue?: Date | string;
 	clientName: string;
-	status: string;
+	clientEmail: string;
 	senderAddress: Address;
 	clientAddress: Address;
+	status: string;
+	description: string;
+	paymentTerms: string;
 	items: Item[];
-	total: number;
+	total?: number;
 }

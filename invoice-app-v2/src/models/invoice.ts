@@ -33,7 +33,7 @@ export interface InvoiceDetails extends mongoose.Document {
 	createdAt: Date;
 	paymentDue: Date;
 	description: string;
-	paymentTerms: number;
+	paymentTerms: string;
 	clientEmail: string;
 	clientName: string;
 	status: string;
@@ -48,7 +48,8 @@ const InvoiceSchema = new mongoose.Schema<InvoiceDetails>(
 		id: String,
 		paymentDue: Date,
 		description: String,
-		paymentTerms: Number,
+		// TODO: string or Number?
+		paymentTerms: String,
 		clientEmail: String,
 		clientName: String,
 		status: String,
