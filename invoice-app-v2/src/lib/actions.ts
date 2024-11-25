@@ -9,7 +9,7 @@ import { redirect } from "next/navigation";
 export async function allInvoices() {
 	try {
 		await connectToMongoDB();
-		const invoices = await Invoice.find({});
+		const invoices = await Invoice.find({}).lean();
 		return invoices;
 	} catch (error) {
 		console.error("Error fetching invoices:", error);
