@@ -4,16 +4,15 @@ import DeleteInvoiceButton from "@/components/DeleteInvoiceButton";
 import { InvoiceDetails, Item } from "@/lib/types";
 import { Suspense } from "react";
 import { formatDateMedFormat } from "@/lib/helper";
+import { getInvoiceById } from "@/lib/actions";
 
 export default async function InvoiceId({
 	params,
 }: { params: { id: string } }) {
-	// fetch all data and filter the single invoice data
-	const res = await fetch(`${process.env.API_URL}/invoices/api`);
-	const data = await res.json();
-	const invoice = data.data.filter(
-		(item: InvoiceDetails) => item.id?.toString() === params.id.toString(),
-	)[0];
+	const invoicedata = await getInvoiceById(params.id);
+
+	//fix from https://stackoverflow.com/questions/76533055/fetching-data-from-nextjs13-server-component
+	const invoice = JSON.parse(JSON.stringify(invoicedata));
 
 	return (
 		<div className="flex flex-col gap-10">

@@ -3,10 +3,11 @@ import InvoiceList from "@/components/InvoiceList";
 import SelectFilter from "@/components/SelectFilter";
 import NoInvoices from "@/components/NoInvoices";
 import Link from "next/link";
+import { allInvoices } from "@/lib/actions";
 
 export default async function Invoices() {
-	const res = await fetch(`${process.env.API_URL}/invoices/api`);
-	const invoices = await res.json();
+	const invoicesdata = await allInvoices();
+	const invoices = JSON.parse(JSON.stringify(invoicesdata));
 
 	return (
 		<>
@@ -15,7 +16,7 @@ export default async function Invoices() {
 					<h1>Invoices</h1>
 					<p>
 						<span className="hidden md:inline">There are </span>
-						{invoices.data.length}{" "}
+						{invoices.length}&nbsp;
 						<span className="hidden md:inline">total </span>
 						invoices
 					</p>
@@ -33,7 +34,7 @@ export default async function Invoices() {
 				</div>
 			</div>
 			<Suspense fallback={<NoInvoices />}>
-				<InvoiceList invoices={invoices.data} />
+				<InvoiceList invoices={invoices} />
 			</Suspense>
 		</>
 	);

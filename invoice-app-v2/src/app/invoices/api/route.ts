@@ -4,21 +4,12 @@ import {
 	createNewInvoice,
 	getInvoiceById,
 } from "@/lib/actions";
-import { type NextRequest } from "next/server";
+import { NextRequest } from "next/server";
 
 export const dynamic = "force-static";
 
 export async function GET(request: NextRequest) {
-	const { searchParams } = request.nextUrl;
-	const query = searchParams.get("id");
-	let data;
-
-	if (query) {
-		data = await getInvoiceById(query);
-	} else {
-		data = await allInvoices();
-	}
-
+	let data = await allInvoices();
 	return Response.json({ data });
 }
 
