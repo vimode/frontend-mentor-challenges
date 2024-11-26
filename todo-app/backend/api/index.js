@@ -1,4 +1,3 @@
-import http from "http";
 import express from "express";
 import mongoose from "mongoose";
 import "express-async-errors";
@@ -7,7 +6,6 @@ import { PORT, MONGODB_URI } from "../utils/config.js";
 import todosRouter from "../controllers/todos.js";
 import usersRouter from "../controllers/users.js";
 import loginRouter from "../controllers/login.js";
-import logger from "../utils/logger.js";
 import {
 	tokenExtractor,
 	userExtractor,
@@ -20,10 +18,6 @@ mongoose.connect(mongoUrl);
 
 const app = express();
 
-// server.listen(PORT, () => {
-// 	logger.info(`Server running OK`);
-// });
-
 app.use(cors());
 app.use(express.json());
 
@@ -33,9 +27,6 @@ app.use(express.json());
 //   response.sendFile(path.join(__dirname, 'dist', 'index.html'))
 // })
 
-app.use("/", (request, response) => {
-	response.send({ message: "Server OK" });
-});
 app.use("/api/login", loginRouter);
 app.use("/api/users", usersRouter);
 
@@ -47,4 +38,7 @@ app.use("/api/todos", todosRouter);
 app.use(unknownEndpoint);
 app.use(errorHandler);
 
+app.use("/", (request, response) => {
+	response.send({ message: "Server OK" });
+});
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
