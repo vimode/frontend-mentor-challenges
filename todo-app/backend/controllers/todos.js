@@ -5,7 +5,7 @@ const todosRouter = Router();
 
 todosRouter.get("/", async (request, response) => {
 	const authUser = request.user.username;
-	const todos = await find({})
+	const todos = await Todo.find({})
 		.populate("user", {
 			username: 1,
 			name: 1,
@@ -24,7 +24,7 @@ todosRouter.post("/", async (request, response) => {
 	const body = request.body;
 
 	const user = request.user;
-	const foundUser = await findById(user.id);
+	const foundUser = await User.findById(user.id);
 
 	const todo = new Todo({
 		title: body.title,
@@ -43,12 +43,12 @@ todosRouter.post("/", async (request, response) => {
 });
 
 todosRouter.delete("/clearCompleted", async (request, response) => {
-	await deleteMany({ completed: true });
+	await Todo.deleteMany({ completed: true });
 	response.status(204).end();
 });
 
 todosRouter.delete("/:id", async (request, response) => {
-	await findByIdAndRemove(request.params.id);
+	await Todo.findByIdAndRemove(request.params.id);
 	response.status(204).end();
 });
 
@@ -60,7 +60,7 @@ todosRouter.put("/:id", async (request, response) => {
 		completed: body.completed,
 	};
 	try {
-		const updatedTodo = await findByIdAndUpdate(request.params.id, todo, {
+		const updatedTodo = await Todo.findByIdAndUpdate(request.params.id, todo, {
 			new: true,
 		});
 		response.status(200).json(updatedTodo);

@@ -9,7 +9,7 @@ usersRouter.get(
 	tokenExtractor,
 	userExtractor,
 	async (request, response) => {
-		const users = await find({}).populate("todos");
+		const users = await User.find({}).populate("todos");
 		response.json(users);
 	},
 );
@@ -19,7 +19,7 @@ usersRouter.get(
 	tokenExtractor,
 	userExtractor,
 	async (request, response) => {
-		const userData = await findById(request.user.id);
+		const userData = await User.findById(request.user.id);
 		const token = request.token;
 
 		const user = {
@@ -41,7 +41,7 @@ usersRouter.post("/", async (request, response) => {
 			.json({ error: "Username or password missing." });
 	}
 
-	const existingUser = await findOne({ username });
+	const existingUser = await User.findOne({ username });
 	if (existingUser) {
 		return response.status(400).json({ error: "username taken" });
 	}

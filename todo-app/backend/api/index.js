@@ -35,11 +35,10 @@ app.use(userExtractor);
 
 app.use("/api/todos", todosRouter);
 
-app.use(unknownEndpoint);
-app.use(errorHandler);
-
 app.use("/", (request, response) => {
 	response.send({ message: "Server OK" });
 });
+app.use(unknownEndpoint);
+app.use(errorHandler);
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));

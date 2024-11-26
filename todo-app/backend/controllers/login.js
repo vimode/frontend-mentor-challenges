@@ -8,7 +8,7 @@ import User from "../models/user.js";
 loginRouter.post("/", async (request, response) => {
 	const { username, password } = request.body;
 
-	const user = await findOne({ username });
+	const user = await User.findOne({ username });
 
 	const validPassword =
 		user === null ? false : await compare(password, user.passwordHash);
@@ -26,7 +26,7 @@ loginRouter.post("/", async (request, response) => {
 		expiresIn: 60 * 1440,
 	});
 
-	const userData = await findOne({ username }, "name username").populate(
+	const userData = await User.findOne({ username }, "name username").populate(
 		"todos",
 	);
 
