@@ -5,7 +5,6 @@ import "express-async-errors";
 import cors from "cors";
 
 const config = require("../utils/config.js");
-const logger = require("../utils/logger.js");
 
 const todosRouter = require("../controllers/todos.js");
 const usersRouter = require("../controllers/users.js");
