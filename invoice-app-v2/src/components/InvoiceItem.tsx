@@ -15,13 +15,13 @@ export default function InvoiceItem({ invoice }: { invoice: InvoiceDetails }) {
 					{invoice.id}
 				</p>
 				<p className=" text-text-tertiary row-start-2 row-end-3 col-span-1 md:col-auto md:row-auto">
-					<span>Due</span> {formatDateMedFormat(invoice?.paymentDue)}
+					<span>Due</span> {formatDateMedFormat(invoice?.paymentDue as string)}
 				</p>
 				<p className="text-text-tertiary text-right row-start-1 row-end-2 col-start-2 col-end-3 md:col-auto md:row-auto">
 					{invoice.clientName}
 				</p>
 				<p className="md:justify-self-end mr-4 font-bold row-start-3 row-end-4 col-span-1 md:col-auto md:row-auto">
-					${invoice.total.toFixed(0)}
+					${invoice?.total?.toFixed(0)}
 				</p>
 				<p
 					className={`row-start-2 row-end-4 col-start-2 col-end-3  md:col-auto md:row-auto text-center font-bold justify-self-end place-self-center w-[100px] px-1 py-2 rounded-lg ${invoice.status === "pending" ? "text-status-pending bg-background-pending_bg" : invoice.status === "draft" ? "text-status-neutral bg-background-neutral_bg" : "text-status-success bg-background-success_bg"}`}

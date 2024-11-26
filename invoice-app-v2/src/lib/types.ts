@@ -14,8 +14,8 @@ export interface Item {
 
 export interface InvoiceDetails {
 	id?: string | undefined;
-	createdAt?: Date | string;
-	paymentDue?: Date | string;
+	createdAt?: string | Date | undefined;
+	paymentDue?: string | Date | undefined;
 	clientName: string;
 	clientEmail: string;
 	senderAddress: Address;

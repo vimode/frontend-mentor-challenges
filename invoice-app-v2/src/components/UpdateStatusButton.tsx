@@ -6,7 +6,10 @@ export default function UpdateStatusButton({
 	invoice,
 }: { invoice: InvoiceDetails }) {
 	async function handleClick() {
-		await updateInvoiceStatus({ id: invoice.id, status: invoice.status });
+		await updateInvoiceStatus({
+			id: invoice.id as string,
+			status: invoice.status,
+		});
 	}
 
 	return (

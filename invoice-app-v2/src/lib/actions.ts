@@ -72,7 +72,7 @@ export async function updateInvoiceStatus(data: {
 }
 
 // Delete a single invoice
-export async function deleteInvoice(data: { id: string }) {
+export async function deleteInvoice(data: { id: string | undefined }) {
 	const { id } = data;
 	try {
 		await connectToMongoDB();
