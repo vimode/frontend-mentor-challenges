@@ -1,6 +1,6 @@
 const config = require("./utils/config.js");
 const express = require("express");
-const path = require('path')
+const path = require("path");
 require("express-async-errors");
 const app = express();
 const cors = require("cors");
@@ -19,12 +19,15 @@ mongoose.connect(mongoUrl);
 app.use(cors());
 app.use(express.json());
 
-app.use(express.static(path.join(__dirname, 'dist')))
+// app.use(express.static(path.join(__dirname, "dist")));
 
-app.get('/', (request, response) => {
-  response.sendFile(path.join(__dirname, 'dist', 'index.html'))
-})
+// app.get('/', (request, response) => {
+//   response.sendFile(path.join(__dirname, 'dist', 'index.html'))
+// })
 
+app.use("/", (request, response) => {
+	response.send({ message: "Server OK" });
+});
 app.use("/api/login", loginRouter);
 app.use("/api/users", usersRouter);
 
@@ -35,6 +38,5 @@ app.use("/api/todos", todosRouter);
 
 app.use(middleware.unknownEndpoint);
 app.use(middleware.errorHandler);
-
 
 module.exports = app;
