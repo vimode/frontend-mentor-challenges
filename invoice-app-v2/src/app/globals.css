@@ -1,0 +1,151 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	:root {
+		--background: #f8f8fb;
+		--secondary-background: #ffffff;
+		--neutral-bg: #f9fafe;
+		--neutral-bg-alt: #dfe3fa;
+		--alert-bg: #ec5757;
+		--alert-bg-alt: #ff9797;
+		--accent: #7c5dfa;
+		--accent-alt: #9277ff;
+		--success: #33d69f;
+		--success-bg: #f3fdfa;
+		--pending: #ff8f00;
+		--pending-bg: #fff9f0;
+		--neutral: #373b53;
+		--neutral-bg: #f4f4f5;
+		--primary-text: #0c0e16;
+		--secondary-text: #858bb2;
+		--tertiary-text: #7e88c3;
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	html {
+		color-scheme: dark;
+	}
+	:root {
+		--foreground-rgb: 255, 255, 255;
+		--background-start-rgb: 0, 0, 0;
+		--background-end-rgb: 0, 0, 0;
+	}
+}
+
+/* DEFAULTS */
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+html,
+body {
+	max-width: 100vw;
+	overflow-x: hidden;
+	min-height: 100vh;
+	height: 100%;
+	position: relative;
+}
+
+body {
+	background: var(--background);
+	color: var(--primary-text);
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+	display: block;
+	max-width: 100%;
+}
+
+li {
+	list-style: none;
+}
+
+/* TYPOGRAPHY */
+h1 {
+	font-size: 32px;
+	line-height: 36px;
+	letter-spacing: -1px;
+	font-weight: 700;
+}
+
+h2 {
+	font-size: 20px;
+	line-height: 22px;
+	letter-spacing: -0.63px;
+	font-weight: 700;
+}
+
+h3 {
+	font-size: 16px;
+	line-height: 22px;
+	letter-spacing: -0.8px;
+	font-weight: 700;
+}
+
+h4 {
+	font-size: 12px;
+	line-height: 15px;
+	letter-spacing: -0.25px;
+	font-weight: 700;
+}
+
+/* INPUT */
+input {
+	border: 2px solid var(--neutral-bg-alt);
+	padding: 10px;
+	border-radius: 5px;
+	outline: none;
+	width: 100%;
+	font-weight: bold;
+}
+
+input:focus {
+	outline: 1px solid var(--accent-alt);
+	border-color: transparent;
+}
+
+select {
+	background-color: transparent;
+}
+
+@layer utilities {
+	.text-balance {
+		text-wrap: balance;
+	}
+}
+
+@layer components {
+	.btn-basic {
+		@apply text-background py-3 px-5 font-semibold  rounded-full;
+	}
+
+	.input-label-group {
+		@apply flex  flex-col gap-3;
+	}
+
+	.form_label_basic {
+		@apply text-text-tertiary text-secondary_text;
+	}
+}
