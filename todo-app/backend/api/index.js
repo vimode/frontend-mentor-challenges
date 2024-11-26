@@ -3,26 +3,26 @@ import express from "express";
 import mongoose from "mongoose";
 import "express-async-errors";
 import cors from "cors";
+import { PORT, MONGODB_URI } from "../utils/config.js";
+import todosRouter from "../controllers/todos.js";
+import usersRouter from "../controllers/users.js";
+import loginRouter from "../controllers/login.js";
+import logger from "../utils/logger.js";
+import {
+	tokenExtractor,
+	userExtractor,
+	errorHandler,
+	unknownEndpoint,
+} from "../utils/middleware.js";
 
-const config = require("../utils/config.js");
-
-const todosRouter = require("../controllers/todos.js");
-const usersRouter = require("../controllers/users.js");
-
-const loginRouter = require("../controllers/login.js");
-const logger = require("../utils/logger.js");
-const middleware = require("../utils/middleware.js");
-
-const mongoUrl = config.MONGODB_URI;
+const mongoUrl = MONGODB_URI;
 mongoose.connect(mongoUrl);
 
 const app = express();
 
-const server = http.createServer(app);
-
-server.listen(config.PORT, () => {
-	logger.info(`Server running OK`);
-});
+// server.listen(PORT, () => {
+// 	logger.info(`Server running OK`);
+// });
 
 app.use(cors());
 app.use(express.json());
@@ -39,12 +39,12 @@ app.use("/", (request, response) => {
 app.use("/api/login", loginRouter);
 app.use("/api/users", usersRouter);
 
-app.use(middleware.tokenExtractor);
-app.use(middleware.userExtractor);
+app.use(tokenExtractor);
+app.use(userExtractor);
 
 app.use("/api/todos", todosRouter);
 
-app.use(middleware.unknownEndpoint);
-app.use(middleware.errorHandler);
+app.use(unknownEndpoint);
+app.use(errorHandler);
 
-module.exports = app;
+app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
