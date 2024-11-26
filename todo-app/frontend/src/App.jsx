@@ -10,76 +10,76 @@ import { clearLocalState } from "./reducers/todoReducer.jsx";
 import { loginUser, authUser, logoutUser } from "./reducers/userReducer.jsx";
 
 function App() {
-  const dispatch = useDispatch();
+	const dispatch = useDispatch();
 
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [name, setName] = useState("");
+	const [username, setUsername] = useState("demouserone");
+	const [password, setPassword] = useState("demo123123");
+	const [name, setName] = useState("");
 
-  useEffect(() => {
-    const loggedUserJSON = window.localStorage.getItem("loggedTodoUser");
-    if (loggedUserJSON) {
-      const user = JSON.parse(loggedUserJSON);
-      dispatch(authUser(user));
-    }
-  }, []);
+	useEffect(() => {
+		const loggedUserJSON = window.localStorage.getItem("loggedTodoUser");
+		if (loggedUserJSON) {
+			const user = JSON.parse(loggedUserJSON);
+			dispatch(authUser(user));
+		}
+	}, []);
 
-  async function handleLogin(event) {
-    event.preventDefault();
+	async function handleLogin(event) {
+		event.preventDefault();
 
-    try {
-      dispatch(loginUser(username, password));
-      setUsername("");
-      setPassword("");
-    } catch (exception) {
-      console.error("wrong credentials");
-    }
-  }
+		try {
+			dispatch(loginUser(username, password));
+			setUsername("");
+			setPassword("");
+		} catch (exception) {
+			console.error("wrong credentials");
+		}
+	}
 
-  async function handleRegistration(event) {
-    event.preventDefault();
-    const userDetails = { name, username, password };
-    try {
-      await registrationService.register(userDetails);
-      setName("");
-      setUsername("");
-      setPassword("");
-    } catch (exception) {
-      console.error(exception);
-    }
-  }
+	async function handleRegistration(event) {
+		event.preventDefault();
+		const userDetails = { name, username, password };
+		try {
+			await registrationService.register(userDetails);
+			setName("");
+			setUsername("");
+			setPassword("");
+		} catch (exception) {
+			console.error(exception);
+		}
+	}
 
-  function handleLogout() {
-    dispatch(logoutUser());
-    dispatch(clearLocalState([]));
-  }
+	function handleLogout() {
+		dispatch(logoutUser());
+		dispatch(clearLocalState([]));
+	}
 
-  return (
-    <div className="App">
-      <Header
-        username={username}
-        password={password}
-        setUsername={setUsername}
-        setPassword={setPassword}
-        name={name}
-        setName={setName}
-        handleLogin={handleLogin}
-        handleRegistration={handleRegistration}
-        handleLogout={handleLogout}
-      />
-      <TodoWrapper />
-      {/* <Footer /> */}
-    </div>
-  );
+	return (
+		<div className="App">
+			<Header
+				username={username}
+				password={password}
+				setUsername={setUsername}
+				setPassword={setPassword}
+				name={name}
+				setName={setName}
+				handleLogin={handleLogin}
+				handleRegistration={handleRegistration}
+				handleLogout={handleLogout}
+			/>
+			<TodoWrapper />
+			{/* <Footer /> */}
+		</div>
+	);
 }
 
 export default App;
 
 // Footer component
 function Footer() {
-  return (
-    <footer>
-      Created by <a href="#">vimo</a>
-    </footer>
-  );
+	return (
+		<footer>
+			Created by <a href="#">vimo</a>
+		</footer>
+	);
 }
