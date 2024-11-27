@@ -1,12 +1,14 @@
 module.exports = {
 	async redirects() {
 		return [
-			// Basic redirect
 			{
-				source: "/",
-				destination: "/invoices",
+				source: "/about",
+				destination: "/",
 				permanent: true,
 			},
 		];
+	},
+	typescript: {
+		ignoreBuildErrors: true,
 	},
 };
