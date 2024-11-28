@@ -83,7 +83,7 @@ The goal of this challenge is to keep coding everyday even if the progress of th
 
 ### Guru(1)
 
--[Invoice App(Nextjs + MongoDb)](./invoice-app-v2/)
+- [Invoice App(Nextjs + MongoDb)](./invoice-app-v2/)
 
 ### Author
 
