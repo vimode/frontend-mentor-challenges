@@ -2,6 +2,8 @@
 
 This is a solution to the [Todo app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW).
 
+[Live Link](https://fm-todo-fs.vercel.app/)
+
 ![Design preview for the Minimalist portfolio website coding challenge](./design/desktop-preview.jpg)
 
 ### The challenge
@@ -85,17 +87,14 @@ app.get('/', (request, response) => {
 ### Useful resources
 
 https://css-tricks.com/custom-styling-form-inputs-with-modern-css-features/
+
 https://expressjs.com/en/4x/api.html#router.use
+
 https://reactjs.org/docs/events.html#mouse-events
+
 https://redux.js.org/tutorials/essentials/part-1-overview-concepts
+
 https://mongoosejs.com/docs/api/model.html#model_Model-deleteMany
+
 https://sass-lang.com/documentation/
 
-
-## Author
-
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.

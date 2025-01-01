@@ -2,6 +2,8 @@
 
 This is a solution to the Entertainment web app challenge on Frontend Mentor.
 
+[Live Link](https://entertainment-app-mern.vercel.app/)
+
 ![Design Preview](./design/preview.jpg)
 
 ## The challenge
@@ -89,6 +91,11 @@ npm run start:all
 ```
 
 ### What I learned and continued development
+
+_WIP  Readme_
+
+- Using multiple TMDB API endpoints, some are processed in the backend to give a more cleaner and combined result.
+- Bookmark functionality is done by creating an anonymous user per unique visitor session, stores that user id in localstorage. 
 
 ### Useful Resources
 
