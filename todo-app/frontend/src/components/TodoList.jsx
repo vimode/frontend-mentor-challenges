@@ -48,7 +48,11 @@ function TodoList() {
           ))}
         </ul>
       ) : (
-        <p className="tempItem">Please Login or Register to get started</p>
+          <>  
+            <p className="tempItem">Please Login or Register to get started</p>
+            <p className="tempItem">username: demouserone <br/> password: demo123123</p>
+          </>
+
       )}
       {allTodos.length > 0 && (
         <div className=" todoListActions">
