@@ -1,1 +1,54 @@
 @import "tailwindcss";
+
+/* TODO: Remove other ununsed static fonts, maybe */
+
+@font-face {
+	font-family: "DM Sans Normal";
+	font-style: normal;
+	font-weight: 300 700;
+	font-display: swap;
+	src: url("/assets/fonts/DM_Sans/DMSans-VariableFont_opsz,wght.ttf")
+		format("truetype");
+}
+
+@font-face {
+	font-family: "DM Sans Italic";
+	font-style: italic;
+	font-weight: 600;
+	font-display: swap;
+	src: url("/assets/fonts/DM_Sans/DMSans-Italic-VariableFont_opsz,wght.ttf")
+		format("truetype");
+}
+
+@font-face {
+	font-family: "Bricolage Grotesque";
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: url("/assets/fonts/Bricolage_Grotesque/BricolageGrotesque-VariableFont_opsz,wdth,wght.ttf")
+		format("truetype");
+}
+
+@theme {
+	--color-midnight-neutral-900: hsl(243, 96%, 9%);
+	--color-midnight-neutral-800: hsl(243, 27%, 20%);
+	--color-midnight-neutral-700: hsl(243, 23%, 24%);
+	--color-midnight-neutral-600: hsl(243, 23%, 30%);
+	--color-midnight-neutral-500: hsl(240, 6%, 70%);
+	--color-midnight-neutral-200: hsl(250, 6%, 84%);
+	--color-midnight-neutral-0: hsl(0, 0%, 100%);
+
+	--color-sun-orange-500: hsl(28, 100%, 52%);
+
+	--color-royal-blue-500: hsl(233, 67%, 56%);
+	--color-royal-blue-500: hsl(248, 70%, 36%);
+	--font-dm-sans-normal: "DM Sans Normal", san-serif;
+	--font-dm-sans-italic: "DM Sans Italic", san-serif;
+	--font-bricolage-normal: "Bricolage Grotesque", san-serif;
+}
+
+@layer base {
+	body {
+		background-color: var(--color-midnight-neutral-900);
+	}
+}
