@@ -1,11 +1,31 @@
 function App() {
 	return (
-		<div className="bg-midnight-neutral-900 flex-row gap-4 p-4">
-			<h1 className="text-midnight-neutral-0 text-preset-1 ">Weather Now</h1>
-			<p className="text-sun-orange-500 text-preset-5-semibold">
-				The quick brown fox jumps over the lazy dog.
-			</p>
-			<p className="text-preset-2 text-royal-blue-500">custom typography</p>
+		<div>
+			<a
+				href="#main"
+				className="absolute left-0 text-midnight-neutral-0 underline text-xl sr-only focus:not-sr-only"
+			>
+				Skip to main
+			</a>
+			<header className="flex justify-between items-center">
+				<img src="/assets/images/logo.svg" />
+				<div>units</div>
+			</header>
+			<div>
+				<h1>How's the sky looking today?</h1>
+				<main id="main">
+					<div role="search">
+            <div>
+              <input role="search"/>
+              <button>Search</button>
+            </div>
+          </div>
+					<section>Current Weather</section>
+          <section>Current Weather details</section>
+          <section>Daily forecast</section>
+          <section>Hourly forecast</section>
+				</main>
+			</div>
 		</div>
 	);
 }
