@@ -3,7 +3,7 @@
 /* TODO: Remove other ununsed static fonts, maybe */
 
 @font-face {
-	font-family: "DM Sans Normal";
+	font-family: "DM Sans";
 	font-style: normal;
 	font-weight: 300 700;
 	font-display: swap;
@@ -12,7 +12,7 @@
 }
 
 @font-face {
-	font-family: "DM Sans Italic";
+	font-family: "DM Sans";
 	font-style: italic;
 	font-weight: 600;
 	font-display: swap;
@@ -41,14 +41,74 @@
 	--color-sun-orange-500: hsl(28, 100%, 52%);
 
 	--color-royal-blue-500: hsl(233, 67%, 56%);
-	--color-royal-blue-500: hsl(248, 70%, 36%);
-	--font-dm-sans-normal: "DM Sans Normal", san-serif;
-	--font-dm-sans-italic: "DM Sans Italic", san-serif;
-	--font-bricolage-normal: "Bricolage Grotesque", san-serif;
+	--color-royal-blue-700: hsl(248, 70%, 36%);
+	--font-sans: "DM Sans", san-serif;
+	--font-bricolage: "Bricolage Grotesque", san-serif;
 }
 
 @layer base {
 	body {
 		background-color: var(--color-midnight-neutral-900);
 	}
+}
+
+/* Custom typography */
+.text-preset-1 {
+	@apply font-semibold italic;
+	font-size: 92px;
+	line-height: 100%;
+	letter-spacing: -2px;
+}
+
+.text-preset-2 {
+	@apply font-bold;
+	font-family: var(--font-bricolage);
+	font-size: 52px;
+	line-height: 120%;
+	letter-spacing: 0px;
+}
+
+.text-preset-3 {
+	@apply font-light;
+	font-size: 32px;
+	line-height: 100%;
+	letter-spacing: 0px;
+}
+
+.text-preset-4 {
+	@apply font-bold;
+	font-size: 28px;
+	line-height: 120%;
+	letter-spacing: 0px;
+}
+
+.text-preset-5 {
+	@apply font-medium text-xl;
+	line-height: 120%;
+	letter-spacing: 0px;
+}
+
+.text-preset-5-semibold {
+	@apply font-semibold text-xl;
+	line-height: 120%;
+	letter-spacing: 0px;
+}
+
+.text-preset-6 {
+	@apply font-medium text-lg;
+	line-height: 120%;
+	letter-spacing: 0px;
+}
+
+.text-preset-7 {
+	@apply font-medium text-base;
+	line-height: 120%;
+	letter-spacing: 0px;
+}
+
+.text-preset-8 {
+	@apply font-medium;
+	font-size: 14px;
+	line-height: 120%;
+	letter-spacing: 0px;
 }
