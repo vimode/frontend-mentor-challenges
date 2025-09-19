@@ -42,7 +42,9 @@
 
 	--color-royal-blue-500: hsl(233, 67%, 56%);
 	--color-royal-blue-700: hsl(248, 70%, 36%);
-	--font-sans: "DM Sans", san-serif;
+	--font-sans:
+		"DM Sans", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+		"Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 	--font-bricolage: "Bricolage Grotesque", san-serif;
 }
 
