@@ -51,6 +51,7 @@
 @layer base {
 	body {
 		background-color: var(--color-midnight-neutral-900);
+		color: var(--color-midnight-neutral-0);
 	}
 }
 
