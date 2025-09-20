@@ -1,3 +1,7 @@
+import Header from "./components/header/Header.jsx";
+import Search from "./components/Search/Search.jsx";
+import WeatherPanels from "./components/Weather/WeatherPanels.jsx";
+
 function App() {
 	return (
 		<div>
@@ -7,23 +11,12 @@ function App() {
 			>
 				Skip to main
 			</a>
-			<header className="flex justify-between items-center">
-				<img src="/assets/images/logo.svg" />
-				<div>units</div>
-			</header>
+			<Header />
 			<div>
-				<h1>How's the sky looking today?</h1>
+				<h1 className="text-preset-2">How's the sky looking today?</h1>
 				<main id="main">
-					<div role="search">
-            <div>
-              <input role="search"/>
-              <button>Search</button>
-            </div>
-          </div>
-					<section>Current Weather</section>
-          <section>Current Weather details</section>
-          <section>Daily forecast</section>
-          <section>Hourly forecast</section>
+					<Search />
+					<WeatherPanels />
 				</main>
 			</div>
 		</div>
