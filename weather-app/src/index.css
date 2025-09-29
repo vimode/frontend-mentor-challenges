@@ -127,4 +127,18 @@
     --md-basis: calc(25% - var(--cardGapmd));
     --lg-basis: calc(25% - var(--cardGaplg));
   }
+
+  .dailyCard {
+    @apply rounded-xl bg-midnight-neutral-800 border border-midnight-neutral-600 px-[10px] py-4 min-w-[30%] md:min-w-1/8 max-w-max flex flex-col items-center gap-4;
+
+    /* min-max temps */
+    div {
+      @apply flex w-full justify-between;
+    }
+
+    /* weather icon */
+    img {
+      max-width: 60px;
+    }
+  }
 }

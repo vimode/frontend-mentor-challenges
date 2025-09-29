@@ -6,10 +6,9 @@ function WeatherPanels() {
         <div className="text-center flex flex-col gap-3 w-full @container/currentW">
           <h2 className="text-preset-4">Berlin, Germany</h2>
           <p className="text-preset-6 opacity-80">Tuesday, Aug 5, 2025</p>
-        </div>
-        <div className="flex place-items-center ">
+          <div className="flex place-items-center "></div>
           <div className="@xs/currentW:w-full max-w-[120px] @xs/currentW:h-auto max-h-[120px]">
-            <img src="/assets/images/icon-sunny.webp" />
+            <img src="/assets/images/icon-sunny.webp" alt="" />
           </div>
           <p className="text-preset-1">20&#176;</p>
         </div>
@@ -38,61 +37,64 @@ function WeatherPanels() {
       </section>
 
       {/* Daily Forecast */}
-      <section className="border-2 border-pink-500 flex">
-        <div>
-          <p>Mon</p>
-          <p>icon</p>
-          <div>
-            <p>20&#176;</p>
-            <p>14&#176;</p>
+      <section className="flex flex-col gap-5">
+        <h2 className="text-preset-5">Daily Forecast</h2>
+        <div className="flex flex-wrap md:flex-nowrap gap-4">
+          <div className="dailyCard">
+            <p className="text-preset-6">Mon</p>
+            <img src="/assets/images/icon-storm.webp" alt="" />
+            <div>
+              <p className="text-preset-7">20&#176;</p>
+              <p className="text-preset-7">14&#176;</p>
+            </div>
           </div>
-        </div>
-        <div>
-          <p>Tue</p>
-          <p>icon</p>
-          <div>
-            <p>20&#176;</p>
-            <p>14&#176;</p>
+          <div className="dailyCard">
+            <p className="text-preset-6">Tue</p>
+            <img src="/assets/images/icon-drizzle.webp" alt="" />
+            <div>
+              <p className="text-preset-7">20&#176;</p>
+              <p className="text-preset-7">14&#176;</p>
+            </div>
           </div>
-        </div>
-        <div>
-          <p>Wed</p>
-          <p>icon</p>
-          <div>
-            <p>20&#176;</p>
-            <p>14&#176;</p>
+          <div className="dailyCard">
+            <p className="text-preset-6">Wed</p>
+            <img src="/assets/images/icon-fog.webp" alt="" />
+            <div>
+              <p className="text-preset-7">20&#176;</p>
+              <p className="text-preset-7">14&#176;</p>
+            </div>
           </div>
-        </div>
-        <div>
-          <p>Thu</p>
-          <p>icon</p>
-          <div>
-            <p>20&#176;</p>
-            <p>14&#176;</p>
+          <div className="dailyCard">
+            <p className="text-preset-6">Thu</p>
+            <img src="/assets/images/icon-overcast.webp" alt="" />
+            <div>
+              <p className="text-preset-7">20&#176;</p>
+              <p className="text-preset-7">14&#176;</p>
+            </div>
           </div>
-        </div>
-        <div>
-          <p>Fri</p>
-          <p>icon</p>
-          <div>
-            <p>20&#176;</p>
-            <p>14&#176;</p>
+          <div className="dailyCard">
+            <p className="text-preset-6">Fri</p>
+            <img src="/assets/images/icon-partly-cloudy.webp" alt="" />
+            <div>
+              <p className="text-preset-7">20&#176;</p>
+              <p className="text-preset-7">14&#176;</p>
+            </div>
           </div>
-        </div>
-        <div>
-          <p>Sat</p>
-          <p>icon</p>
-          <div>
-            <p>20&#176;</p>
-            <p>14&#176;</p>
+          <div className="dailyCard">
+            <p className="text-preset-6">Sat</p>
+            <img src="/assets/images/icon-rain.webp" alt="" />
+            <div>
+              <p className="text-preset-7">20&#176;</p>
+              <p className="text-preset-7">14&#176;</p>
+            </div>
           </div>
-        </div>
-        <div>
-          <p>Sun</p>
-          <p>icon</p>
-          <div>
-            <p>20&#176;</p>
-            <p>14&#176;</p>
+          <div className="dailyCard">
+            <p className="text-preset-6">Sun</p>
+            <img src="/assets/images/icon-snow.webp" alt="" />
+            <div>
+              <p className="text-preset-7">20&#176;</p>
+              <p className="text-preset-7">14&#176;</p>
+            </div>
           </div>
         </div>
       </section>
