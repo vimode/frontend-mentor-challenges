@@ -141,4 +141,17 @@
       max-width: 60px;
     }
   }
+
+  .hourlyCard {
+    @apply rounded-xl bg-midnight-neutral-700 border border-midnight-neutral-600 flex items-center justify-between px-3 py-[10px];
+
+    div:first-child {
+      @apply flex items-center gap-2;
+    }
+
+    /* weather icon */
+    img {
+      max-width: 40px;
+    }
+  }
 }

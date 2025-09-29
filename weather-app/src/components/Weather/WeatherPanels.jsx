@@ -38,7 +38,7 @@ function WeatherPanels() {
 
       {/* Daily Forecast */}
       <section className="flex flex-col gap-5">
-        <h2 className="text-preset-5">Daily Forecast</h2>
+        <h3 className="text-preset-5">Daily Forecast</h3>
         <div className="flex flex-wrap md:flex-nowrap gap-4">
           <div className="dailyCard">
             <p className="text-preset-6">Mon</p>
@@ -100,58 +100,66 @@ function WeatherPanels() {
       </section>
 
       {/* Hourly Forecast */}
-      <section className="border-2 border-emerald-500">
-        <header className="flex justify-between">
-          <h3>Hourly forecast</h3>
+      <section className="bg-midnight-neutral-800 px-4 py-5 rounded-xl flex flex-col gap-4">
+        <header className="flex justify-between items-center">
+          <h3 className="text-preset-5">Hourly forecast</h3>
           <p>Dropdown</p>
         </header>
-        <div>
-          <p>
-            icon<span>3 PM</span>
-          </p>
-          <p>20&#176;</p>
+        <div className="hourlyCard">
+          <div>
+            <img src="/assets/images/icon-snow.webp" alt="" />
+            <p className="text-preset-5-semibold">3 PM</p>
+          </div>
+          <p className="text-present-7">126&#176;</p>
         </div>
-        <div>
-          <p>
-            icon<span>4 PM</span>
-          </p>
-          <p>20&#176;</p>
+        <div className="hourlyCard">
+          <div>
+            <img src="/assets/images/icon-rain.webp" alt="" />
+            <p className="text-preset-5-semibold">4 PM</p>
+          </div>
+          <p className="text-present-7">33&#176;</p>
         </div>
-        <div>
-          <p>
-            icon<span>5 PM</span>
-          </p>
-          <p>20&#176;</p>
+        <div className="hourlyCard">
+          <div>
+            <img src="/assets/images/icon-partly-cloudy.webp" alt="" />
+            <p className="text-preset-5-semibold">5 PM</p>
+          </div>
+          <p className="text-present-7">30&#176;</p>
         </div>
-        <div>
-          <p>
-            icon<span>6 PM</span>
-          </p>
-          <p>20&#176;</p>
+        <div className="hourlyCard">
+          <div>
+            <img src="/assets/images/icon-overcast.webp" alt="" />
+            <p className="text-preset-5-semibold">6 PM</p>
+          </div>
+          <p className="text-present-7">12&#176;</p>
         </div>
-        <div>
-          <p>
-            icon<span>7 PM</span>
-          </p>
-          <p>20&#176;</p>
+        <div className="hourlyCard">
+          <div>
+            <img src="/assets/images/icon-storm.webp" alt="" />
+            <p className="text-preset-5-semibold">7 PM</p>
+          </div>
+          <p className="text-present-7">7&#176;</p>
         </div>
-        <div>
-          <p>
-            icon<span>8 PM</span>
-          </p>
-          <p>20&#176;</p>
+        <div className="hourlyCard">
+          <div>
+            <img src="/assets/images/icon-fog.webp" alt="" />
+            <p className="text-preset-5-semibold">8 PM</p>
+          </div>
+          <p className="text-present-7">17&#176;</p>
         </div>
-        <div>
-          <p>
-            icon<span>9 PM</span>
-          </p>
-          <p>20&#176;</p>
+        <div className="hourlyCard">
+          <div>
+            <img src="/assets/images/icon-drizzle.webp" alt="" />
+            <p className="text-preset-5-semibold">9 PM</p>
+          </div>
+          <p className="text-present-7">29&#176;</p>
         </div>
-        <div>
-          <p>
-            icon<span>10 PM</span>
-          </p>
-          <p>20&#176;</p>
+        <div className="hourlyCard">
+          <div>
+            <img src="/assets/images/icon-sunny.webp" alt="" />
+            <p className="text-preset-5-semibold">10 PM</p>
+          </div>
+          <p className="text-present-7">24&#176;</p>
         </div>
       </section>
     </>
