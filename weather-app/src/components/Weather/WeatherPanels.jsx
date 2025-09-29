@@ -6,7 +6,8 @@ function WeatherPanels() {
         <div className="text-center flex flex-col gap-3 w-full @container/currentW">
           <h2 className="text-preset-4">Berlin, Germany</h2>
           <p className="text-preset-6 opacity-80">Tuesday, Aug 5, 2025</p>
-          <div className="flex place-items-center "></div>
+        </div>
+        <div className="flex place-items-center ">
           <div className="@xs/currentW:w-full max-w-[120px] @xs/currentW:h-auto max-h-[120px]">
             <img src="/assets/images/icon-sunny.webp" alt="" />
           </div>
