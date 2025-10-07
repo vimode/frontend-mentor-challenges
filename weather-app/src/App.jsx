@@ -4,7 +4,7 @@ import WeatherPanels from "./components/Weather/WeatherPanels.jsx";
 
 function App() {
   return (
-    <div className="p-4">
+    <div className="p-4 flex flex-col gap-12 max-w-7xl m-auto">
       <a
         href="#main"
         className="absolute left-0 text-midnight-neutral-0 underline text-xl sr-only focus:not-sr-only"
@@ -12,13 +12,13 @@ function App() {
         Skip to main
       </a>
       <Header />
-      <div>
-        <h1 className="text-preset-2">How's the sky looking today?</h1>
-        <main id="main">
-          <Search />
-          <WeatherPanels />
-        </main>
-      </div>
+      <h1 className="text-center text-preset-2 p-2">
+        How's the sky looking today?
+      </h1>
+      <main id="main" className="flex flex-col gap-8 w-full self-center">
+        <Search />
+        <WeatherPanels />
+      </main>
     </div>
   );
 }

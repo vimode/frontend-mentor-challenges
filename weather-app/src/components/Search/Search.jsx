@@ -1,7 +1,7 @@
 function Search() {
   return (
-    <div className="flex flex-col md:flex-row place-content-center gap-3 md:gap-4">
-      <div className="relative">
+    <div className="flex flex-col md:flex-row place-content-center gap-3 md:gap-4 lg:w-1/2 lg:m-auto">
+      <div className="relative w-full">
         <svg
           className="absolute top-0 bottom-0 my-auto left-4"
           xmlns="http://www.w3.org/2000/svg"
