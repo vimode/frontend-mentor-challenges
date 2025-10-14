@@ -1,4 +1,12 @@
-function WeatherPanels() {
+import formatDate from "../../utils/formatDate";
+
+function WeatherPanels({ weatherData }) {
+  console.log(weatherData);
+  //TODO: loading skeleton?
+  const formattedDate = weatherData?.current?.time
+    ? formatDate(weatherData.current.time)
+    : "Loading...";
+
   return (
     <div className="flex flex-col lg:flex-row gap-8">
       <div className="flex flex-col gap-8 w-full self-center">
@@ -6,7 +14,7 @@ function WeatherPanels() {
         <section className="flex flex-col md:flex-row gap-4 place-items-center rounded-[20px] px-6 py-10 md:py-[calc(var(--spacing)*26)] bg-[url(/assets/images/bg-today-small.svg)] md:bg-[url(/assets/images/bg-today-large.svg)] bg-no-repeat bg-center bg-cover">
           <div className="text-center md:text-left flex flex-col gap-3 w-full @container/currentW">
             <h2 className="text-preset-4">Berlin, Germany</h2>
-            <p className="text-preset-6 opacity-80">Tuesday, Aug 5, 2025</p>
+            <p className="text-preset-6 opacity-80">{formattedDate}</p>
           </div>
           <div className="flex place-items-center ">
             <div className="@xs/currentW:w-full max-w-[120px] @xs/currentW:h-auto max-h-[120px]">
