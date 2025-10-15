@@ -1,4 +1,6 @@
-import formatDate from "../../utils/formatDate";
+import { Suspense } from "react";
+import { formatDate } from "../../utils/formatDate.js";
+import { weatherIcon } from "../../utils/weatherIcon.js";
 
 function WeatherPanels({ weatherData }) {
   console.log(weatherData);
@@ -6,6 +8,43 @@ function WeatherPanels({ weatherData }) {
   const formattedDate = weatherData?.current?.time
     ? formatDate(weatherData.current.time)
     : "Loading...";
+
+  const temperatureIcon = weatherData?.current?.weather_code
+    ? weatherIcon(weatherData?.current?.weather_code)
+    : "./assets/images/icon-loading.svg";
+
+  const dailyWeatherData1 = weatherData?.daily;
+  console.log(dailyWeatherData1);
+
+  const DailyWeatherPanel = (weatherData) => {
+    const dailyWeatherData = weatherData?.daily;
+    return (
+      <div className="flex flex-wrap md:flex-nowrap gap-4">
+        {dailyWeatherData &&
+          dailyWeatherData.time.map((daily, index) => {
+            const dailyIcon = weatherIcon(dailyWeatherData.weather_code[index]);
+            const day = new Intl.DateTimeFormat("en-US", {
+              weekday: "short",
+            }).format(new Date(daily));
+            const highTemp =
+              dailyWeatherData.temperature_2m_max[index].toFixed(0);
+            const lowTemp =
+              dailyWeatherData.temperature_2m_min[index].toFixed(0);
+
+            return (
+              <div className="dailyCard" key={daily.toString()}>
+                <p className="text-preset-6">{day}</p>
+                <img src={dailyIcon} alt="" />
+                <div>
+                  <p className="text-preset-7">{highTemp}&#176;</p>
+                  <p className="text-preset-7">{lowTemp}&#176;</p>
+                </div>
+              </div>
+            );
+          })}
+      </div>
+    );
+  };
 
   return (
     <div className="flex flex-col lg:flex-row gap-8">
@@ -18,9 +57,11 @@ function WeatherPanels({ weatherData }) {
           </div>
           <div className="flex place-items-center ">
             <div className="@xs/currentW:w-full max-w-[120px] @xs/currentW:h-auto max-h-[120px]">
-              <img src="/assets/images/icon-sunny.webp" alt="" />
+              <img src={temperatureIcon} alt="" />
             </div>
-            <p className="text-preset-1">20&#176;</p>
+            <p className="text-preset-1">
+              {weatherData?.current?.temperature_2m.toFixed(0)}&#176;
+            </p>
           </div>
         </section>
 
@@ -30,85 +71,38 @@ function WeatherPanels({ weatherData }) {
             <p className="text-preset-6 text-midnight-neutral-200">
               Feels like
             </p>
-            <p className="text-preset-3 text-midnight-neutral-0">18&#176;</p>
+            <p className="text-preset-3 text-midnight-neutral-0">
+              {weatherData?.current?.apparent_temperature.toFixed(0)}&#176;
+            </p>
           </div>
           <div className="detailsCard basis-(--xs-basis) md:basis-(--md-basis) lg:basis-(--lg-basis)">
             <p className="text-preset-6 text-midnight-neutral-200">Humidity</p>
-            <p className="text-preset-3 text-midnight-neutral-0">46%</p>
+            <p className="text-preset-3 text-midnight-neutral-0">
+              {weatherData?.current?.relative_humidity_2m.toFixed(0)}%
+            </p>
           </div>
           <div className="detailsCard basis-(--xs-basis) md:basis-(--md-basis) lg:basis-(--lg-basis)">
             <p className="text-preset-6 text-midnight-neutral-200">Wind</p>
-            <p className="text-preset-3 text-midnight-neutral-0">14 km/h</p>
+            <p className="text-preset-3 text-midnight-neutral-0">
+              {weatherData?.current?.wind_speed_10m.toFixed(0)} km/h
+            </p>
           </div>
           <div className="detailsCard basis-(--xs-basis) md:basis-(--md-basis) lg:basis-(--lg-basis)">
             <p className="text-preset-6 text-midnight-neutral-200">
               Precipitation
             </p>
-            <p className="text-preset-3 text-midnight-neutral-0">0 mm</p>
+            <p className="text-preset-3 text-midnight-neutral-0">
+              {weatherData?.current?.precipitation.toFixed(0)} mm
+            </p>
           </div>
         </section>
 
         {/* Daily Forecast */}
         <section className="flex flex-col gap-5">
           <h3 className="text-preset-5">Daily Forecast</h3>
-          <div className="flex flex-wrap md:flex-nowrap gap-4">
-            <div className="dailyCard">
-              <p className="text-preset-6">Mon</p>
-              <img src="/assets/images/icon-storm.webp" alt="" />
-              <div>
-                <p className="text-preset-7">20&#176;</p>
-                <p className="text-preset-7">14&#176;</p>
-              </div>
-            </div>
-            <div className="dailyCard">
-              <p className="text-preset-6">Tue</p>
-              <img src="/assets/images/icon-drizzle.webp" alt="" />
-              <div>
-                <p className="text-preset-7">20&#176;</p>
-                <p className="text-preset-7">14&#176;</p>
-              </div>
-            </div>
-            <div className="dailyCard">
-              <p className="text-preset-6">Wed</p>
-              <img src="/assets/images/icon-fog.webp" alt="" />
-              <div>
-                <p className="text-preset-7">20&#176;</p>
-                <p className="text-preset-7">14&#176;</p>
-              </div>
-            </div>
-            <div className="dailyCard">
-              <p className="text-preset-6">Thu</p>
-              <img src="/assets/images/icon-overcast.webp" alt="" />
-              <div>
-                <p className="text-preset-7">20&#176;</p>
-                <p className="text-preset-7">14&#176;</p>
-              </div>
-            </div>
-            <div className="dailyCard">
-              <p className="text-preset-6">Fri</p>
-              <img src="/assets/images/icon-partly-cloudy.webp" alt="" />
-              <div>
-                <p className="text-preset-7">20&#176;</p>
-                <p className="text-preset-7">14&#176;</p>
-              </div>
-            </div>
-            <div className="dailyCard">
-              <p className="text-preset-6">Sat</p>
-              <img src="/assets/images/icon-rain.webp" alt="" />
-              <div>
-                <p className="text-preset-7">20&#176;</p>
-                <p className="text-preset-7">14&#176;</p>
-              </div>
-            </div>
-            <div className="dailyCard">
-              <p className="text-preset-6">Sun</p>
-              <img src="/assets/images/icon-snow.webp" alt="" />
-              <div>
-                <p className="text-preset-7">20&#176;</p>
-                <p className="text-preset-7">14&#176;</p>
-              </div>
-            </div>
-          </div>
+          <Suspense fallback={<div>Loading...</div>}>
+            <DailyWeatherPanel />
+          </Suspense>
         </section>
       </div>
 
