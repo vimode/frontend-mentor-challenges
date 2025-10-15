@@ -1,6 +1,6 @@
 // format date to get the expected day in full, month in short, date and year in full
 
-function formatDate(currentDate) {
+export function formatDate(currentDate) {
   currentDate = new Date(currentDate);
 
   const options = {
@@ -17,5 +17,3 @@ function formatDate(currentDate) {
 
   return formattedDate;
 }
-
-export default formatDate;
