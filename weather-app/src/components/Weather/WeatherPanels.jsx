@@ -16,7 +16,7 @@ function WeatherPanels({ weatherData }) {
   const dailyWeatherData1 = weatherData?.daily;
   console.log(dailyWeatherData1);
 
-  const DailyWeatherPanel = (weatherData) => {
+  const DailyWeatherPanel = ({ weatherData }) => {
     const dailyWeatherData = weatherData?.daily;
     return (
       <div className="flex flex-wrap md:flex-nowrap gap-4">
@@ -101,7 +101,7 @@ function WeatherPanels({ weatherData }) {
         <section className="flex flex-col gap-5">
           <h3 className="text-preset-5">Daily Forecast</h3>
           <Suspense fallback={<div>Loading...</div>}>
-            <DailyWeatherPanel />
+            <DailyWeatherPanel weatherData={weatherData} />
           </Suspense>
         </section>
       </div>
