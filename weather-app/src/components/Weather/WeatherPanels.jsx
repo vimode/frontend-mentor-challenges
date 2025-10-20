@@ -1,8 +1,10 @@
-import { Suspense } from "react";
+import { Suspense, useState } from "react";
+import { createPortal } from "react-dom";
 import { formatDate } from "../../utils/formatDate.js";
 import { weatherIcon } from "../../utils/weatherIcon.js";
 
 function WeatherPanels({ weatherData }) {
+  const [showDayDropdown, setShowDayDropdown] = useState(false);
   console.log(weatherData);
   //TODO: loading skeleton?
   const formattedDate = weatherData?.current?.time
@@ -13,9 +15,9 @@ function WeatherPanels({ weatherData }) {
     ? weatherIcon(weatherData?.current?.weather_code)
     : "./assets/images/icon-loading.svg";
 
-  const dailyWeatherData1 = weatherData?.daily;
-  console.log(dailyWeatherData1);
+  console.log(`hourly`, weatherData?.hourly);
 
+  // Daily Weather Component
   const DailyWeatherPanel = ({ weatherData }) => {
     const dailyWeatherData = weatherData?.daily;
     return (
@@ -45,6 +47,41 @@ function WeatherPanels({ weatherData }) {
       </div>
     );
   };
+
+  // DailyForecast Dropdown Modal Component
+  function DayDropdownModal({ onClose }) {
+    // TODO: Move this to context
+    const [currentDay, setCurrentDay] = useState("Monday");
+
+    const days = [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday",
+    ];
+
+    function updateDay(day) {
+      setCurrentDay(day);
+      onClose();
+    }
+
+    return (
+      <div className="absolute top-[10%] right-[calc(var(--spacing)*4)] bg-midnight-neutral-800 border-1 border-midnight-neutral-600 rounded-xl w-1/2 p-2">
+        {days.map((day) => (
+          <button
+            key={day}
+            className={`block w-full text-left text-preset-7 px-2 py-[10px] ${currentDay === day ? "bg-midnight-neutral-700 rounded-xl" : ""}`}
+            onClick={() => updateDay(day)}
+          >
+            {day}
+          </button>
+        ))}
+      </div>
+    );
+  }
 
   return (
     <div className="flex flex-col lg:flex-row gap-8">
@@ -107,10 +144,19 @@ function WeatherPanels({ weatherData }) {
       </div>
 
       {/* Hourly Forecast */}
-      <section className="bg-midnight-neutral-800 px-4 py-5 rounded-xl flex flex-col gap-4 lg:w-[45%]">
+      <section
+        id="hourlyForecast"
+        className="bg-midnight-neutral-800 px-4 py-5 rounded-xl flex flex-col gap-4 lg:w-[45%] relative"
+      >
         <header className="flex justify-between items-center">
           <h3 className="text-preset-5">Hourly forecast</h3>
-          <p>Dropdown</p>
+          {/* <p>Dropdown</p> */}
+          <button onClick={() => setShowDayDropdown(true)}>Dropdown</button>
+          {showDayDropdown &&
+            createPortal(
+              <DayDropdownModal onClose={() => setShowDayDropdown(false)} />,
+              document.getElementById("hourlyForecast"),
+            )}
         </header>
         <div className="hourlyCard">
           <div>
