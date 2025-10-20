@@ -1,11 +1,12 @@
-import { useEffect, useState, Suspense } from "react";
+import { useEffect, Suspense } from "react";
 import Header from "./components/header/Header.jsx";
 import Search from "./components/Search/Search.jsx";
 import WeatherPanels from "./components/Weather/WeatherPanels.jsx";
 import { getWeatherData } from "./utils/getWeather.js";
+import { useWeather } from "./weatherContext.jsx";
 
 function App() {
-  const [weatherData, setWeatherData] = useState(null);
+  const { city, weatherData, setWeatherData } = useWeather();
 
   useEffect(() => {
     let isMounted = true;
@@ -20,7 +21,7 @@ function App() {
     return () => {
       isMounted = false;
     };
-  }, []);
+  }, [city, setWeatherData]);
 
   return (
     <div className="p-4 flex flex-col gap-12 max-w-7xl m-auto">
