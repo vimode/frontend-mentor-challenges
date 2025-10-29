@@ -69,11 +69,11 @@ function WeatherPanels({ weatherData }) {
     }
 
     return (
-      <div className="absolute top-[10%] right-[calc(var(--spacing)*4)] bg-midnight-neutral-800 border-1 border-midnight-neutral-600 rounded-xl w-1/2 p-2">
+      <div className="absolute top-[10%] right-[calc(var(--spacing)*4)] bg-midnight-neutral-800 border-1 border-midnight-neutral-600 rounded-xl w-1/2 p-2 z-10 flex flex-col gap-1 cursor-pointer">
         {days.map((day) => (
           <button
             key={day}
-            className={`block w-full text-left text-preset-7 px-2 py-[10px] ${currentDay === day ? "bg-midnight-neutral-700 rounded-xl" : ""}`}
+            className={`block w-full text-left text-preset-7 px-2 py-[10px] cursor-pointer transition-colors duration-300 hover:bg-midnight-neutral-700 rounded-xl ${currentDay === day ? "bg-midnight-neutral-700 rounded-xl" : ""}`}
             onClick={() => updateDay(day)}
           >
             {day}
@@ -152,7 +152,7 @@ function WeatherPanels({ weatherData }) {
           <h3 className="text-preset-5">Hourly forecast</h3>
           {/* <p>Dropdown</p> */}
           <button
-            className="bg-midnight-neutral-600 px-4 py-2 rounded-lg"
+            className="bg-midnight-neutral-600 px-4 py-2 rounded-lg cursor-pointer"
             onClick={() => setShowDayDropdown((prev) => !prev)}
           >
             Dropdown&nbsp;&nbsp;
