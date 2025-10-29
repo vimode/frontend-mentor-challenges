@@ -151,7 +151,13 @@ function WeatherPanels({ weatherData }) {
         <header className="flex justify-between items-center">
           <h3 className="text-preset-5">Hourly forecast</h3>
           {/* <p>Dropdown</p> */}
-          <button onClick={() => setShowDayDropdown(true)}>Dropdown</button>
+          <button
+            className="bg-midnight-neutral-600 px-4 py-2 rounded-lg"
+            onClick={() => setShowDayDropdown((prev) => !prev)}
+          >
+            Dropdown&nbsp;&nbsp;
+            <img className="inline" src="./assets/images/icon-dropdown.svg" />
+          </button>
           {showDayDropdown &&
             createPortal(
               <DayDropdownModal onClose={() => setShowDayDropdown(false)} />,
