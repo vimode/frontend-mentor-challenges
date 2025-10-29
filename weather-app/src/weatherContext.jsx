@@ -1,20 +1,45 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
+import { getWeatherData } from "./utils/getWeather";
 
-const WeatherContext = createContext();
+const WeatherDataContext = createContext();
 
-export function useWeather() {
-  return useContext(WeatherContext);
-}
-
-export function WeatherProvider({ children }) {
+export function WeatherDataProvider({ children }) {
   const [weatherData, setWeatherData] = useState(null);
   const [city, setCity] = useState("Berlin");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    async function fetchingWeatherData() {
+      try {
+        setLoading(true);
+        setWeatherData(null);
+        const result = await getWeatherData();
+        setWeatherData(result);
+      } catch (err) {
+        setError(`Failed to fetch weather data: ${err}`);
+      } finally {
+        setLoading(false);
+      }
+    }
+    fetchingWeatherData();
+  }, [city]);
 
   return (
-    <WeatherContext.Provider
-      value={{ city, setCity, weatherData, setWeatherData }}
+    <WeatherDataContext.Provider
+      value={{ city, setCity, weatherData, loading, error }}
     >
       {children}
-    </WeatherContext.Provider>
+    </WeatherDataContext.Provider>
   );
+}
+
+export function useWeatherDataContext() {
+  const context = useContext(WeatherDataContext);
+  if (!context) {
+    throw new Error(
+      `useWeatherDataContext must be used within a WeatherDataProvider`,
+    );
+  }
+  return context;
 }
