@@ -1,6 +1,6 @@
 // format date to get the expected day in full, month in short, date and year in full
 
-export function formatDate(currentDate) {
+export function formatDate(currentDate, userTimeZone) {
   currentDate = new Date(currentDate);
 
   const options = {
@@ -8,6 +8,7 @@ export function formatDate(currentDate) {
     year: "numeric",
     month: "short",
     day: "numeric",
+    timeZone: userTimeZone || "UTC",
   };
 
   // mdn: use Intl for internationalization
