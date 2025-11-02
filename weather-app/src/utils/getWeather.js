@@ -1,10 +1,10 @@
 import { fetchWeatherApi } from "openmeteo";
 
-export async function getWeatherData() {
+export async function getWeatherData(city) {
   // TODO: Convert this to a try catch
   const params = {
-    latitude: 52.52, // static data for testing
-    longitude: 13.41, // static data for testing
+    latitude: city.lat, // static data for testing
+    longitude: city.long, // static data for testing
     daily: ["temperature_2m_max", "temperature_2m_min", "weather_code"],
     hourly: ["temperature_2m", "weather_code"],
     current: [

@@ -5,11 +5,17 @@ const WeatherDataContext = createContext();
 
 export function WeatherDataProvider({ children }) {
   const [weatherData, setWeatherData] = useState(null);
-  const [city, setCity] = useState("Berlin");
+  const [currentCity, setCurrentCity] = useState({
+    name: "Berlin",
+    lat: 40.73,
+    long: -73.93,
+    country: "Germany",
+  });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
   useEffect(() => {
+        const result = await getWeatherData({ ...currentCity, lat, long });
     async function fetchingWeatherData() {
       try {
         setLoading(true);
@@ -23,11 +29,11 @@ export function WeatherDataProvider({ children }) {
       }
     }
     fetchingWeatherData();
-  }, [city]);
+  }, [currentCity.name]);
 
   return (
     <WeatherDataContext.Provider
-      value={{ city, setCity, weatherData, loading, error }}
+      value={{ currentCity, setCurrentCity, weatherData, loading, error }}
     >
       {children}
     </WeatherDataContext.Provider>
