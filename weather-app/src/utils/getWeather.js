@@ -47,6 +47,8 @@ export async function getWeatherData(city) {
   const weatherData = {
     current: {
       time: new Date((Number(current.time()) + utcOffsetSeconds) * 1000),
+      timeraw: current.time(),
+      timezone,
       temperature_2m: current.variables(0).value(),
       relative_humidity_2m: current.variables(1).value(),
       apparent_temperature: current.variables(2).value(),
@@ -90,17 +92,17 @@ export async function getWeatherData(city) {
   };
 
   // 'weatherData' now contains a simple structure with arrays with datetime and weather data
-  console.log(
-    `\nCurrent time: ${weatherData.current.time}`,
-    `\nCurrent temperature_2m: ${weatherData.current.temperature_2m}`,
-    `\nCurrent relative_humidity_2m: ${weatherData.current.relative_humidity_2m}`,
-    `\nCurrent apparent_temperature: ${weatherData.current.apparent_temperature}`,
-    `\nCurrent precipitation: ${weatherData.current.precipitation}`,
-    `\nCurrent weather_code: ${weatherData.current.weather_code}`,
-    `\nCurrent is_day: ${weatherData.current.is_day}`,
-    `\nCurrent wind_speed_10m: ${weatherData.current.wind_speed_10m}`,
-  );
-  console.log("\nHourly data", weatherData.hourly);
-  console.log("\nDaily data", weatherData.daily);
+  // console.log(
+  //   `\nCurrent time: ${weatherData.current.time}`,
+  //   `\nCurrent temperature_2m: ${weatherData.current.temperature_2m}`,
+  //   `\nCurrent relative_humidity_2m: ${weatherData.current.relative_humidity_2m}`,
+  //   `\nCurrent apparent_temperature: ${weatherData.current.apparent_temperature}`,
+  //   `\nCurrent precipitation: ${weatherData.current.precipitation}`,
+  //   `\nCurrent weather_code: ${weatherData.current.weather_code}`,
+  //   `\nCurrent is_day: ${weatherData.current.is_day}`,
+  //   `\nCurrent wind_speed_10m: ${weatherData.current.wind_speed_10m}`,
+  // );
+  // console.log("\nHourly data", weatherData.hourly);
+  // console.log("\nDaily data", weatherData.daily);
   return weatherData;
 }
