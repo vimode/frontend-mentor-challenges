@@ -1,5 +1,6 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import { getWeatherData } from "./utils/getWeather";
+import { getLocation } from "./utils/getLocation";
 
 const WeatherDataContext = createContext();
 
@@ -15,12 +16,14 @@ export function WeatherDataProvider({ children }) {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-        const result = await getWeatherData({ ...currentCity, lat, long });
     async function fetchingWeatherData() {
       try {
         setLoading(true);
         setWeatherData(null);
-        const result = await getWeatherData();
+        const geocodes = await getLocation(currentCity.name);
+        const { lat, long, city, country } = geocodes.data;
+        setCurrentCity((prev) => ({ ...prev, lat, long, name: city, country }));
+        const result = await getWeatherData({ ...currentCity, lat, long });
         setWeatherData(result);
       } catch (err) {
         setError(`Failed to fetch weather data: ${err}`);
