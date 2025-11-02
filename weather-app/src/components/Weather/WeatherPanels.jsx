@@ -4,7 +4,6 @@ import { weatherIcon } from "../../utils/weatherIcon.js";
 import DailyWeatherPanel from "./DailyWeather/DailyWeatherPanel.jsx";
 import HourlyForecastPanel from "./HourlyForecast/HourlyForecastPanel.jsx";
 import { useWeatherDataContext } from "../../weatherContext.jsx";
-import { useWeatherDataContext } from "../../weatherContext.jsx";
 
 function WeatherPanels({ weatherData }) {
   const { currentCity } = useWeatherDataContext();
@@ -15,9 +14,13 @@ function WeatherPanels({ weatherData }) {
     ? formatDate(weatherData.current.time, userTZ)
     : "Loading...";
 
-  const temperatureIcon = weatherData?.current?.weather_code
-    ? weatherIcon(weatherData?.current?.weather_code)
-    : "./assets/images/icon-loading.svg";
+  const weatherCode = weatherData?.current?.weather_code;
+  let temperatureIcon;
+  if (weatherCode === null || weatherCode == undefined) {
+    temperatureIcon = "./assets/images/icon-loading.svg";
+  } else {
+    temperatureIcon = weatherIcon(weatherCode);
+  }
 
   console.log(`hourly`, weatherData?.hourly);
 
