@@ -19,9 +19,9 @@ export default function Search() {
 
     if (result.status === "success") {
       setQueryData(result.data);
-      if (!queryHistory.includes(query)) {
-        setQueryHistory((prev) => [...prev, query]);
-        setCurrentCity((prev) => ({ ...prev, name: query }));
+      if (!queryHistory.some((city) => city.toLowerCase() === query)) {
+        setQueryHistory((prev) => [...prev, result.data.city]);
+        setCurrentCity((prev) => ({ ...prev, name: result.data.city }));
       }
     } else {
       setError(result);
