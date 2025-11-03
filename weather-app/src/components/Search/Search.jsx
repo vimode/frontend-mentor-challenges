@@ -46,9 +46,13 @@ export default function Search() {
         className="flex flex-col md:flex-row place-content-center gap-3 md:gap-4 lg:w-1/2 lg:m-auto"
       >
         <div className="relative w-full group/search">
+          <label htmlFor="location-search" className="sr-only">
+            Search for a place
+          </label>
           <img
             className="absolute top-0 bottom-0 my-auto left-4"
             src="./assets/images/icon-search.svg"
+            alt="Search Icon"
           />
           <input
             className="bg-midnight-neutral-800 px-6 py-4 pl-11 rounded-xl w-full text-midnight-neutral-200 placeholder-neutral-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-midnight-neutral-900 focus-visible:ring-midnight-neutral-0 hover:cursor-pointer "
@@ -56,13 +60,14 @@ export default function Search() {
             placeholder="Search for a place..."
             name="query"
             ref={inputRef}
+            id="location-search"
           />
           {/* Loading spinner */}
           {loading && (
             <div className="absolute mt-3 bg-midnight-neutral-800 rounded-xl border-midnight-neutral-700 w-full text-preset-7 p-3 h-full content-center z-30">
               <img
                 src="./assets/images/icon-loading.svg"
-                alt=""
+                alt="Loading..."
                 className="animate-spin inline"
               />
               &nbsp; Search in progress
@@ -85,10 +90,7 @@ export default function Search() {
             </div>
           )}
         </div>
-        <button
-          className="bg-royal-blue-500 px-6 py-4 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-midnight-neutral-900 focus-visible:ring-royal-blue-500 hover:cursor-pointer hover:bg-royal-blue-700 transition"
-          type="submit"
-        >
+        <button className="bg-royal-blue-500 px-6 py-4 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-midnight-neutral-900 focus-visible:ring-royal-blue-500 hover:cursor-pointer hover:bg-royal-blue-700 transition">
           Search
         </button>
       </form>
