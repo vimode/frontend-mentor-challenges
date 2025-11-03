@@ -24,11 +24,10 @@ Users should be able to:
 ### Built with
 
 - Semantic HTML5 markup
-- CSS custom properties
-- Flexbox
-- CSS Grid
 - Mobile-first workflow
 - [React](https://react.dev) - JS library
+- [TailwindCSS](https://tailwindcss.com/)
+- [Open Meteo](https://open-meteo.com/) Weather data
 
 ### What I learned
 
