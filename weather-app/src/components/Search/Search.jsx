@@ -7,7 +7,7 @@ export default function Search() {
   const [loading, setLoading] = useState(false);
   const [queryData, setQueryData] = useState(null);
   const [queryHistory, setQueryHistory] = useState([]);
-  const { setCurrentCity } = useWeatherDataContext();
+  const { setCurrentCity, loading } = useWeatherDataContext();
 
   async function searchLocation(formData) {
     const query = formData.get("query").trim().toLowerCase();
@@ -52,5 +52,15 @@ export default function Search() {
         Search
       </button>
     </form>
+          {loading && (
+            <div className="absolute mt-3 bg-midnight-neutral-800 rounded-xl border-midnight-neutral-700 w-full text-preset-7 p-3 h-full content-center">
+              <img
+                src="./assets/images/icon-loading.svg"
+                alt=""
+                className="animate-spin inline"
+              />
+              &nbsp; Search in progress
+            </div>
+          )}
   );
 }
