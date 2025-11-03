@@ -10,14 +10,18 @@ export default function Search() {
   const inputRef = useRef(null);
 
   async function searchLocation(formData) {
-    const query = formData.get("query").trim().toLowerCase();
+    const query = formData.get("query").trim().toString().toLowerCase();
     setError(null);
 
     const result = await getLocation(query);
 
     if (result.status === "success") {
       setQueryData(result.data);
-      if (!queryHistory.some((city) => city.toLowerCase() === query)) {
+      if (
+        !queryHistory.some(
+          (city) => city.toLowerCase() === result.data.city.toLowerCase(),
+        )
+      ) {
         setQueryHistory((prev) => [...prev, result.data.city]);
         setCurrentCity((prev) => ({ ...prev, name: result.data.city }));
         // Remove focus from input after searching. To not show the search history dropdown
@@ -26,6 +30,13 @@ export default function Search() {
     } else {
       setError(result);
     }
+  }
+
+  async function handleHistorySearch(event) {
+    const query = event.target.textContent.toString().trim().toLowerCase();
+    const result = await getLocation(query);
+    setQueryData(result.data);
+    setCurrentCity((prev) => ({ ...prev, name: result.data.city }));
   }
 
   return (
@@ -46,8 +57,9 @@ export default function Search() {
             name="query"
             ref={inputRef}
           />
+          {/* Loading spinner */}
           {loading && (
-            <div className="absolute mt-3 bg-midnight-neutral-800 rounded-xl border-midnight-neutral-700 w-full text-preset-7 p-3 h-full content-center">
+            <div className="absolute mt-3 bg-midnight-neutral-800 rounded-xl border-midnight-neutral-700 w-full text-preset-7 p-3 h-full content-center z-30">
               <img
                 src="./assets/images/icon-loading.svg"
                 alt=""
@@ -56,13 +68,15 @@ export default function Search() {
               &nbsp; Search in progress
             </div>
           )}
+          {/* search history dropdown */}
           {queryHistory.length > 0 && (
-            <div className="absolute mt-3 bg-midnight-neutral-800 rounded-xl border-midnight-neutral-700 w-full text-preset-7 p-2 h-auto hidden group-focus-within/search:block">
+            <div className="absolute mt-3 bg-midnight-neutral-800 rounded-xl border-midnight-neutral-700 w-full text-preset-7 p-2 h-auto hidden group-focus-within/search:block z-20">
               <div className="flex flex-col items-start gap-1">
                 {queryHistory.map((query) => (
                   <button
                     key={query}
                     className="px-2 py-3 hover:bg-midnight-neutral-700 rounded-lg border-midnight-neutral-600 w-full text-left cursor-pointer"
+                    onClick={(event) => handleHistorySearch(event)}
                   >
                     {query}
                   </button>
