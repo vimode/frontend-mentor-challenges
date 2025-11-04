@@ -17,7 +17,7 @@ const DailyWeatherPanel = ({ weatherData }) => {
           return (
             <div className="dailyCard" key={daily.toString()}>
               <p className="text-preset-6">{day}</p>
-              <img src={dailyIcon} alt="" />
+              <img src={dailyIcon["src"]} alt={dailyIcon["alt_text"]} />
               <div>
                 <p className="text-preset-7">{highTemp}&#176;</p>
                 <p className="text-preset-7">{lowTemp}&#176;</p>

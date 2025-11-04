@@ -37,7 +37,10 @@ function WeatherPanels({ weatherData }) {
           </div>
           <div className="flex place-items-center ">
             <div className="@xs/currentW:w-full max-w-[120px] @xs/currentW:h-auto max-h-[120px]">
-              <img src={temperatureIcon} alt="" />
+              <img
+                src={temperatureIcon["src"]}
+                alt={temperatureIcon["alt_text"]}
+              />
             </div>
             <p className="text-preset-1">
               {weatherData?.current?.temperature_2m.toFixed(0)}&#176;
