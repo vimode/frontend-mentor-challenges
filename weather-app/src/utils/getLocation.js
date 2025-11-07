@@ -26,7 +26,7 @@ export async function getLocation(query) {
       return {
         status: "error",
         code: 204,
-        message: "NO valid location found",
+        message: "No valid location found",
       };
     }
 
