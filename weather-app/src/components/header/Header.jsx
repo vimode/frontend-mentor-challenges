@@ -2,7 +2,7 @@ import { createPortal } from "react-dom";
 import { useState } from "react";
 
 // Units Dropdown Modal
-function UnitsDropdownModal({ onClose }) {
+function UnitsDropdownModal() {
   const [metricUnits, setMetricUnits] = useState(false);
 
   return (
