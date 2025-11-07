@@ -23,13 +23,13 @@ export default function Search() {
         )
       ) {
         setQueryHistory((prev) => [...prev, result.data.city]);
-        setCurrentCity((prev) => ({ ...prev, name: result.data.city }));
-        // Remove focus from input after searching. To not show the search history dropdown
-        inputRef.current.blur();
       }
     } else {
       setError(result);
     }
+    setCurrentCity((prev) => ({ ...prev, name: result.data.city }));
+    // Remove focus from input after searching. To not show the search history dropdown
+    inputRef.current.blur();
   }
 
   async function handleHistorySearch(event) {
