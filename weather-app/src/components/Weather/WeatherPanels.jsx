@@ -4,6 +4,7 @@ import { weatherIcon } from "../../utils/weatherIcon.js";
 import DailyWeatherPanel from "./DailyWeather/DailyWeatherPanel.jsx";
 import HourlyForecastPanel from "./HourlyForecast/HourlyForecastPanel.jsx";
 import { useWeatherDataContext } from "../../weatherContext.jsx";
+import WeatherDetailsPanel from "./WeatherDetails/WeatherDetailsPanel.jsx";
 
 function WeatherPanels({ weatherData }) {
   const { currentCity } = useWeatherDataContext();
@@ -49,36 +50,7 @@ function WeatherPanels({ weatherData }) {
         </section>
 
         {/* Weather Details */}
-        <section className="flex flex-wrap gap-4">
-          <div className="detailsCard basis-(--xs-basis) md:basis-(--md-basis) lg:basis-(--lg-basis)">
-            <p className="text-preset-6 text-midnight-neutral-200">
-              Feels like
-            </p>
-            <p className="text-preset-3 text-midnight-neutral-0">
-              {weatherData?.current?.apparent_temperature.toFixed(0)}&#176;
-            </p>
-          </div>
-          <div className="detailsCard basis-(--xs-basis) md:basis-(--md-basis) lg:basis-(--lg-basis)">
-            <p className="text-preset-6 text-midnight-neutral-200">Humidity</p>
-            <p className="text-preset-3 text-midnight-neutral-0">
-              {weatherData?.current?.relative_humidity_2m.toFixed(0)}%
-            </p>
-          </div>
-          <div className="detailsCard basis-(--xs-basis) md:basis-(--md-basis) lg:basis-(--lg-basis)">
-            <p className="text-preset-6 text-midnight-neutral-200">Wind</p>
-            <p className="text-preset-3 text-midnight-neutral-0">
-              {weatherData?.current?.wind_speed_10m.toFixed(0)} km/h
-            </p>
-          </div>
-          <div className="detailsCard basis-(--xs-basis) md:basis-(--md-basis) lg:basis-(--lg-basis)">
-            <p className="text-preset-6 text-midnight-neutral-200">
-              Precipitation
-            </p>
-            <p className="text-preset-3 text-midnight-neutral-0">
-              {weatherData?.current?.precipitation.toFixed(0)} mm
-            </p>
-          </div>
-        </section>
+        <WeatherDetailsPanel weatherData={weatherData} />
 
         {/* Daily Forecast */}
         <section className="flex flex-col gap-5">
