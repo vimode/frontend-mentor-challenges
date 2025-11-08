@@ -11,6 +11,7 @@ export default function Search() {
 
   async function searchLocation(formData) {
     const query = formData.get("query").trim().toString().toLowerCase();
+    if (!query) return;
     setError(null);
 
     const result = await getLocation(query);
@@ -60,6 +61,7 @@ export default function Search() {
             placeholder="Search for a place..."
             name="query"
             ref={inputRef}
+            autoComplete="off"
             id="location-search"
           />
           {/* Loading spinner */}
