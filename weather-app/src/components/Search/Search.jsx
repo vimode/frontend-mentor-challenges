@@ -62,7 +62,7 @@ export default function Search() {
             name="query"
             ref={inputRef}
             id="location-search"
-            autoComplete="off"
+            autocomplete="off"
           />
           {/* Loading spinner */}
           {loading && (
