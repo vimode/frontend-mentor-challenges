@@ -61,8 +61,8 @@ export default function Search() {
             placeholder="Search for a place..."
             name="query"
             ref={inputRef}
-            autoComplete="off"
             id="location-search"
+            autoComplete="off"
           />
           {/* Loading spinner */}
           {loading && (
