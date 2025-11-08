@@ -38,6 +38,9 @@ export default function Search() {
     const result = await getLocation(query);
     setQueryData(result.data);
     setCurrentCity((prev) => ({ ...prev, name: result?.data?.city }));
+    // Remove focus from button, helps remove focus from tailwind group. clears :focus-visible
+    event.target.blur();
+    inputRef.current.blur();
   }
 
   return (
