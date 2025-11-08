@@ -8,7 +8,6 @@ import WeatherDetailsPanel from "./WeatherDetails/WeatherDetailsPanel.jsx";
 
 function WeatherPanels({ weatherData }) {
   const { currentCity } = useWeatherDataContext();
-  console.log(weatherData);
   //TODO: loading skeleton?
   const userTZ = weatherData?.current?.timezone;
   const formattedDate = weatherData?.current?.time
@@ -22,8 +21,6 @@ function WeatherPanels({ weatherData }) {
   } else {
     temperatureIcon = weatherIcon(weatherCode);
   }
-
-  console.log(`hourly`, weatherData?.hourly);
 
   return (
     <div className="flex flex-col lg:flex-row gap-8">
