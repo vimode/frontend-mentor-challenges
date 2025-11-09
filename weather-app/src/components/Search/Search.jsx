@@ -18,6 +18,7 @@ export default function Search() {
 
     if (result.status === "success") {
       setQueryData(result.data);
+      setCurrentCity((prev) => ({ ...prev, name: result?.data?.city }));
       if (
         !queryHistory.some(
           (city) => city.toLowerCase() === result.data.city.toLowerCase(),
@@ -28,7 +29,6 @@ export default function Search() {
     } else {
       setError(result);
     }
-    setCurrentCity((prev) => ({ ...prev, name: result?.data?.city }));
     // Remove focus from input after searching. To not show the search history dropdown
     inputRef.current.blur();
   }
