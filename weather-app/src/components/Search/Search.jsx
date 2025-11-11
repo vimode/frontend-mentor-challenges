@@ -66,6 +66,7 @@ export default function Search() {
             ref={inputRef}
             id="location-search"
             autocomplete="off"
+            autoFocus
           />
           {/* Loading spinner */}
           {loading && (
