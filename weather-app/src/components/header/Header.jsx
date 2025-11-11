@@ -8,12 +8,12 @@ function UnitsDropdownModal() {
   return (
     <div className="absolute top-[120%] right-px px-[6px] py-2 bg-midnight-neutral-800 border-1 border-midnight-neutral-600  rounded-xl z-10 w-[calc(var(--spacing)*53)] cursor-pointer">
       <section className="flex flex-col">
-        <h3
+        <button
           className="text-preset-7 px-2 py-[10px] rounded-lg transition-colors duration-300 hover:bg-midnight-neutral-700"
           onClick={() => setMetricUnits((prev) => !prev)}
         >
           Switch to {metricUnits ? "Imperial" : "Metric"}
-        </h3>
+        </button>
         <UnitSection
           title="Temperature"
           metricUnit="Celsius (&#176;C)"
