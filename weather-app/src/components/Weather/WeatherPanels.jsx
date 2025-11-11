@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import { formatDate } from "../../utils/formatDate.js";
+import { getTimeAndDateValues } from "../../utils/timeAndDate.js";
 import { weatherIcon } from "../../utils/weatherIcon.js";
 import DailyWeatherPanel from "./DailyWeather/DailyWeatherPanel.jsx";
 import HourlyForecastPanel from "./HourlyForecast/HourlyForecastPanel.jsx";
@@ -7,11 +7,12 @@ import { useWeatherDataContext } from "../../weatherContext.jsx";
 import WeatherDetailsPanel from "./WeatherDetails/WeatherDetailsPanel.jsx";
 
 function WeatherPanels({ weatherData }) {
-  const { currentCity } = useWeatherDataContext();
-  //TODO: loading skeleton?
+  const { currentCity, loading } = useWeatherDataContext();
+  //TODO: if loading ? show loading skeleton for all
   const userTZ = weatherData?.current?.timezone;
-  const formattedDate = weatherData?.current?.time
-    ? formatDate(weatherData.current.time, userTZ)
+
+  const { weekday, month, day, year } = weatherData?.current?.time
+    ? getTimeAndDateValues(weatherData.current.time, userTZ)
     : "Loading...";
 
   const weatherCode = weatherData?.current?.weather_code;
@@ -31,7 +32,9 @@ function WeatherPanels({ weatherData }) {
             <h2 className="text-preset-4">
               {currentCity.name},&nbsp;{currentCity.country}
             </h2>
-            <p className="text-preset-6 opacity-80">{formattedDate}</p>
+            <p className="text-preset-6 opacity-80">
+              {weekday},&nbsp;{month}&nbsp;{day},&nbsp;{year}
+            </p>
           </div>
           <div className="flex place-items-center ">
             <div className="@xs/currentW:w-full max-w-[120px] @xs/currentW:h-auto max-h-[120px]">
@@ -45,7 +48,6 @@ function WeatherPanels({ weatherData }) {
             </p>
           </div>
         </section>
-
         {/* Weather Details */}
         <WeatherDetailsPanel weatherData={weatherData} />
 
@@ -59,7 +61,8 @@ function WeatherPanels({ weatherData }) {
       </div>
 
       {/* Hourly Forecast */}
-      <HourlyForecastPanel />
+      {/* TODO: Add a loading panel until weatherData?.hourly is available. Only pass hourly data as prop or just load from context? */}
+      <HourlyForecastPanel weatherData={weatherData} />
     </div>
   );
 }
