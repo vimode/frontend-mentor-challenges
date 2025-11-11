@@ -1,4 +1,3 @@
-import { Suspense } from "react";
 import Header from "./components/header/Header.jsx";
 import Search from "./components/Search/Search.jsx";
 import WeatherPanels from "./components/Weather/WeatherPanels.jsx";
@@ -21,10 +20,7 @@ function App() {
       </h1>
       <main id="main" className="flex flex-col gap-8 w-full self-center">
         <Search />
-        {/* TODO:Replace suspense fallback with loading skeleton? */}
-        <Suspense fallback={<div>Loading Weather Data...</div>}>
-          <WeatherPanels weatherData={weatherData} />
-        </Suspense>
+        <WeatherPanels weatherData={weatherData} />
       </main>
     </div>
   );
