@@ -65,7 +65,7 @@ export default function Search() {
             name="query"
             ref={inputRef}
             id="location-search"
-            autocomplete="off"
+            autoComplete="off"
             autoFocus
           />
           {/* Loading spinner */}
