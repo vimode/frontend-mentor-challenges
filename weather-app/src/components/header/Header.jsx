@@ -1,4 +1,3 @@
-import { createPortal } from "react-dom";
 import { useState } from "react";
 
 // Units Dropdown Modal
@@ -85,11 +84,9 @@ function Header() {
         &nbsp;&nbsp;Units&nbsp;&nbsp;
         <img className="inline" src="./assets/images/icon-dropdown.svg" />
       </button>
-      {showUnitsDropdown &&
-        createPortal(
-          <UnitsDropdownModal onClose={() => setShowUnitsDropdown(false)} />,
-          document.getElementById("header"),
-        )}
+      {showUnitsDropdown && (
+        <UnitsDropdownModal onClose={() => setShowUnitsDropdown(false)} />
+      )}
     </header>
   );
 }
