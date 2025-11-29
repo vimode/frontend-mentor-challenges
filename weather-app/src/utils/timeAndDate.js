@@ -1,3 +1,4 @@
+// Formats a date into readable string based on userTZ. - "Sunday, 11 Jan 2025"
 export function formatDate(currentDate, userTimeZone) {
   currentDate = new Date(currentDate);
 
@@ -17,6 +18,7 @@ export function formatDate(currentDate, userTimeZone) {
   return formattedDate;
 }
 
+// Based on userTZ, return current time and date and split into parts - weekday, month, day, year, hour
 export function getTimeAndDateValues(currentDateAndTime, userTimeZone) {
   const date = new Date(currentDateAndTime);
 
@@ -27,8 +29,8 @@ export function getTimeAndDateValues(currentDateAndTime, userTimeZone) {
     day: "numeric",
     timeZone: userTimeZone || "UTC",
     hour: "numeric",
-    hour12: "true",
-    hourCycle: "h12",
+    hour12: false,
+    hourCycle: "h23",
   };
 
   // mdn: use Intl for internationalization
