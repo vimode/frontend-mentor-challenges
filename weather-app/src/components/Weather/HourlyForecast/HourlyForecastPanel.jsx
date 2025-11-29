@@ -1,4 +1,3 @@
-import { createPortal } from "react-dom";
 import { useState } from "react";
 import DayDropdownModal from "./DayDropdownModal";
 import HourlyCard from "./HourlyCard";
@@ -77,7 +76,7 @@ export default function HourlyForecastPanel({ weatherData }) {
 
     const chosenTimes = chosenIndices.map((i) => hourlyTimes[i]);
     const chosenTemps = chosenIndices.map((i) => temps[i]);
-    const chosenCodes = chosenIndices.map((i) => weatherIcon( weatherCode[i]));
+    const chosenCodes = chosenIndices.map((i) => weatherIcon(weatherCode[i]));
     console.log({
       time: chosenTimes,
       temperature: chosenTemps,
@@ -107,11 +106,9 @@ export default function HourlyForecastPanel({ weatherData }) {
           Dropdown&nbsp;&nbsp;
           <img className="inline" src="./assets/images/icon-dropdown.svg" />
         </button>
-        {showDayDropdown &&
-          createPortal(
-            <DayDropdownModal onClose={() => setShowDayDropdown(false)} />,
-            document.getElementById("hourlyForecast"),
-          )}
+        {showDayDropdown && (
+          <DayDropdownModal onClose={() => setShowDayDropdown(false)} />
+        )}
       </header>
       <HourlyForecastCard />
     </section>
