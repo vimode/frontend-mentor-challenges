@@ -30,13 +30,11 @@ export async function getWeatherData(city) {
   const elevation = response.elevation();
   const timezone = response.timezone();
   const timezoneAbbreviation = response.timezoneAbbreviation();
-  const utcOffsetSeconds = response.utcOffsetSeconds();
 
   console.log(
     `\nCoordinates: ${latitude}°N ${longitude}°E`,
     `\nElevation: ${elevation}m asl`,
     `\nTimezone: ${timezone} ${timezoneAbbreviation}`,
-    `\nTimezone difference to GMT+0: ${utcOffsetSeconds}s`,
   );
 
   const current = response.current();
@@ -46,7 +44,7 @@ export async function getWeatherData(city) {
   // Note: The order of weather variables in the URL query and the indices below need to match!
   const weatherData = {
     current: {
-      time: new Date((Number(current.time()) + utcOffsetSeconds) * 1000),
+      time: new Date(Number(current.time()) * 1000),
       timeraw: current.time(),
       timezone,
       temperature_2m: current.variables(0).value(),
@@ -65,10 +63,7 @@ export async function getWeatherData(city) {
         ),
       ].map(
         (_, i) =>
-          new Date(
-            (Number(hourly.time()) + i * hourly.interval() + utcOffsetSeconds) *
-              1000,
-          ),
+          new Date((Number(hourly.time()) + i * hourly.interval()) * 1000),
       ),
       temperature_2m: hourly.variables(0).valuesArray(),
       weather_code: hourly.variables(1).valuesArray(),
@@ -80,10 +75,7 @@ export async function getWeatherData(city) {
         ),
       ].map(
         (_, i) =>
-          new Date(
-            (Number(daily.time()) + i * daily.interval() + utcOffsetSeconds) *
-              1000,
-          ),
+          new Date((Number(daily.time()) + i * daily.interval()) * 1000),
       ),
       temperature_2m_max: daily.variables(0).valuesArray(),
       temperature_2m_min: daily.variables(1).valuesArray(),
