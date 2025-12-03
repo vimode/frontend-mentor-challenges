@@ -11,6 +11,7 @@ function HourlyRow({ hourlyData, userTZ }) {
     const timeData = getTimeAndDateValues(t, userTZ);
     return {
       time: timeData.hour,
+      dayPeriod: timeData.dayPeriod,
       temperature: hourlyData.temperature[idx].toFixed(0),
       icon: hourlyData.weatherCode[idx],
     };
@@ -27,6 +28,7 @@ function HourlyRow({ hourlyData, userTZ }) {
             imgSrc={entry.icon.src}
             imgAlt={entry.icon.alt_text}
             time={entry.time}
+            dayPeriod={entry.dayPeriod}
             temp={entry.temperature}
           />
         ))}

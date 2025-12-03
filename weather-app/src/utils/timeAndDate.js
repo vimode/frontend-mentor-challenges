@@ -29,8 +29,9 @@ export function getTimeAndDateValues(currentDateAndTime, userTimeZone) {
     day: "numeric",
     timeZone: userTimeZone || "UTC",
     hour: "numeric",
-    hour12: false,
-    hourCycle: "h23",
+    hour12: true,
+    hourCycle: "h11",
+    dayPeriod: "short",
   };
 
   // mdn: use Intl for internationalization
@@ -40,9 +41,21 @@ export function getTimeAndDateValues(currentDateAndTime, userTimeZone) {
 
   parts
     .filter((p) => p.type !== "literal")
-    .map(
-      (p) => (localeTokens[p.type] = (localeTokens[p.type] ?? "") + p.value),
-    );
+    .map((p) => {
+      localeTokens[p.type] = p.value;
+    });
+
+  if (localeTokens.dayPeriod) {
+    const ampm = {
+      "in the morning": "AM",
+      noon: "PM",
+      "in the afternoon": "PM",
+      "in the evening": "PM",
+      "at night": "PM",
+    };
+    localeTokens.dayPeriod =
+      ampm[localeTokens.dayPeriod] || localeTokens.dayPeriod;
+  }
 
   return localeTokens;
 }
