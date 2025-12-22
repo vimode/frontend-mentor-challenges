@@ -1,8 +1,9 @@
 import { useState } from "react";
+import { useWeatherDataContext } from "../../weatherContext";
 
 // Units Dropdown Modal
-function UnitsDropdownModal() {
-  const [metricUnits, setMetricUnits] = useState(false);
+function UnitsDropdownModal({ metricUnits }) {
+  const { setMetricUnits } = useWeatherDataContext();
 
   return (
     <div className="absolute top-[120%] right-px px-[6px] py-2 bg-midnight-neutral-800 border-1 border-midnight-neutral-600  rounded-xl z-10 w-[calc(var(--spacing)*53)] cursor-pointer">
@@ -70,6 +71,7 @@ function UnitSection({ title, metricUnit, imperialUnit, isMetric }) {
 
 function Header() {
   const [showUnitsDropdown, setShowUnitsDropdown] = useState(false);
+  const { metricUnits } = useWeatherDataContext();
 
   return (
     <header className="flex justify-between items-center relative" id="header">
@@ -85,7 +87,10 @@ function Header() {
         <img className="inline" src="./assets/images/icon-dropdown.svg" />
       </button>
       {showUnitsDropdown && (
-        <UnitsDropdownModal onClose={() => setShowUnitsDropdown(false)} />
+        <UnitsDropdownModal
+          onClose={() => setShowUnitsDropdown(false)}
+          metricUnits={metricUnits}
+        />
       )}
     </header>
   );

@@ -1,4 +1,4 @@
-import Header from "./components/header/Header.jsx";
+import Header from "./components/Header/Header.jsx";
 import Search from "./components/Search/Search.jsx";
 import WeatherPanels from "./components/Weather/WeatherPanels.jsx";
 import { useWeatherDataContext } from "./weatherContext.jsx";

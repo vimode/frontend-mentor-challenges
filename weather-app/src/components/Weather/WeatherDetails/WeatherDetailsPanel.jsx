@@ -1,6 +1,9 @@
+import { useWeatherDataContext } from "../../../weatherContext";
 import WeatherDetailsCard from "./WeatherDetailCard";
 
 function WeatherDetailsPanel({ weatherData }) {
+  const { metricUnits } = useWeatherDataContext();
+
   return (
     <section className="flex flex-wrap gap-4">
       <WeatherDetailsCard
@@ -16,12 +19,12 @@ function WeatherDetailsPanel({ weatherData }) {
       <WeatherDetailsCard
         label="Wind"
         value={weatherData?.current?.wind_speed_10m.toFixed(0)}
-        unit="&nbsp;km/h"
+        unit={metricUnits ? " km/h" : " mph"}
       />
       <WeatherDetailsCard
         label="Precipitation"
         value={weatherData?.current?.precipitation.toFixed(0)}
-        unit="&nbsp;mm"
+        unit={metricUnits ? " mm" : " in"}
       />
     </section>
   );

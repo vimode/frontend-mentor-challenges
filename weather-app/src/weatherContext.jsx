@@ -14,6 +14,7 @@ export function WeatherDataProvider({ children }) {
   });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [metricUnits, setMetricUnits] = useState(false);
 
   useEffect(() => {
     async function fetchingWeatherData() {
@@ -23,7 +24,10 @@ export function WeatherDataProvider({ children }) {
         const geocodes = await getLocation(currentCity.name);
         const { lat, long, city, country } = geocodes.data;
         setCurrentCity((prev) => ({ ...prev, lat, long, name: city, country }));
-        const result = await getWeatherData({ ...currentCity, lat, long });
+        const result = await getWeatherData(
+          { ...currentCity, lat, long },
+          metricUnits,
+        );
         setWeatherData(result);
       } catch (err) {
         setError(`Failed to fetch weather data: ${err}`);
@@ -32,11 +36,19 @@ export function WeatherDataProvider({ children }) {
       }
     }
     fetchingWeatherData();
-  }, [currentCity.name]);
+  }, [currentCity.name, metricUnits]);
 
   return (
     <WeatherDataContext.Provider
-      value={{ currentCity, setCurrentCity, weatherData, loading, error }}
+      value={{
+        currentCity,
+        setCurrentCity,
+        weatherData,
+        loading,
+        error,
+        metricUnits,
+        setMetricUnits,
+      }}
     >
       {children}
     </WeatherDataContext.Provider>

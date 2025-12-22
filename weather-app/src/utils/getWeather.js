@@ -1,7 +1,9 @@
 import { fetchWeatherApi } from "openmeteo";
 
-export async function getWeatherData(city) {
+export async function getWeatherData(city, metricUnits) {
   // TODO: Convert this to a try catch
+  //
+  const temperature_unit = metricUnits ? "celsius" : "fahrenheit";
   const params = {
     latitude: city.lat, // static data for testing
     longitude: city.long, // static data for testing
@@ -17,6 +19,7 @@ export async function getWeatherData(city) {
       "wind_speed_10m",
     ],
     timezone: "auto",
+    temperature_unit,
   };
   const url = "https://api.open-meteo.com/v1/forecast";
   const responses = await fetchWeatherApi(url, params);
