@@ -31,7 +31,7 @@ export function getTimeAndDateValues(currentDateAndTime, userTimeZone) {
     hour: "numeric",
     hour12: true,
     hourCycle: "h11",
-    dayPeriod: "short",
+    dayPeriod: "long",
   };
 
   // mdn: use Intl for internationalization

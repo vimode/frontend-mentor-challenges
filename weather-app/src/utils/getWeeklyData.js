@@ -3,7 +3,6 @@ import { weatherIcon } from "./weatherIcon";
 
 export function eightHoursData(weatherData, selectedDay) {
   const userTZ = weatherData?.current?.timezone;
-  console.log(userTZ);
 
   // Current time in user's tz
   const timeNow = weatherData?.current?.time
@@ -21,14 +20,6 @@ export function eightHoursData(weatherData, selectedDay) {
   const weatherCode = weatherData?.hourly?.weather_code ?? [];
   console.log("hourlyTimes", hourlyTimes);
 
-  let weekHourlyTimes = [];
-  for (let i = 0; i < 7; i++) {
-    let startDay = Number(targetDay) + i;
-    const day = hourlyTimes?.filter(
-      (item) => new Date(item).getUTCDate() === startDay,
-    );
-    weekHourlyTimes.push(day);
-  }
   const weekdayIndex = {
     sunday: 0,
     monday: 1,
@@ -38,6 +29,16 @@ export function eightHoursData(weatherData, selectedDay) {
     friday: 5,
     saturday: 6,
   };
+
+  let weekHourlyTimes = [];
+  for (let i = 0; i < 7; i++) {
+    let startDay = parseInt(targetDay) + i;
+    const day = hourlyTimes?.filter(
+      (item) => new Date(item).getUTCDate() === startDay,
+    );
+    weekHourlyTimes.push(day);
+  }
+  console.log("weekHourlyTimes", weekHourlyTimes);
 
   const targetIdx = weekdayIndex[targetWeekday];
 
@@ -53,11 +54,12 @@ export function eightHoursData(weatherData, selectedDay) {
   const matchingIndex = todayFiltered?.map((item) =>
     hourlyTimes.findIndex((t) => t.toString() === item.toString()),
   );
-  console.log("indices_for_matching_date_in_timesdata", matchingIndex);
+  console.log("indices_for_matching_date_in_hourlyTimes", matchingIndex);
 
   let startIdx = todayFiltered.findIndex(
-    (t) => new Date(t).getUTCHours() >= Number(timeNow.hour),
+    (t) => new Date(t).getUTCHours() >= parseInt(timeNow.hour),
   );
+
   console.log("startIdx", startIdx);
 
   // Keep track of matchingIndex
