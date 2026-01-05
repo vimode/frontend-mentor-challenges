@@ -9,6 +9,7 @@ function HourlyRow({ hourlyData, userTZ }) {
 
   const hourlyEntries = hourlyData?.time?.map((t, idx) => {
     const timeData = getTimeAndDateValues(t, userTZ);
+    console.log("timeData", timeData);
     return {
       time: timeData.hour,
       dayPeriod: timeData.dayPeriod,

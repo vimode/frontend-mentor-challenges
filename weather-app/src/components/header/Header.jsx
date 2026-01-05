@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useWeatherDataContext } from "../../weatherContext";
 
 // Units Dropdown Modal
@@ -6,7 +6,7 @@ function UnitsDropdownModal({ metricUnits }) {
   const { setMetricUnits } = useWeatherDataContext();
 
   return (
-    <div className="absolute top-[120%] right-px px-[6px] py-2 bg-midnight-neutral-800 border-1 border-midnight-neutral-600  rounded-xl z-10 w-[calc(var(--spacing)*53)] cursor-pointer">
+    <>
       <section className="flex flex-col">
         <button
           className="text-preset-7 px-2 py-[10px] rounded-lg transition-colors duration-300 hover:bg-midnight-neutral-700"
@@ -35,7 +35,7 @@ function UnitsDropdownModal({ metricUnits }) {
         imperialUnit="Inches (in)"
         isMetric={metricUnits}
       />
-    </div>
+    </>
   );
 }
 
@@ -73,6 +73,27 @@ function Header() {
   const [showUnitsDropdown, setShowUnitsDropdown] = useState(false);
   const { metricUnits } = useWeatherDataContext();
 
+  const modalRef = useRef(null);
+
+  // AI solution for my problem of closing the dropdown, when clicked elsewhere in the app
+  useEffect(() => {
+    function handleClick(e) {
+      if (modalRef.current && !modalRef.current.contains(e.target)) {
+        setShowUnitsDropdown(false);
+      }
+    }
+
+    function onKey(e) {
+      if (e.key === "Escape") setShowUnitsDropdown(false);
+    }
+    document.addEventListener("mousedown", handleClick);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("mousedown", handleClick);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, []);
+
   return (
     <header className="flex justify-between items-center relative" id="header">
       <img src="./assets/images/logo.svg" />
@@ -87,10 +108,15 @@ function Header() {
         <img className="inline" src="./assets/images/icon-dropdown.svg" />
       </button>
       {showUnitsDropdown && (
-        <UnitsDropdownModal
-          onClose={() => setShowUnitsDropdown(false)}
-          metricUnits={metricUnits}
-        />
+        <div
+          ref={modalRef}
+          className="absolute top-[120%] right-px px-[6px] py-2 bg-midnight-neutral-800 border-1 border-midnight-neutral-600  rounded-xl z-10 w-[calc(var(--spacing)*53)] cursor-pointer"
+        >
+          <UnitsDropdownModal
+            onClose={() => setShowUnitsDropdown(false)}
+            metricUnits={metricUnits}
+          />
+        </div>
       )}
     </header>
   );

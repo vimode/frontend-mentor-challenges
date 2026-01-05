@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import DayDropdownModal from "./DayDropdownModal";
 import { getTimeAndDateValues } from "../../../utils/timeAndDate";
 import { eightHoursData } from "../../../utils/getWeeklyData";
@@ -16,6 +16,7 @@ export default function HourlyForecastPanel({ weatherData }) {
   console.log("timeNow", timeNow);
   const [displayDay, setDisplayDay] = useState("");
   const [hourlyData, setHourlyData] = useState(null);
+  const modalRef = useRef(null);
 
   // Update displayDay whenever API day is loaded and becomes available
   useEffect(() => {
@@ -25,7 +26,7 @@ export default function HourlyForecastPanel({ weatherData }) {
   }, [timeNow?.weekday]);
 
   useEffect(() => {
-    if (displayDay) {
+    if (displayDay && weatherData) {
       const data = eightHoursData(weatherData, displayDay);
       setHourlyData(data);
     }
@@ -35,6 +36,25 @@ export default function HourlyForecastPanel({ weatherData }) {
     setDisplayDay(selectedDay);
     setShowDayDropdown(!showDayDropdown);
   }
+
+  // AI solution for my problem of closing the dropdown, when clicked elsewhere in the app
+  useEffect(() => {
+    function handleClick(e) {
+      if (modalRef.current && !modalRef.current.contains(e.target)) {
+        setShowDayDropdown(false);
+      }
+    }
+
+    function onKey(e) {
+      if (e.key === "Escape") setShowDayDropdown(false);
+    }
+    document.addEventListener("mousedown", handleClick);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("mousedown", handleClick);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, []);
 
   return (
     <section
@@ -51,10 +71,15 @@ export default function HourlyForecastPanel({ weatherData }) {
           <img className="inline" src="./assets/images/icon-dropdown.svg" />
         </button>
         {showDayDropdown && (
-          <DayDropdownModal
-            displayDay={displayDay}
-            updateDropdownDay={updateDropdownDay}
-          />
+          <div
+            ref={modalRef}
+            className="absolute top-[10%] right-[calc(var(--spacing)*4)] bg-midnight-neutral-800 border-1 border-midnight-neutral-600 rounded-xl w-1/2 p-2 z-10 flex flex-col gap-1 cursor-pointer"
+          >
+            <DayDropdownModal
+              displayDay={displayDay}
+              updateDropdownDay={updateDropdownDay}
+            />
+          </div>
         )}
       </header>
       <HourlyRow hourlyData={hourlyData} userTZ={userTZ} />

@@ -1,8 +1,4 @@
-import { useState } from "react";
-
 export default function DayDropdownModal({ updateDropdownDay, displayDay }) {
-  // TODO: Move this to context
-
   const weekdays = [
     "Monday",
     "Tuesday",
@@ -14,7 +10,7 @@ export default function DayDropdownModal({ updateDropdownDay, displayDay }) {
   ];
 
   return (
-    <div className="absolute top-[10%] right-[calc(var(--spacing)*4)] bg-midnight-neutral-800 border-1 border-midnight-neutral-600 rounded-xl w-1/2 p-2 z-10 flex flex-col gap-1 cursor-pointer">
+    <>
       {weekdays.map((weekday) => (
         <button
           key={weekday}
@@ -24,6 +20,6 @@ export default function DayDropdownModal({ updateDropdownDay, displayDay }) {
           {weekday}
         </button>
       ))}
-    </div>
+    </>
   );
 }
